@@ -1,10 +1,9 @@
 /* Variables  
 -------------------------------------------------*/
-$primary-accent: 	#89C4F4; 			//jordy blue
-$lighter-accent:	lighten($primary-accent, 20%);			//picton blue
-$text-color:		rgb(52, 73, 94);  	//dark dark blue green
-$white:				#fefefe;			//v. light grey
-$button-color:		#19B5FE; 			//dodger blue
+$primary-accent: 	rgb(160, 208, 227); 			//mapbox water blue
+$lighter-accent:	lighten($primary-accent, 20%);	//lighter mapbox water blue
+$text-color:		rgb(52, 73, 94);  				//dark dark blue green
+$white:				#fefefe;						//v. light grey
 $font-family: 		'chaparral-pro', Georgia, serif;
 $font-family2: 		'brandon-grotesque', helvetica, sans-serif;
 
@@ -144,15 +143,16 @@ body {
   	font-size: 17px;
   	line-height: 1.471;
  	border-radius: 6px;
+ 	border: 2px white solid;
  	color: $white;
- 	background-color: $button-color;
+ 	// background-color: $button-color;
  	font-family: $font-family2;
  	text-align: center;
  	margin: auto;
  	-webkit-transition: border .25s linear,color .25s linear,background-color .25s linear;
   	transition: border .25s linear,color .25s linear,background-color .25s linear;
  	&:hover {
- 		background-color: lighten($button-color, 10%)
+ 		// background-color: lighten($button-color, 10%)
  	}
 }
 
