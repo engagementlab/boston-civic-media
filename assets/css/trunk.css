@@ -129,16 +129,15 @@ body {
   background-color: #a0d0e3;
   position: relative; }
   .jumbo .inner {
-    width: 23em;
-    height: 8em;
-    position: absolute;
-    top: 42%;
-    left: 49%;
-    margin: -70px 0 0 -170px; }
+    max-width: 25em;
+    height: 20em;
+    position: relative;
+    margin: 0 auto;
+    padding: 5em 1em 0 1em; }
 
 .btn {
   display: block;
-  max-width: 15em;
+  max-width: 95%;
   padding: 10px 19px;
   font-size: 17px;
   line-height: 1.471;
@@ -202,6 +201,9 @@ nav li {
     width: 5em; }
 
 @media only screen and (max-width: 780px) {
+  h1 {
+    font-size: 2.7em; }
+
   .navbar {
     height: 3em;
     z-index: 2;

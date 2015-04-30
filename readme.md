@@ -2,7 +2,7 @@
 
 To run: 
 - Open the command line in the BostonCivicMedia folder, and run "php -S localhost:8000" (make sure you have php installed)
-- Navigate your browser to localhost:8000
+- Navigate your browser to localhost:8000/conference
 
 There you go. 
 
