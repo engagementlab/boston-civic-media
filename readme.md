@@ -8,7 +8,7 @@ There you go.
 
 To edit content (i.e. writing posts, new pages, adding people), navigate your browser to localhost:8000/panel.
 
-To turn your SCSS into plain old CSS every time you save the file, run "sass --watch [the scss file you want to watch]" from the assets/css folder.
+To turn your sassy, organized SCSS into plain old CSS every time you save the file, run "sass --watch [the scss file you want to watch]" from the assets/css folder.
 
 Ask mayawagon@gmail.com if you need help.
 
