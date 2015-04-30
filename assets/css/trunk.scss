@@ -27,7 +27,11 @@ body {
 	-ms-font-smoothing: antialiased;
 }
 
-a {text-decoration: none;}
+a {text-decoration: none; color:$text-color;}
+a:visited { text-decoration: none; color:$text-color;}
+a:hover { text-decoration: none; color:$text-color;}
+a:focus { text-decoration: none; color:$text-color;}
+a:hover, a:active { text-decoration: none; color:$text-color;}
 
 p {
 	font-family: $font-family;
@@ -102,6 +106,10 @@ nav li a:hover {
 	font-size: 1.3em;
 	line-height: 1.3em;
 	margin: 1em auto;
+	width: 10em;
+  	border: #DEDEDE solid 2px;
+  	padding: 0.5em;
+  	border-radius: 9px;
 	.room-name {
 		font-weight: 800;
 	}

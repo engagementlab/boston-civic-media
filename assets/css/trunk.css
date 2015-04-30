@@ -17,7 +17,24 @@ body {
   -ms-font-smoothing: antialiased; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: #34495e; }
+
+a:visited {
+  text-decoration: none;
+  color: #34495e; }
+
+a:hover {
+  text-decoration: none;
+  color: #34495e; }
+
+a:focus {
+  text-decoration: none;
+  color: #34495e; }
+
+a:hover, a:active {
+  text-decoration: none;
+  color: #34495e; }
 
 p {
   font-family: "chaparral-pro", Georgia, serif;
@@ -77,7 +94,11 @@ nav li a:hover {
   font-family: "brandon-grotesque", helvetica, sans-serif;
   font-size: 1.3em;
   line-height: 1.3em;
-  margin: 1em auto; }
+  margin: 1em auto;
+  width: 10em;
+  border: #DEDEDE solid 2px;
+  padding: 0.5em;
+  border-radius: 9px; }
   .vcard .room-name {
     font-weight: 800; }
 
