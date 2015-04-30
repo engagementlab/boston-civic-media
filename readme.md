@@ -1,12 +1,16 @@
 #Boston Civic Media Website
 
-To run, open the command line in the Website folder, and run "php -S localhost:8000"
-Navigate your browser to localhost:8000
-To edit content (i.e. posts, new pages), go to localhost:8000/panel
+To run: 
+- Open the command line in the BostonCivicMedia folder, and run "php -S localhost:8000" (make sure you have php installed)
+- Navigate your browser to localhost:8000
 
-To magically turn your SCSS into CSS every time you save, run "sass --watch [the scss file you want to watch]"
+There you go. 
 
-Ask mayawagon@gmail.com for help.
+To edit content (i.e. writing posts, new pages, adding people), navigate your browser to localhost:8000/panel.
+
+To turn your SCSS into plain old CSS every time you save the rile, run "sass --watch [the scss file you want to watch]" from the assets/css folder.
+
+Ask mayawagon@gmail.com if you need help.
 
 # Kirby instructions
 
