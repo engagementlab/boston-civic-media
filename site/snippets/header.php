@@ -17,6 +17,6 @@
 <header class="jumbo slide">
   <div class="inner">
     <h1><?php echo $page->title()->html() ?></h1>
-    <a href="#" class="btn">Register</a>
+    <a href="https://www.eventbrite.com/e/boston-civic-media-conference-tickets-16817278934" class="btn">Register</a>
   </div>
 </header> <!-- jumbo header section -->
