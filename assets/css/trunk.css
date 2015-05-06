@@ -34,15 +34,14 @@ a:focus {
 
 a:hover, a:active {
   text-decoration: none;
-  color: #34495e; }
+  color: #34495e;
+  background-color: #ffff63; }
 
 p {
   font-family: "chaparral-pro", Georgia, serif;
   font-size: 1.4em;
   line-height: 1.5em;
-  font-weight: 400;
-  max-width: 40rem;
-  margin: auto; }
+  font-weight: 400; }
 
 h1 {
   font-family: "brandon-grotesque", helvetica, sans-serif;
@@ -107,6 +106,9 @@ nav li a:hover {
 body {
   background-color: #fff; }
 
+.clear {
+  clear: both; }
+
 .container {
   overflow: hidden;
   background-color: #fff;
@@ -127,13 +129,14 @@ body {
   height: 30em;
   background-image: url(http://imgur.com/RuslluS.png);
   background-repeat: repeat;
-  background-attachment: fixed; }
+  background-attachment: fixed;
+  border-bottom: 4px #DDD solid; }
   .jumbo .inner {
     max-width: 25em;
     height: 20em;
     position: relative;
     margin: 0 auto;
-    padding: 5em 1em 0 1em; }
+    padding: 3em 1em 0 1em; }
 
 .btn {
   display: block;
@@ -150,6 +153,13 @@ body {
   margin: auto;
   -webkit-transition: border .25s linear,color .25s linear,background-color .25s linear;
   transition: border .25s linear,color .25s linear,background-color .25s linear; }
+
+.about {
+  border-bottom: 4px #DDD solid; }
+
+.about p {
+  margin: auto;
+  max-width: 40rem; }
 
 .footer {
   background-color: #edeff1;
@@ -191,6 +201,8 @@ nav li {
 .about {
   background-color: #fff; }
 
+/*Schedule Layout
+----------------------------------------------------------------*/
 .schedule {
   width: 100%; }
 
@@ -200,12 +212,20 @@ nav li {
   max-width: 60rem;
   margin: 1em auto;
   padding: 1em; }
-  .session .event-info {
-    min-width: 60%; }
-  .session time {
+  .session .time {
     float: left;
-    width: 5em; }
+    width: 20%; }
+  .session .byline {
+    float: right;
+    width: 80%;
+    margin-top: 0.5em; }
+  .session .event-description {
+    float: right;
+    width: 80%;
+    margin-top: 0.5em; }
 
+/*Media Queries
+----------------------------------------------------------------*/
 @media only screen and (max-width: 780px) {
   h1 {
     font-size: 2.7em; }
@@ -213,7 +233,6 @@ nav li {
   .navbar {
     height: 3em;
     z-index: 2;
-    position: fixed;
     /* starting point */
     -webkit-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);

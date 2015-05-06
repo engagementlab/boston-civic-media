@@ -2,6 +2,7 @@
 -------------------------------------------------*/
 $primary-accent: 	rgb(160, 208, 227); 			//mapbox water blue
 $lighter-accent:	lighten($primary-accent, 20%);	//lighter mapbox water blue
+$bright-af:			rgb(255, 255, 99);				//yellow as fuck
 $text-color:		rgb(52, 73, 94);  				//dark dark blue green
 $white:				#fff;						//literally white
 $button-color:		$white;
@@ -12,7 +13,7 @@ $font-family2: 		'brandon-grotesque', helvetica, sans-serif;
 /* Typography  
 -------------------------------------------------*/
 body {
-	font-family: $font-family;
+	font-family: $font-family; 
 	color: $text-color;
 	text-rendering: optimizelegibility;
 	-webkit-tap-highlight-color:rgba(0,0,0,0);
@@ -32,15 +33,13 @@ a {text-decoration: none; color:$text-color;}
 a:visited { text-decoration: none; color:$text-color;}
 a:hover { text-decoration: none; color:$text-color;}
 a:focus { text-decoration: none; color:$text-color;}
-a:hover, a:active { text-decoration: none; color:$text-color;}
+a:hover, a:active { text-decoration: none; color:$text-color; background-color: $bright-af;}
 
 p {
 	font-family: $font-family;
 	font-size: 1.4em;
 	line-height: 1.5em;
 	font-weight: 400;
-	max-width: 40rem;
-	margin: auto;
 }
 
 h1 {
@@ -123,6 +122,8 @@ body {
 	background-color: $white;
 }
 
+.clear {clear: both;}
+
 .container {
 	overflow: hidden;
 	background-color: $white;
@@ -147,12 +148,13 @@ body {
 	background-image: url(http://imgur.com/RuslluS.png);
 	background-repeat: repeat;
 	background-attachment: fixed;
+	border-bottom: 4px #DDD solid;
 	.inner {
 		max-width: 25em;
 	  	height: 20em;
 	  	position: relative;
 	  	margin: 0 auto;
-	  	padding: 5em 1em 0 1em;
+	  	padding: 3em 1em 0 1em;
 	}
 }
 
@@ -175,6 +177,15 @@ body {
  	&:hover {
  		// background-color: lighten($button-color, 10%)
  	}
+}
+
+.about {
+	border-bottom: 4px #DDD solid;
+}
+
+.about p {
+	margin: auto;
+	max-width: 40rem;
 }
 
 .footer {
@@ -228,9 +239,10 @@ nav li {
 	background-color: $white;
 }
 
+/*Schedule Layout
+----------------------------------------------------------------*/
+
 .schedule {
-	//background-image: url(http://imgur.com/B4NSVnp.png);
-	//background-repeat: repeat;
 	width: 100%;
 }
 
@@ -240,15 +252,24 @@ nav li {
 	max-width: 60rem;
   	margin: 1em auto;
   	padding: 1em;
-	.event-info {
-		min-width: 60%;
-	}
-	time {
+	.time {
 		float: left;
-		width: 5em;
+		width: 20%;
+	}
+	.byline {
+		float: right;
+		width: 80%;
+		margin-top: 0.5em;
+	}
+	.event-description {
+		float: right;
+		width: 80%;
+		margin-top: 0.5em;
 	}
 }
 
+/*Media Queries
+----------------------------------------------------------------*/
 
 @media only screen and (max-width: 780px) {
 
@@ -258,7 +279,7 @@ nav li {
 	.navbar {
 		height: 3em;
 		z-index: 2;	
-		position: fixed;
+		//position: fixed;
 		
 			/* starting point */
 		-webkit-transform: translate3d(0,0,0);
