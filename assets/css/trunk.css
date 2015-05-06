@@ -105,11 +105,12 @@ nav li a:hover {
 /* Layout  
 -------------------------------------------------*/
 body {
-  background-color: #fff; }
+  background-image: url(http://imgur.com/B4NSVnp.png);
+  background-repeat: repeat;
+  background-attachment: fixed; }
 
 .container {
   overflow: hidden;
-  background-color: #fff;
   /*  Prevents Flickering  */
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
@@ -181,12 +182,17 @@ nav li {
   float: left;
   display: inline-block; }
 
-.content {
+.content section {
+  padding: 4em 1em; }
+.content .location {
+  background-color: #fff;
+  padding: 0 0 0 0; }
+
+.about {
   background-color: #fff; }
-  .content section {
-    padding: 4em 1em; }
-  .content .location {
-    padding: 0 0 0 0; }
+
+.schedule {
+  width: 100%; }
 
 .session {
   max-width: 100%;

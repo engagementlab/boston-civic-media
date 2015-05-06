@@ -15,6 +15,7 @@
 
 <!-- Style Sheets --> 
 <?php echo css('assets/css/reset.css') ?>
+<?php echo css('assets/css/grid.css') ?>
 <?php echo css('assets/css/trunk.css') ?> 
 
 <!-- Scripts --> 
