@@ -1,8 +1,7 @@
 <?php snippet('head') ?>
 
 <body> 
-	<div class="container">
-		<?php snippet('header') ?>
+		<?php snippet('header') ?> <!-- Includes .container opening tag -->
 		<div class="content slide">
 			<section class="about">
 				<p><?php echo $page->text() ?></p>

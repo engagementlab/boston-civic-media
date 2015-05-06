@@ -51,7 +51,7 @@ h1 {
   line-height: 1em;
   font-style: normal;
   margin: auto auto;
-  color: #fff; }
+  color: #34495e; }
 
 h2 {
   font-family: "brandon-grotesque", helvetica, sans-serif;
@@ -105,12 +105,11 @@ nav li a:hover {
 /* Layout  
 -------------------------------------------------*/
 body {
-  background-image: url(http://imgur.com/B4NSVnp.png);
-  background-repeat: repeat;
-  background-attachment: fixed; }
+  background-color: #fff; }
 
 .container {
   overflow: hidden;
+  background-color: #fff;
   /*  Prevents Flickering  */
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
@@ -122,13 +121,13 @@ body {
   top: 0;
   right: 0;
   left: 0;
-  background-color: #a0d0e3; }
+  background-color: transparent; }
 
 .jumbo {
   height: 30em;
-  position: relative;
-  background-color: #a0d0e3;
-  position: relative; }
+  background-image: url(http://imgur.com/RuslluS.png);
+  background-repeat: repeat;
+  background-attachment: fixed; }
   .jumbo .inner {
     max-width: 25em;
     height: 20em;
@@ -143,8 +142,9 @@ body {
   font-size: 17px;
   line-height: 1.471;
   border-radius: 6px;
-  border: 2px white solid;
-  color: #fff;
+  border: 2px #34495e solid;
+  color: #34495e;
+  background-color: #fff;
   font-family: "brandon-grotesque", helvetica, sans-serif;
   text-align: center;
   margin: auto;
@@ -166,7 +166,7 @@ body {
 .burger li {
   width: 30px;
   height: 4px;
-  background-color: #fff;
+  background-color: #34495e;
   border-radius: 3px;
   margin: 5px 0; }
 
@@ -273,7 +273,7 @@ nav li {
     margin: 0;
     background-color: #1d2d35;
     /* starting point */
-    opacity: .3;
+    opacity: 0;
     -webkit-transform: translate3d(5%, 0, 0) scale(0.97);
     -moz-transform: translate3d(5%, 0, 0) scale(0.97);
     transform: translate3d(5%, 0, 0) scale(0.97); }

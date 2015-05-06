@@ -4,6 +4,7 @@ $primary-accent: 	rgb(160, 208, 227); 			//mapbox water blue
 $lighter-accent:	lighten($primary-accent, 20%);	//lighter mapbox water blue
 $text-color:		rgb(52, 73, 94);  				//dark dark blue green
 $white:				#fff;						//literally white
+$button-color:		$white;
 $font-family: 		'chaparral-pro', Georgia, serif;
 $font-family2: 		'brandon-grotesque', helvetica, sans-serif;
 
@@ -49,7 +50,7 @@ h1 {
 		line-height: 1em;
 		font-style: normal;
 		margin: auto auto;
-		color: $white;
+		color: $text-color;
 }
 
 h2 {
@@ -119,15 +120,12 @@ nav li a:hover {
 /* Layout  
 -------------------------------------------------*/
 body {
-	//background-color: $white;
-	background-image: url(http://imgur.com/B4NSVnp.png);
-	background-repeat: repeat;
-	background-attachment: fixed; 
+	background-color: $white;
 }
 
 .container {
 	overflow: hidden;
-	//background-color: $white;
+	background-color: $white;
 
 /*  Prevents Flickering  */
 	-webkit-backface-visibility: hidden;
@@ -141,14 +139,14 @@ body {
 	top: 0;
 	right: 0;
 	left: 0;
-	background-color: $primary-accent;
+	background-color: transparent;
 }
 
 .jumbo {
 	height: 30em;
-	position: relative;
-	background-color: $primary-accent;
-	position: relative;
+	background-image: url(http://imgur.com/RuslluS.png);
+	background-repeat: repeat;
+	background-attachment: fixed;
 	.inner {
 		max-width: 25em;
 	  	height: 20em;
@@ -166,9 +164,9 @@ body {
   	font-size: 17px;
   	line-height: 1.471;
  	border-radius: 6px;
- 	border: 2px white solid;
- 	color: $white;
- 	// background-color: $button-color;
+ 	border: 2px $text-color solid;
+ 	color: $text-color;
+ 	background-color: $button-color;
  	font-family: $font-family2;
  	text-align: center;
  	margin: auto;
@@ -195,7 +193,7 @@ body {
 .burger li {
 	width: 30px;
 	height: 4px;
-	background-color: $white;
+	background-color: $text-color;
 	border-radius: 3px;
 	margin: 5px 0;
 }
@@ -208,6 +206,7 @@ nav {
 	position: absolute;
 	top: 0;
 	right: 5px;
+
 }
 nav li {
 	float: left;
@@ -323,7 +322,7 @@ nav li {
 		background-color: #1d2d35;
 		
 		/* starting point */
-		opacity: .3;
+		opacity: 0;
 		-webkit-transform: translate3d(5%,0,0)scale(.97);
 		-moz-transform: translate3d(5%,0,0)scale(.97);
 		transform: translate3d(5%,0,0)scale(.97);
