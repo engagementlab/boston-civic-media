@@ -1,0 +1,59 @@
+/*-----------------------------------*/
+/* Typography */
+/*-----------------------------------*/
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2em;
+  margin-bottom: .4em;
+  word-wrap: break-word;
+  font-weight: 700;
+  color: @heading-color;
+  text-align: left;
+}
+h1 {font-size: @font-size-h1;}
+h2 {font-size: @font-size-h2;}
+h3 {font-size: @font-size-h3;}
+h4 {font-size: @font-size-h4;}
+h5 {font-size: @font-size-h5;}
+h6 {font-size: @font-size-h6;}
+
+h1 span,
+h2 span,
+h3 span,
+h4 span,
+h5 span,
+h6 span{font-weight: 200;}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {color: @heading-color;}
+h1 a:hover,
+h2 a:hover
+, h3 a:hover,
+h4 a:hover,
+h5 a:hover,
+h6 a:hover {color: @base-color2;}
+
+em {font-style: italic;}
+strong {font-weight: 700;}
+small {font-size: 85%;}
+
+i {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  font-style: normal;
+}
+p {
+  font-size: @font-size;
+  line-height: 1.8em;
+  word-wrap: break-word;
+  margin-bottom: 1.5em;
+}
+@media (max-width: 767px) {p {font-size: @font-size;}}
+
+.lowercase {text-transform: lowercase;}
+.uppercase {text-transform: uppercase;}

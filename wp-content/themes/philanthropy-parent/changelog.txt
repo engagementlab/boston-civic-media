@@ -1,0 +1,20 @@
+*** Philanthropy Changelog ***
+
+ 2015.03.11 - version 1.0.2
+ * minor changes
+	philanthropy-parent/page.php
+	philanthropy-parent/content-single-project.php
+ * webkit-appearance fixes
+	philanthropy-parent/less/forms.less
+	philanthropy-parent/less/layout.less
+	philanthropy-parent/style.css
+ * changes for team member shortcode
+	philanthropy-parent/less/layout.less
+	philanthropy-parent/style.css
+ 
+ 2014.10.31 - version 1.0.1
+ * minor changes
+	philanthropy-parent/style.css
+
+ 2014.09.25 - version 1.0
+ * First release!

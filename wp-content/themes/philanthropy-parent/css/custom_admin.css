@@ -1,0 +1,90 @@
+
+
+.folded #adminmenu a.menu-top {
+    height: 0px;
+}
+.folded #adminmenu a.menu-top {
+    padding: 0px !important;
+}
+
+.folded #menu-posts-service div.wp-menu-image {
+margin-top: 6px !important;
+}
+
+.folded #menu-posts-members div.wp-menu-image {
+margin-top: 8px !important;
+}
+
+select.select_hour{
+    width:89px !important;
+}
+
+select.select_minute{
+    width:89px !important;
+}
+
+select.select_time{
+    width:88px !important;
+}
+
+.tf-post-table .div-table-td {float:left;}
+
+.tf-post-table .div-table-td.div-table-delete-checkbox-row{margin-right: -10px;}
+
+.tf-post-table .div-table-td[data-type="datepicker"] {margin-top:-15px;width:121px;margin-right:5px;}
+
+.tf-post-table .div-table-td .formcontainer input.tfuse_datepicker.tfuse_option {width:120px !important;}
+
+
+#menu-posts-member div.wp-menu-image:before,
+#menu-posts-faq div.wp-menu-image:before,
+#menu-posts-gallery div.wp-menu-image:before,
+#menu-posts-advice div.wp-menu-image:before,
+#menu-posts-event div.wp-menu-image:before,
+#menu-posts-testimonials div.wp-menu-image:before,
+#toplevel_page_tf_contact_forms_list div.wp-menu-image:before,
+#toplevel_page_tf_reservations_list div.wp-menu-image:before,
+#toplevel_page_tf_slider_list div.wp-menu-image:before
+{display:block !important;}
+
+#adminmenu #menu-posts-faq div.wp-menu-image,
+#adminmenu #menu-posts-member div.wp-menu-image,
+#adminmenu #menu-posts-gallery div.wp-menu-image,
+#adminmenu #menu-posts-advice div.wp-menu-image,
+#adminmenu #menu-posts-event div.wp-menu-image,
+#adminmenu #menu-posts-testimonials div.wp-menu-image,
+#adminmenu #toplevel_page_tf_reservations_list div.wp-menu-image,
+#adminmenu #toplevel_page_tf_contact_forms_list div.wp-menu-image,
+#adminmenu #toplevel_page_tf_slider_list div.wp-menu-image{
+    float: left;
+    width: 27px;
+    height: 30px !important;
+    margin: 0 !important;
+    text-align: center;
+    margin-left: 9px !important;
+}
+
+.tf-post-table .div-table-td {
+ float: none;
+}
+
+.tf-post-table .div-table-td.div-table-delete-checkbox-row {
+float: left;
+margin-top: 17px;
+margin-left: -10px;
+}
+
+#adminmenu .menu-icon-generic.toplevel_page_tf_reservations_list div.wp-menu-image:before,
+#adminmenu .menu-icon-generic.toplevel_page_tf_contact_forms_list div.wp-menu-image:before,
+#adminmenu .menu-icon-generic.toplevel_page_tf_slider_list div.wp-menu-image:before{
+content: '\f109';
+}
+
+#post-body .option-div_table .desc
+{
+    margin-left:0;
+}
+
+#post-body .option-div_table .option-checkbox .desc{
+    margin-top:25px;
+}

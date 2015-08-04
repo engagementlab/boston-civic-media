@@ -1,0 +1,32 @@
+*** Theme Config Changelog ***
+
+ 2015.03.11 - version 1.0.3
+ * minor changes
+	philanthropy-parent/theme_config/extensions/shortcodes/shortcodes/chart.php
+	philanthropy-parent/theme_config/extensions/shortcodes/shortcodes/flickr.php
+	philanthropy-parent/theme_config/extensions/shortcodes/shortcodes/video_player.php
+	philanthropy-parent/theme_config/theme_includes/THEME_FUNCTIONS.php
+	philanthropy-parent/theme_config/theme_includes/THEME_SCRIPTS_STYLES.php
+	philanthropy-parent/theme_config/extensions/shortcodes/shortcodes/header_map.php
+	philanthropy-parent/theme_config/theme_includes/AJAX_CALLBACKS.php
+ 
+ 2014.11.24 - version 1.0.2
+ * changes for footer menu shortcode
+	philanthropy-parent/theme_config/extensions/shortcodes/shortcodes/footer_menu.php
+ * changes for project slug
+	philanthropy-parent/theme_config/common_includes/CUSTOM_POSTS.php
+
+ 2014.10.31 - version 1.0.1
+ * minor changes
+	philanthropy-parent/theme_config/options/admin_options.php
+	philanthropy-parent/theme_config/theme_includes/THEME_FUNCTIONS.php
+ * minor changes for donation shortcode and windget
+	philanthropy-parent/theme_config/extensions/shortcodes/shortcodes/donate.php
+	philanthropy-parent/theme_config/widgets/TFuse_Widget_Donate.php
+ * minor changes
+	philanthropy-parent/theme_config/extensions/shortcodes/shortcodes/projects.php
+	philanthropy-parent/theme_config/config/theme_config.php
+	philanthropy-parent/theme_config/extensions/shortcodes/shortcodes/footer_tweet.php
+ 
+ 2014.09.25 - version 1.0
+ * First release!

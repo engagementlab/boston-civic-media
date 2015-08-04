@@ -1,0 +1,55 @@
+/*-----------------------------------*/
+/* Font Icons */
+/*-----------------------------------*/
+
+// Import the fonts
+@font-face {
+  font-family: @tficon-font-name;
+  src:  ~"url('@{tficon-font-path}/@{tficon-font-name}.eot')";
+  src:  ~"url('@{tficon-font-path}/@{tficon-font-name}.eot?#iefix') format('embedded-opentype')",
+        ~"url('@{tficon-font-path}/@{tficon-font-name}.svg#@{tficon-font-name}') format('svg')",
+        ~"url('@{tficon-font-path}/@{tficon-font-name}.woff') format('woff')",
+        ~"url('@{tficon-font-path}/@{tficon-font-name}.ttf') format('truetype')";
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="tficon-"], [class*=" tficon-"] {
+  .tficon-font();
+}
+
+.tficon-chevron-left:before {
+  content: "\e616";
+}
+.tficon-chevron-right:before {
+  content: "\e617";
+}
+.tficon-bold-chevron-right:before {
+  content: "\e620";
+}
+.tficon-search:before {
+  content: "\e607";
+}
+.tficon-paypal:before {
+  content: "\e606";
+}
+.tficon-pinterest:before {
+  content: "\e600";
+}
+.tficon-like:before {
+  content: "\e601";
+}
+.tficon-facebook:before {
+  content: "\e602";
+}
+.tficon-twitter:before {
+  content: "\e603";
+}
+.tficon-instagram:before {
+  content: "\e604";
+}
+.tficon-view:before {
+  content: "\e605";
+}
+
+

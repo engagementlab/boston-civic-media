@@ -1,0 +1,244 @@
+  /*Style for light theme "Default"*/
+
+
+.html5gallery{
+  margin-top: -15px;
+}
+
+.slider-foto-video{
+  margin-bottom: 19px;
+}
+
+.slider-html5gallery .html5gallery-car-mask-0{
+  left: 53px !important;
+}
+
+.slider-html5gallery .html5gallery-title-text-0{
+  display: none;
+}
+
+.slider-html5gallery .html5gallery-car-left-0:before,
+.slider-html5gallery .html5gallery-car-right-0:before{
+  font-family: 'fontawesome';
+  content: '\f053';
+  top: 50%;
+  left: 50%;
+  margin-left: -5px;
+  margin-top: -7px;
+  position: absolute;
+  color: @widgets-blue;
+}
+
+.slider-html5gallery .html5gallery-car-right-0:before{
+  content: '\f054';
+}
+
+.slider-html5gallery .html5gallery-car-left-0{
+  left: 0 !important;
+    position: absolute;
+}
+
+.slider-html5gallery .html5gallery-car-right-0{
+  right: 0 !important;
+    position: absolute;
+}
+
+.slider-html5gallery .html5gallery-car-left-0,
+.slider-html5gallery .html5gallery-car-right-0{
+  background: none !important;
+  width: 46px !important;
+  height: 86px !important;
+  top: 2px !important;
+  border: 2px solid @widgets-blue;
+  .border-radius(2px);
+}
+
+.slider-html5gallery .html5gallery-car-left-0:hover:before,
+.html5gallery-car-right-0:hover:before{
+  color: @base-color3;
+}
+
+.slider-html5gallery .html5gallery-car-left-0:hover,
+.html5gallery-car-right-0:hover{
+  background: @widgets-blue !important;
+  cursor: pointer;
+}
+
+
+.slider-html5gallery .html5gallery-car-list-0{
+  width: 100% !important;
+  left: 0 !important;
+}
+
+.slider-html5gallery .html5gallery-tn-selected-0{
+  .box-shadow(inset 0 0 0 4px @base-color6);
+}
+
+.slider-html5gallery .html5gallery-tn-selected-0 .html5gallery-tn-img-0 img{
+  position: relative;
+  z-index: -1;
+}
+
+.slider-html5gallery .html5gallery-lightbox-0{
+  background: none !important;
+  top: 50% !important;
+  left: 50% !important;
+  margin-left: -17px;
+  margin-top: -5px;
+}
+
+.slider-html5gallery .html5gallery-lightbox-0:before{
+  content: '\e605';
+  .tficon-font();
+  font-size: 35px;
+  color: @base-color3;
+}
+
+.slider-html5gallery .html5gallery-right-0,
+.slider-html5gallery .html5gallery-left-0{
+  background: none !important;
+  top: 50% !important;
+}
+
+.slider-html5gallery .html5gallery-right-0:before,
+.slider-html5gallery .html5gallery-left-0:before{
+  content: '\f054';
+  font-family: 'fontawesome';
+  font-size: 35px;
+  color: @base-color3;
+  font-weight: 100;
+}
+
+.slider-html5gallery .html5gallery-left-0:before{
+  content: '\f053';
+
+}
+
+.slider-html5gallery .html5gallery-tn-img-play-0{
+  background: none !important;
+}
+
+.slider-html5gallery .html5gallery-tn-img-play-0:before{
+  content: '\f01d';
+  font-family: 'fontawesome';
+  position: absolute;
+  font-size: 50px;
+  top: 50%;
+  left: 50%;
+  margin-top: -25px;
+  margin-left: -25px;
+  color: @base-color3;
+}
+
+.slider-html5gallery .html5gallery-tn-img-play-0:hover:before,
+.slider-html5gallery .html5gallery-tn-selected-0 .html5gallery-tn-img-play-0:before{
+  color: @base-color6;
+}
+
+.slider-html5gallery .html5gallery-video-play-0{
+  background: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+  .slider-html5gallery .html5gallery-video-play-0:before {
+    position: absolute;
+    font-family: 'fontawesome';
+    content: '\f01d';
+    top: 50%;
+    left: 50%;
+    margin-top: -5px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    font-size: 65px;
+    color: #fff;
+  }
+
+  .html5gallery-fullscreen-pause-0{
+    display: none !important
+  ;
+  }
+
+  .html5gallery-fullscreen-box-0{
+    background-color: @base-color1 !important;
+  }
+
+  .html5gallery-fullscreen-close-0{
+    background-image: ~"url('images/lightbox-closebtn.png')" !important;
+    width: 23px !important;
+    height: 23px !important;
+    top: 13px !important;
+  }
+
+  .html5gallery-fullscreen-next-0{
+    background-image: ~"url('images/lightbox-nextbtn.png')" !important;
+    width: 19px !important;
+    height: 38px !important;
+    right: 15px !important;
+  }
+
+  .html5gallery-fullscreen-prev-0{
+    background-image: ~"url('images/lightbox-prevbtn.png')" !important;
+    width: 19px !important;
+    height: 38px !important;
+    left: 15px !important;
+  }
+
+
+/*Responsive*/
+
+  /*Screen 1024px*/
+@media(max-width:1199px){
+  .slider-html5gallery .html5gallery-car-mask-0{
+    left: 47px !important;
+  }
+
+  .slider-html5gallery .html5gallery-car-left-0,
+  .slider-html5gallery .html5gallery-car-right-0{
+    width: 43px !important;
+  }
+
+}
+
+  /*Screen 768px*/
+@media(max-width:991px){
+  .slider-html5gallery .html5gallery-car-mask-0{
+    left: 55px !important;
+  }
+
+}
+
+  /*Screen 480px*/
+@media screen and (min-width:480px) and (max-width:481px){
+  .slider-html5gallery .html5gallery-car-mask-0{
+      left: 105px !important;
+    width: 245px !important;
+   
+  }
+}
+
+  /*Screen 320px*/
+@media(max-width:479px){
+    .slider-html5gallery .html5gallery-car-mask-0{
+     
+     left: 88px !important;
+        width:120px !important;
+   
+  }
+}
+
+@media screen and (min-width:481px) and (max-width:600px){
+    .slider-html5gallery .html5gallery-car-mask-0 {
+        left: 85px !important;
+        max-width: 365px;
+    }
+    
+}
+
+@media screen and (min-width:600px) and (max-width:767px){
+.slider-html5gallery .html5gallery-car-mask-0 {
+        left: 93px !important;
+        max-width: 488px;
+    }
+}

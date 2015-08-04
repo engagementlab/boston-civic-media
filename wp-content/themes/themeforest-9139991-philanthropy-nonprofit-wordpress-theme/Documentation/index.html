@@ -1,0 +1,654 @@
+﻿<html>
+<head>
+<title>Philanthropy | Wordpress Documentation</title>
+<link type="text/css" rel="stylesheet" href="./tf/style.css">
+<link type="text/css" rel="stylesheet" href="./tf/shCore.css">
+<link type="text/css" rel="stylesheet" href="./tf/shThemeTfuseAll.css">
+</head>
+<body>
+
+<div class="bodywrap support">
+<div class="container">
+
+    <div class="content tf_docs">
+
+    	<div class="middle">
+
+		<!-- column left -->    
+        <div class="column-left">
+
+            <div class="doc-details">
+                <div class="doc-item-img">
+                    <a href="http://themefuse.com/wp-themes-shop/nonprofit-wordpress-theme/"><img src="./tf/thumb.png" alt="" width="80" height="80" border="0" class="thumb"></a>
+                </div>
+                <div class="doc-item-text">
+                        <h1>Philanthropy</h1>
+                        <p>Wordpress Documentation</p>
+                        <div class="buttons">
+                          <a href="http://themefuse.com/wp-themes-shop/nonprofit-wordpress-theme/" class="btn-view3">Theme details</a> &nbsp; <a href="http://support.themefuse.com/hc/en-us/requests/new" class="btn-orange2">Go to Support Forum</a>
+                        </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+
+            <h2 class="left-details-h2">About this documentation</h2>
+            <div class="entry">
+				<p>Thank you for purchasing our product! We are very glad that you have decided on our Philanthropy WordPress theme. </p>
+				<p>This documentation will teach you how to set up and use the <b>Philanthropy</b> wp theme. The theme is very easy to use and we are here to guide and help you, so please read and follow the documentation and if you have further questions visit our AfterCare Support Forum. This documentation is more of a reference work if you do not know what to do, or if you are not familiar to WordPress.</p>
+				<p><b>Philanthropy</b> WordPress is a complex and customizable wp theme. It comes with an unique, massive and functional backend CMS, that gives you almost unending possibilities of making changes for your needs. Every page, post or category template has own set of options that allow you to customize page.</p>
+				<p></p>
+				<h3>Some pointers from ThemeFuse</h3>
+				<p>Please read the following documentation very carefully as it will help you set the theme up with little-to-no frustration. The <b>Philanthropy</b> WordPress theme has been tested on all major browsers and latest version of WordPress. We have gone through the setup process multiple times and provided the best possible instructions.</p>
+				<p>We strongly recommend you to use a fresh install of WordPress and integrate your content into the pages according to the documentation. Of course, you can try to implement the theme into your current WordPress, but we will not provide in-depth support for it. The theme has specific settings that may conflict with your current setup of categories, plugins, javascript use, and more.</p>
+				<p>We believe that most options and tools designed for this theme won’t make you any problems, will be very easy in use and you won’t need any additional help. But, if any problem will occur, this documentation file should help you to find the right solution. And if this documentation won’t help you, feel free to <a target="_blank" href="http://themefuse.com/#contact-us">contact us</a> and write some questions in our <a target="_blank" href="http://support.themefuse.com/hc/en-us/requests/new">ThemeFuse AfterCare Support Forum</a>. We will try to help you as soon as possible, and as good as we can. We will be also very grateful for reporting any errors if you will find any – everything should work great, but some issues that we are not aware of may occur, especially in first releases of this complex theme.</p>
+				<p>We wish you good luck in your work with <b>Philanthropy</b>, and of course we would love to see your website and what you come up with by using this theme.</p>
+				<p><strong>Best regards!</strong><br>
+                <img src="./tf/docs_tf_signature.png" alt="" title="ThemeFuse Signature" width="125" height="35" class="alignnone size-full wp-image-829 signature-bg-none"></p>
+            </div>
+
+            <div id="how-to-install-wordpress" class="separator"></div>
+
+            <h2 class="left-details-h2">How to install WordPress</h2>
+            <div class="entry">
+				<p><a style="display:none" rel="prettyPhoto[screensdocs]" href="http://vimeo.com/16919411" title="How to install WordPress" class="video-tutorial-button" savefrom_lm_index="1" savefrom_lm="1"></a><br>
+				This is a short walkthrough of WordPress installation. This part will be useful if you install WordPress theme for the first time.</p>
+				<p>Before you start, you must have a server that supports PHP and provide access to a MySQL database. First step is to install WordPress on your server. You must download WordPress ZIP file from <a href="http://wordpress.org/download/">http://wordpress.org/download/</a>, extract the files and you’ll get a folder named wordpress. Now you must upload all files from this folder to your server via FTP client. Content from this folder must be located in the root of the website, so that this location will be the URL of your website.</p>
+				<p>If you will access your site URL now, you should see only a note: “There doesn’t seem to be a wp-config.php file…”.</p>
+				<p class="screensdocs">
+				<a rel="prettyPhoto[screensdocs]" href="http://themefuse.com/wp-content/uploads/2010/09/create-configuration-file.png"><span style="display: inline;"></span><img src="http://themefuse.com/wp-content/uploads/2010/09/create-configuration-file.png" alt="" title="" width="520" class="alignnone size-full wp-image-533"></a>
+				</p>
+				<p>In next step you must manually create a configuration file. Open the wordpress folder and make a copy of file named <strong>wp-config-sample.php</strong>. Change name of this copy to <strong>wp-config.php</strong> and open this file in an editor, it can be a simple editor like Notepad. Now you must modify this file and add information about your database. You need to have four data pieces to do this:</p>
+				<ul>
+				<li><strong>- &nbsp;Address of database server</strong> – for example: <code>mysql.yourdomain.com</code></li>
+				<li><strong>- &nbsp;Server username</strong> – for example: <code>yourusername</code></li>
+				<li><strong>- &nbsp;Server password</strong> – for example: <code>123456789</code></li>
+				<li><strong>- &nbsp;Database name</strong> – for example: <code>wpdbname</code></li>
+				</ul>
+				<p>You must fill these four data pieces into your wp-config.php file. This is how it would look like for our example data:</p>
+				<p><code> /** The name of the database for WordPress */<br>
+				define(‘DB_NAME’, ‘wpdbname’);<br>
+				/** MySQL database username */<br>
+				define(‘DB_USER’, ‘username’);<br>
+				/** MySQL database password */<br>
+				define(‘DB_PASSWORD’, ‘123456789’);<br>
+				/** MySQL hostname */<br>
+				define(‘DB_HOST’, ‘mysql.yourdomain.com’);</code></p>
+				<p class="screensdocs">
+				<a rel="prettyPhoto[screensdocs]" href="http://themefuse.com/wp-content/uploads/2010/09/wordpress-database-conection.png"><span></span><img src="http://themefuse.com/wp-content/uploads/2010/09/wordpress-database-conection.png" alt="" title="wordpress-database-conection" width="520" class="alignnone size-full wp-image-550"></a>
+				</p>
+				<p>Now go back to browser and re-load your site that is pointing to your WordPress installation. If all the data from wp-config.php file is correct you will see the installation page:</p>
+				<p class="screensdocs">
+				<a rel="prettyPhoto[screensdocs]" href="http://themefuse.com/wp-content/uploads/2010/09/login-wordpress-data.png"><span></span><img class="alignnone size-large wp-image-109" title="install-wordpress" src="http://themefuse.com/wp-content/uploads/2010/09/login-wordpress-data.png" alt="" width="520"></a>
+				</p>
+				<p>Just fill in the name of your blog and your email address, and click on Install WordPress button (this data can be changed later). Now you will see the last page of WordPress installation process that shows the default Username, which is always admin, and a randomly generated Password.</p>
+				<p class="screensdocs">
+				<a rel="prettyPhoto[screensdocs]" href="http://themefuse.com/wp-content/uploads/2010/09/succes-wordpress-installed.png"><span></span><img class="alignnone size-large wp-image-110" title="" src="http://themefuse.com/wp-content/uploads/2010/09/succes-wordpress-installed.png" alt="" width="520"></a>
+				</p>
+				<p>You must remember this password or just copy and paste it to a temporary file. After this click on Log In button or enter admin panel by pointing to your browser to http://yourdomain.com/wp-admin. You will be redirected to admin panel login page where you have to enter default Username and randomly generated password. You can change Username and Password when you are logged into admin panel. Just click on Username (admin) in the top right corner of admin panel. And that’s it, now you can install your theme to your WordPress installation. And that’s it, now you can install&nbsp;<b>Philanthropy</b> theme to your WordPress installation.</p>
+				<p>You can either choose to upload the theme to your server via FTP (only upload the unzipped folder „Philanthropy“ into the folder wp-content/themes/ ) or via wordpress upload function. To use the upload function zip the “Philanthropy” folder and then upload it via wordpress admin panel. (notice: if you are new to wordpress and have problems installing it you might want to check out this link: <a href="http://codex.wordpress.org/Installing_WordPress">http://codex.wordpress.org/Installing_WordPress</a> ). After this you must login to admin panel (or refresh this panel if you are still logged), go to Themes (under <b>Appearance</b>, on the left WordPress menu) and activate <b>Philanthropy</b> theme.</p>
+				<p class="screensdocs">
+				<a rel="prettyPhoto[screensdocs]" href="tf/images/1.png"><span></span><img src="tf/images/1.png" width="520"></a></p>
+			</div>
+
+            <div id="one-click-auto-install" class="separator"></div>
+
+            <h2 class="left-details-h2">How to install the theme</h2>
+            <div class="entry">
+				<iframe src="http://player.vimeo.com/video/97907725" width="535" height="301" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+				<p><br />
+				After installing a fresh WordPress and activating our wp theme you can use the cool feature that we keep bragging about: <strong>1 click auto install.</strong> You find this feature on the left hand side under the <strong>Fuse Framework</strong> button. </p>
+				<p>This 1 click auto install feature is developed by us in order to help you understand how our wp theme is working. You won’t have to set everything step by step like you do with most  of the wp themes. </p>
+				<p>By pressing the <strong>Import Demo Version</strong> button, the wp theme auto populates categories, posts, pages, widgets and FuseFramework options. It’s much easier now to understand how the theme works and all you need to do is, edit the sample posts, categories, pages and place your own. You do not need technical knowledge. Also you can <strong>Skip Import</strong> and populate theme manually if you are confident on your WordPress skills.</p>
+				<p class="screensdocs">
+				<a rel="prettyPhoto[screensdocs]" href="tf/images/2.png"><span></span><img src="tf/images/2.png" width="520"></a></p>
+			</div>
+			
+			<div id="create-manage-sidebars" class="separator"></div>
+
+            <h2 class="left-details-h2">Create &amp; manage sidebars</h2>
+            <div class="entry">
+				<p><b>Philanthropy</b> theme is widget ready and comes with complex sidebar. It is possible to create an unlimited number of sidebars and use unique sidebar for every category or page template. It is also possible to define one default sidebar that will automatically work for all pages. Every custom widget has own set of options and can be very easy customized. </p>
+				<p>To create a page sidebar go to <b>Manage Sidebars Tab</b> and click on which page you want to add sidebars. Edit widgets and save option page. </p>
+				<p class="screensdocs">
+				<a rel="prettyPhoto[screensdocs]" href="tf/images/3.png"><span style="display: inline;"></span><img class="alignnone size-large wp-image-110" title="" src="tf/images/3.png" alt="" width="520"></a>
+				</p>
+				<p>On the right side of <i>Available Widgets</i> section you will see all created sidebar. Now simply drag and drop widgets from <i>Available Widgets</i> section to sidebar on the right. When widget is placed on sidebar you can use options from this widget and customize sidebar for your needs.</p>
+				<p class="screensdocs">
+				<a rel="prettyPhoto[screensdocs]" href="tf/images/4.png"><span></span><img class="alignnone size-large wp-image-110" title="" src="tf/images/4.png" alt="" width="520"></a>
+				</p>
+				<p>After sidebar is assigned to page or category you will see all widgets placed on this sidebar. In some cases sidebar is not visible – this refers only a situation when there is no place for sidebar created.</p>
+				<p><b>Note:</b> Be very careful when removing widget areas that already got widgets applied to them. WordPress doesn’t remember where it stored widgets by name, it stores this information by number. So if I would add a Google Map widget to Contact (Nr7 Sidebar Page – contact), and then delete the content widget area the widgets (ex. Google Map ) would then be in PORTFOLIO. (previously in Nr8 Sidebar Category – PORTFOLIO, now will be Nr7) </p>
+			</div>
+
+			<div id="logo-favicon-tracking-code" class="separator"></div>
+
+            <h2 class="left-details-h2">Logo, Favicon, Analytics</h2>
+            <div class="entry">
+				<p><a title="General Settings" href="http://vimeo.com/16919399" rel="prettyPhoto[screensdocs]" class="video-tutorial-button withtitle" savefrom_lm_index="1" savefrom_lm="1"></a></p>
+				<h3>Changing Theme Stylesheet</h3>
+				<p>Select your colour scheme. The default colour scheme will be replaced as soon as you have saved the page.</p>
+				<p class="screensdocs">
+				<a rel="prettyPhoto[screensdocs]" href="http://themefuse.com/wp-content/uploads/2010/10/theme-stylesheet2.png"><span style="display: none;"></span><img class="alignnone size-large wp-image-110" title="" src="http://themefuse.com/wp-content/uploads/2010/10/theme-stylesheet2.png" alt="Changing Theme Stylesheet" width="520"></a>
+				</p>
+				<p></p>
+				<h3>Changing your Logo</h3>
+				<p>You got 2 options to change your Logo: The easiest way is to simply enter the url of your own logo file into the input field. The default Logo will be replaced as soon as you have saved the page. </p>
+				<p class="screensdocs">
+				<a rel="prettyPhoto[screensdocs]" href="http://themefuse.com/wp-content/uploads/2010/10/how-to-change-logo-wordpress3.png"><span></span><img class="alignnone size-large wp-image-110" title="" src="http://themefuse.com/wp-content/uploads/2010/10/how-to-change-logo-wordpress3.png" alt="How to change logo" width="520"></a>
+				</p>
+				<p>The second option is to edit your header.php file directly. Search for the tfuse_logo value and change the picture.</p>
+				<p></p>
+				<h3>Changing your Favicon</h3>
+				<p>This URL path is for favicon image. Favicon is a small 16×16 pixels image that is displayed in browser as icon of your site. This image should be saved in ICO format.</p>
+				<p class="screensdocs">
+				<a rel="prettyPhoto[screensdocs]" href="http://themefuse.com/wp-content/uploads/2010/10/favicon2.png"><span></span><img class="alignnone size-large wp-image-110" title="" src="http://themefuse.com/wp-content/uploads/2010/10/favicon2.png" alt="" width="520"></a><br>
+				</p>
+				<p></p>
+				<h3>Changing your RSS URL</h3>
+				<p>Link generated for RSS channel assigned to your site. You can use this link for RSS community. Enter the RSS URL. The default RSS URL will be replaced as soon as you have saved the page.</p>
+				<p class="screensdocs">
+				<a rel="prettyPhoto[screensdocs]" href="http://themefuse.com/wp-content/uploads/2010/10/rss-url.png"><span></span><img class="alignnone size-large wp-image-110" title="" src="http://themefuse.com/wp-content/uploads/2010/10/rss-url.png" alt="" width="520"></a>
+				</p>
+				<p></p>
+				<h3>Setup Tracking Code</h3>
+				<p>Put your tracking code script (e.g. Google Analytics) into this textarea and it will be automatically put into the right place – at the end of site body for every page of your site.</p>
+				<p>Here you can add your google analytics code if you want. Just add the code to the textarea and google will start tracking.</p>
+				<p class="screensdocs">
+				<a rel="prettyPhoto[screensdocs]" href="http://themefuse.com/wp-content/uploads/2010/10/tracking-code-google-analytics.png"><span></span><img class="alignnone size-large wp-image-110" title="" src="http://themefuse.com/wp-content/uploads/2010/10/tracking-code-google-analytics.png" alt="" width="520"></a>
+				</p>
+				<p></p>
+				<h3>Setup Custom CSS</h3>
+				<p>Quickly add some CSS to your theme by adding it to this block.</p>
+				<p class="screensdocs">
+				<a rel="prettyPhoto[screensdocs]" href="http://themefuse.com/wp-content/uploads/2010/10/custom-css-inserted.png"><span></span><img class="alignnone size-large wp-image-110" title="" src="http://themefuse.com/wp-content/uploads/2010/10/custom-css-inserted.png" alt="" width="520"></a></p>
+			</div>
+			
+            <div id="dynamic-images" class="separator"></div>
+
+            <h2 class="left-details-h2">Dynamic Images</h2>
+            <div class="entry">
+                <p><a style="display:none" title="Dynamic Images" href="http://vimeo.com/16919381" rel="prettyPhoto[screensdocs]" class="video-tutorial-button withtitle"></a></p>
+                <h3>Image Resizing</h3>
+                <p>Next step is to decide whether you want to use automatic image resizing or not. If this option is activated you only need to upload one pic for each portfolio entry or one pic for each slider entry. Otherwhise you need to add small preview pictures for the portfolio as well.</p>
+                <p>If you do want to use the image resizing script you need a server with php5 and GD-Library installed (a module for image operations)</p>
+                <p>If you dont know what this means never mind, most servers come with this preinstalled.</p>
+                <p class="screensdocs">
+                    <a rel="prettyPhoto[screensdocs]" href="http://themefuse.com/wp-content/uploads/2010/10/enable-dynamic-images.png"><span></span><img class="alignnone size-large wp-image-110" title="" src="http://themefuse.com/wp-content/uploads/2010/10/enable-dynamic-images.png" alt="" width="520"></a>
+                </p>
+                <p>If GD library is installed and the cache folder is writeable you will see this options to choose from:</p>
+                <p>If the GD library is not installed you will see an error message, as well as if the cache folder is not writeable. If you want to use the script for automatic image resizing you have to do another thing after setup: you have to set the permissions of the folder „cache“ in your theme folder to write able (777). </p>
+                <p>This is only necessary if you want to use the image resizing script. </p>
+                <p>If you do not know how to set the permission please google it, every ftp program has a slightly different approach. I would recommend googeling for „set chmod to 777 with „your-ftp-programm (eg dreamweaver)“</p>
+                <p class="screensdocs">
+                    <a rel="prettyPhoto[screensdocs]" href="http://themefuse.com/wp-content/uploads/2010/10/file-permision.png"><span></span><img class="alignnone size-large wp-image-110" title="" src="http://themefuse.com/wp-content/uploads/2010/10/file-permision.png" alt=""></a>
+                </p>
+                <p>If you need support for the resizing script which is called thumb.php you can take a look here: <a target="_blank" href="http://www.darrenhoyt.com/2008/04/02/timthumb-php-script-released/">http://www.darrenhoyt.com/2008/04/02/timthumb-php-script-released/</a></p>
+            </div>
+
+            <div id="page-404" class="separator"></div>
+
+            <h2 class="left-details-h2">Page 404</h2>
+            <div class="entry">
+                <p>A special Page 404 is used in situation when <strong>WordPress</strong> cannot find a particular page. This page should work fine by default – <strong>WordPress</strong> should automatically look for the 404.php web page when page from selected address doesn’t exist. But sometimes this could not work properly because web server can encounter a problem before WordPress is aware of it. To resolve this, you will have to configure your web server for custom 404 error handling. This will guarantee that your web server sends the visitor to your 404.php page template.</p>
+                <p>You must set your web server to use your custom error files. For this you need to edit the .htaccess file in the main directory (root of your site, where index.php file is located) of your WordPress installation. If you don’t have an .htaccess file, you must create it. To create a .htaccess file you can just create a new TXT file and change its name to .htaccess (no name plus .htaccess file extension).</p>
+                <p>Now you must just edit .htaccess file and add the following line:</p>
+                <p><code>ErrorDocument 404 /index.php?error=404</code></p>
+                <p>This will ensure that the server finds your 404 page.</p>
+                <p>The URL /index.php is server root-relative (the forward slash begins with the root folder of your site). This means that you must put here a full URL path. For example, if your site is located in a subfolder or subdirectory of your site’s root folder named ‘foldername’, the line you add to your .htaccess file should be:</p>
+                <p><code>ErrorDocument 404 /foldername/index.php?error=404</code></p>
+            </div>
+
+            <div id="navigation-option" class="separator"></div>
+
+            <h2 class="left-details-h2">Changing the navigation</h2>
+            <div class="entry">
+				<p><a title="Changing the Navigation" href="http://vimeo.com/16919343" rel="prettyPhoto[screensdocs]" class="video-tutorial-button withtitle" savefrom_lm_index="1" savefrom_lm="1"></a></p>
+				<h3>Edit your Main Menu</h3>
+				<p>First click Appearance -&gt; Menus in your <b>Philanthropy</b> options panel. You will see that there is a select that lets you add new items. If you select one item you get a new select menu item. </p>
+				<p class="screensdocs">
+				<a rel="prettyPhoto[screensdocs]" href="tf/images/5.png"><span style="display: inline;"></span><img class="alignnone size-large wp-image-110" title="" src="tf/images/5.png" alt="" width="520"></a>
+				</p>
+				<p class="screensdocs">
+				<a rel="prettyPhoto[screensdocs]" href="tf/images/6.png"><span></span><img class="alignnone size-large wp-image-110" title="" src="tf/images/6.png" alt="" width="520"></a>
+				</p>
+				<h3>Create drop down menu</h3>
+				<p>
+				Go to <strong>Appearance -&gt; Menus</strong> and add there all menu items you would like to have in your menu. Then drag the menu item that you would like to be a submenu above the one that you would like to be main menu and release it. Do the same for all menu items and done.
+				</p>
+				<p class="screensdocs">
+				<a rel="prettyPhoto[screensdocs]" href="http://themefuse.com/wp-content/uploads/2010/10/menu1.png"><span></span><img class="alignnone size-large wp-image-110" title="" src="http://themefuse.com/wp-content/uploads/2010/10/menu1.png" alt="" width="520"></a></p>
+				<p class="screensdocs">
+				<a rel="prettyPhoto[screensdocs]" href="http://themefuse.com/wp-content/uploads/2010/10/menu21.png"><span></span><img class="alignnone size-large wp-image-110" title="" src="http://themefuse.com/wp-content/uploads/2010/10/menu21.png" alt="" width="520"></a></p>
+			</div>
+
+            <div id="add-a-new-page" class="separator"></div>
+
+            <h2 class="left-details-h2">Add a New Page</h2>
+            <div class="entry">
+				<p>In <b>FuseFramework</b> a part of site content is produced via pages (About, Contact). To create a page you must click on Pages option (on WordPress menu). Click on <strong>Add New</strong> button and you can start to create your page. First you should enter a title name for this page right at the top (this will be also used as title of this page). For every page you must also select a template page in Attributes section. Now you can start to put content for created page.</p>
+				<p class="screensdocs">
+				<a rel="prettyPhoto[screensdocs]" href="tf/images/7.png"><span style="display: none;"></span><img class="alignnone size-large wp-image-110" title="" src="tf/images/7.png" alt="" width="520"></a>
+				</p>
+				<p></p>
+				<h3>Sample Page</h3>
+				<p class="screensdocs">
+				<a rel="prettyPhoto[screensdocs]" href="tf/images/8.png"><span></span><img class="alignnone size-large wp-image-110" title="" src="tf/images/8.png" alt="" width="520"></a>
+				</p>
+				<p></p>
+			</div>
+
+            <div id="add-a-new-category" class="separator"></div>
+
+            <h2 class="left-details-h2">Add a New Category</h2>
+            <div class="entry">
+				<h3>How to create a wordpress category</h3>
+				<p>In our <b>Framework</b> a part of site content is produced via categories. To create a category you must click on Posts -&gt; Categories option (on WordPress menu). First you should enter a <strong>Category Name</strong> for this category right at the top (this will be also used as title for your categories). For every category you must also select a <strong>Parent</strong> in <strong>Category Parent</strong> section. If it is needed you can also add a description for this category in <strong>Description section</strong>. Now you can start to add option for created category.</p>
+				<p><strong>Framework Category</strong> have other fields than a standart wordpress category.</p>
+				<p class="screensdocs">
+				<a rel="prettyPhoto[screensdocs]" href="tf/images/10.png"><span style="display: inline;"></span><img class="alignnone size-large wp-image-110" title="" src="tf/images/10.png" alt="" width="520"></a>
+				</p>
+				<p class="screensdocs">
+				<a rel="prettyPhoto[screensdocs]" href="tf/images/9.png"><span></span><img class="alignnone size-large wp-image-110" title="" src="tf/images/9.png" alt="" width="520"></a></p>
+			</div>
+
+            <div id="add-a-new-post" class="separator"></div>
+
+            <h2 class="left-details-h2">Add a New Post</h2>
+            <div class="entry">
+				<p>In WordPress themes, the most part of site content is produced via post pages. To create a post page you must click on Posts option (on WordPress menu). Click on <strong>Add New</strong> button and you can start to create your post page. First you should enter a title name for this post right at the top. For every post you must also select a category in <strong>Category </strong>section on the right side. If it is needed you can also create a category in this section – this is necessary when you start working with this theme because <strong>Category </strong>list is empty. Now you can start to put content for created post.</p>
+				<p>No matter if this is a blog, portfolio or services post, for every post you can use image resize or must create three images – one main image and two thumbnail images (medium and small thumb). Main image is used as big main post image and is displayed for example: for posts on main Blog page. To add one of these post images you must insert an URL path in edit box, right below preview image in post options.</p>
+				<p class="screensdocs">
+				<a rel="prettyPhoto[screensdocs]" href="tf/images/11.png"><span></span><img class="alignnone size-large wp-image-110" title="" src="tf/images/11.png" alt="" width="520"></a>
+				</p>
+				<p></p>
+				<p class="screensdocs">
+				<a rel="prettyPhoto[screensdocs]" href="tf/images/12.png"><span></span><img class="alignnone size-large wp-image-110" title="" src="tf/images/12.png" alt="" width="520"></a></p>
+			</div>
+
+            <div id="add-contact-forms" class="separator"></div>
+
+            <h2 class="left-details-h2">Contact Forms</h2>
+            <div class="entry">
+                <p>
+                    To create a contact form you must go to <b>Contact Forms Menu – Add New (Number 1)</b>, setup the form name and add your preferred field types with Add new field <b>(Number 3)</b>. Don’t forget to set the <strong>Email to</strong> field <strong>(Number 4)</strong>, this is where the message will be sent (make sure you monitor this email). You can use this module to create how many contact forms you like, make certain fields mandatory or not, and more. After the form is created you can copy its shortcode <b>(Number 2)</b> and insert it in any page or post. </p>
+                <p class="screensdocs">
+                    <a rel="prettyPhoto[screensdocs]" href="tf/images/13.png"><span></span><img src="tf/images/13.png" width="520"></a>
+                </p>
+                <p> <br>
+                    On the Message Tab you can edit the messages the clients sees after the form is submited as well as set an email template you will receive when a contact form is submitted by a user.</p>
+                <p class="screensdocs">
+                    <a rel="prettyPhoto[screensdocs]" href="tf/images/14.png"><span></span><img src="tf/images/14.png" width="520"></a>
+                </p>
+                <p>
+                    After the form is created, all the message settings are set and the form inserted in a page (by copy pasting the form shortcode), this is what you’ll see:</p>
+                <p class="screensdocs">
+                    <a rel="prettyPhoto[screensdocs]" href="tf/images/15.png"><span></span><img src="tf/images/15.png" width="520"></a></p>
+            </div>
+
+            <div id="add-reservations" class="separator"></div>
+
+            <h2 class="left-details-h2">Reservations</h2>
+            <div class="entry">
+                <p>
+                    To create a reservation form you must go in <b>Reservation Menu – Add New (Number 1)</b> then you must setup the form name and add your preferred field types with Add new field <b>(Number 3)</b>. After the form is created you can copy its shortcode <b>(Number 2)</b> and insert it in any page or post. </p>
+                <p class="screensdocs">
+                    <a rel="prettyPhoto[screensdocs]" href="tf/images/16.png"><span></span><img src="tf/images/16.png" width="520"></a>
+                </p>
+                <p>
+                    On the Message Setings tab you can set the admin email (important to do this because client replies will go to this email) and different email templates sent automatically when a client makes a reservation or receives an approval or rejection.</p>
+                <p class="screensdocs">
+                    <a rel="prettyPhoto[screensdocs]" href="tf/images/17.png"><span></span><img src="tf/images/17.png" width="520"></a>
+                </p>
+                <p> <br>
+                    On the Dates Settings tab you can exclude certain dates from the reservation calendar</p>
+                <p class="screensdocs">
+                    <a rel="prettyPhoto[screensdocs]" href="tf/images/18.png"><span></span><img src="tf/images/18.png" width="520"></a>
+                </p>
+                <p>
+                    After the form is created, all the message and dates settings are set and the form inserted in a page (by copy pasting the form shortcode), this is what you’ll see:</p>
+                <p class="screensdocs">
+                    <a rel="prettyPhoto[screensdocs]" href="tf/images/19.png"><span></span><img src="tf/images/19.png" width="520"></a>
+                </p>
+                <p>
+                    When a client submits the form above, <strong>3 things</strong> happen: <strong>1.</strong> the admin will receive an email that a new reservation was made (see Message Settings to change the email template), <strong>2.</strong> the client will receive an email that the reservation is registered in the system (see Message Settings to change the email template) and <strong>3.</strong> the reservation is added with a Pending status in the WordPress admin under <b>User Reservations (Number 1)</b>.</p>
+                <p class="screensdocs">
+                    <a rel="prettyPhoto[screensdocs]" href="tf/images/20.png"><span></span><img src="tf/images/20.png" width="520"></a>
+                </p>
+                <p>
+                    By selecting one of the Pending reservations you can check out the info submitted by the client as shown in the image below. From here you can Approve or Reject a reservation. A template email will be sent to the client, see Message Settings to change this default template. If you write something in the Message box below you’ll overwrite the default email template. </p>
+                <p class="screensdocs">
+                    <a rel="prettyPhoto[screensdocs]" href="tf/images/21.png"><span></span><img src="tf/images/21.png" width="520"></a></p>
+            </div>
+
+            <div id="shortcodes" class="separator"></div>
+
+            <h2 class="left-details-h2">Shortcodes</h2>
+            <div class="entry">
+            <p><a name="tables"></a></p>
+            <h2>Tables</h2>
+            <p class="screensdocs">
+                <a rel="prettyPhoto[screensdocs]" href="http://themefuse.com/wp-content/uploads/2011/09/brandcrafters-tables.png"><span></span><img class="alignnone size-large wp-image-110" title="" src="http://themefuse.com/wp-content/uploads/2011/09/brandcrafters-tables.png" alt="" width="520"></a>
+            </p>
+            <div class="box blog">
+                <div class="box-top"><span></span></div>
+                <div class="box-content">
+                    <div><div id="highlighter_374972" class="syntaxhighlighter nogutter  php"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="span"><div class="container"><div class="line number1 index0 alt2"><span class="php plain">[table style=</span><span class="php string">"table_gray"</span> <span class="php plain">shadow=</span><span class="php string">"1"</span><span class="php plain">]&lt;table width=</span><span class="php string">"100%"</span><span class="php plain">&gt;</span></div><div class="line number2 index1 alt1"><span class="php plain">&lt;thead&gt;</span></div><div class="line number3 index2 alt2"><span class="php plain">&lt;tr&gt;</span></div><div class="line number4 index3 alt1"><span class="php plain">&lt;th style=</span><span class="php string">"width:25%"</span><span class="php plain">&gt;Browser&lt;/th&gt;</span></div><div class="line number5 index4 alt2"><span class="php plain">&lt;th style=</span><span class="php string">"width:25%"</span><span class="php plain">&gt;Version&lt;/th&gt;</span></div><div class="line number6 index5 alt1"><span class="php plain">&lt;th style=</span><span class="php string">"width:25%"</span><span class="php plain">&gt;CSS Grade&lt;/th&gt;</span></div><div class="line number7 index6 alt2"><span class="php plain">&lt;th style=</span><span class="php string">"width:25%"</span><span class="php plain">&gt;Platform&lt;/th&gt;</span></div><div class="line number8 index7 alt1"><span class="php plain">&lt;/tr&gt;</span></div><div class="line number9 index8 alt2"><span class="php plain">&lt;/thead&gt;</span></div><div class="line number10 index9 alt1"><span class="php plain">&lt;tbody&gt;</span></div><div class="line number11 index10 alt2"><span class="php plain">&lt;tr&gt;</span></div><div class="line number12 index11 alt1"><span class="php plain">&lt;td&gt;Firefox&lt;/td&gt;</span></div><div class="line number13 index12 alt2"><span class="php plain">&lt;td&gt;3.10&lt;/td&gt;</span></div><div class="line number14 index13 alt1"><span class="php plain">&lt;td&gt;AAA&lt;/td&gt;</span></div><div class="line number15 index14 alt2"><span class="php plain">&lt;td&gt;Win XP&lt;/td&gt;</span></div><div class="line number16 index15 alt1"><span class="php plain">&lt;/tr&gt;</span></div><div class="line number17 index16 alt2"><span class="php plain">&lt;tr&gt;</span></div><div class="line number18 index17 alt1"><span class="php plain">&lt;td&gt;Internet Explorer&lt;/td&gt;</span></div><div class="line number19 index18 alt2"><span class="php plain">&lt;td&gt;8&lt;/td&gt;</span></div><div class="line number20 index19 alt1"><span class="php plain">&lt;td&gt;C&lt;/td&gt;</span></div><div class="line number21 index20 alt2"><span class="php plain">&lt;td&gt;Win Vista&lt;/td&gt;</span></div><div class="line number22 index21 alt1"><span class="php plain">&lt;/tr&gt;</span></div><div class="line number23 index22 alt2"><span class="php plain">&lt;tr&gt;&lt;td&gt;Chrome&lt;/td&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;BB&lt;/td&gt;&lt;td&gt;Win 7&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;</span></div><div class="line number24 index23 alt1"><span class="php plain">&lt;/table&gt;</span></div><div class="line number25 index24 alt2"><span class="php plain">[/table]</span></div></div></td></tr></tbody></table></div></div>
+                </div>
+                <div class="box-bot"><span></span></div>
+            </div>
+            <p><a name="charts"></a></p>
+            <h2>Charts</h2>
+            <p class="screensdocs">
+                <a rel="prettyPhoto[screensdocs]" href="http://themefuse.com/wp-content/uploads/2011/09/brandcrafters-3d-chart.png"><span></span><img class="alignnone size-large wp-image-110" title="" src="http://themefuse.com/wp-content/uploads/2011/09/brandcrafters-3d-chart.png" alt="" width="520"></a>
+            </p>
+            <div class="box blog">
+                <div class="box-top"><span></span></div>
+                <div class="box-content">
+                    <div><div id="highlighter_884288" class="syntaxhighlighter nogutter  php"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="span"><div class="container"><div class="line number1 index0 alt2"><span class="php plain">[chart width=</span><span class="php string">"540"</span> <span class="php plain">height=</span><span class="php string">"250"</span> <span class="php plain">type=</span><span class="php string">"3dpie"</span> <span class="php plain">title=</span><span class="php string">"The most popularity internet browser"</span> <span class="php plain">data=</span><span class="php string">"40,25,5,25,5"</span> <span class="php plain">label=</span><span class="php string">"Internet Explorer|Firefox|Safari|Chrome|Others"</span> <span class="php plain">colors=</span><span class="php string">"ff9900,e40b0b,1b9a1b,3399cc,bbcced"</span> <span class="php plain">legend=</span><span class="php string">"40|25|5|25|5"</span><span class="php plain">]</span></div></div></td></tr></tbody></table></div></div>
+                </div>
+                <div class="box-bot"><span></span></div>
+            </div>
+            <p><a name="columns"></a></p>
+            <h2>Columns</h2>
+            <p class="screensdocs">
+                <a rel="prettyPhoto[screensdocs]" href="http://themefuse.com/wp-content/uploads/2011/09/brandcrafters-columns.png"><span></span><img class="alignnone size-large wp-image-110" title="" src="http://themefuse.com/wp-content/uploads/2011/09/brandcrafters-columns.png" alt="" width="520"></a>
+            </p>
+            <div class="box blog">
+                <div class="box-top"><span></span></div>
+                <div class="box-content">
+                    <div><div id="highlighter_504442" class="syntaxhighlighter nogutter  php"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="span"><div class="container"><div class="line number1 index0 alt2"><span class="php plain">[col type=</span><span class="php string">"1_2"</span><span class="php plain">]</span></div><div class="line number2 index1 alt1"><span class="php plain">[title h2=</span><span class="php string">"title_blue"</span><span class="php plain">]One half column (Title: Blue)[/title]</span></div><div class="line number3 index2 alt2"><span class="php plain">&lt;p&gt;Hey there where ya goin’, not exactly knowin’, who says you have to call just one place home. He’s goin’ everywhere, B.J. McKay </span><span class="php keyword">and</span> <span class="php plain">his best friend Bear. He just keeps on movin’, ladies keep improvin’, every day is better than the last. New dreams </span><span class="php keyword">and</span> <span class="php plain">better scenes, </span><span class="php keyword">and</span> <span class="php plain">best of all I don’t pay property tax.&lt;/p&gt;</span></div><div class="line number4 index3 alt1"><span class="php plain">[/col]</span></div><div class="line number5 index4 alt2"><span class="php plain">[col type=</span><span class="php string">"1_2"</span><span class="php plain">]</span></div><div class="line number6 index5 alt1"><span class="php plain">[title h2=</span><span class="php string">"title_dark_blue"</span><span class="php plain">]One half column (Title: Dark Blue)[/title]</span></div><div class="line number7 index6 alt2"><span class="php plain">&lt;p&gt;There’s a voice that keeps on calling me. Down the road, that’s where I’ll always be. Every stop I make, I make a </span><span class="php keyword">new</span> <span class="php plain">friend. Can’t stay </span><span class="php keyword">for</span> <span class="php plain">long, just turn around </span><span class="php keyword">and</span> <span class="php plain">I’m gone again. Maybe tomorrow, I’ll want to settle down, Until tomorrow, I’ll just keep moving on.&lt;/p&gt;</span></div><div class="line number8 index7 alt1"><span class="php plain">[/col]</span></div></div></td></tr></tbody></table></div></div>
+                </div>
+                <div class="box-bot"><span></span></div>
+            </div>
+            <p><a name="maps"></a></p>
+            <h2>Maps</h2>
+            <p class="screensdocs">
+                <a rel="prettyPhoto[screensdocs]" href="http://themefuse.com/wp-content/uploads/2011/09/brandcrafters-map.png"><span></span><img class="alignnone size-large wp-image-110" title="" src="http://themefuse.com/wp-content/uploads/2011/09/brandcrafters-map.png" alt="" width="520"></a>
+            </p>
+            <div class="box blog">
+                <div class="box-top"><span></span></div>
+                <div class="box-content">
+                    <div><div id="highlighter_884294" class="syntaxhighlighter nogutter  php"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="span"><div class="container"><div class="line number1 index0 alt2"><span class="php plain">[map lat=</span><span class="php string">"41.887"</span> <span class="php plain">long=</span><span class="php string">"-87.630"</span>&nbsp; <span class="php plain">zoom=</span><span class="php string">"10"</span> <span class="php plain">type=</span><span class="php string">"map1"</span> <span class="php plain">title=</span><span class="php string">"Shortcodes: Maps"</span><span class="php plain">]</span></div></div></td></tr></tbody></table></div></div>
+                </div>
+                <div class="box-bot"><span></span></div>
+            </div>
+            <p><a name="video_player"></a></p>
+            <h2>Vimeo Player</h2>
+            <p class="screensdocs">
+                <a rel="prettyPhoto[screensdocs]" href="http://themefuse.com/wp-content/uploads/2011/09/brandcrafters-vimeo-video.png"><span></span><img class="alignnone size-large wp-image-110" title="" src="http://themefuse.com/wp-content/uploads/2011/09/brandcrafters-vimeo-video.png" alt="" width="520"></a>
+            </p>
+            <div class="box blog">
+                <div class="box-top"><span></span></div>
+                <div class="box-content">
+                    <div><div id="highlighter_819370" class="syntaxhighlighter nogutter  php"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="span"><div class="container"><div class="line number1 index0 alt2"><span class="php plain">[vimeo width=</span><span class="php string">"590"</span> <span class="php plain">height=</span><span class="php string">"332"</span> <span class="php plain">link=</span><span class="php string">"http://vimeo.com/16919307"</span><span class="php plain">]</span></div></div></td></tr></tbody></table></div></div>
+                </div>
+                <div class="box-bot"><span></span></div>
+            </div>
+            <p><a name="youtube_player"></a></p>
+            <h2>Youtube Player</h2>
+            <p class="screensdocs">
+                <a rel="prettyPhoto[screensdocs]" href="http://themefuse.com/wp-content/uploads/2011/09/brandcrafters-youtube-video.png"><span></span><img class="alignnone size-large wp-image-110" title="" src="http://themefuse.com/wp-content/uploads/2011/09/brandcrafters-youtube-video.png" alt="" width="520"></a>
+            </p>
+            <div class="box blog">
+                <div class="box-top"><span></span></div>
+                <div class="box-content">
+                    <div><div id="highlighter_529798" class="syntaxhighlighter nogutter  php"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="span"><div class="container"><div class="line number1 index0 alt2"><span class="php plain">[youtube width=</span><span class="php string">"600"</span> <span class="php plain">height=</span><span class="php string">"350"</span> <span class="php plain">link=</span><span class="php string">"http://www.youtube.com/watch?v=5yB1XPzFzjk"</span><span class="php plain">]</span></div></div></td></tr></tbody></table></div></div>
+                </div>
+                <div class="box-bot"><span></span></div>
+            </div>
+            <p><a name="slideshow"></a></p>
+            <h2>Image Slideshow</h2>
+            <p class="screensdocs">
+                <a rel="prettyPhoto[screensdocs]" href="http://themefuse.com/wp-content/uploads/2011/09/brandcrafters-slideshow.png"><span></span><img class="alignnone size-large wp-image-110" title="" src="http://themefuse.com/wp-content/uploads/2011/09/brandcrafters-slideshow.png" alt="" width="520"></a>
+            </p>
+            <div class="box blog">
+                <div class="box-top"><span></span></div>
+                <div class="box-content">
+                    <div><div id="highlighter_992616" class="syntaxhighlighter nogutter  php"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="span"><div class="container"><div class="line number1 index0 alt2"><span class="php plain">[slideshow width=</span><span class="php string">"570"</span> <span class="php plain">height=</span><span class="php string">"270"</span><span class="php plain">] http:</span><span class="php comments">//localhost/brandcrafters/wp-content/uploads/2011/08/slide-1.jpg http://localhost/brandcrafters/wp-content/uploads/2011/08/slide-2.jpg http://localhost/brandcrafters/wp-content/uploads/2011/08/slide-3.jpg http://localhost/brandcrafters/wp-content/uploads/2011/08/slide-4.jpg http://localhost/brandcrafters/wp-content/uploads/2011/08/slide-5.jpg http://localhost/brandcrafters/wp-content/uploads/2011/08/slide-6.jpg [/slideshow]</span></div></div></td></tr></tbody></table></div></div>
+                </div>
+                <div class="box-bot"><span></span></div>
+            </div>
+            <p><a name="text_slideshow"></a></p>
+            <h2>Text Slideshow</h2>
+            <p class="screensdocs">
+                <a rel="prettyPhoto[screensdocs]" href="http://themefuse.com/wp-content/uploads/2011/09/brandcrafters-slideshow-text.png"><span></span><img class="alignnone size-large wp-image-110" title="" src="http://themefuse.com/wp-content/uploads/2011/09/brandcrafters-slideshow-text.png" alt="" width="520"></a>
+            </p>
+            <div class="box blog">
+                <div class="box-top"><span></span></div>
+                <div class="box-content">
+                    <div><div id="highlighter_196966" class="syntaxhighlighter nogutter  php"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="span"><div class="container"><div class="line number1 index0 alt2"><span class="php plain">[slideshow_text width=</span><span class="php string">"586"</span> <span class="php plain">height=</span><span class="php string">"350"</span> <span class="php plain">type=</span><span class="php string">"text"</span><span class="php plain">]h2&gt;Slide 1Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed </span><span class="php keyword">do</span> <span class="php plain">eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;h2&gt;Slide 2&lt;/h2&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed </span><span class="php keyword">do</span> <span class="php plain">eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.[/slideshow_text]</span></div></div></td></tr></tbody></table></div></div>
+                </div>
+                <div class="box-bot"><span></span></div>
+            </div>
+            <p><a name="minigallery"></a></p>
+            <h2>Minigallery</h2>
+            <p class="screensdocs">
+                <a rel="prettyPhoto[screensdocs]" href="http://themefuse.com/wp-content/uploads/2011/09/brandcrafters-minigallery.png"><span></span><img class="alignnone size-large wp-image-110" title="" src="http://themefuse.com/wp-content/uploads/2011/09/brandcrafters-minigallery.png" alt="" width="520"></a>
+            </p>
+            <h3>Attach images to a specific post/page</h3>
+            <p class="screensdocs">
+                <a rel="prettyPhoto[screensdocs]" href="http://themefuse.com/wp-content/uploads/2011/09/11.png"><span></span><img class="alignnone size-large wp-image-110" title="" src="http://themefuse.com/wp-content/uploads/2011/09/11.png" alt="" width="520"></a>
+            </p>
+            <h3>Add PostID/ PageID to Minigallery Shortcode</h3>
+            <p class="screensdocs">
+                <a rel="prettyPhoto[screensdocs]" href="http://themefuse.com/wp-content/uploads/2011/09/21.png"><span></span><img class="alignnone size-large wp-image-110" title="" src="http://themefuse.com/wp-content/uploads/2011/09/21.png" alt="" width="520"></a>
+            </p>
+            <div class="box blog">
+                <div class="box-top"><span></span></div>
+                <div class="box-content">
+                    <div><div id="highlighter_335056" class="syntaxhighlighter nogutter  php"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="span"><div class="container"><div class="line number1 index0 alt2"><span class="php plain">[minigallery id=</span><span class="php string">"PostID"</span> <span class="php plain">style=</span><span class="php string">"box border box_white"</span> <span class="php keyword">include</span><span class="php plain">=</span><span class="php string">""</span> <span class="php plain">exclude=</span><span class="php string">""</span> <span class="php plain">orderby=</span><span class="php string">""</span> <span class="php plain">order=</span><span class="php string">"ASC"</span><span class="php plain">]</span></div></div></td></tr></tbody></table></div></div>
+                </div>
+                <div class="box-bot"><span></span></div>
+            </div>
+            <p><a name="buttons"></a></p>
+            <h2>Buttons</h2>
+            <p class="screensdocs">
+                <a rel="prettyPhoto[screensdocs]" href="http://themefuse.com/wp-content/uploads/2011/09/brandcrafters-custom-buttons.png"><span></span><img class="alignnone size-large wp-image-110" title="" src="http://themefuse.com/wp-content/uploads/2011/09/brandcrafters-custom-buttons.png" alt="" width="520"></a>
+            </p>
+            <div class="box blog">
+                <div class="box-top"><span></span></div>
+                <div class="box-content">
+                    <div><div id="highlighter_469071" class="syntaxhighlighter nogutter  php"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="span"><div class="container"><div class="line number1 index0 alt2"><span class="php plain">[button link=</span><span class="php string">"#"</span><span class="php plain">]DEFAULT BUTTON[/button]</span></div><div class="line number2 index1 alt1"><span class="php plain">[button link=</span><span class="php string">"#"</span> <span class="php keyword">class</span><span class="php plain">=</span><span class="php string">"btn_green"</span><span class="php plain">]BIO GREEN[/button]</span></div><div class="line number3 index2 alt2"><span class="php plain">[button link=</span><span class="php string">"#"</span> <span class="php keyword">class</span><span class="php plain">=</span><span class="php string">"btn_azure"</span><span class="php plain">]AZURE[/button]</span></div><div class="line number4 index3 alt1"><span class="php plain">[button link=</span><span class="php string">"#"</span> <span class="php keyword">class</span><span class="php plain">=</span><span class="php string">"btn_orange"</span><span class="php plain">]Orange[/button]</span></div></div></td></tr></tbody></table></div></div>
+                </div>
+                <div class="box-bot"><span></span></div>
+            </div>
+            <p class="screensdocs">
+                <a rel="prettyPhoto[screensdocs]" href="http://themefuse.com/wp-content/uploads/2011/09/brandcrafters-lists-styles.png"><span></span><img class="alignnone size-large wp-image-110" title="" src="http://themefuse.com/wp-content/uploads/2011/09/brandcrafters-lists-styles.png" alt="" width="520"></a>
+            </p>
+            <div class="box blog">
+                <div class="box-top"><span></span></div>
+                <div class="box-content">
+                    <div><div id="highlighter_417477" class="syntaxhighlighter nogutter  php"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="span"><div class="container"><div class="line number1 index0 alt2"><span class="php plain">&lt;h3&gt;Default style:&lt;/h3&gt;</span></div><div class="line number2 index1 alt1"><span class="php plain">&lt;ul&gt;</span></div><div class="line number3 index2 alt2"><span class="php plain">&lt;li&gt;Default list item 1&lt;/li&gt;</span></div><div class="line number4 index3 alt1"><span class="php plain">&lt;li&gt;Default list item 2&lt;/li&gt;</span></div><div class="line number5 index4 alt2"><span class="php plain">&lt;li&gt;Default list item 3&lt;/li&gt;</span></div><div class="line number6 index5 alt1"><span class="php plain">&lt;/ul&gt;</span></div><div class="line number7 index6 alt2"><span class="php plain">&lt;h3&gt;Checklist:&lt;/h3&gt;</span></div><div class="line number8 index7 alt1"><span class="php plain">[check_list]</span></div><div class="line number9 index8 alt2"><span class="php plain">&lt;ul&gt;</span></div><div class="line number10 index9 alt1"><span class="php plain">&lt;li&gt;Checklist item 1&lt;/li&gt;</span></div><div class="line number11 index10 alt2"><span class="php plain">&lt;li&gt;Checklist item 2&lt;/li&gt;</span></div><div class="line number12 index11 alt1"><span class="php plain">&lt;li&gt;Checklist item 3&lt;/li&gt;</span></div><div class="line number13 index12 alt2"><span class="php plain">&lt;/ul&gt;</span></div><div class="line number14 index13 alt1"><span class="php plain">[/check_list]</span></div><div class="line number15 index14 alt2"><span class="php plain">&lt;h3&gt;</span><span class="php functions">Delete</span> <span class="php plain">List:&lt;/h3&gt;</span></div><div class="line number16 index15 alt1"><span class="php plain">[delete_list]</span></div><div class="line number17 index16 alt2"><span class="php plain">&lt;ul&gt;</span></div><div class="line number18 index17 alt1"><span class="php plain">&lt;li&gt;</span><span class="php functions">Delete</span> <span class="php plain">List item 1&lt;/li&gt;</span></div><div class="line number19 index18 alt2"><span class="php plain">&lt;li&gt;</span><span class="php functions">Delete</span> <span class="php plain">List item 2&lt;/li&gt;</span></div><div class="line number20 index19 alt1"><span class="php plain">&lt;li&gt;</span><span class="php functions">Delete</span> <span class="php plain">List item 3&lt;/li&gt;</span></div><div class="line number21 index20 alt2"><span class="php plain">&lt;/ul&gt;</span></div><div class="line number22 index21 alt1"><span class="php plain">[/delete_list]</span></div><div class="line number23 index22 alt2"><span class="php plain">[arrow_list]</span></div><div class="line number24 index23 alt1"><span class="php plain">&lt;ul&gt;</span></div><div class="line number25 index24 alt2"><span class="php plain">&lt;li&gt;List with Arrows item 1&lt;/li&gt;</span></div><div class="line number26 index25 alt1"><span class="php plain">&lt;li&gt;List with Arrows item 2&lt;/li&gt;</span></div><div class="line number27 index26 alt2"><span class="php plain">&lt;li&gt;List with Arrows item 3&lt;/li&gt;</span></div><div class="line number28 index27 alt1"><span class="php plain">&lt;/ul&gt;</span></div><div class="line number29 index28 alt2"><span class="php plain">[/arrow_list]</span></div></div></td></tr></tbody></table></div></div>
+                </div>
+                <div class="box-bot"><span></span></div>
+            </div>
+            <p><a name="testimonial"></a></p>
+            <h2>Testimonial</h2>
+            <p class="screensdocs">
+                <a rel="prettyPhoto[screensdocs]" href="http://themefuse.com/wp-content/uploads/2011/09/brandcrafters-testimonial.png"><span></span><img class="alignnone size-large wp-image-110" title="" src="http://themefuse.com/wp-content/uploads/2011/09/brandcrafters-testimonial.png" alt="" width="520"></a>
+            </p>
+            <div class="box blog">
+                <div class="box-top"><span></span></div>
+                <div class="box-content">
+                    <div><div id="highlighter_472566" class="syntaxhighlighter nogutter  php"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="span"><div class="container"><div class="line number1 index0 alt2"><span class="php plain">[testimonial]</span></div></div></td></tr></tbody></table></div></div>
+                </div>
+                <div class="box-bot"><span></span></div>
+            </div>
+            <p><a name="twitter"></a></p>
+            <h2>Twitter</h2>
+            <p class="screensdocs">
+                <a rel="prettyPhoto[screensdocs]" href="http://themefuse.com/wp-content/uploads/2011/09/brandcrafters-twitter.png"><span></span><img class="alignnone size-large wp-image-110" title="" src="http://themefuse.com/wp-content/uploads/2011/09/brandcrafters-twitter.png" alt="" width="520"></a>
+            </p>
+            <div class="box blog">
+                <div class="box-top"><span></span></div>
+                <div class="box-content">
+                    <div><div id="highlighter_291112" class="syntaxhighlighter nogutter  php"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="span"><div class="container"><div class="line number1 index0 alt2"><span class="php plain">[twitter username=</span><span class="php string">"themefuse"</span> <span class="php plain">items=</span><span class="php string">"5"</span> <span class="php plain">title=</span><span class="php string">"Twitter widget in content"</span> <span class="php plain">post_date =</span><span class="php string">''</span><span class="php plain">]</span></div></div></td></tr></tbody></table></div></div>
+                </div>
+                <div class="box-bot"><span></span></div>
+            </div>
+            <p><a name="flickr"></a></p>
+            <h2>Flickr</h2>
+            <p class="screensdocs">
+                <a rel="prettyPhoto[screensdocs]" href="http://themefuse.com/wp-content/uploads/2011/09/brandcrafters-flickr.png"><span></span><img class="alignnone size-large wp-image-110" title="" src="http://themefuse.com/wp-content/uploads/2011/09/brandcrafters-flickr.png" alt="" width="520"></a>
+            </p>
+            <div class="box blog">
+                <div class="box-top"><span></span></div>
+                <div class="box-content">
+                    <div><div id="highlighter_533230" class="syntaxhighlighter nogutter  php"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="span"><div class="container"><div class="line number1 index0 alt2"><span class="php plain">[flickr flickr_id=</span><span class="php string">"51362473@N05"</span> <span class="php plain">items=</span><span class="php string">"4"</span><span class="php plain">]</span></div></div></td></tr></tbody></table></div></div>
+                </div>
+                <div class="box-bot"><span></span></div>
+            </div>
+            <p><a name="widget"></a></p>
+            <h2>Recent / Most Commented Widget</h2>
+            <p class="screensdocs">
+                <a rel="prettyPhoto[screensdocs]" href="http://themefuse.com/wp-content/uploads/2011/09/brandcrafters-tab-widget.png"><span></span><img class="alignnone size-large wp-image-110" title="" src="http://themefuse.com/wp-content/uploads/2011/09/brandcrafters-tab-widget.png" alt="" width="520"></a>
+            </p>
+            <div class="box blog">
+                <div class="box-top"><span></span></div>
+                <div class="box-content">
+                    <div><div id="highlighter_580698" class="syntaxhighlighter nogutter  php"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="span"><div class="container"><div class="line number1 index0 alt2"><span class="php plain">[latest_popular_posts]</span></div></div></td></tr></tbody></table></div></div>
+                </div>
+                <div class="box-bot"><span></span></div>
+            </div>
+            <p class="screensdocs">
+                <a rel="prettyPhoto[screensdocs]" href="http://themefuse.com/wp-content/uploads/2011/09/brandcrafters-recent-popular-posts.png"><span></span><img class="alignnone size-large wp-image-110" title="" src="http://themefuse.com/wp-content/uploads/2011/09/brandcrafters-recent-popular-posts.png" alt="" width="520"></a>
+            </p>
+            <div class="box blog">
+                <div class="box-top"><span></span></div>
+                <div class="box-content">
+                    <div><div id="highlighter_69213" class="syntaxhighlighter nogutter  php"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="span"><div class="container"><div class="line number1 index0 alt2"><span class="php plain">[col_1_2]</span></div><div class="line number2 index1 alt1"><span class="php plain">[latest_posts items=</span><span class="php string">"5"</span> <span class="php plain">content_post=</span><span class="php string">'1'</span> <span class="php plain">date_post=</span><span class="php string">"1"</span><span class="php plain">]</span></div><div class="line number3 index2 alt2"><span class="php plain">[/col_1_2]</span></div><div class="line number4 index3 alt1"><span class="php plain">[col_1_2]</span></div><div class="line number5 index4 alt2"><span class="php plain">[popular_posts]</span></div><div class="line number6 index5 alt1"><span class="php plain">[/col_1_2]</span></div></div></td></tr></tbody></table></div></div>
+                </div>
+                <div class="box-bot"><span></span></div>
+            </div>
+            <p><a name="other"></a></p>
+            <h2>Other Shortcode</h2>
+            <p class="screensdocs">
+                <a rel="prettyPhoto[screensdocs]" href="http://themefuse.com/wp-content/uploads/2011/09/brandcrafters-other_shortcode.png"><span></span><img class="alignnone size-large wp-image-110" title="" src="http://themefuse.com/wp-content/uploads/2011/09/brandcrafters-other_shortcode.png" alt="" width="520"></a>
+            </p>
+            <div class="box blog">
+                <div class="box-top"><span></span></div>
+                <div class="box-content">
+                    <div><div id="highlighter_628087" class="syntaxhighlighter nogutter  php"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="span"><div class="container"><div class="line number1 index0 alt2"><span class="php plain">[search]</span></div><div class="line number2 index1 alt1"><span class="php plain">[newsletter]</span></div><div class="line number3 index2 alt2"><span class="php plain">[autentificate]</span></div></div></td></tr></tbody></table></div></div>
+                </div>
+                <div class="box-bot"><span></span></div>
+            </div>
+            <p><a name="toggle_content"></a></p>
+            <h2>Toggle Content</h2>
+            <p class="screensdocs">
+                <a rel="prettyPhoto[screensdocs]" href="http://themefuse.com/wp-content/uploads/2011/09/brandcrafters-toggle-content.png"><span></span><img class="alignnone size-large wp-image-110" title="" src="http://themefuse.com/wp-content/uploads/2011/09/brandcrafters-toggle-content.png" alt="" width="520"></a>
+            </p>
+            <div class="box blog">
+                <div class="box-top"><span></span></div>
+                <div class="box-content">
+                    <div><div id="highlighter_966718" class="syntaxhighlighter nogutter  php"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="span"><div class="container"><div class="line number1 index0 alt2"><span class="php plain">[toggle_content title=</span><span class="php string">"Title of the toggle green box (click to open)"</span> <span class="php keyword">class</span><span class="php plain">=</span><span class="php string">"toggle box box_green"</span><span class="php plain">]</span></div></div></td></tr></tbody></table></div></div>
+                </div>
+                <div class="box-bot"><span></span></div>
+            </div>
+
+            <p><a name="framed_tabs"></a></p>
+            <h2>Framed Tabs</h2>
+            <p class="screensdocs">
+                <a rel="prettyPhoto[screensdocs]" href="http://themefuse.com/wp-content/uploads/2011/09/brandcrafters-framed-tabs.png"><span></span><img class="alignnone size-large wp-image-110" title="" src="http://themefuse.com/wp-content/uploads/2011/09/brandcrafters-framed-tabs.png" alt="" width="520"></a>
+            </p>
+            <div class="box blog">
+                <div class="box-top"><span></span></div>
+                <div class="box-content">
+                    <div><div id="highlighter_954318" class="syntaxhighlighter nogutter  php"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="span"><div class="container"><div class="line number1 index0 alt2"><span class="php plain">[faq]</span></div><div class="line number2 index1 alt1"><span class="php plain">[framed_tabs]</span></div><div class="line number3 index2 alt2"><span class="php plain">[tab title=</span><span class="php string">"Tab 1"</span><span class="php plain">]</span></div><div class="line number4 index3 alt1"><span class="php plain">&lt;p&gt;Lorem Ipsum is simply dummy text of the printing </span><span class="php keyword">and</span> <span class="php plain">typesetting industry. Lorem Ipsum has been the industry</span><span class="php string">'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries. Lorem Ipsum has been the industry'</span><span class="php plain">s standard dummy text ever since theok a galley of type </span><span class="php keyword">and</span> <span class="php plain">scra.&lt;/p&gt;</span></div><div class="line number5 index4 alt2"><span class="php plain">[/tab]</span></div><div class="line number6 index5 alt1"><span class="php plain">[/framed_tabs]</span></div></div></td></tr></tbody></table></div></div>
+                </div>
+                <div class="box-bot"><span></span></div>
+            </div>
+            <p><a name="frame"></a></p>
+            <h2>Image Frame</h2>
+            <p class="screensdocs">
+                <a rel="prettyPhoto[screensdocs]" href="http://themefuse.com/wp-content/uploads/2011/09/brandcrafters-frame-left.png"><span></span><img class="alignnone size-large wp-image-110" title="" src="http://themefuse.com/wp-content/uploads/2011/09/brandcrafters-frame-left.png" alt="" width="520"></a>
+            </p>
+            <div class="box blog">
+                <div class="box-top"><span></span></div>
+                <div class="box-content">
+                    <div><div id="highlighter_419278" class="syntaxhighlighter nogutter  php"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="span"><div class="container"><div class="line number1 index0 alt2"><span class="php plain">[frame title=</span><span class="php string">""</span> <span class="php plain">link=</span><span class="php string">""</span> <span class="php plain">src=</span><span class="php string">"http://localhost/brandcrafters/wp-content/uploads/2011/08/full_image_1.jpg"</span> <span class="php plain">width=</span><span class="php string">"103"</span> <span class="php plain">height=</span><span class="php string">"117"</span> <span class="php plain">align=</span><span class="php string">"right"</span> <span class="php plain">alt=</span><span class="php string">"Frame Right"</span><span class="php plain">]</span></div><div class="line number2 index1 alt1">&nbsp;</div><div class="line number3 index2 alt2"><span class="php plain">Nam ornare pharetra sem vitae blandit. Aliquam sed massa vitae risus sodales molestie vitae sit amet arcu. Nunc egestas leo nec est dapibus a pellentesque erat pellentesque.</span></div><div class="line number4 index3 alt1">&nbsp;</div><div class="line number5 index4 alt2"><span class="php plain">Suspendisse ornare nulla vitae quam vehicula consectetur. Morbi tincidunt lorem dolor sit amet eurasio mecitur.Nam ornare pharetra sem vitae blandit. Aliquam sed massa vitae risus sodales molestie</span></div></div></td></tr></tbody></table></div></div>
+                </div>
+                <div class="box-bot"><span></span></div>
+            </div>
+            </div>
+
+            <div id="home-slider" class="separator"></div>
+
+            <h2 class="left-details-h2">Home Slider</h2>
+            <div class="entry">
+				<p class="screensdocs"><a href="tf/images/22.png" rel="prettyPhoto[screensdocs]"><img class="alignnone size-full wp-image-7131" title="Philanthropy-slider-1" src="tf/images/22.png" alt="" width="560"></a></p>
+				<p class="screensdocs"><a href="tf/images/23.png" rel="prettyPhoto[screensdocs]"><img class="alignnone size-full wp-image-7132" title="Philanthropy-slider-2" src="tf/images/23.png" alt="" width="560"></a></p>
+				<p class="screensdocs"><a href="tf/images/24.png" rel="prettyPhoto[screensdocs]"><img class="alignnone size-full wp-image-7133" title="Philanthropy-slider-3" src="tf/images/24.png" alt="" width="560"></a></p>
+			</div>
+			
+			<div id="workout-calendar-slider" class="separator"></div>
+
+            <h2 class="left-details-h2">Image-Video Slider</h2>
+            <div class="entry">
+				<p class="screensdocs"><a href="tf/images/26.png" rel="prettyPhoto[screensdocs]"><img class="alignnone size-full wp-image-7131" title="Philanthropy-slider-1" src="tf/images/26.png" alt="" width="560"></a></p>
+				<p class="screensdocs"><a href="tf/images/27.png" rel="prettyPhoto[screensdocs]"><img class="alignnone size-full wp-image-7132" title="Philanthropy-slider-2" src="tf/images/27.png" alt="" width="560"></a></p>
+				<p class="screensdocs"><a href="tf/images/28.png" rel="prettyPhoto[screensdocs]"><img class="alignnone size-full wp-image-7133" title="Philanthropy-slider-3" src="tf/images/28.png" alt="" width="560"></a></p>
+			</div>
+			
+			<div id="workout-slider" class="separator"></div>
+
+            <h2 class="left-details-h2">Caption Slider</h2>
+            <div class="entry">
+				<p class="screensdocs"><a href="tf/images/29.png" rel="prettyPhoto[screensdocs]"><img class="alignnone size-full wp-image-7131" title="Philanthropy-slider-1" src="tf/images/29.png" alt="" width="560"></a></p>
+				<p class="screensdocs"><a href="tf/images/30.png" rel="prettyPhoto[screensdocs]"><img class="alignnone size-full wp-image-7132" title="Philanthropy-slider-2" src="tf/images/30.png" alt="" width="560"></a></p>
+				<p class="screensdocs"><a href="tf/images/31.png" rel="prettyPhoto[screensdocs]"><img class="alignnone size-full wp-image-7133" title="Philanthropy-slider-3" src="tf/images/31.png" alt="" width="560"></a></p>
+			</div>
+			
+			<div id="stories-slider" class="separator"></div>
+			
+        </div>
+        <!-- column left -->
+			
+        <!-- column right -->
+        <div class="column-right">
+            <h2>Jump to</h2>
+            <div class="box2">
+                <div class="box-top"><span></span></div>
+                <div class="box-content nobottom">
+                    <ul class="menuRight">
+                        <li class="cat first-item-no-arrow  active">Getting Started</li>
+                        <li class="stripe"><a href="index.html">About this documentation</a></li>
+                        <li class=""><a href="#how-to-install-wordpress">How to install WordPress</a></li>
+                        <li class="stripe"><a href="#one-click-auto-install">How to install the theme</a><img class="icon_video" src="./tf/icon_video.png"></li>
+                        <li class="cat">General Options</li>
+						<li class="stripe"><a href="#create-manage-sidebars">Create &amp; manage sidebars</a></li>
+						<li class=""><a href="#logo-favicon-tracking-code">Logo, Favicon, Analytics</a><img class="icon_video" src="./tf/icon_video.png"></li>
+                        <li class="stripe"><a href="#dynamic-images">Dynamic Images</a></li>
+                        <li class=""><a href="#page-404">Page 404</a></li>
+                        <li class="cat stripe">Navigation Option</li>
+                        <li class=""><a href="#navigation-option">Changing the navigation</a><img class="icon_video" src="./tf/icon_video.png"></li>
+                        <li class="cat stripe">Categories, pages and posts</li>
+                        <li class=""><a href="#add-a-new-page">Add a New Page</a></li>
+                        <li class="stripe" ><a href="#add-a-new-category">Add a New Category</a></li>
+                        <li class=""><a href="#add-a-new-post">Add a New Post</a></li>
+                        <li class="cat stripe">Built in Modules</li>
+                        <li class=""><a href="#add-contact-forms">Contact Forms</a></li>
+                        <li class="stripe"><a href="#add-reservations">Reservations</a></li>
+                        <li class="cat">Shortcodes</li>
+                        <li class="stripe"><a href="#shortcodes">Shortcodes</a></li>
+                        <li class="cat ">Sliders</li>
+                        <li class="stripe"><a href="#home-slider">Home Slider</a></li>
+                        <li class=""><a href="#workout-calendar-slider">Image-Video Slider</a></li>
+                        <li class="stripe"><a href="#workout-slider">Caption Slider</a></li>
+                    </ul>
+                </div>
+                <div class="box-bot black"><span></span></div>
+            </div>
+        </div>
+        <!-- column right -->
+	
+			<div class="clear"></div>
+		</div>             
+
+    </div>
+	<!--/ content -->
+
+</div>
+</div>
+
+</body>
+</html>

@@ -1,16 +1,17 @@
 <?php
+/**
+ * Front to the WordPress application. This file doesn't do anything, but loads
+ * wp-blog-header.php which does and tells WordPress to load the theme.
+ *
+ * @package WordPress
+ */
 
-define('DS', DIRECTORY_SEPARATOR);
+/**
+ * Tells WordPress to load the WordPress theme and output it.
+ *
+ * @var bool
+ */
+define('WP_USE_THEMES', true);
 
-// load kirby
-require(__DIR__ . DS . 'kirby' . DS . 'bootstrap.php');
-
-// check for a custom site.php
-if(file_exists(__DIR__ . DS . 'site.php')) {
-  require(__DIR__ . DS . 'site.php');
-} else {
-  $kirby = kirby();
-}
-
-// render
-echo $kirby->launch();
+/** Loads the WordPress Environment and Template */
+require( dirname( __FILE__ ) . '/wp-blog-header.php' );

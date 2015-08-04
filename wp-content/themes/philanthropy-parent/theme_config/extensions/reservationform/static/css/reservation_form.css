@@ -1,0 +1,140 @@
+.tfuse_captcha_reload{
+    background-image:url(../images/reload.png) !important;
+    background-repeat: no-repeat !important;
+    height: 18px !important;
+    margin-top: 15px !important;
+    max-width: 16px !important;
+    vertical-align: top;
+    background-color: transparent !important;
+    border:none !important;
+    width: 20px;
+}
+
+.reservationForm .field_text .tfuse_rf_post_datepicker_in, .reservationForm .field_text .tfuse_rf_post_datepicker_out{
+    background-image: url("../../../../../framework/static/images/picker_icon.jpg");
+    background-repeat: no-repeat;
+    background-position: 8px 10px;
+    padding-left: 30px;
+    width: 16px;
+}
+
+
+/* preview */
+#TB_ajaxContent .wrap-contact-form {
+    background: #ffd52d;
+    margin: 77px 0 -85px;
+    padding: 36px 0 24px;
+}
+
+#TB_ajaxContent .wrap-contact-form .title-contact-form {
+    font-size: 30px;
+    color: #1e414e;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 27px;
+}
+
+#TB_ajaxContent .contact-form .column-left {
+    width: 621px;
+    float: left;
+}
+
+#TB_ajaxContent .field-text,#TB_ajaxContent .field-select {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+#TB_ajaxContent .contact-form .column-right {
+    width: 621px;
+    float: right;
+}
+
+#TB_ajaxContent .field-text input[type="text"],
+#TB_ajaxContent .field-text textarea {
+    border: 1px solid #c1c1c1;
+    background-color: #ffffff;
+    padding: 0 16px;
+    font-size: 15px;
+    font-weight: 300;
+    color: #c1c1c1;
+    width: 100%;
+    height: 48px;
+    margin: 0;
+    text-overflow: ellipsis;
+}
+
+#TB_ajaxContent .contact-form textarea {
+height: 165px;
+}
+
+#TB_ajaxContent .field-text select {
+    height: 48px;
+}
+
+#TB_ajaxContent .contact-form {
+    width: 97%;
+}
+
+#TB_ajaxContent .field-text,#TB_ajaxContent .field-select {
+    margin-bottom: 10px;
+    position: relative;
+    float: left;
+    margin-right: 27px;
+}
+
+#TB_ajaxContent .field-text.omega {
+    margin-right:0;
+}
+
+#TB_ajaxContent .contact-form .btn-submit-contact-form {
+    float: right;
+    padding-top: 8px;
+}
+
+#TB_ajaxContent .btn {
+    position: relative;
+    background: none;
+    border: none;
+    padding: 15px 0;
+    outline: none;
+}
+
+#TB_ajaxContent .btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.428571429;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+#TB_ajaxContent .contact-form .btn-submit-contact-form input {
+    background: #142e39;
+    border: 2px solid #142e39;
+    color: #ffffff;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 15px;
+    text-transform: none;
+    padding: 12px 42px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    -ms-transition: 0.5s;
+    transition: 0.5s;
+}

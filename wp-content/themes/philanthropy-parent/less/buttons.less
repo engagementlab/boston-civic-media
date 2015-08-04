@@ -1,0 +1,555 @@
+/* Buttons */
+/*-----------------------------------*/
+
+.btn{
+  position: relative;
+  background: none;
+  border: none;
+  padding: 15px 0;
+  outline: none;
+}
+
+.btn span{
+  background: @widgets-blue;
+  border: 2px solid @widgets-blue;
+  color: @base-color3;
+  font-size: @font-size;
+  padding: 14px 29px;
+  text-transform: none;
+  font-weight: bold;
+  font-style: italic;
+  .border-radius(3px);
+  .transition(all 0.5s ease);
+}
+
+.btn span:hover{
+  background: none;
+  color: @base-color1;
+}
+
+.btn i {
+  font-size: 15px;
+  top: 2px;
+}
+
+.align-left-icon{
+  padding-right: 19px;
+}
+
+.align-right-icon{
+  padding-left: 19px;
+}
+
+
+.btn.btn-transparent span{
+  background: none;
+  color: @site-footer;
+}
+
+.btn.btn-transparent span:hover{
+  background: @widgets-blue;
+  color: @base-color3;
+}
+
+.btn-white span{
+  background: @base-color3;
+  border-color: @base-color3;
+  color: @base-color1;
+}
+
+.btn-white span:hover{
+  background: @base-color6;
+  border-color: @base-color6;
+  color: @base-color1;
+}
+
+.btn-white-transparent span{
+  background: none;
+  border-color: @base-color3;
+}
+
+.btn-white-transparent span:hover{
+  background: @base-color6;
+  border-color: @base-color6;
+  color: @base-color1;
+}
+
+.btn-light span{
+  background: @base-color2;
+  border-color: @base-color2;
+  color: @base-color3;
+}
+
+.btn-light span:hover{
+  background: none;
+  color: @base-color2;
+}
+
+.btn-light-transparent span{
+  background: none;
+  border-color: @base-color2;
+  color: @base-color2;
+}
+
+.btn-light-transparent span:hover{
+  background: @base-color2;
+  color: @base-color3;
+}
+
+
+.btn-yellow span{
+  background: @base-color6;
+  color: @base-color1;
+  border: 2px solid @base-color6;
+}
+
+.btn-yellow span:hover{
+  background: @site-footer;
+  border-color: @site-footer;
+  color: @base-color6;
+}
+
+.btn-yellow-transparent span{
+  background: none;
+  border-color: @base-color6;
+  color: @base-color6;
+}
+
+.btn-yellow-transparent span:hover{
+  background: @base-color3;
+  color: @base-color1;
+  border-color: @base-color3;
+}
+
+/* Size Button */
+.btn-lg span {
+  padding: 20px 50px;
+}
+
+.btn-sm span {
+  padding: 13px 30px;
+}
+
+.btn-xs span {
+  padding: 10px 25px;
+  font-size: 13px;
+}
+
+
+/* Other Buttons */
+.btn-donate-nav{
+  margin-right: -34px;
+  margin-top: -4px;
+}
+
+.btn-donate-nav span{
+  padding: 14px 20px;
+}
+
+.btn-donate-nav span:hover{
+  background: @base-color3;
+  border-color: @base-color3;
+  color: @base-color1;
+}
+
+.btn-donate-bottom{
+  margin:18px 0 ;
+}
+
+.ways-to-help-section .btn-donate-bottom{
+  margin: 18px 18px;
+}
+
+.btn-donate-bottom span{
+  padding: 19px 189px;
+  font-size: 30px;
+}
+
+.btn-donate-bottom span:hover{
+  color: @base-color6;
+  background: @site-footer;
+  border-color: @site-footer;
+}
+
+.btn-slider{
+  margin-top: 10px;
+}
+
+.btn-slider span{
+  font-size: @font-size + 9;
+  font-weight: normal;
+  padding: 10px 41px;
+}
+
+.btn-slider i{
+  padding-left: 19px;
+  font-size: 15px;
+  top: 10px;
+}
+
+.slider-full .with-caption-slider .text-with-caption .btn-slider{
+  margin-top: 0;
+  padding: 8px 0;
+}
+
+.slider-full .with-caption-slider .text-with-caption .btn-slider span{
+  padding: 7px 30px;
+}
+
+
+.btn-join-us{
+  margin: 0;
+  float: right;
+}
+
+.btn-join-us span{
+  padding: 15px 132px;
+  font-size: @font-size + 15;
+}
+
+
+.btn-giveby-card{
+  float: left;
+  margin-right: 7px;
+}
+
+.btn-giveby-card i{
+  padding-left: 7px;
+  font-size: 24px;
+  line-height: 0;
+  top: 10px;
+}
+
+.btn-giveby-paypal span{
+  padding: 14px 10px;
+}
+
+.btn-giveby-card span:hover,
+.btn-giveby-paypal span:hover{
+  background: @base-color3;
+  border-color: @base-color3;
+  color: @base-color1;
+}
+
+.btn-giveby-paypal i{
+  padding-left: 9px;
+  font-size: 16px;
+  line-height: 0;
+  top: 3px;
+}
+
+
+.btn-donate-ourmission span{
+  font-size: @font-size + 15;
+  padding: 15px 109px;
+}
+
+.btn-projects{
+  margin-top: 40px;
+}
+
+.btn-projects span{
+  padding: 13px 20px;
+}
+
+
+.btn-load-more{
+  margin-top: 10px;
+}
+
+.btn-load-more span{
+  padding: 14px 515px;
+  border-color: @base-color4;
+  color: @base-color4 !important;
+  font-size: @font-size + 9;
+  font-weight: 400;
+}
+
+.btn-load-more span:hover{
+  background-color: @base-color4 !important;
+  color: @base-color3 !important;
+}
+
+
+.btn-rss-subscribe span{
+  padding: 15px 50px;
+}
+
+
+.btn-read-more span{
+  padding: 12px 24px;
+}
+
+.btn-read-more span:hover{
+  background: @site-footer;
+  border-color: @site-footer;
+  color: @base-color6;
+}
+
+.btn-error-page{
+  margin: 37px 0;
+}
+
+.btn-error-page span{
+  font-size: @font-size + 15;
+  padding: 17px 87px;
+}
+
+.btn-donate-form{
+  margin-top: 30px;
+}
+
+.btn-donate-form span{
+  font-size: @font-size + 3;
+  padding: 15px 69px;
+}
+
+.ways-to-help-section .btn-donate-bottom span{
+  padding: 19px 198px;
+}
+
+/* Pricing Button */
+.btn-price {
+  border-radius: 0;
+}
+
+.btn-price span{
+  background: @base-color2;
+  border-color: @base-color2;
+  color: @base-color3;
+  font-size: @font-size + 10;
+  font-style: normal;
+  font-weight: bold;
+  border-radius: 0;
+}
+
+.btn-price span:hover{
+  background: @base-color6;
+  border-color: @base-color6;
+  color: @base-color3;
+}
+
+.btn-price span:after{
+  content: '';
+  width: 0;
+  height: 0;
+  .transition(all 0.5s);
+  border-top: 33px solid transparent;
+  border-left: 26px solid @base-color2;
+  border-bottom: 29px solid transparent;
+  position: absolute;
+  right: -26px;
+  top: 1px;
+}
+
+.btn-price span:hover:after{
+  border-left-color: @base-color6;
+}
+
+.sidebar .btn-join-us{
+  float: none;
+  margin: 16px 0;
+}
+
+.sidebar .btn-join-us span{
+  padding: 18px 132px;
+}
+
+
+
+  /*Responsive*/
+
+  /*Screen 1024px*/
+@media(max-width:1199px){
+  .btn-donate-bottom span {
+    padding: 19px 147px;
+  }
+
+  .btn-join-us span{
+     padding: 15px 100px;
+   }
+
+  .sidebar .btn-join-us{
+    width: 100%;
+    padding: 0;
+  }
+
+  .sidebar .btn-join-us span{
+    padding: 18px 100px;
+    display: block;
+  }
+
+  .btn-giveby-paypal span{
+    padding: 14px 8px;
+  }
+
+  .btn-giveby-paypal i{
+    font-size: 13px;
+  }
+
+  .btn-giveby-card span{
+    padding: 14px 19px;
+  }
+
+  .btn-giveby-card i{
+    font-size: 19px;
+  }
+
+  .btn-load-more span{
+    padding: 14px 415px;
+  }
+
+}
+
+  /*Screen 768px*/
+@media(max-width:991px){
+  .btn-donate-bottom span{
+    padding: 19px 280px;
+  }
+
+  .sidebar .btn-join-us{
+    width: 100%;
+    padding: 0;
+  }
+
+  .sidebar .btn-join-us span{
+    padding: 18px 329px;
+    display: block;
+  }
+
+  .btn-giveby-card span {
+    padding: 14px 50px;
+  }
+
+  .btn-giveby-paypal{
+    float: right;
+  }
+
+  .btn-giveby-paypal span {
+    padding: 14px 33px;
+  }
+
+  .btn-join-us span {
+    padding: 15px 100px;
+    font-size: 20px;
+  }
+
+  .btn-load-more span {
+    padding: 14px 305px;
+  }
+
+  .btn-rss-subscribe span{
+    padding: 15px 30px;
+  }
+
+
+}
+
+  /*Screen 568px*/
+@media(max-width:767px){
+  .btn-donate-bottom span{
+    padding: 19px 188px;
+  }
+
+  .btn-join-us span {
+      padding: 15px 50px;
+      font-size: 20px;
+  }
+
+  .sidebar .btn-join-us{
+    width: 100%;
+    padding: 0;
+  }
+
+  .sidebar .btn-join-us span {
+    padding: 18px 237px;
+    display: block;
+  }
+
+  .btn-load-more span {
+    padding: 14px 215px;
+  }
+
+  .btn-rss-subscribe{
+    float: none;
+  }
+
+}
+
+  /*Screen 480px*/
+@media(max-width: 500px){
+  .sidebar .btn-join-us span {
+    padding: 18px 150px;
+  }
+  .btn-donate-bottom span{
+    padding: 19px 146px;
+  }
+}
+
+  /*Screen 320px*/
+@media(max-width:479px){
+
+  .btn-join-us{
+    margin-top: 10px;
+    float:none;
+  }
+
+  .btn-join-us span {
+    padding: 15px 110px;
+    font-size: 20px;
+  }
+
+  .btn-donate-bottom span{
+    padding: 19px 97px;
+    font-size: @font-size + 3;
+  }
+
+  .btn-donate-ourmission span {
+    font-size: @font-size + 8;
+    padding: 15px 62px;
+  }
+
+  .sidebar .btn-join-us{
+    width: 100%;
+    padding: 0;
+  }
+
+  .sidebar .btn-join-us span {
+    padding: 18px 109px;
+    font-size: @font-size + 8;
+    display: block;
+  }
+
+  .wrapp-btn-donate-ourmission{
+    margin: 50px 0 35px;
+  }
+
+  .btn-giveby-paypal span {
+    padding: 14px 8px;
+  }
+
+  .btn-giveby-card span {
+    padding: 14px 15px;
+  }
+
+  .btn-load-more span {
+    padding: 14px 104px;
+    font-size: 18px;
+  }
+
+  .btn.btn-transparent.btn-join-us.btn-rss-subscribe span {
+    padding: 14px 54px;
+  }
+
+  .btn-error-page span{
+    font-size: @font-size + 5;
+    padding: 15px 55px;
+  }
+
+}
+
+.donate-section .btn span:hover {
+  background: @widgets-blue;
+  border-color: @widgets-blue;
+  color: #ffd52d;
+}
