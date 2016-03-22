@@ -5,6 +5,7 @@
   "main": "app.js",
   "dependencies": {
     "express": "^4.13.3",
+    "json-fs-store": "^1.0.0",
     "keystone": "0.3.15"
   }
 }
