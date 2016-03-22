@@ -1,1 +1,0 @@
-<iframe id="newspromo_iframe" src="http://themefuse.com/pages/newspromo/index.php" width="780" height="800" scrolling="auto" frameBorder="0"></iframe>
