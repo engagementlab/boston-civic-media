@@ -5,6 +5,6 @@
 	"allowed_domains": ["www.bostoncivic.media"],
 	"admin_nav": { 
 									"home": ["index"],
-									"about": ["index", "lightning talks", "newsletters", "collaborators"],
+									"about": ["index", "lightning talks", "newsletters", "collaborators"]
 								}
 }
