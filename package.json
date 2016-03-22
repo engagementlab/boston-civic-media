@@ -1,6 +1,6 @@
 {
-  "name": "engagement-lab-home",
-  "description": "The Engagement Lab's home page.",
+  "name": "boston-civic-media",
+  "description": "Boston Civic Media's home page.",
   "version": "0.0.1",
   "main": "app.js",
   "dependencies": {
