@@ -1,9 +1,9 @@
 /**
  * Engagement Lab Website
  * 
- * About page Model
- * @module about
- * @class about
+ * Home page Model
+ * @module Home
+ * @class Home
  * @author Johnny Richardson
  * 
  * For field docs: http://keystonejs.com/docs/database/
@@ -15,14 +15,14 @@ var keystone = require('keystone');
 var Types = keystone.Field.Types;
 
 /**
- * about model
+ * Home model
  * @constructor
  * See: http://keystonejs.com/docs/database/#lists-options
  */
-var About = new keystone.List('About', 
+var Home = new keystone.List('Home', 
 	{
-		label: 'About Page',
-		singular: 'About Page',
+		label: 'Home Page',
+		singular: 'Home Page',
 		track: true,
 		// nodelete: true,
 		nocreate: true
@@ -30,10 +30,10 @@ var About = new keystone.List('About',
 
 /**
  * Model Fields
- * @main About
+ * @main Home
  */
-About.add({
-	name: { type: String, default: "About Page", hidden: true, required: true, initial: true },
+Home.add({
+	name: { type: String, default: "Home Page", hidden: true, required: true, initial: true },
 	vision: { type: Types.Textarea, label: "Vision", required: true },
 	description: { type: Types.Textarea, label: "Description", required: true },
 	// history1: { type: Types.Textarea, label: "History Paragraph 1", required: true },
@@ -43,7 +43,7 @@ About.add({
 	// historyImages: {
 	// 	type: Types.CloudinaryImages,
 	// 	label: 'History Images (Please use 6 images)',
-	// 	folder: 'site/about',
+	// 	folder: 'site/Home',
 	// 	autoCleanup: true
 	// },
 	// process: { type: Types.Textarea, label: "Process and Approach", required: true },
@@ -59,6 +59,6 @@ About.add({
 /**
  * Model Registration
  */
-About.defaultSort = '-createdAt';
-About.defaultColumns = 'name, updatedAt';
-About.register();
+Home.defaultSort = '-createdAt';
+Home.defaultColumns = 'name, updatedAt';
+Home.register();

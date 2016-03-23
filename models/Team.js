@@ -1,7 +1,7 @@
 /**
  * Engagement Lab Website
  * 
- * Person page parent Model
+ * Team page parent Model
  * @module team
  * @author Johnny Richardson
  * 
@@ -19,9 +19,9 @@ var slack = keystone.get('slack');
  * @constructor
  * See: http://keystonejs.com/docs/database/#lists-options
  */
-var Person = new keystone.List('Person', 
+var Team = new keystone.List('Team', 
 	{
-		label: 'People',
+		label: 'Team',
 		singular: 'Team Member',
 		sortable: true,
 		track: true,
@@ -32,7 +32,7 @@ var Person = new keystone.List('Person',
  * Model Fields
  * @main Person
  */
-Person.add({
+Team.add({
 
 	name: { type: Types.Name, label: 'Name', required: true, initial: true, index: true },
 	title: { type: String, label: 'Title', required: true, initial: true },
@@ -40,15 +40,15 @@ Person.add({
 	image: { type: Types.CloudinaryImage, label: 'Image', folder: 'site/team' },
 	cmapPerson: { type: Types.Boolean, label: 'Show on CMAP page' },
   
-  category: { type: Types.Select, options: 'leadership, team, fellows, students, alumni', default: 'team', required: true, initial: true },
-	twitterURL: { type: Types.Url, label: 'Twitter' },	
-	fbURL: { type: Types.Url, label: 'Facebook' },	
-	linkedInURL: { type: Types.Url, label: 'LinkedIn' },	
-	githubURL: { type: Types.Url, label: 'Github' },
-	websiteURL: { type: Types.Url, label: 'Website' },	
+ //  category: { type: Types.Select, options: 'leadership, team, fellows, students, alumni', default: 'team', required: true, initial: true },
+	// twitterURL: { type: Types.Url, label: 'Twitter' },	
+	// fbURL: { type: Types.Url, label: 'Facebook' },	
+	// linkedInURL: { type: Types.Url, label: 'LinkedIn' },	
+	// githubURL: { type: Types.Url, label: 'Github' },
+	// websiteURL: { type: Types.Url, label: 'Website' },	
 
-	email: { type: String, label: 'Email' },
-	phone: { type: String, label: 'Phone' },
+	// email: { type: String, label: 'Email' },
+	// phone: { type: String, label: 'Phone' },
 	
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
 
@@ -58,7 +58,7 @@ Person.add({
  * Hooks
  * =============
  */
-Person.schema.pre('save', function(next) {
+Team.schema.pre('save', function(next) {
 
     // Save state for post hook
     this.wasNew = this.isNew;
@@ -68,13 +68,13 @@ Person.schema.pre('save', function(next) {
 
 });
 
-Person.schema.post('save', function(next) {
+Team.schema.post('save', function(next) {
 
     // Make a post to slack when this Person is updated
-    var person = this;
+    var team = this;
     
     slack.Post(
-    	Person.model, this, true, 
+    	Team.model, this, true, 
     	function() { return person.name.first + ' ' + person.name.last; }
     );
 
@@ -84,6 +84,6 @@ Person.schema.post('save', function(next) {
 /**
  * Model Registration
  */
-Person.defaultSort = 'sortOrder';
-Person.defaultColumns = 'name, category';
-Person.register();
+Team.defaultSort = 'sortOrder';
+Team.defaultColumns = 'name, category';
+Team.register();
