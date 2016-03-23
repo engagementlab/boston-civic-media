@@ -13,17 +13,6 @@
 var keystone = require('keystone');
 var _ = require('underscore');
 
-// DB Models for use on nav
-var Subdirectory = keystone.list('Subdirectory');
-
-var querySub =  Subdirectory.model.where("key")
-                .ne("publications").sort([
-                    ['sortOrder', 'ascending']
-                ]);
-querySub.select('key name');
-
-var publicationsCats = ['Books', 'Guides', 'Articles and Chapters'];
-
 /**
 	Initialises the standard view locals
 	
@@ -36,63 +25,30 @@ exports.initLocals = function(req, res, next) {
 
     var locals = res.locals;
 
-    // Caches query into redis
-    querySub.lean();
-    querySub.exec(function(err, resultSub) {
+    locals.navLinks = [{
+        label: 'About',
+        key: 'about',
+        href: '/about'
+    },
+    {
+        label: 'Get Involved',
+        key: 'get-involved',
+        href: '/get-involved'
+    },
+    {
+        label: 'Syllabi',
+        key: 'syllabi',
+        href: '/syllabi'
+    },
+    {
+        label: 'Events',
+        key: 'events',
+        href: '/events'
+    }];
 
-        var projectsSub = _.map(resultSub, function(sub) {
+    locals.user = req.user;
 
-            return {
-                label: sub.name,
-                key: sub.key,
-                href: '/projects/' + sub.key
-            };
-
-        });
-
-        var publicationsSub = _.map(publicationsCats, function(cat) {
-
-            return {
-                label: cat,
-                key: 'publications',
-                href: '/publications/#' + cat.replace(/ /g, '-').toLowerCase()
-            };
-
-        });
-
-        locals.navLinks = [{
-            label: 'About',
-            key: 'about',
-            href: '/about'
-        }, {
-            label: 'Projects',
-            key: 'projects',
-            href: '/projects',
-            subLinks: projectsSub
-        }, {
-            label: 'Publications',
-            key: 'publications',
-            href: '/publications',
-            subLinks: publicationsSub
-        }, {
-            label: 'People',
-            key: 'people',
-            href: '/people'
-        }, {
-            label: 'Programs',
-            key: 'programs',
-            href: '/programs'
-        }, {
-            label: 'News',
-            key: 'news',
-            href: '/news'
-        }];
-
-        locals.user = req.user;
-
-        next();
-
-    });
+    next();
 
 };
 

@@ -2,9 +2,5 @@
 	"name": "Boston Civic Media",
 	"database": "boston-civic-media",
 	"subdomain": "bcm",
-	"allowed_domains": ["www.bostoncivic.media"],
-	"admin_nav": { 
-									"home": ["index"],
-									"about": ["index", "lightning talks", "newsletters", "collaborators"]
-								}
+	"allowed_domains": ["www.bostoncivic.media"]
 }
