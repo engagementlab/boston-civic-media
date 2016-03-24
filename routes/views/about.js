@@ -1,19 +1,23 @@
 /**
- * Engagement Lab Website
- * Developed by Engagement Lab, 2015
+ * Boston Civic Media Website
+ * Developed by Engagement Lab, 2016
  * ==============
  * About page view controller.
  *
  * Help: http://keystonejs.com/docs/getting-started/#routesviews-firstview
  *
  * @class about
- * @author Johnny Richardson
+ * @author 
  *
  * ==========
  */
 var keystone = require('keystone');
+
 var About = keystone.list('About');
-var Partner = keystone.list('Partner');
+var Affiliate = keystone.list('Affiliate');
+var Funder = keystone.list('Funder');
+var TeamMember = keystone.list('TeamMember');
+
 var _ = require('underscore');
 
 exports = module.exports = function(req, res) {

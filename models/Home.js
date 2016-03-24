@@ -1,5 +1,5 @@
 /**
- * Engagement Lab Website
+ * Boston Civic Media Website
  * 
  * Home page Model
  * @module Home

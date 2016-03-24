@@ -1,5 +1,5 @@
 /**
- * Engagement Lab Website
+ * Boston Civic Media Website
  * 
  * Research category Model
  * @module research_category

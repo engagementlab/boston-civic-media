@@ -1,6 +1,6 @@
 /**
- * Engagement Lab Website
- * Developed by Engagement Lab, 2015
+ * Boston Civic Media Website
+ * Developed by Engagement Lab, 2016
  * ==============
  * Home page view controller.
  *
@@ -13,9 +13,10 @@
  * ==========
  */
 var keystone = require('keystone');
-var Project = keystone.list('Project');
-var NewsBox = keystone.list('NewsBox');
-var Resource = keystone.list('Resource');
+
+// Include models here!
+//var Project = keystone.list('Project')
+
 var _ = require('underscore');
 
 // News data propagated by ./jobs/news
@@ -35,8 +36,9 @@ exports = module.exports = function(req, res) {
 
         locals.featured_content = [];
 
+        // EXAMPLE OF QUERY TO GET FEATURED STUFF
         // This query gets all featured projects
-        var projectQuery = Project.model.find({
+        /*var projectQuery = Project.model.find({
             'enabled': true,
             'featured': true
         })
@@ -51,7 +53,7 @@ exports = module.exports = function(req, res) {
                 locals.featured_content = result;
                 next(err);
             });
-        });
+        });*/
 
     });
 

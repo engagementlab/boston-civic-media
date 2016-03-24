@@ -1,5 +1,5 @@
 /**
- * Engagement Lab Website
+ * Boston Civic Media Website
  * Developed by Engagement Lab, 2016
  * ==============
  * 

@@ -1,5 +1,5 @@
 /**
- * Engagement Lab Website
+ * Boston Civic Media Website
  * 
  * IRBProj page Model
  * @module IRBProj

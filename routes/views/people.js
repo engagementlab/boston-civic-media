@@ -1,6 +1,6 @@
 /**
- * Engagement Lab Website
- * Developed by Engagement Lab, 2015
+ * Boston Civic Media Website
+ * Developed by Engagement Lab, 2016
  * ==============
  * People view controller.
  *
@@ -12,7 +12,6 @@
  * ==========
  */
 var keystone = require('keystone');
-var Person = keystone.list('Person');
 
 exports = module.exports = function(req, res) {
 
@@ -25,7 +24,7 @@ exports = module.exports = function(req, res) {
     // Load all team members and sort/categorize them 
     view.on('init', function(next) {
 
-        var q = Person.model.find({}).sort([
+        /*var q = Person.model.find({}).sort([
             ['sortOrder', 'ascending']
         ]);
         var categorize = function(val, cat) {
@@ -44,7 +43,9 @@ exports = module.exports = function(req, res) {
             locals.alumni = categorize(result, 'alumni');
 
             next(err);
-        });
+        });*/
+        
+            next(err);
 
     });
 

@@ -1,6 +1,6 @@
 /**
- * Engagement Lab Website
- * Developed by Engagement Lab, 2015
+ * Boston Civic Media Website
+ * Developed by Engagement Lab, 2016
  * ==============
  * News/blog page view controller.
  *
@@ -12,7 +12,6 @@
  * ==========
  */
 var keystone = require('keystone');
-var Resource = keystone.list('Resource');
 var _ = require('underscore');
 var twitter = keystone.get('twitter');
 
@@ -53,22 +52,10 @@ exports = module.exports = function(req, res) {
             // err if JSON parsing failed
             if(err) throw err;
 
-            locals.news = newsData.news;
-            _.each(locals.news, function(post){
-                post.content = post.content.replace(/(^(By)\s+(.*)?[0-9]\s)/, '');
-            });
-
-            locals.featured = newsData.news.shift();
             locals.events = newsData.events;
 
-            // Show the 3 most recently added articles
-            Resource.model.find({ type: 'article' }, {}, {
-                sort: { date: -1 }
-            }).limit(3).exec(function(err, articleResult){
-                if (err) throw err;
-                locals.articles = articleResult;
-            });
-
+            // TWITTER FEED EXAMPLE
+            /*
             locals.twitter = {};
 
             twitter.get('statuses/user_timeline.json?count=3', function(err, tweets, response) {
@@ -106,7 +93,7 @@ exports = module.exports = function(req, res) {
                     locals.twitter.tweets.push({ text: html });
                 }
                 next(err);
-            });
+            });*/
         });
     });
 
