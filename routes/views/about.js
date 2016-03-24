@@ -38,25 +38,25 @@ exports = module.exports = function(req, res) {
 
         queryAbout.exec(function(err, resultAbout) {
 
-            locals.about = resultAbout;
-            locals.about.historyImages1 = [];
-            locals.about.historyImages2 = [];
-            for (var i = 0; i < resultAbout.historyImages.length; i++) {
-                if (i > 5) {
-                    break;
-                } else if (i < 3) {
-                    locals.about.historyImages1.push(resultAbout.historyImages[i]);
-                } else {
-                    locals.about.historyImages2.push(resultAbout.historyImages[i]);
-                }
-            }
+            // locals.about = resultAbout;
+            // locals.about.historyImages1 = [];
+            // locals.about.historyImages2 = [];
+            // for (var i = 0; i < resultAbout.historyImages.length; i++) {
+            //     if (i > 5) {
+            //         break;
+            //     } else if (i < 3) {
+            //         locals.about.historyImages1.push(resultAbout.historyImages[i]);
+            //     } else {
+            //         locals.about.historyImages2.push(resultAbout.historyImages[i]);
+            //     }
+            // }
 
-            var queryPartners = Partner.model.find({}).sort([
+            var queryAffiliates = Affiliate.model.find({}).sort([
                 ['sortOrder', 'ascending']
             ]);
 
-            queryPartners.exec(function(err, resultPartners) {
-                locals.partners = resultPartners;
+            queryAffiliates.exec(function(err, resultAffiliates) {
+                locals.affiliates = resultAffiliates;
                 next(err);
             });
         });

@@ -34,8 +34,8 @@ var About = new keystone.List('About',
  */
 About.add({
 	name: { type: String, default: "About Page", hidden: true, required: true, initial: true },
-	vision: { type: Types.Textarea, label: "Vision", required: true },
-	description: { type: Types.Textarea, label: "Description", required: true },
+	vision: { type: Types.Textarea, label: "Vision",  initial: true, required: true },
+	description: { type: Types.Textarea, label: "Description",  initial: true, required: true },
 	// history1: { type: Types.Textarea, label: "History Paragraph 1", required: true },
 	// history2: { type: Types.Textarea, label: "History Paragraph 2", required: true },
 	// history3: { type: Types.Textarea, label: "History Paragraph 3", required: true },
