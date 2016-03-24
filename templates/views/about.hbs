@@ -11,20 +11,20 @@
 * ==========
 */
 --}}
-
+{{!-- {{jsonPrint this}} --}}
 <section class="section">
 	<div class="container">
-		<div class="row pb-40">
+		{{!-- <div class="row pb-40">
 			<div class="col-md-12">
 				<div class="embed-responsive embed-responsive-16by9">
 					<iframe src="https://player.vimeo.com/video/154233162" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 				</div>
 			</div>
-		</div>
+		</div> --}}
 		<div class="row">
 			<div class="col-md-12">
-				{{> page/name name=about.missionStatement}}
-				{{> about/first_paragraph text=about.process}}
+				{{> page/name name=about.vision}}
+				{{> about/first_paragraph text=about.vision}}
 			</div>
 		</div>
 	</div>
@@ -35,27 +35,27 @@
 		<div class="row">
 			<div class="col-md-12 pv-40">
 				{{> page/name name="Vision"}}
-				{{> about/first_paragraph text=about.history1}}
-				{{> about/history_image_set images=about.historyImages1}}
+				{{> about/first_paragraph text=about.vision}}
+				{{!-- {{> about/history_image_set images=about.historyImages1}}
 				{{> about/paragraph text=about.history2}}
 				{{> about/history_image_set images=about.historyImages2}}
 				{{> about/paragraph text=about.history3}}
 				{{#if about.history4}}
 					<p class="lead">{{about.history4}}</p>
-				{{/if}}
+				{{/if}} --}}
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-12 pv-40">
 				{{> page/name name="Description"}}
-				{{> about/first_paragraph text=about.history1}}
-				{{> about/history_image_set images=about.historyImages1}}
+				{{> about/first_paragraph text=about.description}}
+				{{!-- {{> about/history_image_set images=about.historyImages1}}
 				{{> about/paragraph text=about.history2}}
 				{{> about/history_image_set images=about.historyImages2}}
 				{{> about/paragraph text=about.history3}}
 				{{#if about.history4}}
 					<p class="lead">{{about.history4}}</p>
-				{{/if}}
+				{{/if}} --}}
 			</div>
 		</div>
 	</div>

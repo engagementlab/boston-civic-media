@@ -37,7 +37,8 @@ exports = module.exports = function(req, res) {
         });
 
         queryAbout.exec(function(err, resultAbout) {
-
+            locals.about = resultAbout;
+            console.log (locals.about)
             // locals.about = resultAbout;
             // locals.about.historyImages1 = [];
             // locals.about.historyImages2 = [];
