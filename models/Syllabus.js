@@ -31,11 +31,9 @@ Syllabus.add({
 			return item.key + require('path').extname(filename);
 		},
 		containerFormatter: function(item, filename) {
-			return 'syllabi';
+			return 'bcm_syllabi';
 		}
 	},
-	// fileSummary: { type: Types.Markdown, label: 'File Summary',
-	// 	dependsOn: { type: ['file'] } },
 
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
 });

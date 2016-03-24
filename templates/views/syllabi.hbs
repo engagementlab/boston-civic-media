@@ -5,34 +5,37 @@
  * Developed by Engagement Lab, 2016
  * ==============
  * 
- * Subdirectory Page Template 
+ * Syllabi Directory Page Template 
  * - Use {{jsonPrint project}} to print entire json...DEBUG ONLY
  * ==========
  */
 --}}
 
-<!-- SUBDIRECTORY START -->
+<!-- DIRECTORY START -->
 <!-- ================ -->
 <section class="main-container padding-bottom-clear">
 	<div class="container">
 		<div class="main">
-			<h1 class="page-title"><strong>{{upperCase section}}: </strong><span class="font-light">{{name}}</span></h1>
-			{{> page/lead}}
+			<h1 class="page-title"><strong>Syllabi</strong></h1>
+			{{!-- {{> page/lead}} --}}
 		</div>
 	</div>
 
+	{{!-- We'll need some filtering dropdowns here --}}
+
+	{{!-- Show all syllabi below by default --}}
 	<div class="container pv-20">
 		<div class="row">
-			{{#if listings}}
+			{{!-- {{#if listings}}
 				
 				{{!-- Show projects --}}
 				{{#each listings}}
 					{{> sublisting listing=this}}
 				{{/each}}
 
-			{{else}}
+			{{else}} --}}
 				
-				<strong>No projects! Fiddlesticks!</strong>
+				<strong>No syllabi! Fiddlesticks!</strong>
 			
 			{{/if}}
 		</div>
