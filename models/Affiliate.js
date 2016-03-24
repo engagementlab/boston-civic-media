@@ -2,14 +2,14 @@ var keystone = require('keystone');
 var Types = keystone.Field.Types;
 
 /**
- * Funders model
+ * Affiliate model
  * @constructor
  * See: http://keystonejs.com/docs/database/#lists-options
  */
-var Funders = new keystone.List('Funders', 
+var Affiliate = new keystone.List('Affiliate', 
 	{
-		label: 'Funders Page',
-		singular: 'Funders Page',
+		label: 'Affiliate Page',
+		singular: 'Affiliate Page',
 		track: true,
 		// nodelete: true,
 		nocreate: true
@@ -19,7 +19,7 @@ var Funders = new keystone.List('Funders',
  * Model Fields
  * @main About
  */
-Funders.add({
+Affiliate.add({
 	name: { type: Types.Name, label: 'Name', required: true, initial: true, index: true },
 	logo: { type: Types.CloudinaryImage, label: 'Logo', folder: 'site/logos' },
 	
@@ -29,6 +29,6 @@ Funders.add({
 /**
  * Model Registration
  */
-Funders.defaultSort = '-createdAt';
-Funders.defaultColumns = 'name, updatedAt';
-Funders.register();
+Affiliate.defaultSort = '-createdAt';
+Affiliate.defaultColumns = 'name, updatedAt';
+Affiliate.register();

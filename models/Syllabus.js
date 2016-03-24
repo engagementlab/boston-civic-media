@@ -2,14 +2,14 @@ var keystone = require('keystone');
 var Types = keystone.Field.Types;
 
 /**
- * Syllabi model
+ * Syllabus model
  * @constructor
  * See: http://keystonejs.com/docs/database/#lists-options
  */
-var Syllabi = new keystone.List('Syllabi', 
+var Syllabus = new keystone.List('Syllabus', 
 	{
-		label: 'Syllabi Page',
-		singular: 'Syllabi Page',
+		label: 'Syllabus Page',
+		singular: 'Syllabus Page',
 		track: true,
 		// nodelete: true,
 		nocreate: true
@@ -19,7 +19,7 @@ var Syllabi = new keystone.List('Syllabi',
  * Model Fields
  * @main About
  */
-Syllabi.add({
+Syllabus.add({
 	name: { type: Types.Name, label: 'Name', required: true, initial: true, index: true },
 	title: { type: Types.Textarea, label: "Title", required: true },
 	description: { type: Types.Textarea, label: "Description", required: true },
@@ -43,6 +43,6 @@ Syllabi.add({
 /**
  * Model Registration
  */
-Syllabi.defaultSort = '-createdAt';
-Syllabi.defaultColumns = 'name, updatedAt';
-Syllabi.register();
+Syllabus.defaultSort = '-createdAt';
+Syllabus.defaultColumns = 'name, updatedAt';
+Syllabus.register();

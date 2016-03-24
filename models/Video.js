@@ -1,8 +1,8 @@
 /**
- * Engagement Lab Website
+ * Boston Civic Media Website
  * 
- * Videos page parent Model
- * @module Videos
+ * Video page parent Model
+ * @module Video
  * @author Johnny Richardson
  * 
  * For field docs: http://keystonejs.com/docs/database/
@@ -15,14 +15,14 @@ var Types = keystone.Field.Types;
 var slack = keystone.get('slack');
 
 /**
- * @module Videos
+ * @module Video
  * @constructor
  * See: http://keystonejs.com/docs/database/#lists-options
  */
-var Videos = new keystone.List('Videos', 
+var Video = new keystone.List('Video', 
 	{
-		label: 'Videos',
-		singular: 'Videos Member',
+		label: 'Video',
+		singular: 'Video',
 		sortable: true,
 		track: true,
 		autokey: { path: 'key', from: 'name', unique: true },
@@ -32,13 +32,13 @@ var Videos = new keystone.List('Videos',
  * Model Fields
  * @main Person
  */
-Videos.add({
+Video.add({
 
 	title: { type: String, label: 'Name', required: true, initial: true, index: true },
 	//embedLink: { type: Types.URL, label: 'Video Embed Link', required: true, initial: true },
 	description: { type: String, label: 'Description', required: true, initial: true, index: true },
 
- //  category: { type: Types.Select, options: 'leadership, Videos, fellows, students, alumni', default: 'Videos', required: true, initial: true },
+ //  category: { type: Types.Select, options: 'leadership, Video, fellows, students, alumni', default: 'Video', required: true, initial: true },
 	// twitterURL: { type: Types.Url, label: 'Twitter' },	
 	// fbURL: { type: Types.Url, label: 'Facebook' },	
 	// linkedInURL: { type: Types.Url, label: 'LinkedIn' },	
@@ -56,7 +56,7 @@ Videos.add({
  * Hooks
  * =============
  */
-Videos.schema.pre('save', function(next) {
+Video.schema.pre('save', function(next) {
 
     // Save state for post hook
     this.wasNew = this.isNew;
@@ -66,13 +66,13 @@ Videos.schema.pre('save', function(next) {
 
 });
 
-Videos.schema.post('save', function(next) {
+Video.schema.post('save', function(next) {
 
     // Make a post to slack when this Person is updated
-    var Videos = this;
+    var Video = this;
     
     slack.Post(
-    	Videos.model, this, true, 
+    	Video.model, this, true, 
     	function() { return person.name.first + ' ' + person.name.last; }
     );
 
@@ -82,6 +82,6 @@ Videos.schema.post('save', function(next) {
 /**
  * Model Registration
  */
-Videos.defaultSort = 'sortOrder';
-Videos.defaultColumns = 'name, category';
-Videos.register();
+Video.defaultSort = 'sortOrder';
+Video.defaultColumns = 'name, category';
+Video.register();

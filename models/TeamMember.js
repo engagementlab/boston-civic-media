@@ -1,7 +1,7 @@
 /**
- * Engagement Lab Website
+ * Boston Civic Media Website
  * 
- * Team page parent Model
+ * TeamMember page parent Model
  * @module team
  * @author Johnny Richardson
  * 
@@ -19,9 +19,9 @@ var slack = keystone.get('slack');
  * @constructor
  * See: http://keystonejs.com/docs/database/#lists-options
  */
-var Team = new keystone.List('Team', 
+var TeamMember = new keystone.List('TeamMember', 
 	{
-		label: 'Team',
+		label: 'Team Member',
 		singular: 'Team Member',
 		sortable: true,
 		track: true,
@@ -32,24 +32,12 @@ var Team = new keystone.List('Team',
  * Model Fields
  * @main Person
  */
-Team.add({
+TeamMember.add({
 
 	name: { type: Types.Name, label: 'Name', required: true, initial: true, index: true },
 	title: { type: String, label: 'Title', required: true, initial: true },
 	bio: { type: Types.Markdown, label: 'Bio', required: true, initial: true },
 	image: { type: Types.CloudinaryImage, label: 'Image', folder: 'site/team' },
-	cmapPerson: { type: Types.Boolean, label: 'Show on CMAP page' },
-  
- //  category: { type: Types.Select, options: 'leadership, team, fellows, students, alumni', default: 'team', required: true, initial: true },
-	// twitterURL: { type: Types.Url, label: 'Twitter' },	
-	// fbURL: { type: Types.Url, label: 'Facebook' },	
-	// linkedInURL: { type: Types.Url, label: 'LinkedIn' },	
-	// githubURL: { type: Types.Url, label: 'Github' },
-	// websiteURL: { type: Types.Url, label: 'Website' },	
-
-	// email: { type: String, label: 'Email' },
-	// phone: { type: String, label: 'Phone' },
-	
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
 
 });
@@ -58,7 +46,7 @@ Team.add({
  * Hooks
  * =============
  */
-Team.schema.pre('save', function(next) {
+TeamMember.schema.pre('save', function(next) {
 
     // Save state for post hook
     this.wasNew = this.isNew;
@@ -68,13 +56,13 @@ Team.schema.pre('save', function(next) {
 
 });
 
-Team.schema.post('save', function(next) {
+TeamMember.schema.post('save', function(next) {
 
     // Make a post to slack when this Person is updated
     var team = this;
     
     slack.Post(
-    	Team.model, this, true, 
+    	TeamMember.model, this, true, 
     	function() { return person.name.first + ' ' + person.name.last; }
     );
 
@@ -84,6 +72,6 @@ Team.schema.post('save', function(next) {
 /**
  * Model Registration
  */
-Team.defaultSort = 'sortOrder';
-Team.defaultColumns = 'name, category';
-Team.register();
+TeamMember.defaultSort = 'sortOrder';
+TeamMember.defaultColumns = 'name, category';
+TeamMember.register();
