@@ -38,19 +38,7 @@ exports = module.exports = function(req, res) {
 
         queryAbout.exec(function(err, resultAbout) {
             locals.about = resultAbout;
-            console.log (locals.about)
-            // locals.about = resultAbout;
-            // locals.about.historyImages1 = [];
-            // locals.about.historyImages2 = [];
-            // for (var i = 0; i < resultAbout.historyImages.length; i++) {
-            //     if (i > 5) {
-            //         break;
-            //     } else if (i < 3) {
-            //         locals.about.historyImages1.push(resultAbout.historyImages[i]);
-            //     } else {
-            //         locals.about.historyImages2.push(resultAbout.historyImages[i]);
-            //     }
-            // }
+            // console.log (locals.about)
 
             var queryAffiliates = Affiliate.model.find({}).sort([
                 ['sortOrder', 'ascending']

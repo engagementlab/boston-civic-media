@@ -1,11 +1,18 @@
+/**
+ * Boston Civic Media Website
+ * 
+ * Affiliate page Model
+ * @module models
+ * @class affiliate
+ * @author Johnny Richardson
+ * 
+ * For field docs: http://keystonejs.com/docs/database/
+ *
+ * ==========
+ */
 var keystone = require('keystone');
 var Types = keystone.Field.Types;
 
-/**
- * Affiliate model
- * @constructor
- * See: http://keystonejs.com/docs/database/#lists-options
- */
 var Affiliate = new keystone.List('Affiliate', 
 	{
 		label: 'Affiliate Page',
