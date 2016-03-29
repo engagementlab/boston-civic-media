@@ -16,6 +16,7 @@ var keystone = require('keystone');
 
 // Include models here!
 //var Project = keystone.list('Project')
+var Syllabi = keystone.list('Syllabi');
 
 var _ = require('underscore');
 
@@ -34,26 +35,27 @@ exports = module.exports = function(req, res) {
     // Make any queries
     view.on('init', function(next) {
 
-        locals.featured_content = [];
+        //locals.featured_content = [];
+        locals.featured_syllabi = [];
 
         // EXAMPLE OF QUERY TO GET FEATURED STUFF
         // This query gets all featured projects
-        /*var projectQuery = Project.model.find({
+        var syllabiQuery = Syllabi.model.find({
             'enabled': true,
             'featured': true
         })
         .populate('subdirectory');
 
         // Setup the locals to be used inside view
-        projectQuery.exec(function(err, result) {
+        syllabiQuery.exec(function(err, result) {
             if (err) throw err;
-            locals.featured_projects = result;
+            locals.featured_syllabi = result;
 
-            NewsBox.model.find({}).exec(function(err, result) {
-                locals.featured_content = result;
-                next(err);
-            });
-        });*/
+            // NewsBox.model.find({}).exec(function(err, result) {
+            //     locals.featured_content = result;
+            //     next();
+            // });
+        });
     next();
 
     });

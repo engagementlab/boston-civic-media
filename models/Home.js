@@ -34,7 +34,7 @@ var Home = new keystone.List('Home',
  */
 Home.add({
 	name: { type: String, default: "Home Page", hidden: true, required: true, initial: true },
-	vision: { type: Types.Textarea, label: "Vision", initial: true, required: true },
+	missionStatement: { type: Types.Textarea, label: "Mission Statement", initial: true, required: true },
 	description: { type: Types.Textarea, label: "Description", initial: true, required: true },
 	
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }

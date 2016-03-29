@@ -13,7 +13,7 @@
  */
 var keystone = require('keystone');
 
-var Syllabus = keystone.list('Syllabus');
+var Syllabi = keystone.list('Syllabi');
 var _ = require('underscore');
 
 exports = module.exports = function(req, res) {
@@ -26,7 +26,7 @@ exports = module.exports = function(req, res) {
 
     view.on('init', function(next) {
 
-        var querySyllabi = Syllabus.model.find({}).sort([
+        var querySyllabi = Syllabi.model.find({}).sort([
             ['sortOrder', 'ascending']
         ]);
 

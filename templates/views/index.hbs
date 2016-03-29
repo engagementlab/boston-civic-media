@@ -41,7 +41,7 @@
 			</section>
 			<!-- banner end -->
 
-			{{#if featured_content}}
+			{{!-- {{#if featured_content}}
 				<section class="recent-events clearfix light-bg">
 					<div class="container">
 						<div class="row">
@@ -56,8 +56,8 @@
 						</div>
 					</div>
 				</section>
-			{{/if}}
-			{{#if featured_projects}}
+			{{/if}} --}}
+			{{!-- {{#if featured_syllabi}} --}}
 				<section class="featured-projects">
 
 					{{!-- Glider.js structure --}}
@@ -70,8 +70,8 @@
 
 					    <div class="glide__wrapper">
 					        <ul class="glide__track" style="margin-left:-40px">
-										{{#each featured_projects}}
-											<li class="glide__slide">{{> index/featured_project project=this}}</li>
+										{{#each featured_syllabi}}
+											<li class="glide__slide">THis is where the sylabi lives{{> index/featured_syllabi syllabi=this}}</li>
 										{{/each}}
 					        </ul>
 					    </div>
@@ -79,7 +79,7 @@
 					</div>
 					
 				</section>
-			{{/if}}
+			{{!-- {{/if}} --}}
 		</div> <!-- .main -->
 	</div> <!-- .row -->
 </div> <!-- .container-fluid -->
