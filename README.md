@@ -1,15 +1,24 @@
 # boston-civic-media
+### Setup
+1. Install [EL-Website](https://github.com/engagementgamelab/EL-Website).
+2. Clone this repo: `https://github.com/engagementgamelab/boston-civic-media.git`
+3. Link this site to EL-Website: 
 
-Clone this repo as well as [EL-Website](https://github.com/engagementgamelab/EL-Website).
+  ```
+  cd boston-civic-media
+  npm-link
+  ```
+  
+  ```
+  cd EL-Website
+  npm link boston-civic-media
+  ```
+  
+4. Start the site. **From EL-Website**, run:
 
-Follow the instructions for installing EL-Website.
-
-Then, run ```npm link``` in boston-civic-media.
-
-Go back to EL-Website and run ```npm link boston-civic-media```.
-
-Now, run 
-```grunt --sites=boston-civic-media```
-and you should be able to get to the site at http://bcm.localhost:3000.
+  ```
+  nodemon --debug server.js --sites=boston-civic-media
+  ```
+The site should now be running at http://localhost:3000.
 
 (Better docs coming soon.)
