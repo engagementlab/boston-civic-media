@@ -26,11 +26,13 @@
 	{{!-- Show all syllabi below by default --}}
 	<div class="container pv-20">
 		<div class="row">
-			{{#if listings}}
-				
+			{{#if syllabi}}
+				<p>All Syllabi</p>
 				{{!-- Show projects --}}
-				{{#each listings}}
-					{{> sublisting listing=this}}
+				{{#each syllabi}}
+					<p>descriptives</p>
+					{{>syllabi}}
+
 				{{/each}}
 
 				{{else}}

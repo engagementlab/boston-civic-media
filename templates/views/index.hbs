@@ -58,7 +58,8 @@
 				</section>
 			{{/if}} --}}
 			{{!-- {{#if featured_syllabi}} --}}
-				<section class="featured-projects">
+{{!-- 				console.Log ("hellow");
+ --}}	<section class="featured-projects row">
 
 					{{!-- Glider.js structure --}}
 					<div id="featured_glider" class="glide">
@@ -71,7 +72,7 @@
 					    <div class="glide__wrapper">
 					        <ul class="glide__track" style="margin-left:-40px">
 										{{#each featured_syllabi}}
-											<li class="glide__slide">THis is where the sylabi lives{{> index/featured_syllabi syllabi=this}}</li>
+											<li class="glide__slide"><p>THis is where the sylabi lives<p>{{> index/featured_syllabi featured_syllabi}}</li>
 										{{/each}}
 					        </ul>
 					    </div>
