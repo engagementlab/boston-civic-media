@@ -4,3 +4,4 @@
 /thumbs/*
 node_modules/keystone/node_modules
 node_modules
+*.sublime-*
