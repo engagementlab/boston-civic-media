@@ -33,6 +33,12 @@ Syllabi.add({
 			return 'bcmsyllabi';
 		}
 	},
+	// backgroundImage: {
+ //      type: Types.CloudinaryImage,
+ //      label: 'Header Image (large)',
+ //      folder: 'site/research/projects',
+ //      autoCleanup: true
+ //  },
 	
 	enabled: {
       type: Types.Boolean,

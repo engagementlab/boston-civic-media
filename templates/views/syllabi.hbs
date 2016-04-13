@@ -27,11 +27,11 @@
 	<div class="container pv-20">
 		<div class="row">
 			{{#if syllabi}}
-				<p>All Syllabi</p>
 				{{!-- Show projects --}}
 				{{#each syllabi}}
-					<p>descriptives</p>
-					{{>syllabi}}
+					<h3>{{title}}</h3>
+						<p>{{{description}}}</p>
+						<p><strong>{{{createdAt}}}</strong></p>
 
 				{{/each}}
 

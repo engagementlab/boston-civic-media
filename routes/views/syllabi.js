@@ -15,6 +15,7 @@ var keystone = require('keystone');
 
 var Syllabi = keystone.list('Syllabi');
 var _ = require('underscore');
+var cloudinary = require('cloudinary');
 
 exports = module.exports = function(req, res) {
 
@@ -32,7 +33,7 @@ exports = module.exports = function(req, res) {
 
         querySyllabi.exec(function(err, resultSyllabi) {
             locals.syllabi = resultSyllabi;
-            console.log (locals.syllabi)
+            console.log (locals.syllabi);
 
             next(err);
         });
