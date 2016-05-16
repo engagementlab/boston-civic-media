@@ -1,5 +1,29 @@
 /* 2 Layout
 ----------------------------------------------------------------------------- */
+.main-blurb {
+	min-height: 100%;
+	width: 100%;
+	position: relative;
+	background-color: $gray-dark;
+	color: $white;
+	margin: 0 auto;
+	padding-top: 2%;
+	padding-bottom: 2%;
+
+	.main-mission-statement {
+		text-align: justify;
+		width: 90%;
+		font-size: xx-large;
+		font-weight: bold;
+		margin: 0 auto;
+	}
+	.main-description {
+		text-align: justify;
+		width: 90%;
+		margin: 0 auto;
+	}
+}
+
 .page-wrapper {
 	background-color: #ffffff;
 }

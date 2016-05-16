@@ -1,5 +1,6 @@
 var keystone = require('keystone');
 var Types = keystone.Field.Types;
+var Video = require('./Video');
 
 /**
  * LightningTalk model
@@ -11,8 +12,9 @@ var LightningTalk = new keystone.List('LightningTalk',
 		label: 'LightningTalk Page',
 		singular: 'LightningTalk Page',
 		track: true,
+		inherits: Video
 		// nodelete: true,
-		nocreate: true
+		// nocreate: true
 	});
 
 /**
@@ -20,10 +22,18 @@ var LightningTalk = new keystone.List('LightningTalk',
  * @main About
  */
 LightningTalk.add({
-	name: { type: String, default: "About Page", hidden: true, required: true, initial: true },
-	description: { type: Types.Name, label: 'Description', required: true, initial: true, index: true },
-	footer: { type: Types.Name, label: "Footer", required: true, initial: true, index: true },
-
+	name: { type: Types.Name, label: "Talk Name", default: "Lightning Talks", hidden: true, required: true, initial: true },
+	description: { type: String, label: "Talk Description", required: true, initial: true, index: true },
+	footer: { type: String, label: "Talk Footer", required: true, initial: true, index: true },
+	enabled: {
+      type: Types.Boolean,
+      label: 'Enabled'
+	  },
+	  featured: {
+	      type: Types.Boolean,
+	      label: 'Featured'
+	  },
+	
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
 });
 

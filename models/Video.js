@@ -34,20 +34,9 @@ var Video = new keystone.List('Video',
  */
 Video.add({
 
-	title: { type: String, label: 'Name', required: true, initial: true, index: true },
-	//embedLink: { type: Types.URL, label: 'Video Embed Link', required: true, initial: true },
-	description: { type: String, label: 'Description', required: true, initial: true, index: true },
-
- //  category: { type: Types.Select, options: 'leadership, Video, fellows, students, alumni', default: 'Video', required: true, initial: true },
-	// twitterURL: { type: Types.Url, label: 'Twitter' },	
-	// fbURL: { type: Types.Url, label: 'Facebook' },	
-	// linkedInURL: { type: Types.Url, label: 'LinkedIn' },	
-	// githubURL: { type: Types.Url, label: 'Github' },
-	// websiteURL: { type: Types.Url, label: 'Website' },	
-
-	// email: { type: String, label: 'Email' },
-	// phone: { type: String, label: 'Phone' },
-	
+	title: { type: String, label: 'Video Title', required: true, initial: true, index: true },
+	embedLink: { type: Types.Url, label: 'Video Embed Link', required: true, initial: true },
+	description: { type: String, label: 'Video Description', required: true, initial: true},
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
 
 });
@@ -85,3 +74,5 @@ Video.schema.post('save', function(next) {
 Video.defaultSort = 'sortOrder';
 Video.defaultColumns = 'name, category';
 Video.register();
+
+exports = module.exports = Video;

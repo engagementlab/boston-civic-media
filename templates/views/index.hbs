@@ -4,7 +4,75 @@
 	<div class="row">
 		<!-- main start -->
 		<!-- ================ -->
-		<div class="main col-md-12 no-gutter">
+		<div class="main">
+			<div class="col-md-12 main-blurb">
+				<div class="main-mission-statement">{{missionStatements.[0]}}
+				{{!-- Connecting the dots between academia, government, and civil society organizations in Boston to advance civic media. --}}</div>
+				<div class="main-description">{{missionStatements.[1]}}
+				{{!-- Boston Civic Media is a faculty-led network that aims to advance the transdisciplinary domain of civic media research and pedagogy in the Greater Boston Area. This initiative shares knowledge, promotes engaged research, and builds relationships among academics, nonprofits, community-based organizations, government leaders, practitioners, and students. There are plenty of ways to get involved. --}}</div>
+			</div>
+		</div>
+		<div class="main-events">
+			<div class="featured-event">
+
+			</div>
+		</div>
+
+		<div class="row main-featured">
+
+			{{!-- {{#if lightning_talks}} --}}
+				<section class="col-md-6 featured-syllabi">
+					        {{jsonPrint this}}
+
+					{{!-- Glider.js structure --}}
+					<div id="featured_glider" class="glide">
+
+					    <div class="glide__arrows">
+					        <button class="glide__arrow prev" data-glide-dir="<"></button>
+					        <button class="glide__arrow next" data-glide-dir=">"></button>
+					    </div>
+
+					    <div class="glide__wrapper">
+					        <ul class="glide__track" style="margin-left:-40px">
+					        {{!-- {{jsonPrint this}} --}}
+								{{#each featured_lightning_talks}}
+									<li class="glide__slide">{{> index/featured_lightning_talk featured_lightning_talk=this}}</li>
+								{{/each}}
+					        </ul>
+					    </div>
+
+					</div>
+					
+				</section>
+			{{!-- {{/if}} --}}
+
+			{{#if featured_syllabi}}
+				<section class="col-md-6 featured-syllabi">
+
+					{{!-- Glider.js structure --}}
+					<div>
+						<h1>Featured Syllabi:</h1>
+					   {{!--  <div class="glide__arrows">
+					        <button class="glide__arrow prev" data-glide-dir="<"></button>
+					        <button class="glide__arrow next" data-glide-dir=">"></button>
+					    </div> --}}
+
+					    <div>
+					        <ul class="featured-list">
+					        	{{!-- {{jsonPrint this}} --}}
+								{{#each featured_syllabi}}
+									<li>{{> index/featured_syllabi featured_syllabi=this}}</li>
+
+								{{/each}}
+					        </ul>
+					    </div>
+
+					</div>
+					
+				</section>
+			{{/if}}		
+		</div>
+		{{!-- <div class="main col-md-12 no-gutter">
 
 			<section class="hidden-xs-sm">
 				<div class="banner clearfix fullscreen">
@@ -38,7 +106,7 @@
 						</div>
 					</div>
 				</div>
-			</section>
+			</section> --}}
 			<!-- banner end -->
 
 			{{!-- {{#if featured_content}}
@@ -57,29 +125,7 @@
 					</div>
 				</section>
 			{{/if}} --}}
-			{{#if syllabis}}
-				<section class="featured-projects">
-
-					{{!-- Glider.js structure --}}
-					<div id="featured_glider" class="glide">
-
-					    <div class="glide__arrows">
-					        <button class="glide__arrow prev" data-glide-dir="<"></button>
-					        <button class="glide__arrow next" data-glide-dir=">"></button>
-					    </div>
-
-					    <div class="glide__wrapper">
-					        <ul class="glide__track" style="margin-left:-40px">
-										{{#each syllabis}}
-											<li class="glide__slide">{{> index/syllabi syllabi=this}}</li>
-										{{/each}}
-					        </ul>
-					    </div>
-
-					</div>
-					
-				</section>
-			{{/if}}
+			
 		</div> <!-- .main -->
 	</div> <!-- .row -->
 </div> <!-- .container-fluid -->

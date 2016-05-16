@@ -1,5 +1,22 @@
 /* 4 Pages
 ----------------------------------------------------------------------------- */
+/* Partials
+---------------------------------- */
+
+.featured-syllabi {
+	color: $gray-dark;
+	text-align: center;
+	margin: 0 auto;
+	h3 {
+		color: $base-color-hover;
+	}
+}
+
+.featured-list {
+	list-style-type: none;
+	padding: 0;
+}
+
 /* Blog pages
 ---------------------------------- */
 .blogpost {

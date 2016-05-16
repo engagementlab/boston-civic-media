@@ -23,9 +23,9 @@ var Home = new keystone.List('Home',
 	{
 		label: 'Home Page',
 		singular: 'Home Page',
-		track: true,
+		track: true
 		// nodelete: true,
-		nocreate: true
+		// nocreate: true
 	});
 
 /**
@@ -33,11 +33,15 @@ var Home = new keystone.List('Home',
  * @main Home
  */
 Home.add({
-	name: { type: String, default: "Home Page", hidden: true, required: true, initial: true },
-	missionStatement: { type: Types.Textarea, label: "Mission Statement", initial: true, required: true },
-	description: { type: Types.Textarea, label: "Description", initial: true, required: true },
-	
-	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
+	// name: { type: String, default: "Home Page", hidden: true, required: true, initial: true },
+	// missionStatement: { type: Types.Textarea, label: "Mission Statement", initial: true },
+	// description: { type: Types.Textarea, label: "description", initial: true },
+	missionStatements: { type: Types.TextArray, label: "Mission Statement Array", initial: true }
+	// enabled: {
+ //      type: Types.Boolean,
+ //      label: 'Enabled'
+	//   },	
+	// createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
 });
 
 /**

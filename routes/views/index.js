@@ -15,7 +15,8 @@
 var keystone = require('keystone');
 
 // Include models here!
-//var Project = keystone.list('Project')
+var Home = keystone.list('Home');
+var LightningTalk = keystone.list('LightningTalk');
 var Syllabi = keystone.list('Syllabi');
 
 var _ = require('underscore');
@@ -35,22 +36,49 @@ exports = module.exports = function(req, res) {
     // Make any queries
     view.on('init', function(next) {
 
-        //locals.featured_content = [];
+        // locals.missionStatement = Home.model.find({missionStatement});
+        // locals.mainDescription = Home.model.find({description});
+        locals.missionStatements = [];
+        locals.featured_lighting_talks = [];
         locals.featured_syllabi = [];
 
         // EXAMPLE OF QUERY TO GET FEATURED STUFF
+
+        // This query gets mission statement array
+        // var missionStatement = Home.model.missionStatement;
+        var missionStatements = Home.model.findOne({}, "missionStatements", {
+            sort: {
+                'createdAt': -1
+            }
+        });
         // This query gets all featured projects
+        var lightingTalkQuery = LightningTalk.model.find({
+            'enabled': true,
+            'featured': true
+        });
+
         var syllabiQuery = Syllabi.model.find({
             'enabled': true,
             'featured': true
-        })
-        .populate('subdirectory');
+        });
 
         // Setup the locals to be used inside view
+        missionStatements.exec(function(err, result){
+            console.log (result)
+            if (err) throw err;
+            locals.missionStatements = result.missionStatements;
+        })
+
+        lightingTalkQuery.exec(function(err, result){
+            console.log ("hi")
+            if (err) throw err;
+            locals.featured_lighting_talks = result;
+            // console.log (featured_lighting_talk)
+        });
+
         syllabiQuery.exec(function(err, result) {
             if (err) throw err;
             locals.featured_syllabi = result;
-
             // NewsBox.model.find({}).exec(function(err, result) {
             //     locals.featured_content = result;
             //     next();
