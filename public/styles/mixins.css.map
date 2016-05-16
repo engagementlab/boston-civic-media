@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AA2OC,mBAAmB;ACjLpB,mBAAmB;AC1DnB,mBAAmB",
-"sources": ["mixins/vendor-prefixes.scss","mixins/gradients.scss","mixins/center-block.scss"],
-"names": [],
-"file": "mixins.css"
-}
