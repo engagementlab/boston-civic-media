@@ -25,15 +25,31 @@
 
 	{{!-- Show all syllabi below by default --}}
 	<div class="container pv-20">
-		<div class="row">
-			{{#if lightning_talks}}
-				{{!-- Show projects --}}
-				{{#each lightning_talk}}
-					<h3>{{title}}</h3>
-						<p>{{{description}}}</p>
-						<p><strong>{{{createdAt}}}</strong></p>
+		<div class="talks-feature">
+		{{#if featured_lightning_talks}}
 
-				{{/each}}
+				{{>index/featured_lightning_talks featured_lightning_talk=this}}
+			{{else}}
+				
+			<strong>Nothing Featured Here bruh</strong>
+		{{/if}}
+		</div>
+		<div class="talks-grid">
+			{{#if lightning_talk}}
+			<div class="row grid-space-10 team-row3">
+
+					{{#each lightning_talk}}
+
+						{{>index/lightning_talk lightning_talk=this}}
+					{{/each}}
+
+				</div>
+				{{!-- Show projects --}}
+				{{!-- {{#each lightning_talk}}
+
+					
+
+				{{/each}} --}}
 
 				{{else}}
 				

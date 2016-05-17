@@ -39,7 +39,7 @@ exports = module.exports = function(req, res) {
         // locals.missionStatement = Home.model.find({missionStatement});
         // locals.mainDescription = Home.model.find({description});
         locals.missionStatements = [];
-        locals.featured_lighting_talks = [];
+        locals.featured_lightning_talks = [];
         locals.featured_syllabi = [];
 
         // EXAMPLE OF QUERY TO GET FEATURED STUFF
@@ -52,7 +52,7 @@ exports = module.exports = function(req, res) {
             }
         });
         // This query gets all featured projects
-        var lightingTalkQuery = LightningTalk.model.find({
+        var lightningTalkQuery = LightningTalk.model.find({
             'enabled': true,
             'featured': true
         });
@@ -64,16 +64,16 @@ exports = module.exports = function(req, res) {
 
         // Setup the locals to be used inside view
         missionStatements.exec(function(err, result){
-            console.log (result)
+            // console.log (result)
             if (err) throw err;
             locals.missionStatements = result.missionStatements;
         })
 
-        lightingTalkQuery.exec(function(err, result){
-            console.log ("hi")
+        lightningTalkQuery.exec(function(err, result){
+            // console.log ("hi")
             if (err) throw err;
-            locals.featured_lighting_talks = result;
-            // console.log (featured_lighting_talk)
+            locals.featured_lightning_talks = result;
+            // console.log (featured_lightning_talk)
         });
 
         syllabiQuery.exec(function(err, result) {

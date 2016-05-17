@@ -33,29 +33,29 @@
 		{{#ifeq section 'home'}}
 			
 			// Load the video only on desktops
-			if (!jQuery.browser.mobile) {
+			// if (!jQuery.browser.mobile) {
 				
-				// Selects a random start time for the video
-				var vid = "https://player.vimeo.com/video/152725215?background=1&autoplay=1&loop=1#t=";
-				var times = [
-					"0m0s",
-					"0m22s",
-					"0m47s",
-					"1m14s",
-					"1m51s"
-				];
-				var time = times[Math.floor(Math.random()*times.length)];
-				var iframe = $('iframe');
+			// 	// Selects a random start time for the video
+			// 	var vid = "https://player.vimeo.com/video/152725215?background=1&autoplay=1&loop=1#t=";
+			// 	var times = [
+			// 		"0m0s",
+			// 		"0m22s",
+			// 		"0m47s",
+			// 		"1m14s",
+			// 		"1m51s"
+			// 	];
+			// 	var time = times[Math.floor(Math.random()*times.length)];
+			// 	var iframe = $('iframe');
 
-				// Embed video w/ start time
-				iframe.prop('src', vid + time);
+			// 	// Embed video w/ start time
+			// 	iframe.prop('src', vid + time);
 
-				// Show player only on froogaloop ready event
-				$f(iframe[0]).addEvent('ready', function() {
-					iframe.fadeTo(1000, 1);
-		    });
+			// 	// Show player only on froogaloop ready event
+			// 	$f(iframe[0]).addEvent('ready', function() {
+			// 		iframe.fadeTo(1000, 1);
+		 //    });
 
-			}
+			// }
 
 			// Initialize featured projects carousel
 			$("#featured_glider").glide({

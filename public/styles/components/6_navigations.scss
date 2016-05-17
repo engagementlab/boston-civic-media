@@ -744,6 +744,29 @@ header.full-width .animated.main-navigation .dropdown-menu .open .dropdown-menu.
 	}
 }
 
+.footer-outer {
+	width: 100%;
+	background-color: $gray-light;
+
+}
+
+.subscribe-footer {
+
+
+}
+
+.subscribe-button {
+	background-color: $base-color-hover;
+	color: $gray-lighter;
+	border-radius: 0px;
+	border: none;
+	padding: 5%;
+	margin: 1%;
+	min-height: 60px;
+	width: 30%;
+
+}
+
 /* 6.3 Offcanvas navigation
 ----------------------------------------------------------------------------- */
 .offcanvas {

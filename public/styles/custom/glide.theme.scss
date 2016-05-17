@@ -5,6 +5,8 @@
 
     &.active {
       min-height: 450px;
+      min-width: 100%;
+      
     }
   }
 }
@@ -132,6 +134,7 @@
 
 // Added to base styling
 .glide__slide {
+  width: 100%;
   img {
     margin-left: auto;
     margin-right: auto;

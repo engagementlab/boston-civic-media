@@ -49,6 +49,8 @@ exports = module.exports = function(app) {
 
     app.get('/about', routes.views.about);
     app.get('/syllabi', routes.views.syllabi);
+    app.get('/lightning_talk', routes.views.lightning_talk);
+
     // app.get('/people/:person', routes.views.person);
     
     // NOTE: To protect a route so that only admins can see it, use the requireUser middleware:

@@ -33,8 +33,8 @@ exports = module.exports = function(req, res) {
 
         queryLightningTalk.exec(function(err, resultLightningTalk) {
             locals.lightning_talk = resultLightningTalk;
-            console.log (locals.lightning_talk)
-            console.log ("hi")
+            // console.log (locals.lightning_talk)
+            // console.log ("hi")
 
             next(err);
         });

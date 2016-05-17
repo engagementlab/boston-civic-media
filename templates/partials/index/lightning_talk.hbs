@@ -8,19 +8,22 @@
 	* ==========
 	*/
 --}}
-<div class="banner border-clear" style="background-color: #FFCF18;">
-	<div class="container featured-project">
-		<div class="row">
-			<div class="col-sm-6 col-md-6 col-md-offset-1">
+{{!-- <div class="banner border-clear"> --}}
+	{{!-- <div class="container"> --}}
+		{{!-- <div class="row"> --}}
+			<div class="col-sm-4 col-md-4">
 				<div class="va-container">
 					<div class="va-align">
-						<h1><strong>Featured:</strong></h1>
-						<h1>{{lightning_talk.name}}</h1>
-						<p>{{lightning_talk.description}}</p>
+						<div class="lightning-talk-title"><h3>{{lightning_talk.title}}</h3></div>
 						{{!-- <p><a href="/projects/{{syllabi.subdirectory.key}}/{{project.key}}">Read more</a> --}}
+						<div class="embed-responsive embed-responsive-16by9">
+						  {{{lightning_talk.data.html}}}
+						  {{!-- {{jsonPrint featured_lightning_talk}} --}}
+						</div>
+						<p>{{lightning_talk.description}}</p>
 					</div> <!-- .va-align -->
 				</div> <!-- .va-container -->
 			</div> <!-- .col-sm-6 -->
-		</div> <!-- .row -->
+		{{!-- </div> <!-- .row -->
 	</div> <!-- .container -->
-</div> <!-- .banner -->
+</div> <!-- .banner --> --}}
