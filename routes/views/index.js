@@ -73,6 +73,10 @@ exports = module.exports = function(req, res) {
             // console.log ("hi")
             if (err) throw err;
             locals.featured_lightning_talks = result;
+            // LightningTalk.exec(function(err, result){
+            //     if (err) throw err;
+            //     locals.featured_lightning_talk = result;
+            // })
             // console.log (featured_lightning_talk)
         });
 

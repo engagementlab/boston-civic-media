@@ -2309,9 +2309,15 @@ h5 + .separator {
   padding: 0; }
 
 .featured-lightning-talks {
+  color: #7d7d7d;
   margin: 0 auto;
   position: relative;
   text-align: center; }
+  .featured-lightning-talks h3 {
+    color: #0c9ec7; }
+
+.lightning-talk-title {
+  color: #7d7d7d; }
 
 /* Blog pages
 ---------------------------------- */

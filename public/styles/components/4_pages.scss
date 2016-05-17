@@ -20,12 +20,17 @@
 .featured-lightning-talks {
 	// background-color: $gray-dark;
 	// padding: 5%;
+	color: $gray-dark;
 	margin: 0 auto;
 	position: relative;
 	text-align: center;
+	h3 {
+		color: $base-color-hover;
+	}
 }
 
 .lightning-talk-title {
+	color: $gray-dark;
 	// padding-top: 20%;
 
 }
