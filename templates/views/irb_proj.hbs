@@ -16,13 +16,14 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 pv-40">
+			{{!-- {{jsonPrint irb_proj}} --}}
 				{{!-- {{> page/name name="Vision"}} --}}
 				<div class="irb-description"> {{irb_proj.description}}</div>
 			</div>
 			<div class="col-md-4">
 				<div class="irb-image">
-				<img src="{{{cloudinaryUrl irb_proj.image width=200 height=200 crop='scale' quality=100}}}">
-			</div>
+					<img src="{{{cloudinaryUrl irb_proj.image width=300 height=300 crop='scale' quality=100}}}">
+				</div>
 			</div>
 		</div>
 	</div>

@@ -2324,6 +2324,9 @@ h5 + .separator {
 .lightning-talk-title {
   color: #7d7d7d; }
 
+.irb-image {
+  margin: 0 auto; }
+
 /* Blog pages
 ---------------------------------- */
 .blogpost {
@@ -5976,8 +5979,8 @@ header.full-width .animated.main-navigation .dropdown-menu .open .dropdown-menu.
     border-color: #000000; } }
 
 .footer-outer {
-  width: 100%;
-  background-color: #bababa; }
+  background-color: #bababa;
+  margin-top: 10px; }
 
 .subscribe-button {
   background-color: #0c9ec7;
