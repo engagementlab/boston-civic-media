@@ -26,17 +26,17 @@
 	{{!-- Show all syllabi below by default --}}
 	<div class="container pv-20">
 		<div class="row talks-feature">
-		{{!-- {{jsonPrint lightning_talk}} --}}
-		{{#if featured_lightning_talks}}
-			{{!-- {{#each lightning_talk}} --}}
-				{{!-- {{jsonPrint featured_lightning_talks.[0]}} --}}
-				{{> index/featured_lightning_talk featured_lightning_talk=this}}
-				
-			{{!-- {{/each}} --}}
-			{{else}}
-				
-			<strong>Nothing Featured Here bruh</strong>
-		{{/if}}
+
+		{{#each lightning_talk}}
+
+			{{#if featured}}
+				{{#if enabled}}
+					{{>index/lightning_talk lightning_talk=this}}
+				{{/if}}
+			{{/if}}
+			
+		{{/each}}
+		
 		</div>
 		<div class="talks-grid">
 			{{#if lightning_talk}}

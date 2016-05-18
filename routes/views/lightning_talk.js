@@ -33,25 +33,11 @@ exports = module.exports = function(req, res) {
             ['sortOrder', 'ascending']
         ]);
 
-        var featuredTalkQuery = LightningTalk.model.find({
-            'enabled': true,
-            'featured': true
-        });
-
         queryLightningTalk.exec(function(err, resultLightningTalk) {
             locals.lightning_talk = resultLightningTalk;
-            // console.log (locals.lightning_talk)
-            // console.log ("hi")
 
             next(err);
         });
-
-        featuredTalkQuery.exec(function(err, result){
-            console.log ("hi")
-            if (err) throw err;
-            locals.featured_lightning_talks = result;
-        });
-
 
     });
 
