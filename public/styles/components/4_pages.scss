@@ -29,6 +29,13 @@
 	}
 }
 
+.lightning-talk {
+	margin-bottom:1%;
+	margin-top:1%;
+	min-height: 350px;
+
+}
+
 .lightning-talk-title {
 	color: $gray-dark;
 	// padding-top: 20%;
@@ -482,6 +489,23 @@
 	}
 }
 
+.about-vision {
+	color: $base-color-hover;
+	font-weight: bold;
+	font-size: x-large;
+}
+
+.about-description {
+	color: $gray-dark;
+	font-size: large;
+	// font-weight: light;
+}
+
+.affiliate-image {
+	display: inline-block;
+	margin: 1%;
+	
+}
 /* Coming Soon Page
 ---------------------------------- */
 .is-countdown {

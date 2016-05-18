@@ -2316,6 +2316,11 @@ h5 + .separator {
   .featured-lightning-talks h3 {
     color: #0c9ec7; }
 
+.lightning-talk {
+  margin-bottom: 1%;
+  margin-top: 1%;
+  min-height: 350px; }
+
 .lightning-talk-title {
   color: #7d7d7d; }
 
@@ -2696,6 +2701,19 @@ h5 + .separator {
   .team-member {
     max-width: 480px;
     margin: 20px auto 20px !important; } }
+
+.about-vision {
+  color: #0c9ec7;
+  font-weight: bold;
+  font-size: x-large; }
+
+.about-description {
+  color: #7d7d7d;
+  font-size: large; }
+
+.affiliate-image {
+  display: inline-block;
+  margin: 1%; }
 
 /* Coming Soon Page
 ---------------------------------- */

@@ -27,9 +27,16 @@ exports = module.exports = function(req, res) {
 
     view.on('init', function(next) {
 
+        locals.featured_lightning_talks = [];
+
         var queryLightningTalk = LightningTalk.model.find({}).sort([
             ['sortOrder', 'ascending']
         ]);
+
+        var featuredTalkQuery = LightningTalk.model.find({
+            'enabled': true,
+            'featured': true
+        });
 
         queryLightningTalk.exec(function(err, resultLightningTalk) {
             locals.lightning_talk = resultLightningTalk;
@@ -38,6 +45,14 @@ exports = module.exports = function(req, res) {
 
             next(err);
         });
+
+        featuredTalkQuery.exec(function(err, result){
+            console.log ("hi")
+            if (err) throw err;
+            locals.featured_lightning_talks = result;
+        });
+
+
     });
 
     // Render the view

@@ -10,9 +10,9 @@ var Funder = new keystone.List('Funder',
 	{
 		label: 'Funder Page',
 		singular: 'Funder Page',
-		track: true,
+		track: true
 		// nodelete: true,
-		nocreate: true
+		// nocreate: true
 	});
 
 /**

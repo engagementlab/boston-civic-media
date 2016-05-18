@@ -30,13 +30,24 @@ exports = module.exports = function(req, res) {
 
     view.on('init', function(next) {
 
+        locals.affiliates = [];
+        locals.funders = [];
+        locals.teamMembers = [];
+
+
         var queryAbout = About.model.findOne({}, {}, {
             sort: {
                 'createdAt': -1
             }
         });
 
+        // var teamQuery = TeamMember.model.find({
+        //     locals.teamMember 
+        // });
+
         queryAbout.exec(function(err, resultAbout) {
+            if (err) throw err;
+
             locals.about = resultAbout;
             // console.log (locals.about)
 
@@ -45,8 +56,29 @@ exports = module.exports = function(req, res) {
             ]);
 
             queryAffiliates.exec(function(err, resultAffiliates) {
+                if (err) throw err;
                 locals.affiliates = resultAffiliates;
+                // next(err);
+            });
+
+            var queryTeam = TeamMember.model.find({}).sort([
+                ['sortOrder', 'ascending']
+            ]);
+
+            queryTeam.exec(function(err, resultTeamMembers) {
+                if (err) throw err;
+                locals.teamMembers = resultTeamMembers;
                 next(err);
+            });
+
+            var queryFunders = Funder.model.find({}).sort([
+                ['sortOrder', 'ascending']
+            ]);
+
+            queryFunders.exec(function(err, resultFunders) {
+                if (err) throw err;
+                locals.funders = resultFunders;
+                // next(err);
             });
         });
     });

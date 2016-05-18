@@ -17,9 +17,9 @@ var Affiliate = new keystone.List('Affiliate',
 	{
 		label: 'Affiliate Page',
 		singular: 'Affiliate Page',
-		track: true,
+		track: true
 		// nodelete: true,
-		nocreate: true
+		// nocreate: true
 	});
 
 /**

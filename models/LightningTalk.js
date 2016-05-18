@@ -22,9 +22,9 @@ var LightningTalk = new keystone.List('LightningTalk',
  * @main About
  */
 LightningTalk.add({
-	name: { type: Types.Name, label: "Talk Name", default: "Lightning Talks", hidden: true, required: true, initial: true },
+	name: { type: Types.Name, label: "Name", default: "Lightning Talks", hidden: true, required: true, initial: true },
+	title: { type: String, label: "Talk Title", required: true, initial: true, index: true },
 	description: { type: String, label: "Talk Description", required: true, initial: true, index: true },
-	footer: { type: String, label: "Talk Footer", required: true, initial: true, index: true },
 	enabled: {
       type: Types.Boolean,
       label: 'Enabled'
