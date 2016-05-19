@@ -29,7 +29,18 @@ var Affiliate = new keystone.List('Affiliate',
 Affiliate.add({
 	name: { type: Types.Name, label: 'Name', required: true, initial: true, index: true },
 	logo: { type: Types.CloudinaryImage, label: 'Logo', folder: 'site/logos' },
-	
+	comm: {
+      type: Types.Boolean,
+      label: 'Community Organization'
+ 	},
+  	univ: {
+      type: Types.Boolean,
+      label: 'University'
+  	},
+  	city: {
+      type: Types.Boolean,
+      label: 'City Agency'
+  	},
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
 });
 

@@ -2324,8 +2324,68 @@ h5 + .separator {
 .lightning-talk-title {
   color: #7d7d7d; }
 
+.glide {
+  text-align: center; }
+
+.glide__slide {
+  padding: 0; }
+
+.affiliates-wrap {
+  max-height: 600px; }
+
+.glide__wrapper {
+  max-height: 500px; }
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #7d7d7d;
+  border: 1px #7d7d7d;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  display: inline-block;
+  position: relative;
+  margin: 0 auto; }
+
+.affiliate-arrow {
+  color: #7d7d7d;
+  font-family: "FontAwesome";
+  font-size: 1em;
+  position: relative;
+  z-index: 2;
+  margin: 10px;
+  border: none;
+  display: inline-block;
+  background-color: transparent; }
+
+.affiliates-group {
+  margin: 0 auto; }
+
+.affiliates-track {
+  padding: 0;
+  list-style: none; }
+
+.affiliate-title {
+  color: #7d7d7d;
+  margin: 1%;
+  font-size: 1.5em; }
+
+.talk-description {
+  min-height: 100%;
+  padding: 1%; }
+
+.talks-grid {
+  background-color: #dadada;
+  padding-left: 5%;
+  padding-right: 5%; }
+
 .irb-image {
   margin: 0 auto; }
+
+.page-title {
+  font-family: "HalisGR-SBook", sans-serif;
+  margin: 2%; }
 
 /* Blog pages
 ---------------------------------- */
@@ -5979,18 +6039,20 @@ header.full-width .animated.main-navigation .dropdown-menu .open .dropdown-menu.
     border-color: #000000; } }
 
 .footer-outer {
-  background-color: #bababa;
-  margin-top: 10px; }
+  background-color: #bababa; }
 
 .subscribe-button {
   background-color: #0c9ec7;
   color: #dadada;
   border-radius: 0px;
   border: none;
-  padding: 5%;
+  padding: 1%;
+  padding-bottom: 5%;
+  padding-top: 5%;
   margin: 1%;
-  min-height: 60px;
-  width: 30%; }
+  min-height: 40px;
+  width: 30%;
+  font-size: 1.5em; }
 
 /* 6.3 Offcanvas navigation
 ----------------------------------------------------------------------------- */

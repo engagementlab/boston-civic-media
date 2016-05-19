@@ -62,7 +62,8 @@
 
 	        type: "carousel",
 	        autoplay: false,
-	        autoheight: true
+	        autoheight: false, 
+	        paddings: '0'
 
 	    });
 
@@ -70,6 +71,15 @@
 
 		{{!-- ABOUT Template Script --}}
 		{{#ifeq section 'about'}}
+
+			$("#affiliate_glider").glide({
+
+		        type: "carousel",
+		        autoplay: false,
+		        autoheight: true, 
+		        paddings: '0'
+
+		    });
 
 			var gliderDom = $("#partners_glider");
 			var gliderApi;

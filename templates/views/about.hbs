@@ -13,80 +13,38 @@
 --}}
 {{!-- {{jsonPrint this}} --}}
 <section class="section">
-	<div class="container">
-		{{!-- <div class="row pb-40">
-			<div class="col-md-12">
-				<div class="embed-responsive embed-responsive-16by9">
-					<iframe src="https://player.vimeo.com/video/154233162" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	<div class="banner border-clear light-gray-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 pv-40">
+					{{!-- {{> page/name name="Vision"}} --}}
+					<span class="about-vision"> {{about.vision}}</span>
+					<span class="about-description"> {{about.description}}</span>
 				</div>
 			</div>
-		</div> --}}
-		{{!-- <div class="row">
-			<div class="col-md-12">
-				{{> page/name name=about.vision}}
-				{{> about/first_paragraph text=about.vision}}
-			</div>
-		</div> --}}
-	</div>
-</section>
-
-<div class="banner border-clear light-gray-bg">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 pv-40">
-				{{!-- {{> page/name name="Vision"}} --}}
-				<span class="about-vision"> {{about.vision}}</span>
-				<span class="about-description"> {{about.description}}</span>
-			</div>
 		</div>
 	</div>
-</div>
 
-{{!-- <section class="about-section">
-	<!-- Process & Approach -->
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				{{> page/name name="About Us"}}
-				{{> about/first_paragraph text=about.process}}
-			</div>
-		</div>
-	</div>
-</section> --}}
-
-{{!-- <section class="about-section">
-	<!-- Collaborate -->
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				{{> page/name name="Collaborate + Work With Us"}}
-				{{> about/first_paragraph text=about.collaborate}}
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-8 col-md-6">
-			<div class="collaborators">
-				{{> about/collaborator title="Students and Researchers" text="The Engagement Lab is always looking for exemplary students. Emerson undergraduates can work on directed studies with lab faculty, or apply for lab assistantships. We are accepting applications for our 1-year MA program in Civic Media Art and Practice (CMAP), which is housed in the lab and offers the opportunity to work on projects with faculty and staff." icon="arrows"}}
-				{{!-- {{> about/collaborator title="Clients and Consulting" text="With full time faculty fellows and a new graduate program, there are plenty of educational opportunities" icon="bullhorn"}} 
-				{{> about/collaborator title="Community Based Partnerships (workshops)" text="The Engagement Lab is dedicated to fostering meaningful and mutual relationships with organizations or individuals committed to positive social impact. Partnership opportunities include: graduate studio courses, specific design or research projects, workshops or organizational capacity building." icon="briefcase"}}
+	<div class="banner border-clear light-gray-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 pv-40">
+					<iframe src="https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1nPAwCDRMHNc5fuhobxhqs-4zZ4lrM3glZemB_FBj7mc&font=Default&lang=en&initial_zoom=2&height=650" style="width:100%; height: 650px;"></iframe>
 				</div>
-			</div>
-			<div class="col-sm-4 col-md-6">
-				<img src="/images/logos/logo_color.png" alt="Engagement Lab Logo">
 			</div>
 		</div>
 	</div>
 </section>
- --}}
+
 <!-- People and Affiliates-->
-<section class="section clearfix partners{{!--  about-section --}}">
+<section class="section clearfix{{!--  about-section --}}">
 	<div class="container">
 
 		<div class="row">
 
 			<div class="col-md-12">
 				{{!-- {{> page/name name="Our Partners"}} --}}
-				<h1 class="page-title text-center">Team Members</h1>
+				<h1 class="about-title text-center">Team Members</h1>
 			</div>
 			{{#if teamMembers}}
 				{{#each teamMembers}}
@@ -103,16 +61,76 @@
 				<h1 class="page-title text-center">Affiliates</h1>
 			</div>
 			{{!-- Partner icons --}}
-			<div class="col-md-12 pv-20">
-				<div class="clients-container">
+
+				{{!-- <div class="clients-container">
 					<div class="clients">
 						{{#each affiliates}}
 							{{> about/affiliate_icon affiliate=this}}
 						{{/each}}
 					</div>
+				</div> --}}
+
+				<section class="col-md-12">
+					{{!-- Glider.js structure --}}
+					<div id="affiliate_glider" class="glide">
+
+					    {{!-- <div >
+					        <button data-glide-dir="=1">Community Organizations</button>
+					        <button data-glide-dir="=2">Universities</button>
+					        <button data-glide-dir="=3">City Agencies</button>
+					    </div> --}}
+
+					    <div class="glide__arrows" style="top: 0px;">
+					        <button class="affiliate-arrow prev" data-glide-dir="=1">Community Orgs</button>
+					        <div class="dot"></div>
+					        <button class="affiliate-arrow next" data-glide-dir="=2">Universities</button>
+					        <div class="dot"></div>
+					        <button class="affiliate-arrow next" data-glide-dir="=3">City Agencies</button>
+{{!-- 					        <div class="dot"></div>
+ --}}					    </div>
+
+					    <div class="affiliates-wrap" style="margin-bottom: 5%;">
+					        <ul class="affiliates-track glide__track">
+					        {{!-- {{jsonPrint this}} --}}
+								<li id="community" class="glide__slide" style="padding: 30px; width: 50%; overflow: hidden; ">	
+									{{!-- <div class="affiliate-title">Community Organizations</div>  --}}
+									<div class="affiliates-group"> 
+										{{#each affiliates}}
+											{{#if comm}}
+												{{>about/affiliate_icon affiliate=this}}
+											{{/if}}
+										{{/each}}
+									</div>
+								</li>
+
+								<li id="university" class="glide__slide" style=" padding: 30px; width: 50%; overflow: hidden; ">	
+									{{!-- <div class="affiliate-title">Universities</div> --}}
+									<div class="affiliates-group"> 
+										{{#each affiliates}}
+											{{#if univ}}
+												{{>about/affiliate_icon affiliate=this}}
+											{{/if}}
+										{{/each}}
+									</div>
+								</li>
+
+								<li id="city" class="glide__slide" style="margin: 0; padding: 30px; width: 50%; overflow: hidden; ">	
+									{{!-- <div class="affiliate-title">City Agencies</div> --}}
+									<div class="affiliates-group"> 
+										{{#each affiliates}}
+											{{#if city}}
+												{{>about/affiliate_icon affiliate=this}}
+											{{/if}}
+										{{/each}}
+									</div>
+								</li>
+					        </ul>
+					    </div>
+					</div>
 				</div>
-			</div>
+			</section>
 		</div>
+
 		<div class="row">
 
 			<div class="col-md-12">

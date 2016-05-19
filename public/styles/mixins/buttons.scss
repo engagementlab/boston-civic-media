@@ -3,6 +3,16 @@
 // Easily pump out default styles, as well as :hover, :focus, :active,
 // and disabled options for all buttons
 
+@mixin circle($width, $color) {
+  width: $width;
+  height: $width;
+  background: $color;
+  border: 1px $color;
+  -webkit-border-radius: $width/2;
+     -moz-border-radius: $width/2;
+          border-radius: $width/2;
+}
+
 @mixin buttonc-variant($color, $background, $border) {
   color: $color;
   background-color: $background;

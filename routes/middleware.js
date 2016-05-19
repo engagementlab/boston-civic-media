@@ -41,6 +41,11 @@ exports.initLocals = function(req, res, next) {
         href: '/syllabi'
     },
     {
+        label: 'CIRB',
+        key: 'irb_proj',
+        href: '/irb_proj'
+    },
+    {
         label: 'Events',
         key: 'events',
         href: '/events'

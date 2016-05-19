@@ -1,0 +1,41 @@
+{{!< default}}
+{{!-- 
+/**
+ * Boston Civic Media Website
+ * Developed by Engagement Lab, 2016
+ * ==============
+ * 
+ * Events Directory Page Template 
+ * - Use {{jsonPrint project}} to print entire json...DEBUG ONLY
+ * ==========
+ */
+--}}
+
+<!-- DIRECTORY START -->
+<!-- ================ -->
+<section class="main-container padding-bottom-clear">
+	<div class="container">
+		<div class="main">
+		<h3 class="page-title">{{this_event.title}}</h3>
+			{{!-- <h1 class="page-title"><strong>Single Event</strong></h1> --}}
+			{{!-- {{> page/lead}} --}}
+		</div>
+	</div>
+
+	{{!-- We'll need some filtering dropdowns here --}}
+
+	{{!-- Show all syllabi below by default --}}
+	<div class="container pv-20">
+		<div class="row">
+		{{!-- {{jsonPrint this_event}} --}}
+			<div class="col-md-8">
+				
+				<p>{{this_event.description}}</p>
+			</div>
+			<div class="col-md-4">
+				<img src="{{{cloudinaryUrl this_event.image width=150 height=150 crop='scale' quality=100}}}" alt="{{this_event.name}}" class="photo" style="margin:0 auto;">
+			</div>
+		
+		</div>
+		
+</section>

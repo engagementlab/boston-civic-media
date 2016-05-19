@@ -746,7 +746,6 @@ header.full-width .animated.main-navigation .dropdown-menu .open .dropdown-menu.
 
 .footer-outer {
 	background-color: $gray-light;
-	margin-top: 10px;
 }
 
 .subscribe-footer {
@@ -759,11 +758,13 @@ header.full-width .animated.main-navigation .dropdown-menu .open .dropdown-menu.
 	color: $gray-lighter;
 	border-radius: 0px;
 	border: none;
-	padding: 5%;
+	padding: 1%;
+	padding-bottom:5%;
+	padding-top:5%;
 	margin: 1%;
-	min-height: 60px;
+	min-height: 40px;
 	width: 30%;
-
+	font-size:1.5em;
 }
 
 /* 6.3 Offcanvas navigation

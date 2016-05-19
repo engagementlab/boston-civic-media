@@ -1,0 +1,72 @@
+{{!< default}}
+{{!-- 
+/**
+ * Boston Civic Media Website
+ * Developed by Engagement Lab, 2016
+ * ==============
+ * 
+ * Events Directory Page Template 
+ * - Use {{jsonPrint project}} to print entire json...DEBUG ONLY
+ * ==========
+ */
+--}}
+
+<!-- DIRECTORY START -->
+<!-- ================ -->
+<section class="">
+	<div class="container">
+		<div class="main">
+			<h1 class="page-title"><strong>Events</strong></h1>
+			{{!-- {{> page/lead}} --}}
+		</div>
+	</div>
+
+	{{!-- We'll need some filtering dropdowns here --}}
+
+	{{!-- Show all syllabi below by default --}}
+	<div class="">
+		<div class="row events-feature">
+			<div class="col-md-12">
+				<h1 style="padding-left: 5%;">Featured Event</h1>
+
+
+			{{#each events}}
+
+				{{#if featured}}
+					{{#unless past}}
+						{{>index/featured_event event=this}}
+					{{/unless}}
+				{{/if}}
+				
+			{{/each}}
+			
+			</div>
+		</div>
+
+		<div class="talks-grid">
+			{{!-- {{#if lightning_talk}} --}}
+			<div class="row grid-space-10 team-row3">
+			<h1>Past Events</h1>
+
+					{{#each events}}
+						{{#if past}}
+							{{>index/recent_event event=this}}
+						{{/if}}
+					{{/each}}
+
+				</div>
+				{{!-- Show projects --}}
+				{{!-- {{#each lightning_talk}}
+
+					
+
+				{{/each}} --}}
+
+				{{!-- {{else}} --}}
+				
+				{{!-- <strong>No lightning talks!! Fiddlesticks!</strong> --}}
+			
+			{{!-- {{/if}} --}}
+		</div>
+	</div>
+</section>

@@ -42,8 +42,77 @@
 
 }
 
+.glide {
+	text-align: center;
+}
+
+.glide__slide {
+	padding: 0;
+}
+
+.affiliates-wrap {
+	max-height: 600px;
+}
+
+.glide__wrapper {
+	max-height: 500px;
+}
+
+.dot {
+	@include circle(10px, $gray-dark);
+	display: inline-block;
+	position: relative;
+	margin: 0 auto;
+
+}
+
+.affiliate-arrow {
+	color: $gray-dark;
+	font-family: "FontAwesome";
+    font-size: 1em;
+    position: relative;
+    z-index: 2;
+    margin: 10px;
+    border: none;
+    display: inline-block;
+    background-color: transparent;
+
+}
+
+.affiliates-group {
+	margin: 0 auto;
+}
+
+.affiliates-track{
+	padding: 0;
+	list-style:none;
+}
+
+.affiliate-title {
+	color: $gray-dark;
+	margin: 1%;
+	font-size: 1.5em;
+}
+
+.talk-description {
+	min-height: 100%;
+	padding: 1%;
+
+}
+
+.talks-grid {
+	background-color: $gray-lighter;
+	padding-left:5%;
+	padding-right:5%;
+}
+
 .irb-image {
 	margin: 0 auto;
+}
+
+.page-title {
+	font-family: "HalisGR-SBook", sans-serif;
+	margin: 2%;
 }
 
 /* Blog pages
