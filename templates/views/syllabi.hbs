@@ -13,7 +13,7 @@
 
 <!-- DIRECTORY START -->
 <!-- ================ -->
-<section class="main-container padding-bottom-clear">
+<section class="section main-container padding-bottom-clear">
 	<div class="container">
 		<div class="main">
 			<h1 class="page-title"><strong>Syllabi</strong></h1>
@@ -23,15 +23,40 @@
 
 	{{!-- We'll need some filtering dropdowns here --}}
 
+
 	{{!-- Show all syllabi below by default --}}
 	<div class="container pv-20">
-		<div class="row">
+		<div class="button-group" data-filter-group="institution">
+		  <button data-filter="">any</button>
+		  {{jsonPrint filters}}
+
+		  {{#each filters.disciplines}}
+		  <button data-filter="{{label}}">{{name}}</button>
+		  {{!-- <button data-filter=".emersonCollege">Emerson College</button> --}}
+		  {{!-- <button data-filter=".mit">MIT</button> --}}
+		  {{/each}}
+		</div>
+
+		<div class="button-group" data-filter-group="discipline">
+		  <button data-filter="">any</button>
+		  {{!-- {{#each syllabi.institution}} --}}
+			  {{!-- <button data-filter="{{institution.label}}">{{institution.name}}</button> --}}
+		  <button data-filter=".civicMedia">Civic Media</button>
+		  <button data-filter=".socialJustice">Social Justice</button>
+		  {{!-- {{/each}} --}}
+		</div>
+		<div class="syllabi row">
 			{{#if syllabi}}
 				{{!-- Show projects --}}
 				{{#each syllabi}}
-					<h3>{{title}}</h3>
+				<div class="syllabi-item {{institution.label}} {{discipline.label}}">
+					<li class=""{{!-- data-institution="{{{institution.name}}}" data-discipline="{{{discipline.name}}}" --}}>
+					{{!-- {{{jsonPrint this}}} --}}
+						<h3>{{title}}</h3>
 						<p>{{{description}}}</p>
 						<p><strong>{{{createdAt}}}</strong></p>
+					</li>
+				</div>
 
 				{{/each}}
 

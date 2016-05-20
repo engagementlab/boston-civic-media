@@ -1,5 +1,6 @@
 var keystone = require('keystone');
 var Types = keystone.Field.Types;
+var Filter = require('./Filter')
 
 /**
  * Syllabi model
@@ -10,7 +11,9 @@ var Syllabi = new keystone.List('Syllabi',
 	{
 		label: 'Syllabi Page',
 		singular: 'Syllabi Page',
-		track: true
+		track: true, 
+		sortable: true,
+		sortContent: 'Filter:category'
 		// nodelete: true,
 		// nocreate: true
 	});
@@ -21,8 +24,30 @@ var Syllabi = new keystone.List('Syllabi',
  */
 Syllabi.add({
 	name: { type: Types.Name, label: 'Name', required: true, initial: true, index: true },
-	title: { type: Types.Textarea, label: "Title", required: true, initial: true },
+	institution: {
+        type: Types.Relationship,
+        filters: {
+            category: 'Institution'
+        },
+        // many: true
+        ref: 'Filter',
+        required: true,
+        initial: true
+    },
+    discipline: {
+        type: Types.Relationship,
+        filters: {
+            category: 'Discipline'
+        },
+        // many: true
+        ref: 'Filter',
+        required: true,
+        initial: true
+    },
+    title: { type: Types.Textarea, label: "Title", required: true, initial: true },
 	description: { type: Types.Textarea, label: "Description", required: true, initial: true },
+	// discipline: { type: Types.Select, options: 'Social Justice, Storytelling, Urbanism, Civic Media, Media Literacy, Citizenship, Codesign, Data Visualization, Policy, Games, Data Science, Big Data, Civic Engagement, Design, Youth, Design Research, Digital Media, Democracy, Art, Assistive, Health'},
+	// institution: { type: Types.Select, options: 'Emerson College, MIT, Harvard University, Northeastern, Olin, Salem State University, UMass Boston, Wentworth', default: 'Emerson College' },
 	file: {
 		type: Types.AzureFile,
 		label: 'File',

@@ -10,9 +10,9 @@ var GettingInvolved = new keystone.List('GettingInvolved',
 	{
 		label: 'Getting Involved Page',
 		singular: 'Getting Involved Page',
-		track: true,
+		track: true
 		// nodelete: true,
-		nocreate: true
+		// nocreate: true
 	});
 
 /**
@@ -35,7 +35,8 @@ GettingInvolved.add({
         blurb: {
             type: Types.TextArray,
             label: 'Blurb'
-        }
+        },
+        edImage: { type: Types.CloudinaryImage, label: 'Image', folder: 'site/team' }
   }, 
 
   'Comm Orgs', {
@@ -49,7 +50,8 @@ GettingInvolved.add({
         blurb: {
             type: Types.TextArray,
             label: 'Blurb'
-        }
+        },
+        orgsImage: { type: Types.CloudinaryImage, label: 'Image', folder: 'site/team' }
   }, 
 
   'Researchers', {
@@ -63,7 +65,8 @@ GettingInvolved.add({
         blurb: {
             type: Types.TextArray,
             label: 'Blurb'
-        }
+        },
+        resImage: { type: Types.CloudinaryImage, label: 'Image', folder: 'site/team' }
   }, 
 
   'Students', {
@@ -77,7 +80,8 @@ GettingInvolved.add({
         blurb: {
             type: Types.TextArray,
             label: 'Blurb'
-        }
+        },
+        studImage: { type: Types.CloudinaryImage, label: 'Image', folder: 'site/team' }
   });
 
 /**

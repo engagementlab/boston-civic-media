@@ -1,5 +1,12 @@
 /* 2 Layout
 ----------------------------------------------------------------------------- */
+
+.separator {
+	height:1px;
+	background: $base-color-hover;
+	border-bottom: 1px solid $base-color-hover;
+}
+
 .main-blurb {
 	min-height: 100%;
 	width: 100%;

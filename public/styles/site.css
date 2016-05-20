@@ -1168,6 +1168,11 @@ tbody {
 
 /* 2 Layout
 ----------------------------------------------------------------------------- */
+.separator {
+  height: 1px;
+  background: #0c9ec7;
+  border-bottom: 1px solid #0c9ec7; }
+
 .main-blurb {
   min-height: 100%;
   width: 100%;
@@ -2376,7 +2381,6 @@ h5 + .separator {
   padding: 1%; }
 
 .talks-grid {
-  background-color: #dadada;
   padding-left: 5%;
   padding-right: 5%; }
 
