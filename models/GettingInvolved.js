@@ -26,63 +26,63 @@ GettingInvolved.add({
 
 	'Educators', {
 
-        description: {
+        edDescription: {
             type: String,
             label: 'Description',
             initial: true,
             required: true
         },
-        blurb: {
+        edBlurb: {
             type: Types.TextArray,
             label: 'Blurb'
         },
-        edImage: { type: Types.CloudinaryImage, label: 'Image', folder: 'site/team' }
+        // edImage: { type: Types.CloudinaryImage, label: 'Image', folder: 'site/team' }
   }, 
 
   'Comm Orgs', {
 
-        description: {
+        orgsDescription: {
             type: String,
             label: 'Description',
             initial: true,
             required: true
         },
-        blurb: {
+        orgsBlurb: {
             type: Types.TextArray,
             label: 'Blurb'
         },
-        orgsImage: { type: Types.CloudinaryImage, label: 'Image', folder: 'site/team' }
+        // orgsImage: { type: Types.CloudinaryImage, label: 'Image', folder: 'site/team' }
   }, 
 
   'Researchers', {
 
-        description: {
+        resDescription: {
             type: String,
             label: 'Description',
             initial: true,
             required: true
         },
-        blurb: {
+        resBlurb: {
             type: Types.TextArray,
             label: 'Blurb'
         },
-        resImage: { type: Types.CloudinaryImage, label: 'Image', folder: 'site/team' }
+        // resImage: { type: Types.CloudinaryImage, label: 'Image', folder: 'site/team' }
   }, 
 
   'Students', {
 
-        description: {
+        studDescription: {
             type: String,
             label: 'Description',
             initial: true,
             required: true
         },
-        blurb: {
+        studBlurb: {
             type: Types.TextArray,
             label: 'Blurb'
         },
-        studImage: { type: Types.CloudinaryImage, label: 'Image', folder: 'site/team' }
-  });
+        // studImage: { type: Types.CloudinaryImage, label: 'Image', folder: 'site/team' }
+    });
 
 /**
  * Model Registration

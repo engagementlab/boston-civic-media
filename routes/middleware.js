@@ -33,7 +33,7 @@ exports.initLocals = function(req, res, next) {
     {
         label: 'Get Involved',
         key: 'get-involved',
-        href: '/get-involved'
+        href: '/getting_involved'
     },
     {
         label: 'Syllabi',

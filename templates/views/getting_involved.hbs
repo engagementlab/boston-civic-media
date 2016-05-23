@@ -14,7 +14,7 @@
 {{!-- {{jsonPrint this}} --}}
 <div class="banner border-clear light-gray-bg">
 	<div class="container">
-		<div class="row involved-images">
+		{{!-- <div class="row involved-images">
 			<div class="col-md-3">
 				<img src="{{{cloudinaryUrl getting_involved.edImage width=300 height=300 crop='scale' quality=100}}}">
 			</div>
@@ -27,26 +27,61 @@
 			<div class="col-md-3">
 				<img src="{{{cloudinaryUrl getting_involved.studImage width=300 height=300 crop='scale' quality=100}}}">
 			</div>
-		</div>
+		</div> --}} 
 
 		<div class="row">
 			<div class="educators">
-				{{!-- <h4>{{getting_involved.}} --}}
+				<h4>Educators</h4>
+				<p>{{getting_involved.edDescription}}</p>
+				<ul>
+				{{#each getting_involved.edBlurb}}
+					<li>{{{this}}}</li>
+				{{/each}}
+				</ul>
 			</div>
 		</div>
 		<div class="row">
 			<div class="researchers">
-
+				<h4>Researchers</h4>
+				<p>{{getting_involved.resDescription}}</p>
+				<ul>
+				{{#each getting_involved.resBlurb}}
+					<li>{{{this}}}</li>
+				{{/each}}
+				</ul>
 			</div>
 		</div>
 		<div class="row">
 			<div class="organizations">
-
+				<h4>Organizations</h4>
+				<p>{{getting_involved.orgsDescription}}</p>
+				<ul>
+				{{#each getting_involved.orgsBlurb}}
+					<li>{{{this}}}</li>
+				{{/each}}
+				</ul>
 			</div>
 		</div>
 		<div class="row">
 			<div class="students">
-
+				<h4>Students</h4>
+				<p>{{getting_involved.studDescription}}</p>
+				<ul>
+				{{#each getting_involved.studBlurb}}
+					<li>{{{this}}}</li>
+				{{/each}}
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="listserv">
+				<h4>Listserv Guidelines</h4>
+				{{!-- <p>{{getting_involved.guidelines}}</p> --}}
+				<ul>
+				{{#each guidelines}}
+					<li>{{>about/guideline guideline=this}}</li>
+				{{/each}}
+				</ul>
 			</div>
 		</div>
 	</div>
