@@ -40,17 +40,33 @@ exports = module.exports = function(req, res) {
         querySyllabi.exec(function(err, resultSyllabi) {
 
             // var institutions = resultSyllabi.institution;
-            queryFilters.exec(function(err, resultFilters){
-                // console.log (err)
-                locals.filters = resultFilters;
-                // locals.disciplines = resultFilters.discipline;
-            });
-            // locals.institutions = resultSyllabi.institution;
-            // console.log (locals.institutions);
-            locals.syllabi = resultSyllabi;
-            // console.log (locals.syllabi);
+            queryFilters.exec(function(err, resultFilters) {
 
-            next(err);
+                locals.syllabi = resultSyllabi;
+            
+                // Chain the result for filters and map them into arrays of labels after grouping them into sub-objects
+                // http://underscorejs.org/#groupBy
+                // http://underscorejs.org/#map
+                locals.filters =
+                _
+                .chain(resultFilters)
+                .groupBy('category')
+                .map(function(filter, name) {
+                    return {
+                        label: name,
+                        values: filter
+                                .map(function(category, catKey) { 
+                                    var key = category.key;
+                                    var name = category.name; 
+                                    return { "key": key,  "name": name }; 
+                                })
+                    };
+                })
+                .value();
+
+                next(err);
+            });
+
         });
     });
 

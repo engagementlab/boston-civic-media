@@ -36,7 +36,7 @@ GettingInvolved.add({
             type: Types.TextArray,
             label: 'Blurb'
         },
-        edImage: { type: Types.CloudinaryImage, label: 'Image', folder: 'site/team' }
+        image: { type: Types.CloudinaryImage, label: 'Image', folder: 'site/team' }
   }, 
 
   'Comm Orgs', {
