@@ -14,8 +14,8 @@ appStart = function(app) {
 module.exports = function(frameworkDir) {
 
 	// Add main dependencies and EL web framework dependencies
-	require('app-module-path').addPath(__dirname + '/node_modules'); 
-	require('app-module-path').addPath(frameworkDir + '/node_modules'); 
+	// require('app-module-path').addPath(__dirname + '/node_modules'); 
+	// require('app-module-path').addPath(frameworkDir + '/node_modules'); 
 	
 	// Obtain app root path and set as keystone's module root
 	var appRootPath = require('app-root-path').path;
