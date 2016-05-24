@@ -90,7 +90,10 @@ exports = module.exports = function(req, res) {
         lightningTalkQuery.exec(function(err, result){
             // console.log ("hi")
             if (err) throw err;
-            locals.featured_lightning_talks = result;
+
+            if(result !== null)
+                locals.featured_lightning_talks = result;
+            
             // LightningTalk.exec(function(err, result){
             //     if (err) throw err;
             //     locals.featured_lightning_talk = result;
@@ -100,7 +103,10 @@ exports = module.exports = function(req, res) {
 
         syllabiQuery.exec(function(err, result) {
             if (err) throw err;
-            locals.featured_syllabi = result;
+            
+            if(result !== null)
+                locals.featured_syllabi = result;
+            
             // NewsBox.model.find({}).exec(function(err, result) {
             //     locals.featured_content = result;
             //     next();

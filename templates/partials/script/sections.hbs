@@ -32,31 +32,6 @@
 		{{!-- INDEX Template Script --}}
 		{{#ifeq section 'home'}}
 			
-			// Load the video only on desktops
-			// if (!jQuery.browser.mobile) {
-				
-			// 	// Selects a random start time for the video
-			// 	var vid = "https://player.vimeo.com/video/152725215?background=1&autoplay=1&loop=1#t=";
-			// 	var times = [
-			// 		"0m0s",
-			// 		"0m22s",
-			// 		"0m47s",
-			// 		"1m14s",
-			// 		"1m51s"
-			// 	];
-			// 	var time = times[Math.floor(Math.random()*times.length)];
-			// 	var iframe = $('iframe');
-
-			// 	// Embed video w/ start time
-			// 	iframe.prop('src', vid + time);
-
-			// 	// Show player only on froogaloop ready event
-			// 	$f(iframe[0]).addEvent('ready', function() {
-			// 		iframe.fadeTo(1000, 1);
-		 //    });
-
-			// }
-
 			// Initialize featured projects carousel
 			$("#featured_glider").glide({
 
@@ -169,60 +144,34 @@
 
 		{{/ifeq}}
 
-		{{!-- PROJECT Template Script --}}
-		{{#ifeq key 'project'}}
 
-			var gliderDom = $("#project_images_glider");
+		{{!-- SYLLABI Template Script --}}
+		{{#ifeq section 'syllabi'}}
 
-			imageLoaded(gliderDom, function() {
+			var container = $('#syllabi-content');
+			container.isotope({
+		    itemSelector: '.syllabi-item'
+		  });
 
-				// Initialize project images carousel
-				// - Do autoheight for desktop only
-				gliderDom.glide({
-		        type: "carousel",
-		        autoplay: false,
-		        autoheight: !jQuery.browser.mobile
-		    });
-			
-			});
-		
-		{{/ifeq}}
+	    $('select').change(function(){
+		    var selector = $(this);
+		    
+		    // store filter value in object
+		    var group = selector.attr('data-filter-group');
+		    filters[group] = selector.find(':selected').attr('data-filter-value');
+		    
+		    // convert object into array
+		    var isoFilters = [];
+		    for ( var prop in filters ) {
+		      isoFilters.push( filters[ prop ] )
+		    }
+		    			    
+		    var filterStr = isoFilters.join('');
+		    container.isotope({ filter: filterStr });
+		    
+		    return false;
+		  });
 
-		{{!-- CPI Registration Template Script --}}
-		{{#ifeq section 'commmunityplanit:boston'}}
-
-		$('.main-navigation').hide();
-
-		$('#submit_btn').click(function(event) {
-	
-			$("#register_form").validate({
-				
-				submitHandler: function() {
-
-				  var data = $("#register_form :input[type!='hidden']").serializeArray();
-					
-					$.ajax({
-					  type: "POST",
-					  url: "/api/cpi/register/",
-					  data: data,
-					  success: function(msg) {
-					  	$('#form_container').fadeOut(500, function() {
-					  		
-						  	$('#done_container').hide().fadeIn(500);
-					  	
-					  	});
-					  },
-					  error: function(XMLHttpRequest, textStatus, errorThrown) {
-					  	$('#form_errors').show();
-					  }
-					});
-
-				}
-
-			});
-
-		});
-		
 		{{/ifeq}}
 
 	})

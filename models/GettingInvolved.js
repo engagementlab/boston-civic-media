@@ -37,6 +37,7 @@ GettingInvolved.add({
             label: 'Blurb'
         },
         // edImage: { type: Types.CloudinaryImage, label: 'Image', folder: 'site/team' }
+
   }, 
 
   'Comm Orgs', {

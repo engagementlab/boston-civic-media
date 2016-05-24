@@ -2,5 +2,6 @@
 	"name": "Boston Civic Media",
 	"database": "boston-civic-media",
 	"subdomain": "bcm",
+	"db_prefix": "bcm",
 	"allowed_domains": ["www.bostoncivic.media"]
 }
