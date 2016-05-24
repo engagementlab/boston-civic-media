@@ -26,20 +26,9 @@
 
 	{{!-- Show all syllabi below by default --}}
 	<div class="container pv-20">
-	{{jsonPrint this}}
 		<div class="row">
-		{{!-- {{jsonPrint this_event}} --}}
 			<div class="col-md-4">
-			{{!-- {{jsonPrint this_syllabus}} --}}
-
-			{{!-- {{#each filters}}
-		 	<p>{{label}}:
-				  <ul>{{#each values}}
-				  	<li><strong>{{name}}</strong></li>
-				  {{/each}}</ul>
-				</p>
-	  {{/each}} --}}
-			{{!-- {{jsonPrint filters}} --}}
+			
 				<p><strong>Institution: {{this_syllabus.institution.name}}</strong></p>
 				<p><strong>Discipline: {{this_syllabus.discipline.name}}</strong></p>
 				<p><strong>Discipline: {{#each this_syllabus.discipline}} {{this.name}} {{/each}}</strong></p>
