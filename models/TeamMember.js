@@ -21,7 +21,7 @@ var slack = keystone.get('slack');
  */
 var TeamMember = new keystone.List('TeamMember', 
 	{
-		label: 'Team Member',
+		label: 'Team Members',
 		singular: 'Team Member',
 		sortable: true,
 		track: true,

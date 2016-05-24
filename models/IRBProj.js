@@ -21,8 +21,8 @@ var Types = keystone.Field.Types;
  */
 var IRBProj = new keystone.List('IRBProj', 
 	{
-		label: 'IRBProj Page',
-		singular: 'IRBProj Page',
+		label: 'IRB Project',
+		singular: 'IRB Project',
 		track: true
 		// nodelete: true,
 		// nocreate: true

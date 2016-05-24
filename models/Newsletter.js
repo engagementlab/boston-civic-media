@@ -21,8 +21,8 @@ var Types = keystone.Field.Types;
  */
 var Newsletter = new keystone.List('Newsletter', 
 	{
-		label: 'Newsletter Page',
-		singular: 'Newsletter Page',
+		label: 'Newsletter',
+		singular: 'Newsletter',
 		track: true,
 		// nodelete: true,
 		nocreate: true
