@@ -33,20 +33,14 @@ var Home = new keystone.List('Home',
  * @main Home
  */
 Home.add({
-	// name: { type: String, default: "Home Page", hidden: true, required: true, initial: true },
-	// missionStatement: { type: Types.Textarea, label: "Mission Statement", initial: true },
 	beckyBanner: { type: Types.CloudinaryImage, label: 'Becky Banner', folder: 'site/logos' },
-	missionStatements: { type: Types.TextArray, label: "Mission Statement Array", initial: true }
-	// enabled: {
- //      type: Types.Boolean,
- //      label: 'Enabled'
-	//   },	
-	// createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
+	missionStatements: { type: Types.TextArray, label: "Mission Statement Array", initial: true },
+	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
 });
 
 /**
  * Model Registration
  */
 Home.defaultSort = '-createdAt';
-Home.defaultColumns = 'name, updatedAt';
+Home.defaultColumns = 'updatedAt';
 Home.register();
