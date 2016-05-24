@@ -1,0 +1,61 @@
+{{!< default}}
+{{!-- 
+/**
+ * Boston Civic Media Website
+ * Developed by Engagement Lab, 2016
+ * ==============
+ * 
+ * Events Directory Page Template 
+ * - Use {{jsonPrint project}} to print entire json...DEBUG ONLY
+ * ==========
+ */
+--}}
+
+<!-- DIRECTORY START -->
+<!-- ================ -->
+<section class="main-container padding-bottom-clear">
+	<div class="container">
+		<div class="main">
+		<h3 class="page-title">{{this_syllabus.title}}</h3>
+			<h5>{{this_syllabus.author}}</h5>
+			{{!-- {{> page/lead}} --}}
+		</div>
+	</div>
+
+	{{!-- We'll need some filtering dropdowns here --}}
+
+	{{!-- Show all syllabi below by default --}}
+	<div class="container pv-20">
+	{{jsonPrint this}}
+		<div class="row">
+		{{!-- {{jsonPrint this_event}} --}}
+			<div class="col-md-4">
+			{{!-- {{jsonPrint this_syllabus}} --}}
+
+			{{!-- {{#each filters}}
+		 	<p>{{label}}:
+				  <ul>{{#each values}}
+				  	<li><strong>{{name}}</strong></li>
+				  {{/each}}</ul>
+				</p>
+	  {{/each}} --}}
+			{{!-- {{jsonPrint filters}} --}}
+				<p><strong>Institution: {{this_syllabus.institution.name}}</strong></p>
+				<p><strong>Discipline: {{this_syllabus.discipline.name}}</strong></p>
+				<p><strong>Discipline: {{#each this_syllabus.discipline}} {{this.name}} {{/each}}</strong></p>
+			</div>
+			<div class="col-md-8">
+				
+				<p>{{this_syllabus.description}}</p>
+			</div>
+
+			
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<button href="{{{file.url}}}" class="syllabus-button">Download</button>
+			</div>
+		</div>
+	</div>
+		
+</section>

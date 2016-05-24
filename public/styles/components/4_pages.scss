@@ -46,6 +46,41 @@
 
 }
 
+.talks-header {
+	text-align: center;
+	width: 50%;
+	margin: 0 auto;
+}
+
+.talks-buttons {
+	text-align: center;
+	// margin-top: 5%;
+	.button {
+		display: block;
+		width: 100%;
+		background: $base-color;
+		border: none;
+		color: $gray-lighter;
+		height: 60px;
+		margin: 10px 0;
+	}
+	.button:active,
+	.button:focus,
+	.button.active {
+		background-image: none;
+		outline: 0;
+		-webkit-box-shadow: none;
+        box-shadow: none;
+	}
+	.button:hover {
+		background: $base-color-hover;
+	}
+	.is-checked {
+		background: $base-color-hover;
+		// background: transparent;
+	}
+}
+
 .glide {
 	text-align: center;
 }
@@ -54,8 +89,39 @@
 	padding: 0;
 }
 
-.affiliates-wrap {
-	max-height: 600px;
+.affiliate-content {
+	margin: 0 auto;
+}
+
+.affiliate-buttons {
+	text-align: center;
+	margin-bottom: 3%;
+	.button {
+		margin: 1%;
+		background: transparent;
+		color: $gray-dark;
+		border: none;
+	}
+	.button:active,
+	.button:focus,
+	.button.active {
+		background-image: none;
+		outline: 0;
+		-webkit-box-shadow: none;
+        box-shadow: none;
+	}
+	.button:hover {
+		color: $base-color;
+	}
+	.is-checked {
+		color: $base-color;
+		background: transparent;
+	}
+}
+
+.affiliate-item {
+	text-align: center;
+	margin-bottom: 1%;
 }
 
 .glide__wrapper {
@@ -68,34 +134,6 @@
 	position: relative;
 	margin: 0 auto;
 
-}
-
-.affiliate-arrow {
-	color: $gray-dark;
-	font-family: "FontAwesome";
-    font-size: 1em;
-    position: relative;
-    z-index: 2;
-    margin: 10px;
-    border: none;
-    display: inline-block;
-    background-color: transparent;
-
-}
-
-.affiliates-group {
-	margin: 0 auto;
-}
-
-.affiliates-track{
-	padding: 0;
-	list-style:none;
-}
-
-.affiliate-title {
-	color: $gray-dark;
-	margin: 1%;
-	font-size: 1.5em;
 }
 
 .talk-description {
@@ -116,6 +154,10 @@
 
 .page-title {
 	font-family: "HalisGR-SBook", sans-serif;
+	margin: 2%;
+}
+
+.about-title {
 	margin: 2%;
 }
 

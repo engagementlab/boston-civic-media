@@ -13,7 +13,8 @@ var Syllabi = new keystone.List('Syllabi',
 		singular: 'Syllabi Page',
 		track: true, 
 		sortable: true,
-		sortContent: 'Filter:category'
+		sortContent: 'Filter:category',
+    autokey: { path: 'syllabus_key', from: 'title', unique: true }
 		// nodelete: true,
 		// nocreate: true
 	});
@@ -25,26 +26,29 @@ var Syllabi = new keystone.List('Syllabi',
 Syllabi.add({
 	name: { type: Types.Name, label: 'Name', required: true, initial: true, index: true },
 	institution: {
-        type: Types.Relationship,
-        filters: {
-            category: 'Institution'
-        },
-        ref: 'Filter',
-        required: true,
-        initial: true
-    },
-    discipline: {
-        type: Types.Relationship,
-        filters: {
-            category: 'Discipline'
-        },
-        ref: 'Filter',
-        required: true,
-        initial: true
-    },
-    title: { type: Types.Textarea, label: "Title", required: true, initial: true },
-	description: { type: Types.Textarea, label: "Description", required: true, initial: true },
-	file: {
+      type: Types.Relationship,
+      filters: {
+          category: 'Institution'
+      },
+      ref: 'Filter',
+      required: true,
+      initial: true
+  },
+  discipline: {
+      type: Types.Relationship,
+      filters: {
+          category: 'Discipline'
+      },
+      ref: 'Filter',
+      required: true,
+      many: true,
+      initial: true
+  },
+  title: { type: Types.Text, label: "Title", required: true, initial: true },
+  blurb: { type: String, label: "Blurb", note: 'Appears below each syllabus in grids', required: true, initial: true },
+	description: { type: Types.Textarea, label: "Description", note: 'Appears on individual syllabus page', required: true, initial: true },
+	author: { type: String, label: "Author", required: true, initial: true },
+  file: {
 		type: Types.AzureFile,
 		label: 'File',
 		filenameFormatter: function(item, filename) {

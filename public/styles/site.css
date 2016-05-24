@@ -2331,14 +2331,66 @@ h5 + .separator {
 .lightning-talk-title {
   color: #7d7d7d; }
 
+.talks-header {
+  text-align: center;
+  width: 50%;
+  margin: 0 auto; }
+
+.talks-buttons {
+  text-align: center; }
+  .talks-buttons .button {
+    display: block;
+    width: 100%;
+    background: #78cbd1;
+    border: none;
+    color: #dadada;
+    height: 60px;
+    margin: 10px 0; }
+  .talks-buttons .button:active,
+  .talks-buttons .button:focus,
+  .talks-buttons .button.active {
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+  .talks-buttons .button:hover {
+    background: #0c9ec7; }
+  .talks-buttons .is-checked {
+    background: #0c9ec7; }
+
 .glide {
   text-align: center; }
 
 .glide__slide {
   padding: 0; }
 
-.affiliates-wrap {
-  max-height: 600px; }
+.affiliate-content {
+  margin: 0 auto; }
+
+.affiliate-buttons {
+  text-align: center;
+  margin-bottom: 3%; }
+  .affiliate-buttons .button {
+    margin: 1%;
+    background: transparent;
+    color: #7d7d7d;
+    border: none; }
+  .affiliate-buttons .button:active,
+  .affiliate-buttons .button:focus,
+  .affiliate-buttons .button.active {
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+  .affiliate-buttons .button:hover {
+    color: #78cbd1; }
+  .affiliate-buttons .is-checked {
+    color: #78cbd1;
+    background: transparent; }
+
+.affiliate-item {
+  text-align: center;
+  margin-bottom: 1%; }
 
 .glide__wrapper {
   max-height: 500px; }
@@ -2355,29 +2407,6 @@ h5 + .separator {
   position: relative;
   margin: 0 auto; }
 
-.affiliate-arrow {
-  color: #7d7d7d;
-  font-family: "FontAwesome";
-  font-size: 1em;
-  position: relative;
-  z-index: 2;
-  margin: 10px;
-  border: none;
-  display: inline-block;
-  background-color: transparent; }
-
-.affiliates-group {
-  margin: 0 auto; }
-
-.affiliates-track {
-  padding: 0;
-  list-style: none; }
-
-.affiliate-title {
-  color: #7d7d7d;
-  margin: 1%;
-  font-size: 1.5em; }
-
 .talk-description {
   min-height: 100%;
   padding: 1%; }
@@ -2391,6 +2420,9 @@ h5 + .separator {
 
 .page-title {
   font-family: "HalisGR-SBook", sans-serif;
+  margin: 2%; }
+
+.about-title {
   margin: 2%; }
 
 /* Blog pages

@@ -61,7 +61,7 @@ exports = module.exports = function(req, res) {
         // This query gets all featured projects
         var lightningTalkQuery = LightningTalk.model.find({
             'enabled': true,
-            'featured': true
+            'homePage': true
         });
 
         var syllabiQuery = Syllabi.model.find({

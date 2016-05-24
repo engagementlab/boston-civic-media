@@ -15,8 +15,9 @@
 <!-- ================ -->
 <section class="main-container padding-bottom-clear">
 	<div class="container">
-		<div class="main">
-			<h1 class="page-title"><strong>Lightning Talks</strong></h1>
+		<div class="talks-header main">
+			<h1 class="page-title"><strong>Lightning Talk Archive</strong></h1>
+			<p>Browse the talks below to learn more about Boston Civic Media, local case studies, and lessons on topics ranging from impact assessment to engagement approaches.</p>
 			{{!-- {{> page/lead}} --}}
 		</div>
 	</div>
@@ -27,39 +28,40 @@
 	<div class="container pv-20">
 		<div class="row talks-feature">
 
-		{{#each lightning_talk}}
-
-			{{#if featured}}
-				{{#if enabled}}
-					{{>index/lightning_talk lightning_talk=this}}
+			<div class="col-md-4 talks-buttons clearfix button-group filters-button-group" data-filter-group="">
+				<h2>All Talks</h2>
+			    <button value="*" data-filter="*" class="button">All</button>
+			    <button class="button" value="#" data-filter=".Technology">Technology</button>
+			    <button class="button" value="#" data-filter=".Media">Media</button>
+			    <button class="button" value="#" data-filter=".Data">Data</button>
+			    <button class="button" value="#" data-filter=".Co-Design">Co-Design</button>
+			</div>
+				
+			<div class="col-md-8"> 
+				<h2 style="text-align:center;">Featured Talk</h2>
+			{{!-- {{jsonPrint featured_lightning_talks}} --}}
+				{{#if featured_lightning_talks}}
+					{{#each featured_lightning_talks}}
+						{{>index/featured_lightning_talk featured_lightning_talk=this}}
+					{{/each}}
 				{{/if}}
-			{{/if}}
-			
-		{{/each}}
+			</div>
 		
 		</div>
 		<div class="talks-grid">
-			{{#if lightning_talk}}
-			<div class="row grid-space-10 team-row3">
-
+			<div id="talks-content" class="row">
+				{{#if lightning_talk}}
 					{{#each lightning_talk}}
-
-						{{>index/lightning_talk lightning_talk=this}}
+						<div class="col-md-4 talks-item {{{this.category}}}">
+							<div class="" data-category="{{{this.category}}}">
+								{{>index/lightning_talk lightning_talk=this}}
+							</div>
+						</div>
 					{{/each}}
-
-				</div>
-				{{!-- Show projects --}}
-				{{!-- {{#each lightning_talk}}
-
-					
-
-				{{/each}} --}}
-
 				{{else}}
-				
-				<strong>No lightning talks!! Fiddlesticks!</strong>
-			
-			{{/if}}
+					<strong>No lightning talks!! Fiddlesticks!</strong>
+				{{/if}}
+			</div>
 		</div>
 	</div>
 </section>

@@ -33,9 +33,17 @@ exports = module.exports = function(req, res) {
             ['sortOrder', 'ascending']
         ]);
 
+        var featTalkQuery = LightningTalk.model.find({
+            'enabled': true,
+            'featured': true
+        });
+
+        featTalkQuery.exec(function(err, result){
+            locals.featured_lightning_talks = result;
+        });
+
         queryLightningTalk.exec(function(err, resultLightningTalk) {
             locals.lightning_talk = resultLightningTalk;
-
             next(err);
         });
 
