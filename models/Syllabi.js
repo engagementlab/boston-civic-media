@@ -9,13 +9,11 @@ var Filter = require('./Filter')
  */
 var Syllabi = new keystone.List('Syllabi', 
 	{
-		label: 'Syllabus',
-		singular: 'Syllabi',
+		label: 'Syllabi',
+		singular: 'Syllabus',
 		track: true, 
 		sortable: true,
 		sortContent: 'Filter:category'
-		// nodelete: true,
-		// nocreate: true
 	});
 
 /**
