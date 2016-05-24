@@ -15,8 +15,8 @@ var Types = keystone.Field.Types;
 
 var Affiliate = new keystone.List('Affiliate', 
 	{
-		label: 'Affiliate Page',
-		singular: 'Affiliate Page',
+		label: 'Affiliates',
+		singular: 'Affiliate',
 		track: true
 		// nodelete: true,
 		// nocreate: true

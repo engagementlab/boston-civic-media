@@ -20,6 +20,8 @@ var Types = keystone.Field.Types;
  */
 var Filters = new keystone.List('Filter', 
     {
+    		name: 'Filters',
+    		singular: 'Filter',
         hidden: false,
         nodelete: true,
         autokey: { path: 'key', from: 'name', unique: false },

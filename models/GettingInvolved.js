@@ -36,7 +36,7 @@ GettingInvolved.add({
             type: Types.TextArray,
             label: 'Blurb'
         },
-        // edImage: { type: Types.CloudinaryImage, label: 'Image', folder: 'site/team' }
+        // edImage: { type: Types.CloudinaryImage, label: 'Image',  folder: 'bcm/team' }
 
   }, 
 
@@ -52,7 +52,7 @@ GettingInvolved.add({
             type: Types.TextArray,
             label: 'Blurb'
         },
-        // orgsImage: { type: Types.CloudinaryImage, label: 'Image', folder: 'site/team' }
+        // orgsImage: { type: Types.CloudinaryImage, label: 'Image',  folder: 'bcm/team' }
   }, 
 
   'Researchers', {
@@ -67,7 +67,7 @@ GettingInvolved.add({
             type: Types.TextArray,
             label: 'Blurb'
         },
-        // resImage: { type: Types.CloudinaryImage, label: 'Image', folder: 'site/team' }
+        // resImage: { type: Types.CloudinaryImage, label: 'Image',  folder: 'bcm/team' }
   }, 
 
   'Students', {
@@ -82,7 +82,7 @@ GettingInvolved.add({
             type: Types.TextArray,
             label: 'Blurb'
         },
-        // studImage: { type: Types.CloudinaryImage, label: 'Image', folder: 'site/team' }
+        // studImage: { type: Types.CloudinaryImage, label: 'Image',  folder: 'bcm/team' }
     });
 
 /**

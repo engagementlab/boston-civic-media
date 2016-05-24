@@ -9,8 +9,8 @@ var Filter = require('./Filter')
  */
 var Syllabi = new keystone.List('Syllabi', 
 	{
-		label: 'Syllabi Page',
-		singular: 'Syllabi Page',
+		label: 'Syllabi',
+		singular: 'Syllabus',
 		track: true, 
 		sortable: true,
 		sortContent: 'Filter:category',

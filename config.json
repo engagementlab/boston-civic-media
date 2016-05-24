@@ -3,5 +3,12 @@
 	"database": "boston-civic-media",
 	"subdomain": "bcm",
 	"db_prefix": "bcm",
-	"allowed_domains": ["qa.bostoncivic.media", "www.bostoncivic.media"]
+	"allowed_domains": ["qa.bostoncivic.media", "www.bostoncivic.media"],
+	"admin_nav": { 
+									"about": ["About", "affiliates", "funders", "TeamMember"],
+									"syllabi": ["Syllabi", "filters"],
+									"lightning talks": "LightningTalk",
+									"CIRB": "IRBProj",
+									"admin": "users"
+								}
 }

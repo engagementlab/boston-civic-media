@@ -8,8 +8,8 @@ var Types = keystone.Field.Types;
  */
 var Funder = new keystone.List('Funder', 
 	{
-		label: 'Funder Page',
-		singular: 'Funder Page',
+		label: 'Funders',
+		singular: 'Funder',
 		track: true
 		// nodelete: true,
 		// nocreate: true
@@ -21,7 +21,7 @@ var Funder = new keystone.List('Funder',
  */
 Funder.add({
 	name: { type: Types.Name, label: 'Name', required: true, initial: true, index: true },
-	logo: { type: Types.CloudinaryImage, label: 'Logo', folder: 'site/logos' },
+	logo: { type: Types.CloudinaryImage, label: 'Logo',  folder: 'bcm/logos' },
 	
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
 });

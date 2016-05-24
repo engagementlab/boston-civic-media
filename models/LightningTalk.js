@@ -9,9 +9,10 @@ var Video = require('./Video');
  */
 var LightningTalk = new keystone.List('LightningTalk', 
 	{
-		label: 'LightningTalk Page',
-		singular: 'LightningTalk Page',
+		label: 'Lightning Talks',
+		singular: 'Lightning Talk',
 		track: true,
+    hidden: false,
 		inherits: Video
 		// nodelete: true,
 		// nocreate: true

@@ -80,7 +80,10 @@ exports = module.exports = function(req, res) {
         missionStatements.exec(function(err, result){
             // console.log (result)
             if (err) throw err;
-            locals.missionStatements = result.missionStatements;
+            
+            if(result !== null)
+                locals.missionStatements = result.missionStatements;
+            
             beckyBanner.exec(function(err, result){
                 locals.beckyBanner = result.beckyBanner;
             });
