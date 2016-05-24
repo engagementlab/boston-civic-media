@@ -28,11 +28,11 @@ LightningTalk.add({
 	enabled: {
       type: Types.Boolean,
       label: 'Enabled'
-	  },
-	  featured: {
-	      type: Types.Boolean,
-	      label: 'Featured'
-	  },
+  	},
+  	featured: {
+      type: Types.Boolean,
+      label: 'Featured'
+  	},
 	
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
 });

@@ -18,7 +18,7 @@ var keystone = require('keystone');
 var Home = keystone.list('Home');
 var LightningTalk = keystone.list('LightningTalk');
 var Syllabi = keystone.list('Syllabi');
-
+var Event = keystone.list('Event')
 var _ = require('underscore');
 
 // News data propagated by ./jobs/news
@@ -41,12 +41,19 @@ exports = module.exports = function(req, res) {
         locals.missionStatements = [];
         locals.featured_lightning_talks = [];
         locals.featured_syllabi = [];
+        locals.featured_events = [];
 
         // EXAMPLE OF QUERY TO GET FEATURED STUFF
 
         // This query gets mission statement array
         // var missionStatement = Home.model.missionStatement;
         var missionStatements = Home.model.findOne({}, "missionStatements", {
+            sort: {
+                'createdAt': -1
+            }
+        });
+
+        var beckyBanner = Home.model.findOne({}, "beckyBanner", {
             sort: {
                 'createdAt': -1
             }
@@ -62,14 +69,23 @@ exports = module.exports = function(req, res) {
             'featured': true
         });
 
+        var queryFeaturedEvent = Event.model.find({
+            'enabled': true,
+            'featured': true
+        });
+
+        
+
         // Setup the locals to be used inside view
         missionStatements.exec(function(err, result){
             // console.log (result)
             if (err) throw err;
-
-            if(result !== null)
-                locals.missionStatements = result.missionStatements;
-        })
+            locals.missionStatements = result.missionStatements;
+            beckyBanner.exec(function(err, result){
+                locals.beckyBanner = result.beckyBanner;
+            });
+            
+        });
 
         lightningTalkQuery.exec(function(err, result){
             // console.log ("hi")
@@ -95,6 +111,12 @@ exports = module.exports = function(req, res) {
             //     locals.featured_content = result;
             //     next();
             // });
+        });
+
+        queryFeaturedEvent.exec(function(err, resultEvent) {
+            locals.featured_events = resultEvent;
+
+            // next(err);
         });
     next();
 

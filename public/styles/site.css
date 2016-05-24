@@ -2311,7 +2311,9 @@ h5 + .separator {
 
 .featured-list {
   list-style-type: none;
-  padding: 0; }
+  padding: 0;
+  width: 70%;
+  margin: 0 auto; }
 
 .featured-lightning-talks {
   color: #7d7d7d;
@@ -2848,6 +2850,9 @@ h5 + .separator {
 
 /* 5 Components
 ----------------------------------------------------------------------------- */
+.more-button {
+  padding: 20px; }
+
 /* Buttons
 ---------------------------------- */
 /*Buttons Color Variations*/

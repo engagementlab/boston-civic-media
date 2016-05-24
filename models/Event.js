@@ -42,10 +42,10 @@ Event.add({
       type: Types.Boolean,
       label: 'Featured Event'
   	},
- //  	city: {
- //      type: Types.Boolean,
- //      label: 'City Agency'
- //  	},
+  	enabled: {
+      type: Types.Boolean,
+      label: 'Enabled'
+  	},
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
 });
 

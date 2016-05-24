@@ -31,13 +31,13 @@
 
 
 			{{#each events}}
-
-				{{#if featured}}
-					{{#unless past}}
-						{{>index/featured_event event=this}}
-					{{/unless}}
+				{{#if enabled}}
+					{{#if featured}}
+						{{#unless past}}
+							{{>index/featured_event event=this}}
+						{{/unless}}
+					{{/if}}
 				{{/if}}
-				
 			{{/each}}
 			
 			</div>
@@ -51,8 +51,10 @@
 			<h1>Past Events</h1>
 
 					{{#each events}}
-						{{#if past}}
-							{{>index/recent_event event=this}}
+						{{#if enabled}}
+							{{#if past}}
+								{{>index/recent_event event=this}}
+							{{/if}}
 						{{/if}}
 					{{/each}}
 

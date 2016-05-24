@@ -12,7 +12,7 @@
  * ==========
  */
 var keystone = require('keystone');
-
+var ListservGuidelines = keystone.list('ListservGuidelines');
 var GettingInvolved = keystone.list('GettingInvolved');
 var _ = require('underscore');
 var cloudinary = require('cloudinary');
@@ -27,21 +27,28 @@ exports = module.exports = function(req, res) {
 
     view.on('init', function(next) {
 
-        locals.featured_lightning_talks = [];
+        locals.guidelines = [];
 
         var queryGettingInvolved = GettingInvolved.model.find({}).sort([
             ['sortOrder', 'ascending']
         ]);
 
-        queryGettingInvolved.exec(function(err, resultGettingInvolved) {
-            locals.getting_involved = resultGettingInvolved;
+        var queryGuidelines = ListservGuidelines.model.find({}).sort([
+            ['sortOrder', 'ascending']
+        ]);
 
+        queryGettingInvolved.exec(function(err, resultGettingInvolved) {
+            locals.getting_involved = resultGettingInvolved[0];
+            queryGuidelines.exec(function(err, resultGuidelines) {
+                locals.guidelines = resultGuidelines;
+            })
+            // console.log (locals.getting_involved);
             next(err);
         });
 
     });
 
     // Render the view
-    view.render('lightning_talk');
+    view.render('getting_involved');
 
 };
