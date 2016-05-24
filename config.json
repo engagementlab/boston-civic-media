@@ -3,5 +3,5 @@
 	"database": "boston-civic-media",
 	"subdomain": "bcm",
 	"db_prefix": "bcm",
-	"allowed_domains": ["www.bostoncivic.media"]
+	"allowed_domains": ["qa.bostoncivic.media", "www.bostoncivic.media"]
 }
