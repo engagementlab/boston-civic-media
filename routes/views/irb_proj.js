@@ -38,7 +38,7 @@ exports = module.exports = function(req, res) {
         queryIrbProj.exec(function(err, resultIrbProj) {
             if (err) throw err;
             locals.irb_proj = resultIrbProj;
-            console.log (locals.irb_proj);
+            // console.log (locals.irb_proj);
             next(err);
         });
 

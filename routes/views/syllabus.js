@@ -73,7 +73,7 @@ exports = module.exports = function(req, res) {
                     };
                 })
                 .value();
-                 console.log(locals.this_syllabus);
+                 // console.log(locals.this_syllabus);
             });
 
             next(err);
