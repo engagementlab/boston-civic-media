@@ -45,10 +45,9 @@
 
 				{{!-- Show syllabi --}}
 				{{#each syllabi}}
-					
-					<div class="syllabi-item {{institution.key}} {{discipline.key}}">
-						<li class="" data-institution="{{{institution.name}}}" data-discipline="{{{discipline.name}}}">
-						{{!-- {{jsonPrint this}} --}}
+
+					<div class="syllabi-item {{filters}}">
+						<li class="">
 							<a href="/syllabi/{{syllabus_key}}"><h3>{{title}}</h3></a>
 							<p>{{{description}}}</p>
 							<p><strong>{{{createdAt}}}</strong></p>

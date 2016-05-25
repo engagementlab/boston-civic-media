@@ -30,10 +30,17 @@ exports = module.exports = function(req, res) {
         locals.filters = [];
         locals.disciplines = [];
 
+        var filtersPopulate = [
+                                {path:'institution', select:'key'},
+                                {path:'discipline', select:'key'},
+                                {path:'keyword', select:'key'},
+                                {path:'faculty', select:'key'},
+                                {path:'partnerOrg', select:'key'}
+                              ];
         var querySyllabi = Syllabi.model.find({}).sort([
             ['sortOrder', 'ascending']
         ])
-        .populate('institution discipline');
+        .populate(filtersPopulate);
 
         var queryFilters = Filter.model.find({});
 
@@ -43,6 +50,17 @@ exports = module.exports = function(req, res) {
             queryFilters.exec(function(err, resultFilters) {
 
                 locals.syllabi = resultSyllabi;
+
+                _.each(locals.syllabi, function(syllabus) {
+
+                    var filtersConcat = syllabus.institution.concat(syllabus.discipline, syllabus.faculty, syllabus.keyword);
+
+                    if(syllabus.partnerOrg !== null || syllabus.partnerOrg !== undefined)
+                        filtersConcat.concat(syllabus.partnerOrg);
+
+                    syllabus.filters = _.pluck(filtersConcat, 'key').join(' ');
+
+                });
             
                 // Chain the result for filters and map them into arrays of labels after grouping them into sub-objects
                 // http://underscorejs.org/#groupBy

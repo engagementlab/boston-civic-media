@@ -44,16 +44,21 @@ exports = module.exports = function(req, res) {
         ]);
 
         queryGettingInvolved.exec(function(err, resultGettingInvolved) {
+          
             locals.getting_involved = resultGettingInvolved[0];
+          
             queryGuidelines.exec(function(err, resultGuidelines) {
+          
                 locals.guidelines = resultGuidelines;
+          
+                queryNewsletters.exec(function(err, resultNewsletters) {
+                    
+                    locals.newsletters = resultNewsletters;
+                    
+                    next(err);
+                });
 
             });
-            queryNewsletters.exec(function(err, resultNewsletters) {
-                locals.newsletters = resultNewsletters;
-            })
-            // console.log (locals.guidelines);
-            next(err);
         });
 
     });
