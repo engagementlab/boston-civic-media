@@ -33,13 +33,14 @@ var Filters = new keystone.List('Filter',
  */
 Filters.add({
     name: { type: String, label: 'Name', required: true, initial: true, index: true },
-    category: { type: Types.Select, label: 'Type', options: 'Institution, Discipline', required: true, initial: true }
+    category: { type: Types.Select, label: 'Type', options: 'Institution, Discipline, Faculty, Keyword, Partnership Organization', required: true, initial: true }
 });
 
 /**
  * Model Registration
  * =============
  */
+Filters.defaultSort = 'category';
 Filters.defaultColumns = 'name, category';
 Filters.register();
 

@@ -34,9 +34,11 @@ var IRBProj = new keystone.List('IRBProj',
  */
 IRBProj.add({
 	name: { type: String, default: "Community IRB Project", hidden: true, required: true, initial: true },
-	description: { type: Types.Textarea, label: "Description", required: true, initial: true},
+	description: { type: Types.Markdown, label: "Project Description", required: true, initial: true},
+	imageTitle: {type: String, label: "Image Title", required: true, initial: true}, 
+	imageCaption: {type: String, label: "Image Caption", required: true, initial: true},
 	image: { type: Types.CloudinaryImage, label: 'Image',  folder: 'boston-civic-media/logos' },
-
+	email: { type: String, label: "Contact Email", required: true, initial: true},
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
 });
 
@@ -44,5 +46,5 @@ IRBProj.add({
  * Model Registration
  */
 IRBProj.defaultSort = '-createdAt';
-IRBProj.defaultColumns = 'name, updatedAt';
+IRBProj.defaultColumns = 'name, imageTitle, imageCaption, email';
 IRBProj.register();

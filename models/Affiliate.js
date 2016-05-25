@@ -17,6 +17,7 @@ var Affiliate = new keystone.List('Affiliate',
 	{
 		label: 'Affiliates',
 		singular: 'Affiliate',
+		sortable: true,
 		track: true
 		// nodelete: true,
 		// nocreate: true
@@ -27,7 +28,7 @@ var Affiliate = new keystone.List('Affiliate',
  * @main About
  */
 Affiliate.add({
-	name: { type: Types.Name, label: 'Name', required: true, initial: true, index: true },
+	name: { type: String, label: 'Name', required: true, initial: true, index: true },
 	logo: { type: Types.CloudinaryImage, label: 'Logo', folder: 'site/logos' },
 	category: { type: Types.Select, label: 'Type', options: 'University, CityAgency, CommunityOrganization', required: true, initial: true },
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
@@ -36,6 +37,6 @@ Affiliate.add({
 /**
  * Model Registration
  */
-Affiliate.defaultSort = '-createdAt';
-Affiliate.defaultColumns = 'name, updatedAt';
+Affiliate.defaultSort = 'category';
+Affiliate.defaultColumns = 'name, category';
 Affiliate.register();

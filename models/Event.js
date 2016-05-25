@@ -28,19 +28,17 @@ var Event = new keystone.List('Event',
  * @main About
  */
 Event.add({
-	name: { type: Types.Name, label: 'Name', required: true, initial: true, index: true },
-	title: { type: Types.Text, label: 'Title', required: true, initial: true, index: true },
+	title: { type: String, label: 'Title', required: true, initial: true, index: true },
 	image: { type: Types.CloudinaryImage, label: 'Event Image',  folder: 'boston-civic-media/logos' },
-	description: { type: Types.Textarea, label: 'Description', required: true, initial: true, index: true },
-	footer: { type: Types.Textarea, label: 'Footer', required: true, initial: true, index: true },
-	// url: { type: String, label: 'URL', hidden: true},
-	past: {
-      type: Types.Boolean,
-      label: 'Past Event'
- 	},
+	description: { type: Types.Textarea, label: 'Long Description', required: true, initial: true, index: true },
+	footer: { type: Types.Textarea, label: 'Short Description', required: true, initial: true, index: true },
+	eventbriteURL: { type: String, label: 'Eventbrite URL'},
+	hackpadURL: {type: String, label: 'Hackpad URL'}, 
+	additionalURL: { type: String, label: "Additional URL"},
   	featured: {
       type: Types.Boolean,
-      label: 'Featured Event'
+      label: 'Featured Event', 
+      note: 'Only one event should be featured'
   	},
   	enabled: {
       type: Types.Boolean,
@@ -53,5 +51,5 @@ Event.add({
  * Model Registration
  */
 Event.defaultSort = '-createdAt';
-Event.defaultColumns = 'name, updatedAt';
+Event.defaultColumns = 'title, footer, featured, enabled';
 Event.register();

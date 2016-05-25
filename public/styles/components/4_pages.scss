@@ -14,6 +14,20 @@
 
 }
 
+.main-syllabi {
+	background-image: url("/images/infographic.JPG");
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 200px;
+	min-width: 100%;
+
+}
+
+.syllabi-title {
+	color: white;
+	text-align: center;
+}
+
 .featured-list {
 	list-style-type: none;
 	padding: 0;
@@ -150,6 +164,11 @@
 
 .irb-image {
 	margin: 0 auto;
+	text-align: center;
+
+	img {
+		margin: 0 auto;
+	}
 }
 
 .page-title {

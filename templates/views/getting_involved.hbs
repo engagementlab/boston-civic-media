@@ -84,5 +84,13 @@
 				</div>
 			</div>
 		</div>
+		<div class="row">
+			<div class="newsletters">
+				<h4>Newsletter Archive</h4>
+				{{#each newsletters}}
+					{{>about/newsletter newsletter=this}}
+				{{/each}}
+			</div>
+		</div>
 	</div>
 </div>

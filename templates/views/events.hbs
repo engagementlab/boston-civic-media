@@ -33,9 +33,9 @@
 			{{#each events}}
 				{{#if enabled}}
 					{{#if featured}}
-						{{#unless past}}
+						{{!-- {{#unless past}} --}}
 							{{>index/featured_event event=this}}
-						{{/unless}}
+						{{!-- {{/unless}} --}}
 					{{/if}}
 				{{/if}}
 			{{/each}}
@@ -52,9 +52,9 @@
 
 					{{#each events}}
 						{{#if enabled}}
-							{{#if past}}
+							{{!-- {{#if past}} --}}
 								{{>index/recent_event event=this}}
-							{{/if}}
+							{{!-- {{/if}} --}}
 						{{/if}}
 					{{/each}}
 

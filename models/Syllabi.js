@@ -24,7 +24,7 @@ var Syllabi = new keystone.List('Syllabi',
  * @main About
  */
 Syllabi.add({
-	name: { type: Types.Name, label: 'Name', required: true, initial: true, index: true },
+	// name: { type: Types.Name, label: 'Name', required: true, initial: true, index: true },
 	institution: {
       type: Types.Relationship,
       filters: {
@@ -32,6 +32,7 @@ Syllabi.add({
       },
       ref: 'Filter',
       required: true,
+      many: true,
       initial: true
   },
   discipline: {
@@ -44,10 +45,39 @@ Syllabi.add({
       many: true,
       initial: true
   },
+  faculty: {
+      type: Types.Relationship,
+      filters: {
+          category: 'Faculty'
+      },
+      ref: 'Filter',
+      required: true,
+      many: true,
+      initial: true
+  },
+  keyword: {
+      type: Types.Relationship,
+      filters: {
+          category: 'Keyword'
+      },
+      ref: 'Filter',
+      required: true,
+      many: true,
+      initial: true
+  },
+  partnerOrg: {
+      type: Types.Relationship,
+      filters: {
+          category: 'Partner Organization'
+      },
+      ref: 'Filter',
+      required: true,
+      many: true,
+      initial: true
+  },
   title: { type: Types.Text, label: "Title", required: true, initial: true },
-  blurb: { type: String, label: "Blurb", note: 'Appears below each syllabus in grids', required: true, initial: true },
-	description: { type: Types.Textarea, label: "Description", note: 'Appears on individual syllabus page', required: true, initial: true },
-	author: { type: String, label: "Author", required: true, initial: true },
+  blurb: { type: String, label: "Short Description", note: 'Appears below each syllabus in grids', required: true, initial: true },
+	description: { type: Types.Textarea, label: "Long Description", note: 'Appears on individual syllabus page', required: true, initial: true },
   file: {
 		type: Types.AzureFile,
 		label: 'File',
@@ -74,5 +104,5 @@ Syllabi.add({
  * Model Registration
  */
 Syllabi.defaultSort = '-createdAt';
-Syllabi.defaultColumns = 'name, updatedAt';
+Syllabi.defaultColumns = 'title, blurb, institution, discipline, faculty, keyword, partnerOrg';
 Syllabi.register();
