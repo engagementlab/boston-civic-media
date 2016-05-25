@@ -30,7 +30,7 @@ var Event = new keystone.List('Event',
 Event.add({
 	name: { type: Types.Name, label: 'Name', required: true, initial: true, index: true },
 	title: { type: Types.Text, label: 'Title', required: true, initial: true, index: true },
-	image: { type: Types.CloudinaryImage, label: 'Event Image',  folder: 'bcm/logos' },
+	image: { type: Types.CloudinaryImage, label: 'Event Image',  folder: 'boston-civic-media/logos' },
 	description: { type: Types.Textarea, label: 'Description', required: true, initial: true, index: true },
 	footer: { type: Types.Textarea, label: 'Footer', required: true, initial: true, index: true },
 	// url: { type: String, label: 'URL', hidden: true},

@@ -37,7 +37,7 @@ TeamMember.add({
 	name: { type: Types.Name, label: 'Name', required: true, initial: true, index: true },
 	title: { type: String, label: 'Title', required: true, initial: true },
 	bio: { type: Types.Markdown, label: 'Bio', required: true, initial: true },
-	image: { type: Types.CloudinaryImage, label: 'Image',  folder: 'bcm/team' },
+	image: { type: Types.CloudinaryImage, label: 'Image',  folder: 'boston-civic-media/team' },
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
 
 });
