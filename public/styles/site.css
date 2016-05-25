@@ -1177,7 +1177,8 @@ tbody {
   min-height: 100%;
   width: 100%;
   position: relative;
-  background-color: #7d7d7d;
+  background: url("/images/home/zakim_1024.png") no-repeat;
+  background-size: cover;
   color: #ffffff;
   margin: 0 auto;
   padding-top: 2%;
@@ -2309,6 +2310,17 @@ h5 + .separator {
   .featured-syllabi h3 {
     color: #0c9ec7; }
 
+.main-syllabi {
+  background-image: url("/images/infographic.JPG");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 200px;
+  min-width: 100%; }
+
+.syllabi-title {
+  color: white;
+  text-align: center; }
+
 .featured-list {
   list-style-type: none;
   padding: 0;
@@ -2416,7 +2428,10 @@ h5 + .separator {
   padding-right: 5%; }
 
 .irb-image {
-  margin: 0 auto; }
+  margin: 0 auto;
+  text-align: center; }
+  .irb-image img {
+    margin: 0 auto; }
 
 .page-title {
   font-family: "HalisGR-SBook", sans-serif;
@@ -6979,7 +6994,13 @@ h6.media-heading {
   display: inline-block; }
 
 .clients img {
-  margin: 0px auto; }
+  margin: 0px auto;
+  border-radius: 75px; }
+
+.affiliate-image {
+  margin: 0 auto; }
+  .affiliate-image img {
+    border-radius: 75px; }
 
 /* Full Width Content
 ---------------------------------- */

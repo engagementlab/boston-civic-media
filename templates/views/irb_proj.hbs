@@ -14,6 +14,7 @@
 {{!-- {{jsonPrint this}} --}}
 <div class="banner border-clear light-gray-bg">
 	<div class="container">
+		<div class="row page-title"><h1><strong>Community-Institution Partnerships</strong></h1></div>
 		<div class="row">
 			<div class="col-md-8 pv-40">
 			{{!-- {{jsonPrint irb_proj}} --}}
@@ -21,8 +22,12 @@
 				<div class="irb-description"> {{irb_proj.description}}</div>
 			</div>
 			<div class="col-md-4">
+
 				<div class="irb-image">
+					<h4>{{irb_proj.imageTitle}}</h4>
 					<img src="{{{cloudinaryUrl irb_proj.image width=300 height=300 crop='scale' quality=100}}}">
+					<p>{{irb_proj.imageCaption}}</p>
+					<p>Contact: {{emailFormat irb_proj.email}}</a></p>
 				</div>
 			</div>
 		</div>

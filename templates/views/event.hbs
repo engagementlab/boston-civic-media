@@ -31,6 +31,11 @@
 			<div class="col-md-8">
 				
 				<p>{{this_event.description}}</p>
+				<ul>
+					<li><a href="{{this_event.eventbriteURL}}">Eventbrite Link</a></li>
+					<li><a href="{{this_event.hackpadURL}}">Hackpad Link</a></li>
+					<li><a href="{{this_event.additionalURL}}">Read More</a></li>
+				</ul>
 			</div>
 			<div class="col-md-4">
 				<img src="{{{cloudinaryUrl this_event.image width=150 height=150 crop='scale' quality=100}}}" alt="{{this_event.name}}" class="photo" style="margin:0 auto;">

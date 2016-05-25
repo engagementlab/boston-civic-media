@@ -23,9 +23,9 @@ var Newsletter = new keystone.List('Newsletter',
 	{
 		label: 'Newsletter',
 		singular: 'Newsletter',
-		track: true,
+		track: true
 		// nodelete: true,
-		nocreate: true
+		// nocreate: true
 	});
 
 /**
@@ -35,6 +35,7 @@ var Newsletter = new keystone.List('Newsletter',
 Newsletter.add({
 	name: { type: String, default: "Newsletter", hidden: true, required: true, initial: true },
 	url: { type: String, label: 'URL', initial: true },
+	published: {type: Date, default: Date.now},
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
 });
 
@@ -42,5 +43,5 @@ Newsletter.add({
  * Model Registration
  */
 Newsletter.defaultSort = '-createdAt';
-Newsletter.defaultColumns = 'name, updatedAt';
+Newsletter.defaultColumns = 'name, url, published, updatedAt';
 Newsletter.register();

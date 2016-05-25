@@ -23,7 +23,7 @@ var LightningTalk = new keystone.List('LightningTalk',
  * @main About
  */
 LightningTalk.add({
-	name: { type: Types.Name, label: "Name", default: "Lightning Talks", hidden: true, required: true, initial: true },
+	// name: { type: Types.Name, label: "Name", default: "Lightning Talks", hidden: true, required: true, initial: true },
 	title: { type: String, label: "Talk Title", required: true, initial: true, index: true },
 	description: { type: String, label: "Talk Description", required: true, initial: true, index: true },
 	category: { type: Types.Select, label: 'Type', options: 'Technology, Media, Data, Co-Design', required: true, initial: true },
@@ -33,12 +33,12 @@ LightningTalk.add({
   	},
   	homePage: {
       type: Types.Boolean,
-      label: 'Appears on Home Page'
+      label: 'Appears on Home Page carousel'
   	},
   	featured: {
       type: Types.Boolean,
       label: 'Featured',
-      note: 'Only ONE Lightning Talk can be featured'
+      note: 'Appears on Lightning Talk page. Only ONE Lightning Talk can be featured'
   	},
 	
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
@@ -47,6 +47,6 @@ LightningTalk.add({
 /**
  * Model Registration
  */
-LightningTalk.defaultSort = '-createdAt';
-LightningTalk.defaultColumns = 'name, updatedAt';
+LightningTalk.defaultSort = 'category';
+LightningTalk.defaultColumns = 'title, category, enabled, homePage, featured';
 LightningTalk.register();

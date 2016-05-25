@@ -35,8 +35,9 @@ var Home = new keystone.List('Home',
 Home.add({
 
 	name: { type: String, default: "Home Page", hidden: true, required: true, initial: true },
+	beckyBannerUrl: {type: String, label: 'Hyperlink for Becky Banner'},
 	beckyBanner: { type: Types.CloudinaryImage, label: 'Becky Banner',  folder: 'bcm/logos' },
-	missionStatements: { type: Types.TextArray, label: 'Mission Statement' },
+	missionStatements: { type: Types.TextArray, label: 'Mission Statement', note: 'First statement will be bolded and appear first, second statement will be regular and second. Only the first two statements will appear.' },
 	
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
 

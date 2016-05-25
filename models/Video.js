@@ -34,13 +34,9 @@ var Video = new keystone.List('Video',
  * @main Person
  */
 Video.add({
-
-	videoTitle: { type: String, label: 'Video Title', required: true, initial: true, index: true },
 	data: { type: Types.Embedly, label: 'Video Embed Link', from: 'url', hidden: true},
 	url: { type: String, label: 'URL', initial: true },
-	// description: { type: String, label: 'Video Description', required: true, initial: true},
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
-
 });
 
 /**
@@ -74,7 +70,7 @@ Video.schema.post('save', function(next) {
  * Model Registration
  */
 Video.defaultSort = 'sortOrder';
-Video.defaultColumns = 'name, category';
+Video.defaultColumns = 'url, createdAt';
 Video.register();
 
 exports = module.exports = Video;

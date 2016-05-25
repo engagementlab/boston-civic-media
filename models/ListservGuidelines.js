@@ -43,5 +43,5 @@ ListservGuidelines.add({
  * Model Registration
  */
 ListservGuidelines.defaultSort = '-createdAt';
-ListservGuidelines.defaultColumns = 'name, updatedAt';
+ListservGuidelines.defaultColumns = 'name, question, answer';
 ListservGuidelines.register();

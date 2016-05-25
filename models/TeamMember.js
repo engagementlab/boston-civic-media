@@ -35,7 +35,7 @@ var TeamMember = new keystone.List('TeamMember',
 TeamMember.add({
 
 	name: { type: Types.Name, label: 'Name', required: true, initial: true, index: true },
-	title: { type: String, label: 'Title', required: true, initial: true },
+	title: { type: String, label: 'Position', required: true, initial: true },
 	bio: { type: Types.Markdown, label: 'Bio', required: true, initial: true },
 	image: { type: Types.CloudinaryImage, label: 'Image',  folder: 'bcm/team' },
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
@@ -73,5 +73,5 @@ TeamMember.schema.post('save', function(next) {
  * Model Registration
  */
 TeamMember.defaultSort = 'sortOrder';
-TeamMember.defaultColumns = 'name, category';
+TeamMember.defaultColumns = 'name, title';
 TeamMember.register();

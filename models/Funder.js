@@ -20,7 +20,7 @@ var Funder = new keystone.List('Funder',
  * @main About
  */
 Funder.add({
-	name: { type: Types.Name, label: 'Name', required: true, initial: true, index: true },
+	name: { type: String, label: 'Name', required: true, initial: true, index: true },
 	logo: { type: Types.CloudinaryImage, label: 'Logo',  folder: 'bcm/logos' },
 	
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
