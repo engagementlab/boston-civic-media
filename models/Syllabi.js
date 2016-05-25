@@ -31,6 +31,7 @@ Syllabi.add({
           category: 'Institution'
       },
       ref: 'Filter',
+      label: 'Institutions',
       required: true,
       many: true,
       initial: true
@@ -41,6 +42,7 @@ Syllabi.add({
           category: 'Discipline'
       },
       ref: 'Filter',
+      label: 'Disciplines',
       required: true,
       many: true,
       initial: true
@@ -61,6 +63,7 @@ Syllabi.add({
           category: 'Keyword'
       },
       ref: 'Filter',
+      label: 'Keywords',
       required: true,
       many: true,
       initial: true
@@ -71,9 +74,10 @@ Syllabi.add({
           category: 'Partner Organization'
       },
       ref: 'Filter',
-      required: true,
+      label: 'Partner Organizations',
       many: true,
-      initial: true
+      initial: true,
+      note: 'This is optional'
   },
   title: { type: Types.Text, label: "Title", required: true, initial: true },
   blurb: { type: String, label: "Short Description", note: 'Appears below each syllabus in grids', required: true, initial: true },
@@ -98,6 +102,23 @@ Syllabi.add({
   },
 
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
+});
+
+/**
+ * Hooks
+ * =============
+ */
+Syllabi.schema.pre('save', function(next) {
+
+    // Filter.populate(this.institution, )
+
+    // // Save state for post hook
+    // this.filters = Object.assign(this.discipline, this.institution);
+
+    // console.log(this.filters)
+
+    next();
+
 });
 
 /**

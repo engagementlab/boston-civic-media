@@ -174,7 +174,10 @@
 		    itemSelector: '.syllabi-item'
 		  });
 
+				// store filter for each group
+				var filters = {};
 	    $('select').change(function(){
+				
 		    var selector = $(this);
 		    
 		    // store filter value in object
