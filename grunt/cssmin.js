@@ -14,13 +14,6 @@ module.exports = function() {
     __dirname + '/../public/styles/site.css', // site SCSS
   
   ];
-  /*files: [{
-    expand: true,
-    cwd: 'release/css',
-    src: [],
-    dest: 'release/style',
-    ext: '.min.css'
-  }]*/
 
   return config;
   
