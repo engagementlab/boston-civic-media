@@ -97,11 +97,6 @@ exports = module.exports = function(req, res) {
             if(result !== null)
                 locals.featured_lightning_talks = result;
             
-            // LightningTalk.exec(function(err, result){
-            //     if (err) throw err;
-            //     locals.featured_lightning_talk = result;
-            // })
-            // console.log (featured_lightning_talk)
         });
 
         syllabiQuery.exec(function(err, result) {
@@ -109,19 +104,15 @@ exports = module.exports = function(req, res) {
             
             if(result !== null)
                 locals.featured_syllabi = result;
-            
-            // NewsBox.model.find({}).exec(function(err, result) {
-            //     locals.featured_content = result;
-            //     next();
-            // });
+
         });
 
         queryFeaturedEvent.exec(function(err, resultEvent) {
             locals.featured_events = resultEvent;
 
-            // next(err);
+            next(err);
         });
-    next();
+    // next();
 
     });
 

@@ -58,27 +58,25 @@ exports = module.exports = function(req, res) {
             queryAffiliates.exec(function(err, resultAffiliates) {
                 if (err) throw err;
                 locals.affiliates = resultAffiliates;
-                // next(err);
-            });
 
-            var queryTeam = TeamMember.model.find({}).sort([
-                ['sortOrder', 'ascending']
-            ]);
+                var queryTeam = TeamMember.model.find({}).sort([
+                    ['sortOrder', 'ascending']
+                ]);
 
-            queryTeam.exec(function(err, resultTeamMembers) {
-                if (err) throw err;
-                locals.teamMembers = resultTeamMembers;
-                next(err);
-            });
+                queryTeam.exec(function(err, resultTeamMembers) {
+                    if (err) throw err;
+                    locals.teamMembers = resultTeamMembers;
 
-            var queryFunders = Funder.model.find({}).sort([
-                ['sortOrder', 'ascending']
-            ]);
+                    var queryFunders = Funder.model.find({}).sort([
+                        ['sortOrder', 'ascending']
+                    ]);
 
-            queryFunders.exec(function(err, resultFunders) {
-                if (err) throw err;
-                locals.funders = resultFunders;
-                // next(err);
+                    queryFunders.exec(function(err, resultFunders) {
+                        if (err) throw err;
+                        locals.funders = resultFunders;
+                        next(err);
+                    });
+                });
             });
         });
     });
