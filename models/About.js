@@ -36,7 +36,6 @@ About.add({
 	name: { type: String, default: "About Page", hidden: true, required: true, initial: true },
 	vision: { type: Types.Textarea, label: "Vision",  initial: true, required: true },
 	description: { type: Types.Textarea, label: "Description",  initial: true, required: true },
-	
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
 });
 

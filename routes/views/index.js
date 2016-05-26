@@ -58,6 +58,12 @@ exports = module.exports = function(req, res) {
                 'createdAt': -1
             }
         });
+
+        var background = Home.model.findOne({}, "background", {
+            sort: {
+                'createdAt': -1
+            }
+        });
         // This query gets all featured projects
         var lightningTalkQuery = LightningTalk.model.find({
             'enabled': true,
@@ -86,33 +92,37 @@ exports = module.exports = function(req, res) {
             
             beckyBanner.exec(function(err, result){
                 locals.beckyBanner = result.beckyBanner;
+
+                background.exec(function(err, result) {
+                    locals.background = result.background;
+                    console.log (locals.background);
+
+                    lightningTalkQuery.exec(function(err, result){
+                        // console.log ("hi")
+                        if (err) throw err;
+
+                        if(result !== null)
+                            locals.featured_lightning_talks = result;
+                        
+                        syllabiQuery.exec(function(err, result) {
+                            if (err) throw err;
+                            
+                            if(result !== null)
+                                locals.featured_syllabi = result;
+
+                            queryFeaturedEvent.exec(function(err, resultEvent) {
+                                locals.featured_events = resultEvent;
+
+                                next(err);
+                            });
+
+                        });
+
+                    });
+                });
             });
             
         });
-
-        lightningTalkQuery.exec(function(err, result){
-            // console.log ("hi")
-            if (err) throw err;
-
-            if(result !== null)
-                locals.featured_lightning_talks = result;
-            
-        });
-
-        syllabiQuery.exec(function(err, result) {
-            if (err) throw err;
-            
-            if(result !== null)
-                locals.featured_syllabi = result;
-
-        });
-
-        queryFeaturedEvent.exec(function(err, resultEvent) {
-            locals.featured_events = resultEvent;
-
-            next(err);
-        });
-    // next();
 
     });
 
