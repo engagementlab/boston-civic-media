@@ -29,7 +29,7 @@
 	
 	  {{#each filters}}
 		 	{{label}}:
-			<select class="option-set clearfix" data-filter-group="{{label}}">
+			<select class="syllabi-options option-set clearfix" data-filter-group="{{label}}">
 			    <option value="*" data-filter-value="" class="selected">All</option>
 
 				  {{#each values}}
@@ -46,9 +46,9 @@
 				{{!-- Show syllabi --}}
 				{{#each syllabi}}
 
-					<div class="syllabi-item {{filters}}">
+					<div class="col-md-6 syllabi-item {{filters}}">
 						<li class="">
-							<a href="/syllabi/{{syllabus_key}}"><h3>{{title}}</h3></a>
+							<a href="/syllabi/{{syllabus_key}}"><h3 class="styled-title">{{title}}</h3></a>
 							<p>{{{description}}}</p>
 							<p><strong>{{{createdAt}}}</strong></p>
 						</li>

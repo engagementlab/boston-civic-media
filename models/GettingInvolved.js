@@ -21,6 +21,10 @@ var GettingInvolved = new keystone.List('GettingInvolved',
  */
 GettingInvolved.add({
 	name: { type: String, default: "Getting Involved Page", hidden: true, required: true, initial: true },
+    banner: { type: Types.CloudinaryImage, label: 'Banner Image',  folder: 'boston-civic-media/logos' },
+    listservLink: { type: String, label: "Listserv Link", initial: true, required: true},
+    listservBlurb: { type: String, label: "Listserv Blurb", initial: true, required: true},
+    contactEmail: { type: String, label: "Contact Email", initial: true, required: true},
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
 },
 

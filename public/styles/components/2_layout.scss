@@ -7,6 +7,21 @@
 	border-bottom: 1px solid $base-color-hover;
 }
 
+.separator-green-light {
+	@include separator(20px, $green-light);
+}
+
+.separator-green-blue {
+	@include separator(20px, $green-blue);
+}
+
+.separator-brown {
+	@include separator(20px, $brown);
+}
+.separator-green {
+	@include separator(20px, $green);
+}
+
 .main-blurb {
 	min-height: 100%;
 	width: 100%;

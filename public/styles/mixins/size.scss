@@ -8,3 +8,30 @@
 @mixin square($size) {
   @include size($size, $size);
 }
+
+@mixin separator($height, $color) {
+	max-width: 100%;
+	height: $height;
+	background-color: $color;
+	background-size: cover;
+	margin-top: -($height + 5)
+}
+
+@mixin colored-list ($color) {
+	list-style: disc;
+	color: $color;
+  list-style-position: inside;
+
+}
+
+@mixin dot($size, $color) {
+	@include circle($size, $color);
+	display: inline-block;
+	position: relative;
+	margin: 0 auto;
+}
+
+@mixin colored-title ($color) {
+	color: $color;
+	font-size: 1em;
+}

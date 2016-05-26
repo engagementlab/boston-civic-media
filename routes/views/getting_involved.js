@@ -46,7 +46,7 @@ exports = module.exports = function(req, res) {
         queryGettingInvolved.exec(function(err, resultGettingInvolved) {
           
             locals.getting_involved = resultGettingInvolved[0];
-          
+
             queryGuidelines.exec(function(err, resultGuidelines) {
           
                 locals.guidelines = resultGuidelines;
@@ -56,6 +56,9 @@ exports = module.exports = function(req, res) {
                     locals.newsletters = resultNewsletters;
                     
                     next(err);
+
+                    console.log (locals.getting_involved);
+
                 });
 
             });

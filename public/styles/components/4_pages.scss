@@ -28,6 +28,10 @@
 	text-align: center;
 }
 
+.syllabi-options {
+	
+}
+
 .featured-list {
 	list-style-type: none;
 	padding: 0;
@@ -142,12 +146,22 @@
 	max-height: 500px;
 }
 
-.dot {
-	@include circle(10px, $gray-dark);
-	display: inline-block;
-	position: relative;
-	margin: 0 auto;
+.dot-gray {
+	@include dot(10px, $gray-dark);
+}
+.dot-green {
+	@include dot (10px, $green);
+}
 
+.dot-green-light {
+	@include dot (10px, $green-light);
+}
+.dot-green-blue {
+	@include dot (10px, $green-blue);
+}
+
+.dot-brown {
+	@include dot (10px, $brown);
 }
 
 .talk-description {
@@ -176,9 +190,57 @@
 	margin: 2%;
 }
 
+.title-brown {
+	color: $brown;
+}
+.title-green {
+	color: $green;
+}
+.title-green-light {
+	color: $green-light;
+}
+.title-green-blue {
+	color: $green-blue;
+}
+.title-white {
+	color: white;
+}
+.styled-title {
+	font-weight: bold;
+	font-style: italic;
+}
+.title {
+	text-align: center;
+}
 .about-title {
 	margin: 2%;
 }
+.involved {
+	margin: 0 auto;
+	text-align: center;
+
+	li {
+		line-height: 25px;
+	}
+}
+.get-involved-header {
+	min-height: 200px;
+	width: 100%;
+
+}
+.newsletters {
+	background-color: $gray-lighter;
+}
+.listserv {
+	background-color: $green-blue-dark;
+	color: white;
+}
+
+.guideline {
+	color: white;
+}
+
+
 
 /* Blog pages
 ---------------------------------- */

@@ -13,7 +13,9 @@
 --}}
 {{!-- {{jsonPrint this}} --}}
 <div class="banner border-clear light-gray-bg">
-	<div class="container">
+	<div class="">
+	{{!-- {{jsonPrint this}} --}}
+		<div class="get-involved-header" style="background-image: url({{{getting_involved.banner.url}}}); background-size: cover;background-repeat: no-repeat;"><h1 class="title page-title title-white"><strong>Get Involved</strong></h1></div>
 		{{!-- <div class="row involved-images">
 			<div class="col-md-3">
 				<img src="{{{cloudinaryUrl getting_involved.edImage width=300 height=300 crop='scale' quality=100}}}">
@@ -28,55 +30,67 @@
 				<img src="{{{cloudinaryUrl getting_involved.studImage width=300 height=300 crop='scale' quality=100}}}">
 			</div>
 		</div> --}} 
+		<div class="separator-green-blue"></div>
+		<div class="container-padding row">
+			<div class="involved educators">
+				<h2 class="title title-green-blue">Educators</h2>
+				<h3>Educators are the driving force of this network. If you're an educator at a local institution serving undergraduates please reach out to:</h3>
+				<ul class="centered-list green-blue-list">
+					<li><span class="list-item">Share a syllabus</span></li>
+					<li><span class="list-item">Host a themed convening at your institution</span></li>
+					<li><span class="list-item">Volunteer to do a lightning talk</span></li>
+				</ul>
+			</div>
+		</div>
+		<div class="separator-green-light"></div>
+		<div class="container-padding row">
+			<div class="involved organizations">
+				<h2 class="title title-green-light">Community Organizations</h2>
+				{{!-- <p>{{getting_involved.orgsDescription}}</p> --}}
+				<ul class="centered-list green-light-list">
+					<li><span class="list-item">Get in touch with Research Coordinator Liat Racin (<span class="green-light-item">liat at elab.emerson.edu</span>) to participate in a focus group on the Ethical Partnerships project</span></li>
+					<li><span class="list-item">Post volunteer and project opportunities on the Boston Civic Media listserv</span></li>
+					<li><span class="list-item">Volunteer to reflect on a collaboration with an academic partner via a lightning talk</span></li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="separator-brown"></div>
+		<div class="container-padding row">
+			<div class="involved researchers">
+				<h2 class="title title-brown">Researchers</h2>
+				<ul class="centered-list brown-list">
+					<li><span class="list-item">Share resources accessile to the broader community, such as the Boston Data Library</span></li>
+					<li><span class="list-item">Suggest thematic topics for quarterly convenings, such as <span class="styled-title">"Impact and Assessment in Civic Media"</span></span></li>
+					<li><span class="list-item">Contribute your best practices and provocations to the Ethical Partnerships project</span></li>
+				</ul>
+			</div>
+		</div>
+		<div class="separator-green"></div>
+		<div class="container-padding row">
+			<div class="involved students">
+				<h2 class="title title-green">Students</h2>
+				<ul class="centered-list green-list">
+					<li><span class="list-item">Look out for joint Civic Media courses in 2018</span></li>
+					<li><span class="list-item">Get connected to local community organizations looking for interns</span></li>
+					<li><span class="list-item">Showcase your work at our annual summer Boston Civic Media conference</span></li>
+				</ul>
+			</div>
+		</div>
 
-		<div class="row">
-			<div class="educators">
-				<h4>Educators</h4>
-				<p>{{getting_involved.edDescription}}</p>
-				<ul>
-				{{#each getting_involved.edBlurb}}
-					<li>{{{this}}}</li>
+		<div class="newsletters row">
+			<div class="involved container-padding">
+				<h2 class="title">Newsletter Archive</h2>
+				{{#each newsletters}}
+					{{>about/newsletter newsletter=this}}
 				{{/each}}
-				</ul>
 			</div>
 		</div>
-		<div class="row">
-			<div class="researchers">
-				<h4>Researchers</h4>
-				<p>{{getting_involved.resDescription}}</p>
-				<ul>
-				{{#each getting_involved.resBlurb}}
-					<li>{{{this}}}</li>
-				{{/each}}
-				</ul>
-			</div>
-		</div>
-		<div class="row">
-			<div class="organizations">
-				<h4>Organizations</h4>
-				<p>{{getting_involved.orgsDescription}}</p>
-				<ul>
-				{{#each getting_involved.orgsBlurb}}
-					<li>{{{this}}}</li>
-				{{/each}}
-				</ul>
-			</div>
-		</div>
-		<div class="row">
-			<div class="students">
-				<h4>Students</h4>
-				<p>{{getting_involved.studDescription}}</p>
-				<ul>
-				{{#each getting_involved.studBlurb}}
-					<li>{{{this}}}</li>
-				{{/each}}
-				</ul>
-			</div>
-		</div>
-		<div class="row">
-			<div class="listserv">
-				<h4>Listserv Guidelines</h4>
-				{{!-- <p>{{getting_involved.guidelines}}</p> --}}
+
+		<div class="involved listserv row">
+			<div class="container-padding">
+				<h2 class="title title-white">Listserv Guidelines</h2>
+				<p>{{getting_involved.listservBlurb}}<br><a class="green-light-item" href="{{{listservLink}}}">{{getting_involved.listservLink}}</a></p>
 				<div class="guidelines">
 				{{#each guidelines}}
 					<div class="QA">{{>about/guideline guideline=this}}</div>
@@ -84,13 +98,6 @@
 				</div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="newsletters">
-				<h4>Newsletter Archive</h4>
-				{{#each newsletters}}
-					{{>about/newsletter newsletter=this}}
-				{{/each}}
-			</div>
-		</div>
+		
 	</div>
 </div>

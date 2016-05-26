@@ -3,6 +3,58 @@
 /* GENERAL */
 html, body, .container {
   height: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.container-padding {
+  height: 100%;
+  max-width: 100%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 5%;
+  margin-top:2%;
+}
+
+.list-item {
+  color: $gray-dark;
+  font-size: .6em;
+}
+.centered-list {
+  padding: 0px;
+  text-align: center;
+}
+
+.green-list {
+  @include colored-list ($green);
+  font-size:2em;
+}
+
+.green-blue-list {
+  @include colored-list ($green-blue);
+  font-size:2em;
+}
+
+.green-light-list {
+  @include colored-list ($green-light);
+  font-size:2em;
+}
+
+.brown-list {
+  @include colored-list ($brown);
+  font-size:2em;
+}
+.green-item {
+  color: $green;
+}
+.green-light-item {
+  color: $green-light;
+}
+.green-blue-item {
+  color: $green-blue;
+}
+.brown-item {
+  color: $brown;
 }
 
 // Vimeo embed
