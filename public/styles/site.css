@@ -2538,6 +2538,8 @@ body .becky-banner img {
 
 .guideline {
   color: white; }
+  .guideline p {
+    text-align: justify; }
 
 .cirb {
   background-color: #36a498; }
