@@ -16,6 +16,37 @@ html, body, .container {
   margin-top:2%;
 }
 
+.page-title {
+  font-family: "HalisGR-SBook", sans-serif;
+  margin: 2%;
+}
+.text-gray-dark {
+  color: $gray-dark;
+}
+
+.title-brown {
+  color: $brown;
+}
+.title-green {
+  color: $green;
+}
+.title-green-light {
+  color: $green-light;
+}
+.title-green-blue {
+  color: $green-blue;
+}
+.title-white {
+  color: white;
+}
+.styled-title {
+  font-weight: bold;
+  font-style: italic;
+}
+.title {
+  text-align: center;
+}
+
 .list-item {
   color: $gray-dark;
   font-size: .6em;

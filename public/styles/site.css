@@ -2336,6 +2336,10 @@ h5 + .separator {
   .featured-syllabi h3 {
     color: #0c9ec7; }
 
+.becky-banner {
+  width: 100%;
+  height: 100%; }
+
 .main-syllabi {
   background-image: url("https://res.cloudinary.com/engagement-lab-home/image/upload/v1464274547/boston-civic-media/infographic.jpg");
   background-repeat: no-repeat;
@@ -2501,37 +2505,16 @@ h5 + .separator {
   padding-left: 5%;
   padding-right: 5%; }
 
+.irb-proj {
+  padding: 5% 2%; }
+
 .irb-image {
   margin: 0 auto;
-  text-align: center; }
+  text-align: center;
+  padding: 5% 0px;
+  background-color: white; }
   .irb-image img {
     margin: 0 auto; }
-
-.page-title {
-  font-family: "HalisGR-SBook", sans-serif;
-  margin: 2%; }
-
-.title-brown {
-  color: #5c4e4e; }
-
-.title-green {
-  color: #a5d5ac; }
-
-.title-green-light {
-  color: #e5eec3; }
-
-.title-green-blue {
-  color: #5ebcb7; }
-
-.title-white {
-  color: white; }
-
-.styled-title {
-  font-weight: bold;
-  font-style: italic; }
-
-.title {
-  text-align: center; }
 
 .about-title {
   margin: 2%; }
@@ -2556,12 +2539,20 @@ h5 + .separator {
 .guideline {
   color: white; }
 
-.irb-image {
-  background-color: white;
-  padding: 5%; }
-
 .cirb {
   background-color: #36a498; }
+
+.event-description {
+  margin: 0 auto;
+  text-align: left; }
+  .event-description ul {
+    margin: 0 auto;
+    padding: 0px;
+    list-style-type: none; }
+  .event-description li {
+    margin: 0 auto;
+    padding: 5px 0px;
+    line-height: 25px; }
 
 /* Blog pages
 ---------------------------------- */
@@ -5945,6 +5936,8 @@ header.full-width .animated.main-navigation .dropdown-menu .open .dropdown-menu.
 
 /* Small devices (tablets, phones less than 767px) */
 @media (max-width: 767px) {
+  body .subscribe-button {
+    font-size: 1.2em; }
   /* Mobile menu
 	------------------------------ */
   /* active item */
@@ -8226,6 +8219,35 @@ html, body, .container {
   margin-right: 5%;
   margin-bottom: 5%;
   margin-top: 2%; }
+
+.page-title {
+  font-family: "HalisGR-SBook", sans-serif;
+  margin: 2%; }
+
+.text-gray-dark {
+  color: #7d7d7d; }
+
+.title-brown {
+  color: #5c4e4e; }
+
+.title-green {
+  color: #a5d5ac; }
+
+.title-green-light {
+  color: #e5eec3; }
+
+.title-green-blue {
+  color: #5ebcb7; }
+
+.title-white {
+  color: white; }
+
+.styled-title {
+  font-weight: bold;
+  font-style: italic; }
+
+.title {
+  text-align: center; }
 
 .list-item {
   color: #7d7d7d;

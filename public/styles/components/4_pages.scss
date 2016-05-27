@@ -15,11 +15,11 @@
 }
 
 .becky-banner {
-	img {
+	// img {
 		width: 100%;
 		height: 100%;
-		
-	}
+
+	// }
 }
 
 .main-syllabi {
@@ -183,43 +183,22 @@
 	padding-left:5%;
 	padding-right:5%;
 }
+.irb-proj {
+	padding: 5% 2%;
+
+}
 
 .irb-image {
 	margin: 0 auto;
 	text-align: center;
-
+	padding: 5% 0px;
+	background-color: white;
 	img {
 		margin: 0 auto;
 	}
 }
 
-.page-title {
-	font-family: "HalisGR-SBook", sans-serif;
-	margin: 2%;
-}
 
-.title-brown {
-	color: $brown;
-}
-.title-green {
-	color: $green;
-}
-.title-green-light {
-	color: $green-light;
-}
-.title-green-blue {
-	color: $green-blue;
-}
-.title-white {
-	color: white;
-}
-.styled-title {
-	font-weight: bold;
-	font-style: italic;
-}
-.title {
-	text-align: center;
-}
 .about-title {
 	margin: 2%;
 }
@@ -248,12 +227,24 @@
 	color: white;
 }
 
-.irb-image {
-	background-color: white;
-	padding: 5%;
-}
 .cirb {
 	background-color: $green-blue-dark;
+}
+
+.event-description {
+	margin: 0 auto;
+	text-align: left;
+	ul {
+		margin: 0 auto;
+		padding: 0px;
+		
+		list-style-type:none;
+	}
+	li {
+		margin: 0 auto;
+		padding: 5px 0px;
+		line-height: 25px;
+	}
 }
 
 
