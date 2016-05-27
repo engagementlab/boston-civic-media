@@ -26,66 +26,66 @@ GettingInvolved.add({
     listservBlurb: { type: String, label: "Listserv Blurb", initial: true, required: true},
     contactEmail: { type: String, label: "Contact Email", initial: true, required: true},
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
-},
+// },
 
-	'Educators', {
+	// 'Educators', {
 
-        edDescription: {
-            type: String,
-            label: 'Description',
-            initial: true,
-            required: true
-        },
-        edBlurb: {
-            type: Types.TextArray,
-            label: 'Blurb'
-        },
-        // edImage: { type: Types.CloudinaryImage, label: 'Image',  folder: 'bcm/team' }
+ //        edDescription: {
+ //            type: String,
+ //            label: 'Description',
+ //            initial: true,
+ //            required: true
+ //        },
+ //        edBlurb: {
+ //            type: Types.TextArray,
+ //            label: 'Blurb'
+ //        },
+ //        // edImage: { type: Types.CloudinaryImage, label: 'Image',  folder: 'bcm/team' }
 
-  }, 
+ //  }, 
 
-  'Comm Orgs', {
+ //  'Comm Orgs', {
 
-        orgsDescription: {
-            type: String,
-            label: 'Description',
-            initial: true,
-            required: true
-        },
-        orgsBlurb: {
-            type: Types.TextArray,
-            label: 'Blurb'
-        },
-        // orgsImage: { type: Types.CloudinaryImage, label: 'Image',  folder: 'bcm/team' }
-  }, 
+ //        orgsDescription: {
+ //            type: String,
+ //            label: 'Description',
+ //            initial: true,
+ //            required: true
+ //        },
+ //        orgsBlurb: {
+ //            type: Types.TextArray,
+ //            label: 'Blurb'
+ //        },
+ //        // orgsImage: { type: Types.CloudinaryImage, label: 'Image',  folder: 'bcm/team' }
+ //  }, 
 
-  'Researchers', {
+ //  'Researchers', {
 
-        resDescription: {
-            type: String,
-            label: 'Description',
-            initial: true,
-            required: true
-        },
-        resBlurb: {
-            type: Types.TextArray,
-            label: 'Blurb'
-        },
-        // resImage: { type: Types.CloudinaryImage, label: 'Image',  folder: 'bcm/team' }
-  }, 
+ //        resDescription: {
+ //            type: String,
+ //            label: 'Description',
+ //            initial: true,
+ //            required: true
+ //        },
+ //        resBlurb: {
+ //            type: Types.TextArray,
+ //            label: 'Blurb'
+ //        },
+ //        // resImage: { type: Types.CloudinaryImage, label: 'Image',  folder: 'bcm/team' }
+ //  }, 
 
-  'Students', {
+ //  'Students', {
 
-        studDescription: {
-            type: String,
-            label: 'Description',
-            initial: true,
-            required: true
-        },
-        studBlurb: {
-            type: Types.TextArray,
-            label: 'Blurb'
-        },
+ //        studDescription: {
+ //            type: String,
+ //            label: 'Description',
+ //            initial: true,
+ //            required: true
+ //        },
+ //        studBlurb: {
+ //            type: Types.TextArray,
+ //            label: 'Blurb'
+ //        },
         // studImage: { type: Types.CloudinaryImage, label: 'Image',  folder: 'bcm/team' }
     });
 
