@@ -17,7 +17,7 @@
 		<div class="row">
 			<div class="">
 			{{!-- {{jsonPrint this}} --}}
-			<a href="{{{beckyBannerURL}}}"><img class="becky-banner" src="{{{cloudinaryUrl beckyBanner width=1024 height=345 crop='scale' quality=100}}}" alt="{{this_event.name}}" class="photo" style="margin:0 auto; min-width: 100%; height: 100%;"></a>
+			<a href="{{{beckyBannerURL}}}"><img class="becky-banner" src="{{{cloudinaryUrl beckyBanner width=1024 height=345 crop='scale' quality=100}}}" alt="{{this_event.name}}" class="photo" style="margin:0 auto; min-width: 100%; max-width: 1024px; min-height: auto; max-height: 175px;"></a>
 			</div>
 		</div>
 
@@ -69,7 +69,7 @@
 					        <ul class="glide__track">
 					        {{!-- {{jsonPrint this}} --}}
 								{{#each featured_lightning_talks}}
-									<li class="glide__slide" style="padding: 30px; margin-right: -10px; width: 90%; overflow: hidden; ">{{> index/featured_lightning_talk featured_lightning_talk=this}}</li>
+									<li class="glide__slide" style="padding-right: 5%; width: 100%; overflow: hidden; ">{{> index/featured_lightning_talk featured_lightning_talk=this}}</li>
 								{{/each}}
 					        </ul>
 					    </div>
