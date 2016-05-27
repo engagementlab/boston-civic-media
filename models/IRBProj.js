@@ -34,7 +34,7 @@ var IRBProj = new keystone.List('IRBProj',
  */
 IRBProj.add({
 	name: { type: String, default: "Community IRB Project", hidden: true, required: true, initial: true },
-	description: { type: Types.Markdown, label: "Project Description", required: true, initial: true},
+	projDescription: { type: Types.Markdown, label: "Project Description", required: true, initial: true},
 	imageTitle: {type: String, label: "Image Title", required: true, initial: true}, 
 	imageCaption: {type: String, label: "Image Caption", required: true, initial: true},
 	image: { type: Types.CloudinaryImage, label: 'Image',  folder: 'boston-civic-media/logos' },

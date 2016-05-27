@@ -33,7 +33,6 @@ var Home = new keystone.List('Home',
  * @main Home
  */
 Home.add({
-
 	name: { type: String, default: "Home Page", hidden: true, required: true, initial: true },
 	beckyBanner: { type: Types.CloudinaryImage, label: 'Becky Banner',  folder: 'boston-civic-media/logos' },
 	beckyBannerUrl: {type: String, label: 'Hyperlink for Becky Banner'},

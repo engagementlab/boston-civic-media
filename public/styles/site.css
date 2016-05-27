@@ -2556,6 +2556,13 @@ h5 + .separator {
 .guideline {
   color: white; }
 
+.irb-image {
+  background-color: white;
+  padding: 5%; }
+
+.cirb {
+  background-color: #36a498; }
+
 /* Blog pages
 ---------------------------------- */
 .blogpost {
