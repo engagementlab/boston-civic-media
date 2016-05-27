@@ -2351,6 +2351,21 @@ body .becky-banner img {
   color: white;
   text-align: center; }
 
+.syllabus {
+  list-style-type: none;
+  padding: 0px; }
+
+.syllabi-options {
+  background: none;
+  border: 2px solid #e5eec3;
+  border-radius: 0px;
+  -webkit-appearance: none; }
+  .syllabi-options option {
+    background-color: white; }
+
+.overflow {
+  max-height: 300px; }
+
 .featured-list {
   list-style-type: none;
   padding: 0;
@@ -2515,6 +2530,10 @@ body .becky-banner img {
   background-color: white; }
   .irb-image img {
     margin: 0 auto; }
+
+.affiliates {
+  min-height: 100%;
+  overflow-y: visible !important; }
 
 .about-title {
   margin: 2%; }
@@ -5938,7 +5957,7 @@ header.full-width .animated.main-navigation .dropdown-menu .open .dropdown-menu.
 
 /* Small devices (tablets, phones less than 767px) */
 @media (max-width: 767px) {
-  body .subscribe-button {
+  body button.subscribe-button {
     font-size: 1.2em; }
   /* Mobile menu
 	------------------------------ */
@@ -8663,24 +8682,12 @@ ul.resources {
     color: #78cbd1; }
 
 .team-member img {
-  -webkit-transition: all 0.33s ease;
-  -o-transition: all 0.33s ease;
-  transition: all 0.33s ease;
   display: block;
   margin-left: auto;
   margin-right: auto;
   border-radius: 50%;
   height: 192px;
   width: 192px; }
-  .team-member img:hover {
-    -webkit-filter: grayscale(50%);
-    -moz-filter: grayscale(50%);
-    -ms-filter: grayscale(50%);
-    filter: grayscale(50%);
-    -webkit-transform: scale(1.07, 1.07);
-    -ms-transform: scale(1.07, 1.07);
-    -o-transform: scale(1.07, 1.07);
-    transform: scale(1.07, 1.07); }
 
 .light .social-links li a {
   background-color: #bababa;

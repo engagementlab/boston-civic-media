@@ -28,12 +28,12 @@
 	<div class="container pv-20">
 	
 	  {{#each filters}}
-		 	{{label}}:
-			<select class="syllabi-options option-set clearfix" data-filter-group="{{label}}">
-			    <option value="*" data-filter-value="" class="selected">All</option>
+		 	{{!-- {{label}}: --}}
+			<select id="syllabi{{label}}" class="syllabi-options option-set clearfix" data-filter-group="{{label}}">
+			    <option value="*" data-filter-value="" class="is-checked">All {{label}}s</option>
 
 				  {{#each values}}
-				    <option value="#" data-filter-value=".{{key}}">{{name}}</option>
+				    <option value="#" data-filter-value=".{{key}}" class="">{{name}}</option>
 				  {{/each}}
 
 			</select>
@@ -47,7 +47,7 @@
 				{{#each syllabi}}
 
 					<div class="col-md-6 syllabi-item {{filters}}">
-						<li class="">
+						<li class="syllabus">
 							<a href="/syllabi/{{syllabus_key}}"><h3 class="styled-title">{{title}}</h3></a>
 							<p>{{{description}}}</p>
 							<p><strong>{{{createdAt}}}</strong></p>

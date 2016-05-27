@@ -169,10 +169,28 @@
 		{{!-- SYLLABI Template Script --}}
 		{{#ifeq section 'syllabi'}}
 
+			$(function() {
+			    $( 'select#syllabiInstitution' )
+				    .selectmenu({width: 200})
+				    .selectmenu('menuWidget')
+				    .addClass ('overflow');
+
+			    $( "select#syllabiDiscipline" ).selectmenu({
+			    	width: 200
+
+			    });
+			});
+			var disMenu = $("#syllabiDiscipline").selectmenu();
+			$('.body').scroll (function () {
+				disMenu.selectmenu('collapseAll');
+			});
+
+ 
+
 			var container = $('#syllabi-content');
 			container.isotope({
-		    itemSelector: '.syllabi-item'
-		  });
+			    itemSelector: '.syllabi-item'
+			  });
 
 				// store filter for each group
 				var filters = {};

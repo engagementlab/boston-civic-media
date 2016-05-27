@@ -32,12 +32,20 @@ exports = module.exports = function(req, res) {
 
         var filters = [];
 
+        var filtersPopulate = [
+                                {path:'institution', select:'key'},
+                                {path:'discipline', select:'key'},
+                                {path:'keyword', select:'key'},
+                                {path:'faculty', select:'key'},
+                                {path:'partnerOrg', select:'key'}
+                              ];
+
         /* This query gets a publication by the key in the
            URL and populates resources from its model */
         var syllabusQuery = Syllabi.model.findOne({
             syllabus_key: req.params.syllabus_key
         })
-        .populate('institution discipline');
+        .populate(filtersPopulate);
 
         var queryFilters = Filter.model.find({});
 
@@ -49,7 +57,7 @@ exports = module.exports = function(req, res) {
             }
 
             // locals.date = moment(result.date).format();
-            console.log ("hi");
+            // console.log ("hi");
 
             queryFilters.exec(function(err, resultFilters) {
 

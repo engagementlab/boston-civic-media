@@ -36,10 +36,26 @@ body .becky-banner img {
 	text-align: center;
 }
 
-.syllabi-options {
-	
+.syllabus {
+	list-style-type:none;
+	padding: 0px;
 }
 
+.syllabi-options {
+	background: none;
+	border: 2px solid $green-light;
+	border-radius: 0px;
+	-webkit-appearance: none;
+
+	option {
+		background-color: white;
+	}
+}
+
+.overflow {
+	max-height: 300px;
+	
+}
 .featured-list {
 	list-style-type: none;
 	padding: 0;
@@ -198,6 +214,11 @@ body .becky-banner img {
 	}
 }
 
+.affiliates {
+	min-height: 100%;
+	overflow-y: visible !important;
+
+}
 
 .about-title {
 	margin: 2%;

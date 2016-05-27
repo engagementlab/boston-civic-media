@@ -543,14 +543,14 @@ ul.resources {
   }
 }
 .team-member img {
-  @include transition(all 0.33s ease);
+  // @include transition(all 0.33s ease);
   @include center-block;
   border-radius: 50%;
   height: 192px;
   width: 192px;
 
   &:hover {
-    @include teammemberHover();
+    // @include teammemberHover();
   }
 }
 
