@@ -51,11 +51,19 @@ body .becky-banner img {
 		background-color: white;
 	}
 }
+body .dropdown-menu {
+	width:150px;
 
-.overflow {
-	max-height: 300px;
-	
+	li a {
+		color: $gray-dark;
+		background-color: $green-light;
+	}
+	li a:hover {
+		color: $gray-dark;
+		background-color: white;
+	}
 }
+
 .featured-list {
 	list-style-type: none;
 	padding: 0;

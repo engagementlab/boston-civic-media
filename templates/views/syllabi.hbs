@@ -29,14 +29,16 @@
 	
 	  {{#each filters}}
 		 	{{!-- {{label}}: --}}
-			<select id="syllabi{{label}}" class="syllabi-options option-set clearfix" data-filter-group="{{label}}">
-			    <option value="*" data-filter-value="" class="is-checked">All {{label}}s</option>
+		<div class="btn-group clearfix" >
+			<button id="syllabi{{label}}" class="syllabi-options btn btn-default dropdown-toggle" type="button" data-filter-group="{{label}}" data-toggle="dropdown">{{label}}<span class="caret"></span></button>
+			<ul class="dropdown-menu" role="menu">
+				<li><a value="*"  href="#" data-filter-value="" class="is-checked">All {{label}}s</a></li>
 
-				  {{#each values}}
-				    <option value="#" data-filter-value=".{{key}}" class="">{{name}}</option>
-				  {{/each}}
-
-			</select>
+			    {{#each values}}
+			    <li><a value="#" href="#" data-filter-value=".{{key}}" class="">{{name}}</a></li>
+			    {{/each}}
+			</ul>
+		</div>
 
 	  {{/each}}
 
