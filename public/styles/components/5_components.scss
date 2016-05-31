@@ -5,6 +5,13 @@
 	padding:20px;
 }
 
+body .scrollable {
+	max-height: 200px;
+	height: auto;
+	overflow:scroll;
+
+}
+
 /* Buttons
 ---------------------------------- */
 /*Buttons Color Variations*/

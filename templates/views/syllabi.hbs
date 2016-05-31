@@ -30,8 +30,8 @@
 	  {{#each filters}}
 		<div class="btn-group clearfix" >
 			<button id="syllabi{{label}}" class="syllabi-options btn btn-default dropdown-toggle" type="button" data-filter-group="{{label}}" data-toggle="dropdown">{{label}}<span class="caret"></span></button>
-			<ul class="dropdown-menu" role="menu">
-				<li><a value="*"  href="#" data-filter-value="" data-filter-group="{{../label}}" class="option-{{label}}">All {{label}}s</a></li>
+			<ul class="dropdown-menu scrollable" role="menu">
+				<li><a data-filter-value="*"  href="#" data-filter-value="" data-filter-group="{{../label}}" class="option-{{label}}">All {{label}}s</a></li>
 
 			    {{#each values}}
 				    <li><a value="#" href="#" data-filter-value=".{{key}}" data-filter-group="{{../label}}" class="option-{{../label}}">{{name}}</a></li>
@@ -40,8 +40,11 @@
 		</div>
 
 	  {{/each}}
-
+			<div class="no-syllabi-visible">
+				<h2>No Syllabi match those categories!</h2>
+			</div>
 		<div id="syllabi-content" class="syllabi row">
+			
 			{{#if syllabi}}
 
 				{{!-- Show syllabi --}}

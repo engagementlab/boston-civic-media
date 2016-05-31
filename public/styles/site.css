@@ -2329,6 +2329,29 @@ h5 + .separator {
 ----------------------------------------------------------------------------- */
 /* Partials
 ---------------------------------- */
+body .bx-wrapper {
+  box-shadow: none;
+  border: 0px none; }
+
+.slider-buttons {
+  position: relative;
+  height: 60px;
+  margin-top: -80px; }
+  .slider-buttons #slider-next {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    width: 100px;
+    background-color: #dadada;
+    border-radius: 0px 20px 20px 0px; }
+  .slider-buttons #slider-prev {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    width: 100px;
+    background-color: #dadada;
+    border-radius: 20px 0px 0px 20px; }
+
 .featured-syllabi {
   color: #7d7d7d;
   text-align: center;
@@ -2355,6 +2378,10 @@ body .becky-banner img {
   list-style-type: none;
   padding: 0px; }
 
+.no-syllabi-visible {
+  display: none;
+  min-height: 500px; }
+
 .syllabi-options {
   background: none;
   border: 2px solid #e5eec3;
@@ -2375,7 +2402,7 @@ body .dropdown-menu {
 .featured-list {
   list-style-type: none;
   padding: 0;
-  width: 70%;
+  width: 80%;
   margin: 0 auto; }
 
 .featured-lightning-talks {
@@ -3111,6 +3138,11 @@ body .talks-item {
 ----------------------------------------------------------------------------- */
 .more-button {
   padding: 20px; }
+
+body .scrollable {
+  max-height: 200px;
+  height: auto;
+  overflow: scroll; }
 
 /* Buttons
 ---------------------------------- */

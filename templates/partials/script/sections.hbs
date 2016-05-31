@@ -31,16 +31,13 @@
 
 		{{!-- INDEX Template Script --}}
 		{{#ifeq section 'home'}}
-			
-			// Initialize featured projects carousel
-			$("#featured_glider").glide({
-
-	        type: "carousel",
-	        autoplay: false,
-	        autoheight: false, 
-	        paddings: '0'
-
-	    });
+		
+	  	$(document).ready(function(){
+		  $('.bxslider').bxSlider({
+			  nextSelector: '#slider-next',
+			  prevSelector: '#slider-prev'
+		  });
+		});
 
 		{{/ifeq}}
 
@@ -178,13 +175,30 @@
 				$(this).addClass('is-checked');
 
 				applyFilter(this);
-
+				checkFiltered ();
 			});
 
 			var container = $('#syllabi-content');
 			container.isotope({
 		    itemSelector: '.syllabi-item'
 		  });
+
+		function checkFiltered () {
+			var container = $('#syllabi-content');
+			if ( container.data('isotope').filteredItems.length === 0 ) {
+			  $('.no-syllabi-visible').show();
+			} else {
+				$('.no-syllabi-visible').hide();
+			}
+
+			// var invisibleItems = ($('.syllabi-item').css("display")== "none").length;
+			// console.log (invisibleItems);
+			// if (!(invisibleItems == null)) {
+			// 	$('.no-syllabi-visible').hide();
+			// } else {
+			// 	$('.no-syllabi-visible').show();
+			// }
+		}
 	    
 	    function applyFilter(elem) {
 				
@@ -202,6 +216,7 @@
 		    			    
 		    var filterStr = isoFilters.join('');
 		    container.isotope({ filter: filterStr });
+		    console.log (filterStr);
 		   
 		  }
 

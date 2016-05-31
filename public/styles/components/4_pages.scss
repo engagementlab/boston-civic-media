@@ -2,6 +2,40 @@
 ----------------------------------------------------------------------------- */
 /* Partials
 ---------------------------------- */
+body .bx-wrapper {
+	box-shadow: none;
+	border: 0px none;
+
+}
+.slider-buttons  {
+	position: relative;
+	// display: table-cell;
+	height: 60px;
+	margin-top: -80px;
+
+	#slider-next {
+		position: absolute;
+		top: 50%; 
+		right: 5%;
+		// transform: translate(-50%,-50%);
+		width: 100px;
+		// height: 60px;
+		background-color: $gray-lighter;
+		border-radius: 0px 20px 20px 0px;
+		// float: right;
+	}
+	#slider-prev {
+		position: absolute;
+		top: 50%; 
+		left: 5%;
+		// transform: translate(-50%,-50%);
+		width: 100px;
+		// height: 60px;
+		background-color: $gray-lighter;
+		border-radius: 20px 0px 0px 20px;
+	}
+}
+
 
 .featured-syllabi {
 	color: $gray-dark;
@@ -41,6 +75,11 @@ body .becky-banner img {
 	padding: 0px;
 }
 
+.no-syllabi-visible {
+	display: none;
+	min-height: 500px;
+}
+
 .syllabi-options {
 	background: none;
 	border: 2px solid $green-light;
@@ -67,7 +106,7 @@ body .dropdown-menu {
 .featured-list {
 	list-style-type: none;
 	padding: 0;
-	width: 70%;
+	width: 80%;
 	margin: 0 auto;
 }
 
