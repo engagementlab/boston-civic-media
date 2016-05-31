@@ -33,20 +33,14 @@
 		{{#ifeq section 'home'}}
 			
 			// Initialize featured projects carousel
-			/*$("#featured_glider").glide({
+			$("#featured_glider").glide({
 
 	        type: "carousel",
 	        autoplay: false,
 	        autoheight: false, 
 	        paddings: '0'
 
-	    });*/
-
-
-		  $('#featured_glider').bxSlider({
-			  video: true,
-			  useCSS: false
-			});
+	    });
 
 		{{/ifeq}}
 
@@ -175,9 +169,12 @@
 		{{!-- SYLLABI Template Script --}}
 		{{#ifeq section 'syllabi'}}
 
-			$('.button .ul .li .a').click(function(evt) {
-				$(evt.currentTarget).addClass
-			})
+			$('.dropdown-menu li').delegate('a','click', function() {
+				
+				$('.is-checked').removeClass('is-checked');
+				$(this).addClass('is-checked');
+
+			});
 
 			var container = $('#syllabi-content');
 			container.isotope({
