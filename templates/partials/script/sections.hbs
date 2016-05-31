@@ -169,23 +169,12 @@
 		{{!-- SYLLABI Template Script --}}
 		{{#ifeq section 'syllabi'}}
 
-			// $(function() {
-			//     $( 'select#syllabiInstitution' )
-			// 	    .selectmenu({width: 200})
-			// 	    .selectmenu('menuWidget')
-			// 	    .addClass ('overflow');
+			$('.dropdown-menu li').delegate('a','click', function() {
+				
+				$('.is-checked').removeClass('is-checked');
+				$(this).addClass('is-checked');
 
-			//     $( "select#syllabiDiscipline" ).selectmenu({
-			//     	width: 200
-
-			//     });
-			// });
-			// var disMenu = $("#syllabiDiscipline").selectmenu();
-			// $('.body').scroll (function () {
-			// 	disMenu.selectmenu('collapseAll');
-			// });
-
- 
+			});
 
 			var container = $('#syllabi-content');
 			container.isotope({
@@ -200,7 +189,7 @@
 		    
 		    // store filter value in object
 		    var group = selector.attr('data-filter-group');
-		    filters[group] = selector.find(':selected').attr('data-filter-value');
+		    filters[group] = selector.find('.is-checked').attr('data-filter-value');
 		    
 		    // convert object into array
 		    var isoFilters = [];
