@@ -1,0 +1,23 @@
+{
+  "name": "boston-civic-media",
+  "description": "",
+  "main": "app.js",
+  "version": "0.0.1",
+  "authors": [
+    "Erica Salling <erica@elab.emerson.edu>",
+    "Johnny Richardson <johnny@elab.emerson.edu>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/engagementgamelab/boston-civic-media",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery.fitvids": "fitvids#^1.1.0"
+  }
+}

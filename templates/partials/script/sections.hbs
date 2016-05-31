@@ -33,14 +33,20 @@
 		{{#ifeq section 'home'}}
 			
 			// Initialize featured projects carousel
-			$("#featured_glider").glide({
+			/*$("#featured_glider").glide({
 
 	        type: "carousel",
 	        autoplay: false,
 	        autoheight: false, 
 	        paddings: '0'
 
-	    });
+	    });*/
+
+
+		  $('#featured_glider').bxSlider({
+			  video: true,
+			  useCSS: false
+			});
 
 		{{/ifeq}}
 
@@ -169,23 +175,9 @@
 		{{!-- SYLLABI Template Script --}}
 		{{#ifeq section 'syllabi'}}
 
-			// $(function() {
-			//     $( 'select#syllabiInstitution' )
-			// 	    .selectmenu({width: 200})
-			// 	    .selectmenu('menuWidget')
-			// 	    .addClass ('overflow');
-
-			//     $( "select#syllabiDiscipline" ).selectmenu({
-			//     	width: 200
-
-			//     });
-			// });
-			// var disMenu = $("#syllabiDiscipline").selectmenu();
-			// $('.body').scroll (function () {
-			// 	disMenu.selectmenu('collapseAll');
-			// });
-
- 
+			$('.button .ul .li .a').click(function(evt) {
+				$(evt.currentTarget).addClass
+			})
 
 			var container = $('#syllabi-content');
 			container.isotope({
@@ -200,7 +192,7 @@
 		    
 		    // store filter value in object
 		    var group = selector.attr('data-filter-group');
-		    filters[group] = selector.find(':selected').attr('data-filter-value');
+		    filters[group] = selector.find('.is-checked').attr('data-filter-value');
 		    
 		    // convert object into array
 		    var isoFilters = [];
