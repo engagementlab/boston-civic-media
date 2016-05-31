@@ -61,7 +61,7 @@
 				<div id="affiliate-content" class="row">
 					{{#if affiliates}}
 						{{#each affiliates}}
-							<div class="col-md-2 affiliate-item {{{this.category}}}">
+							<div class="col-md-4 affiliate-item {{{this.category}}}">
 								<div class="" data-category="{{{this.category}}}" >
 									{{>about/affiliate_icon affiliate=this}}
 								</div>
@@ -103,7 +103,9 @@
 				<div class="clients-container">
 					<div class="clients">
 						{{#each funders}}
+						<div class="funder col-md-2 col-sm-4"> 
 							{{> about/affiliate_icon affiliate=this}}
+						</div>
 						{{/each}}
 					</div>
 				</div>
