@@ -1309,7 +1309,7 @@ tbody {
   margin-bottom: 50px; }
 
 .section {
-  padding: 20px 0; }
+  padding: 0px 0; }
 
 .footer-top {
   padding: 20px 0; }
@@ -8249,7 +8249,8 @@ html, body, .container {
 
 .page-title {
   font-family: "HalisGR-SBook", sans-serif;
-  margin: 2%; }
+  font-size: 3em;
+  padding-top: 5%; }
 
 .text-gray-dark {
   color: #7d7d7d; }
