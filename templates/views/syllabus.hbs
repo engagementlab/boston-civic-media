@@ -29,7 +29,7 @@
 		<div class="row">
 			<div class="col-md-4">
 			
-				<p><strong>Institution: {{this_syllabus.institution.name}}</strong></p>
+				<p><strong>Institution: {{#each this_syllabus.institution}} {{this.name}} {{/each}}</strong></p>
 				<p><strong>Discipline: {{this_syllabus.discipline.name}}</strong></p>
 				<p><strong>Discipline: {{#each this_syllabus.discipline}} {{this.name}} {{/each}}</strong></p>
 			</div>
