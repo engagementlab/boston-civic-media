@@ -412,9 +412,7 @@ header.full-width .animated.main-navigation .dropdown-menu .open .dropdown-menu.
 /* Small devices (tablets, phones less than 767px) */
 @media (max-width:767px) {
 
-	// body button.subscribe-button {
-	// 	font-size: 1em;
-	// }
+	
 	/* Mobile menu
 	------------------------------ */
 	/* active item */
@@ -774,6 +772,11 @@ header.full-width .animated.main-navigation .dropdown-menu .open .dropdown-menu.
 		font-size: 1em;
 	}
 }
+
+.subscribe-button:active,
+.subscribe-button:hover {
+		color: white;
+	}
 
 /* 6.3 Offcanvas navigation
 ----------------------------------------------------------------------------- */

@@ -342,9 +342,14 @@ body .talks-item {
 .newsletters {
 	background-color: $gray-lighter;
 }
-.listserv {
+body .listserv {
 	background-color: $green-blue-dark;
 	color: white;
+
+	a:hover, 
+	a:active {
+		color: $green;
+	}
 }
 
 .guideline {

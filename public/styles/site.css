@@ -2630,9 +2630,12 @@ body .talks-item {
 .newsletters {
   background-color: #dadada; }
 
-.listserv {
+body .listserv {
   background-color: #36a498;
   color: white; }
+  body .listserv a:hover,
+  body .listserv a:active {
+    color: #a5d5ac; }
 
 .guideline {
   color: white; }
@@ -6356,6 +6359,10 @@ header.full-width .animated.main-navigation .dropdown-menu .open .dropdown-menu.
   @media (max-width: 767px) {
     .subscribe-button {
       font-size: 1em; } }
+
+.subscribe-button:active,
+.subscribe-button:hover {
+  color: white; }
 
 /* 6.3 Offcanvas navigation
 ----------------------------------------------------------------------------- */
