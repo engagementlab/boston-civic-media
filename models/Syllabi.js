@@ -80,7 +80,7 @@ Syllabi.add({
       note: 'This is optional'
   },
   title: { type: Types.Text, label: "Title", required: true, initial: true },
-  blurb: { type: String, label: "Short Description", note: 'Appears below each syllabus in grids', required: true, initial: true },
+  blurb: { type: String, label: "Short Description", note: 'Appears below each syllabus in grids. Cut off at 150 characters.', max: {chars: 150, mode: 'warn'}, required: true, initial: true },
 	description: { type: Types.Textarea, label: "Long Description", note: 'Appears on individual syllabus page', required: true, initial: true },
   file: {
 		type: Types.AzureFile,

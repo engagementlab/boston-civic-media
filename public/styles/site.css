@@ -1309,7 +1309,7 @@ tbody {
   margin-bottom: 50px; }
 
 .section {
-  padding: 20px 0; }
+  padding: 0px 0; }
 
 .footer-top {
   padding: 20px 0; }
@@ -2329,6 +2329,29 @@ h5 + .separator {
 ----------------------------------------------------------------------------- */
 /* Partials
 ---------------------------------- */
+body .bx-wrapper {
+  box-shadow: none;
+  border: 0px none; }
+
+.slider-buttons {
+  position: relative;
+  height: 60px;
+  margin-top: -80px; }
+  .slider-buttons #slider-next {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    width: 100px;
+    background-color: #dadada;
+    border-radius: 0px 20px 20px 0px; }
+  .slider-buttons #slider-prev {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    width: 100px;
+    background-color: #dadada;
+    border-radius: 20px 0px 0px 20px; }
+
 .featured-syllabi {
   color: #7d7d7d;
   text-align: center;
@@ -2355,6 +2378,10 @@ body .becky-banner img {
   list-style-type: none;
   padding: 0px; }
 
+.no-syllabi-visible {
+  display: none;
+  min-height: 500px; }
+
 .syllabi-options {
   background: none;
   border: 2px solid #e5eec3;
@@ -2375,7 +2402,7 @@ body .dropdown-menu {
 .featured-list {
   list-style-type: none;
   padding: 0;
-  width: 70%;
+  width: 80%;
   margin: 0 auto; }
 
 .featured-lightning-talks {
@@ -2390,16 +2417,44 @@ body .dropdown-menu {
   margin-bottom: 1%;
   margin-top: 1%;
   min-height: 350px; }
+  @media (max-width: 767px) {
+    .lightning-talk {
+      min-width: 100%; } }
 
-.lightning-talk-title {
-  color: #7d7d7d; }
+body .lightning-talk-title {
+  color: #7d7d7d;
+  font-weight: 700;
+  min-height: 60px; }
 
 .talks-header {
   text-align: center;
   width: 50%;
   margin: 0 auto; }
+  @media (max-width: 767px) {
+    .talks-header {
+      width: 80%; } }
+
+.talks-feature {
+  padding: 0 5%; }
+  .talks-feature .feature {
+    float: right; }
+    @media (max-width: 767px) {
+      .talks-feature .feature {
+        display: none; } }
+
+@media (max-width: 767px) {
+  .feat-talk-description {
+    text-align: center; } }
+
+.feat-lightning-talk-title {
+  color: #7d7d7d; }
+  @media (max-width: 767px) {
+    .feat-lightning-talk-title {
+      text-align: center; } }
 
 .talks-buttons {
+  float: left;
+  padding-bottom: 5%;
   text-align: center; }
   .talks-buttons .button {
     display: block;
@@ -2420,6 +2475,10 @@ body .dropdown-menu {
     background: #0c9ec7; }
   .talks-buttons .is-checked {
     background: #0c9ec7; }
+  @media (max-width: 767px) {
+    .talks-buttons {
+      min-width: 100%;
+      padding-bottom: 5%; } }
 
 .glide {
   text-align: center; }
@@ -2454,6 +2513,9 @@ body .dropdown-menu {
 .affiliate-item {
   text-align: center;
   margin-bottom: 1%; }
+
+.funder {
+  padding-bottom: 5%; }
 
 .glide__wrapper {
   max-height: 500px; }
@@ -2522,9 +2584,20 @@ body .dropdown-menu {
   min-height: 100%;
   padding: 1%; }
 
+body .talks-item {
+  text-align: center; }
+  body .talks-item p {
+    margin: 0 auto;
+    width: 90%;
+    padding: 2%; }
+  @media (max-width: 767px) {
+    body .talks-item {
+      width: 100%; } }
+
 .talks-grid {
-  padding-left: 5%;
-  padding-right: 5%; }
+  background-color: #dadada;
+  background-size: cover;
+  padding: 0 10%; }
 
 .irb-proj {
   padding: 5% 2%; }
@@ -2557,9 +2630,12 @@ body .dropdown-menu {
 .newsletters {
   background-color: #dadada; }
 
-.listserv {
+body .listserv {
   background-color: #36a498;
   color: white; }
+  body .listserv a:hover,
+  body .listserv a:active {
+    color: #a5d5ac; }
 
 .guideline {
   color: white; }
@@ -2580,6 +2656,31 @@ body .dropdown-menu {
     margin: 0 auto;
     padding: 5px 0px;
     line-height: 25px; }
+
+.featured-event .summary {
+  font-size: 2em;
+  font-style: bold; }
+
+.featured-event p {
+  margin: 0 auto;
+  width: 50%;
+  padding: 5%; }
+
+.events-feature {
+  background-color: #dadada; }
+
+.recent-event {
+  padding-bottom: 15%; }
+  .recent-event p {
+    margin: 0 auto;
+    width: 200px;
+    padding: 5% 2%;
+    max-height: 120px;
+    min-height: 100px;
+    overflow: hidden; }
+
+.event-title {
+  min-height: 40px; }
 
 /* Blog pages
 ---------------------------------- */
@@ -3040,6 +3141,11 @@ body .dropdown-menu {
 ----------------------------------------------------------------------------- */
 .more-button {
   padding: 20px; }
+
+body .scrollable {
+  max-height: 200px;
+  height: auto;
+  overflow: scroll; }
 
 /* Buttons
 ---------------------------------- */
@@ -5963,8 +6069,6 @@ header.full-width .animated.main-navigation .dropdown-menu .open .dropdown-menu.
 
 /* Small devices (tablets, phones less than 767px) */
 @media (max-width: 767px) {
-  body button.subscribe-button {
-    font-size: 1.2em; }
   /* Mobile menu
 	------------------------------ */
   /* active item */
@@ -6252,6 +6356,13 @@ header.full-width .animated.main-navigation .dropdown-menu .open .dropdown-menu.
   min-height: 40px;
   width: 30%;
   font-size: 1.5em; }
+  @media (max-width: 767px) {
+    .subscribe-button {
+      font-size: 1em; } }
+
+.subscribe-button:active,
+.subscribe-button:hover {
+  color: white; }
 
 /* 6.3 Offcanvas navigation
 ----------------------------------------------------------------------------- */
@@ -8249,7 +8360,8 @@ html, body, .container {
 
 .page-title {
   font-family: "HalisGR-SBook", sans-serif;
-  margin: 2%; }
+  font-size: 3em;
+  padding-top: 5%; }
 
 .text-gray-dark {
   color: #7d7d7d; }

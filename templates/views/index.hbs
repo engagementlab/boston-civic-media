@@ -14,6 +14,7 @@
 			</div>
 		</div>
 	</div>
+
 		<div class="row">
 			<div class="">
 			{{!-- {{jsonPrint this}} --}}
@@ -22,29 +23,19 @@
 		</div>
 
 		<div class="row main-featured">
-
-			
 			{{#if featured_syllabi}}
 				<section class="col-md-6 featured-syllabi">
-						<h1>Featured Syllabi:</h1>
-
-					{{!-- Glider.js structure --}}
+					<h1>Featured Syllabi:</h1>
 					<div>
-					    {{!-- <div class="glide__arrows">
-					        <button class="glide__arrow prev" data-glide-dir="<"></button>
-					        <button class="glide__arrow next" data-glide-dir=">"></button>
-					    </div> --}}
-
 					    <div>
 					        <ul class="featured-list">
 					        	{{!-- {{jsonPrint this}} --}}
 								{{#each featured_syllabi}}
 									<li>{{> index/featured_syllabi featured_syllabi=this}}</li>
-
 								{{/each}}
 					        </ul>
 					    </div>
-					<div class="more-button"><a href="/syllabi">See More Syllabi</a></div>
+						<div class="more-button"><a href="/syllabi">See More Syllabi</a></div>
 
 					</div>
 					
@@ -54,26 +45,23 @@
 
 			{{#if featured_lightning_talks}}
 				<section class="col-md-6 featured-lightning-talks">
-
 						<h1>Featured Lightning Talks:</h1>
 						<h3>Listen to local civic media leaders share lessons and provocations from the field</h3>
-					{{!-- Glider.js structure --}}
 					<ul id="featured_glider" class="bxslider">
+						{{#each featured_lightning_talks}}
+							<li>{{> index/featured_lightning_talk featured_lightning_talk=this}}</li>
+						{{/each}}
 
-					    {{!-- <div class="glide__arrows">
-					        <button class="glide__arrow prev" data-glide-dir="<"></button>
-					        <button class="glide__arrow next" data-glide-dir=">"></button>
-					    </div> --}}
-
-										{{#each featured_lightning_talks}}
-											<li>{{> index/featured_lightning_talk featured_lightning_talk=this}}</li>
-										{{/each}}
-
-	        </ul>
-
-					</div>
-					<div class="more-button"><a href="/lightning_talk">Watch More Lightning Talks</a></div>
-
+			        </ul>
+			        
+			        <div class="slider-buttons">
+			        	<div id="slider-next"></div>
+			        	<div id="slider-prev"></div>
+		        	</div>
+			        
+		        	<div class="more-button">
+			        	<a href="/lightning_talk">Watch More Lightning Talks</a>
+		        	</div>					
 				</section>
 			{{/if}}
 		</div>

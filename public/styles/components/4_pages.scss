@@ -2,6 +2,40 @@
 ----------------------------------------------------------------------------- */
 /* Partials
 ---------------------------------- */
+body .bx-wrapper {
+	box-shadow: none;
+	border: 0px none;
+
+}
+.slider-buttons  {
+	position: relative;
+	// display: table-cell;
+	height: 60px;
+	margin-top: -80px;
+
+	#slider-next {
+		position: absolute;
+		top: 50%; 
+		right: 5%;
+		// transform: translate(-50%,-50%);
+		width: 100px;
+		// height: 60px;
+		background-color: $gray-lighter;
+		border-radius: 0px 20px 20px 0px;
+		// float: right;
+	}
+	#slider-prev {
+		position: absolute;
+		top: 50%; 
+		left: 5%;
+		// transform: translate(-50%,-50%);
+		width: 100px;
+		// height: 60px;
+		background-color: $gray-lighter;
+		border-radius: 20px 0px 0px 20px;
+	}
+}
+
 
 .featured-syllabi {
 	color: $gray-dark;
@@ -41,6 +75,11 @@ body .becky-banner img {
 	padding: 0px;
 }
 
+.no-syllabi-visible {
+	display: none;
+	min-height: 500px;
+}
+
 .syllabi-options {
 	background: none;
 	border: 2px solid $green-light;
@@ -67,7 +106,7 @@ body .dropdown-menu {
 .featured-list {
 	list-style-type: none;
 	padding: 0;
-	width: 70%;
+	width: 80%;
 	margin: 0 auto;
 }
 
@@ -88,10 +127,16 @@ body .dropdown-menu {
 	margin-top:1%;
 	min-height: 350px;
 
+
+	@media (max-width: 767px){
+		min-width: 100%;
+	}
 }
 
-.lightning-talk-title {
+body .lightning-talk-title {
 	color: $gray-dark;
+	font-weight: 700;
+	min-height: 60px;
 	// padding-top: 20%;
 
 }
@@ -100,9 +145,39 @@ body .dropdown-menu {
 	text-align: center;
 	width: 50%;
 	margin: 0 auto;
+
+	@media (max-width: 767px){
+		width: 80%;
+	}
+}
+.talks-feature {
+	padding: 0 5%;
+
+	.feature {
+		float: right;
+
+		@media (max-width: 767px) {
+			display: none;
+		}
+	}
+}
+.feat-talk-description {
+	@media (max-width: 767px) {
+		text-align: center;
+	}
+}
+.feat-lightning-talk-title {
+	color: $gray-dark;
+
+	@media (max-width: 767px) {
+		text-align: center;
+
+	}
 }
 
 .talks-buttons {
+	float: left;
+	padding-bottom: 5%;
 	text-align: center;
 	// margin-top: 5%;
 	.button {
@@ -128,6 +203,10 @@ body .dropdown-menu {
 	.is-checked {
 		background: $base-color-hover;
 		// background: transparent;
+	}
+	@media (max-width: 767px) {
+		min-width: 100%;
+		padding-bottom: 5%;
 	}
 }
 
@@ -174,6 +253,10 @@ body .dropdown-menu {
 	margin-bottom: 1%;
 }
 
+.funder {
+	padding-bottom:5%;
+}
+
 .glide__wrapper {
 	max-height: 500px;
 }
@@ -201,11 +284,23 @@ body .dropdown-menu {
 	padding: 1%;
 
 }
+body .talks-item {
+	text-align: center;	
+	p {
+		margin: 0 auto;
+		width: 90%;
+		padding: 2%;
+	}
+
+	@media (max-width: 767px){ 
+		width: 100%;
+	}
+}
 
 .talks-grid {
-	// background-color: $gray-lighter;
-	padding-left:5%;
-	padding-right:5%;
+	background-color: $gray-lighter;
+	background-size: cover;
+	padding:0 10%;
 }
 .irb-proj {
 	padding: 5% 2%;
@@ -247,9 +342,14 @@ body .dropdown-menu {
 .newsletters {
 	background-color: $gray-lighter;
 }
-.listserv {
+body .listserv {
 	background-color: $green-blue-dark;
 	color: white;
+
+	a:hover, 
+	a:active {
+		color: $green;
+	}
 }
 
 .guideline {
@@ -277,6 +377,40 @@ body .dropdown-menu {
 		padding: 5px 0px;
 		line-height: 25px;
 	}
+}
+
+.featured-event {
+	.summary {
+		font-size: 2em;
+		font-style: bold;
+
+	}
+	p {
+		margin: 0 auto;
+		width: 50%;
+		padding: 5%;
+	}
+}
+
+.events-feature {
+	background-color: $gray-lighter;
+}
+
+.recent-event {
+	padding-bottom: 15%;
+	p {
+		margin: 0 auto;
+		width: 200px;
+		padding: 5% 2%;
+		max-height: 120px;
+		min-height: 100px;
+		overflow: hidden;
+	}
+
+}
+
+.event-title {
+	min-height: 40px;
 }
 
 
