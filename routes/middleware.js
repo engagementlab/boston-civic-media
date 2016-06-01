@@ -41,6 +41,11 @@ exports.initLocals = function(req, res, next) {
         href: '/syllabi'
     },
     {
+        label: 'Lightning Talks',
+        key: 'lightning-talk',
+        href: '/lightning_talk'
+    },
+    {
         label: 'CIRB',
         key: 'irb_proj',
         href: '/irb_proj'

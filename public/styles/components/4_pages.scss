@@ -36,11 +36,15 @@ body .bx-wrapper {
 	}
 }
 
+.main-featured {
+	margin: 5% 0px;
+}
 
 .featured-syllabi {
 	color: $gray-dark;
 	text-align: center;
 	margin: 0 auto;
+	border-right: 1px $gray-dark solid;
 	h3 {
 		color: $base-color-hover;
 	}
@@ -48,12 +52,8 @@ body .bx-wrapper {
 
 }
 
-body .becky-banner img {
-	// img {
-		width: 100%;
-		height: 100%;
-
-	// }
+body .beckyBanner {
+	margin: 3% 0px;	
 }
 
 .main-syllabi {
@@ -75,10 +75,29 @@ body .becky-banner img {
 	padding: 0px;
 }
 
+.this-syllabus-description {
+	font-size: 1.5em;
+}
+
 .syllabus-button {
 	font-size: 2em;
 	float: right;
 
+}
+
+.tags {
+	text-align: center;
+	p {
+		margin: 5% auto;
+		border-bottom: 1px $gray-dark solid;
+	}
+	ul li {
+		padding: 0px;
+	}
+	ul {
+		padding: 0px;
+		list-style: none;
+	}
 }
 
 .no-syllabi-visible {
@@ -86,16 +105,48 @@ body .becky-banner img {
 	min-height: 500px;
 }
 
-.syllabi-options {
-	background: none;
-	border: 2px solid $green-light;
-	border-radius: 0px;
-	-webkit-appearance: none;
-
-	option {
-		background-color: white;
+body .filters {
+	.btn-group {
+		margin-right: 2%;
 	}
+	.btn-group.open > btn.syllabi-options:active,
+	.btn-group.open > btn.syllabi-options:visited{
+		background-color: white;
+		border: 3px solid $green;
+		color: $gray-light;
+		box-shadow:none;
+	}
+
+	.syllabi-options{
+		background-color: white;
+		color: $gray-dark;
+		font-weight: bold;
+		border: 3px solid $green;
+	}
+
+	.btn.syllabi-options:hover,
+	.btn.syllabi-options:active,
+	.btn.syllabi-options:focus {
+		background-color: white;
+		border: 3px solid $green;
+		color: $gray-light;
+		box-shadow:none;
+	}
+
+	.btn.syllabi-options:selected {
+		color: $gray-dark;
+		background-color: white;
+		border: 3px solid $green;
+
+	}
+	.btn.syllabi-options:focus {
+		background-color: white;
+		border: 3px solid $green;
+		color: $gray-light;
+	}
+
 }
+
 body .dropdown-menu {
 	width:150px;
 
@@ -157,8 +208,9 @@ body .lightning-talk-title {
 	}
 }
 .talks-feature {
-	padding: 0 5%;
-
+	padding: 2% 5%;
+	margin: 5% 5%;
+	border-bottom: 1px $gray-dark solid;
 	.feature {
 		float: right;
 

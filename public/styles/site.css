@@ -1209,16 +1209,20 @@ tbody {
   margin: 0 auto;
   padding-top: 2%;
   padding-bottom: 2%; }
+  .main-blurb .main-text {
+    max-width: 90%;
+    margin: 0 auto; }
   .main-blurb .main-mission-statement {
     text-align: justify;
-    width: 90%;
+    width: 100%;
     font-size: xx-large;
     font-weight: bold;
     margin: 0 auto; }
   .main-blurb .main-description {
     text-align: justify;
-    width: 90%;
-    margin: 0 auto; }
+    width: 100%;
+    margin: 0 auto;
+    font-size: large; }
 
 .page-wrapper {
   background-color: #ffffff; }
@@ -2352,16 +2356,19 @@ body .bx-wrapper {
     background-color: #dadada;
     border-radius: 20px 0px 0px 20px; }
 
+.main-featured {
+  margin: 5% 0px; }
+
 .featured-syllabi {
   color: #7d7d7d;
   text-align: center;
-  margin: 0 auto; }
+  margin: 0 auto;
+  border-right: 1px #7d7d7d solid; }
   .featured-syllabi h3 {
     color: #0c9ec7; }
 
-body .becky-banner img {
-  width: 100%;
-  height: 100%; }
+body .beckyBanner {
+  margin: 3% 0px; }
 
 .main-syllabi {
   background-image: url("https://res.cloudinary.com/engagement-lab-home/image/upload/v1464274547/boston-civic-media/infographic.jpg");
@@ -2378,21 +2385,61 @@ body .becky-banner img {
   list-style-type: none;
   padding: 0px; }
 
+.this-syllabus-description {
+  font-size: 1.5em; }
+
 .syllabus-button {
   font-size: 2em;
   float: right; }
+
+.tags {
+  text-align: center; }
+  .tags p {
+    margin: 5% auto;
+    border-bottom: 1px #7d7d7d solid; }
+  .tags ul li {
+    padding: 0px; }
+  .tags ul {
+    padding: 0px;
+    list-style: none; }
 
 .no-syllabi-visible {
   display: none;
   min-height: 500px; }
 
-.syllabi-options {
-  background: none;
-  border: 2px solid #e5eec3;
-  border-radius: 0px;
-  -webkit-appearance: none; }
-  .syllabi-options option {
-    background-color: white; }
+body .filters .btn-group {
+  margin-right: 2%; }
+
+body .filters .btn-group.open > btn.syllabi-options:active,
+body .filters .btn-group.open > btn.syllabi-options:visited {
+  background-color: white;
+  border: 3px solid #a5d5ac;
+  color: #bababa;
+  box-shadow: none; }
+
+body .filters .syllabi-options {
+  background-color: white;
+  color: #7d7d7d;
+  font-weight: bold;
+  border: 3px solid #a5d5ac; }
+
+body .filters .btn.syllabi-options:hover,
+body .filters .btn.syllabi-options:active,
+body .filters .btn.syllabi-options:focus {
+  background-color: white;
+  border: 3px solid #a5d5ac;
+  color: #bababa;
+  box-shadow: none; }
+
+body .filters .btn.syllabi-options:selected {
+  color: #7d7d7d;
+  background-color: white;
+  border: 3px solid #a5d5ac; }
+
+body .filters .btn.syllabi-options:focus {
+  background-color: white;
+  border: 3px solid #a5d5ac;
+  color: #bababa; }
 
 body .dropdown-menu {
   width: 150px; }
@@ -2439,7 +2486,9 @@ body .lightning-talk-title {
       width: 80%; } }
 
 .talks-feature {
-  padding: 0 5%; }
+  padding: 2% 5%;
+  margin: 5% 5%;
+  border-bottom: 1px #7d7d7d solid; }
   .talks-feature .feature {
     float: right; }
     @media (max-width: 767px) {
@@ -6348,8 +6397,8 @@ header.full-width .animated.main-navigation .dropdown-menu .open .dropdown-menu.
   background-color: #bababa; }
 
 body .subscribe-button {
-  background-color: #0c9ec7;
-  color: #dadada;
+  background-color: #78cbd1;
+  color: white;
   border-radius: 0px;
   border: none;
   padding: 1%;
@@ -6367,7 +6416,7 @@ body .subscribe-button:active,
 body .subscribe-button:hover,
 body .subscribe-button:selected {
   color: #bababa;
-  background-color: #0c9ec7; }
+  background-color: #78cbd1; }
 
 /* 6.3 Offcanvas navigation
 ----------------------------------------------------------------------------- */
@@ -8363,6 +8412,18 @@ html, body, .container {
   margin-bottom: 5%;
   margin-top: 2%; }
 
+.bigCaret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 4px;
+  vertical-align: middle;
+  border-top: 8px solid #0c9ec7;
+  border-right: 8px solid transparent;
+  border-bottom: 0 dotted;
+  border-left: 8px solid transparent;
+  content: ""; }
+
 .page-title {
   font-family: "HalisGR-SBook", sans-serif;
   font-size: 3em;
@@ -8400,6 +8461,14 @@ html, body, .container {
 .centered-list {
   padding: 0px;
   text-align: center; }
+
+.bulletless-list {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  font-size: 2.2em; }
+  .bulletless-list .list-item {
+    line-height: 2em; }
 
 .green-list {
   list-style: disc;

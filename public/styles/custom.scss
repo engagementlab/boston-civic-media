@@ -16,6 +16,19 @@ html, body, .container {
   margin-top:2%;
 }
 
+.bigCaret {
+    display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 4px;
+  vertical-align: middle;
+  border-top: 8px solid $base-color-hover;
+  border-right: 8px solid transparent;
+  border-bottom: 0 dotted;
+  border-left: 8px solid transparent;
+  content: "";
+}
+
 .page-title {
   font-family: "HalisGR-SBook", sans-serif;
   font-size: 3em;
@@ -56,6 +69,17 @@ html, body, .container {
 .centered-list {
   padding: 0px;
   text-align: center;
+}
+
+.bulletless-list {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  font-size: 2.2em;
+
+  .list-item {
+    line-height: 2em
+  }
 }
 
 .green-list {

@@ -59,11 +59,31 @@ exports = module.exports = function(req, res) {
             }
         });
 
+        var bannerURL = Home.model.findOne({}, "beckyBannerURL", {
+            sort: {
+                'createdAt': -1
+            }
+        });
+
+        var bannerHeader = Home.model.findOne({}, "beckyBannerHeader", {
+            sort: {
+                'createdAt': -1
+            }
+        });
+
+        var bannerBlurb = Home.model.findOne({}, "beckyBannerBlurb", {
+            sort: {
+                'createdAt': -1
+            }
+        });
+
         var background = Home.model.findOne({}, "background", {
             sort: {
                 'createdAt': -1
             }
         });
+
+        
         // This query gets all featured projects
         var lightningTalkQuery = LightningTalk.model.find({
             'enabled': true,
@@ -93,37 +113,45 @@ exports = module.exports = function(req, res) {
             beckyBanner.exec(function(err, result){
                 locals.beckyBanner = result.beckyBanner;
 
-                background.exec(function(err, result) {
-                    locals.background = result.background;
-                    console.log (locals.background);
-
-                    lightningTalkQuery.exec(function(err, result){
-                        // console.log ("hi")
-                        if (err) throw err;
-
-                        if(result !== null)
-                            locals.featured_lightning_talks = result;
+                bannerURL.exec(function(err, result){
+                    locals.bannerURL = result.beckyBannerURL;
+               
+                    bannerHeader.exec(function(err, result){
+                        locals.bannerHeader = result.beckyBannerHeader;
                         
-                        syllabiQuery.exec(function(err, result) {
-                            if (err) throw err;
-                            
-                            if(result !== null)
-                                locals.featured_syllabi = result;
+                        bannerBlurb.exec(function(err, result){
+                            locals.bannerBlurb = result.beckyBannerBlurb;
+                        
+                            background.exec(function(err, result) {
+                                locals.background = result.background;
+                                // console.log (locals.background);
 
-                            queryFeaturedEvent.exec(function(err, resultEvent) {
-                                locals.featured_events = resultEvent;
+                                lightningTalkQuery.exec(function(err, result){
+                                    // console.log ("hi")
+                                    if (err) throw err;
 
-                                next(err);
+                                    if(result !== null)
+                                        locals.featured_lightning_talks = result;
+                                    
+                                    syllabiQuery.exec(function(err, result) {
+                                        if (err) throw err;
+                                        
+                                        if(result !== null)
+                                            locals.featured_syllabi = result;
+
+                                        queryFeaturedEvent.exec(function(err, resultEvent) {
+                                            locals.featured_events = resultEvent;
+
+                                            next(err);
+                                        });
+                                    });
+                                });
                             });
-
                         });
-
                     });
                 });
             });
-            
         });
-
     });
 
     // Render the view
