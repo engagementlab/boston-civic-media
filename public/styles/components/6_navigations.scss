@@ -755,7 +755,7 @@ header.full-width .animated.main-navigation .dropdown-menu .open .dropdown-menu.
 
 }
 
-.subscribe-button {
+body .subscribe-button {
 	background-color: $base-color-hover;
 	color: $gray-lighter;
 	border-radius: 0px;
@@ -773,9 +773,11 @@ header.full-width .animated.main-navigation .dropdown-menu .open .dropdown-menu.
 	}
 }
 
-.subscribe-button:active,
-.subscribe-button:hover {
-		color: white;
+body .subscribe-button:active,
+body .subscribe-button:hover,
+body .subscribe-button:selected {
+		color: $gray-light;
+		background-color: $base-color-hover;
 	}
 
 /* 6.3 Offcanvas navigation

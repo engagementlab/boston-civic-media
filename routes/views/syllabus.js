@@ -62,6 +62,7 @@ exports = module.exports = function(req, res) {
             queryFilters.exec(function(err, resultFilters) {
 
                 locals.this_syllabus = result;
+                // console.log(locals.this_syllabus);
                 // Chain the result for filters and map them into arrays of labels after grouping them into sub-objects
                 // http://underscorejs.org/#groupBy
                 // http://underscorejs.org/#map
@@ -81,7 +82,7 @@ exports = module.exports = function(req, res) {
                     };
                 })
                 .value();
-                 // console.log(locals.this_syllabus);
+                 
             });
 
             next(err);

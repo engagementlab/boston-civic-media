@@ -2595,8 +2595,6 @@ body .talks-item {
       width: 100%; } }
 
 .talks-grid {
-  background-color: #dadada;
-  background-size: cover;
   padding: 0 10%; }
 
 .irb-proj {
@@ -6344,7 +6342,7 @@ header.full-width .animated.main-navigation .dropdown-menu .open .dropdown-menu.
 .footer-outer {
   background-color: #bababa; }
 
-.subscribe-button {
+body .subscribe-button {
   background-color: #0c9ec7;
   color: #dadada;
   border-radius: 0px;
@@ -6357,12 +6355,14 @@ header.full-width .animated.main-navigation .dropdown-menu .open .dropdown-menu.
   width: 30%;
   font-size: 1.5em; }
   @media (max-width: 767px) {
-    .subscribe-button {
+    body .subscribe-button {
       font-size: 1em; } }
 
-.subscribe-button:active,
-.subscribe-button:hover {
-  color: white; }
+body .subscribe-button:active,
+body .subscribe-button:hover,
+body .subscribe-button:selected {
+  color: #bababa;
+  background-color: #0c9ec7; }
 
 /* 6.3 Offcanvas navigation
 ----------------------------------------------------------------------------- */
