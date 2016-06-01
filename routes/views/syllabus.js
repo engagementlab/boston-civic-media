@@ -45,7 +45,9 @@ exports = module.exports = function(req, res) {
         var syllabusQuery = Syllabi.model.findOne({
             syllabus_key: req.params.syllabus_key
         })
-        .populate(filtersPopulate);
+        .populate('institution')
+        .populate('discipline')
+        .populate('keyword');
 
         var queryFilters = Filter.model.find({});
 
@@ -53,12 +55,8 @@ exports = module.exports = function(req, res) {
         syllabusQuery.exec(function(err, result) {
             
             if (result === null) {
-                return res.notfound('Cannot find syllabus', 'Sorry, but it looks like the syllabus you were looking for does not exist! Try <a href="http://elab.emerson.edu/events">going back</a> to the directory.');
+                return res.notfound('Cannot find syllabus', 'Sorry, but it looks like the syllabus you were looking for does not exist!');
             }
-
-            // locals.date = moment(result.date).format();
-            // console.log ("hi");
-
             queryFilters.exec(function(err, resultFilters) {
 
                 locals.this_syllabus = result;

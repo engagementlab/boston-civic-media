@@ -17,7 +17,7 @@
 	<div class="container">
 		<div class="main">
 		<h3 class="page-title">{{this_syllabus.title}}</h3>
-			{{!-- <h5>{{this_syllabus.author}}</h5> --}}
+			<h5>{{this_syllabus.author}}</h5>
 			{{!-- {{> page/lead}} --}}
 		</div>
 	</div>
@@ -28,10 +28,10 @@
 	<div class="container pv-20">
 		<div class="row">
 			<div class="col-md-4">
-			{{jsonPrint this}}
-				<p><strong>Institution: {{this_syllabus.institution.name}}</strong></p>
+			
+				<p><strong>Institution: {{#each this_syllabus.institution}} {{this.name}} {{/each}}</strong></p>
 				<p><strong>Discipline: {{this_syllabus.discipline.name}}</strong></p>
-				<p><strong>Faculty: {{this_syllabus.faculty.name}}</strong></p>
+				<p><strong>Discipline: {{#each this_syllabus.discipline}} {{this.name}} {{/each}}</strong></p>
 			</div>
 			<div class="col-md-8">
 				
