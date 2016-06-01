@@ -47,7 +47,7 @@
 				<h1 class="page-title text-center">Affiliates</h1>
 			</div>
 
-			<div class="affiliates col-md-12 container pv-20">
+			<div class="affiliates col-md-12 container-fluid pv-20">
 				<div class="row affiliate-buttons clearfix button-group filters-button-group" data-filter-group="">
 				    <button value="*" data-filter="*" class="button is-checked">All</button>
 				    <span class="dot-gray"></span>
@@ -58,10 +58,10 @@
 				    <button class="button" value="#" data-filter=".CommunityOrganization">Community Organizations</button>
 				</div>
 
-				<div id="affiliate-content" class="row">
+				<div id="affiliate-content" class="affiliate-content row">
 					{{#if affiliates}}
 						{{#each affiliates}}
-							<div class="col-md-4 affiliate-item {{{this.category}}}">
+							<div class="col-md-3 affiliate-item {{{this.category}}}">
 								<div class="" data-category="{{{this.category}}}" >
 									{{>about/affiliate_icon affiliate=this}}
 								</div>

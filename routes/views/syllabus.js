@@ -47,7 +47,9 @@ exports = module.exports = function(req, res) {
         })
         .populate('institution')
         .populate('discipline')
-        .populate('keyword');
+        .populate('keyword')
+        .populate('faculty')
+        .populate('partnerOrg');
 
         var queryFilters = Filter.model.find({});
 

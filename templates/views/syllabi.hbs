@@ -29,9 +29,9 @@
 	
 	  {{#each filters}}
 		<div class="btn-group clearfix" >
-			<button id="syllabi{{label}}" class="syllabi-options btn btn-default dropdown-toggle" type="button" data-filter-group="{{label}}" data-toggle="dropdown">{{label}}<span class="caret"></span></button>
+			<button id="syllabi{{label}}" class="syllabi-options btn btn-default dropdown-toggle" type="button" data-filter-group="{{label}}" data-toggle="dropdown">{{label}} <span class="caret"></span></button>
 			<ul class="dropdown-menu scrollable" role="menu">
-				<li><a data-filter-value="*"  href="#" data-filter-value="" data-filter-group="{{../label}}" class="option-{{label}}">All {{label}}s</a></li>
+				<li><a data-filter=""  href="#" data-filter-value="" data-filter-group="{{label}}" class="option-{{label}}">All {{label}}s</a></li>
 
 			    {{#each values}}
 				    <li><a value="#" href="#" data-filter-value=".{{key}}" data-filter-group="{{../label}}" class="option-{{../label}}">{{name}}</a></li>

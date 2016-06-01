@@ -75,6 +75,12 @@ body .becky-banner img {
 	padding: 0px;
 }
 
+.syllabus-button {
+	font-size: 2em;
+	float: right;
+
+}
+
 .no-syllabi-visible {
 	display: none;
 	min-height: 500px;
@@ -220,6 +226,7 @@ body .lightning-talk-title {
 
 .affiliate-content {
 	margin: 0 auto;
+	min-height: 100%;
 }
 
 .affiliate-buttons {

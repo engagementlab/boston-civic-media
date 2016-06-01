@@ -2378,6 +2378,10 @@ body .becky-banner img {
   list-style-type: none;
   padding: 0px; }
 
+.syllabus-button {
+  font-size: 2em;
+  float: right; }
+
 .no-syllabi-visible {
   display: none;
   min-height: 500px; }
@@ -2487,7 +2491,8 @@ body .lightning-talk-title {
   padding: 0; }
 
 .affiliate-content {
-  margin: 0 auto; }
+  margin: 0 auto;
+  min-height: 100%; }
 
 .affiliate-buttons {
   text-align: center;
