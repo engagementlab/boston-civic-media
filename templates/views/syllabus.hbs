@@ -15,7 +15,7 @@
 <!-- ================ -->
 <section class="main-container padding-bottom-clear">
 	<div class="container">
-		<div class="main">
+		<div class="main ph-40">
 		<h3 class="page-title">{{this_syllabus.title}}</h3>
 			<h5>{{this_syllabus.author}}</h5>
 			{{!-- {{> page/lead}} --}}
@@ -25,13 +25,30 @@
 	{{!-- We'll need some filtering dropdowns here --}}
 
 	{{!-- Show all syllabi below by default --}}
-	<div class="container pv-20">
+	<div class="container ph-40 pv-40">
 		<div class="row">
 			<div class="col-md-4">
 			
-				<p><strong>Institution: {{#each this_syllabus.institution}} {{this.name}} {{/each}}</strong></p>
-				<p><strong>Discipline: {{this_syllabus.discipline.name}}</strong></p>
-				<p><strong>Discipline: {{#each this_syllabus.discipline}} {{this.name}} {{/each}}</strong></p>
+				{{#if this_syllabus.institution}}
+					<p><strong>Institution(s): {{#each this_syllabus.institution}} {{this.name}} {{/each}}</strong></p>
+				{{/if}}
+
+				{{#if this_syllabus.discipline}}
+					<p><strong>Discipline(s): {{#each this_syllabus.discipline}} {{this.name}} {{/each}}</strong></p>
+				{{/if}}
+
+				{{#if this_syllabus.faculty}}
+					<p><strong>Faculty Member(s): {{#each this_syllabus.faculty}} {{this.name}} {{/each}}</strong></p>
+				{{/if}}
+
+				{{#if this_syllabus.keyword}}
+					<p><strong>Keyword(s): {{#each this_syllabus.keyword}} {{this.name}} {{/each}}</strong></p>
+				{{/if}}
+
+				{{#if this_syllabus.partnerOrg}}
+					<p><strong>Partner Organization(s): {{#each this_syllabus.partnerOrg}} {{this.name}} {{/each}}</strong></p>
+				{{/if}}
+
 			</div>
 			<div class="col-md-8">
 				
@@ -42,7 +59,7 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<a href="{{{this_syllabus.file.url}}}" class="syllabus-button" download="{{this_syllabus.file.filename}}">Download</a>
+				<a href="{{{this_syllabus.file.url}}}" class="syllabus-button" download="{{this_syllabus.file.filename}}">Download PDF of this syllabus</a>
 			</div>
 		</div>
 	</div>
