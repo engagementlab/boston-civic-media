@@ -53,6 +53,7 @@ exports = module.exports = function(app) {
     app.get('/lightning_talk', routes.views.lightning_talk);
     app.get('/irb_proj', routes.views.irb_proj);
     app.get('/getting_involved', routes.views.getting_involved);
+    app.get('/collaborations', routes.views.collaboration);
     app.get('/events', routes.views.events);
     app.get('/events/:event_key', routes.views.event);
     // app.get('/people/:person', routes.views.person);

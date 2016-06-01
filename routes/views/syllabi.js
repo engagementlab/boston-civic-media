@@ -40,7 +40,11 @@ exports = module.exports = function(req, res) {
         var querySyllabi = Syllabi.model.find({}).sort([
             ['sortOrder', 'ascending']
         ])
-        .populate(filtersPopulate);
+        .populate('institution')
+        .populate('discipline')
+        .populate('faculty')
+        .populate('keyword')
+        .populate('partnerOrg');
 
         var queryFilters = Filter.model.find({});
 
