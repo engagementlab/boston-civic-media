@@ -2393,15 +2393,8 @@ body .beckyBanner {
   float: right; }
 
 .tags {
-  text-align: center; }
-  .tags p {
-    margin: 5% auto;
-    border-bottom: 1px #7d7d7d solid; }
-  .tags ul li {
-    padding: 0px; }
-  .tags ul {
-    padding: 0px;
-    list-style: none; }
+  text-align: left;
+  color: #bababa; }
 
 .no-syllabi-visible {
   display: none;
@@ -8465,6 +8458,9 @@ html, body, .container {
 .centered-list {
   padding: 0px;
   text-align: center; }
+
+.left-list {
+  text-align: left; }
 
 .bulletless-list {
   list-style-type: none;

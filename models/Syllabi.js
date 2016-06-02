@@ -50,8 +50,9 @@ Syllabi.add({
   faculty: {
       type: Types.Relationship,
       filters: {
-          category: 'Faculty'
+          category: 'Faculty Member'
       },
+      label: 'Faculty Members',
       ref: 'Filter',
       required: true,
       many: true,

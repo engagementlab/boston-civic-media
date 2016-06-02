@@ -62,43 +62,15 @@
 						<div class="syllabus">
 							<a href="/syllabi/{{syllabus_key}}"><h3 class="styled-title">{{title}}</h3></a>
 							<p>{{{description}}}</p>
-							{{!-- <p>{{jsonPrint this}}</p> --}}
-							<div class="row tags">
-
-							{{#if institution}}
-								<div class="col-md-4">
-									<p><strong>Institution (s)</strong></p>
-									<ul>
-										{{#each institution}} <li>- {{this.name}}</li> {{/each}}
-										
-									</ul>
-								</div>
-							{{/if}}
-
-							{{#if discipline}}
-								<div class="col-md-4">
-									<p><strong>Discipline (s)</strong></p>
-									<ul>
-										{{#each discipline}} <li>- {{this.name}}</li> {{/each}}
-										
-									</ul>
-								</div>
-							{{/if}}
-
+							<div class="tags">
 							{{#if faculty}}
-								<div class="col-md-4">
-									<p><strong>Faculty Member (s)</strong></p>
-									<ul>
-										{{#each faculty}} <li>- {{this.name}}</li> {{/each}}
-										
-									</ul>
+								<div class="">
+									<p><strong>Faculty Member (s):</strong>
+									{{#each faculty}} 
+									{{this.name}}{{#unless @last}}, {{/unless}}
+									{{/each}}</p>
 								</div>
 							{{/if}}
-
-								{{!-- <li>{{#each discipline}} {{this.name}} {{/each}}</li>
-									<li>{{#each faculty}} {{this.name}} {{/each}}</li>
-									{{#if keyword}}<li>{{#each keyword}} {{this.name}} {{/each}}</li>{{/if}}
-									{{#if partnerOrg}}<li>{{#each partnerOrg}} {{this.name}} {{/each}}</li>{{/if}} --}}
 							</div>
 						</div>
 					</div>
