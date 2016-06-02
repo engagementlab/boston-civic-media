@@ -38,7 +38,12 @@
 		  $('.bxslider').bxSlider({
 			  nextSelector: '#slider-next',
 			  prevSelector: '#slider-prev',
-			  infiniteLoop: true
+			  autoheight: true,
+			  infiniteLoop: true,
+			  pager: false,
+			  nextText: '<img src="/images/rightarrow.png" height="60px" width="40px">',
+			  prevText: '<img src="/images/leftarrow.png" height="60px" width="40px">'
+			  // controls: true
 
 		  });
 		});
@@ -184,8 +189,9 @@
 
 			var container = $('#syllabi-content');
 			container.isotope({
-		    itemSelector: '.syllabi-item'
-		  });
+			    itemSelector: '.syllabi-item',
+			    layoutMode: 'fitRows'
+			});
 
 		function checkFiltered () {
 			var container = $('#syllabi-content');

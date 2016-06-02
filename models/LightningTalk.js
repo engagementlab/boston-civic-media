@@ -12,7 +12,7 @@ var LightningTalk = new keystone.List('LightningTalk',
 		label: 'Lightning Talks',
 		singular: 'Lightning Talk',
 		track: true,
-    hidden: false,
+	    hidden: false,
 		inherits: Video
 		// nodelete: true,
 		// nocreate: true

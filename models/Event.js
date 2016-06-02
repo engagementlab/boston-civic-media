@@ -18,8 +18,8 @@ var Event = new keystone.List('Event',
 		label: 'Event Page',
 		singular: 'Event Page',
 		track: true, 
-		autokey: { path: 'event_key', from: 'title', unique: true }
-		// nodelete: true,
+		autokey: { path: 'event_key', from: 'title', unique: true },
+		nodelete: false
 		// nocreate: true
 	});
 

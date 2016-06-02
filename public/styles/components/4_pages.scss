@@ -7,6 +7,10 @@ body .bx-wrapper {
 	border: 0px none;
 
 }
+
+body .dropdown-backdrop {
+	z-index: 0;
+}
 .slider-buttons  {
 	position: relative;
 	// display: table-cell;
@@ -18,10 +22,11 @@ body .bx-wrapper {
 		top: 50%; 
 		right: 5%;
 		// transform: translate(-50%,-50%);
-		width: 100px;
+		// width: 100px;
 		// height: 60px;
-		background-color: $gray-lighter;
-		border-radius: 0px 20px 20px 0px;
+  		
+		// background-color: $gray-lighter;
+		// border-radius: 0px 20px 20px 0px;
 		// float: right;
 	}
 	#slider-prev {
@@ -29,10 +34,11 @@ body .bx-wrapper {
 		top: 50%; 
 		left: 5%;
 		// transform: translate(-50%,-50%);
-		width: 100px;
+		// width: 100px;
 		// height: 60px;
-		background-color: $gray-lighter;
-		border-radius: 20px 0px 0px 20px;
+	    
+		// background-color: $gray-lighter;
+		// border-radius: 20px 0px 0px 20px;
 	}
 }
 
@@ -87,6 +93,10 @@ body .beckyBanner {
 	font-size: 2em;
 	float: right;
 
+}
+
+.syllabi-item {
+	padding: 20px;
 }
 
 .tags {
@@ -243,6 +253,7 @@ body .lightning-talk-title {
 	color: $gray-dark;
 
 	h2 {
+		font-size: 1.2em;
 		@media (max-width: 767px) {
 			text-align: center;
 			font-size: 1em;

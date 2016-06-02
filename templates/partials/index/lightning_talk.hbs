@@ -14,12 +14,13 @@
 			<div class="lightning-talk">
 				<div class="va-container">
 					<div class="va-align">
-						<div class="lightning-talk-title"><h4>{{lightning_talk.title}}</h4></div>
+						
 						{{!-- <p><a href="/projects/{{syllabi.subdirectory.key}}/{{project.key}}">Read more</a> --}}
 						<div class="embed-responsive embed-responsive-16by9">
 						  {{{lightning_talk.data.html}}}
 						  {{!-- {{jsonPrint featured_lightning_talk}} --}}
 						</div>
+						<div class="lightning-talk-title"><h4 class="talk-title">{{lightning_talk.title}}</h4></div>
 						<p>{{lightning_talk.description}}</p>
 					</div> <!-- .va-align -->
 				</div> <!-- .va-container -->
