@@ -1278,6 +1278,9 @@ tbody {
     font-size: xx-large;
     font-weight: bold;
     margin: 0 auto; }
+    @media (max-width: 767px) {
+      .main-blurb .main-mission-statement {
+        font-size: x-large; } }
   .main-blurb .main-description {
     text-align: justify;
     width: 100%;
@@ -2444,6 +2447,9 @@ body .beckyBanner {
 .syllabus {
   list-style-type: none;
   padding: 0px; }
+  @media (max-width: 767px) {
+    .syllabus {
+      padding: 2% 2%; } }
 
 .this-syllabus-description {
   font-size: 1.5em; }
@@ -2454,7 +2460,8 @@ body .beckyBanner {
 
 .tags {
   text-align: left;
-  color: #bababa; }
+  color: #bababa;
+  min-height: 40px; }
 
 .no-syllabi-visible {
   display: none;
@@ -2508,6 +2515,12 @@ body .dropdown-menu {
   padding: 0;
   width: 80%;
   margin: 0 auto; }
+  @media (max-width: 767px) {
+    .featured-list {
+      width: 100%; } }
+  @media (max-width: 767px) {
+    .featured-list h3 {
+      font-size: 1em; } }
 
 .featured-lightning-talks {
   color: #7d7d7d;
@@ -2516,6 +2529,9 @@ body .dropdown-menu {
   text-align: center; }
   .featured-lightning-talks h3 {
     color: #0c9ec7; }
+    @media (max-width: 767px) {
+      .featured-lightning-talks h3 {
+        font-size: 1em; } }
 
 .lightning-talk {
   margin-bottom: 1%;
@@ -2556,11 +2572,12 @@ body .lightning-talk-title {
   .feat-talk-description {
     text-align: center; } }
 
-.feat-lightning-talk-title {
+.feat-talk-title {
   color: #7d7d7d; }
   @media (max-width: 767px) {
-    .feat-lightning-talk-title {
-      text-align: center; } }
+    .feat-talk-title {
+      text-align: center;
+      font-size: 1em; } }
 
 .talks-buttons {
   float: left;

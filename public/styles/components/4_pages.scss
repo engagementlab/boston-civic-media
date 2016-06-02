@@ -73,6 +73,10 @@ body .beckyBanner {
 .syllabus {
 	list-style-type:none;
 	padding: 0px;
+
+	@media (max-width: 767px) {
+		padding: 2% 2%;
+	}
 }
 
 .this-syllabus-description {
@@ -88,6 +92,7 @@ body .beckyBanner {
 .tags {
 	text-align: left;
 	color: $gray-light;
+	min-height: 40px;
 }
 
 .no-syllabi-visible {
@@ -155,6 +160,16 @@ body .dropdown-menu {
 	padding: 0;
 	width: 80%;
 	margin: 0 auto;
+
+	@media (max-width: 767px) {
+		width: 100%;
+	}
+
+	h3 {
+		@media (max-width: 767px) {
+			font-size: 1em;
+		}
+	}
 }
 
 .featured-lightning-talks {
@@ -166,6 +181,10 @@ body .dropdown-menu {
 	text-align: center;
 	h3 {
 		color: $base-color-hover;
+
+		@media (max-width: 767px) {
+			font-size: 1em;
+		}
 	}
 }
 
@@ -220,12 +239,14 @@ body .lightning-talk-title {
 		text-align: center;
 	}
 }
-.feat-lightning-talk-title {
+.feat-talk-title {
 	color: $gray-dark;
 
-	@media (max-width: 767px) {
-		text-align: center;
-
+	h2 {
+		@media (max-width: 767px) {
+			text-align: center;
+			font-size: 1em;
+		}
 	}
 }
 

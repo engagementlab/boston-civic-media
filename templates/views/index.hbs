@@ -7,7 +7,7 @@
 		<div class="main">
 		{{!-- {{jsonPrint this}} --}}
 			<div class="col-md-12 main-blurb" style="background-image: url({{{background.url}}}); background-size: cover; background-repeat: no-repeat;">
-				<div class="main-text">
+				<div class="main-text pv-20">
 					<span class="main-mission-statement">{{missionStatements.[0]}}</span>
 					<span class="main-description">{{missionStatements.[1]}}</span>
 				</div>
@@ -18,7 +18,7 @@
 		<div class="row beckyBanner">
 			<div class="col-md-4">
 			{{!-- {{jsonPrint this}} --}}
-				<a href="{{{bannerURL}}}"><img class="becky-banner" src="{{{cloudinaryUrl beckyBanner width=700 height=345 crop='scale' quality=100}}}" alt="{{this_event.name}}" class="photo" style="margin:0 auto; min-width: 100%; max-width: 1024px; min-height: auto; max-height: 175px;"></a>
+				<a href="{{{bannerURL}}}"><img class="becky-banner" src="{{{cloudinaryUrl beckyBanner width=700 height=345 crop='scale' quality=100}}}" alt="{{this_event.name}}" class="photo" style="margin:0 auto; min-width: 100%; max-width: 100%; min-height: auto; max-height: 175px;"></a>
 			</div>
 
 			<div class="col-md-8">

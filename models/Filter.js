@@ -23,7 +23,7 @@ var Filters = new keystone.List('Filter',
     		name: 'Filters',
     		singular: 'Filter',
         hidden: false,
-        nodelete: true,
+        nodelete: false,
         autokey: { path: 'key', from: 'name', unique: false },
     });
 

@@ -60,6 +60,9 @@
 		font-size: xx-large;
 		font-weight: bold;
 		margin: 0 auto;
+		@media (max-width: 767px) {
+			font-size: x-large;
+		}
 	}
 	.main-description {
 		text-align: justify;
