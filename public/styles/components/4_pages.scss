@@ -316,24 +316,6 @@ body .lightning-talk-title {
 	max-height: 500px;
 }
 
-.dot-gray {
-	@include dot(10px, $gray-dark);
-}
-.dot-green {
-	@include dot (10px, $green);
-}
-
-.dot-green-light {
-	@include dot (10px, $green-light);
-}
-.dot-green-blue {
-	@include dot (10px, $green-blue);
-}
-
-.dot-brown {
-	@include dot (10px, $brown);
-}
-
 .talk-description {
 	min-height: 100%;
 	padding: 1%;
@@ -381,11 +363,18 @@ body .talks-item {
 	margin: 2%;
 }
 .involved {
+	width: 70%;
 	margin: 0 auto;
-	text-align: center;
-
+	text-align: left;
+	.title {
+		text-align: left;
+	}
 	li {
-		line-height: 25px;
+		line-height: 35px;
+	}
+
+	@media (max-width: 767px) {
+		width: 90%;
 	}
 }
 .get-involved-header {
@@ -397,12 +386,12 @@ body .talks-item {
 	background-color: $gray-lighter;
 }
 body .listserv {
-	background-color: $green-blue-dark;
+	background-color: $green-dark;
 	color: white;
 
 	a:hover, 
 	a:active {
-		color: $green;
+		color: $gray-dark;
 	}
 }
 
@@ -923,6 +912,10 @@ body .listserv {
 	color: $gray-dark;
 	font-size: large;
 	// font-weight: light;
+}
+
+.about-collaborations {
+	font-size: large;
 }
 
 .affiliate-image {

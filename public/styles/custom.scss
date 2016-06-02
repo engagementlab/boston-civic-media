@@ -43,10 +43,10 @@ html, body, .container {
   color: $brown;
 }
 .title-green {
-  color: $green;
+  color: $green-dark;
 }
 .title-green-light {
-  color: $green-light;
+  color: $green;
 }
 .title-green-blue {
   color: $green-blue;
@@ -64,7 +64,7 @@ html, body, .container {
 
 .list-item {
   color: $gray-dark;
-  font-size: .6em;
+  font-size: .7em;
 }
 .centered-list {
   padding: 0px;
@@ -72,6 +72,11 @@ html, body, .container {
 }
 .left-list {
   text-align: left;
+  padding: 0px;
+
+  @media (max-width: 767px) {
+      margin-bottom: 10%;
+  }
 }
 
 .bulletless-list {
@@ -86,7 +91,7 @@ html, body, .container {
 }
 
 .green-list {
-  @include colored-list ($green);
+  @include colored-list ($green-dark);
   font-size:2em;
 }
 
@@ -96,7 +101,7 @@ html, body, .container {
 }
 
 .green-light-list {
-  @include colored-list ($green-light);
+  @include colored-list ($green);
   font-size:2em;
 }
 
@@ -105,10 +110,10 @@ html, body, .container {
   font-size:2em;
 }
 .green-item {
-  color: $green;
+  color: $green-dark;
 }
 .green-light-item {
-  color: $green-light;
+  color: $green;
 }
 .green-blue-item {
   color: $green-blue;
@@ -116,6 +121,7 @@ html, body, .container {
 .brown-item {
   color: $brown;
 }
+
 
 // Vimeo embed
 .embed-container {

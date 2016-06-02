@@ -8,7 +8,7 @@
 }
 
 .separator-green-light {
-	@include separator(20px, $green-light);
+	@include separator(20px, $green);
 }
 
 .separator-green-blue {
@@ -19,7 +19,24 @@
 	@include separator(20px, $brown);
 }
 .separator-green {
-	@include separator(20px, $green);
+	@include separator(20px, $green-dark);
+}
+.dot-gray {
+	@include dot(10px, $gray-dark);
+}
+.dot-green {
+	@include dot (10px, $green);
+}
+
+.dot-green-light {
+	@include dot (10px, $green-light);
+}
+.dot-green-blue {
+	@include dot (10px, $green-blue);
+}
+
+.dot-brown {
+	@include dot (10px, $brown);
 }
 
 .main-blurb {

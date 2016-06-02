@@ -34,8 +34,8 @@ var Collaboration = new keystone.List('Collaboration',
  */
 Collaboration.add({
 	name: { type: String, hidden: true, required: true, initial: true },
-	title: { type: String, label: "Collaborator",  initial: true, required: true },
-	text: { type: Types.Textarea, label: "Collaborated with..",  initial: true, required: true },
+	// title: { type: String, label: "Collaborator",  initial: true, required: true },
+	theText: { type: Types.Markdown, label: "Collaboration Text",  initial: true, required: true },
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
 });
 
