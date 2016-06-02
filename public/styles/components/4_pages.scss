@@ -191,9 +191,15 @@ body .dropdown-menu {
 }
 
 body .lightning-talk-title {
+	display: table-cell;
 	color: $gray-dark;
 	font-weight: 700;
-	min-height: 60px;
+	min-height: 80px;
+
+	h4 {
+		position: relative;
+		vertical-align: center;
+	}
 	// padding-top: 20%;
 
 }
