@@ -7,6 +7,13 @@ html, body, .container {
   overflow-x: hidden;
 }
 
+body .embed-responsive iframe {
+  // width: 80%;
+  // height: 80%;
+  // position: absolute;
+  // left: 10%;
+}
+
 .container-padding {
   height: 100%;
   max-width: 100%;

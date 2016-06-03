@@ -5,22 +5,43 @@
 body .bx-wrapper {
 	box-shadow: none;
 	border: 0px none;
-
+	margin: 0;
+	max-width: 70%;
 }
 
 body .dropdown-backdrop {
 	z-index: 0;
 }
+#slider-next {
+	position:relative;
+
+	a.bx-next {
+		float: right;
+	// padding-right: 10%;
+	}
+}
+#slider-prev {
+	position:relative;
+
+	a.bx-prev {
+		float:left;
+	// padding-left: 10%;
+	}
+
+}
+
+
 .slider-buttons  {
 	position: relative;
-	// display: table-cell;
-	height: 60px;
-	margin-top: -80px;
+	z-index: 1000;
+	// height: 0px;
+	margin-top: -100px;
+	margin-bottom:10%;
 
 	#slider-next {
-		position: absolute;
-		top: 50%; 
-		right: 5%;
+		// position: absolute;
+		// top: 50%; 
+		// right: 5%;
 		// transform: translate(-50%,-50%);
 		// width: 100px;
 		// height: 60px;
@@ -30,9 +51,9 @@ body .dropdown-backdrop {
 		// float: right;
 	}
 	#slider-prev {
-		position: absolute;
-		top: 50%; 
-		left: 5%;
+		// position: absolute;
+		// top: 50%; 
+		// left: 5%;
 		// transform: translate(-50%,-50%);
 		// width: 100px;
 		// height: 60px;
@@ -222,7 +243,20 @@ body .lightning-talk-title {
 	// padding-top: 20%;
 
 }
+.slider-header {
+	width: 100%;
+	display: table-cell;
+	position: relative;
 
+	
+	.slider-text {
+		width: 70%;
+		margin: 0 auto;
+		vertical-align: center;
+		position: relative;
+	}
+
+}
 .talks-header {
 	text-align: center;
 	width: 50%;
@@ -296,13 +330,6 @@ body .lightning-talk-title {
 	}
 }
 
-.glide {
-	text-align: center;
-}
-
-.glide__slide {
-	padding: 0;
-}
 
 .affiliate-content {
 	margin: 0 auto;
@@ -344,9 +371,6 @@ body .lightning-talk-title {
 	padding-bottom:5%;
 }
 
-.glide__wrapper {
-	max-height: 500px;
-}
 
 .talk-description {
 	min-height: 100%;

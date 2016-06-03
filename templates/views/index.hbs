@@ -50,19 +50,27 @@
 
 			{{#if featured_lightning_talks}}
 				<section class="col-md-6 featured-lightning-talks">
-						<h1>Featured Lightning Talks:</h1>
-						<h3>Listen to local civic media leaders share lessons and provocations from the field</h3>
-					<ul id="featured_glider" class="bxslider">
+						<div class="slider-header">
+							
+							<div class="slider-text">
+								<h1>Featured Lightning Talks:</h1>
+								<h3>Listen to local civic media leaders share lessons and provocations from the field</h3>
+							</div>
+							
+							<div class="row slider-buttons">
+					        	<div class="col-md-6" id="slider-prev"></div>
+					        	 <div class="col-md-6" id="slider-next"></div>
+				        	</div>
+				        </div>
+			        
+					<ul class="bxslider">
 						{{#each featured_lightning_talks}}
 							<li>{{> index/featured_lightning_talk featured_lightning_talk=this}}</li>
 						{{/each}}
-
+						
 			        </ul>
+			       
 			        
-			        <div class="slider-buttons">
-			        	<div id="slider-next"></div>
-			        	<div id="slider-prev"></div>
-		        	</div>
 			        
 		        	<div class="more-button">
 			        	<a href="/lightning_talk">Watch More Lightning Talks</a>
