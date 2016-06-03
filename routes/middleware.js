@@ -62,6 +62,31 @@ exports.initLocals = function(req, res, next) {
 
 };
 
+exports.Footer = function (req, res, next) {
+
+        locals = res.locals;
+
+    // Init locals
+    locals.section = 'footer';
+
+    view.on('init', function(next) {
+
+        var queryFooter = Footer.model.findOne({}, {}, {
+            sort: {
+                'createdAt': -1
+            }
+        });
+
+        queryFooter.exec(function(err, resultFooter) {
+            if (err) throw err;
+
+            locals.footer = resultFooter;
+            next(err);
+        });
+
+    });
+}
+
 /**
 	Fetches and clears the flashMessages before a view is rendered
 */
