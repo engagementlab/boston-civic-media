@@ -33,7 +33,9 @@ var Footer = new keystone.List('Footer',
  * @main Footer
  */
 Footer.add({
-	name: { type: String, default: "Footer Page", hidden: true, required: true, initial: true },
+    	name: { type: String, default: "Footer Page", hidden: true, required: true, initial: true },
+        createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
+    },
 	'Stay Updated', {
 
         subscribe: {
@@ -43,7 +45,7 @@ Footer.add({
         listserv: {
             type: Types.Textarea,
             label: 'Listserv Button Blurb'
-        },
+        }
 	}, 
 	'Main Footer', {
 
@@ -62,9 +64,7 @@ Footer.add({
             label: 'Footer Content',
             note: "Each content item will be displayed as an individual line in the footer.", 
             folder: 'site/logos'
-        },
-	}, 
-	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
+    }
 });
 
 /**
