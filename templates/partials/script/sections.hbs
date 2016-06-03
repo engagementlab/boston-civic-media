@@ -53,16 +53,24 @@
 
 		{{!-- ABOUT Template Script --}}
 		{{#ifeq section 'about'}}
-
-		function affiliateIsotope () {
-
+		var container = $('#affiliate-content');
+		// function affiliateIsotope () {
+		// 	var container = $('#affiliate-content');
+		// 		container.isotope({
+		// 	    itemSelector: '.affiliate-item', 
+		// 	    layoutMode: 'fitRows'
+		// 	  });
+		// }
+		// var affiliateContainer = $('#affiliate-content');
+		lastImageLoaded (container, function () {
 			var container = $('#affiliate-content');
 				container.isotope({
 			    itemSelector: '.affiliate-item', 
 			    layoutMode: 'fitRows'
 			  });
 
-			$('.filters-button-group').on( 'click', 'button', function() {
+		});
+		$('.filters-button-group').on( 'click', 'button', function() {
 			  var filterValue = $( this ).attr('data-filter');
 			  // use filterFn if matches value
 			  // filterValue = filterFns[ filterValue ] || filterValue;
@@ -76,9 +84,6 @@
 			    $( this ).addClass('is-checked');
 			  });
 			});
-		}
-		var affiliateContainer = $('#affiliate-content');
-		lastImageLoaded (affiliateContainer, affiliateIsotope());
 
 			// $("#affiliate_glider").glide({
 
