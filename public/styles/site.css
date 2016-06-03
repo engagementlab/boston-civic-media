@@ -2432,6 +2432,9 @@ body .dropdown-backdrop {
   .featured-syllabi h3 {
     color: #0c9ec7; }
 
+.syllabi {
+  min-height: 100%; }
+
 body .beckyBanner {
   margin: 3% 0px; }
 
@@ -2627,6 +2630,9 @@ body .lightning-talk-title {
 .affiliate-content {
   margin: 0 auto;
   min-height: 100%; }
+  @media (max-width: 767px) {
+    .affiliate-content {
+      margin-left: 20%; } }
 
 .affiliate-buttons {
   text-align: center;
@@ -2648,10 +2654,16 @@ body .lightning-talk-title {
   .affiliate-buttons .is-checked {
     color: #78cbd1;
     background: transparent; }
+  @media (max-width: 767px) {
+    .affiliate-buttons {
+      margin-bottom: 15%; } }
 
 .affiliate-item {
   text-align: center;
   margin-bottom: 1%; }
+  @media (max-width: 767px) {
+    .affiliate-item {
+      margin-bottom: 15%; } }
 
 .funder {
   padding-bottom: 5%; }

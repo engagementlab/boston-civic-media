@@ -78,6 +78,9 @@ body .dropdown-backdrop {
 	// width: 100%;
 
 }
+.syllabi  {
+	min-height: 100%;
+}
 
 body .beckyBanner {
 	margin: 3% 0px;	
@@ -334,6 +337,10 @@ body .lightning-talk-title {
 .affiliate-content {
 	margin: 0 auto;
 	min-height: 100%;
+
+	@media(max-width: 767px) {
+		margin-left: 20%;
+	}
 }
 
 .affiliate-buttons {
@@ -360,11 +367,19 @@ body .lightning-talk-title {
 		color: $base-color;
 		background: transparent;
 	}
+
+	@media (max-width: 767px) {
+		margin-bottom: 15%;
+	}
 }
 
 .affiliate-item {
 	text-align: center;
 	margin-bottom: 1%;
+
+	@media (max-width: 767px) {
+		margin-bottom: 15%;
+	}
 }
 
 .funder {
