@@ -412,15 +412,28 @@ body .talks-item {
 .irb-proj {
 	padding: 5% 2%;
 
+	.irb-proj-title {
+		font-size: x-large;
+		font-weight: bold;
+	}
+
 }
 
+
 .irb-image {
+	width: 80%;
 	margin: 0 auto;
 	text-align: center;
 	padding: 5% 0px;
 	background-color: white;
 	img {
 		margin: 0 auto;
+	}
+	h3 {
+		color: $green-blue;
+		font-weight: bold;
+		// font-size: 
+
 	}
 }
 
@@ -474,7 +487,7 @@ body .listserv {
 }
 
 .cirb {
-	background-color: $green-blue-dark;
+	background-color: $green-blue;
 }
 
 .event-description {
