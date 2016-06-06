@@ -64,7 +64,7 @@ exports.initLocals = function(req, res, next) {
 
 exports.Footer = function (req, res, next) {
 
-        locals = res.locals;
+    var locals = res.locals;
 
     // Init locals
     locals.section = 'footer';
