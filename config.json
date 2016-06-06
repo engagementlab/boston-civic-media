@@ -5,7 +5,7 @@
 	"db_prefix": "bcm",
 	"allowed_domains": ["qa.bostoncivic.media", "www.bostoncivic.media"],
 	"admin_nav": { 
-									"home": ["Home", "Event"],
+									"home": ["Home", "events"],
 									"about": ["About", "affiliates", "funders", "TeamMember", "collaborations"],
 									"syllabi": ["Syllabi", "filters"],
 									"lightning talks": "LightningTalk",

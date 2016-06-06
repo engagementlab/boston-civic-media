@@ -11,7 +11,9 @@
  * ==========
  */
 var keystone = require('keystone');
+var Video = require('./Video');
 var Types = keystone.Field.Types;
+
 
 var Event = new keystone.List('Event', 
 	{
@@ -19,7 +21,9 @@ var Event = new keystone.List('Event',
 		singular: 'Event Page',
 		track: true, 
 		autokey: { path: 'event_key', from: 'title', unique: true },
-		nodelete: false
+		inherits: Video,
+		hidden: false
+		// nodelete: true
 		// nocreate: true
 	});
 
@@ -31,7 +35,7 @@ Event.add({
 	title: { type: String, label: 'Title', required: true, initial: true, index: true },
 	image: { type: Types.CloudinaryImage, label: 'Event Image',  folder: 'boston-civic-media/logos' },
 	theDescription: { type: Types.Markdown, label: 'Long Description', note: 'Shown on individual event page. No character limit.', required: true, initial: true },
-	theFooter: { type: Types.Markdown, label: 'Short Description', note: 'Shown in events grid page. Will be cut off at 150 characters.', max: {chars: 150, mode: 'validate'}, required: true, initial: true },
+	theFooter: { type: Types.Markdown, label: 'Short Description', note: 'Shown in events grid page. Should be no more than 150 characters.', max: {chars: 200, mode: 'validate'}, required: true, initial: true },
 	eventbriteURL: { type: String, label: 'Eventbrite URL'},
 	hackpadURL: {type: String, label: 'Hackpad URL'}, 
 	additionalURL: { type: String, label: "Additional URL"},

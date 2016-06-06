@@ -23,9 +23,9 @@ var Home = new keystone.List('Home',
 	{
 		label: 'Home Page',
 		singular: 'Home Page',
-		track: true
-		// nodelete: true,
-		// nocreate: true
+		track: true,
+		nodelete: true,
+		nocreate: true
 	});
 
 /**
