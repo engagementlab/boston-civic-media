@@ -11,6 +11,7 @@
  **/
 
 var keystone = require('keystone');
+var Footer = require('keystone').list('Footer');
 var _ = require('underscore');
 
 /**
@@ -69,22 +70,19 @@ exports.Footer = function (req, res, next) {
     // Init locals
     locals.section = 'footer';
 
-    view.on('init', function(next) {
-
-        var queryFooter = Footer.model.findOne({}, {}, {
-            sort: {
-                'createdAt': -1
-            }
-        });
-
-        queryFooter.exec(function(err, resultFooter) {
-            if (err) throw err;
-
-            locals.footer = resultFooter;
-            next(err);
-        });
-
+    var queryFooter = Footer.model.findOne({}, {}, {
+        sort: {
+            'createdAt': -1
+        }
     });
+
+    queryFooter.exec(function(err, resultFooter) {
+        if (err) throw err;
+
+        locals.footer = resultFooter;
+        next(err);
+    });
+
 }
 
 /**
