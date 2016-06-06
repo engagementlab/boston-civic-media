@@ -6,7 +6,7 @@
 	"allowed_domains": ["qa.bostoncivic.media", "www.bostoncivic.media"],
 	"admin_nav": { 
 									"home": ["Home", "Event"],
-									"about": ["About", "affiliates", "funders", "TeamMember"],
+									"about": ["About", "affiliates", "funders", "TeamMember", "collaborations"],
 									"syllabi": ["Syllabi", "filters"],
 									"lightning talks": "LightningTalk",
 									"CIRB": "IRBProj",
