@@ -10,7 +10,9 @@
   "dependencies": {
     "app-module-path": "^1.0.6",
     "app-root-path": "^1.0.0",
+    "connect-mongostore": "^0.1.4",
     "express": "^4.13.3",
+    "handlebars": "^4.0.5",
     "json-fs-store": "^1.0.0",
     "keystone": "0.3.15",
     "node-sass-middleware": "^0.9.7",
