@@ -42,9 +42,17 @@ Footer.add({
             type: Types.Textarea,
             label: 'Subscribe Button Blurb'
         },
+        subscribeLink: {
+            type: String,
+            label: 'Subscribe Button Link'
+        },
         listserv: {
             type: Types.Textarea,
             label: 'Listserv Button Blurb'
+        },
+        listservLink: {
+            type: String,
+            label: 'Listserv Button Link'
         }
 	}, 
 	'Main Footer', {
