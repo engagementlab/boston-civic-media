@@ -781,14 +781,22 @@ body .subscribe-button {
 	@media (max-width: 767px) {
 		font-size: 1em;
 	}
+	// .btn:active,
+	// .btn:hover,
+	// .btn:selected {
+	// 	color: $gray-light;
+	// 	background-color: $green-blue;
+	// }
+}
+body {
+
+	.btn:hover,
+	.btn:focus,
+	.btn.focus {
+		color: $gray-light;
+	}
 }
 
-body .subscribe-button:active,
-body .subscribe-button:hover,
-body .subscribe-button:selected {
-		color: $gray-light;
-		background-color: $green-blue;
-	}
 
 /* 6.3 Offcanvas navigation
 ----------------------------------------------------------------------------- */

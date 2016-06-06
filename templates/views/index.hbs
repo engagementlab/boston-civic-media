@@ -18,7 +18,7 @@
 		<div class="row beckyBanner">
 			<div class="col-md-4">
 			{{!-- {{jsonPrint this}} --}}
-				<a href="{{{bannerURL}}}"><img class="becky-banner" src="{{{cloudinaryUrl beckyBanner width=700 height=345 crop='scale' quality=100}}}" alt="{{this_event.name}}" class="photo" style="margin:0 auto; min-width: 100%; max-width: 100%; min-height: auto; max-height: 175px;"></a>
+				<a href="{{{bannerURL}}}"><img class="becky-banner" src="{{{cloudinaryUrl beckyBanner width=auto height=auto crop='scale' quality=100}}}" alt="{{this_event.name}}" class="photo" style="margin:0 auto; min-width: 100%; max-width: 100%; min-height: auto;"></a>
 			</div>
 
 			<div class="col-md-8">
@@ -63,7 +63,7 @@
 				        	</div>
 				        </div>
 			        
-					<ul id="bxslider">
+					<ul class="bxslider">
 						{{#each featured_lightning_talks}}
 							<li>{{> index/featured_lightning_talk featured_lightning_talk=this}}</li>
 						{{/each}}

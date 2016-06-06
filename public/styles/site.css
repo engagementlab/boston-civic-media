@@ -2593,7 +2593,7 @@ body .lightning-talk-title {
 .feat-talk-title {
   color: #7d7d7d; }
   .feat-talk-title h2 {
-    font-size: 1.2em; }
+    font-size: 1.5em; }
     @media (max-width: 767px) {
       .feat-talk-title h2 {
         text-align: center;
@@ -2606,9 +2606,9 @@ body .lightning-talk-title {
   .talks-buttons .button {
     display: block;
     width: 100%;
-    background: #78cbd1;
+    background: #39aea9;
     border: none;
-    color: #dadada;
+    color: white;
     height: 60px;
     margin: 10px 0; }
   .talks-buttons .button:active,
@@ -2619,9 +2619,11 @@ body .lightning-talk-title {
     -webkit-box-shadow: none;
     box-shadow: none; }
   .talks-buttons .button:hover {
-    background: #0c9ec7; }
+    color: #bababa;
+    background: #39aea9; }
   .talks-buttons .is-checked {
-    background: #0c9ec7; }
+    color: #bababa;
+    background: #39aea9; }
   @media (max-width: 767px) {
     .talks-buttons {
       min-width: 100%;
@@ -2672,8 +2674,12 @@ body .lightning-talk-title {
   min-height: 100%;
   padding: 1%; }
 
+#talks-content {
+  padding: 0px 5%; }
+
 body .talks-item {
-  text-align: center; }
+  text-align: center;
+  min-height: 600px; }
   body .talks-item p {
     margin: 0 auto;
     width: 90%;
@@ -6467,11 +6473,10 @@ body .subscribe-button {
     body .subscribe-button {
       font-size: 1em; } }
 
-body .subscribe-button:active,
-body .subscribe-button:hover,
-body .subscribe-button:selected {
-  color: #bababa;
-  background-color: #39aea9; }
+body .btn:hover,
+body .btn:focus,
+body .btn.focus {
+  color: #bababa; }
 
 /* 6.3 Offcanvas navigation
 ----------------------------------------------------------------------------- */

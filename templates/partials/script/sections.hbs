@@ -29,18 +29,13 @@
 		 Analytics end
 		*/
 
-		$('#markdown-span p').contents().unwrap();
-
-		{{!-- INDEX Template Script --}}
-		{{#ifeq section 'home'}}
-		
-	  	$(document).ready(function(){
-		  $('#bxslider').bxSlider({
+		$(document).ready(function(){
+		  $('.bxslider').bxSlider({
 			  nextSelector: '#slider-next',
 			  prevSelector: '#slider-prev',
 			  autoheight: true,
 			  infiniteLoop: true,
-			  // pager: false,
+			  pager: false,
 			  // controls: true,
 			  nextText: '<img src="/images/rightarrow.png" height="50%" width="20%" style="margin:0 auto;">',
 			  prevText: '<img src="/images/leftarrow.png" height="50%" width="20%" style="margin:0 auto;">'
@@ -48,6 +43,13 @@
 
 		  });
 		});
+		
+		$('#markdown-span p').contents().unwrap();
+
+		{{!-- INDEX Template Script --}}
+		{{#ifeq section 'home'}}
+		
+	  	
 
 		{{/ifeq}}
 
