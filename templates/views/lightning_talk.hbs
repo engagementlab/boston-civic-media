@@ -52,11 +52,13 @@
 			<div id="talks-content" class="row">
 				{{#if lightning_talk}}
 					{{#each lightning_talk}}
+						{{#if enabled}}
 						<div class="col-md-4 col-sm-12 talks-item {{{this.category}}}">
 							<div class="" data-category="{{{this.category}}}">
 								{{>index/lightning_talk lightning_talk=this}}
 							</div>
 						</div>
+						{{/if}}
 					{{/each}}
 				{{else}}
 					<strong>No lightning talks!! Fiddlesticks!</strong>

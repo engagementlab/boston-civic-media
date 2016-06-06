@@ -28,19 +28,14 @@
 		 =============
 		 Analytics end
 		*/
-
-		$('#markdown-span p').contents().unwrap();
-
-		{{!-- INDEX Template Script --}}
-		{{#ifeq section 'home'}}
-		
-	  	// $(document).ready(function(){
+		console.log ("checking");
+		// $(document).ready(function(){
 		  $('.bxslider').bxSlider({
 			  nextSelector: '#slider-next',
 			  prevSelector: '#slider-prev',
 			  autoheight: true,
 			  infiniteLoop: true,
-			  // pager: false,
+			  pager: false,
 			  // controls: true,
 			  nextText: '<img src="/images/rightarrow.png" height="50%" width="20%" style="margin:0 auto;">',
 			  prevText: '<img src="/images/leftarrow.png" height="50%" width="20%" style="margin:0 auto;">'
@@ -48,11 +43,19 @@
 
 		  });
 		// });
+		
+		$('#markdown-span p').contents().unwrap();
+
+		{{!-- INDEX Template Script --}}
+		{{#ifeq section 'home'}}
+		
+	  	
 
 		{{/ifeq}}
 
 		{{!-- ABOUT Template Script --}}
 		{{#ifeq section 'about'}}
+		console.log ("I'm on the about page");
 		var container = $('#affiliate-content');
 		// function affiliateIsotope () {
 		// 	var container = $('#affiliate-content');
@@ -240,6 +243,8 @@
 		    console.log (filterStr);
 		   
 		  }
+
+		  console.log ("on syllabi page now");
 
 		{{/ifeq}}
 

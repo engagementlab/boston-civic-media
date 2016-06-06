@@ -2593,7 +2593,7 @@ body .lightning-talk-title {
 .feat-talk-title {
   color: #7d7d7d; }
   .feat-talk-title h2 {
-    font-size: 1.2em; }
+    font-size: 1.5em; }
     @media (max-width: 767px) {
       .feat-talk-title h2 {
         text-align: center;
@@ -2606,9 +2606,9 @@ body .lightning-talk-title {
   .talks-buttons .button {
     display: block;
     width: 100%;
-    background: #78cbd1;
+    background: #39aea9;
     border: none;
-    color: #dadada;
+    color: white;
     height: 60px;
     margin: 10px 0; }
   .talks-buttons .button:active,
@@ -2619,9 +2619,11 @@ body .lightning-talk-title {
     -webkit-box-shadow: none;
     box-shadow: none; }
   .talks-buttons .button:hover {
-    background: #0c9ec7; }
+    color: #bababa;
+    background: #39aea9; }
   .talks-buttons .is-checked {
-    background: #0c9ec7; }
+    color: #bababa;
+    background: #4b7882; }
   @media (max-width: 767px) {
     .talks-buttons {
       min-width: 100%;
@@ -2672,8 +2674,12 @@ body .lightning-talk-title {
   min-height: 100%;
   padding: 1%; }
 
+#talks-content {
+  padding: 0px 5%; }
+
 body .talks-item {
-  text-align: center; }
+  text-align: center;
+  min-height: 600px; }
   body .talks-item p {
     margin: 0 auto;
     width: 90%;
@@ -2687,14 +2693,21 @@ body .talks-item {
 
 .irb-proj {
   padding: 5% 2%; }
+  .irb-proj .irb-proj-title {
+    font-size: x-large;
+    font-weight: bold; }
 
 .irb-image {
+  width: 80%;
   margin: 0 auto;
   text-align: center;
   padding: 5% 0px;
   background-color: white; }
   .irb-image img {
     margin: 0 auto; }
+  .irb-image h3 {
+    color: #39aea9;
+    font-weight: bold; }
 
 .affiliates {
   min-height: 100%;
@@ -2735,7 +2748,7 @@ body .listserv {
     text-align: justify; }
 
 .cirb {
-  background-color: #4b7882; }
+  background-color: #39aea9; }
 
 .event-description {
   margin: 0 auto;
@@ -5819,12 +5832,12 @@ fieldset[disabled] .form-control {
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
   background-color: transparent;
-  color: #78cbd1; }
+  color: #39aea9; }
 
 .transparent-header .header:not(.dark) .navbar-nav > li.open > a,
 .transparent-header .header:not(.dark) .navbar-nav > li > a:hover,
 .transparent-header .header:not(.dark) .navbar-nav > li > a:focus {
-  color: #78cbd1; }
+  color: #39aea9; }
 
 /* first level menu item when opened */
 .main-navigation .navbar-nav > .open > a,
@@ -5832,7 +5845,7 @@ fieldset[disabled] .form-control {
 .main-navigation .navbar-nav > .open > a:focus,
 .main-navigation .navbar-nav > .dropdown > a:focus {
   background-color: #ffffff;
-  color: #78cbd1;
+  color: #39aea9;
   border-bottom-color: #ffffff;
   border-right: 1px solid #f5f5f5;
   border-left: 1px solid #f5f5f5;
@@ -6439,8 +6452,13 @@ header.full-width .animated.main-navigation .dropdown-menu .open .dropdown-menu.
 .footer-outer {
   background-color: #bababa; }
 
+.footer-content-list ul {
+  padding: 0px;
+  list-style-type: none;
+  margin: 0px; }
+
 body .subscribe-button {
-  background-color: #78cbd1;
+  background-color: #39aea9;
   color: white;
   border-radius: 0px;
   border: none;
@@ -6449,17 +6467,16 @@ body .subscribe-button {
   padding-top: 5%;
   margin: 1%;
   min-height: 40px;
-  width: 30%;
+  width: 80%;
   font-size: 1.5em; }
   @media (max-width: 767px) {
     body .subscribe-button {
       font-size: 1em; } }
 
-body .subscribe-button:active,
-body .subscribe-button:hover,
-body .subscribe-button:selected {
-  color: #bababa;
-  background-color: #78cbd1; }
+body .btn:hover,
+body .btn:focus,
+body .btn.focus {
+  color: #bababa; }
 
 /* 6.3 Offcanvas navigation
 ----------------------------------------------------------------------------- */

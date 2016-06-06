@@ -290,7 +290,7 @@ body .lightning-talk-title {
 	color: $gray-dark;
 
 	h2 {
-		font-size: 1.2em;
+		font-size: 1.5em;
 		@media (max-width: 767px) {
 			text-align: center;
 			font-size: 1em;
@@ -306,9 +306,9 @@ body .lightning-talk-title {
 	.button {
 		display: block;
 		width: 100%;
-		background: $base-color;
+		background: $green-blue;
 		border: none;
-		color: $gray-lighter;
+		color: white;
 		height: 60px;
 		margin: 10px 0;
 	}
@@ -316,15 +316,18 @@ body .lightning-talk-title {
 	.button:focus,
 	.button.active {
 		background-image: none;
+
 		outline: 0;
 		-webkit-box-shadow: none;
         box-shadow: none;
 	}
 	.button:hover {
-		background: $base-color-hover;
+		color: $gray-light;
+		background: $green-blue;
 	}
 	.is-checked {
-		background: $base-color-hover;
+		color: $gray-light;
+		background: $green-blue-dark;
 		// background: transparent;
 	}
 	@media (max-width: 767px) {
@@ -392,8 +395,12 @@ body .lightning-talk-title {
 	padding: 1%;
 
 }
+#talks-content {
+	padding: 0px 5%;
+}
 body .talks-item {
 	text-align: center;	
+	min-height: 600px;
 	p {
 		margin: 0 auto;
 		width: 90%;
@@ -412,15 +419,28 @@ body .talks-item {
 .irb-proj {
 	padding: 5% 2%;
 
+	.irb-proj-title {
+		font-size: x-large;
+		font-weight: bold;
+	}
+
 }
 
+
 .irb-image {
+	width: 80%;
 	margin: 0 auto;
 	text-align: center;
 	padding: 5% 0px;
 	background-color: white;
 	img {
 		margin: 0 auto;
+	}
+	h3 {
+		color: $green-blue;
+		font-weight: bold;
+		// font-size: 
+
 	}
 }
 
@@ -474,7 +494,7 @@ body .listserv {
 }
 
 .cirb {
-	background-color: $green-blue-dark;
+	background-color: $green-blue;
 }
 
 .event-description {
