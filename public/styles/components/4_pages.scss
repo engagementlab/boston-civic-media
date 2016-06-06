@@ -316,6 +316,7 @@ body .lightning-talk-title {
 	.button:focus,
 	.button.active {
 		background-image: none;
+
 		outline: 0;
 		-webkit-box-shadow: none;
         box-shadow: none;
@@ -326,7 +327,7 @@ body .lightning-talk-title {
 	}
 	.is-checked {
 		color: $gray-light;
-		background: $green-blue;
+		background: $green-blue-dark;
 		// background: transparent;
 	}
 	@media (max-width: 767px) {

@@ -28,8 +28,8 @@
 		 =============
 		 Analytics end
 		*/
-
-		$(document).ready(function(){
+		console.log ("checking");
+		// $(document).ready(function(){
 		  $('.bxslider').bxSlider({
 			  nextSelector: '#slider-next',
 			  prevSelector: '#slider-prev',
@@ -42,7 +42,7 @@
 			  // controls: true
 
 		  });
-		});
+		// });
 		
 		$('#markdown-span p').contents().unwrap();
 
@@ -55,6 +55,7 @@
 
 		{{!-- ABOUT Template Script --}}
 		{{#ifeq section 'about'}}
+		console.log ("I'm on the about page");
 		var container = $('#affiliate-content');
 		// function affiliateIsotope () {
 		// 	var container = $('#affiliate-content');
@@ -242,6 +243,8 @@
 		    console.log (filterStr);
 		   
 		  }
+
+		  console.log ("on syllabi page now");
 
 		{{/ifeq}}
 
