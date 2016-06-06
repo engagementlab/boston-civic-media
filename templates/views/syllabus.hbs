@@ -30,23 +30,23 @@
 			<div class="col-md-4">
 			
 				{{#if this_syllabus.institution}}
-					<p><strong>Institution(s): {{#each this_syllabus.institution}} {{this.name}} {{/each}}</strong></p>
+					<p><strong>Institution(s): {{#each this_syllabus.institution}} {{this.name}}{{#unless @last}}, {{/unless}} {{/each}}</strong></p>
 				{{/if}}
 
 				{{#if this_syllabus.discipline}}
-					<p><strong>Discipline(s): {{#each this_syllabus.discipline}} {{this.name}} {{/each}}</strong></p>
+					<p><strong>Discipline(s): {{#each this_syllabus.discipline}} {{this.name}}{{#unless @last}}, {{/unless}} {{/each}}</strong></p>
 				{{/if}}
 
 				{{#if this_syllabus.faculty}}
-					<p><strong>Faculty Member(s): {{#each this_syllabus.faculty}} {{this.name}} {{/each}}</strong></p>
+					<p><strong>Faculty Member(s): {{#each this_syllabus.faculty}} {{this.name}}{{#unless @last}}, {{/unless}} {{/each}}</strong></p>
 				{{/if}}
 
 				{{#if this_syllabus.keyword}}
-					<p><strong>Keyword(s): {{#each this_syllabus.keyword}} {{this.name}} {{/each}}</strong></p>
+					<p><strong>Keyword(s): {{#each this_syllabus.keyword}}{{this.name}}{{#unless @last}}, {{/unless}} {{/each}}</strong></p>
 				{{/if}}
 
 				{{#if this_syllabus.partnerOrg}}
-					<p><strong>Partner Organization(s): {{#each this_syllabus.partnerOrg}} {{this.name}} {{/each}}</strong></p>
+					<p><strong>Partner Organization(s):{{#each this_syllabus.partnerOrg}}{{this.name}}{{#unless @last}}, {{/unless}} {{/each}}</strong></p>
 				{{/if}}
 
 			</div>
