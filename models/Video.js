@@ -35,7 +35,7 @@ var Video = new keystone.List('Video',
  */
 Video.add({
 	data: { type: Types.Embedly, label: 'Video Embed Link', from: 'url', hidden: true},
-	url: { type: String, label: 'URL', initial: true },
+	url: { type: String, label: 'Video URL', initial: true },
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
 });
 

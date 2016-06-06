@@ -2767,8 +2767,8 @@ body .listserv {
     margin: 0 auto;
     width: 200px;
     padding: 5% 2%;
-    max-height: 120px;
-    min-height: 100px;
+    max-height: 160px;
+    min-height: 160px;
     overflow: hidden; }
 
 .event-title {
