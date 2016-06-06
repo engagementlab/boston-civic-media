@@ -30,7 +30,7 @@ var Event = new keystone.List('Event',
 Event.add({
 	title: { type: String, label: 'Title', required: true, initial: true, index: true },
 	image: { type: Types.CloudinaryImage, label: 'Event Image',  folder: 'boston-civic-media/logos' },
-	description: { type: Types.Textarea, label: 'Long Description', note: 'Shown on individual event page. No character limit.', required: true, initial: true, index: true },
+	description: { type: Types.Textarea, label: 'Long Description', note: 'Shown on individual event page. No character limit.', required: true, initial: true },
 	footer: { type: Types.Textarea, label: 'Short Description', note: 'Shown in events grid page. Will be cut off at 150 characters.', max: {chars: 150, mode: 'validate'}, required: true, initial: true, index: true },
 	eventbriteURL: { type: String, label: 'Eventbrite URL'},
 	hackpadURL: {type: String, label: 'Hackpad URL'}, 
