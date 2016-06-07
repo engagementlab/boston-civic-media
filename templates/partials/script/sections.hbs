@@ -55,16 +55,8 @@
 
 		{{!-- ABOUT Template Script --}}
 		{{#ifeq section 'about'}}
-		console.log ("I'm on the about page");
 		var container = $('#affiliate-content');
-		// function affiliateIsotope () {
-		// 	var container = $('#affiliate-content');
-		// 		container.isotope({
-		// 	    itemSelector: '.affiliate-item', 
-		// 	    layoutMode: 'fitRows'
-		// 	  });
-		// }
-		// var affiliateContainer = $('#affiliate-content');
+
 		lastImageLoaded (container, function () {
 			var container = $('#affiliate-content');
 				container.isotope({
@@ -87,15 +79,6 @@
 			    $( this ).addClass('is-checked');
 			  });
 			});
-
-			// $("#affiliate_glider").glide({
-
-		 //        type: "carousel",
-		 //        autoplay: false,
-		 //        autoheight: true, 
-		 //        paddings: '0'
-
-		 //    });
 
 			var gliderDom = $("#partners_glider");
 			var gliderApi;
@@ -132,10 +115,8 @@
 
 		{{/ifeq}}
 
-
 		{{!-- BIO Template Script --}}
 		{{#ifeq section 'person'}}
-
 
 			var gliderDom = $("#people_glider");
 	    var gliderApi;
@@ -188,7 +169,8 @@
 		{{/ifeq}}
 
 
-		// {{!-- SYLLABI Template Script --}}
+		{{!-- SYLLABI Template Script --}}
+		{{#ifeq section 'syllabi'}}
 
 			// store filter for each group
 			var filters = {};
@@ -209,20 +191,13 @@
 			});
 
 		function checkFiltered () {
+			
 			var syllabiContainer = $('#syllabi-content');
-			if ( syllabiContainer.data('isotope').filteredItems.length === 0 ) {
+			if ( syllabiContainer.data('isotope').filteredItems.length === 0 )
 			  $('.no-syllabi-visible').show();
-			} else {
+			else
 				$('.no-syllabi-visible').hide();
-			}
 
-			// var invisibleItems = ($('.syllabi-item').css("display")== "none").length;
-			// console.log (invisibleItems);
-			// if (!(invisibleItems == null)) {
-			// 	$('.no-syllabi-visible').hide();
-			// } else {
-			// 	$('.no-syllabi-visible').show();
-			// }
 		}
 	    
 	    function applyFilter(elem) {
@@ -241,12 +216,10 @@
 		    			    
 		    var filterStr = isoFilters.join('');
 		    syllabiContainer.isotope({ filter: filterStr });
-		    console.log (filterStr);
-		   
+
 		  }
 
-		  console.log ("on syllabi page now");
-
+		{{/ifeq}}
 
 		{{!-- LIGHTNING TALK Template Script --}}
 		{{#ifeq section 'lightning_talk'}}
@@ -258,10 +231,10 @@
 			  });
 
 			$('.filters-button-group').on( 'click', 'button', function() {
+			  
 			  var filterValue = $( this ).attr('data-filter');
-			  // use filterFn if matches value
-			  // filterValue = filterFns[ filterValue ] || filterValue;
 			  container.isotope({ filter: filterValue });
+
 			});
 			// change is-checked class on buttons
 			$('.button-group').each( function( i, buttonGroup ) {

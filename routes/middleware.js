@@ -67,9 +67,6 @@ exports.Footer = function (req, res, next) {
 
     var locals = res.locals;
 
-    // Init locals
-    locals.section = 'footer';
-
     var queryFooter = Footer.model.findOne({}, {}, {
         sort: {
             'createdAt': -1
