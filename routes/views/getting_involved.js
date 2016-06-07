@@ -54,10 +54,11 @@ exports = module.exports = function(req, res) {
                 queryNewsletters.exec(function(err, resultNewsletters) {
                     
                     locals.newsletters = resultNewsletters;
+                    // locals.newsletterDate = resultNewsletters._.published.format('MMMM Do YYYY');
                     
                     next(err);
 
-                    console.log (locals.getting_involved);
+                    // console.log (locals.getting_involved);
 
                 });
 

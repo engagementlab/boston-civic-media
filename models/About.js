@@ -36,7 +36,7 @@ About.add({
 	name: { type: String, default: "About Page", hidden: true, required: true, initial: true },
 	vision: { type: Types.Textarea, label: "Vision",  initial: true, required: true },
 	mission: { type: Types.Textarea, label: "Description",  initial: true, required: true },
-	collaborationsLink: { type: Types.Markdown, label: "collaborationsLink", initial: true, required:true },
+	externalLinks: { type: Types.Markdown, label: "External Links", initial: true, required:true },
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
 });
 

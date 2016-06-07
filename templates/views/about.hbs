@@ -20,16 +20,17 @@
 					{{!-- {{> page/name name="Vision"}} --}}
 					<span class="about-vision"> {{about.vision}}</span>
 					<span class="about-description"> {{about.mission}}</span>
-					<span id="markdown-span" class="about-collaborations"> {{{about.collaborationsLink.html}}}</span>
+					<span id="markdown-span" class="about-links"> {{{about.externalLinks.html}}}</span>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="banner border-clear light-gray-bg">
+	<div class="bcm-timeline banner border-clear light-gray-bg">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 pv-40">
+					<h1 class="page-title text-center">Timeline</h1>
 					<iframe src="https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1nPAwCDRMHNc5fuhobxhqs-4zZ4lrM3glZemB_FBj7mc&font=Default&lang=en&initial_zoom=.5&height=650" style="width:100%; height: 650px;"></iframe>
 				</div>
 			</div>
@@ -56,7 +57,7 @@
 				    <span class="dot-gray"></span>
 				    <button class="button" value="#" data-filter=".CityAgency">City Agencies</button>
 				    <span class="dot-gray"></span>
-				    <button class="button" value="#" data-filter=".CommunityOrganization">Community Organizations</button>
+				    <button class="button" value="#" data-filter=".Organization">Organizations</button>
 				</div>
 
 				<div id="affiliate-content" class="affiliate-content row">
@@ -80,7 +81,7 @@
 
 			<div class="col-md-12">
 				{{!-- {{> page/name name="Our Partners"}} --}}
-				<h1 class="about-title text-center">Team Members</h1>
+				<h1 class="about-title text-center">Leadership</h1>
 			</div>
 			{{#if teamMembers}}
 				{{#each teamMembers}}

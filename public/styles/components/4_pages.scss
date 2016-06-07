@@ -9,6 +9,15 @@ body .bx-wrapper {
 	max-width: 70%;
 }
 
+.bcm-timeline {
+	margin: 0px;
+
+	@media (max-width: 767px) {
+		display: none;
+	}
+
+}
+
 body .dropdown-backdrop {
 	z-index: 0;
 }
@@ -342,7 +351,7 @@ body .lightning-talk-title {
 	min-height: 100%;
 
 	@media(max-width: 767px) {
-		margin-left: 20%;
+		// margin-left: 20%;
 	}
 }
 
@@ -497,7 +506,7 @@ body .listserv {
 	background-color: $green-blue;
 }
 
-.event-description {
+.this-event{
 	margin: 0 auto;
 	text-align: left;
 	ul {
@@ -507,6 +516,7 @@ body .listserv {
 		list-style-type:none;
 	}
 	li {
+		font-size: large;
 		margin: 0 auto;
 		padding: 5px 0px;
 		line-height: 25px;
@@ -1005,7 +1015,7 @@ body .listserv {
 	// font-weight: light;
 }
 
-.about-collaborations {
+.about-links {
 	font-size: large;
 }
 

@@ -2402,6 +2402,12 @@ body .bx-wrapper {
   margin: 0;
   max-width: 70%; }
 
+.bcm-timeline {
+  margin: 0px; }
+  @media (max-width: 767px) {
+    .bcm-timeline {
+      display: none; } }
+
 body .dropdown-backdrop {
   z-index: 0; }
 
@@ -2632,9 +2638,6 @@ body .lightning-talk-title {
 .affiliate-content {
   margin: 0 auto;
   min-height: 100%; }
-  @media (max-width: 767px) {
-    .affiliate-content {
-      margin-left: 20%; } }
 
 .affiliate-buttons {
   text-align: center;
@@ -2750,14 +2753,15 @@ body .listserv {
 .cirb {
   background-color: #39aea9; }
 
-.event-description {
+.this-event {
   margin: 0 auto;
   text-align: left; }
-  .event-description ul {
+  .this-event ul {
     margin: 0 auto;
     padding: 0px;
     list-style-type: none; }
-  .event-description li {
+  .this-event li {
+    font-size: large;
     margin: 0 auto;
     padding: 5px 0px;
     line-height: 25px; }
@@ -3174,7 +3178,7 @@ body .listserv {
   color: #7d7d7d;
   font-size: large; }
 
-.about-collaborations {
+.about-links {
   font-size: large; }
 
 .affiliate-image {

@@ -12,6 +12,7 @@
  */
 
 var keystone = require('keystone');
+var _ = require('underscore');
 var Types = keystone.Field.Types;
 
 /**
@@ -42,6 +43,7 @@ Newsletter.add({
 /**
  * Model Registration
  */
+// Newsletter._.published = Date.format ('MM-DD-YYYY');
 Newsletter.defaultSort = '-createdAt';
-Newsletter.defaultColumns = 'name, url, published, updatedAt';
+Newsletter.defaultColumns = 'name, url, published';
 Newsletter.register();

@@ -25,26 +25,36 @@
 	{{!-- We'll need some filtering dropdowns here --}}
 
 	{{!-- Show all syllabi below by default --}}
-	<div class="container pv-20">
+	<div class="container pv-20 this-event">
 		<div class="row">
 		{{!-- {{jsonPrint this_event}} --}}
 			<div class="col-md-8 ph-40 event-description">
 				
 				<p>{{{this_event.theDescription.html}}}</p>
-				<div class="embed-responsive embed-responsive-16by9">
-						  {{{this_event.data.html}}}
-						  {{!-- {{jsonPrint featured_lightning_talk}} --}}
-						</div>
 				<ul>
 					<li><a href="{{this_event.eventbriteURL}}">Eventbrite Link</a></li>
 					<li><a href="{{this_event.hackpadURL}}">Hackpad Link</a></li>
 					<li><a href="{{this_event.additionalURL}}">Read More</a></li>
 				</ul>
+				
 			</div>
 			<div class="col-md-4">
-				<img src="{{{cloudinaryUrl this_event.image width=auto height=auto crop='scale' quality=100}}}" alt="{{this_event.name}}" class="photo" style="margin:0 auto;">
+			<img src="{{{cloudinaryUrl this_event.image width=auto height=auto crop='scale' quality=100}}}" alt="{{this_event.name}}" class="photo" style="margin:0 auto;">
+				
 			</div>
 		
+		</div>
+		<div class="row pv-40">
+			<div class="col-md-8">
+				
+			</div>
+
+			<div class="col-md-4">
+				<div class="embed-responsive embed-responsive-16by9">
+					{{{this_event.data.html}}}
+						  {{!-- {{jsonPrint featured_lightning_talk}} --}}
+				</div>
+			</div>
 		</div>
 		
 </section>
