@@ -28,7 +28,7 @@
 		 =============
 		 Analytics end
 		*/
-		
+
 		// $(document).ready(function(){
 		  $('.bxslider').bxSlider({
 			  nextSelector: '#slider-next',
@@ -132,7 +132,6 @@
 
 		{{/ifeq}}
 
-
 		{{!-- BIO Template Script --}}
 		{{#ifeq section 'person'}}
 
@@ -184,11 +183,11 @@
 
 			});
 
-
 		{{/ifeq}}
 
 
-		// {{!-- SYLLABI Template Script --}}
+		{{!-- SYLLABI Template Script --}}
+		{{#ifeq section 'syllabi'}}
 
 			// store filter for each group
 			var filters = {};
@@ -202,15 +201,15 @@
 				checkFiltered ();
 			});
 
-			var syllabiContainer = $('#syllabi-content');
-			syllabiContainer.isotope({
+			var container = $('#syllabi-content');
+			container.isotope({
 			    itemSelector: '.syllabi-item',
 			    layoutMode: 'fitRows'
 			});
 
 		function checkFiltered () {
-			var syllabiContainer = $('#syllabi-content');
-			if ( syllabiContainer.data('isotope').filteredItems.length === 0 ) {
+			var container = $('#syllabi-content');
+			if ( container.data('isotope').filteredItems.length === 0 ) {
 			  $('.no-syllabi-visible').show();
 			} else {
 				$('.no-syllabi-visible').hide();
@@ -240,13 +239,14 @@
 		    }
 		    			    
 		    var filterStr = isoFilters.join('');
-		    syllabiContainer.isotope({ filter: filterStr });
+		    container.isotope({ filter: filterStr });
 		    console.log (filterStr);
 		   
 		  }
 
 		  console.log ("on syllabi page now");
 
+		{{/ifeq}}
 
 		{{!-- LIGHTNING TALK Template Script --}}
 		{{#ifeq section 'lightning_talk'}}
