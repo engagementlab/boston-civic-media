@@ -36,7 +36,7 @@ var Newsletter = new keystone.List('Newsletter',
 Newsletter.add({
 	name: { type: String, default: "Newsletter", hidden: true, required: true, initial: true },
 	url: { type: String, label: 'URL', initial: true },
-	published: {type: Date, default: Date.now},
+	publishedAt: {type: Types.Datetime, default: Date.now},
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
 });
 

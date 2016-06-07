@@ -72,11 +72,12 @@ Syllabi.add({
   partnerOrg: {
       type: Types.Relationship,
       filters: {
-          category: 'Partner Organization'
+          category: 'Partnership Organization'
       },
       ref: 'Filter',
       label: 'Partner Organizations',
       many: true,
+      // required: true,
       initial: true,
       note: 'This is optional'
   },
@@ -87,7 +88,8 @@ Syllabi.add({
 		type: Types.AzureFile,
 		label: 'File',
 		filenameFormatter: function(item, filename) {
-			return item.key + require('path').extname(filename);
+      // console.log ("hi");
+			return item.syllabus_key + require('path').extname(filename);
 		},
 		containerFormatter: function(item, filename) {
 			return 'bcmsyllabi';
@@ -104,6 +106,52 @@ Syllabi.add({
 
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
 });
+
+/**
+ * Methods
+ * =============
+ */
+// Remove a given filter from all syllabi that referenced it
+Syllabi.schema.statics.removeFilterRef = function(filterId, callback) {
+
+    Syllabi.model.update({
+            $or: [{
+                'institution': filterId
+            }, {
+                'discipline': filterId
+            }, {
+                'faculty': filterId
+            }, {
+                'keyword': filterId
+            }, {
+                'partnerOrg': filterId
+            }]
+        },
+
+        {
+            $pull: {
+                'institution': filterId,
+                'discipline': filterId,
+                'faculty': filterId,
+                'keyword': filterId,
+                'partnerOrg': filterId
+            }
+        },
+
+        {
+            multi: true
+        },
+
+        function(err, result) {
+
+            callback(err, result);
+
+            if (err)
+                console.error(err);
+        }
+    );
+
+};
 
 /**
  * Hooks

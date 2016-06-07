@@ -36,6 +36,24 @@ Filters.add({
     category: { type: Types.Select, label: 'Type', options: 'Institution, Discipline, Faculty Member, Keyword, Partnership Organization', required: true, initial: true }
 });
 
+
+Filters.schema.pre('remove', function(next) {
+
+  // Remove resource from all that referenced it 
+	keystone.list('Syllabi').model.removeFilterRef(this._id, function(err, removedCount) {
+
+		if(err)
+			console.error(err);
+    
+		if(removedCount > 0)
+			console.log("Removed " +  removedCount + " references to '"+ this._id + "'");
+		
+		next();
+
+	});
+
+});
+
 /**
  * Model Registration
  * =============

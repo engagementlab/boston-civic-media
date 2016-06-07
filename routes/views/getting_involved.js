@@ -16,6 +16,7 @@ var ListservGuidelines = keystone.list('ListservGuidelines');
 var Newsletter = keystone.list ('Newsletter');
 var GettingInvolved = keystone.list('GettingInvolved');
 var _ = require('underscore');
+var moment = require('moment');
 var cloudinary = require('cloudinary');
 
 exports = module.exports = function(req, res) {
@@ -53,9 +54,9 @@ exports = module.exports = function(req, res) {
           
                 queryNewsletters.exec(function(err, resultNewsletters) {
                     
+                    // locals.newsletterDate = resultNewsletters[i]._.publishedAt.format('MMMM Do YYYY');
+                    locals.date = moment(resultNewsletters.publishedAt).format();
                     locals.newsletters = resultNewsletters;
-                    // locals.newsletterDate = resultNewsletters._.published.format('MMMM Do YYYY');
-                    
                     next(err);
 
                     // console.log (locals.getting_involved);
