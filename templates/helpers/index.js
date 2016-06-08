@@ -34,8 +34,7 @@ module.exports = function() {
         }
     };
 
-    _helpers.removePara = function () {
-        var str = '';
+    _helpers.removePara = function (str) {
         return str.replace ('<p></p>', '');
     }
 
