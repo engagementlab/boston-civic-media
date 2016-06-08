@@ -11,6 +11,7 @@ module.exports = function() {
     __dirname + '/../public/js/*.js', // js for the site
     __dirname + '/../public/plugins/*.js',  // Plugins
     __dirname + '/../public/plugins/**/*.js',
+    '!' + __dirname + '/../public/plugins/isotope/*.js',  // Ignore isotope (this is a seperate prod include)
     __dirname + '/../public/plugins/bxslider/jquery.bxslider.js',
   
   ];
