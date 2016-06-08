@@ -32,7 +32,7 @@
 		// $(document).ready(function(){
 		  
 		// });
-		$('.isotopeContent').isotope('reloadItems').isotope();
+		
 		$('#markdown-span p').contents().unwrap();
 
 		{{!-- INDEX Template Script --}}
@@ -63,6 +63,7 @@
 			    itemSelector: '.affiliate-item', 
 			    layoutMode: 'fitRows'
 			  });
+			$('.isotopeContent').isotope('reloadItems').isotope();
 
 		});
 		$('.filters-button-group').on( 'click', 'button', function() {
@@ -190,7 +191,8 @@
 			    isFitHeight: true,
 			    layoutMode: 'fitRows'
 			});
-			
+			$('.isotopeContent').isotope('reloadItems').isotope();
+
 
 		function checkFiltered () {
 			
@@ -241,6 +243,7 @@
 			    itemSelector: '.talks-item', 
 			    layoutMode: 'fitRows'
 			  });
+				$('.isotopeContent').isotope('reloadItems').isotope();
 
 			$('.filters-button-group').on( 'click', 'button', function() {
 			  
