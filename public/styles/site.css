@@ -2408,9 +2408,6 @@ body .bx-wrapper {
   -moz-transform: translate(0px, 0px) !important;
   transform: translate(0px, 0px) !important; }
 
-p:empty {
-  display: none; }
-
 .bcm-timeline {
   margin: 0px; }
   @media (max-width: 767px) {
