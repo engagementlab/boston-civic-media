@@ -2402,8 +2402,11 @@ body .bx-wrapper {
   margin: 0;
   max-width: 70%; }
 
-p:empty {
-  display: none; }
+.isotopeContent .item {
+  position: static !important;
+  -webkit-transform: translate(0px, 0px) !important;
+  -moz-transform: translate(0px, 0px) !important;
+  transform: translate(0px, 0px) !important; }
 
 .bcm-timeline {
   margin: 0px; }

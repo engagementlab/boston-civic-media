@@ -35,7 +35,7 @@ module.exports = function() {
     };
 
     _helpers.removePara = function () {
-        var str = '';
+        var str = this;
         return str.replace ('<p></p>', '');
     }
 
