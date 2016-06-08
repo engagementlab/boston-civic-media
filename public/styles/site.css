@@ -2424,11 +2424,17 @@ body .dropdown-backdrop {
   position: relative; }
   #slider-next a.bx-next {
     float: right; }
+    @media (max-width: 767px) {
+      #slider-next a.bx-next {
+        margin-right: -40px; } }
 
 #slider-prev {
   position: relative; }
   #slider-prev a.bx-prev {
     float: left; }
+    @media (max-width: 767px) {
+      #slider-prev a.bx-prev {
+        margin-left: -40px; } }
 
 .slider-buttons {
   position: relative;
@@ -2446,6 +2452,9 @@ body .dropdown-backdrop {
   border-right: 1px #7d7d7d solid; }
   .featured-syllabi h3 {
     color: #0c9ec7; }
+  @media (max-width: 991px) {
+    .featured-syllabi {
+      border: 0px solid; } }
 
 .syllabi {
   min-height: 100%; }
@@ -2580,13 +2589,16 @@ body .lightning-talk-title {
 
 .slider-header {
   width: 100%;
-  display: table-cell;
   position: relative; }
   .slider-header .slider-text {
     width: 70%;
     margin: 0 auto;
     vertical-align: center;
     position: relative; }
+
+@media (max-width: 991px) {
+  .slider-text h3 {
+    font-size: large; } }
 
 .talks-header {
   text-align: center;
@@ -2682,7 +2694,8 @@ body .lightning-talk-title {
   margin-bottom: 1%; }
   @media (max-width: 767px) {
     .affiliate-item {
-      margin-bottom: 15%; } }
+      margin-bottom: 15%;
+      min-width: 100%; } }
 
 .funder {
   padding-bottom: 5%; }
