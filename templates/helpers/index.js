@@ -34,9 +34,10 @@ module.exports = function() {
         }
     };
 
-    _helpers.removePara = function (str) {
-        return str.replace ('<p></p>', '');
-    }
+    // _helpers.removePara = function (str) {
+    //     console.log (str);
+    //     return str.replace ('<p></p>', '');
+    // };
 
     /**
      * KeystoneJS specific helpers
