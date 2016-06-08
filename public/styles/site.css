@@ -2477,6 +2477,11 @@ body .beckyBanner {
   color: #bababa;
   min-height: 40px; }
 
+.no-talks-visible {
+  display: none;
+  margin-left: 5%;
+  min-height: 500px; }
+
 .no-syllabi-visible {
   display: none;
   min-height: 500px; }
@@ -2678,7 +2683,7 @@ body .lightning-talk-title {
   padding: 1%; }
 
 #talks-content {
-  padding: 0px 5%; }
+  padding: 0px 2%; }
 
 body .talks-item {
   text-align: center;
@@ -6455,6 +6460,11 @@ header.full-width .animated.main-navigation .dropdown-menu .open .dropdown-menu.
 
 .footer-outer {
   background-color: #bababa; }
+
+.subscribe-footer p {
+  padding: 5%;
+  width: 80%;
+  margin: 0 auto; }
 
 .footer-content-list ul {
   padding: 0px;

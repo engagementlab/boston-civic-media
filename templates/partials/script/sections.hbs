@@ -30,7 +30,14 @@
 		*/
 		
 		// $(document).ready(function(){
-		  $('.bxslider').bxSlider({
+		  
+		// });
+		$('.isotopeContent').isotope('reloadItems').isotope();
+		$('#markdown-span p').contents().unwrap();
+
+		{{!-- INDEX Template Script --}}
+		{{#ifeq section 'home'}}
+			$('.bxslider').bxSlider({
 			  nextSelector: '#slider-next',
 			  prevSelector: '#slider-prev',
 			  autoheight: true,
@@ -42,13 +49,6 @@
 			  // controls: true
 
 		  });
-		// });
-		
-		$('#markdown-span p').contents().unwrap();
-
-		{{!-- INDEX Template Script --}}
-		{{#ifeq section 'home'}}
-		
 	  	
 
 		{{/ifeq}}
@@ -190,6 +190,7 @@
 			    isFitHeight: true,
 			    layoutMode: 'fitRows'
 			});
+			
 
 		function checkFiltered () {
 			
@@ -225,6 +226,16 @@
 		{{!-- LIGHTNING TALK Template Script --}}
 		{{#ifeq section 'lightning_talk'}}
 
+		function checkFiltered () {
+			
+			var talks = $('#talks-content');
+			if ( talks.data('isotope').filteredItems.length === 0 )
+			  $('.no-talks-visible').show();
+			else
+				$('.no-talks-visible').hide();
+
+		}
+
 			var container = $('#talks-content');
 				container.isotope({
 			    itemSelector: '.talks-item', 
@@ -240,11 +251,16 @@
 			// change is-checked class on buttons
 			$('.button-group').each( function( i, buttonGroup ) {
 			  var $buttonGroup = $( buttonGroup );
+
 			  $buttonGroup.on( 'click', 'button', function() {
 			    $buttonGroup.find('.is-checked').removeClass('is-checked');
 			    $( this ).addClass('is-checked');
+
+			    checkFiltered();
 			  });
+
 			});
+
 		{{/ifeq}}
 	})
 </script>

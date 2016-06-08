@@ -138,6 +138,12 @@ body .beckyBanner {
 	min-height: 40px;
 }
 
+.no-talks-visible {
+	display: none;
+	margin-left: 5%;
+	min-height: 500px;
+}
+
 .no-syllabi-visible {
 	display: none;
 	min-height: 500px;
@@ -405,7 +411,7 @@ body .lightning-talk-title {
 
 }
 #talks-content {
-	padding: 0px 5%;
+	padding: 0px 2%;
 }
 body .talks-item {
 	text-align: center;	

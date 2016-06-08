@@ -49,7 +49,11 @@
 		
 		</div>
 		<div class="ph40">
-			<div id="talks-content" class="row">
+			<div class="no-talks-visible">
+				<h2>No lightning talks match that category!</h2>
+			</div>
+
+			<div id="talks-content" class="isotopeContent row">
 				{{#if lightning_talk}}
 					{{#each lightning_talk}}
 						{{#if enabled}}
