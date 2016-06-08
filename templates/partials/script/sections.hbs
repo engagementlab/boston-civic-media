@@ -189,7 +189,7 @@
 			syllabiContainer.isotope({
 			    itemSelector: '.syllabi-item',
 			    isFitHeight: true,
-			    layoutMode: 'fitRows'
+			    layoutMode: 'masonry'
 			});
 			$('.isotopeContent').isotope('reloadItems').isotope();
 
@@ -241,9 +241,9 @@
 			var container = $('#talks-content');
 				container.isotope({
 			    itemSelector: '.talks-item', 
-			    layoutMode: 'fitRows'
+			    layoutMode: 'masonry'
 			  });
-				$('.isotopeContent').isotope('reloadItems').isotope();
+				// $('.isotopeContent').isotope('reloadItems').isotope();
 
 			$('.filters-button-group').on( 'click', 'button', function() {
 			  
