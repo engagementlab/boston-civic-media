@@ -249,7 +249,7 @@ body .dropdown-menu {
 }
 
 body .lightning-talk-title {
-	display: table-cell;
+	display: relative;
 	color: $gray-dark;
 	font-weight: 700;
 	min-height: 80px;
