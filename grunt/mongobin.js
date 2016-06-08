@@ -19,7 +19,7 @@
  module.exports = {
 
   options: {
-    host: '127.0.0.1',
+    host: 'catan.dev.emerson.edu',
     port: '27017',
     db: 'boston-civic-media'
   },
@@ -27,7 +27,7 @@
   restore: {
     task: 'restore',
     path: './dump/boston-civic-media',
-    db: 'boston-civic-media-staging',
+    db: 'boston-civic-media',
     drop: true
   },
 
