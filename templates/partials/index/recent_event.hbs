@@ -8,7 +8,7 @@
 				</div>
 				<a href="/events/{{event.event_key}}"><img src="{{{cloudinaryUrl event.image width=150 height=150 crop='scale' quality=100}}}" alt="{{event.name}}" class="photo" style="margin:0 auto;">{{!-- <span><i class="fa fa-chevron-right" aria-hidden="true"></i></span> --}}</a>
 				{{!-- {{#if event.footer}} --}}
-					<p>{{{removePara event.theFooter.html}}}</p>
+					<p>{{{event.theFooter.html}}}</p>
 				{{!-- {{/if}} --}}
 			</div>
 		</div>

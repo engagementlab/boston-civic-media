@@ -20,11 +20,14 @@
 		<div class="container-padding row">
 			<div class="involved educators">
 				<h1 class="title title-green-blue">Educators</h1>
-				<h4><strong>Educators are the driving force of this network. If you're an educator at a local institution serving undergraduates please reach out to: </strong></h4>
+				<h4><strong>{{getting_involved.edDescription}}{{!-- Educators are the driving force of this network. If you're an educator at a local institution serving undergraduates please reach out to:  --}}</strong></h4>
 				<ul class="left-list green-blue-list">
-					<li><span class="list-item">Share a syllabus</span></li>
+					{{#each getting_involved.edBlurb}}
+					<li><span class="list-item">{{this}}</span></li>
+					{{/each}}
+					{{!-- <li><span class="list-item">Share a syllabus</span></li>
 					<li><span class="list-item">Host a themed convening at your institution</span></li>
-					<li><span class="list-item">Volunteer to do a lightning talk</span></li>
+					<li><span class="list-item">Volunteer to do a lightning talk</span></li> --}}
 				</ul>
 			</div>
 		</div>
@@ -33,9 +36,12 @@
 			<div class="involved organizations">
 				<h1 class="title title-green-light">Organizations</h1>
 				<ul class="left-list green-light-list">
-					<li><span class="list-item">Get in touch with Research Coordinator Liat Racin (<span class="green-light-item">liat at elab.emerson.edu</span>) to participate in a focus group on the Ethical Partnerships project</span></li>
+					{{#each getting_involved.orgBlurb}}
+					<li><span class="list-item">{{this}}</span></li>
+					{{/each}}
+					{{!-- <li><span class="list-item">Get in touch with Research Coordinator Liat Racin (<span class="green-light-item">liat at elab.emerson.edu</span>) to participate in a focus group on the Ethical Partnerships project</span></li>
 					<li><span class="list-item">Post volunteer and project opportunities on the Boston Civic Media listserv</span></li>
-					<li><span class="list-item">Volunteer to reflect on a collaboration with an academic partner via a lightning talk</span></li>
+					<li><span class="list-item">Volunteer to reflect on a collaboration with an academic partner via a lightning talk</span></li> --}}
 				</ul>
 			</div>
 		</div>
@@ -45,9 +51,12 @@
 			<div class="involved researchers">
 				<h1 class="title title-brown">Researchers</h1>
 				<ul class="left-list brown-list">
-					<li><span class="list-item">Share resources accessible to the broader community, such as the Boston Data Library</span></li>
+					{{#each getting_involved.resBlurb}}
+					<li><span class="list-item">{{this}}</span></li>
+					{{/each}}
+					{{!-- <li><span class="list-item">Share resources accessible to the broader community, such as the Boston Data Library</span></li>
 					<li><span class="list-item">Suggest thematic topics for quarterly convenings, such as <span class="styled-title">"Impact and Assessment in Civic Media"</span></span></li>
-					<li><span class="list-item">Contribute your best practices and provocations to the Ethical Partnerships project</span></li>
+					<li><span class="list-item">Contribute your best practices and provocations to the Ethical Partnerships project</span></li> --}}
 				</ul>
 			</div>
 		</div>
@@ -56,9 +65,12 @@
 			<div class="involved students">
 				<h1 class="title title-green">Students</h1>
 				<ul class="left-list green-list">
-					<li><span class="list-item">Look out for joint Civic Media courses in 2018</span></li>
+					{{#each getting_involved.studBlurb}}
+					<li><span class="list-item">{{this}}</span></li>
+					{{/each}}
+					{{!-- <li><span class="list-item">Look out for joint Civic Media courses in 2018</span></li>
 					<li><span class="list-item">Get connected to local community organizations looking for interns</span></li>
-					<li><span class="list-item">Showcase your work at our annual summer Boston Civic Media conference</span></li>
+					<li><span class="list-item">Showcase your work at our annual summer Boston Civic Media conference</span></li> --}}
 				</ul>
 			</div>
 		</div>
