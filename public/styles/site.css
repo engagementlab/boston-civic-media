@@ -2402,6 +2402,9 @@ body .bx-wrapper {
   margin: 0;
   max-width: 70%; }
 
+p:empty {
+  display: none; }
+
 .bcm-timeline {
   margin: 0px; }
   @media (max-width: 767px) {
@@ -2561,7 +2564,7 @@ body .dropdown-menu {
       min-width: 100%; } }
 
 body .lightning-talk-title {
-  display: table-cell;
+  display: relative;
   color: #7d7d7d;
   font-weight: 700;
   min-height: 80px; }
@@ -2773,12 +2776,15 @@ body .listserv {
 
 .featured-event .summary {
   font-size: 2em;
-  font-style: bold; }
+  font-style: bold;
+  width: 60%;
+  margin: 0 auto; }
 
 .featured-event p {
+  font-size: large;
   margin: 0 auto;
   width: 50%;
-  padding: 5%; }
+  padding: 2%; }
 
 .events-feature {
   background-color: #dadada; }
