@@ -23,9 +23,9 @@ var IRBProj = new keystone.List('IRBProj',
 	{
 		label: 'IRB Project',
 		singular: 'IRB Project',
-		track: true
-		// nodelete: true,
-		// nocreate: true
+		track: true,
+		nodelete: true,
+		nocreate: true
 	});
 
 /**
@@ -34,13 +34,73 @@ var IRBProj = new keystone.List('IRBProj',
  */
 IRBProj.add({
 	name: { type: String, default: "Community IRB Project", hidden: true, required: true, initial: true },
-	projectTitle: {type: Types.Markdown, label: "Project Title", note: "Inline, styled text at the beginning of the description", required: true, initial: true}, 
-	projDescription: { type: Types.Markdown, label: "Project Description", required: true, initial: true},
+	// projectTitle: {type: Types.Markdown, label: "Project Title", note: "Inline, styled text at the beginning of the description", required: true, initial: true}, 
+	// projDescription: { type: Types.Markdown, label: "Project Description", required: true, initial: true},
 	imageTitle: {type: String, label: "Image Title", required: true, initial: true}, 
 	imageCaption: {type: String, label: "Image Caption", required: true, initial: true},
 	image: { type: Types.CloudinaryImage, label: 'Image',  folder: 'boston-civic-media/logos' },
 	email: { type: String, label: "Contact Email", required: true, initial: true},
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
+},
+	'The Problem', {
+
+        probTitle: {
+            type: String,
+            label: 'Title',
+            initial: true,
+            required: true
+        },
+        probText: {
+            type: Types.Markdown,
+            label: 'Text',
+            initial: true,
+            required: true
+        }
+  }, 
+  'What We Did', {
+
+        didTitle: {
+            type: String,
+            label: 'Title',
+            initial: true,
+            required: true
+        },
+        didText: {
+            type: Types.Markdown,
+            label: 'Text',
+            initial: true,
+            required: true
+        }
+  }, 
+  'What We Found', {
+
+        foundTitle: {
+            type: String,
+            label: 'Title',
+            initial: true,
+            required: true
+        },
+        foundText: {
+            type: Types.Markdown,
+            label: 'Text',
+            initial: true,
+            required: true
+        }
+  }, 
+  'Next Steps', {
+
+        nextTitle: {
+            type: String,
+            label: 'Title',
+            initial: true,
+            required: true
+        },
+        nextText: {
+            type: Types.Markdown,
+            label: 'Text',
+            initial: true,
+            required: true
+        }
 });
 
 /**
