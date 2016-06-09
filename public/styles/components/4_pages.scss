@@ -37,6 +37,9 @@ body .dropdown-backdrop {
 
 	a.bx-next {
 		float: right;
+		@media(max-width: 767px){
+			margin-right: -40px;
+		}
 	// padding-right: 10%;
 	}
 }
@@ -45,10 +48,15 @@ body .dropdown-backdrop {
 
 	a.bx-prev {
 		float:left;
+		@media(max-width: 767px){
+			margin-left: -40px;
+		}
 	// padding-left: 10%;
 	}
 
 }
+
+
 
 
 .slider-buttons  {
@@ -95,9 +103,14 @@ body .dropdown-backdrop {
 	h3 {
 		color: $base-color-hover;
 	}
+
+	@media (max-width: 991px) {
+		border: 0px solid;
+	}
 	// width: 100%;
 
 }
+
 .syllabi  {
 	min-height: 100%;
 }
@@ -275,7 +288,7 @@ body .lightning-talk-title {
 }
 .slider-header {
 	width: 100%;
-	display: table-cell;
+	// display: table-cell;
 	position: relative;
 
 	
@@ -287,6 +300,13 @@ body .lightning-talk-title {
 	}
 
 }
+@media (max-width: 991px){
+	.slider-text h3 {
+		font-size: large;
+	}
+}
+
+
 .talks-header {
 	text-align: center;
 	width: 50%;
@@ -409,6 +429,7 @@ body .lightning-talk-title {
 
 	@media (max-width: 767px) {
 		margin-bottom: 15%;
+		min-width: 100%;
 	}
 }
 
