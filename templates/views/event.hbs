@@ -14,9 +14,9 @@
 <!-- DIRECTORY START -->
 <!-- ================ -->
 <section class="main-container padding-bottom-clear">
-	<div class="container">
+	<div class="ph-40">
 		<div class="main">
-		<h2 class="page-title">{{this_event.title}}</h2>
+		<h2 class="page-title" style="margin-left:2%;">{{this_event.title}}</h2>
 			{{!-- <h1 class="page-title"><strong>Single Event</strong></h1> --}}
 			{{!-- {{> page/lead}} --}}
 		</div>
@@ -25,10 +25,10 @@
 	{{!-- We'll need some filtering dropdowns here --}}
 
 	{{!-- Show all syllabi below by default --}}
-	<div class="container pv-20 this-event">
+	<div class="ph-40 pv-20 this-event">
 		<div class="row">
 		{{!-- {{jsonPrint this_event}} --}}
-			<div class="col-md-8 ph-40 event-description">
+			<div class="col-md-8 col-sm-6 ph-40 event-description">
 				
 				<p>{{{this_event.theDescription.html}}}</p>
 				<ul>
@@ -38,22 +38,30 @@
 				</ul>
 				
 			</div>
-			<div class="col-md-4">
-			<img src="{{{cloudinaryUrl this_event.image width=auto height=auto crop='scale' quality=100}}}" alt="{{this_event.name}}" class="photo" style="margin:0 auto;">
+			<div class="col-md-4 col-sm-6">
+			<img src="{{{cloudinaryUrl this_event.image width=auto height=auto crop='scale' quality=100}}}" alt="{{this_event.name}}" class="event-photo" style="margin:0 auto;">
 				
 			</div>
 		
 		</div>
 		<div class="row pv-40">
-			<div class="col-md-8">
-				
+			<div class="col-md-8 col-sm-12">
+			{{#if this_event.videoLinks}}
+			<div class="video-links">
+			<h4>Lightning talks related to this event:</h4>
+				<ul>
+					{{#each this_event.videoLinks}}
+					<li><a href='{{this}}'>{{this}}</a></li>
+					{{/each}}
+				</ul>
+			</div>
+			{{/if}}
 			</div>
 
-			<div class="col-md-4">
-				<div class="embed-responsive embed-responsive-16by9">
-					{{{this_event.data.html}}}
-						  {{!-- {{jsonPrint featured_lightning_talk}} --}}
-				</div>
+			<div class="col-md-4 col-sm-12">
+				{{#if this_event.file}}
+					<a href="{{{this_event.file.url}}}" class="event-button" download="{{this_event.file.filename}}">Download PDF <span class="fa fa-download"></span></a>
+				{{/if}}
 			</div>
 		</div>
 		

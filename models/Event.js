@@ -39,6 +39,18 @@ Event.add({
 	eventbriteURL: { type: String, label: 'Eventbrite URL'},
 	hackpadURL: {type: String, label: 'Hackpad URL'}, 
 	additionalURL: { type: String, label: "Additional URL"},
+	videoLinks: { type: Types.TextArray, label: "Lightning Talk Links"},
+	file: {
+		type: Types.AzureFile,
+		label: 'File',
+		filenameFormatter: function(item, filename) {
+      // console.log ("hi");
+			return item.event_key + require('path').extname(filename);
+		},
+		containerFormatter: function(item, filename) {
+			return 'bcmevent';
+		}
+	},
   	featured: {
       type: Types.Boolean,
       label: 'Featured Event', 

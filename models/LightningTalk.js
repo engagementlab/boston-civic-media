@@ -13,6 +13,7 @@ var LightningTalk = new keystone.List('LightningTalk',
 		singular: 'Lightning Talk',
 		track: true,
 	    hidden: false,
+	    autokey: { path: 'talk_key', from: 'title', unique: true },
 		inherits: Video
 		// nodelete: true,
 		// nocreate: true
@@ -23,9 +24,10 @@ var LightningTalk = new keystone.List('LightningTalk',
  * @main About
  */
 LightningTalk.add({
-	// name: { type: Types.Name, label: "Name", default: "Lightning Talks", hidden: true, required: true, initial: true },
+	// name: { type: Types.Name, label: "Name", default: "talk_key", hidden: true, required: true, initial: true },
 	title: { type: String, label: "Talk Title", required: true, initial: true, index: true },
-	talkDescription: { type: Types.Markdown, label: "Talk Description", note: "Cut off at 300 characters.", max: {chars: 300, mode: 'validate'}, required: true, initial: true, index: true },
+	longDescription: { type: Types.Markdown, label: 'Long Description', note: 'Shown on individual talk page. No character limit.', required: true, initial: true },
+	talkDescription: { type: Types.Markdown, label: "Short Description", note: "Cut off at 300 characters. Appears in grid layout of talks.", max: {chars: 300, mode: 'validate'}, required: true, initial: true, index: true },
 	category: { type: Types.Select, label: 'Type', options: 'Welcome, Art, Research, Technology, Media, Data, Co-Design', required: true, initial: true },
 	enabled: {
       type: Types.Boolean,

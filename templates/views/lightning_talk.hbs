@@ -5,7 +5,7 @@
  * Developed by Engagement Lab, 2016
  * ==============
  * 
- * Syllabi Directory Page Template 
+ * Events Directory Page Template 
  * - Use {{jsonPrint project}} to print entire json...DEBUG ONLY
  * ==========
  */
@@ -15,9 +15,9 @@
 <!-- ================ -->
 <section class="main-container padding-bottom-clear">
 	<div class="container">
-		<div class="talks-header main">
-			<h1 class="page-title"><strong>Lightning Talk Archive</strong></h1>
-			<p>Browse the talks below to learn more about Boston Civic Media, local case studies, and lessons on topics ranging from impact assessment to engagement approaches.</p>
+		<div class="main">
+		<h2 class="page-title">{{this_talk.title}}</h2>
+			{{!-- <h1 class="page-title"><strong>Single Event</strong></h1> --}}
 			{{!-- {{> page/lead}} --}}
 		</div>
 	</div>
@@ -25,53 +25,29 @@
 	{{!-- We'll need some filtering dropdowns here --}}
 
 	{{!-- Show all syllabi below by default --}}
-	<div class="">
-		<div class="row talks-feature">
-				
-			<div class="col-md-8 col-sm-12 feature"> 
-				<h2 style="text-align:center;">Featured Talk</h2>
-			{{!-- {{jsonPrint featured_lightning_talks}} --}}
-				{{#if featured_lightning_talks}}
-					{{#each featured_lightning_talks}}
-						{{>index/featured_lightning_talk featured_lightning_talk=this}}
-					{{/each}}
-				{{/if}}
-			</div>
+	<div class="container pv-20 this-event">
+		<div class="row">
+		{{!-- {{jsonPrint this_event}} --}}
+			<div class="col-md-6">
+				<div class="embed-responsive embed-responsive-16by9">
+				  {{{this_talk.data.html}}}
+				  {{!-- {{jsonPrint featured_lightning_talk}} --}}
+				</div>
 
-			<div class="col-md-4 col-sm-12 talks-buttons clearfix button-group filters-button-group" data-filter-group="">
-				<h2>Talk Categories</h2>
-			    <button value="*" data-filter="" class="button">All</button>
-			    <button class="button" value="#" data-filter=".Welcome">Welcome</button>
-			    <button class="button" value="#" data-filter=".Art">Art</button>
-			    <button class="button" value="#" data-filter=".Research">Research</button>
-			    <button class="button" value="#" data-filter=".Technology">Technology</button>
-			    <button class="button" value="#" data-filter=".Media">Media</button>
-			    <button class="button" value="#" data-filter=".Data">Data</button>
-			    <button class="button" value="#" data-filter=".Co-Design">Co-Design</button>
+					
 			</div>
+			<div class="col-md-6 ph-40 event-description">
+				
+				<p>{{{this_talk.longDescription.html}}}</p>
+				
+			</div>
+		</div>
+		<div class="row">
+			
+		</div>
+			
 		
 		</div>
-		<div class="no-talks-visible">
-				<h2>No lightning talks match that category!</h2>
-			</div>
-		{{!-- <div class="ph40"> --}}
-			
-
-			<div id="talks-content" class="isotopeContent row">
-				{{#if lightning_talk}}
-					{{#each lightning_talk}}
-						{{#if enabled}}
-						<div class="col-md-4 col-sm-12 talks-item item {{{this.category}}}">
-							<div class="" data-category="{{{this.category}}}">
-								{{>index/lightning_talk lightning_talk=this}}
-							</div>
-						</div>
-						{{/if}}
-					{{/each}}
-				{{else}}
-					<strong>No lightning talks!! Fiddlesticks!</strong>
-				{{/if}}
-			</div>
-		{{!-- </div> --}}
-	</div>
+		
+		
 </section>

@@ -14,7 +14,7 @@
 <!-- DIRECTORY START -->
 <!-- ================ -->
 <section class="main-container padding-bottom-clear">
-	<div class="container">
+	<div class="">
 		<div class="main ph-40">
 		<h3 class="page-title">{{this_syllabus.title}}</h3>
 			<h5>{{this_syllabus.author}}</h5>
@@ -25,9 +25,9 @@
 	{{!-- We'll need some filtering dropdowns here --}}
 
 	{{!-- Show all syllabi below by default --}}
-	<div class="container ph-40 pv-40">
+	<div class="ph-40 pv-40">
 		<div class="row">
-			<div class="col-md-4">
+			<div class="col-md-4 col-sm-4">
 			
 				{{#if this_syllabus.institution}}
 					<p><strong>Institution(s): {{#each this_syllabus.institution}} {{this.name}}{{#unless @last}}, {{/unless}} {{/each}}</strong></p>
@@ -50,7 +50,7 @@
 				{{/if}}
 
 			</div>
-			<div class="this-syllabus-description col-md-8">
+			<div class="this-syllabus-description col-md-8 col-sm-8">
 				
 				<p>{{this_syllabus.description}}</p>
 			</div>

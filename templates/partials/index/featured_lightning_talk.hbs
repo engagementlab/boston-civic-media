@@ -24,9 +24,10 @@
 
 					</div> <!-- .va-align -->
 				</div>
-				<div class="feat-talk-title"><h2>{{featured_lightning_talk.title}}</h2></div>
+				{{!-- <div class="feat-talk-title"><h2>{{featured_lightning_talk.title}}</h2></div> --}}
 
-				<div class="feat-talk-description"><p>{{{featured_lightning_talk.talkDescription.html}}}</p></div> <!-- .va-container -->
+				<div class="feat-talk-description"><p>{{{featured_lightning_talk.talkDescription.html}}}</p>
+				<a href="/lightning_talks/{{featured_lightning_talk.talk_key}}"><p>Read More</p></a></div> <!-- .va-container -->
 			</div> <!-- .col-sm-6 -->
 		{{!-- </div> <!-- .row --> --}}
 	</div> <!-- .container -->

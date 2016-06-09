@@ -44,7 +44,7 @@ exports.initLocals = function(req, res, next) {
     {
         label: 'Lightning Talks',
         key: 'lightning-talk',
-        href: '/lightning_talk'
+        href: '/lightning_talks'
     },
     // {
     //     label: 'CIRB',

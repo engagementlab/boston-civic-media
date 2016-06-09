@@ -51,7 +51,8 @@ exports = module.exports = function(app) {
     app.get('/about', routes.views.about);
     app.get('/syllabi', routes.views.syllabi);
     app.get('/syllabi/:syllabus_key', routes.views.syllabus);
-    app.get('/lightning_talk', routes.views.lightning_talk);
+    app.get('/lightning_talks', routes.views.lightning_talks);
+    app.get('/lightning_talks/:talk_key', routes.views.lightning_talk);
     app.get('/irb_proj', routes.views.irb_proj);
     app.get('/getting_involved', routes.views.getting_involved);
     app.get('/collaborations', routes.views.collaboration);

@@ -152,6 +152,17 @@ body .beckyBanner {
 
 }
 
+.event-button {
+	font-size: 2em;
+	float: right;
+
+	@media (max-width: 767px) {
+		float: left;
+		padding: 5%;
+
+	}
+}
+
 .syllabi-item {
 	padding: 20px;
 }
@@ -318,7 +329,8 @@ body .lightning-talk-title {
 }
 .talks-feature {
 	padding: 2% 5%;
-	margin: 5% 5%;
+	margin: 0 5%;
+	margin-bottom: 5%;
 	border-bottom: 1px $gray-dark solid;
 	.feature {
 		float: right;
@@ -329,6 +341,7 @@ body .lightning-talk-title {
 	}
 }
 .feat-talk-description {
+	padding: 4% 2%;
 	@media (max-width: 767px) {
 		text-align: center;
 	}
@@ -445,14 +458,15 @@ body .lightning-talk-title {
 }
 #talks-content {
 	padding: 0px 2%;
+	min-height: 100%;
 }
 body .talks-item {
 	text-align: center;	
 	// min-height: 600px;
 	p {
 		margin: 0 auto;
-		width: 90%;
-		padding: 2%;
+		// width: 90%;
+		padding: 2% 0px;
 	}
 
 	@media (max-width: 767px){ 
@@ -540,7 +554,7 @@ body .listserv {
 	ul {
 		margin: 0 auto;
 		padding: 0px;
-
+		padding-bottom: 5%;
 		list-style-type:none;
 	}
 	li {
@@ -548,6 +562,12 @@ body .listserv {
 		margin: 0 auto;
 		padding: 5px 0px;
 		line-height: 25px;
+	}
+}
+.event-description {
+	@media (max-width: 767px) {
+		margin-left: -15px;
+		margin-right: -15px;
 	}
 }
 
@@ -559,10 +579,24 @@ body .listserv {
 		margin: 0 auto;
 	}
 	p {
+		color: $gray-dark;
 		font-size: large;
-		margin: 0 auto;
-		width: 50%;
+		margin: 15% auto;
+		// width: 50%;
 		padding: 2%;
+	}
+}
+.event-photo {
+	@media(max-width: 767px) {
+		height: 200px;
+	}
+}
+.video-links {
+	padding-left: 4%;
+}
+.featured-event p {
+	@media (max-width: 767px){
+		margin: 0 auto;
 	}
 }
 

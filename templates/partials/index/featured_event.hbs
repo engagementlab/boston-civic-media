@@ -1,16 +1,21 @@
 <div class="col-md-12">
 	<div class="pv-30 ph-20 featured-event text-center" id="box-{{@index}}">
 		<div class="va-container">
-			<div class="va-align" style="margin: 0 auto;">
-				<div class="summary">
-					<h2>{{event.title}}</h2>
-					{{!-- {{jsonPrint this}} --}}
+			<a href="/events/{{event.event_key}}"><div class="row va-align" style="margin: 0 auto;">
+				<div class="col-md-6">
+					<div class="summary">
+						<h2>{{event.title}}</h2>
+						{{!-- {{jsonPrint this}} --}}
+					</div>
+					<img src="{{{cloudinaryUrl event.image width=auto height=400 crop='scale' quality=100}}}" alt="{{event.name}}" class="photo" style="margin:20px auto;">
 				</div>
-				<a href="/events/{{event.event_key}}"><img src="{{{cloudinaryUrl event.image width=300 height=300 crop='scale' quality=100}}}" alt="{{event.name}}" class="photo" style="margin:0 auto;">{{!-- <span><i class="fa fa-chevron-right" aria-hidden="true"></i></span> --}}</a>
+				{{!-- <span><i class="fa fa-chevron-right" aria-hidden="true"></i></span> --}}
 				{{!-- {{#if event.footer}} --}}
+				<div class="col-md-6">
 					<p>{{{event.theFooter.html}}}</p>
+				</div>
 				{{!-- {{/if}} --}}
-			</div>
+			</div></a>
 		</div>
 	</div>
 </div>

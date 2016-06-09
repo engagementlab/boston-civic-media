@@ -12,10 +12,9 @@
  * ==========
  */
 var keystone = require('keystone');
-
+// var moment = require('moment');
 var LightningTalk = keystone.list('LightningTalk');
-var _ = require('underscore');
-var cloudinary = require('cloudinary');
+// var Resource = keystone.list('Resource');
 
 exports = module.exports = function(req, res) {
 
@@ -23,30 +22,30 @@ exports = module.exports = function(req, res) {
         locals = res.locals;
 
     // Init locals
-    locals.section = 'lightning_talk';
+    locals.section = 'this_talk';
+    // locals.sub_section = 'publications';
 
+    // Load the current publication
     view.on('init', function(next) {
 
-        locals.featured_lightning_talks = [];
-
-        var queryLightningTalk = LightningTalk.model.find({}).sort([
-            ['sortOrder', 'ascending']
-        ]);
-
-        var featTalkQuery = LightningTalk.model.find({
-            'enabled': true,
-            'featured': true
+        /* This query gets a publication by the key in the
+           URL and populates resources from its model */
+        var talkQuery = LightningTalk.model.findOne({
+            talk_key: req.params.talk_key
         });
 
-        featTalkQuery.exec(function(err, result){
-            locals.featured_lightning_talks = result;
-        });
+        // Setup the locals to be used inside view
+        talkQuery.exec(function(err, result) {
+            
+            if (result === null) {
+                return res.notfound('Cannot find lightning talk', 'Sorry, but it looks like the talk you were looking for does not exist! Try <a href="http://elab.emerson.edu/events">going back</a> to the directory.');
+            }
 
-        queryLightningTalk.exec(function(err, resultLightningTalk) {
-            locals.lightning_talk = resultLightningTalk;
+            // locals.date = moment(result.date).format();
+            locals.this_talk = result;
+
             next(err);
         });
-
     });
 
     // Render the view
