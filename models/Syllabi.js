@@ -14,7 +14,8 @@ var Syllabi = new keystone.List('Syllabi',
 		track: true, 
 		sortable: true,
 		sortContent: 'Filter:category',
-    autokey: { path: 'syllabus_key', from: 'title', unique: true }
+    autokey: { path: 'syllabus_key', from: 'title', unique: true },
+    map: { name: 'title' }
 		// nodelete: true,
 		// nocreate: true
 	});

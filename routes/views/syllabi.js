@@ -39,12 +39,12 @@ exports = module.exports = function(req, res) {
                               ];
         var querySyllabi = Syllabi.model.find({}).sort([
             ['sortOrder', 'ascending']
-        ])
-        .populate('institution')
-        .populate('discipline')
-        .populate('faculty')
-        .populate('keyword')
-        .populate('partnerOrg');
+        ]).lean()
+        .populate('institution', 'key')
+        .populate('discipline', 'key')
+        .populate('faculty', 'key name')
+        .populate('keyword', 'key')
+        .populate('partnerOrg', 'key');
 
         var queryFilters = Filter.model.find({});
 
@@ -57,10 +57,17 @@ exports = module.exports = function(req, res) {
 
                 _.each(locals.syllabi, function(syllabus) {
 
-                    var filtersConcat = syllabus.institution.concat(syllabus.discipline, syllabus.faculty, syllabus.keyword);
+                    // Sort faculty by last name
+                    var facultySorted = syllabus.faculty.sort(function (a, b) {
+                        if (a.name.split(' ')[1] < b.name.split(' ')[1]) return -1;
+                        if (a.name.split(' ')[1] > b.name.split(' ')[1]) return 1;
+                        return 0;
+                    });
+                    
+                    var filtersConcat = syllabus.institution.concat(syllabus.discipline, facultySorted, syllabus.keyword);
 
-                    if(syllabus.partnerOrg !== null || syllabus.partnerOrg !== undefined)
-                        filtersConcat.concat(syllabus.partnerOrg);
+                    if(syllabus.partnerOrg !== null && syllabus.partnerOrg !== undefined && syllabus.partnerOrg.length > 0)
+                        filtersConcat = filtersConcat.concat(syllabus.partnerOrg);
 
                     syllabus.filters = _.pluck(filtersConcat, 'key').join(' ');
 
