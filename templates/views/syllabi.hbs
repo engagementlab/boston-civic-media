@@ -30,19 +30,22 @@
 		<div class="row">
 			<div class="col-md-12 filters">
 			  {{#each filters}}
-
+			  {{jsonPrint this}}
 				<div class="btn-group clearfix" >
 					<button id="syllabi{{label}}" class="syllabi-options btn btn-default dropdown-toggle" type="button" data-filter-group="{{label}}" data-toggle="dropdown">{{label}} <span class="bigCaret"></span></button>
 					<ul class="dropdown-menu scrollable" role="menu">
-						<li><a data-filter=""  href="#" data-filter-value="" data-filter-group="{{label}}" class="option-{{label}}">All {{label}}s</a></li>
+						<li><a id="{{label}}" data-filter=""  href="#" data-filter-value="" data-filter-group="{{label}}" class="option-{{label}}">All {{label}}s</a></li>
 
 					    {{#each values}}
-						    <li><a value="#" href="#" data-filter-value=".{{key}}" data-filter-group="{{../label}}" class="option-{{../label}}">{{name}}</a></li>
+						    <li><a id="{{../label}}" value="#" href="#" data-filter-value=".{{key}}" data-filter-group="{{../label}}" class="option-{{../label}}">{{name}}</a></li>
 					    {{/each}}
 					</ul>
 				</div>
 
 			  {{/each}}
+				<div class="btn-group clearfix">
+					<button class="syllabi-options clear-all btn btn-default dropdown-toggle" type="button" data-filter-value="">Clear All Filters</button>
+				</div>
 			</div>
 		</div>
 
@@ -64,6 +67,7 @@
 							<p>{{{description}}}</p>
 							<div class="tags">
 							{{#if faculty}}
+
 								<div class="">
 									<p><strong>Faculty Member (s):</strong>
 									{{#each faculty}} 

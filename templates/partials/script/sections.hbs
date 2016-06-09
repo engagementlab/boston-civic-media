@@ -182,6 +182,7 @@
 				$(this).addClass('is-checked');
 
 				applyFilter(this);
+				displayChecked(this);
 				checkFiltered ();
 			});
 
@@ -193,6 +194,17 @@
 			});
 			$('.isotopeContent').isotope('reloadItems').isotope();
 
+		function displayChecked (elem) {
+			// var label = $('')
+			var selector = $(elem);
+			var label = selector.attr('id');
+			var id = '#syllabi' + label;
+			var option = selector.html();
+			console.log (id + " is the ID")
+			console.log (label + " is the label");
+			console.log (option + " is the option");
+			$(id).html (option + '<span class="bigCaret"></span>')
+		}
 
 		function checkFiltered () {
 			
@@ -222,6 +234,13 @@
 		    syllabiContainer.isotope({ filter: filterStr });
 
 		  }
+
+		$(".clear-all").click(function(){
+		    $("#syllabi-content").isotope({
+		        filter: '*'
+		    });
+		});
+
 		  console.log ("im a syllabi");
 		{{/ifeq}}
 

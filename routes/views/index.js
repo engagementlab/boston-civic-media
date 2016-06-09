@@ -93,7 +93,8 @@ exports = module.exports = function(req, res) {
         var syllabiQuery = Syllabi.model.find({
             'enabled': true,
             'featured': true
-        });
+        })
+        .populate('faculty');
 
         var queryFeaturedEvent = Event.model.find({
             'enabled': true,
