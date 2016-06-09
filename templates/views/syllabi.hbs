@@ -30,21 +30,21 @@
 		<div class="row">
 			<div class="col-md-12 filters">
 			  {{#each filters}}
-			  {{jsonPrint this}}
+			  {{!-- {{jsonPrint this}} --}}
 				<div class="btn-group clearfix" >
-					<button id="syllabi{{label}}" class="syllabi-options btn btn-default dropdown-toggle" type="button" data-filter-group="{{label}}" data-toggle="dropdown">{{label}} <span class="bigCaret"></span></button>
+					<button id="syllabi{{key}}" class="syllabi-options btn btn-default dropdown-toggle" type="button" data-filter-group="{{label}}" data-toggle="dropdown">{{label}} <span class="bigCaret"></span></button>
 					<ul class="dropdown-menu scrollable" role="menu">
-						<li><a id="{{label}}" data-filter=""  href="#" data-filter-value="" data-filter-group="{{label}}" class="option-{{label}}">All {{label}}s</a></li>
+						<li><a id="{{key}}" data-filter=""  href="#" data-filter-value="" data-filter-group="{{key}}" class="all-options option-{{key}}">All {{label}}s</a></li>
 
 					    {{#each values}}
-						    <li><a id="{{../label}}" value="#" href="#" data-filter-value=".{{key}} .{{../key}}" data-filter-group="{{../label}}" class="option-{{../label}}">{{name}}</a></li>
+						    <li><a id="{{../key}}" value="#" href="#" data-filter-value=".{{key}}" data-filter-group="{{../key}}" class="option-{{../key}}">{{name}}</a></li>
 					    {{/each}}
 					</ul>
 				</div>
 
 			  {{/each}}
 				<div class="btn-group clearfix">
-					<button class="syllabi-options clear-all btn btn-default dropdown-toggle" type="button" data-filter-value="">Clear All Filters</button>
+					<button class="syllabi-options clear-all btn btn-default dropdown-toggle" type="button" data-filter-value="">Reset Filters</button>
 				</div>
 			</div>
 		</div>

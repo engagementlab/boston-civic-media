@@ -235,10 +235,20 @@
 
 		  }
 
-		$(".clear-all").click(function(){
-		    $("#syllabi-content").isotope({
-		        filter: '*'
+		$(".clear-all").on('click', function(){
+			filters = {};
+		    syllabiContainer.isotope({
+		        filter: ''
 		    });
+		    // $('.dropdown-menu li').delegate('a','click', function() {
+				
+			$('.is-checked').removeClass('is-checked');
+			$('.all-options').addClass('is-checked');
+			applyFilter('.all-options');
+			$('.all-options').each(function(i, obj){
+				displayChecked(this);
+			});
+			// });
 		});
 
 		  console.log ("im a syllabi");

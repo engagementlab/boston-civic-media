@@ -2505,7 +2505,7 @@ body .beckyBanner {
   min-height: 500px; }
 
 body .filters .btn-group {
-  margin-right: 2%; }
+  margin-right: 0.5%; }
 
 body .filters .btn-group.open > btn.syllabi-options:active,
 body .filters .btn-group.open > btn.syllabi-options:visited {
