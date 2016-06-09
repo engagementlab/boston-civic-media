@@ -75,6 +75,7 @@ exports = module.exports = function(req, res) {
                 .groupBy('category')
                 .map(function(filter, name) {
                     return {
+                        key: name.toLowerCase().replace(' ', '-'),
                         label: name,
                         values: filter
                                 .map(function(category, catKey) { 
