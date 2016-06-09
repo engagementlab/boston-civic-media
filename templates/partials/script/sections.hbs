@@ -33,6 +33,7 @@
 		  
 		// });
 		// {{removePara}}
+
 		$('#markdown-span p').contents().unwrap();
 
 		{{!-- INDEX Template Script --}}
@@ -200,9 +201,9 @@
 			var label = selector.attr('id');
 			var id = '#syllabi' + label;
 			var option = selector.html();
-			console.log (id + " is the ID")
-			console.log (label + " is the label");
-			console.log (option + " is the option");
+			// console.log (id + " is the ID")
+			// console.log (label + " is the label");
+			// console.log (option + " is the option");
 			$(id).html (option + '<span class="bigCaret"></span>')
 		}
 
@@ -232,20 +233,22 @@
 		    			    
 		    var filterStr = isoFilters.join('');
 		    syllabiContainer.isotope({ filter: filterStr });
-
+		    console.log (filterStr);
 		  }
 
 		$(".clear-all").on('click', function(){
 			filters = {};
+			// var syllabiContainer = $('#syllabi-content');
 		    syllabiContainer.isotope({
-		        filter: ''
+		        filter: '*'
 		    });
 		    // $('.dropdown-menu li').delegate('a','click', function() {
 				
 			$('.is-checked').removeClass('is-checked');
 			$('.all-options').addClass('is-checked');
-			applyFilter('.all-options');
+			// applyFilter('.all-options'); 
 			$('.all-options').each(function(i, obj){
+				applyFilter(this);
 				displayChecked(this);
 			});
 			// });

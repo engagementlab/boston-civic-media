@@ -176,7 +176,7 @@ body .beckyBanner {
 
 body .filters {
 	.btn-group {
-		margin-right: 0.5%;
+		margin-right: .5%;
 	}
 	.btn-group.open > btn.syllabi-options:active,
 	.btn-group.open > btn.syllabi-options:visited{
@@ -448,7 +448,7 @@ body .lightning-talk-title {
 }
 body .talks-item {
 	text-align: center;	
-	min-height: 600px;
+	// min-height: 600px;
 	p {
 		margin: 0 auto;
 		width: 90%;

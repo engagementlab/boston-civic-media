@@ -2505,7 +2505,7 @@ body .beckyBanner {
   min-height: 500px; }
 
 body .filters .btn-group {
-  margin-right: 0.5%; }
+  margin-right: .5%; }
 
 body .filters .btn-group.open > btn.syllabi-options:active,
 body .filters .btn-group.open > btn.syllabi-options:visited {
@@ -2708,8 +2708,7 @@ body .lightning-talk-title {
   padding: 0px 2%; }
 
 body .talks-item {
-  text-align: center;
-  min-height: 600px; }
+  text-align: center; }
   body .talks-item p {
     margin: 0 auto;
     width: 90%;
@@ -8501,6 +8500,15 @@ h6.media-heading {
 html, body, .container {
   height: 100%;
   max-width: 100%;
+  overflow-x: hidden; }
+
+html, body {
+  position: relative;
+  min-width: 100%;
+  max-width: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
   overflow-x: hidden; }
 
 .container-padding {
