@@ -2581,8 +2581,7 @@ body .dropdown-menu {
 body .lightning-talk-title {
   display: relative;
   color: #7d7d7d;
-  font-weight: 700;
-  min-height: 80px; }
+  font-weight: 700; }
   body .lightning-talk-title h4 {
     position: relative;
     vertical-align: center; }
@@ -2726,17 +2725,9 @@ body .talks-item {
     font-size: x-large;
     font-weight: bold; }
 
-.irb-image {
-  width: 80%;
-  margin: 0 auto;
-  text-align: center;
-  padding: 5% 0px;
-  background-color: white; }
-  .irb-image img {
-    margin: 0 auto; }
-  .irb-image h3 {
-    color: #39aea9;
-    font-weight: bold; }
+.contact-email h4 {
+  color: white;
+  font-weight: bold; }
 
 .affiliates {
   min-height: 100%;

@@ -22,7 +22,7 @@ var Funder = new keystone.List('Funder',
 Funder.add({
 	name: { type: String, label: 'Name', required: true, initial: true, index: true },
 	logo: { type: Types.CloudinaryImage, label: 'Logo',  folder: 'boston-civic-media/logos' },
-	
+	link: { type: String, label: 'Funder URL Link', required:true, initial:true},
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
 });
 

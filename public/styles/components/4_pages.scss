@@ -277,7 +277,7 @@ body .lightning-talk-title {
 	display: relative;
 	color: $gray-dark;
 	font-weight: 700;
-	min-height: 80px;
+	// min-height: 80px;
 
 	h4 {
 		position: relative;
@@ -473,22 +473,11 @@ body .talks-item {
 	}
 
 }
-
-
-.irb-image {
-	width: 80%;
-	margin: 0 auto;
-	text-align: center;
-	padding: 5% 0px;
-	background-color: white;
-	img {
-		margin: 0 auto;
-	}
-	h3 {
-		color: $green-blue;
+.contact-email {
+	h4{
+		color: white;
 		font-weight: bold;
-		// font-size: 
-
+		
 	}
 }
 

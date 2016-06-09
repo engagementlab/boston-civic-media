@@ -34,11 +34,6 @@ var IRBProj = new keystone.List('IRBProj',
  */
 IRBProj.add({
 	name: { type: String, default: "Community IRB Project", hidden: true, required: true, initial: true },
-	// projectTitle: {type: Types.Markdown, label: "Project Title", note: "Inline, styled text at the beginning of the description", required: true, initial: true}, 
-	// projDescription: { type: Types.Markdown, label: "Project Description", required: true, initial: true},
-	imageTitle: {type: String, label: "Image Title", required: true, initial: true}, 
-	imageCaption: {type: String, label: "Image Caption", required: true, initial: true},
-	image: { type: Types.CloudinaryImage, label: 'Image',  folder: 'boston-civic-media/logos' },
 	email: { type: String, label: "Contact Email", required: true, initial: true},
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
 },

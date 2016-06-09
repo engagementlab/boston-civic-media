@@ -260,6 +260,34 @@
 		{{!-- LIGHTNING TALK Template Script --}}
 		{{#ifeq section 'lightning_talk'}}
 
+		var container = $('#talks-content');
+		var iframe = $('iframe');
+		var total = document.getElementsByTagName("iframe").length;
+		var count = 0;
+		iframe.each(function(i, obj){
+			console.log ("adding event 'ready'");
+			$f(iframe[i]).addEvent('ready', function() {
+					// iframe.fadeTo(1000, 1);
+					
+		    });
+		    count += 1;
+					console.log (count);
+		    if (count == total) {
+		    	console.log ('starting isotope')
+
+				container.isotope({
+			    itemSelector: '.talks-item', 
+			    isFitHeight: true,
+			    layoutMode: 'masonry'
+			  });
+		    };
+		});
+
+		
+
+		
+		
+
 		function checkFiltered () {
 			
 			var talks = $('#talks-content');
@@ -269,14 +297,15 @@
 				$('.no-talks-visible').hide();
 
 		}
-
-			var container = $('#talks-content');
-				container.isotope({
-			    itemSelector: '.talks-item', 
-			    isFitHeight: true,
-			    layoutMode: 'masonry'
-			  });
+		// function filterTalks () {
+			// var container = $('#talks-content');
+			// 	container.isotope({
+			//     itemSelector: '.talks-item', 
+			//     isFitHeight: true,
+			//     layoutMode: 'masonry'
+			//   });
 				// $('.isotopeContent').isotope('reloadItems').isotope();
+			// }
 
 			$('.filters-button-group').on( 'click', 'button', function() {
 			  

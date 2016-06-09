@@ -16,7 +16,7 @@
 	<div class="container-fluid">
 		{{!-- <div class="row"></div> --}}
 		<div class="row irb-proj">
-			<div class="col-md-8 col-sm-8">
+			<div class="col-md-12 col-sm-12">
 			{{!-- {{jsonPrint irb_proj}} --}}
 				{{!-- {{> page/name name="Vision"}} --}}
 				<div class="title-white irb-description">
@@ -35,18 +35,14 @@
 					<div class="next">
 						<div class="irb-proj-title">{{irb_proj.nextTitle}}</div>
 						<div>{{{irb_proj.nextText.html}}}</div>
-					</div>					
+					</div>		
+					<div class="contact-email">
+						<h4>{{irb_proj.email}}</h4>
+					</div>			
 				</div>
-			</div>
-			<div class="col-md-4 col-sm-4">
 
-				<div class="text-gray-dark irb-image">
-					<h3>{{irb_proj.imageTitle}}</h3>
-					<img src="{{{cloudinaryUrl irb_proj.image width=250 height=250 crop='scale' quality=100}}}">
-					<p>{{irb_proj.imageCaption}}</p>
-					<p>Contact: {{emailFormat irb_proj.email}}</a></p>
-				</div>
 			</div>
+			
 			{{!-- <div class="row"></div> --}}
 		</div>
 	</div>
