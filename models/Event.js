@@ -11,7 +11,7 @@
  * ==========
  */
 var keystone = require('keystone');
-var Video = require('./Video');
+// var Video = require('./Video');
 var Types = keystone.Field.Types;
 
 
@@ -21,7 +21,7 @@ var Event = new keystone.List('Event',
 		singular: 'Event Page',
 		track: true, 
 		autokey: { path: 'event_key', from: 'title', unique: true },
-		inherits: Video,
+		// inherits: Video,
 		hidden: false
 		// nodelete: true
 		// nocreate: true
@@ -46,7 +46,8 @@ Event.add({
   	},
   	enabled: {
       type: Types.Boolean,
-      label: 'Enabled'
+      label: 'Enabled',
+      note: 'Will never appear on site if not enabled'
   	},
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
 });

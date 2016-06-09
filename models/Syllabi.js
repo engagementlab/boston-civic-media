@@ -98,11 +98,13 @@ Syllabi.add({
 	},
 	enabled: {
       type: Types.Boolean,
-      label: 'Enabled'
+      label: 'Enabled', 
+      note: 'Will never appear on site if not enabled'
   },
   featured: {
       type: Types.Boolean,
-      label: 'Featured'
+      label: 'Featured', 
+      note: 'There should be three syllabi featured for the front page.'
   },
 
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }

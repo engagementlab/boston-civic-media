@@ -29,7 +29,8 @@ LightningTalk.add({
 	category: { type: Types.Select, label: 'Type', options: 'Welcome, Art, Research, Technology, Media, Data, Co-Design', required: true, initial: true },
 	enabled: {
       type: Types.Boolean,
-      label: 'Enabled'
+      label: 'Enabled',
+      note: 'Will never appear on site if not enabled'
   	},
   	homePage: {
       type: Types.Boolean,
