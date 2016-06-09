@@ -616,9 +616,21 @@ body .listserv {
 	}
 
 }
-
+.feat-event-title {
+	p {
+		font-size: xx-large;
+		margin: 0 auto;
+		padding: 0px;
+	}
+}
 .event-title {
 	min-height: 40px;
+	p {
+		min-height: 20px;
+		max-height: 30px;
+		padding: 0px;
+		margin: 0 auto;
+	}
 }
 
 

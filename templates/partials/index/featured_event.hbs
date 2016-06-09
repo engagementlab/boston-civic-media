@@ -3,8 +3,8 @@
 		<div class="va-container">
 			<a href="/events/{{event.event_key}}"><div class="row va-align" style="margin: 0 auto;">
 				<div class="col-md-6">
-					<div class="summary">
-						<h2>{{event.title}}</h2>
+					<div class="feat-event-title">
+						<h2><span>{{{event.theTitle.html}}}</span></h2>
 						{{!-- {{jsonPrint this}} --}}
 					</div>
 					<img src="{{{cloudinaryUrl event.image width=auto height=400 crop='scale' quality=100}}}" alt="{{event.name}}" class="photo" style="margin:20px auto;">
