@@ -26,7 +26,7 @@ LightningTalk.add({
 	// name: { type: Types.Name, label: "Name", default: "Lightning Talks", hidden: true, required: true, initial: true },
 	title: { type: String, label: "Talk Title", required: true, initial: true, index: true },
 	talkDescription: { type: Types.Markdown, label: "Talk Description", note: "Cut off at 300 characters.", max: {chars: 300, mode: 'validate'}, required: true, initial: true, index: true },
-	category: { type: Types.Select, label: 'Type', options: 'Technology, Media, Data, Co-Design', required: true, initial: true },
+	category: { type: Types.Select, label: 'Type', options: 'Welcome, Art, Research, Technology, Media, Data, Co-Design', required: true, initial: true },
 	enabled: {
       type: Types.Boolean,
       label: 'Enabled'
