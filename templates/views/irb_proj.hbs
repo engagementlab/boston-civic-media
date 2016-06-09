@@ -20,8 +20,22 @@
 			{{!-- {{jsonPrint irb_proj}} --}}
 				{{!-- {{> page/name name="Vision"}} --}}
 				<div class="title-white irb-description">
-					<span id="markdown-span" class="irb-proj-title">{{{irb_proj.projectTitle.html}}}</span>
-					<span id="markdown-span">{{{irb_proj.projDescription.html}}}</span>
+					<div class="problem">
+						<div class="irb-proj-title">{{irb_proj.probTitle}}</div>
+						<div>{{{irb_proj.probText.html}}}</div>
+					</div>
+					<div class="did">
+						<div class="irb-proj-title">{{irb_proj.didTitle}}</div>
+						<div>{{{irb_proj.didText.html}}}</div>
+					</div>
+					<div class="found">
+						<div class="irb-proj-title">{{irb_proj.foundTitle}}</div>
+						<div>{{{irb_proj.foundText.html}}}</div>
+					</div>
+					<div class="next">
+						<div class="irb-proj-title">{{irb_proj.nextTitle}}</div>
+						<div>{{{irb_proj.nextText.html}}}</div>
+					</div>					
 				</div>
 			</div>
 			<div class="col-md-4 col-sm-4">

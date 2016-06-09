@@ -24,8 +24,8 @@ var Footer = new keystone.List('Footer',
 		label: 'Footer Page',
 		singular: 'Footer Page',
 		track: true,
-		nodelete: false,
-		nocreate: false
+		nodelete: true,
+		nocreate: true
 	});
 
 /**
