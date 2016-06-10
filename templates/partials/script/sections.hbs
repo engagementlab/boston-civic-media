@@ -254,75 +254,70 @@
 			// });
 		});
 
-		  console.log ("im a syllabi");
 		{{/ifeq}}
 
 		{{!-- LIGHTNING TALK Template Script --}}
 		{{#ifeq section 'lightning_talk'}}
-
-		var container = $('#talks-content');
-		var iframe = $('iframe');
-		var total = document.getElementsByTagName("iframe").length;
-		var count = 0;
-		iframe.each(function(i, obj){
-			console.log ("adding event 'ready'");
-			$f(iframe[i]).addEvent('ready', function() {
-					// iframe.fadeTo(1000, 1);
-					
-		    });
-		    count += 1;
-					console.log (count);
-		    if (count == total) {
-		    	console.log ('starting isotope')
-
-				container.isotope({
-			    itemSelector: '.talks-item', 
-			    isFitHeight: true,
-			    layoutMode: 'masonry'
-			  });
-		    };
-		});
-
-		
-
-		
-		
-
-		function checkFiltered () {
 			
-			var talks = $('#talks-content');
-			if ( talks.data('isotope').filteredItems.length === 0 )
-			  $('.no-talks-visible').show();
-			else
-				$('.no-talks-visible').hide();
+			var videos = $('iframe.embedly-embed'),
+			container = $('#talks-content'),
+			count;
 
-		}
-		// function filterTalks () {
-			// var container = $('#talks-content');
-			// 	container.isotope({
-			//     itemSelector: '.talks-item', 
-			//     isFitHeight: true,
-			//     layoutMode: 'masonry'
-			//   });
-				// $('.isotopeContent').isotope('reloadItems').isotope();
-			// }
-
-			$('.filters-button-group').on( 'click', 'button', function() {
+			// find all the embedly iframes on the page.
+			videos.each(function(){
+			  // initialize the player.
+			  var player = new playerjs.Player(this);
 			  
-			  var filterValue = $( this ).attr('data-filter');
-			  container.isotope({ filter: filterValue });
+			  // Wait for the player to be ready.
+			  player.on('ready', function(){
+					    
+			    count++;
+
+			    if (count === videos.length) {
+			        container.isotope({
+			            itemSelector: '.talks-item',
+			            isFitHeight: true,
+			            layoutMode: 'masonry'
+			        });
+			    };
+			    
+			    // Listen to the play event.
+			    player.on('play', function(){
+			      // Tell Google analytics that a video was played.
+			      window.ga('send', 'event', 'Video', 'Play');
+			    });
+			  
+			  });
+			});
+
+			function checkFiltered() {
+
+			    var talks = $('#talks-content');
+			    if (talks.data('isotope').filteredItems.length === 0)
+			        $('.no-talks-visible').show();
+			    else
+			        $('.no-talks-visible').hide();
+
+			}
+
+			$('.filters-button-group').on('click', 'button', function() {
+
+			    var filterValue = $(this).attr('data-filter');
+			    container.isotope({
+			        filter: filterValue
+			    });
 
 			});
 			// change is-checked class on buttons
-			$('.button-group').each( function( i, buttonGroup ) {
-			  var $buttonGroup = $( buttonGroup );
+			$('.button-group').each(function(i, buttonGroup) {
+			    var $buttonGroup = $(buttonGroup);
 
-			  $buttonGroup.on( 'click', 'button', function() {
-			    $buttonGroup.find('.is-checked').removeClass('is-checked');
-			    $( this ).addClass('is-checked');
+			    $buttonGroup.on('click', 'button', function() {
+			        $buttonGroup.find('.is-checked').removeClass('is-checked');
+			        $(this).addClass('is-checked');
 
-			    checkFiltered();
-			  });
+			        checkFiltered();
+			    });
 
 			});
 
