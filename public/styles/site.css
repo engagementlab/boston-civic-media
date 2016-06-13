@@ -2719,7 +2719,8 @@ body .lightning-talk-title {
   min-height: 100%; }
 
 body .talks-item {
-  text-align: center; }
+  text-align: center;
+  min-height: 500px; }
   body .talks-item p {
     margin: 0 auto;
     padding: 2% 0px; }
@@ -2842,10 +2843,10 @@ body .listserv {
   padding: 0px; }
 
 .event-title {
-  min-height: 40px; }
+  min-height: 60px; }
   .event-title p {
-    min-height: 20px;
-    max-height: 40px;
+    min-height: 40px;
+    max-height: 50px;
     padding: 0px;
     margin: 0 auto; }
 
