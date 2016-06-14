@@ -57,11 +57,13 @@
 
 			
 		</div>
+		{{#if this_syllabus.file}}
 		<div class="row">
 			<div class="col-md-12">
 				<a href="{{{this_syllabus.file.url}}}" class="syllabus-button" download="{{this_syllabus.file.filename}}">Download PDF <span class="fa fa-download"></span></a>
 			</div>
 		</div>
+		{{/if}}
 	</div>
 		
 </section>
