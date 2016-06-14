@@ -57,13 +57,18 @@
 
 			
 		</div>
-		{{#if this_syllabus.file}}
+		
 		<div class="row">
 			<div class="col-md-12">
+			{{#if this_syllabus.file}}
 				<a href="{{{this_syllabus.file.url}}}" class="syllabus-button" download="{{this_syllabus.file.filename}}">Download PDF <span class="fa fa-download"></span></a>
+				{{else}}
+				<p><strong>Look out for the downloadable syllabus coming soon!</strong></p>
+				
+			{{/if}}
 			</div>
 		</div>
-		{{/if}}
+		
 	</div>
 		
 </section>
