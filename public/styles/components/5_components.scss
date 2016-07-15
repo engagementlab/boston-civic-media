@@ -3,14 +3,41 @@
 
 .more-button {
 	padding:20px;
+	font-size: 2em;
 }
 
 body .scrollable {
 	max-height: 200px;
 	height: auto;
-	overflow:scroll;
+	overflow-y:scroll;
+	// overflow-x:hidden;
+
+	&.dropdown-menu {
+		width: auto;
+	} 
+	li {
+		width: 100%;
+		a {
+			white-space: nowrap;
+		}
+	}
+}
+
+.filter-counter {
+	font-weight: bold;
+}
+
+button.syllabi-options {
+	width: auto;
+
+	.button-text {
+		width: 100%;
+		white-space: nowrap;
+
+	}
 
 }
+
 
 /* Buttons
 ---------------------------------- */

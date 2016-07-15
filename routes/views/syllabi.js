@@ -46,7 +46,7 @@ exports = module.exports = function(req, res) {
         .populate('keyword', 'key')
         .populate('partnerOrg', 'key');
 
-        var queryFilters = Filter.model.find({});
+        var queryFilters = Filter.model.find({}).sort('name');
 
         querySyllabi.exec(function(err, resultSyllabi) {
 
@@ -54,6 +54,7 @@ exports = module.exports = function(req, res) {
             queryFilters.exec(function(err, resultFilters) {
 
                 locals.syllabi = resultSyllabi;
+                locals.institutions = resultFilters.
 
                 _.each(locals.syllabi, function(syllabus) {
 

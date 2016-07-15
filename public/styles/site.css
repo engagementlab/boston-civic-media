@@ -2448,8 +2448,7 @@ body .dropdown-backdrop {
 .featured-syllabi {
   color: #7d7d7d;
   text-align: center;
-  margin: 0 auto;
-  border-right: 1px #7d7d7d solid; }
+  margin: 0 auto; }
   .featured-syllabi h3 {
     color: #0c9ec7; }
   @media (max-width: 991px) {
@@ -2568,6 +2567,7 @@ body .dropdown-menu {
       font-size: 1em; } }
 
 .featured-lightning-talks {
+  border-left: 1px #7d7d7d solid;
   color: #7d7d7d;
   margin: 0 auto;
   position: relative;
@@ -2730,6 +2730,9 @@ body .talks-item {
 
 .talks-grid {
   padding: 0 10%; }
+  .talks-grid .event-item {
+    min-height: 450px;
+    max-height: 450px; }
 
 .irb-proj {
   padding: 5% 2%; }
@@ -2744,6 +2747,23 @@ body .talks-item {
 .affiliates {
   min-height: 100%;
   overflow-y: visible !important; }
+
+.clients {
+  position: relative;
+  padding-top: 5%; }
+
+.funder {
+  display: inline-block;
+  margin: 10px 1%; }
+  @media (min-width: 1023px) {
+    .funder {
+      width: 22%; } }
+  @media (min-width: 767px) and (max-width: 1023px) {
+    .funder {
+      width: 40%; } }
+  @media (max-width: 426px) {
+    .funder {
+      width: 50%; } }
 
 .about-title {
   margin: 2%; }
@@ -2796,6 +2816,9 @@ body .listserv {
     padding: 5px 0px;
     line-height: 25px; }
 
+.event-description .read-summary {
+  font-size: 1.3em; }
+
 @media (max-width: 767px) {
   .event-description {
     margin-left: -15px;
@@ -2836,6 +2859,9 @@ body .listserv {
     max-height: 160px;
     min-height: 160px;
     overflow: hidden; }
+
+.event-talks h3 {
+  padding-left: 5%; }
 
 .feat-event-title p {
   font-size: xx-large;
@@ -3311,12 +3337,28 @@ body .listserv {
 /* 5 Components
 ----------------------------------------------------------------------------- */
 .more-button {
-  padding: 20px; }
+  padding: 20px;
+  font-size: 2em; }
 
 body .scrollable {
   max-height: 200px;
   height: auto;
-  overflow: scroll; }
+  overflow-y: scroll; }
+  body .scrollable.dropdown-menu {
+    width: auto; }
+  body .scrollable li {
+    width: 100%; }
+    body .scrollable li a {
+      white-space: nowrap; }
+
+.filter-counter {
+  font-weight: bold; }
+
+button.syllabi-options {
+  width: auto; }
+  button.syllabi-options .button-text {
+    width: 100%;
+    white-space: nowrap; }
 
 /* Buttons
 ---------------------------------- */

@@ -39,7 +39,7 @@
 </section>
 
 <!-- People and Affiliates-->
-<section class="section clearfix{{!--  about-section --}}">
+<section class="section clearfix">
 	<div class="container">
 
 		<div class="row">
@@ -63,7 +63,7 @@
 				<div id="affiliate-content" class="isotopeContent affiliate-content row">
 					{{#if affiliates}}
 						{{#each affiliates}}
-							<div class="col-md-3 col-sm-12 affiliate-item {{{this.category}}}">
+							<div class="col-md-3 col-sm-6 col-xs-12 affiliate-item {{{this.category}}}">
 								<div style="margin:0 auto" class="" data-category="{{{this.category}}}" >
 									{{>about/affiliate_icon affiliate=this}}
 								</div>
@@ -98,20 +98,21 @@
 
 			<div class="col-md-12">
 				{{!-- {{> page/name name="Our Partners"}} --}}
-				<h1 class="page-title text-center">Funders</h1>
-			</div>
-			{{!-- Partner icons --}}
-			<div class="col-md-12 pv-20">
-				<div class="clients-container">
-					<div class="clients">
+				<div class="row">
+					<h1 class="page-title text-center">Funders</h1>
+				</div>
+			
+				<div class="clients-container row">
+					<div class="clients col-sm-12">
 						{{#each funders}}
-						<div class="funder col-md-2 col-sm-4"> 
+						<div class="funder"> 
 							{{> about/affiliate_icon affiliate=this}}
 						</div>
 						{{/each}}
 					</div>
 				</div>
 			</div>
+
 		</div>
 		
 	</div>

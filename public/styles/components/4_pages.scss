@@ -99,7 +99,7 @@ body .dropdown-backdrop {
 	color: $gray-dark;
 	text-align: center;
 	margin: 0 auto;
-	border-right: 1px $gray-dark solid;
+	
 	h3 {
 		color: $base-color-hover;
 	}
@@ -260,6 +260,7 @@ body .dropdown-menu {
 .featured-lightning-talks {
 	// background-color: $gray-dark;
 	// padding: 5%;
+	border-left: 1px $gray-dark solid;
 	color: $gray-dark;
 	margin: 0 auto;
 	position: relative;
@@ -477,6 +478,11 @@ body .talks-item {
 .talks-grid {
 
 	padding:0 10%;
+
+	.event-item {
+		min-height: 450px;
+		max-height: 450px;
+	}
 }
 .irb-proj {
 	padding: 5% 2%;
@@ -498,6 +504,29 @@ body .talks-item {
 .affiliates {
 	min-height: 100%;
 	overflow-y: visible !important;
+
+}
+
+.clients {
+	position: relative;
+	padding-top:5%;
+}
+
+.funder {
+	display: inline-block;
+	margin: 10px 1%;
+
+	@media (min-width: 1023px) {
+		width: 22%;
+	}
+
+	@media (min-width: 767px ) and (max-width: 1023px) {
+		width: 40%;
+	}
+
+	@media (max-width: 426px) {
+		width: 50%;
+	}
 
 }
 
@@ -565,6 +594,10 @@ body .listserv {
 	}
 }
 .event-description {
+
+	.read-summary {
+		font-size: 1.3em;
+	}
 	@media (max-width: 767px) {
 		margin-left: -15px;
 		margin-right: -15px;
@@ -591,9 +624,7 @@ body .listserv {
 		height: 200px;
 	}
 }
-.video-links {
-	padding-left: 4%;
-}
+
 .featured-event p {
 	@media (max-width: 767px){
 		margin: 0 auto;
@@ -615,6 +646,12 @@ body .listserv {
 		overflow: hidden;
 	}
 
+}
+
+.event-talks {
+	h3 {
+		padding-left: 3%;
+	}
 }
 .feat-event-title {
 	p {

@@ -17,13 +17,12 @@
 
 		<div class="row beckyBanner">
 			<div class="col-md-4">
-			{{!-- {{jsonPrint this}} --}}
-				<a href="{{{bannerURL}}}"><img class="becky-banner" src="{{{cloudinaryUrl beckyBanner width=auto height=auto crop='scale' quality=100}}}" alt="{{this_event.name}}" class="photo" style="margin:0 auto; min-width: 100%; max-width: 100%; min-height: auto;"></a>
+				<a href="{{beckyBannerUrl}}"><img class="becky-banner" src="{{{cloudinaryUrl beckyBanner width=auto height=auto crop='scale' quality=100}}}" alt="{{this_event.name}}" class="photo" style="margin:0 auto; min-width: 100%; max-width: 100%; min-height: auto;"></a>
 			</div>
 
 			<div class="col-md-8">
-				<h3>{{bannerHeader}}</h3>
-				<p>{{bannerBlurb}}</p>
+				<h3>{{beckyBannerTitle}}</h3>
+				{{{beckyBannerText.html}}}
 			</div>
 		</div>
 
@@ -40,7 +39,7 @@
 								{{/each}}
 					        </ul>
 					    </div>
-						<div class="more-button"><a href="/syllabi">See More Syllabi</a></div>
+						<div class="more-button"><a href="/syllabi">See All Syllabi</a></div>
 
 					</div>
 					
@@ -73,7 +72,7 @@
 			        
 			        
 		        	<div class="more-button">
-			        	<a href="/lightning_talk">Watch More Lightning Talks</a>
+			        	<a href="/lightning_talk">Watch All Lightning Talks</a>
 		        	</div>					
 				</section>
 			{{/if}}

@@ -20,11 +20,8 @@ var Event = new keystone.List('Event',
 		label: 'Event Page',
 		singular: 'Event Page',
 		track: true, 
-		autokey: { path: 'event_key', from: 'title', unique: true },
-		// inherits: Video,
+		autokey: { path: 'event_key', from: 'name', unique: true },
 		hidden: false
-		// nodelete: true
-		// nocreate: true
 	});
 
 /**
@@ -33,24 +30,30 @@ var Event = new keystone.List('Event',
  */
 Event.add({
 	theTitle: { type: Types.Markdown, label: 'Title', note: "All titles must be split into two lines to display properly", required: true, initial: true, index: true },
+	name: { type: String, default: 'Name of Event', hidden: true},
 	image: { type: Types.CloudinaryImage, label: 'Event Image',  folder: 'boston-civic-media/logos' },
 	theDescription: { type: Types.Markdown, label: 'Long Description', note: 'Shown on individual event page. No character limit.', required: true, initial: true },
-	theFooter: { type: Types.Markdown, label: 'Short Description', note: 'Shown in events grid page. Should be no more than 150 characters.', required: true, initial: true },
+	theFooter: { type: Types.Markdown, label: 'Short Description', note: 'Shown in events grid page. Should be no more than 120 characters.', required: true, initial: true },
 	eventbriteURL: { type: String, label: 'Eventbrite URL'},
 	hackpadURL: {type: String, label: 'Hackpad URL'}, 
-	additionalURL: { type: String, label: "Additional URL"},
-	videoLinks: { type: Types.TextArray, label: "Lightning Talk Links"},
-	file: {
-		type: Types.AzureFile,
-		label: 'File',
-		filenameFormatter: function(item, filename) {
-      // console.log ("hi");
-			return item.event_key + require('path').extname(filename);
-		},
-		containerFormatter: function(item, filename) {
-			return 'bcmevent';
-		}
-	},
+	additionalURL: { type: String, label: "Summary Blog Post URL"},
+	talks: {
+      type: Types.Relationship,
+      ref: 'LightningTalk',
+      label: 'Associated Lightning Talks',
+      many: true
+    },
+	// file: {
+	// 	type: Types.AzureFile,
+	// 	label: 'File',
+	// 	filenameFormatter: function(item, filename) {
+ //      // console.log ("hi");
+	// 		return item.event_key + require('path').extname(filename);
+	// 	},
+	// 	containerFormatter: function(item, filename) {
+	// 		return 'bcmevent';
+	// 	}
+	// },
   	featured: {
       type: Types.Boolean,
       label: 'Featured Event', 
@@ -64,9 +67,54 @@ Event.add({
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
 });
 
+// Event.schema.virtual('name').get(function() { return this.theTitle; })
+
+Event.schema.pre('save', function(next) {
+
+    // Save state for post hook
+    this.wasNew = this.isNew;
+    this.wasModified = this.isModified();
+
+    this.name = this.theTitle.html;
+    this.name = this.name.replace('<p>', '');
+    this.name = this.name.replace('</p>', '');
+
+    next();
+
+});
+
+Event.schema.statics.removeResourceRef = function(resourceId, callback) {
+
+   Event.model.update({
+            $or: [{
+                'talks': resourceId
+            }]
+        },
+
+        {
+            $pull: {
+                'talks': resourceId
+            }
+        },
+
+        {
+            multi: true
+        },
+
+        function(err, result) {
+
+            callback(err, result);
+
+            if (err)
+                console.error(err);
+        }
+    );
+
+};
+
 /**
  * Model Registration
  */
 Event.defaultSort = '-createdAt';
-Event.defaultColumns = 'title, footer, featured, enabled';
+Event.defaultColumns = 'name, footer, featured, enabled';
 Event.register();

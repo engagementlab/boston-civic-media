@@ -34,7 +34,7 @@
 		// });
 		// {{removePara}}
 
-		$('.markdown-span p').contents().unwrap();
+		$('.markdown-span p').contents().unwrap().html("");
 
 		{{!-- INDEX Template Script --}}
 		{{#ifeq section 'home'}}
@@ -174,9 +174,21 @@
 		{{!-- SYLLABI Template Script --}}
 		{{#ifeq section 'syllabi'}}
 
+			var institutions = $('.dropdown-menu li .option-institution').size();
+			var faculty = $('.dropdown-menu li .option-faculty-member').size();
+			var partnerOrgs = $('.dropdown-menu li .option-partnership-organization').size();
+			var keywords = $('.dropdown-menu li .option-keyword').size();
+			var disciplines = $('.dropdown-menu li .option-discipline').size();
+
+			console.log (institutions, "number of institutions");
+
+			$('span.institution-number').html("(" + institutions + ")");
+			$('span.faculty-member-number').text("(" + faculty + ")");
+			$('span.partnership-organization-number').text("(" + partnerOrgs + ")");
+			$('span.keyword-number').text("(" + keywords + ")");
+			$('span.discipline-number').text("(" + disciplines + ")");
 			// store filter for each group
 			var filters = {};
-
 			$('.dropdown-menu li').delegate('a','click', function() {
 				
 				$('.is-checked').removeClass('is-checked');
@@ -319,6 +331,18 @@
 			        checkFiltered();
 			    });
 
+			});
+
+		{{/ifeq}}
+
+		{{#ifeq section 'events'}}
+
+			$('.recent-event p').text(function(index, currentText) {
+				if (currentText) {
+					console.log (currentText, "current text");
+					// console.log (currentText.substr(0, 10));
+				    return currentText.substr(0, 120) + "...";
+				}
 			});
 
 		{{/ifeq}}
