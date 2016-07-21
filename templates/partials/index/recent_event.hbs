@@ -8,7 +8,7 @@
 				</div>
 				<a href="/events/{{event.event_key}}"><img src="{{{cloudinaryUrl event.image width=150 height=150 crop='scale' quality=100}}}" alt="{{event.name}}" class="photo" style="margin:0 auto;"></a>
 				{{!-- {{#if event.footer}} --}}
-					<p class="ellipsis">{{{event.theFooter.html}}}</p>
+					<div class="ellipsis">{{{event.theFooter.html}}}</div>
 					<a href="/events/{{event.event_key}}"><p>Read More</p></a>
 				{{!-- {{/if}} --}}
 			</div>
