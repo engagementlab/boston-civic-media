@@ -54,7 +54,7 @@ exports = module.exports = function(req, res) {
             queryFilters.exec(function(err, resultFilters) {
 
                 locals.syllabi = resultSyllabi;
-                locals.institutions = resultFilters.
+                locals.institutions = resultFilters;
 
                 _.each(locals.syllabi, function(syllabus) {
 

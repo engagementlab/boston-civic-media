@@ -2840,9 +2840,6 @@ body .listserv {
   .event-photo {
     height: 200px; } }
 
-.video-links {
-  padding-left: 4%; }
-
 @media (max-width: 767px) {
   .featured-event p {
     margin: 0 auto; } }
@@ -2861,7 +2858,7 @@ body .listserv {
     overflow: hidden; }
 
 .event-talks h3 {
-  padding-left: 5%; }
+  padding-left: 3%; }
 
 .feat-event-title p {
   font-size: xx-large;
