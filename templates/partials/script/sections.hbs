@@ -34,6 +34,18 @@
 		// });
 		// {{removePara}}
 
+		// lastImageLoaded (container, function () {
+				console.log("events lightning talk masonry")
+				// var container = $('#event-talks');
+					$('#event-talks').isotope({
+				    itemSelector: '.event-talks-item', 
+				    isFitHeight: true, 
+				    layoutMode: 'fitRows'
+				  });
+			// $('.isotopeContent').isotope('reloadItems').isotope();
+
+		// });
+
 		$('.markdown-span p').contents().unwrap().html("");
 
 		{{!-- INDEX Template Script --}}
@@ -344,6 +356,8 @@
 				    return currentText.substr(0, 120) + "...";
 				}
 			});
+
+
 
 		{{/ifeq}}
 	})

@@ -51,22 +51,23 @@
 			</div>
 		
 		</div>
+
 		<div class="row pv-40">
-			<div class="col-md-8 col-sm-12">
+			<div class="col-md-12 col-sm-12">
 			{{#if this_event.talks}}
 			
-			<div class="event-talks row">
-			<h3>Associated Lightning Talks:</h3>
-				{{#each this_event.talks}}
-				<div class="col-md-4">
-					{{> index/featured_lightning_talk featured_lightning_talk=this}}
+				<div class="event-talks row">
+					<h3>Associated Lightning Talks:</h3>
+					<div id="event-talks">
+					{{#each this_event.talks}}
+					<div class="col-md-3 event-talks-item">
+						{{> index/featured_lightning_talk featured_lightning_talk=this}}
+					</div>
+					{{/each}}
 				</div>
-				{{/each}}
+				</div>
+				{{/if}}
 			</div>
-			{{/if}}
-			</div>
-
-			
 		</div>
 		
 </section>
