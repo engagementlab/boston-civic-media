@@ -59,19 +59,19 @@ exports = module.exports = function(req, res) {
             }
         });
 
-        var bannerURL = Home.model.findOne({}, "beckyBannerURL", {
+        var beckyBannerUrl = Home.model.findOne({}, "beckyBannerUrl", {
             sort: {
                 'createdAt': -1
             }
         });
 
-        var bannerHeader = Home.model.findOne({}, "beckyBannerHeader", {
+        var beckyBannerTitle = Home.model.findOne({}, "beckyBannerTitle", {
             sort: {
                 'createdAt': -1
             }
         });
 
-        var bannerBlurb = Home.model.findOne({}, "beckyBannerBlurb", {
+        var beckyBannerText = Home.model.findOne({}, "beckyBannerText", {
             sort: {
                 'createdAt': -1
             }
@@ -114,14 +114,14 @@ exports = module.exports = function(req, res) {
             beckyBanner.exec(function(err, result){
                 locals.beckyBanner = result.beckyBanner;
 
-                bannerURL.exec(function(err, result){
-                    locals.bannerURL = result.beckyBannerURL;
+                beckyBannerUrl.exec(function(err, result){
+                    locals.beckyBannerUrl = result.beckyBannerUrl;
                
-                    bannerHeader.exec(function(err, result){
-                        locals.bannerHeader = result.beckyBannerHeader;
+                    beckyBannerTitle.exec(function(err, result){
+                        locals.beckyBannerTitle = result.beckyBannerTitle;
                         
-                        bannerBlurb.exec(function(err, result){
-                            locals.bannerBlurb = result.beckyBannerBlurb;
+                        beckyBannerText.exec(function(err, result){
+                            locals.beckyBannerText = result.beckyBannerText;
                         
                             background.exec(function(err, result) {
                                 locals.background = result.background;
@@ -139,6 +139,7 @@ exports = module.exports = function(req, res) {
                                         
                                         if(result !== null)
                                             locals.featured_syllabi = result;
+                                        console.log (locals.featured_syllabi, "featured_syllabi");
 
                                         queryFeaturedEvent.exec(function(err, resultEvent) {
                                             locals.featured_events = resultEvent;

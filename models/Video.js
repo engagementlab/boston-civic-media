@@ -53,15 +53,7 @@ Video.schema.pre('save', function(next) {
 
 });
 
-Video.schema.post('save', function(next) {
-
-    // Make a post to slack when this Person is updated
-    var Video = this;
-    
-    slack.Post(
-    	Video.model, this, true, 
-    	function() { return person.name.first + ' ' + person.name.last; }
-    );
+Video.schema.post('save', function(next) {   
 
 });
 

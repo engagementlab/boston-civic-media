@@ -32,9 +32,16 @@
 				
 				<p>{{{this_event.theDescription.html}}}</p>
 				<ul>
-					<li><a href="{{this_event.eventbriteURL}}">Eventbrite Link</a></li>
-					<li><a href="{{this_event.hackpadURL}}">Hackpad Link</a></li>
-					<li><a href="{{this_event.additionalURL}}">Read More</a></li>
+				{{#if this_event.additionalURL}}
+					<li><a class="read-summary" href="{{this_event.additionalURL}}">Read Summary</a></li>
+				{{/if}}
+				{{#if this_event.eventbriteURL}}
+					<li><a class="eventbrite" href="{{this_event.eventbriteURL}}">Eventbrite Link</a></li>
+				{{/if}}
+				{{#if this_event.hackpadURL}}
+					<li><a class="hackpad" href="{{this_event.hackpadURL}}">Hackpad Link</a></li>
+				{{/if}}
+				
 				</ul>
 				
 			</div>
@@ -44,23 +51,21 @@
 			</div>
 		
 		</div>
-		<div class="row pv-40">
-			<div class="col-md-8 col-sm-12">
-			{{#if this_event.videoLinks}}
-			<div class="video-links">
-			<h4>Lightning talks related to this event:</h4>
-				<ul>
-					{{#each this_event.videoLinks}}
-					<li><a href='{{this}}'>{{this}}</a></li>
-					{{/each}}
-				</ul>
-			</div>
-			{{/if}}
-			</div>
 
-			<div class="col-md-4 col-sm-12">
-				{{#if this_event.file}}
-					<a href="{{{this_event.file.url}}}" class="event-button" download="{{this_event.file.filename}}">Download PDF <span class="fa fa-download"></span></a>
+		<div class="row pv-40">
+			<div class="col-md-12 col-sm-12">
+			{{#if this_event.talks}}
+			
+				<div class="event-talks row">
+					<h3>Associated Lightning Talks:</h3>
+					<div id="event-talks">
+					{{#each this_event.talks}}
+					<div class="col-md-3 event-talks-item">
+						{{> index/featured_lightning_talk featured_lightning_talk=this}}
+					</div>
+					{{/each}}
+				</div>
+				</div>
 				{{/if}}
 			</div>
 		</div>

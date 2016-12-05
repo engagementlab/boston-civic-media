@@ -32,7 +32,8 @@ exports = module.exports = function(req, res) {
            URL and populates resources from its model */
         var eventQuery = Events.model.findOne({
             event_key: req.params.event_key
-        });
+        })
+        .populate ('talks');
 
         // Setup the locals to be used inside view
         eventQuery.exec(function(err, result) {

@@ -36,8 +36,8 @@ Home.add({
 	name: { type: String, default: "Home Page", hidden: true, required: true, initial: true },
 	beckyBanner: { type: Types.CloudinaryImage, label: 'Becky Banner',  folder: 'boston-civic-media/logos' },
 	beckyBannerUrl: {type: String, label: 'Hyperlink for Becky Banner'},
-	beckyBannerHeader: { type: String, label: 'Header for banner text',required: true, initial: true },
-	beckyBannerBlurb: { type: Types.Textarea, label: 'Blurb for banner', required: true, initial: true },
+	beckyBannerTitle: { type: String, label: 'Header for banner text'},
+	beckyBannerText: { type: Types.Markdown, label: 'Blurb for banner'},
 	background: { type: Types.CloudinaryImage, label: 'Home Page Background Image',  folder: 'boston-civic-media/logos' },
 	missionStatements: { type: Types.TextArray, label: 'Mission Statement', note: 'First statement will be bolded and appear first, second statement will be regular and second. Only the first two statements will appear.' },
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }

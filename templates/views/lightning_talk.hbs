@@ -13,7 +13,7 @@
 
 <!-- DIRECTORY START -->
 <!-- ================ -->
-<section class="main-container padding-bottom-clear">
+<section class="main-container">
 	<div class="container">
 		<div class="main">
 		<h2 class="page-title">{{this_talk.title}}</h2>
@@ -25,7 +25,7 @@
 	{{!-- We'll need some filtering dropdowns here --}}
 
 	{{!-- Show all syllabi below by default --}}
-	<div class="container pv-20 this-event">
+	<div class="container pv-20 this-talk">
 		<div class="row">
 		{{!-- {{jsonPrint this_event}} --}}
 			<div class="col-md-6">
@@ -36,7 +36,7 @@
 
 					
 			</div>
-			<div class="col-md-6 ph-40 event-description">
+			<div class="col-md-6 ph-40 talk-description">
 				
 				<p>{{{this_talk.longDescription.html}}}</p>
 				

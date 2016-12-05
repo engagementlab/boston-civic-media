@@ -24,6 +24,7 @@ var Filters = new keystone.List('Filter',
 		singular: 'Filter',
         hidden: false,
         nodelete: false,
+        sortable: true,
         autokey: { path: 'key', from: 'name', unique: false }
     });
 
