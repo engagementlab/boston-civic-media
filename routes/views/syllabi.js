@@ -95,6 +95,12 @@ exports = module.exports = function(req, res) {
                 })
                 .value();
 
+                locals.filters[0].values = locals.filters[0].values.sort(function (a, b) {
+                    if (a.name.split(' ')[1] < b.name.split(' ')[1]) return -1;
+                    if (a.name.split(' ')[1] > b.name.split(' ')[1]) return 1;
+                    return 0;
+                });
+
                 next(err);
             });
 

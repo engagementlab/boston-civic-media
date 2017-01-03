@@ -12,11 +12,9 @@
  * ==========
  */
 var keystone = require('keystone');
-// var moment = require('moment');
 var Syllabi = keystone.list('Syllabi');
 var Filter = keystone.list('Filter');
 var _ = require('underscore');
-// var Resource = keystone.list('Resource');
 
 exports = module.exports = function(req, res) {
 
@@ -25,13 +23,11 @@ exports = module.exports = function(req, res) {
 
     // Init locals
     locals.section = 'this_syllabus';
-    // locals.sub_section = 'publications';
 
     // Load the current publication
     view.on('init', function(next) {
 
         var filters = [];
-
         var filtersPopulate = [
                                 {path:'institution', select:'key'},
                                 {path:'discipline', select:'key'},
@@ -56,13 +52,12 @@ exports = module.exports = function(req, res) {
         // Setup the locals to be used inside view
         syllabusQuery.exec(function(err, result) {
             
-            if (result === null) {
+            if (!result)
                 return res.notfound('Cannot find syllabus', 'Sorry, but it looks like the syllabus you were looking for does not exist!');
-            }
+            
             queryFilters.exec(function(err, resultFilters) {
 
                 locals.this_syllabus = result;
-                // console.log(locals.this_syllabus);
                 // Chain the result for filters and map them into arrays of labels after grouping them into sub-objects
                 // http://underscorejs.org/#groupBy
                 // http://underscorejs.org/#map
@@ -82,13 +77,12 @@ exports = module.exports = function(req, res) {
                     };
                 })
                 .value();
+
+                next(err);
                  
             });
-
-            next(err);
         });
     });
-// });
 
     // Render the view
     view.render('syllabus');
