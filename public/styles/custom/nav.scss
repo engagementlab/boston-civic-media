@@ -42,14 +42,14 @@ body {
 		font-size: 17px;
 		vertical-align: middle;
 		padding-left: 10px;
-		color: $gray-light;
+		color: $color-grey;
 	}
 
 	&:hover {
 		img { @include opacity(0.6); }
 		p { 
 			padding-left: 14px; 
-			color: $base-color;
+			color: white;
 		}
 	}
 }

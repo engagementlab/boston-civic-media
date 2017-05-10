@@ -1265,10 +1265,7 @@ tbody {
   min-height: 100%;
   width: 100%;
   position: relative;
-  color: #ffffff;
-  margin: 0 auto;
-  padding-top: 2%;
-  padding-bottom: 2%; }
+  color: #ffffff; }
   .main-blurb .main-text {
     max-width: 90%;
     margin: 0 auto; }
@@ -5901,6 +5898,10 @@ fieldset[disabled] .form-control {
   border-color: #ededed;
   background-color: #fafafa;
   font-weight: 400; }
+  .navbar.navbar-default .row {
+    background-color: #215C56; }
+    .navbar.navbar-default .row li a {
+      color: #D8D8D8; }
 
 /* first level menu item */
 .navbar-default .navbar-nav > li > a {
@@ -9282,13 +9283,13 @@ body {
     font-size: 17px;
     vertical-align: middle;
     padding-left: 10px;
-    color: #bababa; }
+    color: #D8D8D8; }
   .logo-container:hover img {
     opacity: 0.6;
     filter: alpha(opacity=60); }
   .logo-container:hover p {
     padding-left: 14px;
-    color: #78cbd1; }
+    color: white; }
 
 .main-navigation .dropdown-menu {
   top: 100%; }

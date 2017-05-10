@@ -11,8 +11,13 @@
 --}}
 
 <script type="text/javascript">
+    
 	$(document).ready(function() {
-		// alert('{{section}}');
+		
+		// Image responsiveness
+		var cl = cloudinary.Cloudinary.new({cloud_name: "engagement-lab-home"}); 
+		cl.responsive({responsive_resize:true});
+
 		/*
 		 Analytics start
 		 ==============
@@ -29,22 +34,11 @@
 		 Analytics end
 		*/
 		
-		// $(document).ready(function(){
-		  
-		// });
-		// {{removePara}}
-
-		// lastImageLoaded (container, function () {
-				console.log("events lightning talk masonry")
-				// var container = $('#event-talks');
-					$('#event-talks').isotope({
-				    itemSelector: '.event-talks-item', 
-				    isFitHeight: true, 
-				    layoutMode: 'fitRows'
-				  });
-			// $('.isotopeContent').isotope('reloadItems').isotope();
-
-		// });
+		$('#event-talks').isotope({
+	    itemSelector: '.event-talks-item', 
+	    isFitHeight: true, 
+	    layoutMode: 'fitRows'
+	  });
 
 		$('.markdown-span p').contents().unwrap().html("");
 

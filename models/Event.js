@@ -29,6 +29,7 @@ var Event = new keystone.List('Event',
  * @main About
  */
 Event.add({
+
 	theTitle: { type: Types.Markdown, label: 'Title', note: "All titles must be split into two lines to display properly", required: true, initial: true, index: true },
 	name: { type: String, default: 'Name of Event', hidden: true},
 	image: { type: Types.CloudinaryImage, label: 'Event Image',  folder: 'boston-civic-media/logos' },
@@ -43,17 +44,6 @@ Event.add({
       label: 'Associated Lightning Talks',
       many: true
     },
-	// file: {
-	// 	type: Types.AzureFile,
-	// 	label: 'File',
-	// 	filenameFormatter: function(item, filename) {
- //      // console.log ("hi");
-	// 		return item.event_key + require('path').extname(filename);
-	// 	},
-	// 	containerFormatter: function(item, filename) {
-	// 		return 'bcmevent';
-	// 	}
-	// },
   	featured: {
       type: Types.Boolean,
       label: 'Featured Event', 
@@ -65,9 +55,8 @@ Event.add({
       note: 'Will never appear on site if not enabled'
   	},
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
-});
 
-// Event.schema.virtual('name').get(function() { return this.theTitle; })
+});
 
 Event.schema.pre('save', function(next) {
 

@@ -9,6 +9,16 @@
 	border-color: #ededed;
 	background-color: #fafafa;
 	font-weight: 400;
+
+	.row {
+		background-color: $color-theme;
+
+		li {
+			a {
+				color: $color-grey;
+			}
+		}
+	}
 }
 /* first level menu item */
 .navbar-default .navbar-nav > li > a {
