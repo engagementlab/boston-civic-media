@@ -24,6 +24,12 @@ body .embed-responsive iframe {
   // left: 10%;
 }
 
+// Center any column, yay!
+.col-centered {
+  float: none;
+  margin: 0 auto;
+}
+
 .container-padding {
   height: 100%;
   max-width: 100%;

@@ -1,4 +1,4 @@
-/* Engagement Lab Website */
+/* Boston Civic Media */
 /**
  * Route middleware
  * This file contains the common middleware used by all routes. Extend or replace these functions as the application requires.

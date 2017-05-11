@@ -46,24 +46,15 @@ exports = module.exports = function(req, res) {
             }
         })
         .populate('features');
-
-        // This query gets all featured projects
-        var lightningTalkQuery = LightningTalk.model.find({
-            'enabled': true,
-            'homePage': true
-        });
-
-/*        var syllabiQuery = Syllabi.model.find({
+        var syllabiQuery = Syllabi.model.find({
             'enabled': true,
             'featured': true
         })
         .populate('faculty');
-
-        var queryFeaturedEvent = Event.model.find({
-            'enabled': true,
-            'featured': true
+        var queryEvents = Event.model.find({
+            'enabled': true
         });
-*/
+        
         // Setup the locals to be used inside view
         homeQuery.exec(function(err, result) {
             
@@ -72,29 +63,25 @@ exports = module.exports = function(req, res) {
             if(result !== null)
                 locals.features = result.features;
             
-            lightningTalkQuery.exec(function(err, result){
-                // console.log ("hi")
+            queryEvents.exec(function(err, resultEvents) {
                 if (err) throw err;
 
-                if(result !== null)
-                    locals.featured_lightning_talks = result;
+                if(resultEvents)
+                    locals.events = resultEvents;
                 
-                syllabiQuery.exec(function(err, result) {
+                syllabiQuery.exec(function(err, resultSyllabi) {
                     if (err) throw err;
                     
-                    if(result !== null)
-                        locals.featured_syllabi = result;
-                    console.log (locals.featured_syllabi, "featured_syllabi");
-
-                    queryFeaturedEvent.exec(function(err, resultEvent) {
-                        locals.featured_events = resultEvent;
-
-                        next(err);
-                    });
+                    if(resultSyllabi)
+                        locals.featured_syllabi = resultSyllabi;
+                    
+                    next(err);
                 });
             });
 
         });
+
+    });
 
     // Render the view
     view.render('index');
