@@ -1,5 +1,5 @@
 // Site-wide JS
-module.exports = function() {
+module.exports = function(grunt, options) {
   // Obtain env to generate filename
   var env = grunt.option('env');
 
