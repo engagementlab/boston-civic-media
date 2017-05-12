@@ -3,15 +3,19 @@
 	<div class="row">
 		
 		<section class="col-md-12 main-blurb">
-			<div id="features" class="col-sm-10 col-centered">
-				{{#each features}}
-				<div class="col-sm-3 feature">
-					<h1>{{name}}</h1>
-					<h2>{{description}}</h2>
+			<div class="col-sm-10 col-centered">
+				<h1>Boston Civic Media</h1>
+				<h2>a network for solving problems at the scale of the city</h2>
+				<div id="features">
+					{{#each features}}
+						<div class="col-sm-3 feature">
+							<h1>{{name}}</h1>
+							<h2>{{description}}</h2>
+						</div>
+					{{/each}}
 				</div>
-				{{/each}}
-			</div>
 			{{!-- {{{responsiveImg path="/v1494440105/boston-civic-media/layout/background-home.jpg" }}} --}}
+			</div>
 		</section>
 	</div>
 	<div class="row main-featured">
@@ -31,20 +35,9 @@
 			</div>
 		</section>
 		{{/if}}
-		<section class="col-md-6 featured-events">
-			<div class="slider-header">
-				
-				<div class="slider-text">
-					<h1>Upcoming Events</h1>
-				</div>
-				
-				<div class="row slider-buttons">
-					<div class="col-md-6" id="slider-prev"></div>
-					<div class="col-md-6" id="slider-next"></div>
-				</div>
-			</div>
-			
-			<ul class="bxslider">
+		<section class="col-md-6 upcoming-events">
+			<h1>Upcoming Events</h1>
+			<ul>
 
 				{{#each events}}
 					<li>{{> index/event event=this}}</li>

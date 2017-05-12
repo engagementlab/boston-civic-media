@@ -34,7 +34,7 @@ exports.initLocals = function(req, res, next) {
     {
         label: 'Get Involved',
         key: 'get-involved',
-        href: '/getting_involved'
+        href: '/get-involved'
     },
     {
         label: 'Syllabi',
@@ -44,7 +44,7 @@ exports.initLocals = function(req, res, next) {
     {
         label: 'Lightning Talks',
         key: 'lightning-talk',
-        href: '/lightning_talks'
+        href: '/lightning-talks'
     },
     // {
     //     label: 'CIRB',

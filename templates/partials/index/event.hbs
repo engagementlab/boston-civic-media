@@ -5,10 +5,6 @@
 	* ==============
 */
 --}}
-<div class="container">
-
-	<h1>{{{event.theTitle.html}}}</h1>
-	{{!-- img here? --}}
-	<h2>{{{event.theDescription.html}}}</h2>
-
-</div>
+<div class="title">{{{event.theTitle.html}}}</div>
+<img src="{{{cloudinaryUrl event.image height=128 effect='grayscale'}}}" alt="{{event.name}}">
+<p>{{{event.theFooter.html}}}</p>

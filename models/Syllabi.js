@@ -16,8 +16,6 @@ var Syllabi = new keystone.List('Syllabi',
 		sortContent: 'Filter:category',
     autokey: { path: 'syllabus_key', from: 'title', unique: true },
     map: { name: 'title' }
-		// nodelete: true,
-		// nocreate: true
 	});
 
 /**
@@ -155,23 +153,6 @@ Syllabi.schema.statics.removeFilterRef = function(filterId, callback) {
     );
 
 };
-
-/**
- * Hooks
- * =============
- */
-Syllabi.schema.pre('save', function(next) {
-
-    // Filter.populate(this.institution, )
-
-    // // Save state for post hook
-    // this.filters = Object.assign(this.discipline, this.institution);
-
-    // console.log(this.filters)
-
-    next();
-
-});
 
 /**
  * Model Registration

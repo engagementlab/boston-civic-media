@@ -33,7 +33,7 @@
 			{{!-- {{jsonPrint featured_lightning_talks}} --}}
 				{{#if featured_lightning_talks}}
 					{{#each featured_lightning_talks}}
-						{{>index/featured_lightning_talk featured_lightning_talk=this}}
+						{{>talks/featured featured_lightning_talk=this}}
 					{{/each}}
 				{{/if}}
 			</div>
@@ -52,10 +52,8 @@
 		
 		</div>
 		<div class="no-talks-visible">
-				<h2>No lightning talks match that category!</h2>
-			</div>
-		{{!-- <div class="ph40"> --}}
-			
+			<h2>No lightning talks match that category!</h2>
+		</div>		
 
 			<div id="talks-content" class="isotopeContent row">
 				{{#if lightning_talk}}

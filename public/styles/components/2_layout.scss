@@ -43,11 +43,14 @@
 	min-height: 577px;
 	width: 100%;
 	position: relative;
-	color: $white;
 
 	@include responsive-image('/v1494440105/boston-civic-media/layout/background-home.jpg', $mq-mobile-portrait, $mq-mobile-landscape, $mq-tablet-portrait, $mq-tablet-landscape, $mq-desktop);
 	background-repeat: no-repeat;
   background-size: cover;
+
+	h1, h2 {
+		color: $color-white;
+	}
 
 	.main-text {
 		max-width: 90%;
@@ -56,23 +59,23 @@
 	}
 
 	#features {
-		display: flex;
-		align-items: center;
+		// display: flex;
+		// align-items: center;
 	}
 
 	.feature {
-		float: none;
-    display: table-cell;
-		color: $color-theme-text !important;
+		margin-left: 5%;
 		background-color: $color-feature-bg;
 
-		@include box-shadow(2px 4px 0 rgba(0, 0, 0, .5));
+		@include box-shadow(0 2px 4px rgba(0, 0, 0, .5));
 
 		h1 {
 			font-size: 25px;
+			color: $color-theme-text;
 		}
 		h2 {
 			font-size: 18px;
+			color: $color-theme-text;
 		}
 	}
 }

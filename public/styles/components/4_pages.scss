@@ -257,17 +257,35 @@ body .dropdown-menu {
 	}
 }
 
-.featured-events {
-	border-left: 5px $color-theme-dark solid;
-	color: $gray-dark;
+.upcoming-events {
+
+	@include mobile-landscape-and-below {
+		border-top: 5px $color-theme-dark solid;
+	}
+	@include mobile-landscape-and-up {
+		border-left: 5px $color-theme-dark solid;
+	}
+
+	// color: $gray-dark;
 	margin: 0 auto;
 	position: relative;
 	text-align: center;
-	h3 {
-		color: $base-color-hover;
 
-		@media (max-width: 767px) {
-			font-size: 1em;
+	ul {
+		padding: 0;
+		list-style-type: none;
+		list-style-image: none;
+	}
+
+	img {
+		float: none;
+    margin: 0 auto;
+	}
+
+	.title {
+		p:first-of-type {
+			color: $color-theme-light;
+			font-size: 16px;
 		}
 	}
 }
