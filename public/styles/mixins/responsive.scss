@@ -3,8 +3,9 @@ $mq-mobile-landscape	: 480px !default;
 $mq-tablet-portrait		: 768px !default;
 $mq-tablet-landscape	: 1024px !default;
 $mq-desktop				: 1382px !default;
+// $mq-all 					: ($mq-mobile-portrait, $mq-mobile-landscape, $mq-tablet-portrait, $mq-tablet-landscape, $mq-desktop,);
 
-$imgpath-prefix: "https://res.cloudinary.com/engagement-lab-home/image/upload/c_scale";
+$imgpath-prefix: "https://res.cloudinary.com/engagement-lab-home/image/upload";
 
 // Both portrait and landscape
 @mixin mobile-only {
@@ -136,15 +137,29 @@ $imgpath-prefix: "https://res.cloudinary.com/engagement-lab-home/image/upload/c_
 
 /// --- END media queries
 
+// Generate a media breakpoint and a background-image path corresponding to max screen width from our image CDN for all sizes specified.
+// -------------
+// eg.
+// @include responsive-image('/v1494440105/boston-civic-media/layout/background-home.jpg', $mq-tablet-portrait, $mq-tablet-landscape, $mq-desktop);
+// @include responsive-image('/v1494440105/boston-civic-media/layout/background-home.jpg', $mq-all);
 @mixin responsive-image($imgpath, $sizes...) {
-    $max: length($sizes);
-
-    @for $i from 1 through $max {
-			$imgpath-affix: str-replace(inspect(nth($sizes, $i)), 'px');
-			@media (min-width: nth($sizes, $i)) {        
-
-        background-image: url($imgpath-prefix + '/w_' + $imgpath-affix + $imgpath);
-
+    
+    @each $size in $sizes {
+			$imgpath-affix: str-replace(inspect($size), 'px');
+		
+			@media (min-width: $size) {        
+        background-image: url($imgpath-prefix + '/c_scale/w_' + $imgpath-affix + $imgpath);
 			}
     };
+
+}
+
+@mixin cdn-image($imgpath) { 
+
+  @return $imgpath-prefix + '/f_auto' + $imgpath;
+
+}
+
+@mixin cdn-background($imgpath) {
+	background-image: url($imgpath-prefix + '/f_auto' + $imgpath);
 }

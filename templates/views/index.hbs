@@ -8,13 +8,13 @@
 				<h2>a network for solving problems at the scale of the city</h2>
 				<div id="features">
 					{{#each features}}
-						<div class="col-sm-3 feature">
-							<h1>{{name}}</h1>
-							<h2>{{description}}</h2>
-						</div>
+					<div class="col-sm-3 feature">
+						<h1>{{name}}</h1>
+						<h2>{{description}}</h2>
+					</div>
 					{{/each}}
 				</div>
-			{{!-- {{{responsiveImg path="/v1494440105/boston-civic-media/layout/background-home.jpg" }}} --}}
+				{{!-- {{{responsiveImg path="/v1494440105/boston-civic-media/layout/background-home.jpg" }}} --}}
 			</div>
 		</section>
 	</div>
@@ -38,13 +38,12 @@
 		<section class="col-md-6 upcoming-events">
 			<h1>Upcoming Events</h1>
 			<ul>
-
 				{{#each events}}
-					<li>{{> index/event event=this}}</li>
+				<li>{{> index/event event=this}}</li>
 				{{/each}}
 				
 			</ul>
-					
+			
 			{{!-- <div class="more-button">
 				<a href="/lightning_talk">Watch All Lightning Talks</a>
 			</div> --}}

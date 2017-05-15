@@ -30,6 +30,7 @@ body {
 	margin: 16px 0;
 	display: inline-block;
 	width: 400px;
+	font-family: $light-type;
 	
 	img {
 		@include transition(all 0.2s ease-in-out);
@@ -39,7 +40,7 @@ body {
 	p {
 		@include transition(all 0.2s ease-in-out);
 		display: inline;
-		font-size: 17px;
+		font-size: 1.5em;
 		vertical-align: middle;
 		padding-left: 10px;
 		color: $color-grey;

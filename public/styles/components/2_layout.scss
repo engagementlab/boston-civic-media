@@ -48,8 +48,21 @@
 	background-repeat: no-repeat;
   background-size: cover;
 
-	h1, h2 {
+	h1 {
 		color: $color-white;
+		font-family: HalisGR-Black;
+		font-size: 4em;
+		font-weight: 900;
+		letter-spacing: -0.4px;
+		text-align: justify;
+	}
+	h2 {
+		color: $color-white;
+		font-family: $med-type;
+		font-size: 3em;
+		font-weight: 500;
+		letter-spacing: -0.4px;
+		text-align: justify;
 	}
 
 	.main-text {
@@ -58,23 +71,34 @@
 
 	}
 
-	#features {
-		// display: flex;
-		// align-items: center;
-	}
-
 	.feature {
 		margin-left: 5%;
 		background-color: $color-feature-bg;
+
+    &:before {
+	    content: "";
+			position: absolute;
+	    z-index: 10;
+	    bottom: 8px;
+	    right: 18px;
+      font-size: 16px;
+	    width: 0;
+	    height: 0;
+	    border-left: 24px solid $color-light-grey-blue;
+			border-top: 13px solid transparent;
+			border-bottom: 13px solid transparent;
+    }
 
 		@include box-shadow(0 2px 4px rgba(0, 0, 0, .5));
 
 		h1 {
 			font-size: 25px;
+			font-family: $med-type;
 			color: $color-theme-text;
 		}
 		h2 {
 			font-size: 18px;
+			font-family: $light-type;
 			color: $color-theme-text;
 		}
 	}
