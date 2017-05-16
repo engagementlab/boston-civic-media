@@ -25,6 +25,7 @@ var _ = require('underscore');
 exports.initLocals = function(req, res, next) {
 
     var locals = res.locals;
+    locals.env = process.env.NODE_ENV; 
 
     locals.navLinks = [{
         label: 'About',
@@ -46,11 +47,6 @@ exports.initLocals = function(req, res, next) {
         key: 'lightning-talk',
         href: '/lightning-talks'
     },
-    // {
-    //     label: 'CIRB',
-    //     key: 'irb_proj',
-    //     href: '/irb_proj'
-    // },
     {
         label: 'Events',
         key: 'events',

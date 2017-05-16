@@ -22,8 +22,7 @@ var Types = keystone.Field.Types;
 var Collaboration = new keystone.List('Collaboration', 
 	{
 		label: 'Collaboration Page',
-		singular: 'Collaboration Page',
-		track: true
+		singular: 'Collaboration Page'
 		// nodelete: true,
 		// nocreate: true
 	});

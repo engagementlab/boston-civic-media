@@ -22,8 +22,7 @@ var Types = keystone.Field.Types;
 var ListservGuidelines = new keystone.List('ListservGuidelines', 
 	{
 		label: 'Listserv Guidelines Page',
-		singular: 'Listserv Guidelines Page',
-		track: true
+		singular: 'Listserv Guidelines Page'
 		// nodelete: true,
 		// nocreate: true
 	});

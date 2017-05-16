@@ -10,8 +10,7 @@ var GettingInvolved = new keystone.List('GettingInvolved',
 	{
 		label: 'Getting Involved Page',
 		singular: 'Getting Involved Page',
-		track: true,
-		nodelete: true,
+				nodelete: true,
 		nocreate: true
 	});
 

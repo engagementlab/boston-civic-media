@@ -22,6 +22,8 @@ exports = module.exports = function(req, res) {
     var view = new keystone.View(req, res),
         locals = res.locals;
 
+        console.log('locals', res.locals)
+
     // Init locals
     locals.section = 'courses';
 

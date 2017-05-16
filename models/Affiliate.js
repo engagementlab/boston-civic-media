@@ -17,8 +17,7 @@ var Affiliate = new keystone.List('Affiliate',
 	{
 		label: 'Affiliates',
 		singular: 'Affiliate',
-		sortable: true,
-		track: true
+		sortable: true
 		// nodelete: true,
 		// nocreate: true
 	});

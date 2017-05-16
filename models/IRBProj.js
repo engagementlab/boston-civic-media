@@ -23,8 +23,7 @@ var IRBProj = new keystone.List('IRBProj',
 	{
 		label: 'IRB Project',
 		singular: 'IRB Project',
-		track: true,
-		nodelete: true,
+				nodelete: true,
 		nocreate: true
 	});
 

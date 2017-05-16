@@ -18,13 +18,15 @@
  * http://expressjs.com/api.html#app.VERB
  */
 
+var express = require('express');
+var router = express.Router();
 var keystone = require('keystone');
 var middleware = require('./middleware');
 var importRoutes = keystone.importer(__dirname);
 
 // Common Middleware
 keystone.pre('routes', middleware.initErrorHandlers);
-keystone.pre('routes', middleware.initLocals);
+keystone.pre('render', middleware.initLocals);
 keystone.pre('render', middleware.flashMessages);
 keystone.pre('render', middleware.Footer);
 
@@ -33,32 +35,36 @@ var routes = {
     views: importRoutes('./views')
 };
 
-// Setup Route Bindings
-exports = module.exports = function(app) {
+// Setup Route Bindings 
 
-    // Views
-    app.get('/', routes.views.index);
+// /keystone redirect
+router.all('/admin', function(req, res, next) {
+    res.redirect('/keystone');
+});
 
-    app.get('/about', routes.views.about);
-    app.get('/courses', routes.views.courses);
-    app.get('/syllabi', routes.views.syllabi);
-    app.get('/syllabi/:syllabus_key', routes.views.syllabus);
-    app.get('/lightning-talks', routes.views.lightning_talks);
-    app.get('/lightning-talks/:talk_key', routes.views.lightning_talk);
-    app.get('/irb-proj', routes.views.irb_proj);
-    app.get('/get-involved', routes.views.getting_involved);
-    app.get('/collaborations', routes.views.collaboration);
-    app.get('/events', routes.views.events);
-    app.get('/events/:event_key', routes.views.event);
-    // app.get('/people/:person', routes.views.person);
+// Views
+router.get('/', routes.views.index);
 
-    // DEPRECATED
-    app.get('/irb_proj', routes.views.irb_proj);
-    app.get('/getting_involved', routes.views.getting_involved);
-    app.get('/lightning_talks', routes.views.lightning_talks);
-    app.get('/lightning_talks/:talk_key', routes.views.lightning_talk);
-    
-    // NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
-    // app.get('/protected', middleware.requireUser, routes.views.protected);
+router.get('/about', routes.views.about);
+router.get('/courses', routes.views.courses);
+router.get('/syllabi', routes.views.syllabi);
+router.get('/syllabi/:syllabus_key', routes.views.syllabus);
+router.get('/lightning-talks', routes.views.lightning_talks);
+router.get('/lightning-talks/:talk_key', routes.views.lightning_talk);
+router.get('/irb-proj', routes.views.irb_proj);
+router.get('/get-involved', routes.views.getting_involved);
+router.get('/collaborations', routes.views.collaboration);
+router.get('/events', routes.views.events);
+router.get('/events/:event_key', routes.views.event);
+// router.get('/people/:person', routes.views.person);
 
-};
+// DEPRECATED
+router.get('/irb_proj', routes.views.irb_proj);
+router.get('/getting_involved', routes.views.getting_involved);
+router.get('/lightning_talks', routes.views.lightning_talks);
+router.get('/lightning_talks/:talk_key', routes.views.lightning_talk);
+
+// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
+// router.get('/protected', middleware.requireUser, routes.views.protected);
+
+module.exports = router;

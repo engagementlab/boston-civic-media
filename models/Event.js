@@ -19,8 +19,7 @@ var Event = new keystone.List('Event',
 	{
 		label: 'Event Page',
 		singular: 'Event Page',
-		track: true, 
-		autokey: { path: 'event_key', from: 'name', unique: true },
+				autokey: { path: 'event_key', from: 'name', unique: true },
 		hidden: false
 	});
 

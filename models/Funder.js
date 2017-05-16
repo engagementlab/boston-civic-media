@@ -9,8 +9,7 @@ var Types = keystone.Field.Types;
 var Funder = new keystone.List('Funder', 
 	{
 		label: 'Funders',
-		singular: 'Funder',
-		track: true
+		singular: 'Funder'
 		// nodelete: true,
 		// nocreate: true
 	});

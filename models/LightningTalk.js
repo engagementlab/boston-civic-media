@@ -11,8 +11,7 @@ var LightningTalk = new keystone.List('LightningTalk',
 	{
 		label: 'Lightning Talks',
 		singular: 'Lightning Talk',
-		track: true,
-	    hidden: false,
+			    hidden: false,
 	    autokey: { path: 'talk_key', from: 'name', unique: true },
 		inherits: Video
 		// nodelete: true,

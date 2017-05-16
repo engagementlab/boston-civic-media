@@ -27,8 +27,7 @@ var Video = new keystone.List('Video',
 		singular: 'Video',
     hidden: true,
 		sortable: true,
-		track: true,
-		autokey: { path: 'key', from: 'name', unique: true },
+				autokey: { path: 'key', from: 'name', unique: true },
 	});
 
 /**

@@ -18,8 +18,7 @@ var HomeFeature = new keystone.List('HomeFeature',
 		label: 'Home Features',
 		singular: 'Home Feature',
 		sortable: true,
-		track: true,
-    autokey: { path: 'key', from: 'name', unique: false }
+		    autokey: { path: 'key', from: 'name', unique: false }
 	});
 
 /**

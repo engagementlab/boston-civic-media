@@ -13,7 +13,6 @@ var Course = new keystone.List('Course',
 	{
 		label: 'Courses',
 		singular: 'Course',
-		track: true, 
 		sortable: true,
     autokey: { path: 'course_key', from: 'name', unique: true }
 	});
