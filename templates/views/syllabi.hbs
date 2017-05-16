@@ -1,91 +1,71 @@
 {{!< default}}
-{{!-- 
+{{!--
 /**
- * Boston Civic Media Website
- * Developed by Engagement Lab, 2016
- * ==============
- * 
- * Syllabi Directory Page Template 
- * - Use {{jsonPrint project}} to print entire json...DEBUG ONLY
- * ==========
- */
+* Boston Civic Media Website
+* Developed by Engagement Lab, 2016
+* ==============
+*
+* Syllabi Directory Page Template
+* ==========
+*/
 --}}
 
-<!-- DIRECTORY START -->
-<!-- ================ -->
 <section class="section main-container padding-bottom-clear">
 	<div class="container-fluid">
 		<div class="row main-syllabi">
 			<h1 class="col-md-12 syllabi-title page-title"><strong>Syllabi</strong></h1>
-			{{!-- {{> page/lead}} --}}
 		</div>
 	</div>
-
-	{{!-- We'll need some filtering dropdowns here --}}
-
-
 	{{!-- Show all syllabi below by default --}}
 	<div class="container pv-20">
-
 		<div class="row">
 			<div class="col-md-12 filters">
-			  {{#each filters}}
-			  {{!-- {{jsonPrint this}} --}}
-				<div class="btn-group clearfix" >
+				{{#each filters}}
+				<div class="btn-group clearfix">
 					<button id="syllabi{{key}}" class="syllabi-options btn btn-default dropdown-toggle" type="button" data-filter-group="{{label}}" data-toggle="dropdown">
-						<div class="button-text">{{label}} <span class="{{key}}-number filter-counter"> </span><span class="bigCaret"></span></div>
+					<div class="button-text">{{label}} <span class="{{key}}-number filter-counter"> </span><span class="bigCaret"></span></div>
 					</button>
 					<ul class="dropdown-menu scrollable" role="menu">
 						<li><a id="{{key}}" data-filter=""  href="#" data-filter-value="" data-filter-group="{{key}}" class="all-options option-{{key}}">All {{label}}s</a></li>
-
-					    {{#each values}}
-						    <li><a id="{{../key}}" value="#" href="#" data-filter-value=".{{key}}" data-filter-group="{{../key}}" class="option-{{../key}}">{{name}}</a></li>
-					    {{/each}}
+						{{#each values}}
+						<li><a id="{{../key}}" value="#" href="#" data-filter-value=".{{key}}" data-filter-group="{{../key}}" class="option-{{../key}}">{{name}}</a></li>
+						{{/each}}
 					</ul>
 				</div>
-
-			  {{/each}}
+				{{/each}}
 				<div class="btn-group clearfix">
 					<button class="syllabi-options clear-all btn btn-default dropdown-toggle" type="button" data-filter-value="">Reset</button>
 				</div>
 			</div>
 		</div>
-
 		<div class="no-syllabi-visible">
 			<h2>No Syllabi match those categories!</h2>
 		</div>
-
 		<div id="syllabi-content" class="isotopeContent syllabi row">
 			
 			{{#if syllabi}}
-
-				{{!-- Show syllabi --}}
+			{{!-- Show syllabi --}}
 				{{#each syllabi}}
-
-
-					<div class="col-md-6 syllabi-item {{filters}}">
-						<div class="syllabus container">
-							<a href="/syllabi/{{syllabus_key}}"><h3 class="styled-title">{{title}}</h3></a>
-							<p>{{{description}}}</p>
-							<div class="tags">
+				<div class="col-md-6 syllabi-item {{filters}}">
+					<div class="syllabus container">
+						<a href="/syllabi/{{syllabus_key}}"><h3 class="styled-title">{{title}}</h3></a>
+						<p>{{{description}}}</p>
+						<div class="tags">
 							{{#if faculty}}
-
-								<div class="">
-									<p><strong>Faculty Member(s):</strong>
-									{{#each faculty}} 
+							<div class="">
+								<p><strong>Faculty Member(s):</strong>
+									{{#each faculty}}
 									{{this.name}}{{#unless @last}}, {{/unless}}
-									{{/each}}</p>
-								</div>
-							{{/if}}
+								{{/each}}</p>
 							</div>
+							{{/if}}
 						</div>
 					</div>
-
+				</div>
 				{{/each}}
-
 			{{else}}
-				
-				<strong>No syllabi! Fiddlesticks!</strong>
+			
+			<strong>No syllabi! Fiddlesticks!</strong>
 			
 			{{/if}}
 		</div>

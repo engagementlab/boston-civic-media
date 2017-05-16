@@ -1222,3 +1222,59 @@ body .listserv {
 	margin-bottom: 10px;
 	color: #fff;
 }
+
+/* Course Catalog
+---------------------------------- */
+.courses {
+
+	#course-menu {
+		ul {
+			list-style-type: none;
+			list-style-image: none;
+			li {
+		    margin-top: 3%;
+
+				a.active {
+					color: $color-dull-teal;
+					font-family: $bold-type;
+					font-size: 1.5em;
+				}
+				a {
+					font-size: 1.25em;
+				}
+			}
+		}
+	}
+	#course-contents {
+		background-color: $color-seafoam-blue;
+		@include box-shadow(0 0 4px 1px rgba(0, 0, 0, 0.24));
+		border: solid 4px #ffffff;
+		color: $color-dark-green-blue;
+
+		h1 {
+			font-family: $med-type;
+			font-size: 2em;
+			color: white;
+		}
+		h2 {
+			font-family: $med-type;
+			font-size: 1.5em;
+			color: $color-dark-green-blue;
+		}
+
+		.content {
+			display: none;
+			&.active {
+				display: block;
+			}
+			a {
+				color: white;
+				
+			}
+			strong {
+				font-family: $bold-type;
+			}
+		}
+	}
+
+}

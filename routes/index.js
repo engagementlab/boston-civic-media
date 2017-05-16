@@ -40,6 +40,7 @@ exports = module.exports = function(app) {
     app.get('/', routes.views.index);
 
     app.get('/about', routes.views.about);
+    app.get('/courses', routes.views.courses);
     app.get('/syllabi', routes.views.syllabi);
     app.get('/syllabi/:syllabus_key', routes.views.syllabus);
     app.get('/lightning-talks', routes.views.lightning_talks);

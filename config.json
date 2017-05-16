@@ -6,6 +6,7 @@
 	"admin_nav": { 
 									"home": ["Home", "HomeFeature", "events"],
 									"about": ["About", "affiliates", "funders", "TeamMember", "collaborations"],
+									"courses": ["Course", "filters"],
 									"syllabi": ["Syllabi", "filters"],
 									"lightning talks": "LightningTalk",
 									"CIRB": "IRBProj",

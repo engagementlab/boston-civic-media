@@ -29,31 +29,24 @@
 				<h1 class="page-title text-center">Featured Event:</h1>
 
 
-			{{#each events}}
+			{{!-- {{#each events}}
 				{{#if enabled}}
 					{{#if featured}}
-						{{!-- {{#unless past}} --}}
 							{{>index/featured_event event=this}}
-						{{!-- {{/unless}} --}}
 					{{/if}}
 				{{/if}}
-			{{/each}}
+			{{/each}} --}}
 			
 			</div>
 		</div>
-					{{!-- <div class="separator"></div> --}}
-
 
 		<div class="talks-grid">
-			{{!-- {{#if lightning_talk}} --}}
 			<div class="row">
 				<h1 class="page-title text-center" style="padding-bottom:3%;">Past Events</h1>
 
 					{{#each events}}
 						{{#if enabled}}
-							{{!-- {{#if past}} --}}
 								{{>index/recent_event event=this}}
-							{{!-- {{/if}} --}}
 						{{/if}}
 					{{/each}}
 

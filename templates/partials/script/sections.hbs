@@ -341,18 +341,30 @@
 
 		{{/ifeq}}
 
+		{{!-- EVENTS Template Script --}}
 		{{#ifeq section 'events'}}
 
 			$('.ellipsis p').text(function(index, currentText) {
-				if (currentText) {
-					console.log (currentText, "current text");
-					// console.log (currentText.substr(0, 10));
+				if (currentText)
 				    return currentText.substr(0, 120) + "...";
-				}
 			});
-
-
-
 		{{/ifeq}}
+
+		{{!-- COURSE CATALOG Template Script --}}
+		{{#ifeq section 'courses'}}
+
+			$('#course-menu a').hover(
+			  function() {
+			  	var courseKey = $(this).data('key');
+			  	$('#course-menu a').removeClass('active');
+			  	$(this).addClass('active');
+
+			  	$('#course-contents .content').hide()
+			  	$('#course-contents .content[data-key="' + courseKey + '"]').show();
+			  }, function() {
+			  }
+			);
+		{{/ifeq}}
+
 	})
 </script>
