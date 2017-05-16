@@ -8,10 +8,16 @@
 				<h2>a network for solving problems at the scale of the city</h2>
 				<div id="features">
 					{{#each features}}
-					<div class="col-sm-3 feature">
-						<h1>{{name}}</h1>
-						<h2>{{description}}</h2>
-					</div>
+						{{#if url}}
+							<a href="{{url}}">
+							<div class="col-sm-3 feature link">
+						{{else}}
+							<div class="col-sm-3 feature">
+						{{/if}}
+								<h1>{{name}}</h1>
+								<h2>{{description}}</h2>
+							</div>
+						{{#if url}}</a>{{/if}}
 					{{/each}}
 				</div>
 				{{!-- {{{responsiveImg path="/v1494440105/boston-civic-media/layout/background-home.jpg" }}} --}}
