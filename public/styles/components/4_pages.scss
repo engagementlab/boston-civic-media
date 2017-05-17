@@ -1244,6 +1244,32 @@ body .listserv {
 				}
 			}
 		}
+		select {
+	    display: inline-block;
+	    width: 100%;
+	    cursor: pointer;
+	    padding: 10px 15px;
+      margin-bottom: 4%;
+	    outline: 0;
+	    border: 0;
+	    border-radius: 0;
+	    background: $color-seafoam-blue;
+	    color: $color-white;
+	    appearance: none;
+	    -webkit-appearance: none;
+	    -moz-appearance: none;
+	  }
+	  .select-arrow {
+		  position: absolute;
+		  top: 16px;
+		  right: 24px;
+		  width: 0;
+		  height: 0;
+		  pointer-events: none;
+		  border-style: solid;
+		  border-width: 19px 16px 0 15px;
+		  border-color: $color-theme-dark transparent transparent transparent;
+		}
 	}
 	#course-contents {
 		background-color: $color-seafoam-blue;

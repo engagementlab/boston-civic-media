@@ -19,6 +19,10 @@ module.exports = function(frameworkDir, shared) {
 	var appRootPath = require('app-root-path').path;
 	var keystoneInst = require('keystone');	
 
+	keystoneInst.set('wysiwyg override toolbar', true);
+	keystoneInst.set('wysiwyg additional buttons', 'bold,italic');
+	// toolbar: 'undo redo | styleselect | bold italic | link image'
+
 	return { 
 
 		keystone: keystoneInst,

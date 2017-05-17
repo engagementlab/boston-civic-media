@@ -353,15 +353,26 @@
 		{{!-- COURSE CATALOG Template Script --}}
 		{{#ifeq section 'courses'}}
 
+			function courseChange(el) {
+			
+				var courseKey = el.data('key');
+		  	$('#course-menu a').removeClass('active');
+		  	$('#course-menu a[data-key="' + courseKey + '"]').addClass('active');
+
+		  	$('#course-contents .content').hide()
+		  	$('#course-contents .content[data-key="' + courseKey + '"]').show();
+
+		  }
+
 			$('#course-menu a').hover(
 			  function() {
-			  	var courseKey = $(this).data('key');
-			  	$('#course-menu a').removeClass('active');
-			  	$(this).addClass('active');
+			  	courseChange($(this));
+			  }
+			);
 
-			  	$('#course-contents .content').hide()
-			  	$('#course-contents .content[data-key="' + courseKey + '"]').show();
-			  }, function() {
+			$('#course-menu #courses-mobile').change(
+			  function() {
+			  	courseChange($(this).find(':selected'));
 			  }
 			);
 		{{/ifeq}}

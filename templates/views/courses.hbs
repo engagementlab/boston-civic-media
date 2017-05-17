@@ -17,15 +17,24 @@
 			<p>For 2017-2018, faculty participating in the Boston Civic Media consortium will be offering a range of courses that explore the intersection of civic media and climate change. Please review the list of course offerings below. If you are an undergrad at a Boston area institution, we encourage you to consider registering for one of the listed courses. While we cannot guarantee availability of seats, we have provided instructions on cross registration for each of the listed courses and we encourage you to reach out to the professors regarding availability.</p>
 		</div>
 		<div class="col-sm-10 col-centered courses">
-			<div id="course-menu" class="col-md-6 col-sm-10">
-				<ul>
+		
+			<div id="course-menu" class="col-md-12 col-sm-10 col-centered">
+				<ul class="desktop-only">
 					{{!-- COURSE LISTING --}}
 					{{#each courses}}
-					<li><a href="#" data-key="{{course_key}}" {{#if @first}} class="active"{{/if}}>{{name}}</a></li>
+						<li><a href="#" data-key="{{course_key}}" {{#if @first}} class="active"{{/if}}>{{name}}</a></li>
 					{{/each}}
 				</ul>
+				<select id="courses-mobile" class="mobile-tablet-only">
+					{{!-- COURSE LISTING --}}
+					{{#each courses}}
+						<option data-key="{{course_key}}" {{#if @first}} selected="selected"{{/if}}>{{name}}</option>
+					{{/each}}
+				</select>
+				<div class="select-arrow"></div>
 			</div>
-			<section id="course-contents" class="col-md-6 col-sm-10">
+
+			<section id="course-contents" class="col-md-12 col-sm-10 col-centered">
 				{{!-- COURSE CONTENT --}}
 				{{#each courses}}
 				<div data-key="{{course_key}}" class="content{{#if @first}} active{{/if}}">
