@@ -8,51 +8,42 @@
 				<h2>a network for solving problems at the scale of the city</h2>
 				<div id="features">
 					{{#each features}}
-						{{#if url}}
-							<a href="{{url}}">
-							<div class="col-sm-3 feature link">
-						{{else}}
-							<div class="col-sm-3 feature">
-						{{/if}}
-								<h1>{{name}}</h1>
-								<h2>{{description}}</h2>
-							</div>
-						{{#if url}}</a>{{/if}}
+						{{> index/feature}}
 					{{/each}}
+					</div>
+					{{!-- {{{responsiveImg path="/v1494440105/boston-civic-media/layout/background-home.jpg" }}} --}}
 				</div>
-				{{!-- {{{responsiveImg path="/v1494440105/boston-civic-media/layout/background-home.jpg" }}} --}}
-			</div>
-		</section>
-	</div>
-	<div class="row main-featured">
-		{{#if featured_syllabi}}
-		<section class="col-md-6 featured-syllabi">
-			<h1>Featured Syllabi:</h1>
-			
-			<div>
-				<div>
-					<ul class="featured-list">
-						{{#each featured_syllabi}}
-						<li>{{> index/featured_syllabi featured_syllabi=this}}</li>
-						{{/each}}
-					</ul>
-				</div>
-				<div class="more-button"><a href="/syllabi">See All Syllabi</a></div>
-			</div>
-		</section>
-		{{/if}}
-		<section class="col-md-6 upcoming-events">
-			<h1>Upcoming Events</h1>
-			<ul>
-				{{#each events}}
-				<li>{{> index/event event=this}}</li>
-				{{/each}}
+			</section>
+		</div>
+		<div class="row main-featured">
+			{{#if featured_syllabi}}
+			<section class="col-md-6 featured-syllabi">
+				<h1>Featured Syllabi:</h1>
 				
-			</ul>
-			
-			{{!-- <div class="more-button">
-				<a href="/lightning_talk">Watch All Lightning Talks</a>
-			</div> --}}
-		</section>
+				<div>
+					<div>
+						<ul class="featured-list">
+							{{#each featured_syllabi}}
+							<li>{{> index/featured_syllabi featured_syllabi=this}}</li>
+							{{/each}}
+						</ul>
+					</div>
+					<div class="more-button"><a href="/syllabi">See All Syllabi</a></div>
+				</div>
+			</section>
+			{{/if}}
+			<section class="col-md-6 upcoming-events">
+				<h1>Upcoming Events</h1>
+				<ul>
+					{{#each events}}
+					<li>{{> index/event event=this}}</li>
+					{{/each}}
+					
+				</ul>
+				
+				{{!-- <div class="more-button">
+					<a href="/lightning_talk">Watch All Lightning Talks</a>
+				</div> --}}
+			</section>
+		</div>
 	</div>
-</div>

@@ -791,6 +791,7 @@ body .subscribe-button {
 	min-height: 40px;
 	width: 80%;
 	font-size:1.5em;
+	box-shadow: 0 8px 0 0 $color-sea;
 
 	@media (max-width: 767px) {
 		font-size: 1em;

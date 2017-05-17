@@ -62,11 +62,12 @@ Course.add({
       initial: true
   },
   description: { type: Types.Textarea, label: "Course Description", required: true, initial: true },
-  howTo: { type: Types.Markdown, label: "How To Enroll", required: true, initial: true },
+  howTo: { type: Types.Markdown, label: "How To Enroll", required: true, initial: true, wysiwyg: true, toolbarOptions: { hiddenButtons: 'Code'  } },
   contactName: { type: Types.Text, label: "Contact Name", note: "e.g. 'Office of the Registrar'", required: true, initial: true },
-  contactPhone: { type: Types.Text, label: "Contact Phone", length: 12, required: true, initial: true },
-  contactUrl: { type: Types.Url, label: "Contact Website URL", validate: urlValidator, note: 'Must be in format "http://www.something.org"', required: true, initial: true },
-  contactEmail: { type: Types.Email, label: "Contact Email", required: true, initial: true },
+  contactAddress: { type: Types.Location, label: "Contact Address", defaults: { state: "MA", country: 'United States' } },
+  contactPhone: { type: Types.Text, label: "Contact Phone", length: 12 },
+  contactUrl: { type: Types.Url, label: "Contact Website URL", validate: urlValidator, note: 'Must be in format "http://www.something.org"' },
+  contactEmail: { type: Types.Email, label: "Contact Email" },
 
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
 });

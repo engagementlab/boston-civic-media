@@ -28,6 +28,10 @@
   font-family: "HalisGR-SLight";
   src: url("https://res.cloudinary.com/engagement-lab-home/raw/upload/v1494878248/boston-civic-media/fonts/HalisGR-SLight.otf") format("opentype"); }
 
+@font-face {
+  font-family: "HalisGR-Light";
+  src: url("https://res.cloudinary.com/engagement-lab-home/raw/upload/v1494878248/boston-civic-media/fonts/HalisGR-Light.otf") format("opentype"); }
+
 /* Theme Name:The Project - Responsive Website Template
 Author:HtmlCoder
 Author URI:http://www.htmlcoder.me
@@ -1298,9 +1302,7 @@ tbody {
     margin: 0 auto; }
   .main-blurb .feature {
     margin-left: 5%;
-    background-color: rgba(255, 255, 255, 0.48);
-    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); }
+    background-color: rgba(255, 255, 255, 0.8); }
     .main-blurb .feature.link:before {
       content: "";
       position: absolute;
@@ -1313,6 +1315,12 @@ tbody {
       border-left: 24px solid #98ccc9;
       border-top: 13px solid transparent;
       border-bottom: 13px solid transparent; }
+    .main-blurb .feature.link .bottom {
+      font-family: "HalisGR-SLight", sans-serif;
+      font-size: .8em;
+      color: #98ccc9;
+      margin-right: 13%;
+      margin-bottom: 4%; }
     .main-blurb .feature h1 {
       font-size: 25px;
       font-family: "HalisGR-Medium", sans-serif;
@@ -3388,6 +3396,31 @@ body .listserv {
       font-size: 1.5em; }
     .courses #course-menu ul li a {
       font-size: 1.25em; }
+
+.courses #course-menu select {
+  width: 100%;
+  cursor: pointer;
+  padding: 10px 15px;
+  margin-bottom: 4%;
+  outline: 0;
+  border: 0;
+  border-radius: 0;
+  background: #6bc8bc;
+  color: #EBEBEB;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none; }
+
+.courses #course-menu .select-arrow {
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  border-style: solid;
+  border-width: 19px 16px 0 15px;
+  border-color: #26625C transparent transparent transparent; }
 
 .courses #course-contents {
   background-color: #6bc8bc;
@@ -6660,7 +6693,8 @@ body .subscribe-button {
   margin: 1%;
   min-height: 40px;
   width: 80%;
-  font-size: 1.5em; }
+  font-size: 1.5em;
+  box-shadow: 0 8px 0 0 #2f8985; }
   @media (max-width: 767px) {
     body .subscribe-button {
       font-size: 1em; } }
@@ -7035,6 +7069,23 @@ html, body {
 .col-centered {
   float: none;
   margin: 0 auto; }
+
+@media only screen and (max-width: 1024px) {
+  .col-centered-md {
+    float: none;
+    margin: 0 auto; } }
+
+@media only screen and (min-width: 321px) {
+  .mobile-only {
+    display: none; } }
+
+@media only screen and (min-width: 1025px) {
+  .mobile-tablet-only {
+    display: none; } }
+
+@media only screen and (max-width: 1024px) {
+  .desktop-only {
+    display: none; } }
 
 .container-padding {
   height: 100%;

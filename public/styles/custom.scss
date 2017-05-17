@@ -29,6 +29,32 @@ body .embed-responsive iframe {
   float: none;
   margin: 0 auto;
 }
+.col-centered-md {
+  @include tablet-landscape-and-below {
+    float: none;
+    margin: 0 auto;
+  }
+}
+
+// Mobile only element
+.mobile-only {
+  @include mobile-landscape-and-up {
+    display: none;
+  }
+}
+// Mobile & tablet only element
+.mobile-tablet-only {
+  @include desktop-and-up {
+    display: none;
+  }
+}
+// Desktop only element
+.desktop-only {
+  @include tablet-landscape-and-below {
+    display: none;
+  }
+}
+
 
 .container-padding {
   height: 100%;
