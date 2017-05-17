@@ -1,5 +1,33 @@
 @charset "UTF-8";
 /* Scss Document */
+@font-face {
+  font-family: "HalisGR-SBook";
+  src: url("https://res.cloudinary.com/engagement-lab-home/raw/upload/v1494878248/boston-civic-media/fonts/HalisGR-SBook.otf") format("opentype"); }
+
+@font-face {
+  font-family: "HalisGR-Book";
+  src: url("https://res.cloudinary.com/engagement-lab-home/raw/upload/v1494878248/boston-civic-media/fonts/HalisGR-Book.otf") format("opentype"); }
+
+@font-face {
+  font-family: "HalisGR-Bold";
+  src: url("https://res.cloudinary.com/engagement-lab-home/raw/upload/v1494878248/boston-civic-media/fonts/HalisGR-Bold.otf") format("opentype"); }
+
+@font-face {
+  font-family: "HalisGR-Black";
+  src: url("https://res.cloudinary.com/engagement-lab-home/raw/upload/v1494878248/boston-civic-media/fonts/HalisGR-Black.otf") format("opentype"); }
+
+@font-face {
+  font-family: "HalisGR-Medium";
+  src: url("https://res.cloudinary.com/engagement-lab-home/raw/upload/v1494878248/boston-civic-media/fonts/HalisGR-Medium.otf") format("opentype"); }
+
+@font-face {
+  font-family: "HalisGR-Thin";
+  src: url("https://res.cloudinary.com/engagement-lab-home/raw/upload/v1494878248/boston-civic-media/fonts/HalisGR-Thin.otf") format("opentype"); }
+
+@font-face {
+  font-family: "HalisGR-SLight";
+  src: url("https://res.cloudinary.com/engagement-lab-home/raw/upload/v1494878248/boston-civic-media/fonts/HalisGR-SLight.otf") format("opentype"); }
+
 /* Theme Name:The Project - Responsive Website Template
 Author:HtmlCoder
 Author URI:http://www.htmlcoder.me
@@ -776,20 +804,8 @@ h3,
 h4,
 h5,
 h6,
-.navbar .navbar-nav {
-  font-family: "HalisGR-Book", sans-serif; }
-
 body {
   font-family: "HalisGR-Book", sans-serif; }
-
-.logo-font {
-  font-family: "Pacifico", cursive, sans-serif; }
-
-.font-light {
-  font-family: "HalisR-ExtraLight", sans-serif; }
-
-.page-title, .title {
-  font-family: "HalisGR-SBook", sans-serif; }
 
 /*Typography
 ---------------------------------- */
@@ -797,8 +813,8 @@ html {
   height: 100%; }
 
 body {
-  font-size: 15px;
-  line-height: 1.46667;
+  font-size: 16px;
+  line-height: 1.4666666667;
   color: #7d7d7d;
   background-color: #ffffff;
   font-weight: 300; }
@@ -813,7 +829,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #7d7d7d;
+  color: #1A534E;
   line-height: 1.2; }
 
 h1 a,
@@ -860,7 +876,7 @@ h3 a {
   color: #bababa; }
 
 h1 {
-  font-size: 33px;
+  font-size: 35px;
   font-weight: 400; }
 
 h1.logo-font {
@@ -869,24 +885,24 @@ h1.logo-font {
   font-size: 50px; }
 
 h2 {
-  font-size: 28px;
+  font-size: 29px;
   margin-bottom: 15px; }
 
 h2.logo-font {
   text-transform: none; }
 
 h3 {
-  font-size: 24px; }
+  font-size: 26px; }
 
 h4 {
-  font-size: 19px; }
+  font-size: 20px; }
 
 h5 {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 700; }
 
 h6 {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700; }
 
 /* Small devices (tablets, 768px and up) */
@@ -1246,7 +1262,6 @@ tbody {
   min-height: 577px;
   width: 100%;
   position: relative;
-  color: #ffffff;
   background-repeat: no-repeat;
   background-size: cover; }
   @media (min-width: 320px) {
@@ -1264,23 +1279,48 @@ tbody {
   @media (min-width: 1382px) {
     .main-blurb {
       background-image: url("https://res.cloudinary.com/engagement-lab-home/image/upload/c_scale/w_1382/v1494440105/boston-civic-media/layout/background-home.jpg"); } }
+  .main-blurb h1 {
+    color: #EBEBEB;
+    font-family: HalisGR-Black;
+    font-size: 4em;
+    font-weight: 900;
+    letter-spacing: -0.4px;
+    text-align: justify; }
+  .main-blurb h2 {
+    color: #EBEBEB;
+    font-family: "HalisGR-Medium", sans-serif;
+    font-size: 3em;
+    font-weight: 500;
+    letter-spacing: -0.4px;
+    text-align: justify; }
   .main-blurb .main-text {
     max-width: 90%;
     margin: 0 auto; }
-  .main-blurb #features {
-    display: flex;
-    align-items: center; }
   .main-blurb .feature {
-    float: none;
-    display: table-cell;
-    color: #1A534E !important;
-    background-color: rgba(255, 255, 255, 0.58);
-    -webkit-box-shadow: 2px 4px 0 rgba(0, 0, 0, 0.5);
-    box-shadow: 2px 4px 0 rgba(0, 0, 0, 0.5); }
+    margin-left: 5%;
+    background-color: rgba(255, 255, 255, 0.48);
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); }
+    .main-blurb .feature.link:before {
+      content: "";
+      position: absolute;
+      z-index: 10;
+      bottom: 8px;
+      right: 18px;
+      font-size: 16px;
+      width: 0;
+      height: 0;
+      border-left: 24px solid #98ccc9;
+      border-top: 13px solid transparent;
+      border-bottom: 13px solid transparent; }
     .main-blurb .feature h1 {
-      font-size: 25px; }
+      font-size: 25px;
+      font-family: "HalisGR-Medium", sans-serif;
+      color: #1A534E; }
     .main-blurb .feature h2 {
-      font-size: 18px; }
+      font-size: 18px;
+      font-family: "HalisGR-SLight", sans-serif;
+      color: #1A534E; }
 
 .page-wrapper {
   background-color: #ffffff; }
@@ -2457,7 +2497,7 @@ body .beckyBanner {
   margin: 3% 0px; }
 
 .main-syllabi {
-  background-image: url("https://res.cloudinary.com/engagement-lab-home/image/upload/v1464274547/boston-civic-media/infographic.jpg");
+  background-image: url("https://res.cloudinary.com/engagement-lab-home/image/upload/f_auto/v1464274547/boston-civic-media/infographic.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 200px;
@@ -2561,17 +2601,26 @@ body .dropdown-menu {
     .featured-list h3 {
       font-size: 1em; } }
 
-.featured-events {
-  border-left: 5px #26625C solid;
-  color: #7d7d7d;
+.upcoming-events {
   margin: 0 auto;
   position: relative;
   text-align: center; }
-  .featured-events h3 {
-    color: #0c9ec7; }
-    @media (max-width: 767px) {
-      .featured-events h3 {
-        font-size: 1em; } }
+  @media only screen and (max-width: 480px) {
+    .upcoming-events {
+      border-top: 5px #26625C solid; } }
+  @media only screen and (min-width: 321px) {
+    .upcoming-events {
+      border-left: 5px #26625C solid; } }
+  .upcoming-events ul {
+    padding: 0;
+    list-style-type: none;
+    list-style-image: none; }
+  .upcoming-events img {
+    float: none;
+    margin: 0 auto; }
+  .upcoming-events .title p:first-of-type {
+    color: #58A49F;
+    font-size: 16px; }
 
 .lightning-talk {
   margin-bottom: 1%;
@@ -3326,6 +3375,43 @@ body .listserv {
   margin-bottom: 10px;
   color: #fff; }
 
+/* Course Catalog
+---------------------------------- */
+.courses #course-menu ul {
+  list-style-type: none;
+  list-style-image: none; }
+  .courses #course-menu ul li {
+    margin-top: 3%; }
+    .courses #course-menu ul li a.active {
+      color: #58a49f;
+      font-family: "HalisGR-Bold", sans-serif;
+      font-size: 1.5em; }
+    .courses #course-menu ul li a {
+      font-size: 1.25em; }
+
+.courses #course-contents {
+  background-color: #6bc8bc;
+  -webkit-box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.24);
+  border: solid 4px #ffffff;
+  color: #1a534e; }
+  .courses #course-contents h1 {
+    font-family: "HalisGR-Medium", sans-serif;
+    font-size: 2em;
+    color: white; }
+  .courses #course-contents h2 {
+    font-family: "HalisGR-Medium", sans-serif;
+    font-size: 1.5em;
+    color: #1a534e; }
+  .courses #course-contents .content {
+    display: none; }
+    .courses #course-contents .content.active {
+      display: block; }
+    .courses #course-contents .content a {
+      color: white; }
+    .courses #course-contents .content strong {
+      font-family: "HalisGR-Bold", sans-serif; }
+
 /* 5 Components
 ----------------------------------------------------------------------------- */
 .more-button {
@@ -3596,42 +3682,42 @@ fieldset[disabled] .btn-default {
 .btn {
   padding: 7px 20px;
   font-size: 14px;
-  line-height: 1.46667;
+  line-height: 1.4666666667;
   border-radius: 3px;
   margin: 10px 0; }
 
 .btn-sm {
   padding: 5px 15px;
   font-size: 12px;
-  line-height: 1.46667;
+  line-height: 1.4666666667;
   border-radius: 3px;
   margin: 5px 0; }
 
 .btn-lg {
   padding: 10px 25px;
   font-size: 18px;
-  line-height: 1.46667;
+  line-height: 1.4666666667;
   border-radius: 4px;
   margin: 10px 0; }
 
 .btn-md-link {
   padding: 7px 15px;
   font-size: 14px;
-  line-height: 1.46667;
+  line-height: 1.4666666667;
   border-radius: 0px;
   margin: 10px 0; }
 
 .btn-sm-link {
   padding: 5px 15px;
   font-size: 12px;
-  line-height: 1.46667;
+  line-height: 1.4666666667;
   border-radius: 0px;
   margin: 5px 0; }
 
 .btn-lg-link {
   padding: 10px 15px;
   font-size: 18px;
-  line-height: 1.46667;
+  line-height: 1.4666666667;
   border-radius: 0px;
   margin: 10px 0; }
 
@@ -7196,7 +7282,7 @@ html, body {
   .overlay h1 {
     font-size: 44px; }
   .overlay h3 {
-    font-size: 28px; }
+    font-size: 29px; }
 
 #logo-img {
   max-height: 400px;
@@ -7268,9 +7354,9 @@ html, body {
 
 @media (max-width: 992px) {
   .overlay h1 {
-    font-size: 33px; }
+    font-size: 35px; }
   .overlay h3 {
-    font-size: 28px; }
+    font-size: 29px; }
   #logo-img {
     max-height: 240px; } }
 
@@ -7279,9 +7365,9 @@ html, body {
     left: 10%;
     width: 80%; }
     .overlay h1 {
-      font-size: 19px; }
+      font-size: 20px; }
     .overlay h3 {
-      font-size: 13px; }
+      font-size: 14px; }
   .owl-buttons {
     display: none; }
   #logo-img {
@@ -7400,9 +7486,9 @@ ul.resources {
   list-style-type: none;
   padding-left: 8px; }
   ul.resources * {
-    font-size: 15px; }
+    font-size: 16px; }
   ul.resources a {
-    font-size: 19px; }
+    font-size: 20px; }
 
 /* Large and Medium devices (desktops, tablets less than 1199px) */
 @media (min-width: 768px) {
@@ -7625,10 +7711,47 @@ body {
   float: right; }
 
 .navbar.navbar-default {
+  height: 100%;
+  max-height: 80px;
+  background-color: #215C56;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
   border-radius: 0; }
   .navbar.navbar-default li > a {
-    font-size: 15px;
+    font-size: 16px;
     color: #7d7d7d; }
+  .navbar.navbar-default ul {
+    padding: 0px;
+    margin: 0px; }
+  .navbar.navbar-default.expand {
+    float: none;
+    max-height: 100%; }
+  .navbar.navbar-default .container-fluid, .navbar.navbar-default #navbar-collapse {
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    height: 0%;
+    background-color: #215C56; }
+    .navbar.navbar-default .container-fluid.expand, .navbar.navbar-default #navbar-collapse.expand {
+      height: 100%;
+      visibility: visible; }
+
+#navbar-collapse {
+  overflow: hidden;
+  position: fixed;
+  visibility: hidden;
+  top: 60px;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease; }
+  #navbar-collapse li {
+    text-align: center;
+    margin: 12px auto; }
+    #navbar-collapse li a {
+      font-size: 24px; }
+  #navbar-collapse.expand {
+    top: 160px; }
 
 .navbar-fixed-top {
   margin-top: 0 !important;
@@ -7637,7 +7760,8 @@ body {
 .logo-container {
   margin: 16px 0;
   display: inline-block;
-  width: 400px; }
+  width: 400px;
+  font-family: "HalisGR-SLight", sans-serif; }
   .logo-container img {
     -webkit-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
@@ -7649,7 +7773,7 @@ body {
     -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
     display: inline;
-    font-size: 17px;
+    font-size: 1.5em;
     vertical-align: middle;
     padding-left: 10px;
     color: #D8D8D8; }
@@ -7659,6 +7783,13 @@ body {
   .logo-container:hover p {
     padding-left: 14px;
     color: white; }
+  .logo-container.expand {
+    margin-left: 10.6%;
+    text-align: center; }
+    .logo-container.expand img {
+      height: 112px; }
+    .logo-container.expand p {
+      display: block; }
 
 .main-navigation .dropdown-menu {
   top: 100%; }
@@ -7875,3 +8006,5 @@ body {
     margin-right: auto; }
   .glide__slide .caption {
     text-align: center; }
+
+/*# sourceMappingURL=core.css.map */

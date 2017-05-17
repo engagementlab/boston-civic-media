@@ -156,7 +156,7 @@ $imgpath-prefix: "https://res.cloudinary.com/engagement-lab-home/image/upload";
 
 @mixin cdn-image($imgpath) { 
 
-  @return $imgpath-prefix + '/f_auto' + $imgpath;
+  // @return $imgpath-prefix + '/f_auto' + $imgpath;
 
 }
 

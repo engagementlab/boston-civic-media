@@ -42,6 +42,11 @@
 
 		$('.markdown-span p').contents().unwrap().html("");
 
+		$('#toggle-nav').on('click', function() {
+			$('.navbar.navbar-default, .navbar.navbar-default container-fluid, .navbar.navbar-default .row, #navbar-collapse, .logo-container').toggleClass('expand');
+
+		});
+
 		{{!-- INDEX Template Script --}}
 		{{#ifeq section 'home'}}
 			$('.bxslider').bxSlider({
