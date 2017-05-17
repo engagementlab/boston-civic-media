@@ -15,7 +15,7 @@
     "express": "^4.13.3",
     "handlebars": "^4.0.5",
     "json-fs-store": "^1.0.0",
-    "keystone": "4.0.0-beta.5",
+    "keystone": "git://github.com/engagementgamelab/keystone.git",
     "keystone-storage-adapter-azure": "^1.1.0",
     "node-sass-middleware": "^0.9.7",
     "underscore": "^1.8.3"
