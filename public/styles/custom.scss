@@ -29,6 +29,12 @@ body .embed-responsive iframe {
   float: none;
   margin: 0 auto;
 }
+.col-centered-md {
+  @include tablet-landscape-and-below {
+    float: none;
+    margin: 0 auto;
+  }
+}
 
 // Mobile only element
 .mobile-only {

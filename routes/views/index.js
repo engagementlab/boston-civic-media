@@ -16,6 +16,7 @@ var keystone = require('keystone');
 
 // Include models here!
 var Home = keystone.list('Home');
+var HomeFeature = keystone.list('HomeFeature');
 var LightningTalk = keystone.list('LightningTalk');
 var Syllabi = keystone.list('Syllabi');
 var Event = keystone.list('Event')
@@ -44,14 +45,14 @@ exports = module.exports = function(req, res) {
             sort: {
                 'createdAt': -1
             }
-        })
-        .populate('features');
-        var syllabiQuery = Syllabi.model.find({
+        }),
+        featuresQuery = HomeFeature.model.find(),
+        syllabiQuery = Syllabi.model.find({
             'enabled': true,
             'featured': true
         })
-        .populate('faculty');
-        var queryEvents = Event.model.find({
+        .populate('faculty'),
+        queryEvents = Event.model.find({
             'enabled': true
         });
         
@@ -59,10 +60,7 @@ exports = module.exports = function(req, res) {
         homeQuery.exec(function(err, result) {
             
             if (err) throw err;
-            
-            if(result !== null)
-                locals.features = result.features;
-            
+                        
             queryEvents.exec(function(err, resultEvents) {
                 if (err) throw err;
 
@@ -74,8 +72,16 @@ exports = module.exports = function(req, res) {
                     
                     if(resultSyllabi)
                         locals.featured_syllabi = resultSyllabi;
+                
+                    featuresQuery.exec(function(err, resultFeatures) {
+                        if (err) throw err;
+                        
+                        if(resultFeatures)
+                            locals.features = resultFeatures;
+                        
+                        next(err);
+                    });
                     
-                    next(err);
                 });
             });
 
