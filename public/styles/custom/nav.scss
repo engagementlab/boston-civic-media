@@ -13,12 +13,57 @@ body {
 }
 
 .navbar.navbar-default {
+	height:100%;
+	max-height: 80px;
+	background-color: $color-theme;
+	@include transition(all 0.2s ease);
 	border-radius: 0;
 	li > a { 
 		font-size: $font-size-base; 
 		color: $gray-dark;
 	}
+	ul {
+		padding: 0px;
+		margin: 0px;
+	}
+	&.expand {
+		float: none;
+		max-height: 100%;
+	}
+
+
+  .container-fluid, #navbar-collapse {
+  	@include transition(all 0.2s ease);
+		height: 0%;
+		background-color: $color-theme;
+		&.expand {
+			height:100%;
+			visibility: visible;
+		}
+	}
+	
 }
+
+
+	#navbar-collapse {
+		overflow: hidden;
+		position: fixed;
+		visibility: hidden;
+		top: 60px;
+		@include transition(all 0.2s ease);
+
+		li { 
+			text-align: center;
+			margin: 12px auto;
+			a {
+				font-size: 24px;
+			}
+		}
+		&.expand {
+			top: 160px;
+		}
+	}
+
 
 .navbar-fixed-top {
 	margin-top: 0 !important;
@@ -51,6 +96,18 @@ body {
 		p { 
 			padding-left: 14px; 
 			color: white;
+		}
+	}
+
+	&.expand {
+		margin-left: 10.6%;
+		text-align: center;
+		img {
+			height: 112px;
+
+		}
+		p {
+			display: block;
 		}
 	}
 }
