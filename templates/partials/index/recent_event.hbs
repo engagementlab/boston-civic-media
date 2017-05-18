@@ -3,8 +3,10 @@
 		<div class="va-container">
 			<div class="va-align recent-event">
 				<div class="event-title">
-					<h4>{{{event.theTitle.html}}}</h4>
-					{{!-- {{jsonPrint this}} --}}
+					<h4>
+						{{event.name}}
+						<p class="date">{{date event.date format='MMMM Do YYYY'}}</p>
+					</h4>
 				</div>
 				<a href="/events/{{event.event_key}}"><img src="{{{cloudinaryUrl event.image width=150 height=150 crop='scale' quality=100}}}" alt="{{event.name}}" class="photo" style="margin:0 auto;"></a>
 				{{!-- {{#if event.footer}} --}}

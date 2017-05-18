@@ -1,11 +1,10 @@
 
-body {
-  padding-top: 76px;
-}
-
 .navbar {
 	border: none;
 	box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.08);
+	margin-bottom: 0;
+	z-index: 100;
+
 }
 
 .navbar-nav {
@@ -13,10 +12,10 @@ body {
 }
 
 .navbar.navbar-default {
-	height:100%;
-	max-height: 80px;
-	background-color: $color-theme;
 	@include transition(all 0.2s ease);
+	@include gradient-horizontal-three-colors($color-theme, $color-theme-dark, 46%, $color-dark-grey-blue);
+		// (linear-gradient(to right, , #26625c 46%, #306d67);
+
 	border-radius: 0;
 	li > a { 
 		font-size: $font-size-base; 
@@ -31,26 +30,25 @@ body {
 		max-height: 100%;
 	}
 
-
   .container-fluid, #navbar-collapse {
   	@include transition(all 0.2s ease);
-		height: 0%;
-		background-color: $color-theme;
+		height: 0px;
 		&.expand {
 			height:100%;
+			width: 100%;
 			visibility: visible;
 		}
 	}
 	
 }
 
-
-	#navbar-collapse {
+#navbar-collapse {
+	@include gradient-horizontal-three-colors($color-theme, $color-theme-dark, 46%, $color-dark-grey-blue);
+	@include tablet-landscape-and-below {
 		overflow: hidden;
 		position: fixed;
 		visibility: hidden;
 		top: 60px;
-		@include transition(all 0.2s ease);
 
 		li { 
 			text-align: center;
@@ -63,7 +61,8 @@ body {
 			top: 160px;
 		}
 	}
-
+	@include transition(all 0.2s ease);
+}
 
 .navbar-fixed-top {
 	margin-top: 0 !important;
@@ -74,8 +73,7 @@ body {
 
 	margin: 16px 0;
 	display: inline-block;
-	width: 400px;
-	font-family: $light-type;
+	font-family: $light-type-super;
 	
 	img {
 		@include transition(all 0.2s ease-in-out);
@@ -100,11 +98,9 @@ body {
 	}
 
 	&.expand {
-		margin-left: 10.6%;
 		text-align: center;
 		img {
 			height: 112px;
-
 		}
 		p {
 			display: block;
@@ -148,13 +144,20 @@ body {
 	left: 80px;
 }
 
-@media (max-width: 768px) { 
-	body { padding-top: 76px; }
+@include tablet-landscape-and-below {
+	.logo-container {
+		margin-bottom: 0;
+	} 
 	.navbar-nav {
 		width: 100%;
+		float: none;
+
 		li {
 			text-align: left;
 		}
+		> li {
+			float: none;
+		}		
 	}
 	.dropdown-menu {
 		display: none;
@@ -183,29 +186,32 @@ body {
 	}
 }
 
-@media (max-width: 991px) and (min-width: 768px) { 
-	body { padding-top: 138px; }
-	.navbar-nav {
-
-		float: none;
-		
-		> li {
-			float: none;
-			display: inline-block;
-		}
-	}
-	.logo-container {
-		margin-bottom: 0;
-	}
-	#logo-col {
-		text-align: center;
-	}
-}
-
 @media (min-width: 768px) {
 	#at-emerson-sm { display: none; }
 }
 
+#navbutton-container {
+	position: absolute;
+	z-index: 100;
+	right: 0;
+}
+
+#logo-col.expand {
+	width: 100%;
+  text-align: center;
+}
+
+// Bootstrap override
 .navbar-toggle {
 	margin-top: 22px;
+	@include tablet-landscape-and-below {
+		display: block;
+	}
+	@include tablet-landscape-and-up {
+		float: none !important;
+		display: block;
+	}
+	@include desktop-and-up {
+		display: none;
+	}
 }

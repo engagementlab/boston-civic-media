@@ -19,3 +19,10 @@
   @include scaleXY(1.07, 1.07);
 
 }
+
+// Convert px to em
+$browser-context: 16; // Default
+
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em
+}

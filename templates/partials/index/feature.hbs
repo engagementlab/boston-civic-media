@@ -1,0 +1,21 @@
+{{!-- 
+/**
+	* Boston Civic Media
+	* Developed by Engagement Lab, 2016
+	* ==============
+*/
+--}}
+{{#if url}}
+	<a href="{{url}}">
+	<div class="col-sm-3 feature link">
+		{{else}}
+		<div class="col-sm-3 feature">
+			{{/if}}
+			<h1>{{name}}</h1>
+			<h2>{{description}}</h2>
+			{{#if url}}
+			<div class="bottom">Learn More</div>
+		</div></a>
+		{{else}}
+	</div>
+{{/if}}

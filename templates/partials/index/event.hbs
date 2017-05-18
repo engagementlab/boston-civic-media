@@ -1,10 +1,20 @@
-{{!-- 
+{{!--
 /**
-	* Boston Civic Media
-	* Developed by Engagement Lab, 2016
-	* ==============
+* Boston Civic Media
+* Developed by Engagement Lab, 2016
+* ==============
 */
 --}}
-<div class="title">{{{event.theTitle.html}}}</div>
-<img src="{{{cloudinaryUrl event.image height=128 effect='grayscale'}}}" alt="{{event.name}}">
+<div class="title">
+	<p class="name">
+		{{event.name}}
+		<br />
+		<span class="date">{{date event.date format='MMMM Do YYYY'}}</span>
+	</p>
+</div>
+{{!-- <img src="{{{cloudinaryUrl event.image height=200 width='auto' effect='grayscale' crop='scale' gravity='center'}}}" alt="{{event.name}}"> --}}
+<img 
+  data-src="{{{cloudinaryUrl event.image height=200 width='auto' effect='grayscale' crop='fill' gravity='faces:center'}}}" 
+  class="cld-responsive">
+
 <p>{{{event.theFooter.html}}}</p>

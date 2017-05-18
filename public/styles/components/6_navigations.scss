@@ -5,13 +5,11 @@
 /* mobile menu */
 .navbar.navbar-default {
 	@include border-radius(3px);
-	margin: 10px 0 15px;
 	border-color: #ededed;
 	background-color: #fafafa;
 	font-weight: 400;
 
 	.row {
-		background-color: $color-theme;
 
 		li {
 			a {

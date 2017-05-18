@@ -40,7 +40,12 @@
 }
 
 .main-blurb {
-	min-height: 577px;
+	@include tablet-portrait-and-below {
+		min-height: 177px;
+	}
+	@include tablet-landscape-and-up {
+		min-height: 577px;
+	}
 	width: 100%;
 	position: relative;
 
@@ -51,7 +56,10 @@
 	h1 {
 		color: $color-white;
 		font-family: HalisGR-Black;
-		font-size: 4em;
+		font-size: em(56);
+		@include tablet-portrait-and-below {
+			font-size: em(28);
+		}
 		font-weight: 900;
 		letter-spacing: -0.4px;
 		text-align: justify;
@@ -59,16 +67,37 @@
 	h2 {
 		color: $color-white;
 		font-family: $med-type;
-		font-size: 3em;
+		font-size: em(32);
+		@include tablet-portrait-and-below {
+			font-size: em(16);
+		}
 		font-weight: 500;
 		letter-spacing: -0.4px;
-		text-align: justify;
 	}
 
 	.main-text {
 		max-width: 90%;
 		margin: 0 auto;
 
+	}
+}
+
+.top-content {
+
+	.features {
+		&.desktop {
+			@include tablet-portrait-and-below {
+				display: none;
+			}
+		}
+		&.mobile {
+			@include tablet-portrait-and-below {
+				display: block;
+			}
+			@include tablet-landscape-and-up {
+				display: none;
+			}
+		}
 	}
 
 	.feature {
@@ -85,32 +114,48 @@
 	      font-size: 16px;
 		    width: 0;
 		    height: 0;
+		    @include tablet-portrait-and-below {
+    	    border-left: 12px solid $color-light-grey-blue;
+			    border-top: 7px solid transparent;
+			    border-bottom: 7px solid transparent;
+			    bottom: 4%;
+		    }
 		    border-left: 24px solid $color-light-grey-blue;
 				border-top: 13px solid transparent;
 				border-bottom: 13px solid transparent;
 	    }
 	    .bottom {
-	    	font-family: $light-type;
-	    	font-size: .8em;
+	    	font-family: $light-type-super;
+	    	font-size: em(12);
 	    	color: $color-light-grey-blue;
 	    	margin-right: 13%;
 		    margin-bottom: 4%;
+				@include tablet-portrait-and-below {
+					text-align: right;
+				}
 	    }
 	  }
 
 		//@include box-shadow(0 2px 4px rgba(0, 0, 0, .5));
 
 		h1 {
-			font-size: 25px;
+			font-size: em(24);
+			@include tablet-portrait-and-below {
+				font-size: em(16);
+			}
 			font-family: $med-type;
 			color: $color-theme-text;
 		}
 		h2 {
-			font-size: 18px;
+			font-size: em(18);
+			@include tablet-portrait-and-below {
+				font-size: em(16);
+			}
 			font-family: $light-type;
 			color: $color-theme-text;
 		}
 	}
+
 }
 
 .page-wrapper {

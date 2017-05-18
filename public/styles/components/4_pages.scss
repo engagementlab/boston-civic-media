@@ -260,13 +260,16 @@ body .dropdown-menu {
 .upcoming-events {
 
 	@include mobile-landscape-and-below {
-		border-top: 5px $color-theme-dark solid;
+		@include gradient-horizontal-three-colors($color-theme, $color-theme-dark, 46%, $color-dark-grey-blue);
+		h1 {
+			color: $color-light-grey-blue;
+			font-size: em(24);
+		}
 	}
 	@include mobile-landscape-and-up {
-		border-left: 5px $color-theme-dark solid;
+		border-right: 5px $color-theme-dark solid;
 	}
 
-	// color: $gray-dark;
 	margin: 0 auto;
 	position: relative;
 	text-align: center;
@@ -275,6 +278,7 @@ body .dropdown-menu {
 		padding: 0;
 		list-style-type: none;
 		list-style-image: none;
+		color: white;
 	}
 
 	img {
@@ -283,9 +287,24 @@ body .dropdown-menu {
 	}
 
 	.title {
-		p:first-of-type {
+		@include mobile-landscape-and-below {
+			text-align: left;
+		}
+		
+		font-family: $body-type;
+		font-size: em(20);
+
+		.date {
+			font-family: $light-type;
+		}
+
+		p {
+			@include mobile-landscape-and-below {
+				color: white;
+			}
+
 			color: $color-theme-light;
-			font-size: 16px;
+			font-size: em(16);
 		}
 	}
 }
