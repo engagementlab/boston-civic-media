@@ -38,6 +38,11 @@ exports.initLocals = function(req, res, next) {
         href: '/get-involved'
     },
     {
+        label: 'Courses',
+        key: 'courses',
+        href: '/courses'
+    },
+    {
         label: 'Syllabi',
         key: 'syllabi',
         href: '/syllabi'
