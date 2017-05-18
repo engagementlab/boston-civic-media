@@ -17,6 +17,12 @@ html, body {
   overflow-x: hidden;
 }
 
+body {
+  &.expand {
+    overflow-y: hidden;
+  }
+}
+
 body .embed-responsive iframe {
   // width: 80%;
   // height: 80%;

@@ -22,6 +22,9 @@
 .navbar-default .navbar-nav > li > a {
 	color: $gray;
 	font-size: 14px;
+	@include tablet-only {
+		padding: 0;
+	}
 	padding: 10px 15px 10px 15px;
 	z-index: 102;
 	border: none;
@@ -374,6 +377,9 @@ header.full-width .animated.main-navigation .dropdown-menu .open .dropdown-menu.
 @media (min-width:768px) and (max-width:1199px) {
 	.navbar-default .navbar-nav > li > a { 
 		font-size: 15px;
+		@include tablet-only {
+			padding: 0;
+		}
 		padding: 28px 10px 27px 10px;
 	}
 }
