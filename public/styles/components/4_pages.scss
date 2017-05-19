@@ -575,19 +575,43 @@ body .talks-item {
 	.title {
 		text-align: left;
 	}
+	ul {
+		list-style-type: none;
+		list-style-image: none;
+	}
 	li {
 		line-height: 35px;
+	}
+
+	h4 {
+		font-family: $light-type;
+		font-size: em(20);
+		letter-spacing: -0.1px;
+		color: $color-dull-teal;
 	}
 
 	@media (max-width: 767px) {
 		width: 90%;
 	}
 }
-.get-involved-header {
+
+.page-header {
 	min-height: 200px;
 	width: 100%;
-
+	margin: 0;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
+
+.sub-header {
+	font-family: $body-type;
+	font-size: em(24);
+	line-height: 1.17;
+	letter-spacing: -0.4px;
+	text-align: center;
+	padding: 2%;
+}
+
 .newsletters {
 	background-color: $gray-lighter;
 }

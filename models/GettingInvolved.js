@@ -21,6 +21,7 @@ var GettingInvolved = new keystone.List('GettingInvolved',
 GettingInvolved.add({
 	name: { type: String, default: "Getting Involved Page", hidden: true, required: true, initial: true },
     banner: { type: Types.CloudinaryImage, label: 'Banner Image',  folder: 'boston-civic-media/logos' },
+    subHeader: { type: String, label: "Subheader Text", note: "Subheader is under banner", initial: true, required: true},
     listservLink: { type: String, label: "Listserv URL", initial: true, required: true},
     listservBlurb: { type: String, label: "Listserv Blurb", initial: true, required: true},
     contactEmail: { type: String, label: "Contact Email", initial: true, required: true},
@@ -37,54 +38,50 @@ GettingInvolved.add({
         edBlurb: {
             type: Types.TextArray,
             label: 'Bullet Point Lines'
-        },
-        // edImage: { type: Types.CloudinaryImage, label: 'Image',  folder: 'bcm/team' }
+        }
 
   }, 
 
   'Organizations', {
 
-        // orgsDescription: {
-        //     type: String,
-        //     label: 'Description',
-        //     initial: true,
-        //     required: true
-        // },
+        orgsDescription: {
+            type: String,
+            label: 'Description',
+            initial: true,
+            required: true
+        },
         orgBlurb: {
             type: Types.TextArray,
             label: 'Bullet Point Lines'
-        },
-        // orgsImage: { type: Types.CloudinaryImage, label: 'Image',  folder: 'bcm/team' }
+        }
   }, 
 
   'Researchers', {
 
-        // resDescription: {
-        //     type: String,
-        //     label: 'Description',
-        //     initial: true,
-        //     required: fals
-        // },
+        resDescription: {
+            type: String,
+            label: 'Description',
+            initial: true,
+            required: true
+        },
         resBlurb: {
             type: Types.TextArray,
             label: 'Bullet Point Lines'
-        },
-        // resImage: { type: Types.CloudinaryImage, label: 'Image',  folder: 'bcm/team' }
+        }
   }, 
 
   'Students', {
 
-        // studDescription: {
-        //     type: String,
-        //     label: 'Description',
-        //     initial: true,
-        //     required: false
-        // },
+        studDescription: {
+            type: String,
+            label: 'Description',
+            initial: true,
+            required: true
+        },
         studBlurb: {
             type: Types.TextArray,
             label: 'Bullet Point Lines'
-        },
-        // studImage: { type: Types.CloudinaryImage, label: 'Image',  folder: 'bcm/team' }
+        }
     });
 
 /**

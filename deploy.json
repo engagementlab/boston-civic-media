@@ -46,7 +46,7 @@
       "ref": "origin/keystone-4.0",
       "path": "/srv/boston-civic-media",
       "pre-deploy-local" : "echo 'Cloning and running npm install. Be patient.'",
-      "post-deploy" : "npm i ; cd /srv/framework/current/; npm link /srv/boston-civic-media/current ; grunt compile --sites=boston-civic-media --env staging ; pm2 restart 'server' --env staging",
+      "post-deploy" : "npm i ; cd /srv/framework/current/; grunt compile --sites=boston-civic-media --env staging ; pm2 restart 'server' --env staging",
       "env": {
         "NODE_ENV": "staging"
       }
