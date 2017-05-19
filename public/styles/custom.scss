@@ -298,6 +298,53 @@ body {
     }
 }
 
+// FOOTER
+#footer {
+
+  background-color:rgba(207, 235, 234, 0.3);
+
+  .footer {
+    max-width: 60%;
+  }
+
+  .footer-content-list {
+    margin-bottom:44px;
+  }
+
+  .buttons {
+    p {
+      font-size:em(18);
+      width: 225px;
+      margin: 0 auto;
+    }
+  }
+
+  .btn {
+    color: #b2e2dc;
+    border: solid 4px #b2e2dc;
+    background-color: transparent;
+    box-shadow: none;
+    height: 62px;
+    width: 175px;
+    margin: 8px;
+    padding:0px;
+    line-height: 54px;
+    font-size: em(26);
+    font-family: HalisGR-Bold;
+
+  }
+
+  .footer-line {
+    font-size: 22px;
+    line-height: 1.18;
+    letter-spacing: -0.1px;
+    color: #b2e2dc;
+    &:nth-child(1) {
+      color:#3f9893;
+    }
+  }
+}
+
 /* HOME */
 .overlay {
   position: absolute;
