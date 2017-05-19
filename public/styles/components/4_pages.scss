@@ -1293,9 +1293,12 @@ body .listserv {
 	background-color: #ebebeb;
 	display:inline-block;
 	width: 100%;
+	padding: 0px;
+	padding-bottom:60px;
 }
 
 .courses-header {
+	padding: 0px 8%;
 	width:100%;
 	background-color: white;
 	h1 {
@@ -1331,7 +1334,6 @@ body .listserv {
 	padding: 60px 40px;
 	height: 100%;
     position: relative;
-    display: flex;
 
 	#course-menu {
 		ul {
@@ -1342,11 +1344,13 @@ body .listserv {
 		    margin-top: 3%;
 
 				a.active {
-					color: $color-dull-teal;
+					color: #338b83;
 					font-family: $bold-type;
 					font-size: 1.5em;
 				}
 				a {
+					font-family: HalisGR-Book;
+					color: #3f9893;
 					font-size: 1.25em;
 				}
 			}
@@ -1408,6 +1412,14 @@ body .listserv {
 				display: block;
 			}
 
+			a {
+				color: $color-dark-green-blue;
+
+				&:hover, &:focus, &:active {
+					color: lighten($color-dark-green-blue, 20%);
+				}
+			}
+
 			strong {
 				margin: 0px;
 				padding:0px;
@@ -1437,6 +1449,19 @@ body .listserv {
 			  text-align: left;
 			  color: #b2e2dc;
 			  font-family: HalisGR-Book;
+			}
+
+			button {
+				width: 135px;
+			  height: 42px;
+			  border: solid 3px #b2e2dc;
+			  font-family: HalisGR-Bold;
+			  font-size: 26px;
+			  line-height: 0.8;
+			  letter-spacing: 0px;
+			  text-align: center;
+			  color: #b2e2dc;
+			  background-color:transparent;
 			}
 		}
 	}

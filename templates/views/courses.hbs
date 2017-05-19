@@ -10,7 +10,7 @@
 * ==========
 */
 --}}
-<section class="padding-bottom-clear course-catalog">
+<section class="course-catalog">
 		<div class="courses-header main">
 			<h1 class="page-title">Boston Civic Media</h1>
 			<h1 class="page-title"><strong>2017-2018 Consortium Course Catalog</strong></h1>
@@ -46,19 +46,19 @@
 						{{else}}
 						<strong>Instructors:</strong> 
 							{{#each instructor}}
-								{{name}}
-								{{#if contactEmail}} ({{contactEmail}}){{/if}}
-								{{#unless @last}}, {{/unless}}
+								{{name}}{{#if contactEmail}} ({{contactEmail}}){{/if}}{{#unless @last}}, {{/unless}}
 							{{/each}}
 						{{/ifeq}}
 					</p>
 					<h2 style="padding-top:16px">Course Description</h2>
 					<p>{{description}}</p>
-					<h2>How to Enroll</h2>
-					<p>{{{howTo.html}}}</p>
+					{{!-- <h2>How to Enroll</h2>
+					<p>{{{howTo.html}}}</p> --}}
 					<h2>Contact Information</h2>
 					<p>{{contactName}}<br>
 					<a href="{{contactUrl}}">Website</a> | {{contactPhone}} | <a href="mailto:{{contactUrl}}">{{contactEmail}}</a></p>
+
+					<button class="btn" id="enroll-btn">enroll</button>
 				</div>
 				{{/each}}
 			</section>
