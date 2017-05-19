@@ -12,8 +12,11 @@
 */
 --}}
 <div id="get-involved" class="banner border-clear light-gray-bg">
-	<div>
-	<section class="page-header" style="background-image: url({{cloudinaryUrl getting_involved.banner effect='tint:100:98ccc9' crop='fill' gravity='faces:center'}});"><h1 class="title page-title title-white"><strong>Get Involved</strong></h1></section>
+
+{{!-- Image will be loaded w/ responsive width and then loaded as cld-background bg img --}}
+<img class="cld-responsive temp" data-src="{{cloudinaryUrl getting_involved.banner height=205 width='auto' effect='tint:100:98ccc9' crop='fill' gravity='center'}}">
+<section class="page-header cld-background"><h1 class="title page-title title-white"><strong>Get Involved</strong></h1></section>
+
 <section class="sub-header col-sm-12 col-md-6 col-centered">
 	{{getting_involved.subHeader}}
 </section>
@@ -67,24 +70,5 @@
 		</ul>
 	</div>
 </div>
-{{!-- <div class="newsletters row">
-	<div class="involved ph-40 pv-40">
-		<h2 class="title">Newsletter Archive</h2>
-		{{#each newsletters}}
-		{{>about/newsletter newsletter=this}}
-		{{/each}}
-	</div>
-</div> --}}
-{{!-- <div class="listserv row">
-	<div class="involved pv-40 ph-40">
-		<h2 class="title title-white">Listserv Guidelines</h2>
-		<p>{{getting_involved.listservBlurb}}<br><a class="brown-item" href="{{{listservLink}}}">{{getting_involved.listservLink}}</a></p>
-		<div class="guidelines">
-			{{#each guidelines}}
-			<div class="QA">{{>about/guideline guideline=this}}</div>
-			{{/each}}
-		</div>
-	</div>
-</div> --}}
 
 </div>

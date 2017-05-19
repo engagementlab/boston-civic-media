@@ -13,6 +13,14 @@
 --}}
 {{!-- {{jsonPrint this}} --}}
 <div class="cirb banner border-clear">
+
+	{{!-- Image will be loaded w/ responsive width and then loaded as cld-background bg img --}}
+	<img class="cld-responsive temp" data-src="{{cloudinaryUrl irb_proj.banner height=205 width='auto' crop='fill' effect='tint:100:5b5151'}}">
+
+	<section class="page-header cld-background"><h1 class="title page-title title-white"><strong>Community IRB</strong></h1></section>
+	<section class="sub-header col-sm-12 col-md-6 col-centered">
+		{{irb_proj.subHeader}}
+	</section>
 	<div class="container-fluid">
 		<div class="row irb-proj">
 			<div class="col-md-12 col-sm-12">
