@@ -18,6 +18,9 @@
 }
 
 .navbar.navbar-default {
+	height:100%;
+	max-height: 80px;
+
 	@include transition(all 0.2s ease);
 	@include gradient-horizontal-three-colors($color-theme, $color-theme-dark, 46%, $color-dark-grey-blue);
 		// (linear-gradient(to right, , #26625c 46%, #306d67);

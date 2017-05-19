@@ -1,55 +1,38 @@
 <!-- footer start (Add "dark" class to #footer in order to enable dark footer) -->
 <!-- ================ -->
-<footer id="footer" class="clearfix dark">
+<footer id="footer" class="clearfix">
 
 	<!-- .footer start -->
-	<!-- ================ -->
-	<div class="footer-outer row">
-		<div class="col-md-8 col-md-offset-2">
-			<div class="subscribe-footer footer-content text-center">
-				<h2>STAY UPDATED</h2>	
-				<div class="row">
-					<div class="col-md-6 col-sm-6">
-						
-						<a href="{{footer.subscribeLink}}" class="btn subscribe-button">Newsletter</a>
-						<p>{{footer.subscribe}}</p>
-					</div>
-					<div class="col-md-6 col-sm-6">
-						
-						<a href="{{footer.listservLink}}" class="btn subscribe-button">Listserv</a>
-						<p>{{footer.listserv}}</p>
-					</div>
-				</div>
-				
+	<div class="footer col-lg-6 col-centered">
+		<div class="dark footer-content text-center padding-ver-clear">
+
+			<div class="logos-footer center-block">
+				<img id="logo-el" src="{{{cloudinaryUrl footer.elLogo width=150 height=150 crop='scale' quality=100}}}" alt="Engagement Lab">
+				<img id="logo-bcm" src="{{{cloudinaryUrl footer.bcmLogo width=150 height=150 crop='scale' quality=100}}}" alt="Boston Civic Media">
 			</div>
-		</div>
-	</div>
-	<div class="footer">
-		<div class="container">
 
-			<div class="footer-inner">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2">
-						<div class="dark footer-content text-center padding-ver-clear">
-
-							<div class="logos-footer center-block">
-								<img id="logo-el" src="{{{cloudinaryUrl footer.elLogo width=150 height=150 crop='scale' quality=100}}}" alt="Engagement Lab">
-								<img id="logo-bcm" src="{{{cloudinaryUrl footer.bcmLogo width=150 height=150 crop='scale' quality=100}}}" alt="Boston Civic Media">
-							</div>
-							<div class="row footer-content-list">
-								<div class="col-md-12">
-								<ul>
-									{{#each footer.content}}
-									<li>{{this}}</li>
-									{{/each}}
-								</ul>
-								</div>
-							</div>
-							</div>
-						</div>
-					</div>
+			<div class="row footer-content-list">
+				<div class="col-md-12">
+						{{#each footer.content}}
+						<div class="footer-line">{{this}}</div>
+						{{/each}}
 				</div>
 			</div>
+
+			<div class="row buttons">
+				<div class="col-lg-6 col-xs-6">
+					
+					<a href="{{footer.subscribeLink}}" class="btn subscribe-button">Newsletter</a>
+					<p>{{footer.subscribe}}</p>
+				</div>
+
+				<div class="col-lg-6 col-xs-6">
+					
+					<a href="{{footer.listservLink}}" class="btn subscribe-button">Listserv</a>
+					<p>{{footer.listserv}}</p>
+				</div>
+			</div>
+							
 		</div>
 	</div>
 	<!-- .footer end -->
