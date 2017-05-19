@@ -62,7 +62,7 @@ Course.add({
       initial: true
   },
   description: { type: Types.Textarea, label: "Course Description", required: true, initial: true },
-  howTo: { type: Types.Markdown, label: "How To Enroll", required: true, initial: true, wysiwyg: true, toolbarOptions: { hiddenButtons: 'Code'  } },
+  // howTo: { type: Types.Markdown, label: "How To Enroll", required: true, initial: true, wysiwyg: true, toolbarOptions: { hiddenButtons: 'Code'  } },
   contactName: { type: Types.Text, label: "Contact Name", note: "e.g. 'Office of the Registrar'", required: true, initial: true },
   contactAddress: { type: Types.Location, label: "Contact Address", defaults: { state: "MA", country: 'United States' } },
   contactPhone: { type: Types.Text, label: "Contact Phone", length: 12 },
