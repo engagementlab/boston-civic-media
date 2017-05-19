@@ -304,12 +304,6 @@ header.full-width .animated.main-navigation .dropdown-menu .open .dropdown-menu.
 /* mobile menu toggle button on hover/focus */
 .navbar-default {
 	.navbar-toggle {
-		border-color: #ccc;
-		&:hover,
-		&:focus {
-			background-color: #fafafa;
-			border-color: $base-color-hover;
-		}
 		.icon-bar {
 			background-color: #ccc;
 		}

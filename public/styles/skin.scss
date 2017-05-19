@@ -644,12 +644,6 @@ header:not(.dark) .dropdown-menu > li.active > a i {
 /* mobile menu toggle button on hover/focus */
 .navbar-default {
 	.navbar-toggle {
-		border-color: #ccc;
-		&:hover,
-		&:focus {
-			background-color: #fafafa;
-			border-color: $base-color-hover;
-		}
 		.icon-bar {
 			background-color: #ccc;
 		}

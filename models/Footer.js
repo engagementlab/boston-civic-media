@@ -56,16 +56,6 @@ Footer.add({
 	}, 
 	'Main Footer', {
 
-	    elLogo: {
-            type: Types.CloudinaryImage, 
-            label: 'EL Logo', 
-            folder: 'site/logos'
-        },
-        bcmLogo: {
-            type: Types.CloudinaryImage, 
-            label: 'BCM Logo', 
-            folder: 'site/logos'
-        },
         content: {
             type: Types.TextArray, 
             label: 'Footer Content',
