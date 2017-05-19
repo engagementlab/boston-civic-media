@@ -50,7 +50,7 @@ body {
 // Desktop only element
 .desktop-only {
   @include tablet-landscape-and-below {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -300,6 +300,8 @@ body {
 // FOOTER
 #footer {
 
+  background-color:rgba(207, 235, 234, 0.3);
+  
   .footer {
     max-width: 60%;
   }

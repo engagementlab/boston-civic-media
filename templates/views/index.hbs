@@ -3,14 +3,14 @@
 	<div class="row top-content">
 		
 		<section class="col-md-12 main-blurb">
-			<div class="col-sm-10 col-centered">
+			<div class="header">
 				<h1>Boston Civic Media</h1>
 				<h2>a network for solving problems at the scale of the city</h2>
-				<div class="features desktop">
-					{{#each features}}
-					{{> index/feature}}
-					{{/each}}
-				</div>
+			</div>
+			<div class="features desktop">
+				{{#each features}}
+				{{> index/feature}}
+				{{/each}}
 			</div>
 		</section>
 		
@@ -24,7 +24,7 @@
 <div class="row main-featured">
 	
 	{{#if featured_syllabi}}
-	<section class="col-md-6 featured-syllabi">
+	<section class="col-md-5 featured-syllabi">
 		<h1>Featured Syllabi:</h1>
 		
 		<div>
@@ -35,12 +35,14 @@
 					{{/each}}
 				</ul>
 			</div>
-			<div class="more-button"><a href="/syllabi">See All Syllabi</a></div>
+{{!-- 			<div class="more-button"><a href="/syllabi">See All Syllabi</a></div> --}}		
 		</div>
 	</section>
 	{{/if}}
 
-	<section class="col-md-6 upcoming-events">
+	<div class="divider desktop-only"></div>
+
+	<section class="col-md-5 upcoming-events">
 		<h1>Upcoming Events</h1>
 		<ul>
 			{{#each events}}

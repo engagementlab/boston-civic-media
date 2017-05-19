@@ -93,13 +93,24 @@ body .dropdown-backdrop {
 
 .main-featured {
 	margin: 5% 0px;
+	padding: 0px 40px;
 
 	section {
-		margin: 24px auto;
+		margin: 24px;
 
 		h1 {
 			margin-bottom: 24px;
 		}
+	}
+
+	.divider {
+		margin-top: 48px;
+		left: 50%;
+		position: absolute;
+		height: 70%;
+		background: #26625c;
+		width: 8px;
+		display: inline-block;
 	}
 }
 
@@ -118,6 +129,10 @@ body .dropdown-backdrop {
 		color: $color-sea-two;
 		margin:0px;
 	}	
+
+	p {
+		padding-bottom: 24px;
+	}
 
 	@media (max-width: 991px) {
 		border: 0px solid;
@@ -258,7 +273,6 @@ body .dropdown-menu {
 .featured-list {
 	list-style-type: none;
 	padding: 0;
-	width: 80%;
 	margin: 0 auto;
 
 	@media (max-width: 767px) {
@@ -277,6 +291,7 @@ body .dropdown-menu {
 	margin: 0 auto;
 	position: relative;
 	text-align: center;
+	float: right;
 
 	ul {
 		padding: 0;
