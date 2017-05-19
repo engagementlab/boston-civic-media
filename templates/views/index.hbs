@@ -22,19 +22,7 @@
 	</div>
 </div>
 <div class="row main-featured">
-	<section class="col-md-6 upcoming-events">
-		<h1>Upcoming Events</h1>
-		<ul>
-			{{#each events}}
-			<li>{{> index/event event=this}}</li>
-			{{/each}}
-			
-		</ul>
-		
-		{{!-- <div class="more-button">
-			<a href="/lightning_talk">Watch All Lightning Talks</a>
-		</div> --}}
-	</section>
+	
 	{{#if featured_syllabi}}
 	<section class="col-md-6 featured-syllabi">
 		<h1>Featured Syllabi:</h1>
@@ -51,5 +39,19 @@
 		</div>
 	</section>
 	{{/if}}
+
+	<section class="col-md-6 upcoming-events">
+		<h1>Upcoming Events</h1>
+		<ul>
+			{{#each events}}
+			<li>{{> index/event event=this}}</li>
+			{{/each}}
+			
+		</ul>
+		
+		{{!-- <div class="more-button">
+			<a href="/lightning_talk">Watch All Lightning Talks</a>
+		</div> --}}
+	</section>
 </div>
 </div>

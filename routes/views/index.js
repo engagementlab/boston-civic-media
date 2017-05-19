@@ -53,7 +53,8 @@ exports = module.exports = function(req, res) {
         })
         .populate('faculty'),
         queryEvents = Event.model.find({
-            'enabled': true
+            'enabled': true, 
+            'featured': true
         });
         
         // Setup the locals to be used inside view
