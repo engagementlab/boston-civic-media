@@ -33,6 +33,7 @@ var IRBProj = new keystone.List('IRBProj',
  */
 IRBProj.add({
 	name: { type: String, default: "Community IRB Project", hidden: true, required: true, initial: true },
+    subheader: { type: Types.Markdown, label: 'Subheader' },
 	email: { type: String, label: "Contact Email", required: true, initial: true},
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
 },
