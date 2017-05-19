@@ -520,11 +520,31 @@ body .talks-item {
 	}
 }
 .irb-proj {
-	padding: 5% 2%;
+	padding: 50px 40px;
+	color:black;
+	font-size: em(18);
+	line-height: 1.22;
+  letter-spacing: -0.1px;
 
 	.irb-proj-title {
-		font-size: x-large;
+		font-family: HalisGR-Book;
+		font-size: em(22);
 		font-weight: bold;
+		color: #3f9893;
+		padding-top: em(16);
+		padding-bottom: em(8);
+	}
+	.description {
+		padding-bottom: 16px;
+	}
+
+	.did, .found {
+		background-color: rgba(207, 235, 234, 0.3);
+    margin-right: -54px;
+    margin-left: -54px;
+    display: inline-block;
+    padding: 0px 54px;
+
 	}
 
 }
@@ -633,7 +653,7 @@ body .listserv {
 }
 
 .cirb {
-	background-color: $green-blue;
+	background-color: white;
 }
 
 .this-event{
@@ -743,7 +763,7 @@ body .listserv {
 		}
 	}
 	.post-info {
-		font-size: 12px;
+		font-size: em(12);
 		color: #aaa;
 		font-weight: 400;
 		>span {
