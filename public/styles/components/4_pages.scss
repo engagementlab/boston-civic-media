@@ -1288,12 +1288,56 @@ body .listserv {
 
 /* Course Catalog
 ---------------------------------- */
+
+.course-catalog {
+	background-color: #ebebeb;
+	display:inline-block;
+	width: 100%;
+}
+
+.courses-header {
+	width:100%;
+	background-color: white;
+	h1 {
+		font-size: em(34);
+		text-align: center;
+		line-height: 1.12;
+
+		// BCM
+		&:nth-child(1) {
+		  font-weight: bold;
+		  letter-spacing: 0.2px;
+		  color: #338b83;
+		  font-family: HalisGR-SBold;
+		}
+		// Courses
+		&:nth-child(2) {
+		  letter-spacing: -0.1px;
+		  font-family: HalisGR-Black;
+		  color: #003732;
+		  margin-bottom: 16px;
+		  padding: 0px;
+		}
+	}
+	p {
+		margin:0 auto;
+		padding: 0px 40px;
+		padding-bottom: 60px;
+		text-align:justify;
+	}
+}
 .courses {
+
+	padding: 60px 40px;
+	height: 100%;
+    position: relative;
+    display: flex;
 
 	#course-menu {
 		ul {
 			list-style-type: none;
 			list-style-image: none;
+			padding:0px;
 			li {
 		    margin-top: 3%;
 
@@ -1334,6 +1378,7 @@ body .listserv {
 		}
 	}
 	#course-contents {
+		padding: 24px;
 		background-color: $color-seafoam-blue;
 		@include box-shadow(0 0 4px 1px rgba(0, 0, 0, 0.24));
 		border: solid 4px #ffffff;
@@ -1352,15 +1397,46 @@ body .listserv {
 
 		.content {
 			display: none;
+
+			h1 {
+				padding: 0px;
+				margin: 0px;
+				margin-bottom: 8px;
+				font-family: HalisGR-Black;
+			}
 			&.active {
 				display: block;
 			}
-			a {
-				color: white;
-				
-			}
+
 			strong {
-				font-family: $bold-type;
+				margin: 0px;
+				padding:0px;
+				font-size: 22px;
+			  line-height: 1.18;
+			  letter-spacing: -0.1px;
+			  text-align: left;
+			  color: #b2e2dc;
+			  font-family: HalisGR-Book;
+			}
+
+			p {
+				font-family: HalisGR-Book;
+			  font-size: 18px;
+			  line-height: 1.22;
+			  letter-spacing: -0.1px;
+			  text-align: left;
+			  color: #1f635d;
+			}
+
+			h2 {
+				margin: 0px;
+				padding:0px;
+				font-size: 22px;
+			  line-height: 1.18;
+			  letter-spacing: -0.1px;
+			  text-align: left;
+			  color: #b2e2dc;
+			  font-family: HalisGR-Book;
 			}
 		}
 	}

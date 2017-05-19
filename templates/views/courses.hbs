@@ -10,9 +10,9 @@
 * ==========
 */
 --}}
-<section class="main-container padding-bottom-clear">
-	<div class="container">
-		<div class="talks-header main">
+<section class="padding-bottom-clear course-catalog">
+		<div class="courses-header main">
+			<h1 class="page-title">Boston Civic Media</h1>
 			<h1 class="page-title"><strong>2017-2018 Consortium Course Catalog</strong></h1>
 			<p>For 2017-2018, faculty participating in the Boston Civic Media consortium will be offering a range of courses that explore the intersection of civic media and climate change. Please review the list of course offerings below. If you are an undergrad at a Boston area institution, we encourage you to consider registering for one of the listed courses. While we cannot guarantee availability of seats, we have provided instructions on cross registration for each of the listed courses and we encourage you to reach out to the professors regarding availability.</p>
 		</div>
@@ -42,7 +42,7 @@
 					<p><strong>Institution:</strong> {{institution.name}}</p>
 					<p>
 						{{#ifeq instructor.length 1}}
-						<strong>Instructor:</strong> {{instructor.[0].name}} {{#if instructor.[0].contactEmail}} ({{instructor.[0].contactEmail}}) {{/if}}
+						<h2>Instructor:</h2> {{instructor.[0].name}} {{#if instructor.[0].contactEmail}} ({{instructor.[0].contactEmail}}) {{/if}}
 						{{else}}
 						<strong>Instructors:</strong> 
 							{{#each instructor}}
@@ -52,18 +52,17 @@
 							{{/each}}
 						{{/ifeq}}
 					</p>
-					<h2>Course Description</h2>
+					<h2 style="padding-top:16px">Course Description</h2>
 					<p>{{description}}</p>
 					<h2>How to Enroll</h2>
 					<p>{{{howTo.html}}}</p>
-					<strong>Contact Information</strong>
-					<br />{{contactName}}<br />
-					<a href="{{contactUrl}}">Website</a> | {{contactPhone}} | <a href="mailto:{{contactUrl}}">{{contactEmail}}</a>
+					<h2>Contact Information</h2>
+					<p>{{contactName}}<br>
+					<a href="{{contactUrl}}">Website</a> | {{contactPhone}} | <a href="mailto:{{contactUrl}}">{{contactEmail}}</a></p>
 				</div>
 				{{/each}}
 			</section>
 			
 		</div>
-	</div>
 	
 </section>
