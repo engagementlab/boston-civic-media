@@ -18,6 +18,14 @@
 		var cl = cloudinary.Cloudinary.new({cloud_name: "engagement-lab-home"}); 
 		cl.responsive({responsive_resize:true});
 
+		/* Look for any temp img tag w/ cloud path and wait for it to load,
+			 then replace background element with url from image and hide image.
+		*/
+		$(".cld-responsive.temp").load(function(){
+			$(".cld-background:first").css('backgroundImage', 'url('+$(".cld-responsive.temp:first").attr('src')+')');
+			$(".cld-responsive.temp:first").hide();
+    });
+
 		/*
 		 Analytics start
 		 ==============
