@@ -12,6 +12,10 @@
 	}
 
 	#toggle-nav {
+		@include mobile-portrait-and-below {
+			width: 40px;
+			margin-right: 0;
+		}
 	  width: 60px;
 	  height: 45px;
 	  -webkit-transform: rotate(0deg);
@@ -25,6 +29,9 @@
 	  cursor: pointer;
 
 	  &.expand {
+			@include mobile-portrait-and-below {
+				width: 60px;
+			}
 	  	span {
 			  border-radius: 9px;
 	  	}
@@ -118,19 +125,21 @@
 .navbar.navbar-default {
 	height:100%;
 	max-height: 80px;
+	border-radius: 0;
 
 	@include transition(all 0.2s ease);
 	@include gradient-horizontal-three-colors($color-theme, $color-theme-dark, 46%, $color-dark-grey-blue);
-		// (linear-gradient(to right, , #26625c 46%, #306d67);
 
-	border-radius: 0;
 	li > a { 
 		font-size: $font-size-base; 
 		color: $gray-dark;
 	}
 	ul {
 		padding: 0px;
-		margin: 0px;
+		// margin: 0px;
+
+    margin-left: auto;
+    margin-right: auto;
 	}
 	&.expand {
 		float: none;
