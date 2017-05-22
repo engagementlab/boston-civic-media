@@ -23,6 +23,10 @@ body {
   }
 }
 
+.clearfix {
+  clear: both;
+}
+
 // Center any column, yay!
 .col-centered {
   float: none;
@@ -136,21 +140,6 @@ body {
   }
 }
 
-.green-list {
-  @include colored-list ($green-dark);
-}
-
-.green-blue-list {
-  @include colored-list ($green-blue);
-}
-
-.green-light-list {
-  @include colored-list ($green);
-}
-
-.brown-list {
-  @include colored-list ($brown);
-}
 .green-item {
   color: $green-dark;
 }
@@ -318,6 +307,20 @@ body {
     }
   }
 
+  .footer-line {
+    font-size: 22px;
+    line-height: 1.18;
+    letter-spacing: -0.1px;
+    color: #b2e2dc;
+    &:nth-child(1) {
+      color:#3f9893;
+    }
+  }
+}
+
+.buttons {
+  text-align: center;
+
   .btn {
     color: #b2e2dc;
     border: solid 4px #b2e2dc;
@@ -332,16 +335,7 @@ body {
     font-family: HalisGR-Bold;
 
   }
-
-  .footer-line {
-    font-size: 22px;
-    line-height: 1.18;
-    letter-spacing: -0.1px;
-    color: #b2e2dc;
-    &:nth-child(1) {
-      color:#3f9893;
-    }
-  }
+  
 }
 
 /* HOME */

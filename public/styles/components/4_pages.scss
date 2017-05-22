@@ -615,30 +615,54 @@ body .talks-item {
 .about-title {
 	margin: 2%;
 }
-.involved {
-	width: 70%;
-	margin: 0 auto;
-	text-align: left;
-	.title {
-		text-align: left;
-	}
-	ul {
-		list-style-type: none;
-		list-style-image: none;
-	}
-	li {
-		line-height: 35px;
+.involved-wrapper {
+
+	// TOP BORDER
+	div {
+		&:nth-child(1) {
+			border-top-color: $color-seafoam-blue;
+		}
+		&:nth-child(2) {
+			border-top-color: $color-pale-teal;
+		}
+		&:nth-child(4) {
+			border-top-color: $color-sea;
+		}
+		&:nth-child(5) {
+			border-top-color: $color-seafoam-blue;
+		}
 	}
 
-	h4 {
-		font-family: $light-type;
-		font-size: em(20);
-		letter-spacing: -0.1px;
-		color: $color-dull-teal;
-	}
+	.involved {
+	  border-top: solid 40px;
+	  
+		ul {
+			list-style-type: disc;
+			list-style-image: url('https://res.cloudinary.com/engagement-lab-home/image/upload/v1495473210/boston-civic-media/layout/bullet.svg');
+		}
+		li {
+			line-height: 35px;
+		  color: $gray-dark;
+		  font-family: $body-type;
+		  font-size: em(18);
+		  letter-spacing: -0.1px;
+		  padding-left: 5%;
+		}
 
-	@media (max-width: 767px) {
-		width: 90%;
+		h1 {
+			font-family: $body-type;
+			font-size: em(34);
+			line-height: 0.76;
+			letter-spacing: -0.2px;
+			padding-top: 34px;
+		}
+		h4 {
+			font-family: $light-type;
+			font-size: em(20);
+			letter-spacing: -0.1px;
+			color: $color-dull-teal;
+		}
+
 	}
 }
 
@@ -652,30 +676,29 @@ body .talks-item {
 
 .sub-header {
 	font-family: $body-type;
-	font-size: em(24);
+	font-size: em(22);
+	color: $color-sea-two;
 	line-height: 1.17;
 	letter-spacing: -0.4px;
 	text-align: center;
 	padding: 2%;
+	padding-top: 0;
+
+
+  &.dark {
+		color: $color-dark-blue-green;
+  }
 }
 
 .newsletters {
 	background-color: $gray-lighter;
 }
-body .listserv {
-	background-color: $green-dark;
-	color: white;
-
-	a:hover, 
-	a:active {
-		color: $gray-dark;
-	}
-}
 
 .guideline {
-	color: white;
-	p {
-		text-align: justify;
+	color: $color-dark-green-blue-two;
+	h4 {
+		font-size: em(22);
+		color: $color-seafoam-blue;
 	}
 }
 

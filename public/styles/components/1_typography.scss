@@ -134,7 +134,16 @@ h6 {
 }
 .page-title {
 	margin-top: 0;
+	color: $color-dark-blue-green;
+
+	&.title {
+		padding-top: 5%;
+	}
+	&.light {
+		color: $color-seafoam-blue;
+	}
 }
+
 /* Medium devices (desktops, tablets, 992px and up) */
 @media (min-width:992px) {
 	.title {

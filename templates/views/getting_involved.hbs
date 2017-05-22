@@ -11,64 +11,75 @@
 * ==========
 */
 --}}
-<div id="get-involved" class="banner border-clear light-gray-bg">
-
-{{!-- Image will be loaded w/ responsive width and then loaded as cld-background bg img --}}
-<img class="cld-responsive temp" data-src="{{cloudinaryUrl getting_involved.banner height=205 width='auto' effect='tint:100:98ccc9' crop='fill' gravity='center'}}">
-<section class="page-header cld-background"><h1 class="title page-title title-white"><strong>Get Involved</strong></h1></section>
-
+<div id="get-involved" class="banner border-clear">
+<section><h1 class="title page-title"><strong>Get Involved with Boston Civic Media</strong></h1></section>
 <section class="sub-header col-sm-12 col-md-6 col-centered">
 	{{getting_involved.subHeader}}
 </section>
-<div class="separator-green-blue"></div>
 
-<div class="container-padding">
-	<div class="involved educators">
-		<h1 class="title title-green-blue">Educators</h1>
-		<h4><strong>{{getting_involved.edDescription}}</strong></h4>
-		<ul class="left-list green-blue-list">
+<section class="involved-wrapper col-md-10 col-centered">
+	
+	<div class="involved educators col-sm-12 col-md-6">
+		{{!-- <div class="separator-green-blue"></div> --}}
+		<h1 class="title sub-header">Educators</h1>
+		<ul>
 			{{#each getting_involved.edBlurb}}
-			<li><span class="list-item">{{this}}</span></li>
+			<li>{{this}}</li>
 			{{/each}}
 		</ul>
 	</div>
-</div>
-<div class="separator-green-light"></div>
-<div class="container-padding">
-	<div class="involved organizations">
-		<h1 class="title title-green-light">Organizations</h1>
-		<h4><strong>{{getting_involved.orgsDescription}}</strong></h4>
-		<ul class="left-list green-light-list">
+	<div class="involved organizations col-sm-12 col-md-6">
+		<h1 class="title sub-header">Organizations</h1>
+		<ul>
 			{{#each getting_involved.orgBlurb}}
-			<li><span class="list-item">{{this}}</span></li>
+			<li>{{this}}</li>
 			{{/each}}
 		</ul>
 	</div>
-</div>
+	<div class="row col-sm-12"></div>
 
-<div class="separator-brown"></div>
-<div class="container-padding">
-	<div class="involved researchers">
-		<h1 class="title title-brown">Researchers</h1>
-		<h4><strong>{{getting_involved.resDescription}}</strong></h4>
-		<ul class="left-list brown-list">
+	<div class="involved researchers col-sm-12 col-md-6">
+		{{!-- <div class="separator-brown"></div> --}}
+		<h1 class="title sub-header">Researchers</h1>
+		<ul>
 			{{#each getting_involved.resBlurb}}
-			<li><span class="list-item">{{this}}</span></li>
+			<li>{{this}}</li>
 			{{/each}}
 		</ul>
 	</div>
-</div>
-<div class="separator-green"></div>
-<div class="container-padding">
-	<div class="involved students">
-		<h1 class="title title-green">Students</h1>
-		<h4><strong>{{getting_involved.studDescription}}</strong></h4>
-		<ul class="left-list green-list">
+	<div class="involved students col-sm-12 col-md-6">
+		{{!-- <div class="separator-green"></div> --}}
+		<h1 class="title sub-header">Students</h1>
+		<ul>
 			{{#each getting_involved.studBlurb}}
-			<li><span class="list-item">{{this}}</span></li>
+			<li>{{this}}</li>
 			{{/each}}
 		</ul>
+	</div>
+
+</section>
+
+{{!-- LISTSERV --}}
+
+<div class="row col-sm-12 clearfix">
+<section><h1 class="title page-title light"><strong>Join the Boston Civic Media Listserv</strong></h1></section>
+<section class="sub-header dark col-sm-12 col-md-6 col-centered">
+	{{getting_involved.listservBlurb}}
+</section>
+
+<div class="listserv col-sm-12 col-md-10 col-centered">
+	<div class="involved buttons">
+
+		<a href="{{getting_involved.listservLink}}" class="btn subscribe-button" style="width: 310px;">Click here to sign up</a>
+	</div>
+
+	{{!-- <p>{{getting_involved.listservBlurb}}<br><a class="brown-item" href=""></a></p> --}}
+	<div class="guidelines">
+	{{#each guidelines}}
+		<div class="QA">{{>about/guideline guideline=this}}</div>
+	{{/each}}
 	</div>
 </div>
 
+</div>
 </div>
