@@ -11,31 +11,19 @@
  */
 --}}
 
-<!-- DIRECTORY START -->
-<!-- ================ -->
-<section class="">
-	{{!-- <div class="container" style="width:100%; overflow:hidden;">
-		<div class="main">
-			<h1 class="page-title"><strong>Events</strong></h1>
-		</div>
-	</div> --}} 
-
-	{{!-- We'll need some filtering dropdowns here --}}
-
-	{{!-- Show all syllabi below by default --}}
+<section id="events">
 	<div class="container-fluid" style="padding: 0px">
 		<div class="row events-feature">
 			<div class="col-md-12">
-				<h1 class="page-title text-center">Featured Event:</h1>
+				{{!-- <h1 class="page-title text-center">Featured Event:</h1> --}}
 
-
-			{{!-- {{#each events}}
+			{{#each events}}
 				{{#if enabled}}
 					{{#if featured}}
 							{{>index/featured_event event=this}}
 					{{/if}}
 				{{/if}}
-			{{/each}} --}}
+			{{/each}}
 			
 			</div>
 		</div>
