@@ -5,17 +5,20 @@
 	* ==============
 */
 --}}
+
+<div class="col-md-4">
 {{#if url}}
 	<a href="{{url}}">
-	<div class="col-sm-3 feature link">
+	<div class="feature link">
 		{{else}}
-		<div class="col-sm-3 feature">
-			{{/if}}
-			<h1>{{name}}</h1>
-			<h2>{{description}}</h2>
-			{{#if url}}
-			<div class="bottom">Learn More</div>
-		</div></a>
-		{{else}}
+		<div class="feature">
+		{{/if}}
+		<h1>{{name}}</h1>
+		<h2>{{description}}</h2>
+		{{#if url}}
+		<div class="bottom">Learn More</div>
+	</div></a>
+	{{else}}
 	</div>
 {{/if}}
+</div>

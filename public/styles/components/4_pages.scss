@@ -93,15 +93,45 @@ body .dropdown-backdrop {
 
 .main-featured {
 	margin: 5% 0px;
+	padding: 0px 40px;
+
+	section {
+		margin: 24px;
+
+		h1 {
+			margin-bottom: 24px;
+		}
+	}
+
+	.divider {
+		margin-top: 48px;
+		left: 50%;
+		position: absolute;
+		height: 70%;
+		background: #26625c;
+		width: 8px;
+		display: inline-block;
+	}
 }
 
 .featured-syllabi {
-	color: $gray-dark;
-	text-align: center;
-	margin: 0 auto;
+	color: #7e7e7e;
+	text-align: left;
+	font-family: HalisGR-Book;
+
+	h1 {
+		color: #003732;
+		text-align: center;
+		font-family: HalisGR-Black;
+	}
 	
 	h3 {
-		color: $base-color-hover;
+		color: $color-sea-two;
+		margin:0px;
+	}	
+
+	p {
+		padding-bottom: 24px;
 	}
 
 	@media (max-width: 991px) {
@@ -243,7 +273,6 @@ body .dropdown-menu {
 .featured-list {
 	list-style-type: none;
 	padding: 0;
-	width: 80%;
 	margin: 0 auto;
 
 	@media (max-width: 767px) {
@@ -259,20 +288,10 @@ body .dropdown-menu {
 
 .upcoming-events {
 
-	@include mobile-landscape-and-below {
-		@include gradient-horizontal-three-colors($color-theme, $color-theme-dark, 46%, $color-dark-grey-blue);
-		h1 {
-			color: $color-light-grey-blue;
-			font-size: em(24);
-		}
-	}
-	@include mobile-landscape-and-up {
-		border-right: 5px $color-theme-dark solid;
-	}
-
 	margin: 0 auto;
 	position: relative;
 	text-align: center;
+	float: right;
 
 	ul {
 		padding: 0;
@@ -281,32 +300,40 @@ body .dropdown-menu {
 		color: white;
 	}
 
-	img {
-		float: none;
-    margin: 0 auto;
+
+	h1 {
+		font-family: HalisGR-Black;
+		color: #003732;
 	}
 
 	.title {
-		@include mobile-landscape-and-below {
-			text-align: left;
-		}
-		
-		font-family: $body-type;
-		font-size: em(20);
+	  font-family: HalisGR-Book;
+	  font-size: em(22);
+	  line-height: 1.18;
+	  letter-spacing: -0.1px;
+	  text-align: center;
+	  color: $color-sea-two;
 
-		.date {
-			font-family: $light-type;
-		}
-
-		p {
-			@include mobile-landscape-and-below {
-				color: white;
-			}
-
-			color: $color-theme-light;
-			font-size: em(16);
-		}
+	  span {
+	  	color: $color-dull-teal;
+	  	font-family: HalisGR-Light;
+	  }
 	}
+
+	p {
+	  font-family: HalisGR-Book;
+	  font-size: 18px;
+	  line-height: 1.22;
+	  letter-spacing: -0.1px;
+	  text-align: center;
+	  color: #7e7e7e;
+	}
+
+	img {
+		float: none;
+    	margin: 8px auto;
+	}
+
 }
 
 .lightning-talk {
@@ -530,7 +557,7 @@ body .talks-item {
 		font-family: HalisGR-Book;
 		font-size: em(22);
 		font-weight: bold;
-		color: #3f9893;
+		color: $color-sea-two;
 		padding-top: em(16);
 		padding-bottom: em(8);
 	}
@@ -1350,7 +1377,7 @@ body .listserv {
 				}
 				a {
 					font-family: HalisGR-Book;
-					color: #3f9893;
+					color: $color-sea-two;
 					font-size: 1.25em;
 				}
 			}

@@ -9,29 +9,10 @@
 	*/
 --}}
 <div class="banner border-clear">
-	<div class="">
-		<div class="">
-			<div class="">
-				<div class="va-container">
-					<div class="va-align">
-						<a href="/syllabi/{{featured_syllabi.syllabus_key}}"><h3>{{featured_syllabi.title}}</h3></a>
-						<p>{{featured_syllabi.blurb}}</p>
-						<div class="tags">
-							{{#if featured_syllabi.faculty}}
-							{{!-- {{jsonPrint featured_syllabi.faculty}} --}}
-								<div class="">
-									<p><strong>Faculty Member (s):</strong>
-									{{#each featured_syllabi.faculty}} 
-										{{this.name}}{{#unless @last}}, {{/unless}}
-									{{/each}}</p>
-								</div>
-							{{/if}}
-						</div>
-						{{!-- <p><a href="/projects/{{syllabi.subdirectory.key}}/{{project.key}}">Read more</a> --}}
-
-					</div> <!-- .va-align -->
-				</div> <!-- .va-container -->
-			</div> <!-- .col-sm-6 -->
-		</div> <!-- .row -->
-	</div> <!-- .container -->
+	<div class="va-container">
+		<div class="va-align">
+			<a href="/syllabi/{{featured_syllabi.syllabus_key}}"><h3>{{featured_syllabi.title}}</h3></a>
+			<p>{{featured_syllabi.blurb}}</p>
+		</div> <!-- .va-align -->
+	</div> <!-- .va-container -->
 </div> <!-- .banner -->
