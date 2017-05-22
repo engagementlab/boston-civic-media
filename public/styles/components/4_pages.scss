@@ -740,17 +740,29 @@ body .talks-item {
 }
 
 .featured-event {
+	text-align: center;
+
 	.summary {
 		font-size: 2em;
 		font-style: bold;
 		width: 60%;
 		margin: 0 auto;
 	}
+	h1 {
+		font-family: $body-type;
+		font-size: em(40);
+		color: $color-dull-teal;
+	}
+	h2 {
+		margin-top: 0;
+		font-family: $body-type;
+		font-size: em(30);
+		color: $color-warm-grey;
+
+	}
 	p {
 		color: $gray-dark;
 		font-size: large;
-		margin: 15% auto;
-		// width: 50%;
 		padding: 2%;
 	}
 }
@@ -773,12 +785,6 @@ body .talks-item {
 .recent-event {
 	padding-bottom: 15%;
 	p {
-		margin: 0 auto;
-		width: 200px;
-		padding: 5% 2%;
-		max-height: 160px;
-		min-height: 160px;
-		overflow: hidden;
 	}
 
 }
