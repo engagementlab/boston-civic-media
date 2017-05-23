@@ -36,6 +36,29 @@
   @include transform(rotate(#{$deg}deg));
 }
 
+// Generates an arrow image
+@mixin arrow($size, $left, $right: auto, $bottom: 4px) {
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: 10;
+    bottom: $bottom;
+    left: $left;
+    right: $right;
+    width: 0;
+    height: 0;
+    border-left: $size solid $color-light-grey-blue;
+    border-top: $size / 2 solid transparent;
+    border-bottom: $size / 2 solid transparent;
+    @include tablet-portrait-and-below {
+      border-left: 12px solid $color-light-grey-blue;
+      border-top: 7px solid transparent;
+      border-bottom: 7px solid transparent;
+      bottom: 4%;
+    }
+  }
+}
+
 // Utilities
 @import "mixins/hide-text";
 @import "mixins/opacity";
