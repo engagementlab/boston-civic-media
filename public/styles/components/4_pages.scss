@@ -763,13 +763,30 @@ body .talks-item {
 	}
 }
 .event-description {
-
-	.read-summary {
-		font-size: 1.3em;
+	
+	h1 {
+		font-family: $body-type;
+		font-size: em(48);
+		color: $color-dark-green-blue;
+		margin-bottom: 0;
 	}
-	@media (max-width: 767px) {
-		margin-left: -15px;
-		margin-right: -15px;
+	h2 {
+		margin: 0;
+		font-family: $body-type;
+		font-size: em(36);
+		color: $color-seafoam-blue;
+
+	}
+	img {
+		// display: inline;
+		margin: 0 auto;
+	}
+
+	.short {
+		color: $color-light-blue-grey;
+		font-size: em(22);
+		line-height: 1.18;
+		letter-spacing: -0.1px;
 	}
 }
 
@@ -868,9 +885,11 @@ body .talks-item {
 
 }
 
-.event-talks {
-	h3 {
-		padding-left: 3%;
+#event-talks {
+	text-align: center;
+	h2 {
+		font-size: em(32);
+		color: $color-sea-two;
 	}
 }
 

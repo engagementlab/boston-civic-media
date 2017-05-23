@@ -14,60 +14,29 @@
 <!-- DIRECTORY START -->
 <!-- ================ -->
 <section class="main-container padding-bottom-clear">
-	<div class="ph-40">
-		<div class="main">
-		<h2 class="page-title" style="margin-left:2%;">{{{this_event.theTitle.html}}}</h2>
-			{{!-- <h1 class="page-title"><strong>Single Event</strong></h1> --}}
-			{{!-- {{> page/lead}} --}}
-		</div>
-	</div>
+<div class="col-sm-12 col-md-8 col-centered event-description">
 
-	{{!-- We'll need some filtering dropdowns here --}}
+	<img 
+  data-src="{{{cloudinaryUrl this_event.image width=624 crop='fit'}}}"  alt="{{this_event.name}}" class="event-photo cld-responsive">
 
-	{{!-- Show all syllabi below by default --}}
-	<div class="ph-40 pv-20 this-event">
-		<div class="row">
-		{{!-- {{jsonPrint this_event}} --}}
-			<div class="col-md-8 col-sm-6 ph-40 event-description">
-				
-				<p>{{{this_event.theDescription.html}}}</p>
-				<ul>
-				{{#if this_event.additionalURL}}
-					<li><a class="read-summary" href="{{this_event.additionalURL}}">Read Summary</a></li>
-				{{/if}}
-				{{#if this_event.eventbriteURL}}
-					<li><a class="eventbrite" href="{{this_event.eventbriteURL}}">Eventbrite Link</a></li>
-				{{/if}}
-				{{#if this_event.hackpadURL}}
-					<li><a class="hackpad" href="{{this_event.hackpadURL}}">Hackpad Link</a></li>
-				{{/if}}
-				
-				</ul>
-				
-			</div>
-			<div class="col-md-4 col-sm-6">
-			<img src="{{{cloudinaryUrl this_event.image width=auto height=auto crop='scale' quality=100}}}" alt="{{this_event.name}}" class="event-photo" style="margin:0 auto;">
-				
-			</div>
-		
-		</div>
+	<h1>{{this_event.name}}</h1>
+	<h2>{{date event.date format='MMMM D, YYYY'}}</h2>
 
-		<div class="row pv-40">
-			<div class="col-md-12 col-sm-12">
-			{{#if this_event.talks}}
-			
-				<div class="event-talks row">
-					<h3>Associated Lightning Talks:</h3>
-					<div id="event-talks">
-					{{#each this_event.talks}}
-					<div class="col-md-3 event-talks-item">
-						{{> index/featured_lightning_talk featured_lightning_talk=this}}
-					</div>
-					{{/each}}
-				</div>
-				</div>
-				{{/if}}
+	<span class="short"><p>{{{this_event.theFooter.html}}}</p></span>
+	<p>{{{this_event.theDescription.html}}}</p>
+
+</div>		
+
+<div id="event-talks" class="col-sm-12">
+	{{#if this_event.talks}}
+
+		<h2>Lightning Talks</h2>
+		{{#each this_event.talks}}
+			<div class="col-sm-12 col-md-6 event-talks-item">
+				{{> talks/featured featured_lightning_talk=this}}
 			</div>
-		</div>
-		
+		{{/each}}
+	{{/if}}
+</div>
+
 </section>
