@@ -686,6 +686,22 @@ body .talks-item {
 
 #get-involved {
 	background-color: #f1f9f8;
+
+	&.row, .row {
+		@include tablet-portrait-and-below {
+			padding: 30px;
+		}
+	}
+
+	.involved {
+		@media (max-width: 426px){
+			margin-bottom: 24px;
+			max-height: 500px;
+			height: auto;
+			padding-bottom: 24px;
+		}
+	}
+	
 }
 .involved-wrapper {
 
@@ -701,11 +717,14 @@ body .talks-item {
 		&:nth-child(2) {
 			border-top-color: $color-pale-teal;
 		}
-		&:nth-child(4) {
+		&:nth-child(3) {
 			border-top-color: $color-sea;
 		}
-		&:nth-child(5) {
+		&:nth-child(4) {
 			border-top-color: $color-seafoam-blue;
+		}
+		@include tablet-portrait-and-below {
+			margin: 24px auto;
 		}
 	}
 
@@ -714,13 +733,13 @@ body .talks-item {
 	  
 		ul {
 			list-style-type: none;
-/* 			list-style-image: url('https://res.cloudinary.com/engagement-lab-home/image/upload/v1495473210/boston-civic-media/layout/bullet.svg'); */
+			padding: 0px;
 		}
 		li {
 			background-repeat:no-repeat;
 			background-position: 0px center;
 			background-image: url('https://res.cloudinary.com/engagement-lab-home/image/upload/v1495473210/boston-civic-media/layout/bullet.svg');
-		  margin: 12px;
+		  margin: 24px 0px;
 		  color: $gray-dark;
 		  font-family: $body-type;
 		  font-size: em(18);
@@ -748,7 +767,45 @@ body .talks-item {
 
 .listserv {
 	background-color: white;
+	margin: 0px auto;
+	padding: 24px;
+	.page-title {
+		margin-bottom: 24px;
+		padding: 0px;
+	}
+	.guidelines {
+		
+	}
+
+	&.col-sm-12 {
+		padding: 80px;
+	}
+
+	.btn.subscribe-button {
+		height: 80px;
+		width: 400px;
+		line-height: 72px;
+	}
+
+	@include tablet-portrait-and-below {
+		margin-right: -15px;
+		margin-left: -15px;
+		&.row {
+			padding: 0px;
+		}
+
+		&.col-sm-12 {
+			padding: 24px;
+		}
+
+		.btn.subscribe-button {
+			width: 300px;
+		}
+
+	}
 }
+
+
 
 .page-header {
 	min-height: 200px;
