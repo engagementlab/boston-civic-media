@@ -102,6 +102,10 @@ body {
   font-family: $body-type-super;
   font-size: em(48);
   padding-top: 9%;
+
+  @media (max-width: 320px) {
+    font-size: em(36);
+  }
 }
 .text-gray-dark {
   color: $gray-dark;
