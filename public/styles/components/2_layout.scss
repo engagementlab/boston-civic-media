@@ -102,7 +102,12 @@ background-repeat: no-repeat;
 		}
 		&.mobile {
 			@include tablet-portrait-and-below {
+				background-color: #f1f9f8;
+				padding: 30px 0px;
 				display: block;
+				.feature {
+					background-color: white;
+				}
 			}
 			@include tablet-landscape-and-up {
 				display: none;

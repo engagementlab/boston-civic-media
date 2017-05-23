@@ -94,7 +94,6 @@ body .dropdown-backdrop {
 .main-featured {
 	max-width: 944px;
 	margin: 5% auto;
-	padding: 0px 40px;
 	position: relative;
 
 	section {
@@ -118,6 +117,29 @@ body .dropdown-backdrop {
 		width: 8px;
 		display: inline-block;
 	}
+
+	@include tablet-portrait-and-below {
+		margin: 0px;
+		padding-top: 16px;
+		background-color: #f1f9f8;
+	}
+}
+
+.upcoming-events {
+
+	ul {
+		padding: 0px;
+
+	}
+	li {
+		list-style-type:none;
+	}
+
+	@include tablet-portrait-and-below {
+		margin-top: 40px !important;
+		background-color: white;
+	}
+	
 }
 
 .featured-syllabi {
@@ -148,6 +170,27 @@ body .dropdown-backdrop {
 	  line-height: 1.22;
 	  letter-spacing: -0.1px;
 	  text-align: left;
+	}
+
+	@include tablet-portrait-and-below {
+		background-image: linear-gradient(to right, #215c56, #26625c 46%, #306d67);
+		color: #f1f9f8;
+		margin: 0px;
+		margin-top: -20px;
+		padding-top: 24px;
+
+		h1 {
+			color: #98cbc9;
+		}
+
+		h3 {
+			font-family: HalisGR-Medium;
+			color: #f1f9f8;
+		}
+		p {
+			font-size: em(16);
+			font-family: HalisGR-Light;
+		}
 	}
 
 	@media (max-width: 991px) {
@@ -354,6 +397,7 @@ body .dropdown-menu {
 
 	img {
 		height: 200px;
+		width:100%;
 		float: none;
     	margin: 8px auto;
 	}
