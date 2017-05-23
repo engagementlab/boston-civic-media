@@ -190,6 +190,8 @@
 	margin: 16px 0;
 	display: inline-block;
 	font-family: $light-type-super;
+
+	@include transition(all 0.2s);
 	
 	img {
 		@include transition(all 0.2s ease-in-out);
