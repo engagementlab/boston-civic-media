@@ -490,16 +490,16 @@ body .lightning-talk-title {
 }
 
 .talks-buttons {
-	float: left;
 	padding-bottom: 5%;
 	text-align: center;
 	// margin-top: 5%;
 	.button {
-		display: block;
-		width: 100%;
-		background: $green-blue;
+		display: inline-block;
+		width: auto;
+		padding: 8px;
+		background: white;
 		border: none;
-		color: white;
+		color: $light-blue-grey;
 		height: 60px;
 		margin: 10px 0;
 	}
@@ -764,6 +764,10 @@ body .talks-item {
 		  letter-spacing: -0.1px;
 		  padding-left: 40px;
 		  line-height: 1.2;
+
+		  @media (max-width: 320px) {
+		  	font-size: em(14);
+		  }
 		}
 
 		h1 {
@@ -1574,12 +1578,23 @@ body .talks-item {
 		padding-bottom: 60px;
 		text-align:justify;
 	}
+
+	@media(max-width: 426px) {
+		p {
+			padding:0px;
+			padding-bottom: 60px;	
+		}
+	}
 }
 .courses {
 
 	padding: 60px 40px;
 	height: 100%;
     position: relative;
+
+    @media (max-width: 426px) {
+    	padding: 20px;
+    }
 
 	#course-menu {
 		ul {
