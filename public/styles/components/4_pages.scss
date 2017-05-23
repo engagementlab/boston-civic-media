@@ -584,6 +584,8 @@ body .talks-item {
 }
 
 .affiliates {
+	    padding-right: 160px;
+    padding-left: 160px;
 	min-height: 100%;
 	overflow-y: visible !important;
 
@@ -613,7 +615,7 @@ body .talks-item {
 }
 
 .about-title {
-	margin: 2%;
+	margin: 0px;
 }
 .involved-wrapper {
 
@@ -1258,12 +1260,21 @@ body .talks-item {
 }
 
 .about-vision {
-	color: $base-color-hover;
-	font-weight: bold;
-	font-size: x-large;
+	margin-bottom: 16px;
+	color: #338b83;
+	font-size: em(24);
+	font-family: HalisGR-Bold;
+	line-height: 1.08;
+  letter-spacing: -0.1px;
+  text-align: left;
 }
 
 .about-description {
+	font-family: HalisGR-Book;
+  font-size: 18px;
+  line-height: 1.22;
+  letter-spacing: -0.1px;
+  text-align: left;
 	color: $gray-dark;
 	font-size: large;
 	// font-weight: light;
