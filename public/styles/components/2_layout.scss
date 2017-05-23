@@ -115,6 +115,10 @@ background-repeat: no-repeat;
 		min-height:200px;
 		background-color: $color-feature-bg;
 
+		@media(max-width:426px) {
+			margin: 16px;
+		}
+
 		&.link {
 
 	    .bottom {
