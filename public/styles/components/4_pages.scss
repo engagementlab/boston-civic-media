@@ -748,23 +748,36 @@ body .talks-item {
 		width: 60%;
 		margin: 0 auto;
 	}
+	a {
+  	font-family: $light-type;
+  	font-size: em(16);
+		span {
+			@include arrow(12px, 102px, auto, 5px);
+		}
+	}
+
+	img {
+		display: inline;
+	}
 	h1 {
 		font-family: $body-type;
 		font-size: em(40);
 		color: $color-dull-teal;
+		margin-bottom: 0;
 	}
 	h2 {
-		margin-top: 0;
+		margin: 0;
 		font-family: $body-type;
 		font-size: em(30);
 		color: $color-warm-grey;
 
 	}
 	p {
+		font-family: $extra-light-type;
 		color: $gray-dark;
 		font-size: large;
-		padding: 2%;
 	}
+
 }
 .event-photo {
 	@media(max-width: 767px) {
@@ -783,8 +796,39 @@ body .talks-item {
 }
 
 .recent-event {
-	padding-bottom: 15%;
+	padding-bottom: 44px;
+	
+	.content {
+		border-bottom: 7px solid $color-seafoam-blue;
+		padding: 0;
+
+			span { 
+				@include arrow(12px, 86px, auto, 5px);
+			}
+	}
+	img {
+    border-radius: 50%;
+    margin: 0 auto;
+	}
+	h1 {
+		color: $color-greeny-blue;
+		font-size: em(24);
+		margin: 0;
+	}
+	h2 {
+		font-family: $bold-type;
+		color: $color-warm-grey;
+		font-size: em(19);
+		margin: 0;
+		margin-top: 1%;
+	}
 	p {
+		font-family: $extra-light-type;
+		color: $color-warm-grey;
+		font-size: em(16);
+		margin: 0;
+		margin-top: 2%;
+		margin-bottom: 1%;
 	}
 
 }
@@ -794,23 +838,6 @@ body .talks-item {
 		padding-left: 3%;
 	}
 }
-.feat-event-title {
-	p {
-		font-size: xx-large;
-		margin: 0 auto;
-		padding: 0px;
-	}
-}
-.event-title {
-	min-height: 60px;
-	p {
-		min-height: 40px;
-		max-height: 50px;
-		padding: 0px;
-		margin: 0 auto;
-	}
-}
-
 
 /* Blog pages
 ---------------------------------- */

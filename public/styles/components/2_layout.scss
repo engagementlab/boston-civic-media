@@ -108,70 +108,52 @@
 		}
 	}
 
-	.feature {
-		padding: 16px;
-		min-height:200px;
-		background-color: $color-feature-bg;
+}
 
-		&.link {
+.feature {
+	padding: 16px;
+	min-height:200px;
+	background-color: $color-feature-bg;
 
-	    .bottom {
+	&.link {
+    .bottom {
 
-	    	font-family: $light-type-super;
-	    	font-size: em(18);
-	    	color: $color-light-grey-blue;
-	    	width:40%;
-	    	position: absolute;
-	    	bottom: 8px;
+    	font-family: $light-type-super;
+    	font-size: em(18);
+    	color: $color-light-grey-blue;
+    	width:40%;
+    	position: absolute;
+    	bottom: 8px;
 			right:8px;
-		    position: absolute;
+	    position: absolute;
 
-				@include tablet-portrait-and-below {
-					text-align: right;
-				}
-
-				&:before {
-					content: "";
-					position: absolute;
-					z-index: 10;
-					bottom: 4px;
-					right: 18px;
-					width: 0;
-					height: 0;
-			    	border-left: 18px solid $color-light-grey-blue;
-					border-top: 9px solid transparent;
-					border-bottom: 9px solid transparent;
-					@include tablet-portrait-and-below {
-						border-left: 12px solid $color-light-grey-blue;
-						border-top: 7px solid transparent;
-						border-bottom: 7px solid transparent;
-						bottom: 4%;
-					}
-				}
-
-	    }
-	  }
-
-		//@include box-shadow(0 2px 4px rgba(0, 0, 0, .5));
-
-		h1 {
-			font-size: em(24);
 			@include tablet-portrait-and-below {
-				font-size: em(16);
+				text-align: right;
 			}
-			font-family: $med-type;
-			color: $color-theme-text;
-		}
-		h2 {
-			font-size: em(18);
-			@include tablet-portrait-and-below {
-				font-size: em(16);
+			span { 				
+				@include arrow(18px, auto, 18px, 4px);
 			}
-			font-family: $light-type;
-			color: $color-theme-text;
+    }
+  }
+
+	//@include box-shadow(0 2px 4px rgba(0, 0, 0, .5));
+
+	h1 {
+		font-size: em(24);
+		@include tablet-portrait-and-below {
+			font-size: em(16);
 		}
+		font-family: $med-type;
+		color: $color-theme-text;
 	}
-
+	h2 {
+		font-size: em(18);
+		@include tablet-portrait-and-below {
+			font-size: em(16);
+		}
+		font-family: $light-type;
+		color: $color-theme-text;
+	}
 }
 
 .page-wrapper {

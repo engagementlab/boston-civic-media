@@ -33,11 +33,13 @@
 @include font-face(HalisGR-Thin, 'https://res.cloudinary.com/engagement-lab-home/raw/upload/v1494878248/boston-civic-media/fonts/HalisGR-Thin', null, null, otf);
 @include font-face(HalisGR-SLight, 'https://res.cloudinary.com/engagement-lab-home/raw/upload/v1494878248/boston-civic-media/fonts/HalisGR-SLight', null, null, otf);
 @include font-face(HalisGR-Light, 'https://res.cloudinary.com/engagement-lab-home/raw/upload/v1494878248/boston-civic-media/fonts/HalisGR-Light', null, null, otf);
+@include font-face(HalisGR-ExtraLight, 'https://res.cloudinary.com/engagement-lab-home/raw/upload/v1494878248/boston-civic-media/fonts/HalisGR-ExtraLight', null, null, otf);
 @include font-face(HalisGR-SBold, 'https://res.cloudinary.com/engagement-lab-home/raw/upload/v1494878248/boston-civic-media/fonts/HalisGR-SBold', null, null, otf);
 
 $body-type-super: "HalisGR-SBook", sans-serif;
 $body-type: "HalisGR-Book", sans-serif;
 $light-type-super: "HalisGR-SLight", sans-serif;
 $light-type: "HalisGR-Light", sans-serif;
+$extra-light-type: "HalisGR-ExtraLight", sans-serif;
 $med-type: "HalisGR-Medium", sans-serif;
 $bold-type: "HalisGR-Bold", sans-serif;
