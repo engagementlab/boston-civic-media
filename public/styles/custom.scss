@@ -11,6 +11,10 @@ html, body, .container {
   overflow: hidden;
 }
 
+.container-max {
+  max-width: 944px;
+}
+
 html, body {
   position: relative;
   min-width: 100%;
@@ -84,7 +88,7 @@ body {
 
 .section-header {
   p {
-    padding: 0px 56px;
+    padding: 0px;
     color: $color-sea-two;
     font-size: 22px;
   line-height: 1.18;
@@ -224,6 +228,7 @@ body {
 .pb-40 { padding-bottom: 40px; }
 .pb-60 { padding-bottom: 60px; }
 
+.p-0 { padding: 0px; }
 .p-80-40 { padding: 80px 40px; }
 .p-80 { padding: 80px; }
 
@@ -557,7 +562,6 @@ body {
 }
 
 .collaborations {
-  padding: 0px 86px;
   ul {
     padding: 0px;
   }
