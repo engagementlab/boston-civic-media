@@ -763,6 +763,7 @@ body .talks-item {
 
 .featured-event {
 	text-align: center;
+	padding-top: 84px;
 
 	.summary {
 		font-size: 2em;
@@ -818,7 +819,7 @@ body .talks-item {
 }
 
 .recent-event {
-	padding-bottom: 44px;
+	padding-bottom: 64px;
 	
 	.content {
 		border-bottom: 7px solid $color-seafoam-blue;
