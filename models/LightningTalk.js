@@ -13,7 +13,8 @@ var LightningTalk = new keystone.List('LightningTalk',
 		singular: 'Lightning Talk',
 			    hidden: false,
 	    autokey: { path: 'talk_key', from: 'name', unique: true },
-		inherits: Video
+		inherits: Video, 
+    map: { name: 'title'}
 		// nodelete: true,
 		// nocreate: true
 	});
@@ -48,17 +49,17 @@ LightningTalk.add({
 
 LightningTalk.relationship({ ref: 'Event', path: 'talks' });
 
-LightningTalk.schema.pre('save', function(next) {
+// LightningTalk.schema.pre('save', function(next) {
 
-    // Save state for post hook
-    this.wasNew = this.isNew;
-    this.wasModified = this.isModified();
+//     // Save state for post hook
+//     this.wasNew = this.isNew;
+//     this.wasModified = this.isModified();
 
-    this.name = this.title;
+//     this.name = this.title;
 
-    next();
+//     next();
 
-});
+// });
 
 /**
  * Model Registration

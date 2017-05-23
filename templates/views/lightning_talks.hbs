@@ -28,7 +28,7 @@
 	<div class="">
 		<div class="row talks-feature">
 				
-			<div class="col-md-8 col-sm-12 feature"> 
+			<div class="col-md-8 col-sm-12 col-centered feature"> 
 				<h2 style="text-align:center;">Featured Talk</h2>
 			{{!-- {{jsonPrint featured_lightning_talks}} --}}
 				{{#if featured_lightning_talks}}
@@ -37,8 +37,14 @@
 					{{/each}}
 				{{/if}}
 			</div>
+		
+		</div>
+		<div class="no-talks-visible">
+			<h2>No lightning talks match that category!</h2>
+		</div>		
 
-			<div class="col-md-4 col-sm-12 talks-buttons clearfix button-group filters-button-group" data-filter-group="">
+
+			<div class="row talks-buttons clearfix button-group filters-button-group" data-filter-group="">
 				<h2>Talk Categories</h2>
 			    <button value="*" data-filter="" class="button">All</button>
 			    <button class="button" value="#" data-filter=".Welcome">Welcome</button>
@@ -49,11 +55,6 @@
 			    <button class="button" value="#" data-filter=".Data">Data</button>
 			    <button class="button" value="#" data-filter=".Co-Design">Co-Design</button>
 			</div>
-		
-		</div>
-		<div class="no-talks-visible">
-			<h2>No lightning talks match that category!</h2>
-		</div>		
 
 			<div id="talks-content" class="isotopeContent row">
 				{{#if lightning_talk}}
