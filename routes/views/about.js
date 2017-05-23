@@ -16,6 +16,7 @@ var keystone = require('keystone');
 var About = keystone.list('About');
 var Affiliate = keystone.list('Affiliate');
 var Funder = keystone.list('Funder');
+var Collab = keystone.list('Collaboration');
 var TeamMember = keystone.list('TeamMember');
 
 var _ = require('underscore');
@@ -74,7 +75,16 @@ exports = module.exports = function(req, res) {
                     queryFunders.exec(function(err, resultFunders) {
                         if (err) throw err;
                         locals.funders = resultFunders;
-                        next(err);
+
+                        var queryCollab = Collab.model.findOne({}).sort([
+                            ['sortOrder', 'ascending']
+                        ]);
+
+                        queryCollab.exec(function(err, resultCollab) {
+                            if (err) throw err;
+                            locals.collaborations = resultCollab;
+                            next(err);
+                        });
                     });
                 });
             });

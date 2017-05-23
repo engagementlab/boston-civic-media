@@ -38,9 +38,12 @@
 .dot-brown {
 	@include dot (10px, $brown);
 }
-
+.top-content {
+	@include responsive-image('/v1494440105/boston-civic-media/layout/background-home.jpg', $mq-mobile-portrait, $mq-mobile-landscape, $mq-tablet-portrait, $mq-tablet-landscape, $mq-desktop);
+background-repeat: no-repeat;
+  background-size: cover;
+}
 .main-blurb {
-	display:inline-block;
 	@include tablet-portrait-and-below {
 		min-height: 177px;
 	}
@@ -48,11 +51,10 @@
 		min-height: 577px;
 	}
 	width: 100%;
+	max-width: 944px;
+	margin: 0 auto;
 	position: relative;
-
-	@include responsive-image('/v1494440105/boston-civic-media/layout/background-home.jpg', $mq-mobile-portrait, $mq-mobile-landscape, $mq-tablet-portrait, $mq-tablet-landscape, $mq-desktop);
-	background-repeat: no-repeat;
-  background-size: cover;
+	float: none;
 
 	h1 {
 		color: $color-white;
@@ -108,52 +110,78 @@
 		}
 	}
 
-}
+	.feature {
+		padding: 16px;
+		min-height:200px;
+		background-color: $color-feature-bg;
 
-.feature {
-	padding: 16px;
-	min-height:200px;
-	background-color: $color-feature-bg;
+		&.link {
 
-	&.link {
-    .bottom {
+	    .bottom {
 
-    	font-family: $light-type-super;
-    	font-size: em(18);
-    	color: $color-light-grey-blue;
-    	width:40%;
-    	position: absolute;
-    	bottom: 8px;
-			right:8px;
-	    position: absolute;
+	    	font-family: $light-type-super;
+	    	font-size: em(18);
+	    	color: $color-light-grey-blue;
+	    	width:40%;
+	    	position: absolute;
+	    	bottom: 8px;
+			right:36px;
+		    position: absolute;
 
+				@include tablet-portrait-and-below {
+					text-align: right;
+				}
+
+				&:before {
+					content: "";
+					position: absolute;
+					z-index: 10;
+					bottom: 4px;
+					right: -10px;
+					width: 0;
+					height: 0;
+			    	border-left: 18px solid $color-light-grey-blue;
+					border-top: 9px solid transparent;
+					border-bottom: 9px solid transparent;
+					@include tablet-portrait-and-below {
+						border-left: 12px solid $color-light-grey-blue;
+						border-top: 7px solid transparent;
+						border-bottom: 7px solid transparent;
+						bottom: 4%;
+					}
+				}
+
+	    }
+	  }
+
+		//@include box-shadow(0 2px 4px rgba(0, 0, 0, .5));
+
+		h1 {
+			margin-top:0px;
+			margin-bottom: 16px;
+			font-size: em(30);
 			@include tablet-portrait-and-below {
-				text-align: right;
+				font-size: em(16);
 			}
-			span { 				
-				@include arrow(18px, auto, 18px, 4px);
+			line-height: 1.2;
+		  letter-spacing: 0.1px;
+		  text-align: left;
+			font-family: HalisGR-Black;
+			color: $color-theme-text;
+		}
+		h2 {
+			font-size: em(16);
+			@include tablet-portrait-and-below {
+				font-size: em(16);
 			}
-    }
-  }
-
-	//@include box-shadow(0 2px 4px rgba(0, 0, 0, .5));
-
-	h1 {
-		font-size: em(24);
-		@include tablet-portrait-and-below {
-			font-size: em(16);
+			font-family: HalisGR-SBold;
+		  line-height: 1.31;
+		  letter-spacing: 0.1px;
+		  text-align: left;
+			color: $color-theme-text;
 		}
-		font-family: $med-type;
-		color: $color-theme-text;
 	}
-	h2 {
-		font-size: em(18);
-		@include tablet-portrait-and-below {
-			font-size: em(16);
-		}
-		font-family: $light-type;
-		color: $color-theme-text;
-	}
+
 }
 
 .page-wrapper {

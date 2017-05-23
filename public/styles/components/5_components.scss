@@ -1853,9 +1853,20 @@ fieldset[disabled] .form-control {
 	margin-bottom: 20px;
 }
 .image-box .body {
-	padding: 15px;
+	padding: 8px;
 	h3 {
 		margin-top: 0;
+		font-size: 22px;
+	  line-height: 1.18;
+	  letter-spacing: -0.1px;
+	  text-align: center;
+	  margin-bottom: 8px;
+	}
+	p {
+		font-size: 13px;
+	  line-height: 1.69;
+	  letter-spacing: -0.1px;
+	  text-align: center;
 	}
 	p:last-child {
 		margin-bottom: 0;
