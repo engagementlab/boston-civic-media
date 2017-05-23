@@ -92,8 +92,10 @@ body .dropdown-backdrop {
 }
 
 .main-featured {
-	margin: 5% 0px;
+	max-width: 944px;
+	margin: 5% auto;
 	padding: 0px 40px;
+	position: relative;
 
 	section {
 		margin: 24px;
@@ -107,7 +109,7 @@ body .dropdown-backdrop {
 		margin-top: 48px;
 		left: 50%;
 		position: absolute;
-		height: 70%;
+		height: 85%;
 		background: #26625c;
 		width: 8px;
 		display: inline-block;
@@ -128,10 +130,20 @@ body .dropdown-backdrop {
 	h3 {
 		color: $color-sea-two;
 		margin:0px;
+		font-family: HalisGR-Book;
+	  font-size: 22px;
+	  line-height: 1.18;
+	  letter-spacing: -0.1px;
+	  text-align: left;
 	}	
 
 	p {
 		padding-bottom: 24px;
+		font-family: HalisGR-Book;
+	  font-size: 18px;
+	  line-height: 1.22;
+	  letter-spacing: -0.1px;
+	  text-align: left;
 	}
 
 	@media (max-width: 991px) {
@@ -307,16 +319,23 @@ body .dropdown-menu {
 	}
 
 	.title {
-	  font-family: HalisGR-Book;
-	  font-size: em(22);
-	  line-height: 1.18;
-	  letter-spacing: -0.1px;
-	  text-align: center;
-	  color: $color-sea-two;
+		h2 {
+		  font-family: HalisGR-Book;
+		  font-size: em(22);
+		  line-height: 1.18;
+		  letter-spacing: -0.1px;
+		  text-align: center;
+		  color: $color-sea-two;
+		  margin: 0px;
+		}
 
-	  span {
+	  p {
 	  	color: $color-dull-teal;
 	  	font-family: HalisGR-Light;
+	  	font-size: em(20);
+	  letter-spacing: -0.1px;
+	  text-align: center;
+	  margin-bottom: 8px;
 	  }
 	}
 
@@ -330,6 +349,7 @@ body .dropdown-menu {
 	}
 
 	img {
+		height: 200px;
 		float: none;
     	margin: 8px auto;
 	}

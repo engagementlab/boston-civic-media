@@ -38,9 +38,12 @@
 .dot-brown {
 	@include dot (10px, $brown);
 }
-
+.top-content {
+	@include responsive-image('/v1494440105/boston-civic-media/layout/background-home.jpg', $mq-mobile-portrait, $mq-mobile-landscape, $mq-tablet-portrait, $mq-tablet-landscape, $mq-desktop);
+background-repeat: no-repeat;
+  background-size: cover;
+}
 .main-blurb {
-	display:inline-block;
 	@include tablet-portrait-and-below {
 		min-height: 177px;
 	}
@@ -48,11 +51,10 @@
 		min-height: 577px;
 	}
 	width: 100%;
+	max-width: 944px;
+	margin: 0 auto;
 	position: relative;
-
-	@include responsive-image('/v1494440105/boston-civic-media/layout/background-home.jpg', $mq-mobile-portrait, $mq-mobile-landscape, $mq-tablet-portrait, $mq-tablet-landscape, $mq-desktop);
-	background-repeat: no-repeat;
-  background-size: cover;
+	float: none;
 
 	h1 {
 		color: $color-white;
@@ -123,7 +125,7 @@
 	    	width:40%;
 	    	position: absolute;
 	    	bottom: 8px;
-				right:8px;
+			right:36px;
 		    position: absolute;
 
 				@include tablet-portrait-and-below {
@@ -135,7 +137,7 @@
 					position: absolute;
 					z-index: 10;
 					bottom: 4px;
-					right: 18px;
+					right: -10px;
 					width: 0;
 					height: 0;
 			    	border-left: 18px solid $color-light-grey-blue;
@@ -155,19 +157,27 @@
 		//@include box-shadow(0 2px 4px rgba(0, 0, 0, .5));
 
 		h1 {
-			font-size: em(24);
+			margin-top:0px;
+			margin-bottom: 16px;
+			font-size: em(30);
 			@include tablet-portrait-and-below {
 				font-size: em(16);
 			}
-			font-family: $med-type;
+			line-height: 1.2;
+		  letter-spacing: 0.1px;
+		  text-align: left;
+			font-family: HalisGR-Black;
 			color: $color-theme-text;
 		}
 		h2 {
-			font-size: em(18);
+			font-size: em(16);
 			@include tablet-portrait-and-below {
 				font-size: em(16);
 			}
-			font-family: $light-type;
+			font-family: HalisGR-SBold;
+		  line-height: 1.31;
+		  letter-spacing: 0.1px;
+		  text-align: left;
 			color: $color-theme-text;
 		}
 	}
