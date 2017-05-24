@@ -674,6 +674,11 @@ body .talks-item {
 		&:nth-child(5) {
 			border-top-color: $color-seafoam-blue;
 		}
+
+		@include tablet-portrait-and-below {
+			height: auto;
+			padding-bottom: 44px;
+		}
 	}
 
 	.involved {
@@ -681,6 +686,9 @@ body .talks-item {
 	  
 		ul {
 			list-style-type: none;
+			@media (max-width: 1024px) {
+				padding: 0px;
+			}
 		}
 		li {
 			background-repeat:no-repeat;
@@ -694,8 +702,8 @@ body .talks-item {
 		  padding-left: 40px;
 		  line-height: 1.2;
 
-		  @media (max-width: 320px) {
-		  	font-size: em(14);
+		  @media (max-width: 426px) {
+		  	font-size: em(16);
 		  }
 		}
 
@@ -718,6 +726,11 @@ body .talks-item {
 
 .listserv {
 	background-color: white;
+
+	.guidelines {
+		margin: 40px;
+		width: 100%;
+	}
 }
 
 .page-header {
