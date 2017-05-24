@@ -901,7 +901,9 @@ body .talks-item {
 	@media(max-width: 426px) {
 		padding: 30px;
 	}
-	
+	.image {
+		padding-top: 8px;
+	}
 	.content {
 		border-bottom: 7px solid $color-seafoam-blue;
 		padding: 8px 0px;
