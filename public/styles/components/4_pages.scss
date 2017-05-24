@@ -790,25 +790,34 @@ body .talks-item {
 }
 .event-description {
 
-	padding: 24px 0px;
+	padding-top: 24px;
+	padding-bottom: 48px;
+
+	@include tablet-portrait-and-below {
+		padding: 24px;
+	}
 	
 	h1 {
 		font-family: $body-type;
 		font-size: em(48);
 		color: $color-dark-green-blue;
 		margin-bottom: 0;
+		margin-top: 16px;
+		display: inline-block;
 	}
 	h2 {
 		margin: 0;
 		font-family: $body-type;
 		font-size: em(36);
 		color: $color-seafoam-blue;
+		display: block;
 
 	}
 	img {
 		display: inline-block;
 		margin: 0 auto;
 		float: left;
+		margin-bottom: 40px;
 	}
 
 	.short {
@@ -862,7 +871,7 @@ body .talks-item {
 }
 .event-photo {
 	@media(max-width: 767px) {
-		height: 200px;
+		height: 400px;
 	}
 }
 
@@ -953,7 +962,14 @@ body .talks-item {
 
 #event-talks {
 	text-align: center;
+	background: white;
+    padding: 40px 0px;
 
+	.row {
+		padding: 16px;
+		max-width: 1024px;
+		margin: 0 auto;
+	}
 	.event-talk {
 		padding: 0;
 	}
@@ -1524,10 +1540,11 @@ body .talks-item {
 ---------------------------------- */
 
 .course-catalog {
-	display:inline-block;
 	width: 100%;
 	padding: 0px;
 	padding-bottom:60px;
+	max-width: 1024px;
+    margin: 0 auto;
 }
 
 .courses-header {

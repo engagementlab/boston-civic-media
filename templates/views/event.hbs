@@ -14,10 +14,10 @@
 <!-- DIRECTORY START -->
 <!-- ================ -->
 <section class="main-container padding-bottom-clear event-wrap">
-<div class="col-sm-12 col-md-8 col-centered event-description">
+<div class="col-sm-12 col-md-8 col-lg-6 col-centered event-description">
 
 	<img 
-  data-src="{{{cloudinaryUrl this_event.image width=624 crop='fit'}}}"  alt="{{this_event.name}}" class="event-photo cld-responsive">
+  data-src="{{{cloudinaryUrl this_event.image width=624 crop='fit'}}}"  alt="{{this_event.name}}" class="event-photo cld-responsive"/>
 
 	<h1>{{this_event.name}}</h1>
 	<h2>{{date event.date format='MMMM D, YYYY'}}</h2>
@@ -31,11 +31,13 @@
 	{{#if this_event.talks}}
 
 		<h2>Lightning Talks</h2>
+		<div class="row">
 		{{#each this_event.talks}}
 			<div class="col-sm-12 col-md-6 event-talk">
 				{{> talks/featured featured_lightning_talk=this}}
 			</div>
 		{{/each}}
+		</div>
 	{{/if}}
 </div>
 
