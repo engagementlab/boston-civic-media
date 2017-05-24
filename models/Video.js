@@ -50,12 +50,16 @@ Video.schema.pre('save', function(next) {
 
 		// HTTP requester
 		let request = require('request');
+		let url = 'https://vimeo.com/api/oembed.json?url=' + this.url;
+
+		if(this.url.indexOf('youtube.com') !== -1)
+			url = 'http://www.youtube.com/oembed?url=' + this.url + '&format=json';
 
     // Save state for post hook
     this.wasNew = this.isNew;
     this.wasModified = this.isModified();
 
-    request('https://vimeo.com/api/oembed.json?url=' + this.url, (error, response, articleBody) => {
+    request(url, (error, response, articleBody) => {
 
     	this.data = JSON.parse(response.body);
 

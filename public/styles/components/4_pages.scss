@@ -361,13 +361,17 @@ body .dropdown-menu {
 }
 
 .lightning-talk {
-	margin-bottom:1%;
-	margin-top:1%;
-	min-height: 350px;
+  margin: 0px 4%;
 
-
-	@media (max-width: 767px){
-		min-width: 100%;
+	h1 {
+		font-family: $body-type;
+		font-size: em(22);
+		color: $color-sea-two;
+	}
+	p {
+		font-family: $extra-light-type;
+		color: $color-warm-grey;
+		font-size: em(16);		
 	}
 }
 
@@ -415,13 +419,9 @@ body .lightning-talk-title {
 	}
 }
 .talks-feature {
-	padding: 2% 5%;
-	margin: 0 5%;
+	background-color: $color-pale-grey;
 	margin-bottom: 5%;
-	border-bottom: 1px $gray-dark solid;
 	.feature {
-		float: right;
-
 		@media (max-width: 767px) {
 			display: none;
 		}

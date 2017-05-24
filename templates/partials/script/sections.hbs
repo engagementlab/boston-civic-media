@@ -11,7 +11,25 @@
 --}}
 
 <script type="text/javascript">
-    
+	
+	$.fn.isOnScreen = function(){
+	  
+	  var win = $(window),
+			  viewport = {
+	      top : win.scrollTop(),
+	      left : win.scrollLeft()
+	  };
+	  viewport.right = viewport.left + win.width();
+	  viewport.bottom = viewport.top + win.height();
+	  
+	  var bounds = this.offset();
+	  bounds.right = bounds.left + this.outerWidth();
+	  bounds.bottom = bounds.top + this.outerHeight();
+	  
+	  return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
+	  
+	};
+
 	$(document).ready(function() {
 		
 		// Image responsiveness
@@ -37,6 +55,7 @@
 
 		ga('create', 'UA-64617433-3', 'auto');
 		ga('send', 'pageview');
+
 		/*
 		 =============
 		 Analytics end
@@ -64,8 +83,6 @@
 
 			$('.filters-button-group').on( 'click', 'button', function() {
 				  var filterValue = $( this ).attr('data-filter');
-				  // use filterFn if matches value
-				  // filterValue = filterFns[ filterValue ] || filterValue;
 				  container.isotope({ filter: filterValue });
 			});
 			// change is-checked class on buttons
@@ -165,7 +182,6 @@
 
 		{{/ifeq}}
 
-
 		{{!-- SYLLABI Template Script --}}
 		{{#ifeq section 'syllabi'}}
 
@@ -180,7 +196,7 @@
 			$('span.partnership-organization-number').text("(" + partnerOrgs + ")");
 			$('span.keyword-number').text("(" + keywords + ")");
 			$('span.discipline-number').text("(" + disciplines + ")");
-			// store filter for each group
+
 			var filters = {};
 			$('.dropdown-menu li').delegate('a','click', function() {
 				
@@ -201,15 +217,13 @@
 			$('.isotopeContent').isotope('reloadItems').isotope();
 
 		function displayChecked (elem) {
-			// var label = $('')
+
 			var selector = $(elem);
 			var label = selector.attr('id');
 			var id = '#syllabi' + label;
 			var option = selector.html();
-			// console.log (id + " is the ID")
-			// console.log (label + " is the label");
-			// console.log (option + " is the option");
-			$(id).html (option + '<span class="bigCaret"></span>')
+			$(id).html (option + '<span class="bigCaret"></span>');
+
 		}
 
 		function checkFiltered () {
@@ -222,41 +236,36 @@
 
 		}
 	    
-	    function applyFilter(elem) {
-				
-		    var selector = $(elem);
-		    
-		    // store filter value in object
-		    var group = selector.attr('data-filter-group');
-		    filters[group] = selector.attr('data-filter-value');
-		    
-		    // convert object into array
-		    var isoFilters = [];
-		    for ( var prop in filters ) {
-		      isoFilters.push( filters[ prop ] )
-		    }
-		    			    
-		    var filterStr = isoFilters.join('');
-		    syllabiContainer.isotope({ filter: filterStr });
-		    console.log (filterStr);
-		  }
+    function applyFilter(elem) {
+			
+	    var selector = $(elem);
+	    
+	    // store filter value in object
+	    var group = selector.attr('data-filter-group');
+	    filters[group] = selector.attr('data-filter-value');
+	    
+	    // convert object into array
+	    var isoFilters = [];
+	    for ( var prop in filters ) {
+	      isoFilters.push( filters[ prop ] )
+	    }
+	    			    
+	    var filterStr = isoFilters.join('');
+	    syllabiContainer.isotope({ filter: filterStr });
+	  }
 
 		$(".clear-all").on('click', function(){
 			filters = {};
-			// var syllabiContainer = $('#syllabi-content');
-		    syllabiContainer.isotope({
-		        filter: '*'
-		    });
-		    // $('.dropdown-menu li').delegate('a','click', function() {
+	    syllabiContainer.isotope({
+	        filter: '*'
+	    });
 				
 			$('.is-checked').removeClass('is-checked');
 			$('.all-options').addClass('is-checked');
-			// applyFilter('.all-options'); 
 			$('.all-options').each(function(i, obj){
 				applyFilter(this);
 				displayChecked(this);
 			});
-			// });
 		});
 
 		{{/ifeq}}
@@ -268,13 +277,38 @@
 			container = $('#talks-content'),
 			count;
 
+			function loadVidThumbs() {
+
+      	$.each($('.video-embed-thumb'), function(i, thumb) {
+      		var url = $(thumb).data('url');
+      		var replaceStart = url.lastIndexOf('_');
+      		url = url.substr(0, replaceStart) + '_' + $(thumb).parent().width() + '.jpg';
+
+        	$(thumb).attr('src', url);
+        	$(thumb).click(function(el) {
+        		$('#overlay').html($(el.currentTarget).data('embed')).show();
+        	})
+      	});
+
+      	$('#overlay').click(function(el) {
+      		$('#overlay').empty().hide();
+      	});
+
+      }
+
 			// find all the embedly iframes on the page.
 			videos.each(function(){
 			  // initialize the player.
 			  var player = new playerjs.Player(this);
+			    
+		    // Listen to the play event.
+		    player.on('play', function(){
+		      // Tell Google analytics that a video was played.
+		      window.ga('send', 'event', 'Video', 'Play');
+		    });
 			  
 			  // Wait for the player to be ready.
-			  player.on('ready', function(){
+			  /*player.on('ready', function(){
 					    
 			    count++;
 
@@ -285,14 +319,8 @@
 			            layoutMode: 'fitRows'
 			        });
 			    };
-			    
-			    // Listen to the play event.
-			    player.on('play', function(){
-			      // Tell Google analytics that a video was played.
-			      window.ga('send', 'event', 'Video', 'Play');
-			    });
 			  
-			  });
+			  });*/
 			});
 
 			function checkFiltered() {
@@ -325,6 +353,8 @@
 			    });
 
 			});
+
+			loadVidThumbs();
 
 		{{/ifeq}}
 
