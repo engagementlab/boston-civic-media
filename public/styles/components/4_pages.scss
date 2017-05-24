@@ -304,10 +304,6 @@ body .dropdown-menu {
 
 .upcoming-events {
 
-	margin: 0 auto;
-	position: relative;
-	text-align: center;
-	float: right;
 
 	ul {
 		padding: 0;
@@ -877,16 +873,42 @@ body .talks-item {
 	background-color: $gray-lighter;
 }
 
+.featured-event-wrap {
+	padding: 80px;
+}
+
+.past-events, .upcoming-events {
+	background-color: $color-pale-grey;
+
+	.page-title {
+		font-size: 32px;
+		  line-height: 0.81;
+		  letter-spacing: -0.2px;
+		  color: $color-sea-two;
+		  font-family: HalisGR-Book;
+		  margin: 40px auto;
+	}
+}
+
 .recent-event {
 	padding-bottom: 64px;
+
+	&:nth-child(last) {
+		padding-bottom:24px;
+	}
+
+
+	@media(max-width: 426px) {
+		padding: 30px;
+	}
 	
 	.content {
 		border-bottom: 7px solid $color-seafoam-blue;
-		padding: 0;
+		padding: 8px 0px;
 
-			span { 
-				@include arrow(12px, 86px, auto, 5px);
-			}
+		span { 
+			@include arrow(12px, 86px, auto, 8px);
+		}
 	}
 	img {
     border-radius: 50%;
