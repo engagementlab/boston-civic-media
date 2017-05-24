@@ -304,10 +304,6 @@ body .dropdown-menu {
 
 .upcoming-events {
 
-	margin: 0 auto;
-	position: relative;
-	text-align: center;
-	float: right;
 
 	ul {
 		padding: 0;
@@ -454,7 +450,7 @@ body .lightning-talk-title {
 		width: auto;
 		padding: 8px;
 		background: white;
-		border: none;
+		border: 2px solid $color-light-blue-grey;
 		color: $color-light-blue-grey;
 		height: 60px;
 		margin: 10px 0;
@@ -674,6 +670,11 @@ body .talks-item {
 		&:nth-child(5) {
 			border-top-color: $color-seafoam-blue;
 		}
+
+		@include tablet-portrait-and-below {
+			height: auto;
+			padding-bottom: 44px;
+		}
 	}
 
 	.involved {
@@ -681,6 +682,9 @@ body .talks-item {
 	  
 		ul {
 			list-style-type: none;
+			@media (max-width: 1024px) {
+				padding: 0px;
+			}
 		}
 		li {
 			background-repeat:no-repeat;
@@ -694,8 +698,8 @@ body .talks-item {
 		  padding-left: 40px;
 		  line-height: 1.2;
 
-		  @media (max-width: 320px) {
-		  	font-size: em(14);
+		  @media (max-width: 426px) {
+		  	font-size: em(16);
 		  }
 		}
 
@@ -718,6 +722,11 @@ body .talks-item {
 
 .listserv {
 	background-color: white;
+
+	.guidelines {
+		margin: 40px;
+		width: 100%;
+	}
 }
 
 .page-header {
@@ -780,23 +789,35 @@ body .talks-item {
 	}
 }
 .event-description {
+
+	padding-top: 24px;
+	padding-bottom: 48px;
+
+	@include tablet-portrait-and-below {
+		padding: 24px;
+	}
 	
 	h1 {
 		font-family: $body-type;
 		font-size: em(48);
 		color: $color-dark-green-blue;
 		margin-bottom: 0;
+		margin-top: 16px;
+		display: inline-block;
 	}
 	h2 {
 		margin: 0;
 		font-family: $body-type;
 		font-size: em(36);
 		color: $color-seafoam-blue;
+		display: block;
 
 	}
 	img {
-		// display: inline;
+		display: inline-block;
 		margin: 0 auto;
+		float: left;
+		margin-bottom: 40px;
 	}
 
 	.short {
@@ -850,7 +871,7 @@ body .talks-item {
 }
 .event-photo {
 	@media(max-width: 767px) {
-		height: 200px;
+		height: 400px;
 	}
 }
 
@@ -864,16 +885,53 @@ body .talks-item {
 	background-color: $gray-lighter;
 }
 
+.featured-event-wrap {
+	padding: 80px;
+}
+
+.past-events, .upcoming-events {
+	background-color: $color-pale-grey;
+
+	.page-title {
+		font-size: 32px;
+		  line-height: 0.81;
+		  letter-spacing: -0.2px;
+		  color: $color-sea-two;
+		  font-family: HalisGR-Book;
+		  margin: 40px auto;
+	}
+}
+
+.event-wrap {
+	background-color: $color-pale-grey;
+
+	.event-talks {
+		background-color: white;
+
+	}
+}
+
 .recent-event {
 	padding-bottom: 64px;
-	
+
+	&:nth-child(last) {
+		padding-bottom:24px;
+	}
+
+
+	@media(max-width: 426px) {
+		padding: 30px;
+	}
+	.image {
+		padding-top: 16px;
+	}
 	.content {
 		border-bottom: 7px solid $color-seafoam-blue;
-		padding: 0;
+		padding: 8px 0px;
 
-			span { 
-				@include arrow(12px, 86px, auto, 5px);
-			}
+		span { 
+			@include arrow(12px, 86px, auto, 8px);
+		}
 	}
 	img {
     border-radius: 50%;
@@ -904,13 +962,27 @@ body .talks-item {
 
 #event-talks {
 	text-align: center;
+	background: white;
+    padding: 40px 0px;
+
+	.row {
+		padding: 16px;
+		max-width: 1024px;
+		margin: 0 auto;
+	}
 	.event-talk {
 		padding: 0;
+	}
+
+	.event-description {
+		padding: 24px auto;
 	}
 
 	h2 {
 		font-size: em(32);
 		color: $color-sea-two;
+		margin-bottom: 40px;
+		margin-top: 80px;
 	}
 }
 
@@ -1382,6 +1454,11 @@ body .talks-item {
 
 .about-links {
 	font-size: large;
+
+	p {
+		line-height: 1.2;
+	}
+
 }
 
 .affiliate-image {
@@ -1463,10 +1540,11 @@ body .talks-item {
 ---------------------------------- */
 
 .course-catalog {
-	display:inline-block;
 	width: 100%;
 	padding: 0px;
 	padding-bottom:60px;
+	max-width: 1024px;
+    margin: 0 auto;
 }
 
 .courses-header {

@@ -30,13 +30,28 @@ exports = module.exports = function(req, res) {
         // locals.featured_lightning_talks = [];
 
         var queryEvent = Event.model.find({}).sort([
-            ['sortOrder', 'ascending']
+            ['date', 'ascending']
         ]);
 
         queryEvent.exec(function(err, resultEvent) {
             locals.events = resultEvent;
 
-            next(err);
+            locals.upcoming = _.map(resultEvent, function(event){
+                if (event.date >= Date.now())
+                    return event;
+            });
+
+            locals.past = _.map(resultEvent, function(event){
+                if (event.date <= Date.now())
+                    return event;
+            });
+
+            Event.model.find({'featured': true}).sort([
+                ['date', 'ascending']
+            ]).exec(function(err, featured){
+                locals.featured = featured;
+                next(err);
+            });
         });
 
     });
