@@ -30,7 +30,7 @@ exports = module.exports = function(req, res) {
         // locals.featured_lightning_talks = [];
 
         var queryEvent = Event.model.find({}).sort([
-            ['date', 'descending']
+            ['date', 'ascending']
         ]);
 
         queryEvent.exec(function(err, resultEvent) {
@@ -47,7 +47,7 @@ exports = module.exports = function(req, res) {
             });
 
             Event.model.find({'featured': true}).sort([
-                ['date', 'descending']
+                ['date', 'ascending']
             ]).exec(function(err, featured){
                 locals.featured = featured;
                 next(err);
