@@ -532,34 +532,34 @@ ul.pagination li.active a,
 /*Pace (Page loader)
 ---------------------------------- */
 .page-loader-1 .pace {
-	border: 1px solid $base-color;
+	border: 1px solid $color-pale-teal;
 }
 .page-loader-1 .pace .pace-progress {
-	background: $base-color;
+	background: $color-pale-teal;
 }
 .page-loader-2 .pace .pace-progress:before {
-	background: $base-color;
+	background: $color-pale-teal;
 }
 .page-loader-2 .pace .pace-activity {
-	border: 5px solid $base-color;
+	border: 5px solid $color-pale-teal;
 }
 .page-loader-2 .pace .pace-activity:after {
-	border: 5px solid $base-color;
+	border: 5px solid $color-pale-teal;
 }
 .page-loader-2 .pace .pace-activity:before {
-	border: 5px solid $base-color;
+	border: 5px solid $color-pale-teal;
 }
 .page-loader-3 .pace .pace-progress {
-	background: $base-color;
+	background: $color-pale-teal;
 }
 .page-loader-4 .pace .pace-progress {
-  background: $base-color;
+  background: $color-pale-teal;
 }
 .page-loader-5 .pace .pace-progress:after {
-  color: $base-color;
+  color: $color-pale-teal;
 }
 .page-loader-6 .pace .pace-activity { 
-	background: $base-color; 
+	background: $color-pale-teal; 
 }
 /* 6 Navigations
 -------------------------------------------------

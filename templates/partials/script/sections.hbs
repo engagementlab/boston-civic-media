@@ -48,42 +48,25 @@
 
 		});
 
-		{{!-- INDEX Template Script --}}
-		{{#ifeq section 'home'}}
-			$('.bxslider').bxSlider({
-			  nextSelector: '#slider-next',
-			  prevSelector: '#slider-prev',
-			  autoheight: true,
-			  infiniteLoop: true,
-			  pager: false,
-			  // controls: true,
-			  nextText: '<img src="/images/rightarrow.png" height="50%" width="20%" style="margin:0 auto;">',
-			  prevText: '<img src="/images/leftarrow.png" height="50%" width="20%" style="margin:0 auto;">'
-			  // controls: true
-
-		  })
-	  	
-
-		{{/ifeq}}
-
 		{{!-- ABOUT Template Script --}}
 		{{#ifeq section 'about'}}
-		var container = $('#affiliate-content');
-
-		lastImageLoaded (container, function () {
+	
 			var container = $('#affiliate-content');
-				container.isotope({
-			    itemSelector: '.affiliate-item', 
-			    layoutMode: 'fitRows'
-			  });
-			// $('.isotopeContent').isotope('reloadItems').isotope();
 
-		});
-		$('.filters-button-group').on( 'click', 'button', function() {
-			  var filterValue = $( this ).attr('data-filter');
-			  // use filterFn if matches value
-			  // filterValue = filterFns[ filterValue ] || filterValue;
-			  container.isotope({ filter: filterValue });
+			lastImageLoaded (container, function () {
+				var container = $('#affiliate-content');
+					container.isotope({
+				    itemSelector: '.affiliate-item', 
+				    layoutMode: 'fitRows'
+				  });
+
+			});
+
+			$('.filters-button-group').on( 'click', 'button', function() {
+				  var filterValue = $( this ).attr('data-filter');
+				  // use filterFn if matches value
+				  // filterValue = filterFns[ filterValue ] || filterValue;
+				  container.isotope({ filter: filterValue });
 			});
 			// change is-checked class on buttons
 			$('.button-group').each( function( i, buttonGroup ) {
@@ -191,8 +174,6 @@
 			var partnerOrgs = $('.dropdown-menu li .option-partnership-organization').size();
 			var keywords = $('.dropdown-menu li .option-keyword').size();
 			var disciplines = $('.dropdown-menu li .option-discipline').size();
-
-			console.log (institutions, "number of institutions");
 
 			$('span.institution-number').html("(" + institutions + ")");
 			$('span.faculty-member-number').text("(" + faculty + ")");

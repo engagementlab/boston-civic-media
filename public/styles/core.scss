@@ -1,11 +1,11 @@
 /* Scss Document */
 
 // Core variables and mixins
+@import "custom/variables";
 @import "fonts";
 @import "skin";
 @import "mixins";
 
-@import "custom/variables";
 @import "components/1_typography";
 @import "components/2_layout";
 @import "components/3_sections";

@@ -782,16 +782,6 @@ body .subscribe-button {
 	color: white;
 	border-radius: 0px;
 	border: none;
-	
-	@media (max-width: 767px) {
-		font-size: 1em;
-	}
-	// .btn:active,
-	// .btn:hover,
-	// .btn:selected {
-	// 	color: $gray-light;
-	// 	background-color: $green-blue;
-	// }
 }
 body {
 

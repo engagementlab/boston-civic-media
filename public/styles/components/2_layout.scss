@@ -40,7 +40,7 @@
 }
 .top-content {
 	@include responsive-image('/v1494440105/boston-civic-media/layout/background-home.jpg', $mq-mobile-portrait, $mq-mobile-landscape, $mq-tablet-portrait, $mq-tablet-landscape, $mq-desktop);
-background-repeat: no-repeat;
+	background-repeat: no-repeat;
   background-size: cover;
 }
 .main-blurb {

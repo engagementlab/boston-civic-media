@@ -94,6 +94,7 @@ body .dropdown-backdrop {
 .main-featured {
 	max-width: 944px;
 	margin: 5% auto;
+	padding: 0px 40px;
 	position: relative;
 
 	section {
@@ -117,29 +118,6 @@ body .dropdown-backdrop {
 		width: 8px;
 		display: inline-block;
 	}
-
-	@include tablet-portrait-and-below {
-		margin: 0px;
-		padding-top: 16px;
-		background-color: #f1f9f8;
-	}
-}
-
-.upcoming-events {
-
-	ul {
-		padding: 0px;
-
-	}
-	li {
-		list-style-type:none;
-	}
-
-	@include tablet-portrait-and-below {
-		margin-top: 40px !important;
-		background-color: white;
-	}
-	
 }
 
 .featured-syllabi {
@@ -170,27 +148,6 @@ body .dropdown-backdrop {
 	  line-height: 1.22;
 	  letter-spacing: -0.1px;
 	  text-align: left;
-	}
-
-	@include tablet-portrait-and-below {
-		background-image: linear-gradient(to right, #215c56, #26625c 46%, #306d67);
-		color: #f1f9f8;
-		margin: 0px;
-		margin-top: -20px;
-		padding-top: 24px;
-
-		h1 {
-			color: #98cbc9;
-		}
-
-		h3 {
-			font-family: HalisGR-Medium;
-			color: #f1f9f8;
-		}
-		p {
-			font-size: em(16);
-			font-family: HalisGR-Light;
-		}
 	}
 
 	@media (max-width: 991px) {
@@ -397,7 +354,6 @@ body .dropdown-menu {
 
 	img {
 		height: 200px;
-		width:100%;
 		float: none;
     	margin: 8px auto;
 	}
@@ -651,27 +607,9 @@ body .talks-item {
 	}
 }
 
-.collaborations {
-
-	@media(max-width: 426px) {
-		padding: 20px;
-	}
-
-}
-
- .p-80-40.about-header {
- 	@media(max-width: 426px) {
-		padding: 40px 20px;
-	}
- }
-
 .affiliates {
 	min-height: 100%;
 	overflow-y: visible !important;
-
-	.dot-gray {
-		margin: 0px 8px;
-	}
 
 }
 
@@ -704,22 +642,17 @@ body .talks-item {
 
 #get-involved {
 	background-color: #f1f9f8;
-
-	&.row, .row {
-		@include tablet-portrait-and-below {
-			padding: 30px;
-		}
-	}
-
-	.involved {
-		@media (max-width: 426px){
-			margin-bottom: 24px;
-			max-height: 500px;
-			height: auto;
-			padding-bottom: 24px;
-		}
-	}
 	
+	.subscribe-button {
+
+		width: 420px;
+
+		@include mobile-landscape-and-below { 
+			width: 270px;
+			font-size: em(18);
+		}
+
+	}
 }
 .involved-wrapper {
 
@@ -735,14 +668,11 @@ body .talks-item {
 		&:nth-child(2) {
 			border-top-color: $color-pale-teal;
 		}
-		&:nth-child(3) {
+		&:nth-child(4) {
 			border-top-color: $color-sea;
 		}
-		&:nth-child(4) {
+		&:nth-child(5) {
 			border-top-color: $color-seafoam-blue;
-		}
-		@include tablet-portrait-and-below {
-			margin: 24px auto;
 		}
 	}
 
@@ -751,13 +681,12 @@ body .talks-item {
 	  
 		ul {
 			list-style-type: none;
-			padding: 0px;
 		}
 		li {
 			background-repeat:no-repeat;
 			background-position: 0px center;
 			background-image: url('https://res.cloudinary.com/engagement-lab-home/image/upload/v1495473210/boston-civic-media/layout/bullet.svg');
-		  margin: 24px 0px;
+		  margin: 12px;
 		  color: $gray-dark;
 		  font-family: $body-type;
 		  font-size: em(18);
@@ -789,45 +718,7 @@ body .talks-item {
 
 .listserv {
 	background-color: white;
-	margin: 0px auto;
-	padding: 24px;
-	.page-title {
-		margin-bottom: 24px;
-		padding: 0px;
-	}
-	.guidelines {
-		
-	}
-
-	&.col-sm-12 {
-		padding: 80px;
-	}
-
-	.btn.subscribe-button {
-		height: 80px;
-		width: 400px;
-		line-height: 72px;
-	}
-
-	@include tablet-portrait-and-below {
-		margin-right: -15px;
-		margin-left: -15px;
-		&.row {
-			padding: 0px;
-		}
-
-		&.col-sm-12 {
-			padding: 24px;
-		}
-
-		.btn.subscribe-button {
-			width: 300px;
-		}
-
-	}
 }
-
-
 
 .page-header {
 	min-height: 200px;
@@ -845,8 +736,11 @@ body .talks-item {
 	letter-spacing: -0.4px;
 	text-align: center;
 	padding: 2%;
+	@include mobile-landscape-and-below {
+		padding-left: 10%;
+		padding-right: 10%;
+	}
 	padding-top: 0;
-
 
   &.dark {
 		color: $color-dark-blue-green;
@@ -1010,6 +904,10 @@ body .talks-item {
 
 #event-talks {
 	text-align: center;
+	.event-talk {
+		padding: 0;
+	}
+
 	h2 {
 		font-size: em(32);
 		color: $color-sea-two;
@@ -1454,6 +1352,12 @@ body .talks-item {
 /* About Us Pages
 ---------------------------------- */
 /* Small devices (tablets, phones less than 767px) */
+@media (max-width:767px) {
+	.team-member {
+		max-width: 480px;
+		margin: 20px auto 20px !important;
+	}
+}
 
 .about-vision {
 	margin-bottom: 16px;
@@ -1559,7 +1463,6 @@ body .talks-item {
 ---------------------------------- */
 
 .course-catalog {
-	background-color: #ebebeb;
 	display:inline-block;
 	width: 100%;
 	padding: 0px;
