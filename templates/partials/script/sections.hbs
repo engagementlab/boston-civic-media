@@ -286,12 +286,15 @@
 
         	$(thumb).attr('src', url);
         	$(thumb).click(function(el) {
-        		$('#overlay').html($(el.currentTarget).data('embed')).show();
-        	})
+        		$('#modal-video .embed-responsive').html($(el.currentTarget).data('embed'));
+        		$('#modal-video').modal();
+        	});
+        	
       	});
 
-      	$('#overlay').click(function(el) {
-      		$('#overlay').empty().hide();
+      	$('#modal-video').click(function(el) {
+      		$('#modal-video .embed-responsive').empty();
+      		$('#modal-video').hide();
       	});
 
       }

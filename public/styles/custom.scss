@@ -983,26 +983,44 @@ a .project-box {
 
 
 
-// Modal container
-.modal {
-  background-color: rgba(255, 255, 255, .8);
-  z-index: 1999;
-  width: 100%;
-  top: 0;
-  left: 0;
-  text-align:center;
-
-  &#overlay {
-    iframe {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      height: 30%;
-      width: 50%;
-      margin: -15% 0 0 -25%;
-    }
+// Modal container for video 
+.modal-backdrop.in {
+    filter: alpha(opacity=7);
+    opacity: 0.7;
+}
+ 
+.modal-content {
+  background: none;
+  border: 0;
+  -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0;
+  -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;
+   
+  .modal-header {
+    padding: 25px 25px 15px 25px;
+    text-align: right;
+    
+    @include gradient-horizontal-three-colors($color-theme, $color-theme-dark, 46%, $color-dark-grey-blue);
   }
 }
+ 
+.modal-body {
+    padding: 0 0 25px 0;
+}
+ 
+.modal-header, .modal-footer {
+    border: 0;
+}
+ 
+.modal-header .close {
+    float: none;
+    margin: 0;
+    font-size: 36px;
+    color: #fff;
+    font-weight: 300;
+    text-shadow: none;
+    opacity: 1;
+}
+
 
 // Talk video previews
 .thumb-parent {
