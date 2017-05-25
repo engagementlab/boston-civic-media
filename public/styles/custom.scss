@@ -994,11 +994,23 @@ a .project-box {
   border: 0;
   -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0;
   -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;
+    @include gradient-horizontal-three-colors($color-theme, $color-theme-dark, 46%, $color-dark-grey-blue);
+
+  .embed-responsive {
+    background-image: url('/images/cdn/loading.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60px 60px;
+    
+    iframe {
+      display: none;
+    }
+  }
    
   .modal-header {
-    padding: 25px 25px 15px 25px;
-    text-align: right;
-    
+    padding: 0;
+    padding-right: 10px;
+    text-align: right;    
     @include gradient-horizontal-three-colors($color-theme, $color-theme-dark, 46%, $color-dark-grey-blue);
   }
 }
@@ -1014,26 +1026,23 @@ a .project-box {
 .modal-header .close {
     float: none;
     margin: 0;
-    font-size: 36px;
+    font-size: em(80);
     color: #fff;
     font-weight: 300;
     text-shadow: none;
     opacity: 1;
+    line-height: .2;
 }
 
 
 // Talk video previews
 .thumb-parent {
   cursor: pointer;
-  &:before {
-    content: "";
-    position: absolute;
-    z-index: 10;
-    top: 50%;
-    width: 0;
-    height: 0;
-    border-left: 50px solid $color-light-grey-blue;
-    border-top: 25px solid transparent;
-    border-bottom: 25px solid transparent;
+  img {
+    margin: 0 auto;
+    @include linear_transition(filter, 0.2s);
+    &:hover {
+      @include filter(brightness, 75%);
+    }
   }
 }

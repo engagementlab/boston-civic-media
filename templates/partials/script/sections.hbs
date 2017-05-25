@@ -281,15 +281,19 @@
 
       	$.each($('.video-embed-thumb'), function(i, thumb) {
       		var url = $(thumb).data('url');
-      		var replaceStart = url.lastIndexOf('_');
-      		url = url.substr(0, replaceStart) + '_' + $(thumb).parent().width() + '.jpg';
+      		var replaceStart = url.indexOf('_640.jpg&src1');
+      		url = url.substr(0, replaceStart) + '_' + $(thumb).parent().width() + '.jpg&src1' + url.substr(replaceStart, url.length);
 
         	$(thumb).attr('src', url);
         	$(thumb).click(function(el) {
         		$('#modal-video .embed-responsive').html($(el.currentTarget).data('embed'));
         		$('#modal-video').modal();
+
+		      	$('#modal-video .embed-responsive iframe').on('load', function(evt) {
+		      		$(evt.currentTarget).fadeIn(200);
+		      	});
         	});
-        	
+
       	});
 
       	$('#modal-video').click(function(el) {

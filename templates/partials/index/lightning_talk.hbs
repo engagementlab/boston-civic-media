@@ -9,7 +9,11 @@
 	*/
 --}}
 <div class="lightning-talk col-sm-12 col-md-5">
-  <div class="thumb-parent"><img class="video-embed-thumb" data-url="{{lightning_talk.data.thumbnail_url}}" data-embed="{{lightning_talk.data.html}}"></div>
+  <div class="thumb-parent">
+	  <img class="video-embed-thumb" data-url="{{lightning_talk.data.thumbnail_url_with_play_button}}" data-embed="{{lightning_talk.data.html}}">
+	  <div class="video-overlay"></div>
+  </div>
+  
   <h1>{{lightning_talk.name}}</h1>
   {{{lightning_talk.talkDescription.html}}}
 	<a href="/lightning-talks/{{lightning_talk.talk_key}}"><p>More Information</p></a>
