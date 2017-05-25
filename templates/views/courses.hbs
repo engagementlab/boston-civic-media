@@ -5,64 +5,78 @@
 * Developed by Engagement Lab, 2016
 * ==============
 *
-* Syllabi Directory Page Template
+* Course Directory Page Template
 * - Use {{jsonPrint project}} to print entire json...DEBUG ONLY
 * ==========
 */
 --}}
 <section class="course-catalog row">
-		<div class="courses-header main">
-			<h1 class="page-title">Boston Civic Media</h1>
-			<h1 class="page-title"><strong>2017-2018 Consortium Course Catalog</strong></h1>
-			<p>For 2017-2018, faculty participating in the Boston Civic Media consortium will be offering a range of courses that explore the intersection of civic media and climate change. Please review the list of course offerings below. If you are an undergrad at a Boston area institution, we encourage you to consider registering for one of the listed courses. While we cannot guarantee availability of seats, we have provided instructions on cross registration for each of the listed courses and we encourage you to reach out to the professors regarding availability.</p>
+	<div class="courses-header main">
+		<h1 class="page-title">Boston Civic Media</h1>
+		<h1 class="page-title"><strong>{{page.pageTitle}}</strong></h1>
+		<p id="blurb">{{page.pageBlurb}}</p>
+	</div>
+	<div class="col-md-10 col-sm-10 col-xs-12 col-centered features row">
+		<div class="col-md-4 col-sm-12">
+			{{{cloudinaryUrl '/v1495743504/boston-civic-media/layout/courses/clipboardimage' width=102 format='svg' alt='Courses Symbol'}}}
+			<h1>{{page.featureHeadings.[0]}}</h1>
+			<h2>{{page.featureContent.[0]}}</h2>
 		</div>
-		<div class="col-sm-10 col-xs-12 col-centered courses">
-
-			<div id="course-menu" class="col-lg-6 col-md-12 col-sm-10 col-xs-12 col-centered-md">
-				<ul class="desktop-only">
-					{{!-- COURSE LISTING --}}
-					{{#each courses}}
-						<li><a href="#" data-key="{{course_key}}" {{#if @first}} class="active"{{/if}}>{{name}}</a></li>
-					{{/each}}
-				</ul>
-				<select id="courses-mobile" class="mobile-tablet-only">
-					{{!-- COURSE LISTING --}}
-					{{#each courses}}
-						<option data-key="{{course_key}}" {{#if @first}} selected="selected"{{/if}}>{{name}}</option>
-					{{/each}}
-				</select>
-				<div class="select-arrow mobile-tablet-only"></div>
-			</div>
-
-			<section id="course-contents" class="col-lg-6 col-md-12 col-sm-10 col-xs-12 col-centered-md">
-				{{!-- COURSE CONTENT --}}
+		<div class="col-md-4 col-sm-12">
+			{{{cloudinaryUrl '/v1495743504/boston-civic-media/layout/courses/communicateimage' width=102 format='svg' alt='Courses Symbol'}}}
+			<h1>{{page.featureHeadings.[1]}}</h1>
+			<h2>{{page.featureContent.[1]}}</h2>
+		</div>
+		<div class="col-md-4 col-sm-12">
+			{{{cloudinaryUrl '/v1495743504/boston-civic-media/layout/courses/checkmarkimage' width=102 format='svg' alt='Courses Symbol'}}}
+			<h1>{{page.featureHeadings.[2]}}</h1>
+			<h2>{{page.featureContent.[2]}}</h2>
+		</div>
+	</div>
+	<div class="col-sm-10 col-xs-12 col-centered courses">
+		<div id="course-menu" class="col-lg-6 col-md-12 col-sm-10 col-xs-12 col-centered-md">
+			<ul class="desktop-only">
+				{{!-- COURSE LISTING --}}
 				{{#each courses}}
-				<div data-key="{{course_key}}" class="content{{#if @first}} active{{/if}}">
-					<h1>{{name}}</h1>
-					<p><strong>Institution:</strong> {{institution.name}}</p>
-					<p>
-						{{#ifeq instructor.length 1}}
-						<h2>Instructor:</h2> {{instructor.[0].name}} {{#if instructor.[0].contactEmail}} ({{instructor.[0].contactEmail}}) {{/if}}
-						{{else}}
-						<strong>Instructors:</strong> 
-							{{#each instructor}}
-								{{name}}{{#if contactEmail}} ({{contactEmail}}){{/if}}{{#unless @last}}, {{/unless}}
-							{{/each}}
-						{{/ifeq}}
-					</p>
-					<h2 style="padding-top:16px">Course Description</h2>
-					<p>{{description}}</p>
-					{{!-- <h2>How to Enroll</h2>
-					<p>{{{howTo.html}}}</p> --}}
-					<h2>Contact Information</h2>
-					<p>{{contactName}}<br>
-					<a href="{{contactUrl}}">Website</a> | {{contactPhone}} | <a href="mailto:{{contactUrl}}">{{contactEmail}}</a></p>
+				<li><a href="#" data-key="{{course_key}}" {{#if @first}} class="active"{{/if}}>{{name}}</a></li>
+				{{/each}}
+			</ul>
+		</div>
+		<section id="course-contents" class="col-lg-6 col-md-12 col-sm-10 col-xs-12 col-centered-md">
+			<select id="courses-mobile" class="mobile-tablet-only">
+				{{!-- COURSE LISTING --}}
+				{{#each courses}}
+				<option data-key="{{course_key}}" {{#if @first}} selected="selected"{{/if}}>{{name}}</option>
+				{{/each}}
+			</select>
+			<div class="select-arrow mobile-tablet-only"></div>
+			{{!-- COURSE CONTENT --}}
+			{{#each courses}}
+			<div data-key="{{course_key}}" class="content{{#if @first}} active{{/if}}">
+				<h1>{{name}}</h1>
+				<p><strong>Institution</strong> {{institution.name}}</p>
+				<p>
+					{{#ifeq instructor.length 1}}
+					<h2>Instructor</h2> {{instructor.[0].name}} {{#if instructor.[0].contactEmail}} ({{instructor.[0].contactEmail}}) {{/if}}
+					{{else}}
+					<strong>Instructors</strong>
+					{{#each instructor}}
+					{{name}}{{#if contactEmail}} ({{contactEmail}}){{/if}}{{#unless @last}}, {{/unless}}
+					{{/each}}
+					{{/ifeq}}
+				</p>
+				<h2 style="padding-top:16px">Course Description</h2>
+				<p>{{description}}</p>
 
-					<button class="btn" id="enroll-btn">enroll</button>
+				<h2>Contact Information</h2>
+				
+				<p>{{contactName}}<br>
+					<a href="{{contactUrl}}">Website</a> | {{contactPhone}} | <a href="mailto:{{contactUrl}}">{{contactEmail}}</a></p>
+					<a href="{{contactUrl}}"><button class="btn" id="enroll-btn">Learn how to enroll</button></a>
 				</div>
 				{{/each}}
 			</section>
 			
 		</div>
-	
-</section>
+		
+	</section>

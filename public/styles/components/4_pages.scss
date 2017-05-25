@@ -121,7 +121,7 @@ body .dropdown-backdrop {
 }
 
 .featured-syllabi {
-	color: #7e7e7e;
+	color: $color-warm-grey-two;
 	text-align: left;
 	font-family: HalisGR-Book;
 
@@ -345,7 +345,7 @@ body .dropdown-menu {
 	  line-height: 1.22;
 	  letter-spacing: -0.1px;
 	  text-align: center;
-	  color: #7e7e7e;
+	  color: $color-warm-grey-two;
 	}
 
 	img {
@@ -1543,7 +1543,48 @@ body .talks-item {
 	padding: 0px;
 	padding-bottom:60px;
 	max-width: 1024px;
-    margin: 0 auto;
+  margin: 0 auto;
+
+  #blurb {
+		font-size: em(24);
+		line-height: 1.17;
+		letter-spacing: -0.4px;
+		text-align: justify;
+		color: $color-greyish-brown;
+
+		@include mobile-landscape-and-below {
+			font-size: em(16);
+			font-family: $extra-light-type;
+			text-align: left;
+			margin-top: 15px;
+		}
+  }
+
+  .features {
+  	text-align: center;
+
+		@include mobile-landscape-and-below {
+			margin-top: 40px;
+		}
+
+  	img {
+  		margin: 0 auto;
+  	}
+  	h1 {
+			font-size: em(18);
+			line-height: 1.44;
+			letter-spacing: -0.1px;
+			color: $color-sea-two;
+			margin: 0;
+  	}
+  	h2 {
+			font-size: em(14);
+			line-height: 1.44;
+			letter-spacing: -0.1px;
+			color: $color-warm-grey-two;
+			margin-top: 8px;
+  	}
+  }
 }
 
 .courses-header {
@@ -1560,7 +1601,12 @@ body .talks-item {
 		  font-weight: bold;
 		  letter-spacing: 0.2px;
 		  color: #338b83;
-		  font-family: HalisGR-SBold;
+		  font-family: $bold-type;
+		  text-transform: uppercase;
+
+			@include mobile-landscape-and-below {
+				font-size: em(24);
+			}
 		}
 		// Courses
 		&:nth-child(2) {
@@ -1569,19 +1615,22 @@ body .talks-item {
 		  color: #003732;
 		  margin-bottom: 16px;
 		  padding: 0px;
+
+			@include mobile-landscape-and-below {
+				font-size: em(28);
+			}
 		}
 	}
 	p {
 		margin:0 auto;
-		padding: 0px 40px;
-		padding-bottom: 60px;
+		padding-top: 16px;
+		padding-bottom: 40px;
 		text-align:justify;
 	}
 
 	@media(max-width: 426px) {
 		p {
 			padding:0px;
-			padding-bottom: 60px;	
 		}
 	}
 }
@@ -1589,11 +1638,38 @@ body .talks-item {
 
 	padding: 60px 40px;
 	height: 100%;
-    position: relative;
+  position: relative;
 
-    @media (max-width: 426px) {
-    	padding: 20px;
-    }
+  @include mobile-landscape-and-below {
+  	padding: 0;
+  }
+	select {
+    width: 100%;
+    cursor: pointer;
+    padding: 10px 15px;
+    margin-bottom: 4%;
+    outline: 0;
+    border: 0;
+    border-radius: 0;
+    font-family: $extra-light-type;
+    text-align: center;
+    background: $color-light-blue-grey;
+    color: $color-warm-grey;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+  .select-arrow {
+	  position: absolute;
+	  top: 39px;
+	  right: 34px;
+	  width: 0;
+	  height: 0;
+	  pointer-events: none;
+	  border-style: solid;
+	  border-width: 15px 9px 0 9px;
+	  border-color: $color-seafoam-blue transparent transparent transparent;
+	}
 
 	#course-menu {
 		ul {
@@ -1615,38 +1691,16 @@ body .talks-item {
 				}
 			}
 		}
-		select {
-	    width: 100%;
-	    cursor: pointer;
-	    padding: 10px 15px;
-      margin-bottom: 4%;
-	    outline: 0;
-	    border: 0;
-	    border-radius: 0;
-	    background: $color-seafoam-blue;
-	    color: $color-white;
-	    appearance: none;
-	    -webkit-appearance: none;
-	    -moz-appearance: none;
-	  }
-	  .select-arrow {
-		  position: absolute;
-		  top: 16px;
-		  right: 24px;
-		  width: 0;
-		  height: 0;
-		  pointer-events: none;
-		  border-style: solid;
-		  border-width: 19px 16px 0 15px;
-		  border-color: $color-theme-dark transparent transparent transparent;
-		}
 	}
 	#course-contents {
 		padding: 24px;
 		background-color: $color-seafoam-blue;
-		@include box-shadow(0 0 4px 1px rgba(0, 0, 0, 0.24));
-		border: solid 4px #ffffff;
 		color: $color-dark-green-blue;
+
+	  @include tablet-portrait-and-up {
+			@include box-shadow(0 0 4px 1px rgba(0, 0, 0, 0.24));
+			border: solid 4px #ffffff;
+	  }
 
 		h1 {
 			font-family: $med-type;
@@ -1674,6 +1728,7 @@ body .talks-item {
 
 			a {
 				color: $color-dark-green-blue;
+				text-decoration: underline;
 
 				&:hover, &:focus, &:active {
 					color: lighten($color-dark-green-blue, 20%);
@@ -1687,7 +1742,7 @@ body .talks-item {
 			  line-height: 1.18;
 			  letter-spacing: -0.1px;
 			  text-align: left;
-			  color: #b2e2dc;
+			  color: $color-light-blue-grey;
 			  font-family: HalisGR-Book;
 			}
 
@@ -1707,22 +1762,32 @@ body .talks-item {
 			  line-height: 1.18;
 			  letter-spacing: -0.1px;
 			  text-align: left;
-			  color: #b2e2dc;
+			  color: $color-light-blue-grey;
 			  font-family: HalisGR-Book;
 			}
 
 			button {
 				width: 135px;
 			  height: 42px;
-			  border: solid 3px #b2e2dc;
+			  border: solid 3px $color-light-blue-grey;
 			  font-family: HalisGR-Bold;
 			  font-size: 26px;
 			  line-height: 0.8;
 			  letter-spacing: 0px;
 			  text-align: center;
-			  color: #b2e2dc;
+			  color: $color-light-blue-grey;
 			  background-color:transparent;
+
+			  &:hover {
+			  	color: $color-seafoam-blue;
+			  	background-color: $color-light-blue-grey;
+			  }
 			}
+		}
+
+		#enroll-btn {
+			margin: 0 auto;
+			width: 285px;
 		}
 	}
 

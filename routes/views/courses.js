@@ -14,6 +14,7 @@
 var keystone = require('keystone');
 var Filter = keystone.list('Filter');
 var Course = keystone.list('Course');
+var CoursePage = keystone.list('CoursePage');
 var _ = require('underscore');
 var cloudinary = require('cloudinary');
 
@@ -21,8 +22,6 @@ exports = module.exports = function(req, res) {
 
     var view = new keystone.View(req, res),
         locals = res.locals;
-
-        console.log('locals', res.locals)
 
     // Init locals
     locals.section = 'courses';
@@ -34,12 +33,21 @@ exports = module.exports = function(req, res) {
         ])
         .populate('institution', 'name contactEmail')
         .populate('instructor', 'name');
+        var queryCoursePage = CoursePage.model.findOne({}, {}, {
+            sort: {
+                'createdAt': -1
+            }
+        });
 
         queryCourses.exec(function(err, resultCourses) {
+            queryCoursePage.exec(function(err, resultPage) {
 
-            locals.courses = resultCourses;
+                locals.courses = resultCourses;
+                locals.page = resultPage;
 
-            next();
+                next();
+                
+            });
         });
     });
 
