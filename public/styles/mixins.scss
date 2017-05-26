@@ -56,7 +56,7 @@
 }
 
 // Generates an arrow image
-@mixin arrow($size, $left, $right: auto, $bottom: 4px) {
+@mixin arrow($size, $left, $right: auto, $bottom: 4px, $bottom-mobile: 4%) {
   &:before {
     content: "";
     position: absolute;
@@ -73,7 +73,7 @@
       border-left: 12px solid $color-light-grey-blue;
       border-top: 7px solid transparent;
       border-bottom: 7px solid transparent;
-      bottom: 4%;
+      bottom: $bottom-mobile;
     }
   }
 }
