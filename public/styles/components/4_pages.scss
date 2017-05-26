@@ -97,6 +97,14 @@ body .dropdown-backdrop {
 	padding: 0px 40px;
 	position: relative;
 
+	.upcoming-events {
+		background-color: white;
+		margin-left: 48px;
+		h1 {
+			text-align: center;
+		}
+	}
+
 	section {
 		margin: 24px;
 
@@ -111,7 +119,7 @@ body .dropdown-backdrop {
 
 	.divider {
 		margin-top: 48px;
-		left: 50%;
+		left: calc(50% - 8px);
 		position: absolute;
 		height: 85%;
 		background: #26625c;
