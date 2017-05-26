@@ -394,7 +394,7 @@ body .dropdown-menu {
 	}
 
 	img {
-		height: 200px;
+/* 		height: 200px; */
 		float: none;
     	margin: 8px auto;
 	}
@@ -875,7 +875,6 @@ body .talks-item {
 
 .featured-event {
 	text-align: center;
-	padding-top: 84px;
 
 	.summary {
 		font-size: 2em;
@@ -932,6 +931,9 @@ body .talks-item {
 
 .featured-event-wrap {
 	padding: 80px;
+	@include mobile-landscape-and-below {
+		padding: 40px;
+	}
 }
 
 .past-events, .upcoming-events {
@@ -939,11 +941,11 @@ body .talks-item {
 
 	.page-title {
 		font-size: 32px;
-		  line-height: 0.81;
-		  letter-spacing: -0.2px;
-		  color: $color-sea-two;
-		  font-family: HalisGR-Book;
-		  margin: 40px auto;
+	  line-height: 0.81;
+	  letter-spacing: -0.2px;
+	  color: $color-sea-two;
+	  font-family: HalisGR-Book;
+		padding: 3%;
 	}
 }
 
@@ -958,14 +960,11 @@ body .talks-item {
 
 .recent-event {
 	padding-bottom: 64px;
+	padding-left: 15px;
+	padding-right: 15px;
 
 	&:nth-child(last) {
 		padding-bottom:24px;
-	}
-
-
-	@media(max-width: 426px) {
-		padding: 30px;
 	}
 	.image {
 		padding-top: 16px;
@@ -975,7 +974,9 @@ body .talks-item {
 		padding: 8px 0px;
 
 		span { 
-			@include arrow(12px, 86px, auto, 8px);
+			
+			@include arrow(12px, 86px, auto, 13px, 12px);
+			
 		}
 	}
 	img {
@@ -983,8 +984,9 @@ body .talks-item {
     margin: 0 auto;
 	}
 	h1 {
-		color: $color-greeny-blue;
+		font-family: $regular-type;
 		font-size: em(24);
+		color: $color-greeny-blue;
 		margin: 0;
 	}
 	h2 {
@@ -998,9 +1000,10 @@ body .talks-item {
 		font-family: $extra-light-type;
 		color: $color-warm-grey;
 		font-size: em(16);
+		text-align: left;
 		margin: 0;
-		margin-top: 2%;
-		margin-bottom: 1%;
+		margin-top: 8px;
+		margin-bottom: 8px;
 	}
 
 }
@@ -1690,6 +1693,9 @@ body .talks-item {
   }
 	select {
     width: 100%;
+
+	text-align: center;
+  	text-align-last: center;
     cursor: pointer;
     padding: 10px 15px;
     margin-bottom: 4%;

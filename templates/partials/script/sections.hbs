@@ -12,24 +12,6 @@
 
 <script type="text/javascript">
 	
-	$.fn.isOnScreen = function(){
-	  
-	  var win = $(window),
-			  viewport = {
-	      top : win.scrollTop(),
-	      left : win.scrollLeft()
-	  };
-	  viewport.right = viewport.left + win.width();
-	  viewport.bottom = viewport.top + win.height();
-	  
-	  var bounds = this.offset();
-	  bounds.right = bounds.left + this.outerWidth();
-	  bounds.bottom = bounds.top + this.outerHeight();
-	  
-	  return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
-	  
-	};
-
 	$(document).ready(function() {
 		
 		// Image responsiveness
@@ -273,7 +255,6 @@
 		{{!-- LIGHTNING TALK Template Script --}}
 		{{#ifeq section 'lightning_talk'}}
 			
-			var videos = $('iframe.embedly-embed'),
 			container = $('#talks-content'),
 			count;
 
@@ -282,16 +263,26 @@
       	$.each($('.video-embed-thumb'), function(i, thumb) {
       		var url = $(thumb).data('url');
       		var replaceStart = url.indexOf('_640.jpg&src1');
+      		var frame = $('#modal-video .embed-responsive iframe');
       		url = url.substr(0, replaceStart) + '_' + $(thumb).parent().width() + '.jpg&src1' + url.substr(replaceStart, url.length);
 
         	$(thumb).attr('src', url);
         	$(thumb).click(function(el) {
+
         		$('#modal-video .embed-responsive').html($(el.currentTarget).data('embed'));
         		$('#modal-video').modal();
 
-		      	$('#modal-video .embed-responsive iframe').on('load', function(evt) {
+					  var player = new playerjs.Player(frame); 
+				    // Listen to the play event.
+				    player.on('play', function() {
+					      // Tell Google analytics that a video was played.
+					     ga('send', 'event', 'Video', 'Play');
+						});
+
+		      	frame.on('load', function(evt) {
 		      		$(evt.currentTarget).fadeIn(200);
 		      	});
+
         	});
 
       	});
@@ -302,33 +293,6 @@
       	});
 
       }
-
-			// find all the embedly iframes on the page.
-			videos.each(function(){
-			  // initialize the player.
-			  var player = new playerjs.Player(this);
-			    
-		    // Listen to the play event.
-		    player.on('play', function(){
-		      // Tell Google analytics that a video was played.
-		      window.ga('send', 'event', 'Video', 'Play');
-		    });
-			  
-			  // Wait for the player to be ready.
-			  /*player.on('ready', function(){
-					    
-			    count++;
-
-			    if (count === videos.length) {
-			        container.isotope({
-			            itemSelector: '.talks-item',
-			            isFitHeight: true,
-			            layoutMode: 'fitRows'
-			        });
-			    };
-			  
-			  });*/
-			});
 
 			function checkFiltered() {
 
@@ -394,7 +358,7 @@
 			  }
 			);
 
-			$('#course-menu #courses-mobile').change(
+			$('#courses-mobile').change(
 			  function() {
 			  	courseChange($(this).find(':selected'));
 			  }
