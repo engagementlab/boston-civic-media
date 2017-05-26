@@ -48,7 +48,8 @@ Course.add({
     ref: 'Filter',
     label: 'Institution',
     required: true,
-    initial: true
+    initial: true, 
+    note: 'Edit enrollment information on this Institution filter.'
   },
   instructor: {
       type: Types.Relationship,
@@ -59,7 +60,8 @@ Course.add({
       ref: 'Filter',
       required: true,
       many: true,
-      initial: true
+      initial: true, 
+      note: 'Edit individual instructor contact emails on this Instructor filter.'
   },
   description: { type: Types.Textarea, label: "Course Description", required: true, initial: true },
   // howTo: { type: Types.Markdown, label: "How To Enroll", required: true, initial: true, wysiwyg: true, toolbarOptions: { hiddenButtons: 'Code'  } },

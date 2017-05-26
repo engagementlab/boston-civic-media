@@ -11,11 +11,13 @@
 */
 --}}
 <section class="course-catalog row">
+
 	<div class="courses-header main">
 		<h1 class="page-title">Boston Civic Media</h1>
 		<h1 class="page-title"><strong>{{page.pageTitle}}</strong></h1>
 		<p id="blurb">{{page.pageBlurb}}</p>
 	</div>
+
 	<div class="col-md-10 col-sm-10 col-xs-12 col-centered features row">
 		<div class="col-md-4 col-sm-12">
 			{{{cloudinaryUrl '/v1495743504/boston-civic-media/layout/courses/clipboardimage' width=102 format='svg' alt='Courses Symbol'}}}
@@ -33,7 +35,9 @@
 			<h2>{{page.featureContent.[2]}}</h2>
 		</div>
 	</div>
+
 	<div class="col-sm-10 col-xs-12 col-centered courses">
+
 		<div id="course-menu" class="col-lg-6 col-md-12 col-sm-10 col-xs-12 col-centered-md">
 			<ul class="desktop-only">
 				{{!-- COURSE LISTING --}}
@@ -42,6 +46,7 @@
 				{{/each}}
 			</ul>
 		</div>
+
 		<section id="course-contents" class="col-lg-6 col-md-12 col-sm-10 col-xs-12 col-centered-md">
 			<select id="courses-mobile" class="mobile-tablet-only">
 				{{!-- COURSE LISTING --}}
@@ -49,7 +54,9 @@
 				<option data-key="{{course_key}}" {{#if @first}} selected="selected"{{/if}}>{{name}}</option>
 				{{/each}}
 			</select>
+
 			<div class="select-arrow mobile-tablet-only"></div>
+
 			{{!-- COURSE CONTENT --}}
 			{{#each courses}}
 			<div data-key="{{course_key}}" class="content{{#if @first}} active{{/if}}">
@@ -60,9 +67,9 @@
 					<h2>Instructor</h2> {{instructor.[0].name}} {{#if instructor.[0].contactEmail}} ({{instructor.[0].contactEmail}}) {{/if}}
 					{{else}}
 					<strong>Instructors</strong>
-					{{#each instructor}}
-					{{name}}{{#if contactEmail}} ({{contactEmail}}){{/if}}{{#unless @last}}, {{/unless}}
-					{{/each}}
+						{{#each instructor}}
+						{{name}}{{#if contactEmail}} ({{contactEmail}}){{/if}}{{#unless @last}}, {{/unless}}
+						{{/each}}
 					{{/ifeq}}
 				</p>
 				<h2 style="padding-top:16px">Course Description</h2>
@@ -71,12 +78,30 @@
 				<h2>Contact Information</h2>
 				
 				<p>{{contactName}}<br>
-					<a href="{{contactUrl}}">Website</a> | {{contactPhone}} | <a href="mailto:{{contactUrl}}">{{contactEmail}}</a></p>
-					<a href="{{contactUrl}}"><button class="btn" id="enroll-btn">Learn how to enroll</button></a>
-				</div>
-				{{/each}}
-			</section>
+					<a href="{{contactUrl}}">Website</a> | {{contactPhone}} | <a href="mailto:{{contactUrl}}">{{contactEmail}}</a>
+				</p>
+					<a href="#{{institution.key}}"><button class="btn" id="enroll-btn">Learn how to enroll</button></a>
+			</div>
+			{{/each}}
+
+		</section>
 			
+	</div>
+
+	<div class="col-sm-12 col-lg-12 enroll-info-wrap">
+		<h1 class="page-title">Enrollment Information</h1>
+
+		{{#each filters}}
+		<a href="#{{this.key}}">{{this.name}}</a>
+		{{/each}}
+
+		{{#each filters}}
+		<div class="enroll-info" id="{{this.key}}">
+			<h1>{{this.name}}</h1>
+			{{{this.enrollInfo.html}}}
 		</div>
+		{{/each}}
+
+	</div>
 		
-	</section>
+</section>

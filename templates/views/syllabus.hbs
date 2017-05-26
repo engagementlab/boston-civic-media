@@ -13,40 +13,45 @@
 
 <!-- DIRECTORY START -->
 <!-- ================ -->
-<section class="main-container padding-bottom-clear">
-	<div class="">
-		<div class="main ph-40">
+<section class="main-container padding-bottom-clear syllabus-wrap">
+	<div class="main ph-40">
 		<h3 class="page-title">{{this_syllabus.title}}</h3>
-			<h5>{{this_syllabus.author}}</h5>
-			{{!-- {{> page/lead}} --}}
-		</div>
+		<h5>{{this_syllabus.author}}</h5>
 	</div>
 
-	{{!-- We'll need some filtering dropdowns here --}}
-
-	{{!-- Show all syllabi below by default --}}
 	<div class="ph-40 pv-40">
 		<div class="row">
-			<div class="col-md-4 col-sm-4">
+
+			<div class="col-md-4 col-sm-4 this-syllabus-info">
 			
 				{{#if this_syllabus.institution}}
-					<p><strong>Institution(s): {{#each this_syllabus.institution}} {{this.name}}{{#unless @last}}, {{/unless}} {{/each}}</strong></p>
+					<p>Institution(s): {{#each this_syllabus.institution}} {{this.name}}{{#unless @last}}, {{/unless}} {{/each}}</p>
 				{{/if}}
 
 				{{#if this_syllabus.discipline}}
-					<p><strong>Discipline(s): {{#each this_syllabus.discipline}} {{this.name}}{{#unless @last}}, {{/unless}} {{/each}}</strong></p>
+					<p>Discipline(s): {{#each this_syllabus.discipline}} {{this.name}}{{#unless @last}}, {{/unless}} {{/each}}</p>
 				{{/if}}
 
 				{{#if this_syllabus.faculty}}
-					<p><strong>Faculty Member(s): {{#each this_syllabus.faculty}} {{this.name}}{{#unless @last}}, {{/unless}} {{/each}}</strong></p>
+					<p>Faculty Member(s): {{#each this_syllabus.faculty}} {{this.name}}{{#unless @last}}, {{/unless}} {{/each}}</p>
 				{{/if}}
 
 				{{#if this_syllabus.keyword}}
-					<p><strong>Keyword(s): {{#each this_syllabus.keyword}}{{this.name}}{{#unless @last}}, {{/unless}} {{/each}}</strong></p>
+					<p>Keyword(s): {{#each this_syllabus.keyword}}{{this.name}}{{#unless @last}}, {{/unless}} {{/each}}</p>
 				{{/if}}
 
 				{{#if this_syllabus.partnerOrg}}
-					<p><strong>Partner Organization(s):{{#each this_syllabus.partnerOrg}}{{this.name}}{{#unless @last}}, {{/unless}} {{/each}}</strong></p>
+					<p>Partner Organization(s):{{#each this_syllabus.partnerOrg}}{{this.name}}{{#unless @last}}, {{/unless}} {{/each}}</p>
+				{{/if}}
+
+				{{#if this_syllabus.file}}
+				
+					<a href="{{{this_syllabus.file.url}}}" class="syllabus-button" download="{{this_syllabus.file.filename}}">Download PDF <span class="fa fa-download"></span></a>
+					
+				{{else}}
+					
+					<p>Look out for the downloadable syllabus coming soon!</p>
+
 				{{/if}}
 
 			</div>
@@ -54,24 +59,8 @@
 				
 				<p>{{this_syllabus.description}}</p>
 			</div>
-
 			
 		</div>
-		
-		<div class="row">
-			<div class="col-md-12">
-			{{#if this_syllabus.file.url}}
-				
-				<a href="{{{this_syllabus.file.url}}}" class="syllabus-button" download="{{this_syllabus.file.filename}}">Download PDF <span class="fa fa-download"></span></a>
-				
-			{{else}}
-				
-				<p class="syllabus-button"><strong>Look out for the downloadable syllabus coming soon!</strong></p>
-
-			{{/if}}
-			</div>
-		</div>
-		
 	</div>
 		
 </section>
