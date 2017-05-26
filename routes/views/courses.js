@@ -23,6 +23,12 @@ exports = module.exports = function(req, res) {
     var view = new keystone.View(req, res),
         locals = res.locals;
 
+    var categorize = function(val, cat) {
+        return val.filter(function(item) {
+            return item.category == cat;
+        });
+    };
+
     // Init locals
     locals.section = 'courses';
 
@@ -31,8 +37,9 @@ exports = module.exports = function(req, res) {
         var queryCourses = Course.model.find({}).sort([
             ['sortOrder', 'ascending']
         ])
-        .populate('institution', 'name contactEmail')
-        .populate('instructor', 'name');
+        .populate('institution', 'name enrollInfo')
+        .populate('instructor', 'name contactEmail');
+
         var queryCoursePage = CoursePage.model.findOne({}, {}, {
             sort: {
                 'createdAt': -1
@@ -41,12 +48,14 @@ exports = module.exports = function(req, res) {
 
         queryCourses.exec(function(err, resultCourses) {
             queryCoursePage.exec(function(err, resultPage) {
+                Filter.model.find({}).exec(function(err, resultFilter){
+                    locals.filters = categorize(resultFilter, 'Institution');
 
-                locals.courses = resultCourses;
-                locals.page = resultPage;
+                    locals.courses = resultCourses;
+                    locals.page = resultPage;
 
-                next();
-                
+                    next();
+                });
             });
         });
     });
