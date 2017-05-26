@@ -59,9 +59,9 @@
       "host": "199.94.80.32",
       "repo": "git@github.com:engagementgamelab/boston-civic-media.git",
       "ref": "origin/keystone-4.0",
-      "path": "/srv/boston-civic-media-4.0",
+      "path": "/srv/boston-civic-media-2.0",
       "pre-deploy-local" : "echo 'Cloning and running npm install. Be patient.'",
-      "post-deploy" : "npm i ; cd /srv/framework-4.0/current/ ; grunt compile --sites=boston-civic-media --env production ; pm2 restart 1 --env production",
+      "post-deploy" : "npm i ; cd /srv/framework-2.0/current/ ; grunt compile --sites=boston-civic-media --env production ; pm2 restart 1 --env production",
       "env": {
         "NODE_ENV": "production"
       }

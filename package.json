@@ -1,7 +1,7 @@
 {
-  "name": "boston-civic-media",
+  "name": "boston-civic-media-2.0",
   "description": "Boston Civic Media's home page.",
-  "version": "0.0.1",
+  "version": "2.0.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/engagementgamelab/boston-civic-media.git"
