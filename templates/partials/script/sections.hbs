@@ -14,6 +14,7 @@
 	
 	$(document).ready(function() {
 		
+		var container;
 		// Image responsiveness
 		var cl = cloudinary.Cloudinary.new({cloud_name: "engagement-lab-home"}); 
 		cl.responsive({responsive_resize:true});
@@ -52,7 +53,7 @@
 		{{!-- ABOUT Template Script --}}
 		{{#ifeq section 'about'}}
 	
-			var container = $('#affiliate-content');
+			container = $('#affiliate-content');
 
 			lastImageLoaded (container, function () {
 				var container = $('#affiliate-content');
@@ -254,7 +255,7 @@
 		{{!-- LIGHTNING TALK Template Script --}}
 		{{#ifeq section 'lightning_talk'}}
 			
-			container = $('#talks-content'),
+			container = $('#talks-content');
 			function loadVidThumbs() {
 
       	$.each($('.video-embed-thumb'), function(i, thumb) {
@@ -305,7 +306,9 @@
 
 			    var filterValue = $(this).attr('data-filter');
 			    container.isotope({
-			        filter: filterValue
+		        filter: filterValue,
+				    isFitHeight: true,
+				    layoutMode: 'masonry'
 			    });
 
 			});
