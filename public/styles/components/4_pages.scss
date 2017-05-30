@@ -103,6 +103,10 @@ body .dropdown-backdrop {
 		h1 {
 			text-align: center;
 		}
+
+		@include tablet-portrait-and-below {
+			margin-left: auto;
+		}
 	}
 
 	section {
