@@ -12,7 +12,7 @@
  * ==========
  */
 var keystone = require('keystone');
-var Filter = keystone.list('Filter');
+var Enroll = keystone.list('Enroll');
 var Course = keystone.list('Course');
 var CoursePage = keystone.list('CoursePage');
 var _ = require('underscore');
@@ -23,12 +23,6 @@ exports = module.exports = function(req, res) {
     var view = new keystone.View(req, res),
         locals = res.locals;
 
-    var categorize = function(val, cat) {
-        return val.filter(function(item) {
-            return item.category == cat;
-        });
-    };
-
     // Init locals
     locals.section = 'courses';
 
@@ -37,7 +31,7 @@ exports = module.exports = function(req, res) {
         var queryCourses = Course.model.find({}).sort([
             ['sortOrder', 'ascending']
         ])
-        .populate('institution', 'name enrollInfo')
+        .populate('inst')
         .populate('instructor', 'name contactEmail');
 
         var queryCoursePage = CoursePage.model.findOne({}, {}, {
@@ -48,8 +42,8 @@ exports = module.exports = function(req, res) {
 
         queryCourses.exec(function(err, resultCourses) {
             queryCoursePage.exec(function(err, resultPage) {
-                Filter.model.find({}).exec(function(err, resultFilter){
-                    locals.filters = categorize(resultFilter, 'Institution');
+                Enroll.model.find({}).exec(function(err, resultFilter){
+                    locals.filters = resultFilter;
 
                     locals.courses = resultCourses;
                     locals.page = resultPage;

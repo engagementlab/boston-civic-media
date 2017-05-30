@@ -657,25 +657,40 @@ body .talks-item {
 	}
 }
 .involved-wrapper {
+	max-width: 1024px;
+
+    margin: 0 auto;
+
+    @media (max-width: 1200px) {
+    	width: 90%;
+    }
 
 	// TOP BORDER
-	div {
-		background-color: white;
-		margin: 0px 4%;
-		height: 400px;
-		margin-bottom: 60px;
-		&:nth-child(1) {
-			border-top-color: $color-seafoam-blue;
+	.involved {
+
+		div {
+
+			background-color: white;
+			height: 400px;
+			margin: 0 auto;
+			margin-bottom: 60px;
+		  border-top: solid 40px;
+		  width: 100%;
+
+			&:nth-child(1) {
+				border-top-color: $color-seafoam-blue;
+			}
+			&:nth-child(2) {
+				border-top-color: $color-pale-teal;
+			}
+			&:nth-child(4) {
+				border-top-color: $color-sea;
+			}
+			&:nth-child(5) {
+				border-top-color: $color-seafoam-blue;
+			}
 		}
-		&:nth-child(2) {
-			border-top-color: $color-pale-teal;
-		}
-		&:nth-child(4) {
-			border-top-color: $color-sea;
-		}
-		&:nth-child(5) {
-			border-top-color: $color-seafoam-blue;
-		}
+
 
 		@include tablet-portrait-and-below {
 			height: auto;
@@ -684,24 +699,25 @@ body .talks-item {
 	}
 
 	.involved {
-	  border-top: solid 40px;
 	  
 		ul {
 			list-style-type: none;
+			padding: 0px;
 			@media (max-width: 1024px) {
 				padding: 0px;
 			}
 		}
 		li {
-			background-repeat:no-repeat;
+/* 			background-repeat:no-repeat;
 			background-position: 0px center;
-			background-image: url('https://res.cloudinary.com/engagement-lab-home/image/upload/v1495473210/boston-civic-media/layout/bullet.svg');
+			background-image: url('https://res.cloudinary.com/engagement-lab-home/image/upload/v1495473210/boston-civic-media/layout/bullet.svg'); */
 		  margin: 12px;
 		  color: $gray-dark;
 		  font-family: $body-type;
 		  font-size: em(18);
 		  letter-spacing: -0.1px;
-		  padding-left: 40px;
+		  padding-left: 20px;
+		  padding-right: 20px;
 		  line-height: 1.2;
 
 		  @media (max-width: 426px) {

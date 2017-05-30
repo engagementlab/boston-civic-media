@@ -16,39 +16,47 @@
 <section class="sub-header col-sm-12 col-md-6 col-centered">
 	{{getting_involved.subHeader}}
 </section>
-<section class="involved-wrapper col-md-10 col-centered">
+<section class="involved-wrapper row">
 	
-	<div class="involved educators col-sm-11 col-md-5">
-		<h1 class="title sub-header">Educators</h1>
-		<ul>
-			{{#each getting_involved.edBlurb}}
-			<li>{{this}}</li>
-			{{/each}}
-		</ul>
+	<div class="involved col-sm-12 col-md-6">
+		<div classs="row educators">
+			<h1 class="title sub-header">Educators</h1>
+			<ul>
+				{{#each getting_involved.edBlurb}}
+				<li>{{this}}</li>
+				{{/each}}
+			</ul>
+		</div>
 	</div>
-	<div class="involved organizations col-sm-11 col-md-5">
-		<h1 class="title sub-header">Organizations</h1>
-		<ul>
-			{{#each getting_involved.orgBlurb}}
-			<li>{{this}}</li>
-			{{/each}}
-		</ul>
+	<div class="involved col-sm-12 col-md-6">
+		<div class="row organizations">
+			<h1 class="title sub-header">Organizations</h1>
+			<ul>
+				{{#each getting_involved.orgBlurb}}
+				<li>{{this}}</li>
+				{{/each}}
+			</ul>
+		</div>
 	</div>
-	<div class="involved researchers col-sm-11 col-md-5">
-		<h1 class="title sub-header">Researchers</h1>
-		<ul>
-			{{#each getting_involved.resBlurb}}
-			<li>{{this}}</li>
-			{{/each}}
-		</ul>
+	<div class="involved col-sm-12 col-md-6">
+		<div class="row researchers">
+			<h1 class="title sub-header">Researchers</h1>
+			<ul>
+				{{#each getting_involved.resBlurb}}
+				<li>{{this}}</li>
+				{{/each}}
+			</ul>
+		</div>
 	</div>
-	<div class="involved students col-sm-11 col-md-5">
-		<h1 class="title sub-header">Students</h1>
-		<ul>
-			{{#each getting_involved.studBlurb}}
-			<li>{{this}}</li>
-			{{/each}}
-		</ul>
+	<div class="involved col-sm-12 col-md-6">
+		<div class="row students">
+			<h1 class="title sub-header">Students</h1>
+			<ul>
+				{{#each getting_involved.studBlurb}}
+				<li>{{this}}</li>
+				{{/each}}
+			</ul>
+		</div>
 	</div>
 </section>
 {{!-- LISTSERV --}}
