@@ -336,10 +336,13 @@ body {
     margin-bottom: 16px;
   }
 
-  .subscribe, .btn.subscribe-button {
-    width: 224px;
-
-  }
+  .btn.subscribe-button {
+    border: solid 8px $color-light-teal;
+    line-height: 50px;
+    font-size: em(24);
+    width: 175px;
+    color: $color-light-teal;
+  } 
 
   .footer-content-list {
     margin-bottom:44px;
@@ -348,19 +351,23 @@ body {
 
   .buttons {
     p {
-      font-size:em(18);
+      font-size:em(14);
       width: 225px;
       margin: 0 auto;
+      color: $color-light-teal;
     }
   }
 
   .footer-line {
-    font-size: 22px;
+    font-size: em(22);
     line-height: 1.18;
     letter-spacing: -0.1px;
-    color: $color-light-blue-grey;
+    color:$color-light-teal;
+    font-family: HalisGR-Bold;
+
     &:nth-child(1) {
-      color:#3f9893;
+      font-size: em(20);
+      font-family: HalisGR-Regular;
     }
   }
 }
@@ -390,7 +397,6 @@ body {
   }
 
   .subscribe {
-    width: 224px;
     display: inline-block;
 
   }

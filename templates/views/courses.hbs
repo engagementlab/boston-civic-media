@@ -92,13 +92,9 @@
 		<h1 class="page-title">Enrollment Information</h1>
 
 		{{#each filters}}
-		<a href="#{{this.key}}">{{this.name}}</a>
-		{{/each}}
-
-		{{#each filters}}
 		<div class="enroll-info" id="{{this.key}}">
 			<h1>{{this.name}}</h1>
-			{{{this.enrollInfo.html}}}
+			{{{this.info.html}}}
 		</div>
 		{{/each}}
 

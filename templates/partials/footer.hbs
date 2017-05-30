@@ -4,27 +4,29 @@
 		<div class="dark footer-content text-center padding-ver-clear">
 
 			<div class="logos-footer center-block">
-				{{{cloudinaryUrl '/v1495219010/boston-civic-media/logos/el-logo' width=142 format='svg' id="logo-el" alt="Engagement Lab"}}}
-				{{{cloudinaryUrl '/v1495219010/boston-civic-media/logos/bcm-logo' width=142 format='svg' id="logo-bcm" alt="Boston Civic Media"}}}
-				{{{cloudinaryUrl '/v1495219010/boston-civic-media/logos/teagle-logo' width=142 format='svg' id="logo-teagle" alt="Teagle Foundation"}}}
+				{{{cloudinaryUrl '/co_rgb:85ddd2/v1495219010/boston-civic-media/logos/el-logo' height=75 format='svg' id="logo-el" alt="Engagement Lab"}}}
+				{{{cloudinaryUrl '/co_rgb:85ddd2/v1495219010/boston-civic-media/layout/cross' width=35 format='svg' alt="Boston Civic Media"}}}
+				{{{cloudinaryUrl '/co_rgb:85ddd2/v1495219010/boston-civic-media/logos/bcm-logo' height=75 format='svg' id="logo-bcm" alt="Boston Civic Media"}}}
+				{{{cloudinaryUrl '/co_rgb:85ddd2/v1496158923/boston-civic-media/layout/cross' width=35 format='svg' alt="Boston Civic Media"}}}
+				{{{cloudinaryUrl '/co_rgb:85ddd2/v1495219010/boston-civic-media/logos/teagle-logo' height=75 format='svg' id="logo-teagle" alt="Teagle Foundation" class=""}}}
 			</div>
 
 			<div class="row footer-content-list">
 				<div class="col-md-12">
-						{{#each footer.content}}
-						<div class="footer-line">{{this}}</div>
-						{{/each}}
+					{{#each footer.content}}
+					<div class="footer-line">{{this}}</div>
+					{{/each}}
 				</div>
 			</div>
 
 			<div class="row buttons">
-				<div class="subscribe col-md-3 col-centered">
+				<div class="subscribe col-md-5 col-centered">
 					
 					<a href="{{footer.subscribeLink}}" class="btn subscribe-button">Newsletter</a>
 					<p>{{footer.subscribe}}</p>
 				</div>
 
-				<div class="subscribe col-md-3 col-centered">
+				<div class="subscribe col-md-5 col-centered">
 					
 					<a href="{{footer.listservLink}}" class="btn subscribe-button">Listserv</a>
 					<p>{{footer.listserv}}</p>

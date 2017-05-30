@@ -109,15 +109,25 @@
 		}
 		&.mobile {
 			@include tablet-portrait-and-below {
-				background-color: #f1f9f8;
+				background-color: #29655f;
 				padding: 30px 15px;
-/* 				display: inline-block; */
+				display: inline-block;
 				margin-bottom: -8px;
 				width: 100%;
 				position: relative;
+				.feature-wrap {
+					width: 100%;
+					float: none;
+					margin: 0 auto;
+				}
 				.feature {
 					background-color: white;
 					margin: 16px auto;
+					max-width: 80%;
+					float: none;
+					@media (max-width: 426px) {
+						max-width: 100%;
+					}
 					&.link {
 						.bottom {
 							width: 90%;
@@ -135,6 +145,7 @@
 		padding: 16px;
 		min-height:200px;
 		background-color: $color-feature-bg;
+		position: relative;
 
 		@include transition(all 0.2s);
 
@@ -190,7 +201,7 @@
 		h1 {
 			margin-top:0px;
 			margin-bottom: 16px;
-			font-size: em(30);
+			font-size: em(28);
 			@include tablet-portrait-and-below {
 				font-size: em(16);
 			}
@@ -203,13 +214,13 @@
 		h2 {
 			font-size: em(16);
 			@include tablet-portrait-and-below {
-				font-size: em(16);
+				font-size: em(14);
 			}
 			font-family: HalisGR-SBold;
 		  line-height: 1.31;
 		  letter-spacing: 0.1px;
 		  text-align: left;
-			color: $color-theme-text;
+			color: #338b83;
 		}
 	}
 

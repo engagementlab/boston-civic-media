@@ -40,16 +40,13 @@ var urlValidator = {
 Course.add({
 
   name: { type: Types.Text, label: "Course Name", required: true, initial: true },
-  institution: {
+  inst: {
     type: Types.Relationship,
-    filters: {
-        category: 'Institution'
-    },
-    ref: 'Filter',
-    label: 'Institution',
+    ref: 'Enroll',
+    label: 'Enrollment Institution',
     required: true,
     initial: true, 
-    note: 'Edit enrollment information on this Institution filter.'
+    note: 'Edit enrollment information on the Enroll model item.'
   },
   instructor: {
       type: Types.Relationship,

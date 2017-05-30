@@ -36,8 +36,7 @@ Filters.add({
     name: { type: String, label: 'Name', required: true, initial: true, index: true },
     category: { type: Types.Select, label: 'Type', options: 'Institution, Discipline, Faculty Member, Keyword, Partnership Organization', required: true, initial: true },
 	  
-	  contactEmail: { type: Types.Email, label: 'Email', required: false, dependsOn: {category: 'Faculty Member'} }, 
-	  enrollInfo: { type: Types.Markdown, label: 'Enroll Information', required: false, dependsOn: {category: 'Institution'}, note: 'Use h2 tags for section headings - everything else should be regular text.'}
+	  contactEmail: { type: Types.Email, label: 'Email', required: false, dependsOn: {category: 'Faculty Member'} }
 });
 
 

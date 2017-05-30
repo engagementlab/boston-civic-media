@@ -8,9 +8,15 @@
 	}
 	img {
 		display: initial;
-		opacity: 0.5;
-		margin-left: 2em;
+		opacity: 1;
+		margin: 0px 2em;
 		margin-bottom: 1em;
+		max-height: 75px;
+
+		&#logo-teagle {
+			margin: 0px 3em;
+			margin-bottom: 1em;
+		}
 	}
 }
 
