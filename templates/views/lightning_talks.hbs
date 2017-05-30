@@ -48,9 +48,9 @@
 		{{#if lightning_talk}}
 		{{#each lightning_talk}}
 		{{#if enabled}}
-		<div class="{{{this.category}}} {{#odd @index}}row{{/odd}}" data-category="{{{this.category}}}">
+		{{!-- <div class="{{#odd @index}}row{{/odd}}"> --}}
 			{{>index/lightning_talk lightning_talk=this}}
-		</div>
+		{{!-- </div> --}}
 		{{/if}}
 		{{/each}}
 		{{else}}

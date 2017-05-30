@@ -56,39 +56,11 @@ body .dropdown-backdrop {
 
 }
 
-
-
-
 .slider-buttons  {
 	position: relative;
 	z-index: 1000;
-	// height: 0px;
 	margin-top: -100px;
 	margin-bottom:10%;
-
-	#slider-next {
-		// position: absolute;
-		// top: 50%; 
-		// right: 5%;
-		// transform: translate(-50%,-50%);
-		// width: 100px;
-		// height: 60px;
-  		
-		// background-color: $gray-lighter;
-		// border-radius: 0px 20px 20px 0px;
-		// float: right;
-	}
-	#slider-prev {
-		// position: absolute;
-		// top: 50%; 
-		// left: 5%;
-		// transform: translate(-50%,-50%);
-		// width: 100px;
-		// height: 60px;
-	    
-		// background-color: $gray-lighter;
-		// border-radius: 20px 0px 0px 20px;
-	}
 }
 
 .main-featured {
@@ -178,7 +150,6 @@ body .dropdown-backdrop {
 	text-align: center;
 }
 
-
 .syllabus-wrap {
 	background-color: $color-pale-grey;
 	.page-title {
@@ -223,7 +194,6 @@ body .dropdown-backdrop {
 
 	}
 }
-
 
 .syllabus {
 	list-style-type:none;
@@ -351,6 +321,22 @@ body .dropdown-menu {
 	}
 }
 
+.lightning-talk {
+
+	max-height: 500px;
+
+	h1 {
+		font-family: $body-type;
+		font-size: em(22);
+		color: $color-sea-two;
+	}
+	p {
+		font-family: $extra-light-type;
+		color: $color-warm-grey;
+		font-size: em(16);		
+	}
+}
+
 .upcoming-events {
 
 
@@ -398,41 +384,12 @@ body .dropdown-menu {
 	}
 
 	img {
-/* 		height: 200px; */
 		float: none;
-    	margin: 8px auto;
+		margin: 8px auto;
 	}
 
 }
 
-.lightning-talk {
-  margin: 0px 4%;
-
-	h1 {
-		font-family: $body-type;
-		font-size: em(22);
-		color: $color-sea-two;
-	}
-	p {
-		font-family: $extra-light-type;
-		color: $color-warm-grey;
-		font-size: em(16);		
-	}
-}
-
-body .lightning-talk-title {
-	display: relative;
-	color: $gray-dark;
-	font-weight: 700;
-	// min-height: 80px;
-
-	h4 {
-		position: relative;
-		vertical-align: center;
-	}
-	// padding-top: 20%;
-
-}
 .slider-header {
 	width: 100%;
 	// display: table-cell;
