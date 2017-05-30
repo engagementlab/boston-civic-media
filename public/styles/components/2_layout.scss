@@ -39,15 +39,19 @@
 	@include dot (10px, $brown);
 }
 .top-content {
-	@include responsive-image('/v1494440105/boston-civic-media/layout/background-home.jpg', $mq-mobile-portrait, $mq-mobile-landscape, $mq-tablet-portrait, $mq-tablet-landscape, $mq-desktop);
+		background-image: url('https://res.cloudinary.com/engagement-lab-home/image/upload/c_scale/w_auto/v1494440105/boston-civic-media/layout/background-home.jpg');
+
+/* 	@include responsive-image('/v1494440105/boston-civic-media/layout/background-home.jpg', $mq-mobile-portrait, $mq-mobile-landscape, $mq-tablet-portrait, $mq-tablet-landscape, $mq-desktop); */
 	background-repeat: no-repeat;
  	 background-size: cover;
+	
+ 	 @media (max-width: 768px) {
+ 	 	background-position: -100px -300px;
+ 	 }
 
- 	 @media (max-width: 320px) {
- 	 	background-size: auto 320px;
- 	 }	
- 	 @media (max-width: 426px) {
- 	 	background-size: auto 426px;
+ 	 @media (max-width: 480px) {
+ 	 	background-size: auto 480px;
+   		background-position: initial;
  	 }
 }
 .main-blurb {
@@ -66,20 +70,20 @@
 	h1 {
 		color: $color-white;
 		font-family: HalisGR-Black;
-		font-size: em(56);
+		font-size: em(65);
 		@include tablet-portrait-and-below {
-			font-size: em(28);
+			font-size: em(36);
 		}
 		font-weight: 900;
 		letter-spacing: -0.4px;
-		text-align: justify;
+		text-align: left;
 	}
 	h2 {
 		color: $color-white;
 		font-family: $med-type;
-		font-size: em(32);
+		font-size: em(48);
 		@include tablet-portrait-and-below {
-			font-size: em(16);
+			font-size: em(24);
 		}
 		font-weight: 500;
 		letter-spacing: -0.4px;
@@ -105,6 +109,9 @@
 		&.desktop {
 			@include tablet-portrait-and-below {
 				display: none;
+			}
+			.feature-wrap {
+				padding: 8px;
 			}
 		}
 		&.mobile {
@@ -162,19 +169,19 @@
 	    .bottom {
 
 	    	font-family: $light-type-super;
-	    	font-size: em(18);
+	    	font-size: em(14);
 	    	color: $color-light-grey-blue;
-	    	width:40%;
+	    	width:auto;
 	    	position: absolute;
 	    	bottom: 8px;
-			right:36px;
+			right:16px;
 		    position: absolute;
 
 				@include tablet-portrait-and-below {
 					text-align: right;
 				}
 
-				&:before {
+/* 				&:before {
 					content: "";
 					position: absolute;
 					z-index: 10;
@@ -191,7 +198,7 @@
 						border-bottom: 7px solid transparent;
 						bottom: 4%;
 					}
-				}
+				} */
 
 	    }
 	  }
@@ -202,9 +209,6 @@
 			margin-top:0px;
 			margin-bottom: 16px;
 			font-size: em(28);
-			@include tablet-portrait-and-below {
-				font-size: em(16);
-			}
 			line-height: 1.2;
 		  letter-spacing: 0.1px;
 		  text-align: left;
@@ -212,7 +216,7 @@
 			color: $color-theme-text;
 		}
 		h2 {
-			font-size: em(16);
+			font-size: em(14);
 			@include tablet-portrait-and-below {
 				font-size: em(14);
 			}

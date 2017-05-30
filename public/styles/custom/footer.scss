@@ -1,4 +1,5 @@
 .logos-footer {
+	color: #85ddd2;
 	#logo {
 		width: 96px;
 	}
@@ -9,13 +10,14 @@
 	img {
 		display: initial;
 		opacity: 1;
-		margin: 0px 2em;
+		margin: 0px 16px 8px;
 		margin-bottom: 1em;
 		max-height: 75px;
+		max-width: 100px;
+		fill: currentColor;
 
 		&#logo-teagle {
-			margin: 0px 3em;
-			margin-bottom: 1em;
+			margin: 0px 16px 8px;
 		}
 	}
 }
