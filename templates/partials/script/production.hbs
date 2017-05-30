@@ -14,11 +14,14 @@
 {{!-- Core framework JS --}}
 <script type="text/javascript" src="https://res.cloudinary.com/engagement-lab-home/raw/upload/site/js/core.js"></script>
 
-{{!-- Player.js --}}
-<script type="text/javascript" src="https://cdn.embed.ly/player-0.0.11.min.js"></script>
-
 {{!-- Site JS --}}
 <script type="text/javascript" src="https://res.cloudinary.com/engagement-lab-home/raw/upload/v1/boston-civic-media/isotope.min.js"></script>
 <script type="text/javascript" src="{{cdnAsset product='boston-civic-media-2.0' env=environment type='js' }}"></script>
+
+{{#ifeq environment "production"}}
+	<script type="text/javascript" src="{{cdnAsset product='boston-civic-media-2.0' env=environment type='js' }}"></script>
+{{else}}
+	<script type="text/javascript" src="{{cdnAsset product='boston-civic-media' env=environment type='js' }}"></script>
+{{/ifeq}}
 
 {{> script/sections section=section key=key env=environment }}

@@ -48,7 +48,7 @@ router.get('/', routes.views.index);
 router.get('/about', routes.views.about);
 router.get('/courses', routes.views.courses);
 router.get('/syllabi', routes.views.syllabi);
-router.get('/syllabi/:syllabus_key', routes.views.syllabus);
+router.get('/syllabus/:syllabus_key', routes.views.syllabus);
 router.get('/lightning-talks', routes.views.lightning_talks);
 router.get('/lightning-talks/:talk_key', routes.views.lightning_talk);
 router.get('/irb-proj', routes.views.irb_proj);
@@ -63,6 +63,7 @@ router.get('/irb_proj', routes.views.irb_proj);
 router.get('/getting_involved', routes.views.getting_involved);
 router.get('/lightning_talks', routes.views.lightning_talks);
 router.get('/lightning_talks/:talk_key', routes.views.lightning_talk);
+router.get('/syllabi/:syllabus_key', routes.views.syllabus);
 
 // NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 // router.get('/protected', middleware.requireUser, routes.views.protected);

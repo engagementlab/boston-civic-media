@@ -30,7 +30,8 @@ module.exports = function(grunt, options) {
     __dirname + '/../public/plugins/**/*.js',
     '!' + __dirname + '/../public/plugins/isotope/*.js',  // Ignore isotope (this is a seperate prod include)
     __dirname + '/../public/plugins/bxslider/jquery.bxslider.js',
-    __dirname + '/../public/bower_components/cloudinary-core/cloudinary-core-shrinkwrap.js'
+    __dirname + '/../public/bower_components/cloudinary-core/cloudinary-core-shrinkwrap.js',
+    __dirname + '/../public/bower_components/vimeo-player-js/dist/player.js'
   
   ];
 

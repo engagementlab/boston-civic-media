@@ -161,7 +161,6 @@
 
 			});
 
-
 		{{/ifeq}}
 
 		{{!-- SYLLABI Template Script --}}
@@ -256,14 +255,11 @@
 		{{#ifeq section 'lightning_talk'}}
 			
 			container = $('#talks-content'),
-			count;
-
 			function loadVidThumbs() {
 
       	$.each($('.video-embed-thumb'), function(i, thumb) {
       		var url = $(thumb).data('url');
       		var replaceStart = url.indexOf('_640.jpg&src1');
-      		var frame = $('#modal-video .embed-responsive iframe');
       		url = url.substr(0, replaceStart) + '_' + $(thumb).parent().width() + '.jpg&src1' + url.substr(replaceStart, url.length);
 
         	$(thumb).attr('src', url);
@@ -272,15 +268,16 @@
         		$('#modal-video .embed-responsive').html($(el.currentTarget).data('embed'));
         		$('#modal-video').modal();
 
-					  var player = new playerjs.Player(frame); 
-				    // Listen to the play event.
-				    player.on('play', function() {
-					      // Tell Google analytics that a video was played.
-					     ga('send', 'event', 'Video', 'Play');
-						});
-
+	      		var frame = $('#modal-video .embed-responsive iframe');
 		      	frame.on('load', function(evt) {
 		      		$(evt.currentTarget).fadeIn(200);
+
+	        		var player = new Vimeo.Player(frame[0]);
+					    // Listen to the play event.
+					    player.on('play', function() {
+						      // Tell Google analytics that a video was played.
+						     ga('send', 'event', 'Video', 'Play');
+							});
 		      	});
 
         	});
