@@ -256,7 +256,14 @@
 		{{#ifeq section 'lightning_talk'}}
 			
 			container = $('#talks-content');
-			function loadVidThumbs() {
+			function preLoad() {
+      	container.isotope({
+      		itemSelector: '.lightning-talk',
+	        filter: '*', 
+			    layoutMode: 'fitRows'
+		    });
+			}
+			function loadVidThumbs(callback) {
 
       	$.each($('.video-embed-thumb'), function(i, thumb) {
       		var url = $(thumb).data('url');
@@ -290,15 +297,17 @@
       		$('#modal-video').hide();
       	});
 
+      	callback();
+
       }
 
 			function checkFiltered() {
 
-			    var talks = $('#talks-content');
-			    if (talks.data('isotope').filteredItems.length === 0)
-			        $('.no-talks-visible').show();
-			    else
-			        $('.no-talks-visible').hide();
+		    var talks = $('#talks-content');
+		    if (talks.data('isotope').filteredItems.length === 0)
+		        $('.no-talks-visible').show();
+		    else
+		        $('.no-talks-visible').hide();
 
 			}
 
@@ -306,9 +315,10 @@
 
 			    var filterValue = $(this).attr('data-filter');
 			    container.isotope({
+			    	itemSelector: '.lightning-talk',
 		        filter: filterValue,
 				    isFitHeight: true,
-				    layoutMode: 'masonry'
+				    layoutMode: 'fitRows'
 			    });
 
 			});
@@ -336,6 +346,7 @@
 				if (currentText)
 				    return currentText.substr(0, 120) + "...";
 			});
+			
 		{{/ifeq}}
 
 		{{!-- COURSE CATALOG Template Script --}}
