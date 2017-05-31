@@ -261,7 +261,7 @@ body .filters {
 	.btn-group.open > btn.syllabi-options:active,
 	.btn-group.open > btn.syllabi-options:visited{
 		background-color: white;
-		border: 3px solid $green;
+		border: 3px solid #85bbb2;
 		color: $gray-light;
 		box-shadow:none;
 	}
@@ -270,14 +270,14 @@ body .filters {
 		background-color: white;
 		color: $gray-dark;
 		font-weight: bold;
-		border: 3px solid $green;
+		border: 3px solid #85bbb2;
 	}
 
 	.btn.syllabi-options:hover,
 	.btn.syllabi-options:active,
 	.btn.syllabi-options:focus {
 		background-color: white;
-		border: 3px solid $green;
+		border: 3px solid #85bbb2;
 		color: $gray-light;
 		box-shadow:none;
 	}
@@ -285,12 +285,12 @@ body .filters {
 	.btn.syllabi-options:selected {
 		color: $gray-dark;
 		background-color: white;
-		border: 3px solid $green;
+		border: 3px solid #85bbb2;
 
 	}
 	.btn.syllabi-options:focus {
 		background-color: white;
-		border: 3px solid $green;
+		border: 3px solid #85bbb2;
 		color: $gray-light;
 	}
 
@@ -301,7 +301,7 @@ body .dropdown-menu {
 
 	li a {
 		color: $gray-dark;
-		background-color: $green-light;
+		background-color: #85bbb2;
 	}
 	li a:hover {
 		color: $gray-dark;
@@ -328,6 +328,7 @@ body .dropdown-menu {
 .lightning-talk {
 
 	max-height: 500px;
+	min-height: 500px;
 
 	h1 {
 		font-family: $body-type;
@@ -550,12 +551,13 @@ body .dropdown-menu {
 
 }
 #talks-content {
-	padding: 0px 2%;
+	padding: 0px;
 	min-height: 100%;
 }
 body .talks-item {
 	text-align: center;	
-	min-height: 500px;
+	min-height: 600px;
+	max-height: 600px;
 	p {
 		margin: 0 auto;
 		// width: 90%;

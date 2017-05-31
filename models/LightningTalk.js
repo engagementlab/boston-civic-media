@@ -21,9 +21,9 @@ var LightningTalk = new keystone.List('LightningTalk',
  * @main About
  */
 LightningTalk.add({
-	name: { type: String, label: "Title", note: "Talk Title", required: true, initial: true, index: true},
+	name: { type: String, label: "Title", note: "Should be UNDER 100 characters.", required: true, initial: true, index: true},
 	longDescription: { type: Types.Markdown, label: 'Long Description', note: 'Shown on individual talk page. No character limit.', required: true, initial: true },
-	talkDescription: { type: Types.Markdown, label: "Short Description", note: "Cut off at 300 characters. Appears in grid layout of talks.", max: {chars: 300, mode: 'validate'}, required: true, initial: true, index: true },
+	short: { type: Types.Text, label: "Short Description", note: "Should be UNDER 300 characters. Appears in grid layout of talks.", max: {chars: 300, mode: 'validate'}, required: true, initial: true, index: true },
 	category: { type: Types.Select, label: 'Type', options: 'Welcome, Art, Research, Technology, Media, Data, Co-Design', required: true, initial: true },
 	enabled: {
     type: Types.Boolean,
