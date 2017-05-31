@@ -69,6 +69,10 @@ body .dropdown-backdrop {
 	padding: 0px 40px;
 	position: relative;
 
+	@include tablet-portrait-and-below {
+		padding: 0px 8px;
+	}
+
 	.upcoming-events {
 		background-color: white;
 		margin-left: 48px;
@@ -76,8 +80,8 @@ body .dropdown-backdrop {
 			text-align: center;
 		}
 
-		@include tablet-portrait-and-below {
-			margin-left: auto;
+		@include tablet-landscape-and-below {
+			margin: 0 auto;
 		}
 	}
 
