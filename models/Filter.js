@@ -19,14 +19,14 @@ var Types = keystone.Field.Types;
  * See: http://keystonejs.com/docs/database/#lists-options
  */
 var Filters = new keystone.List('Filter', 
-    {
-		name: 'Filters',
-		singular: 'Filter',
-        hidden: false,
-        nodelete: false,
-        sortable: true,
-        autokey: { path: 'key', from: 'name', unique: false }
-    });
+{
+	name: 'Filters',
+	singular: 'Filter',
+  hidden: false,
+  nodelete: false,
+  sortable: true,
+  autokey: { path: 'key', from: 'name', unique: false }
+});
 
 /**
  * Model Fields

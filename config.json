@@ -7,7 +7,7 @@
 									"home": ["Home", "HomeFeature"],
 									"about": ["About", "affiliates", "funders", "TeamMember", "collaborations"],
 									"Getting Involved": ["GettingInvolved", "ListservGuidelines", "Newsletter"],
-									"courses": ["Course", "CoursePage", "filters"],
+									"courses": ["Course", "CoursePage", "Enroll"],
 									"syllabi": ["Syllabi", "filters"],
 									"lightning talks": "LightningTalk",
 									"events": "events",

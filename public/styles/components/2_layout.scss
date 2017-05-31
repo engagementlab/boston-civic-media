@@ -79,7 +79,7 @@
 		text-align: left;
 	}
 	h2 {
-		color: $color-white;
+		color: $color-feature-h2;
 		font-family: $med-type;
 		font-size: em(48);
 		@include tablet-portrait-and-below {
@@ -221,7 +221,7 @@
 				font-size: em(14);
 			}
 			font-family: HalisGR-SBold;
-		  line-height: 1.31;
+		  line-height: 1.5;
 		  letter-spacing: 0.1px;
 		  text-align: left;
 			color: #338b83;

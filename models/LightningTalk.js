@@ -23,7 +23,7 @@ var LightningTalk = new keystone.List('LightningTalk',
 LightningTalk.add({
 	name: { type: String, label: "Title", note: "Talk Title", required: true, initial: true, index: true},
 	longDescription: { type: Types.Markdown, label: 'Long Description', note: 'Shown on individual talk page. No character limit.', required: true, initial: true },
-	talkDescription: { type: Types.Markdown, label: "Short Description", note: "Cut off at 300 characters. Appears in grid layout of talks.", max: {chars: 300, mode: 'validate'}, required: true, initial: true, index: true },
+	shortDescription: { type: Types.Textarea, label: "Short Description", note: "<b>Limit 300 characters.</b> Appears in grid layout of talks.", max: 300, required: true, initial: true },
 	category: { type: Types.Select, label: 'Type', options: 'Welcome, Art, Research, Technology, Media, Data, Co-Design', required: true, initial: true },
 	enabled: {
     type: Types.Boolean,
@@ -32,12 +32,12 @@ LightningTalk.add({
 	},
 	homePage: {
     type: Types.Boolean,
-    label: 'Appears on Home Page carousel'
+    label: 'Appears on Home Page'
 	},
 	featured: {
     type: Types.Boolean,
     label: 'Featured',
-    note: 'Appears on Lightning Talk page. Only ONE Lightning Talk can be featured'
+    note: 'Appears on Lightning Talk page. Only ONE Lightning Talk can be featured!'
 	},
 
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }

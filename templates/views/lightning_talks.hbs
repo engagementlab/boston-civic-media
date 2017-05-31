@@ -19,11 +19,13 @@
 		
 		<div class="col-md-8 col-sm-12 col-centered feature">
 			<h2 style="text-align:center;">Featured Lightning Talk</h2>
+			
 			{{#if featured_lightning_talks}}
 			{{#each featured_lightning_talks}}
 				{{>talks/featured featured_lightning_talk=this}}
 			{{/each}}
 			{{/if}}
+
 		</div>
 		
 	</div>

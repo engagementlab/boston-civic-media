@@ -23,7 +23,7 @@ var Home = new keystone.List('Home',
 	{
 		label: 'Home Page',
 		singular: 'Home Page',
-				nodelete: true,
+		nodelete: true,
 		nocreate: true
 	});
 

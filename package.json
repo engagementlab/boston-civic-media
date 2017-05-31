@@ -17,6 +17,7 @@
     "json-fs-store": "^1.0.0",
     "keystone": "git://github.com/engagementgamelab/keystone.git",
     "keystone-storage-adapter-azure": "^1.1.0",
+    "mongoose-validator": "^1.2.6",
     "node-sass-middleware": "^0.9.7",
     "underscore": "^1.8.3"
   }
