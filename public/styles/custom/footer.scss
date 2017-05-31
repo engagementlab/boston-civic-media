@@ -17,8 +17,22 @@
 		fill: currentColor;
 
 		&#logo-teagle {
-			margin: 0px 16px 8px;
+			margin: 0px 8px 8px;
 		}
+
+		@media(max-width: 426px) {
+			max-width: 80px;
+			max-height: 60px;
+			margin: 16px auto;
+			&.cross {
+				display: none;
+			}
+			&#logo-teagle {
+				margin: 16px auto;
+			}
+		}
+
+		
 	}
 }
 
