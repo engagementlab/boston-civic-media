@@ -10,6 +10,7 @@ var Enroll = new keystone.List('Enroll',
 	{
 		label: 'Enrollment Information Content',
 		singular: 'Enrollment Information Content',
+    autokey: { path: 'key', from: 'name', unique: true },
     nocreate: false
 	});
 

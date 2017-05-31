@@ -31,7 +31,7 @@ exports = module.exports = function(req, res) {
         var queryCourses = Course.model.find({}).sort([
             ['sortOrder', 'ascending']
         ])
-        .populate('inst')
+        .populate('inst', 'name key')
         .populate('instructor', 'name contactEmail');
 
         var queryCoursePage = CoursePage.model.findOne({}, {}, {

@@ -321,14 +321,11 @@ body {
   background-color:rgba(207, 235, 234, 0.3);
   
   .footer {
-    max-width: 60%;
+    max-width: 1024;
 
-    @include tablet-landscape-and-below {
+    @include tablet-portrait-and-below {
       max-width: 90%;
 
-      .subscribe {
-        width: 90%;
-      }
     }
   }
 
