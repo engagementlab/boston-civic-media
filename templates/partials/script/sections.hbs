@@ -263,7 +263,7 @@
 			    layoutMode: 'fitRows'
 		    });
 			}
-			function loadVidThumbs(callback) {
+			function loadVidThumbs() {
 
       	$.each($('.video-embed-thumb'), function(i, thumb) {
       		var url = $(thumb).data('url');
@@ -294,10 +294,8 @@
 
       	$('#modal-video').click(function(el) {
       		$('#modal-video .embed-responsive').empty();
-      		$('#modal-video').hide();
+      		$('#modal-video').modal('toggle');      		
       	});
-
-      	callback();
 
       }
 
