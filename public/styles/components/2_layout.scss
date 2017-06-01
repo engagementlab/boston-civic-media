@@ -220,7 +220,7 @@
 			@include tablet-portrait-and-below {
 				font-size: em(14);
 			}
-			font-family: HalisGR-SBold;
+			font-family: $bold-type;
 		  line-height: 1.5;
 		  letter-spacing: 0.1px;
 		  text-align: left;
