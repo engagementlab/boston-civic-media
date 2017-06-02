@@ -76,15 +76,7 @@ exports = module.exports = function(req, res) {
                         if (err) throw err;
                         locals.funders = resultFunders;
 
-                        var queryCollab = Collab.model.findOne({}).sort([
-                            ['sortOrder', 'ascending']
-                        ]);
-
-                        queryCollab.exec(function(err, resultCollab) {
-                            if (err) throw err;
-                            locals.collaborations = resultCollab;
-                            next(err);
-                        });
+                        next(err);
                     });
                 });
             });

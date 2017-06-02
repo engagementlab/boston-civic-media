@@ -33,9 +33,9 @@ exports.initLocals = function(req, res, next) {
         href: '/about'
     },
     {
-        label: 'Get Involved',
-        key: 'get-involved',
-        href: '/get-involved'
+        label: 'Events',
+        key: 'events',
+        href: '/events'
     },
     {
         label: 'Courses',
@@ -53,9 +53,9 @@ exports.initLocals = function(req, res, next) {
         href: '/lightning-talks'
     },
     {
-        label: 'Events',
-        key: 'events',
-        href: '/events'
+        label: 'Get Involved',
+        key: 'get-involved',
+        href: '/get-involved'
     }];
 
     locals.user = req.user;

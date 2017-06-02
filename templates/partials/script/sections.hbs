@@ -274,7 +274,7 @@
         	$(thumb).click(function(el) {
 
         		$('#modal-video .embed-responsive').html($(el.currentTarget).data('embed'));
-        		$('#modal-video').modal();
+        		$('#modal-video').modal('show');
 
 	      		var frame = $('#modal-video .embed-responsive iframe');
 		      	frame.on('load', function(evt) {
@@ -294,7 +294,7 @@
 
       	$('#modal-video').click(function(el) {
       		$('#modal-video .embed-responsive').empty();
-      		$('#modal-video').modal('toggle');      		
+      		$('#modal-video').modal('hide');
       	});
 
       }
