@@ -859,6 +859,10 @@ body .talks-item {
 .featured-event {
 	text-align: center;
 
+	@include mobile-landscape-and-below {
+		padding: 0;
+	}
+
 	.summary {
 		font-size: 2em;
 		font-style: bold;
@@ -881,18 +885,27 @@ body .talks-item {
 		font-size: em(40);
 		color: $color-dull-teal;
 		margin-bottom: 0;
+		@include mobile-landscape-and-below {
+			font-size: em(24);
+		}
 	}
 	h2 {
 		margin: 0;
 		font-family: $body-type;
 		font-size: em(30);
 		color: $color-warm-grey;
+		@include mobile-landscape-and-below {
+			font-size: em(20);
+		}
 
 	}
 	p {
 		font-family: $extra-light-type;
 		color: $gray-dark;
 		font-size: large;
+		@include mobile-landscape-and-below {
+			font-size: em(16);
+		}
 	}
 
 }
@@ -915,7 +928,10 @@ body .talks-item {
 .featured-event-wrap {
 	padding: 80px;
 	@include mobile-landscape-and-below {
-		padding: 40px;
+		padding: 1px;
+		margin-top: 30px;
+		border-left: $color-pale-grey 8px solid;
+    	border-right: $color-pale-grey 8px solid;
 	}
 }
 
@@ -953,7 +969,9 @@ body .talks-item {
 		padding-top: 16px;
 	}
 	.content {
-		border-bottom: 7px solid $color-seafoam-blue;
+		//@include tablet-landscape-and-up {
+			border-bottom: 7px solid $color-seafoam-blue;
+		//}
 		padding: 8px 0px;
 
 		span { 
