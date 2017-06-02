@@ -36,7 +36,7 @@
 		</div>
 	</div>
 
-	<div class="col-sm-10 col-xs-12 col-centered courses">
+	<div class="col-xs-12 col-centered courses">
 
 		<div id="course-menu" class="col-lg-4 col-md-4 col-sm-10 col-xs-12 col-centered-md">
 			<ul class="desktop-only">
@@ -61,14 +61,14 @@
 			{{#each courses}}
 			<div data-key="{{course_key}}" class="content{{#if @first}} active{{/if}}">
 				<h1>{{name}}</h1>
-				<p><strong>Institution</strong> {{inst.name}}</p>
+				<p><strong>Institution</strong><br />{{inst.name}}</p>
 				<p>
 					{{#ifeq instructor.length 1}}
-					<h2>Instructor</h2> {{instructor.[0].name}} {{#if instructor.[0].contactEmail}} ({{instructor.[0].contactEmail}}) {{/if}}
+					<h2>Instructor</h2>{{instructor.[0].name}} {{#if instructor.[0].contactEmail}} (<a href="mailto:{{instructor.[0].contactEmail}}">{{instructor.[0].contactEmail}}</a>) {{/if}}
 					{{else}}
-					<strong>Instructors</strong>
+					<strong>Instructors</strong><br />
 						{{#each instructor}}
-						{{name}}{{#if contactEmail}} ({{contactEmail}}){{/if}}{{#unless @last}}, {{/unless}}
+						{{name}}{{#if contactEmail}} (<a href="mailto:{{contactEmail}}">{{contactEmail}}</a>){{/if}}{{#unless @last}}, {{/unless}}
 						{{/each}}
 					{{/ifeq}}
 				</p>
