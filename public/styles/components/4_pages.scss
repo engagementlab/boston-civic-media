@@ -432,11 +432,6 @@ body .dropdown-menu {
 .talks-feature {
 	background-color: $color-pale-grey;
 	margin-bottom: 5%;
-	.feature {
-		@media (max-width: 767px) {
-			display: none;
-		}
-	}
 }
 .feat-talk-description {
 	padding: 4% 2%;
