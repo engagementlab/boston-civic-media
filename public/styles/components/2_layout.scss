@@ -81,9 +81,9 @@
 	h2 {
 		color: $color-feature-h2;
 		font-family: $med-type;
-		font-size: em(48);
+		font-size: em(32);
 		@include tablet-portrait-and-below {
-			font-size: em(24);
+			font-size: em(26);
 		}
 		font-weight: 500;
 		letter-spacing: -0.4px;
