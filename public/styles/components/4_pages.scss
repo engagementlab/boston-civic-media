@@ -330,6 +330,10 @@ body .dropdown-menu {
 	max-height: 500px;
 	min-height: 500px;
 
+	@include tablet-landscape-and-up {
+		margin-bottom: 40px;
+	}
+
 	h1 {
 		font-family: $body-type;
 		font-size: em(22);
@@ -624,6 +628,7 @@ body .talks-item {
 .clients {
 	position: relative;
 	padding-top:5%;
+	text-align: center;
 }
 
 .funder {
@@ -683,20 +688,19 @@ body .talks-item {
 		  border-top: solid 40px;
 		  width: 100%;
 
-			&:nth-child(1) {
+			&.educators {
 				border-top-color: $color-seafoam-blue;
 			}
-			&:nth-child(2) {
+			&.organizations {
 				border-top-color: $color-pale-teal;
 			}
-			&:nth-child(4) {
+			&.researchers {
 				border-top-color: $color-sea;
 			}
-			&:nth-child(5) {
+			&.students {
 				border-top-color: $color-seafoam-blue;
 			}
 		}
-
 
 		@include tablet-portrait-and-below {
 			height: auto;
@@ -778,7 +782,7 @@ body .talks-item {
 		padding-left: 10%;
 		padding-right: 10%;
 	}
-	padding-top: 0;
+	padding-top: 10px;
 
   &.dark {
 		color: $color-dark-blue-green;
