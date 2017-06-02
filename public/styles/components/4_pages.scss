@@ -371,6 +371,9 @@ body .dropdown-menu {
 		  text-align: center;
 		  color: $color-sea-two;
 		  margin: 0px;
+		  a {
+			  color: $color-sea-two;
+		  }
 		}
 
 	  p {
