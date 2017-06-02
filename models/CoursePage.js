@@ -10,7 +10,7 @@ var CoursePage = new keystone.List('CoursePage',
 	{
 		label: 'Courses Page Content',
 		singular: 'Courses Page Content',
-    nocreate: true
+    // nocreate: true
 	});
 
 /**
