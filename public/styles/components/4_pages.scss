@@ -750,6 +750,7 @@ body .talks-item {
 
 .listserv {
 	background-color: white;
+	text-align: left;
 
 	.guidelines {
 		// margin: 40px;
@@ -791,8 +792,12 @@ body .talks-item {
 .guideline {
 	color: $color-dark-green-blue-two;
 	h4 {
-		font-size: em(22);
+		font-size: em(14);
 		color: $color-seafoam-blue;
+	}
+	p {
+		font-size: em(12); 
+		line-height: 1.57;
 	}
 }
 
