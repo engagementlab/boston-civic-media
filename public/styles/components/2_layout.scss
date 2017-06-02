@@ -90,7 +90,12 @@
 	}
 
 	.header {
-		margin: 45px;
+		@include tablet-landscape-and-below {
+			margin-left: 45px;
+			margin-right: 45px;
+		}
+		margin-bottom: 45px;
+		margin-top: 45px;
 		background:transparent;
 		border: 0px;
 
