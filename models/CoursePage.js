@@ -9,8 +9,8 @@ var Types = keystone.Field.Types;
 var CoursePage = new keystone.List('CoursePage', 
 	{
 		label: 'Courses Page Content',
-		singular: 'Courses Page Content'
-    // nocreate: true
+		singular: 'Courses Page Content',
+    nocreate: true
 	});
 
 /**

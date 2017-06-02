@@ -38,7 +38,7 @@
 
 	<div class="col-sm-10 col-xs-12 col-centered courses">
 
-		<div id="course-menu" class="col-lg-6 col-md-12 col-sm-10 col-xs-12 col-centered-md">
+		<div id="course-menu" class="col-lg-4 col-md-12 col-sm-10 col-xs-12 col-centered-md">
 			<ul class="desktop-only">
 				{{!-- COURSE LISTING --}}
 				{{#each courses}}
@@ -47,7 +47,7 @@
 			</ul>
 		</div>
 
-		<section id="course-contents" class="col-lg-6 col-md-12 col-sm-10 col-xs-12 col-centered-md">
+		<section id="course-contents" class="col-lg-8 col-md-12 col-sm-10 col-xs-12 col-centered-md">
 			<select id="courses-mobile" class="mobile-tablet-only">
 				{{!-- COURSE LISTING --}}
 				{{#each courses}}
@@ -61,7 +61,7 @@
 			{{#each courses}}
 			<div data-key="{{course_key}}" class="content{{#if @first}} active{{/if}}">
 				<h1>{{name}}</h1>
-				<p><strong>Institution</strong> {{institution.name}}</p>
+				<p><strong>Institution</strong> {{inst.name}}</p>
 				<p>
 					{{#ifeq instructor.length 1}}
 					<h2>Instructor</h2> {{instructor.[0].name}} {{#if instructor.[0].contactEmail}} ({{instructor.[0].contactEmail}}) {{/if}}

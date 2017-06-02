@@ -1713,15 +1713,15 @@ body .talks-item {
 			li {
 		    margin-top: 3%;
 
-				a.active {
+				a:hover, a.active {
 					color: #338b83;
 					font-family: $bold-type;
-					font-size: 1.5em;
+					font-size: 1.25em;
 				}
 				a {
 					font-family: HalisGR-Book;
 					color: $color-sea-two;
-					font-size: 1.25em;
+					font-size: 1em;
 				}
 			}
 		}
