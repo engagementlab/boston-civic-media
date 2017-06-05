@@ -110,6 +110,8 @@
 
 .top-content {
 
+	margin-right: 0;
+
 	.features {
 		&.desktop {
 			@include tablet-portrait-and-below {

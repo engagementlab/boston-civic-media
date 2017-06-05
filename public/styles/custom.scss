@@ -14,6 +14,11 @@ html, body, .container {
   max-width: 944px;
 }
 
+/* .row {
+  margin-right: 0;
+  margin-left: 0;
+}
+ */
 html, body {
   position: relative;
   min-width: 100%;
@@ -21,7 +26,6 @@ html, body {
   width: 100%;
   margin: 0px;
   padding: 0px;
-  overflow-x: hidden;
 }
 
 body {
@@ -387,7 +391,7 @@ body {
 
 
 			  &:hover {
-			  	color: $color-seafoam-blue;
+			  	color: $color-white !important;
 			  	background-color: $color-light-blue-grey;
 			  }
 
@@ -996,6 +1000,12 @@ a .project-box {
 .modal-backdrop.in {
     filter: alpha(opacity=7);
     opacity: 0.7;
+    
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
 }
  
 .modal-content {

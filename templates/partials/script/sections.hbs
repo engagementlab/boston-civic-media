@@ -362,7 +362,8 @@
 		  }
 
 			$('#course-menu a').click(
-			  function() {
+			  function(evt) {
+			  	evt.preventDefault();
 			  	courseChange($(this));
 			  }
 			);
