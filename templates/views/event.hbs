@@ -20,7 +20,7 @@
   data-src="{{{cloudinaryUrl this_event.image width=624 crop='fit'}}}"  alt="{{this_event.name}}" class="event-photo cld-responsive"/>
 
 	<h1>{{this_event.name}}</h1>
-	<h2>{{date event.date format='MMMM D, YYYY'}}</h2>
+	<h2>{{date this_event.date format='MMMM D, YYYY'}}</h2>
 
 	<span class="short"><p>{{{this_event.theFooter.html}}}</p></span>
 	<p>{{{this_event.theDescription.html}}}</p>

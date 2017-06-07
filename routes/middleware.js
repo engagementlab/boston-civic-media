@@ -38,7 +38,7 @@ exports.initLocals = function(req, res, next) {
         href: '/events'
     },
     {
-        label: 'Courses',
+        label: 'Climate Courses',
         key: 'courses',
         href: '/courses'
     },
