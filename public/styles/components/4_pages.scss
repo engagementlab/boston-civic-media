@@ -942,8 +942,14 @@ body .talks-item {
 	}
 }
 
+section#events {
+	background-color: #f1f9f8;
+}
+
 .past-events, .upcoming-events {
 	background-color: $color-pale-grey;
+	max-width: 1024px;
+	margin: 0 auto;
 
 	.page-title {
 		font-size: 32px;
