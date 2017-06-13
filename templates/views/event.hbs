@@ -27,15 +27,12 @@
 
 </div>		
 
-<div id="event-talks" class="col-sm-12">
+<div id="event-talks" class="col-md-10 col-sm-12 col-centered">
 	{{#if this_event.talks}}
 
 		<h2>Lightning Talks</h2>
-		<div class="row">
 		{{#each this_event.talks}}
-			<div class="col-sm-12 col-md-6 event-talk">
-				{{> talks/featured featured_lightning_talk=this}}
-			</div>
+			{{>index/lightning_talk lightning_talk=this}}
 		{{/each}}
 		</div>
 	{{/if}}

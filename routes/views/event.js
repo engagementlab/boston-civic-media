@@ -22,7 +22,7 @@ exports = module.exports = function(req, res) {
         locals = res.locals;
 
     // Init locals
-    locals.section = 'this_event';
+    locals.section = 'event';
     // locals.sub_section = 'publications';
 
     // Load the current publication

@@ -50,6 +50,89 @@
 
 		});
 
+		function lightningTalks() {
+
+			container = $('#talks-content');
+			function preLoad() {
+      	container.isotope({
+      		itemSelector: '.lightning-talk',
+	        filter: '*', 
+			    layoutMode: 'fitRows'
+		    });
+			}
+			function loadVidThumbs() {
+
+      	$.each($('.video-embed-thumb'), function(i, thumb) {
+      		var url = $(thumb).data('url');
+      		var replaceStart = url.indexOf('_640.jpg&src1');
+      		url = url.substr(0, replaceStart) + '_' + $(thumb).parent().width() + '.jpg&src1' + url.substr(replaceStart, url.length);
+
+        	$(thumb).attr('src', url);
+        	$(thumb).click(function(el) {
+
+        		$('#modal-video .embed-responsive').html($(el.currentTarget).data('embed'));
+        		$('#modal-video').modal('show');
+
+	      		var frame = $('#modal-video .embed-responsive iframe');
+		      	frame.on('load', function(evt) {
+		      		$(evt.currentTarget).fadeIn(200);
+
+	        		var player = new Vimeo.Player(frame[0]);
+					    // Listen to the play event.
+					    player.on('play', function() {
+						      // Tell Google analytics that a video was played.
+						     ga('send', 'event', 'Video', 'Play');
+							});
+		      	});
+
+        	});
+
+      	});
+
+      	$('#modal-video').click(function(el) {
+      		$('#modal-video .embed-responsive').empty();
+      		$('#modal-video').modal('hide');
+      	});
+
+      }
+			function checkFiltered() {
+
+		    var talks = $('#talks-content');
+		    if (talks.data('isotope').filteredItems.length === 0)
+		        $('.no-talks-visible').show();
+		    else
+		        $('.no-talks-visible').hide();
+
+			}
+
+			$('.filters-button-group').on('click', 'button', function() {
+
+			    var filterValue = $(this).attr('data-filter');
+			    container.isotope({
+			    	itemSelector: '.lightning-talk',
+		        filter: filterValue,
+				    isFitHeight: true,
+				    layoutMode: 'fitRows'
+			    });
+
+			});
+			// change is-checked class on buttons
+			$('.button-group').each(function(i, buttonGroup) {
+			    var $buttonGroup = $(buttonGroup);
+
+			    $buttonGroup.on('click', 'button', function() {
+			        $buttonGroup.find('.is-checked').removeClass('is-checked');
+			        $(this).addClass('is-checked');
+
+			        checkFiltered();
+			    });
+
+			});
+
+			loadVidThumbs();
+
+		}
+
 		{{!-- ABOUT Template Script --}}
 		{{#ifeq section 'about'}}
 	
@@ -254,86 +337,8 @@
 
 		{{!-- LIGHTNING TALK Template Script --}}
 		{{#ifeq section 'lightning_talk'}}
-			
-			container = $('#talks-content');
-			function preLoad() {
-      	container.isotope({
-      		itemSelector: '.lightning-talk',
-	        filter: '*', 
-			    layoutMode: 'fitRows'
-		    });
-			}
-			function loadVidThumbs() {
 
-      	$.each($('.video-embed-thumb'), function(i, thumb) {
-      		var url = $(thumb).data('url');
-      		var replaceStart = url.indexOf('_640.jpg&src1');
-      		url = url.substr(0, replaceStart) + '_' + $(thumb).parent().width() + '.jpg&src1' + url.substr(replaceStart, url.length);
-
-        	$(thumb).attr('src', url);
-        	$(thumb).click(function(el) {
-
-        		$('#modal-video .embed-responsive').html($(el.currentTarget).data('embed'));
-        		$('#modal-video').modal('show');
-
-	      		var frame = $('#modal-video .embed-responsive iframe');
-		      	frame.on('load', function(evt) {
-		      		$(evt.currentTarget).fadeIn(200);
-
-	        		var player = new Vimeo.Player(frame[0]);
-					    // Listen to the play event.
-					    player.on('play', function() {
-						      // Tell Google analytics that a video was played.
-						     ga('send', 'event', 'Video', 'Play');
-							});
-		      	});
-
-        	});
-
-      	});
-
-      	$('#modal-video').click(function(el) {
-      		$('#modal-video .embed-responsive').empty();
-      		$('#modal-video').modal('hide');
-      	});
-
-      }
-
-			function checkFiltered() {
-
-		    var talks = $('#talks-content');
-		    if (talks.data('isotope').filteredItems.length === 0)
-		        $('.no-talks-visible').show();
-		    else
-		        $('.no-talks-visible').hide();
-
-			}
-
-			$('.filters-button-group').on('click', 'button', function() {
-
-			    var filterValue = $(this).attr('data-filter');
-			    container.isotope({
-			    	itemSelector: '.lightning-talk',
-		        filter: filterValue,
-				    isFitHeight: true,
-				    layoutMode: 'fitRows'
-			    });
-
-			});
-			// change is-checked class on buttons
-			$('.button-group').each(function(i, buttonGroup) {
-			    var $buttonGroup = $(buttonGroup);
-
-			    $buttonGroup.on('click', 'button', function() {
-			        $buttonGroup.find('.is-checked').removeClass('is-checked');
-			        $(this).addClass('is-checked');
-
-			        checkFiltered();
-			    });
-
-			});
-
-			loadVidThumbs();
+			lightningTalks();
 
 		{{/ifeq}}
 
@@ -345,6 +350,13 @@
 				    return currentText.substr(0, 120) + "...";
 			});
 			
+		{{/ifeq}}
+		
+		{{!-- EVENT Template Script --}}
+		{{#ifeq section 'event'}}
+			
+			lightningTalks();
+
 		{{/ifeq}}
 
 		{{!-- COURSE CATALOG Template Script --}}
