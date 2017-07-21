@@ -53,9 +53,8 @@ exports = module.exports = function(req, res) {
         })
         .populate('faculty'),
         queryEvents = Event.model.find({
-            'enabled': true, 
-            'featured': true
-        });
+            'enabled': true
+        }).sort('-date');
         
         // Setup the locals to be used inside view
         homeQuery.exec(function(err, result) {
@@ -66,7 +65,7 @@ exports = module.exports = function(req, res) {
                 if (err) throw err;
 
                 if(resultEvents)
-                    locals.events = resultEvents;
+                    locals.recentEvent = resultEvents[0];
                 
                 syllabiQuery.exec(function(err, resultSyllabi) {
                     if (err) throw err;

@@ -40,11 +40,9 @@
 	{{/if}}
 
 	<section class="col-md-5 upcoming-events">
-		<h1>Upcoming Events</h1>
+		<h1>Featured Event</h1>
 		<ul>
-			{{#each events}}
-			<li>{{> index/event event=this}}</li>
-			{{/each}}
+			<li>{{> index/event event=recentEvent}}</li>
 			
 		</ul>
 		

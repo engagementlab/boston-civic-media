@@ -13,32 +13,11 @@
 
 <section id="events">
 
-{{!-- 	{{#if featured}}
-	<div class="featured-event-wrap">
-		{{#each featured}}
-		{{>events/featured event=this}}
-		{{/each}}
-	</div>
-	{{/if}} --}}
-
-	{{#if upcoming}}
-	<div class="upcoming-events">
+	{{#if events}}
+	<div class="events">
 		<div class="col-xs-12 col-sm-10 col-md-10 col-lg-8 col-centered">
-			<h1 class="page-title text-center" style="padding-bottom:3%;">Upcoming Events</h1>
-			{{#each upcoming}}
-				{{#if enabled}}
-					{{>index/recent_event event=this}}
-				{{/if}}
-			{{/each}}			
-		</div>
-	</div>
-	{{/if}}
-
-	{{#if past}}
-	<div class="past-events">
-		<div class="col-xs-12 col-sm-10 col-md-10 col-lg-8 col-centered">
-			<h1 class="page-title text-center" style="padding-bottom:3%;">Past Events</h1>
-			{{#each past}}
+			<h1 class="page-title text-center" style="padding-bottom:3%;">Events</h1>
+			{{#each events}}
 				{{#if enabled}}
 					{{>index/recent_event event=this}}
 				{{/if}}
