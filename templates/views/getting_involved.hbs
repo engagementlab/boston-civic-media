@@ -23,7 +23,7 @@
 			<h1 class="title sub-header">Educators</h1>
 			<ul>
 				{{#each getting_involved.edBlurb}}
-				<li>{{this}}</li>
+				<li>{{checkEmail this}}</li>
 				{{/each}}
 			</ul>
 		</div>
@@ -33,7 +33,7 @@
 			<h1 class="title sub-header">Organizations</h1>
 			<ul>
 				{{#each getting_involved.orgBlurb}}
-				<li>{{this}}</li>
+				<li>{{checkEmail this}}</li>
 				{{/each}}
 			</ul>
 		</div>
@@ -43,7 +43,7 @@
 			<h1 class="title sub-header">Researchers</h1>
 			<ul>
 				{{#each getting_involved.resBlurb}}
-				<li>{{this}}</li>
+				<li>{{checkEmail this}}</li>
 				{{/each}}
 			</ul>
 		</div>
@@ -53,7 +53,7 @@
 			<h1 class="title sub-header">Students</h1>
 			<ul>
 				{{#each getting_involved.studBlurb}}
-				<li>{{this}}</li>
+				<li>{{checkEmail this}}</li>
 				{{/each}}
 			</ul>
 		</div>

@@ -31,7 +31,7 @@ Event.add({
 
   name: { type: String, default: 'Name of Event', required: true, initial: true, index: true },
 	date: { type: Date, label: 'Event Date', default: Date.now, required: true, initial: true },
-	image: { type: Types.CloudinaryImage, label: 'Event Image',  folder: 'boston-civic-media/logos' },
+	image: { type: Types.CloudinaryImage, label: 'Event Image',  folder: 'boston-civic-media/logos', note: 'Images should be 600x600 in order to display properly' },
 	theDescription: { type: Types.Markdown, label: 'Long Description', note: 'Shown on individual event page. No character limit.', required: true, initial: true },
 	theFooter: { type: Types.Markdown, label: 'Short Description', note: 'Shown in events grid page. Should be no more than 120 characters.', required: true, initial: true },
 	eventbriteURL: { type: String, label: 'Eventbrite URL'},
