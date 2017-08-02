@@ -31,28 +31,33 @@ Event.add({
 
   name: { type: String, default: 'Name of Event', required: true, initial: true, index: true },
 	date: { type: Date, label: 'Event Date', default: Date.now, required: true, initial: true },
-	image: { type: Types.CloudinaryImage, label: 'Event Image',  folder: 'boston-civic-media/logos', note: 'Images should be 600x600 in order to display properly' },
+	image: { 
+    type: Types.CloudinaryImage, 
+    label: 'Event Image (Images should be 600x600 in order to display properly)',  
+    folder: 'boston-civic-media/logos', 
+    note: 'Images should be 600x600 in order to display properly'
+  },
 	theDescription: { type: Types.Markdown, label: 'Long Description', note: 'Shown on individual event page. No character limit.', required: true, initial: true },
 	theFooter: { type: Types.Markdown, label: 'Short Description', note: 'Shown in events grid page. Should be no more than 120 characters.', required: true, initial: true },
 	eventbriteURL: { type: String, label: 'Eventbrite URL'},
 	hackpadURL: {type: String, label: 'Hackpad URL'}, 
 	additionalURL: { type: String, label: "Summary Blog Post URL"},
 	talks: {
-      type: Types.Relationship,
-      ref: 'LightningTalk',
-      label: 'Associated Lightning Talks',
-      many: true
-    },
-  	featured: {
-      type: Types.Boolean,
-      label: 'Featured Event', 
-      note: 'Only one event should be featured'
-  	},
-  	enabled: {
-      type: Types.Boolean,
-      label: 'Enabled',
-      note: 'Will never appear on site if not enabled'
-  	},
+    type: Types.Relationship,
+    ref: 'LightningTalk',
+    label: 'Associated Lightning Talks',
+    many: true
+  },
+	featured: {
+    type: Types.Boolean,
+    label: 'Featured Event', 
+    note: 'Only one event should be featured'
+	},
+	enabled: {
+    type: Types.Boolean,
+    label: 'Enabled',
+    note: 'Will never appear on site if not enabled'
+	},
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
 
 });
