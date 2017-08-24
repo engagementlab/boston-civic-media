@@ -23,6 +23,11 @@ var azureFile = new keystone.Storage({
   azure: {
     container: 'bcmsyllabi',
     generateFilename: keystone.Storage.originalFilename
+  },
+  schema: {
+    path: true,
+    originalname: true,
+    url: true
   }
 });
 
@@ -89,7 +94,7 @@ Syllabi.add({
       note: 'This is optional'
   },
   title: { type: Types.Text, label: "Title", required: true, initial: true },
-  blurb: { type: String, label: "Short Description", note: 'Cut off at 300 characters. Appears below each syllabus in grids.', max: {chars: 300, mode: 'validate'}, required: true, initial: true },
+  blurb: { type: String, label: "Blurb/Short Description", note: 'Cut off at 300 characters. Appears below each syllabus in grids.', max: 300, required: true, initial: true },
 	description: { type: Types.Textarea, label: "Long Description", note: 'CAN BE AS LONG AS YOU WANT. Appears on individual syllabus page', required: true, initial: true },
   file: {
 		type: Types.File,
