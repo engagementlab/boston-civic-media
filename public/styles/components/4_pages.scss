@@ -727,6 +727,7 @@ body .talks-item {
 		  padding-left: 20px;
 		  padding-right: 20px;
 		  line-height: 1.2;
+		  display: none;
 
 		  @media (max-width: 426px) {
 		  	font-size: em(16);

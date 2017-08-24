@@ -8,9 +8,22 @@ module.exports = function() {
     //
     //  *Usage example:*
     //  {{{responsiveImg path='/v1494440105/boston-civic-media/layout/background-home.jpg' }}}
-    _helpers.responsiveImg = function(data) {
 
-    	return '<img data-src="https://res.cloudinary.com/engagement-lab-home/image/upload/w_auto,c_scale' + data.hash.path + '" class="cld-responsive">';
+
+    _helpers.checkEmail = function(text) {
+
+        var arr = text.split(' ');
+
+        var check = _.map(arr, function(a){
+            if (a.indexOf('@') >= 0) {
+               a = '<a href="mailto://' + a + '">' + a + '</a>';
+               return a;
+            }
+            else
+               return a;
+        });
+
+        return check.join(' ');
 
     }
 
@@ -32,6 +45,12 @@ module.exports = function() {
             return options.inverse(this);
         }
         
+    }
+
+        _helpers.responsiveImg = function(data) {
+
+        return '<img data-src="https://res.cloudinary.com/engagement-lab-home/image/upload/w_auto,c_scale' + data.hash.path + '" class="cld-responsive">';
+
     }
 
 

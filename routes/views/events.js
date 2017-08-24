@@ -34,22 +34,7 @@ exports = module.exports = function(req, res) {
         queryEvent.exec(function(err, resultEvent) {
             locals.events = resultEvent;
 
-            locals.upcoming = _.map(resultEvent, function(event){
-                if (event.date >= Date.now())
-                    return event;
-            });
-
-            locals.past = _.map(resultEvent, function(event){
-                if (event.date <= Date.now())
-                    return event;
-            });
-
-            Event.model.find({'featured': true}).sort([
-                ['date', 'ascending']
-            ]).exec(function(err, featured){
-                locals.featured = featured;
-                next(err);
-            });
+            next();
         });
 
     });

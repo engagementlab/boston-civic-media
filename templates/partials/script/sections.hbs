@@ -387,5 +387,17 @@
 			);
 		{{/ifeq}}
 
+		{{#ifeq section 'getting_involved'}}
+
+		$('.involved ul li').each(function(text) {
+			var item = $('.involved ul li')[text];
+			if ($(item).text().indexOf('href') > 0) {
+				$(item).html($(item).text())
+			}
+			$(item).show();
+		});
+
+		{{/ifeq}}
+
 	})
 </script>

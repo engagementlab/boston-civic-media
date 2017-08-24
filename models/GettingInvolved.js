@@ -24,7 +24,6 @@ GettingInvolved.add({
     subHeader: { type: String, label: "Subheader Text", note: "Subheader is under banner", initial: true, required: true },
     listservLink: { type: String, label: "Listserv URL", initial: true, required: true},
     listservBlurb: { type: String, label: "Listserv Blurb", initial: true, required: true},
-    contactEmail: { type: String, label: "Contact Email", initial: true, required: true},
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
 },
 	'Educators', {

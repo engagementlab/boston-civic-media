@@ -40,17 +40,16 @@
 	{{/if}}
 
 	<section class="col-md-5 upcoming-events">
-		<h1>Upcoming Events</h1>
+		<h1>Events</h1>
 		<ul>
-			{{#each events}}
-			<li>{{> index/event event=this}}</li>
-			{{/each}}
+			<li>{{> index/event event=recentEvent}}</li>
 			
 		</ul>
+
 		
-		{{!-- <div class="more-button">
-			<a href="/lightning_talk">Watch All Lightning Talks</a>
-		</div> --}}
+		<div class="more-button">
+			<a href="/events">See More Events</a>
+		</div>
 	</section>
 
 	<div class="divider desktop-only"></div>

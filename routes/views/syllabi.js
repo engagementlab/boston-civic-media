@@ -29,14 +29,7 @@ exports = module.exports = function(req, res) {
 
         locals.filters = [];
         locals.disciplines = [];
-
-        var filtersPopulate = [
-                                {path:'institution', select:'key'},
-                                {path:'discipline', select:'key'},
-                                {path:'keyword', select:'key'},
-                                {path:'faculty', select:'key'},
-                                {path:'partnerOrg', select:'key'}
-                              ];
+        
         var querySyllabi = Syllabi.model.find({}).sort([
             ['sortOrder', 'ascending']
         ]).lean()
