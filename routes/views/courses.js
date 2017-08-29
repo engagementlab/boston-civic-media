@@ -53,6 +53,8 @@ exports = module.exports = function(req, res) {
 
                     locals.fallCourses = categorize(resultCourses, 'Fall');
                     locals.springCourses = categorize(resultCourses, 'Spring');
+
+                    locals.courses = locals.fallCourses.concat(locals.springCourses);
                     locals.page = resultPage;
 
                     next();

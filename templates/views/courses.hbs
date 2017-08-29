@@ -59,9 +59,18 @@
 		<section id="course-contents" class="col-lg-8 col-md-8 col-sm-10 col-xs-12 col-centered-md">
 			<select id="courses-mobile" class="mobile-tablet-only">
 				{{!-- COURSE LISTING --}}
-				{{#each courses}}
-				<option data-key="{{course_key}}" {{#if @first}} selected="selected"{{/if}}>{{name}}</option>
-				{{/each}}
+				{{#if fallCourses}}
+				<h3>Fall Courses</h3>
+					{{#each fallCourses}}
+					<option data-key="{{course_key}}" {{#if @first}} selected="selected"{{/if}}>{{name}}</option>
+					{{/each}}
+				{{/if}}
+				{{#if springCourses}}
+				<h3>Spring Courses</h3>
+					{{#each springCourses}}
+					<option data-key="{{course_key}}">{{name}}</option>
+					{{/each}}
+				{{/if}}
 			</select>
 
 			<div class="select-arrow mobile-tablet-only"></div>
