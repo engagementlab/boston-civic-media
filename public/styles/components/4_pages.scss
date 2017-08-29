@@ -971,7 +971,7 @@ section#events {
 	padding-left: 15px;
 	padding-right: 15px;
 
-	&:nth-child(last) {
+	&:nth-last-child(1) {
 		padding-bottom:24px;
 	}
 	.image {
