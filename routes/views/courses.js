@@ -28,7 +28,7 @@ exports = module.exports = function(req, res) {
 
     view.on('init', function(next) {
 
-        var queryCourses = Course.model.find({}).sort([
+        var queryCourses = Course.model.find({ 'enabled': true }).sort([
             ['sortOrder', 'ascending']
         ])
         .populate('inst', 'name key')

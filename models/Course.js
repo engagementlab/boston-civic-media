@@ -68,6 +68,8 @@ Course.add({
   contactUrl: { type: Types.Url, label: "Contact Website URL", validate: urlValidator, note: 'Must be in format "http://www.something.org"' },
   contactEmail: { type: Types.Email, label: "Contact Email" },
 
+  enabled: { type: Boolean, label: 'Enabled', note: 'Must be enabled to appear on Courses Page'},
+
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
 });
 

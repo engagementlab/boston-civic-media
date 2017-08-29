@@ -57,6 +57,7 @@ exports.initLocals = function(req, res, next) {
         key: 'get-involved',
         href: '/get-involved'
     }];
+    
 
     locals.user = req.user;
 
