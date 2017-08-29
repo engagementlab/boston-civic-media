@@ -28,6 +28,12 @@ exports = module.exports = function(req, res) {
 
     view.on('init', function(next) {
 
+        var categorize = function(val, cat) {
+            return val.filter(function(item) {
+                return item.semester == cat;
+            });
+        };
+
         var queryCourses = Course.model.find({ 'enabled': true }).sort([
             ['sortOrder', 'ascending']
         ])
@@ -45,7 +51,8 @@ exports = module.exports = function(req, res) {
                 Enroll.model.find({}).exec(function(err, resultFilter){
                     locals.filters = resultFilter;
 
-                    locals.courses = resultCourses;
+                    locals.fallCourses = categorize(resultCourses, 'Fall');
+                    locals.springCourses = categorize(resultCourses, 'Spring');
                     locals.page = resultPage;
 
                     next();

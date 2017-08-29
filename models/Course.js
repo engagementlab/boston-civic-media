@@ -40,6 +40,7 @@ var urlValidator = {
 Course.add({
 
   name: { type: Types.Text, label: "Course Name", required: true, initial: true },
+  semester: { type: Types.Select, label: "Course Semester", options: ['Spring', 'Fall'] },
   inst: {
     type: Types.Relationship,
     ref: 'Enroll',

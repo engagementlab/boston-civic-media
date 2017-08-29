@@ -41,9 +41,18 @@
 		<div id="course-menu" class="col-lg-4 col-md-4 col-sm-10 col-xs-12 col-centered-md">
 			<ul class="desktop-only">
 				{{!-- COURSE LISTING --}}
-				{{#each courses}}
-				<li><a href="#" data-key="{{course_key}}" {{#if @first}} class="active"{{/if}}>{{name}}</a></li>
-				{{/each}}
+				{{#if fallCourses}}
+				<h3>Fall Courses</h3>
+					{{#each fallCourses}}
+					<li><a href="#" data-key="{{course_key}}" {{#if @first}} class="active"{{/if}}>{{name}}</a></li>
+					{{/each}}
+				{{/if}}
+				{{#if springCourses}}
+				<h3>Spring Courses</h3>
+					{{#each springCourses}}
+					<li><a href="#" data-key="{{course_key}}">{{name}}</a></li>
+					{{/each}}
+				{{/if}}
 			</ul>
 		</div>
 
@@ -61,6 +70,7 @@
 			{{#each courses}}
 			<div data-key="{{course_key}}" class="content{{#if @first}} active{{/if}}">
 				<h1>{{name}}</h1>
+				<p><strong>Semester</strong><br />{{inst.semester}}</p>
 				<p><strong>Institution</strong><br />{{inst.name}}</p>
 				<p>
 					{{#ifeq instructor.length 1}}
