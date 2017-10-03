@@ -1,7 +1,7 @@
 {{!< default}}
 {{!--
 /**
-* Engagement Lab Website
+* Boston Civic Media
 * Developed by Engagement Lab, 2015
 * ==============
 *
@@ -11,90 +11,70 @@
 * ==========
 */
 --}}
-{{!-- {{jsonPrint this}} --}}
-<div class="banner border-clear light-gray-bg">
-	<div class="">
-	{{!-- {{jsonPrint this}} --}}
-		<div class="get-involved-header" style="background-image: url({{{getting_involved.banner.url}}}); background-size: cover;background-repeat: no-repeat;"><h1 class="title page-title title-white"><strong>Get Involved</strong></h1></div>
-		<div class="separator-green-blue"></div>
-		<div class="container-padding row">
-			<div class="involved educators">
-				<h1 class="title title-green-blue">Educators</h1>
-				<h4><strong>{{getting_involved.edDescription}}{{!-- Educators are the driving force of this network. If you're an educator at a local institution serving undergraduates please reach out to:  --}}</strong></h4>
-				<ul class="left-list green-blue-list">
-					{{#each getting_involved.edBlurb}}
-					<li><span class="list-item">{{this}}</span></li>
-					{{/each}}
-					{{!-- <li><span class="list-item">Share a syllabus</span></li>
-					<li><span class="list-item">Host a themed convening at your institution</span></li>
-					<li><span class="list-item">Volunteer to do a lightning talk</span></li> --}}
-				</ul>
-			</div>
-		</div>
-		<div class="separator-green-light"></div>
-		<div class="container-padding row">
-			<div class="involved organizations">
-				<h1 class="title title-green-light">Organizations</h1>
-				<ul class="left-list green-light-list">
-					{{#each getting_involved.orgBlurb}}
-					<li><span class="list-item">{{this}}</span></li>
-					{{/each}}
-					{{!-- <li><span class="list-item">Get in touch with Research Coordinator Liat Racin (<span class="green-light-item">liat at elab.emerson.edu</span>) to participate in a focus group on the Ethical Partnerships project</span></li>
-					<li><span class="list-item">Post volunteer and project opportunities on the Boston Civic Media listserv</span></li>
-					<li><span class="list-item">Volunteer to reflect on a collaboration with an academic partner via a lightning talk</span></li> --}}
-				</ul>
-			</div>
-		</div>
-		
-		<div class="separator-brown"></div>
-		<div class="container-padding row">
-			<div class="involved researchers">
-				<h1 class="title title-brown">Researchers</h1>
-				<ul class="left-list brown-list">
-					{{#each getting_involved.resBlurb}}
-					<li><span class="list-item">{{this}}</span></li>
-					{{/each}}
-					{{!-- <li><span class="list-item">Share resources accessible to the broader community, such as the Boston Data Library</span></li>
-					<li><span class="list-item">Suggest thematic topics for quarterly convenings, such as <span class="styled-title">"Impact and Assessment in Civic Media"</span></span></li>
-					<li><span class="list-item">Contribute your best practices and provocations to the Ethical Partnerships project</span></li> --}}
-				</ul>
-			</div>
-		</div>
-		<div class="separator-green"></div>
-		<div class="container-padding row">
-			<div class="involved students">
-				<h1 class="title title-green">Students</h1>
-				<ul class="left-list green-list">
-					{{#each getting_involved.studBlurb}}
-					<li><span class="list-item">{{this}}</span></li>
-					{{/each}}
-					{{!-- <li><span class="list-item">Look out for joint Civic Media courses in 2018</span></li>
-					<li><span class="list-item">Get connected to local community organizations looking for interns</span></li>
-					<li><span class="list-item">Showcase your work at our annual summer Boston Civic Media conference</span></li> --}}
-				</ul>
-			</div>
-		</div>
-
-		<div class="newsletters row">
-			<div class="involved ph-40 pv-40">
-				<h2 class="title">Newsletter Archive</h2>
-				{{#each newsletters}}
-					{{>about/newsletter newsletter=this}}
+<div id="get-involved" class="banner row border-clear">
+<section><h1 class="title page-title"><strong>Get Involved</strong></h1></section>
+<section class="sub-header col-sm-12 col-md-6 col-centered">
+	{{getting_involved.subHeader}}
+</section>
+<section class="involved-wrapper row">
+	
+	<div class="involved col-sm-12 col-md-6">
+		<div class="row educators">
+			<h1 class="title sub-header">Educators</h1>
+			<ul>
+				{{#each getting_involved.edBlurb}}
+				<li>{{checkEmail this}}</li>
 				{{/each}}
-			</div>
+			</ul>
 		</div>
-
-		<div class="listserv row">
-			<div class="involved pv-40 ph-40">
-				<h2 class="title title-white">Listserv Guidelines</h2>
-				<p>{{getting_involved.listservBlurb}}<br><a class="brown-item" href="{{{listservLink}}}">{{getting_involved.listservLink}}</a></p>
-				<div class="guidelines">
-				{{#each guidelines}}
-					<div class="QA">{{>about/guideline guideline=this}}</div>
-				{{/each}}
-				</div>
-			</div>
-		</div>
-		
 	</div>
+	<div class="involved col-sm-12 col-md-6">
+		<div class="row organizations">
+			<h1 class="title sub-header">Organizations</h1>
+			<ul>
+				{{#each getting_involved.orgBlurb}}
+				<li>{{checkEmail this}}</li>
+				{{/each}}
+			</ul>
+		</div>
+	</div>
+	<div class="involved col-sm-12 col-md-6">
+		<div class="row researchers">
+			<h1 class="title sub-header">Researchers</h1>
+			<ul>
+				{{#each getting_involved.resBlurb}}
+				<li>{{checkEmail this}}</li>
+				{{/each}}
+			</ul>
+		</div>
+	</div>
+	<div class="involved col-sm-12 col-md-6">
+		<div class="row students">
+			<h1 class="title sub-header">Students</h1>
+			<ul>
+				{{#each getting_involved.studBlurb}}
+				<li>{{checkEmail this}}</li>
+				{{/each}}
+			</ul>
+		</div>
+	</div>
+</section>
+{{!-- LISTSERV --}}
+<div class="col-sm-12 clearfix listserv">
+<section><h1 class="title page-title light"><strong>Join the Boston Civic Media Listserv</strong></h1></section>
+<section class="sub-header dark col-sm-12 col-md-8 col-centered">
+	{{getting_involved.listservBlurb}}
+	<div class="listserv row">
+		<div class="guidelines col-centered">
+			{{#each guidelines}}
+			<div class="QA">{{>about/guideline guideline=this}}</div>
+			{{/each}}
+		</div>
+		
+		<div class="involved buttons">
+			<a href="{{getting_involved.listservLink}}" class="btn subscribe-button">Click here to sign up</a>
+		</div>
+	</div>
+</section>
+</div>
 </div>

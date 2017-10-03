@@ -5,15 +5,26 @@
 /* mobile menu */
 .navbar.navbar-default {
 	@include border-radius(3px);
-	margin: 10px 0 15px;
 	border-color: #ededed;
 	background-color: #fafafa;
 	font-weight: 400;
+
+	.row {
+
+		li {
+			a {
+				color: $color-grey;
+			}
+		}
+	}
 }
 /* first level menu item */
 .navbar-default .navbar-nav > li > a {
 	color: $gray;
 	font-size: 14px;
+	@include tablet-only {
+		padding: 0;
+	}
 	padding: 10px 15px 10px 15px;
 	z-index: 102;
 	border: none;
@@ -293,12 +304,6 @@ header.full-width .animated.main-navigation .dropdown-menu .open .dropdown-menu.
 /* mobile menu toggle button on hover/focus */
 .navbar-default {
 	.navbar-toggle {
-		border-color: #ccc;
-		&:hover,
-		&:focus {
-			background-color: #fafafa;
-			border-color: $base-color-hover;
-		}
 		.icon-bar {
 			background-color: #ccc;
 		}
@@ -366,6 +371,9 @@ header.full-width .animated.main-navigation .dropdown-menu .open .dropdown-menu.
 @media (min-width:768px) and (max-width:1199px) {
 	.navbar-default .navbar-nav > li > a { 
 		font-size: 15px;
+		@include tablet-only {
+			padding: 0;
+		}
 		padding: 28px 10px 27px 10px;
 	}
 }
@@ -747,7 +755,7 @@ header.full-width .animated.main-navigation .dropdown-menu .open .dropdown-menu.
 }
 
 .footer-outer {
-	background-color: $gray-light;
+	background-color: rgba(207, 235, 234, 0.3);
 }
 
 .subscribe-footer {
@@ -774,23 +782,6 @@ body .subscribe-button {
 	color: white;
 	border-radius: 0px;
 	border: none;
-	padding: 1%;
-	padding-bottom:5%;
-	padding-top:5%;
-	margin: 1%;
-	min-height: 40px;
-	width: 80%;
-	font-size:1.5em;
-
-	@media (max-width: 767px) {
-		font-size: 1em;
-	}
-	// .btn:active,
-	// .btn:hover,
-	// .btn:selected {
-	// 	color: $gray-light;
-	// 	background-color: $green-blue;
-	// }
 }
 body {
 

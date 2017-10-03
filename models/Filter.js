@@ -1,5 +1,5 @@
 /**
- * Engagement Lab Website
+ * Boston Civic Media
  * 
  * Research category Modelz
  * @class Filters
@@ -19,14 +19,14 @@ var Types = keystone.Field.Types;
  * See: http://keystonejs.com/docs/database/#lists-options
  */
 var Filters = new keystone.List('Filter', 
-    {
-		name: 'Filters',
-		singular: 'Filter',
-        hidden: false,
-        nodelete: false,
-        sortable: true,
-        autokey: { path: 'key', from: 'name', unique: false }
-    });
+{
+	name: 'Filters',
+	singular: 'Filter',
+  hidden: false,
+  nodelete: false,
+  sortable: true,
+  autokey: { path: 'key', from: 'name', unique: false }
+});
 
 /**
  * Model Fields
@@ -34,7 +34,9 @@ var Filters = new keystone.List('Filter',
  */
 Filters.add({
     name: { type: String, label: 'Name', required: true, initial: true, index: true },
-    category: { type: Types.Select, label: 'Type', options: 'Institution, Discipline, Faculty Member, Keyword, Partnership Organization', required: true, initial: true }
+    category: { type: Types.Select, label: 'Type', options: 'Institution, Discipline, Faculty Member, Keyword, Partnership Organization', required: true, initial: true },
+	  
+	  contactEmail: { type: Types.Email, label: 'Email', required: false, dependsOn: {category: 'Faculty Member'} }
 });
 
 

@@ -4,12 +4,14 @@
 	"subdomain": "bcm",
 	"allowed_domains": ["qa.bostoncivic.media", "www.bostoncivic.media", "www.bostoncivic.com", "www.bostoncivic.org", "www.bostoncivic.info"],
 	"admin_nav": { 
-									"home": ["Home", "events"],
+									"home": ["Home", "HomeFeature"],
 									"about": ["About", "affiliates", "funders", "TeamMember", "collaborations"],
+									"Getting Involved": ["GettingInvolved", "ListservGuidelines", "Newsletter"],
+									"courses": ["Course", "CoursePage", "Enroll"],
 									"syllabi": ["Syllabi", "filters"],
 									"lightning talks": "LightningTalk",
+									"events": "events",
 									"CIRB": "IRBProj",
-									"Getting Involved": ["GettingInvolved", "ListservGuidelines", "Newsletter"],
 									"admin": "users"
 								}
 }

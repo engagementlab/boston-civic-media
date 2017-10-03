@@ -17,9 +17,8 @@ var Types = keystone.Field.Types;
 
 var Event = new keystone.List('Event', 
 	{
-		label: 'Event Page',
-		singular: 'Event Page',
-		track: true, 
+		label: 'Events',
+		singular: 'Event',
 		autokey: { path: 'event_key', from: 'name', unique: true },
 		hidden: false
 	});
@@ -29,55 +28,45 @@ var Event = new keystone.List('Event',
  * @main About
  */
 Event.add({
-	theTitle: { type: Types.Markdown, label: 'Title', note: "All titles must be split into two lines to display properly", required: true, initial: true, index: true },
-	name: { type: String, default: 'Name of Event', hidden: true},
-	image: { type: Types.CloudinaryImage, label: 'Event Image',  folder: 'boston-civic-media/logos' },
+
+  name: { type: String, default: 'Name of Event', required: true, initial: true, index: true },
+	date: { type: Date, label: 'Event Date', default: Date.now, required: true, initial: true },
+	image: { 
+    type: Types.CloudinaryImage, 
+    label: 'Event Image (Images should be 600x600 in order to display properly)',  
+    folder: 'boston-civic-media/logos', 
+    note: 'Images should be 600x600 in order to display properly'
+  },
 	theDescription: { type: Types.Markdown, label: 'Long Description', note: 'Shown on individual event page. No character limit.', required: true, initial: true },
 	theFooter: { type: Types.Markdown, label: 'Short Description', note: 'Shown in events grid page. Should be no more than 120 characters.', required: true, initial: true },
 	eventbriteURL: { type: String, label: 'Eventbrite URL'},
 	hackpadURL: {type: String, label: 'Hackpad URL'}, 
 	additionalURL: { type: String, label: "Summary Blog Post URL"},
 	talks: {
-      type: Types.Relationship,
-      ref: 'LightningTalk',
-      label: 'Associated Lightning Talks',
-      many: true
-    },
-	// file: {
-	// 	type: Types.AzureFile,
-	// 	label: 'File',
-	// 	filenameFormatter: function(item, filename) {
- //      // console.log ("hi");
-	// 		return item.event_key + require('path').extname(filename);
-	// 	},
-	// 	containerFormatter: function(item, filename) {
-	// 		return 'bcmevent';
-	// 	}
-	// },
-  	featured: {
-      type: Types.Boolean,
-      label: 'Featured Event', 
-      note: 'Only one event should be featured'
-  	},
-  	enabled: {
-      type: Types.Boolean,
-      label: 'Enabled',
-      note: 'Will never appear on site if not enabled'
-  	},
+    type: Types.Relationship,
+    ref: 'LightningTalk',
+    label: 'Associated Lightning Talks',
+    many: true
+  },
+	featured: {
+    type: Types.Boolean,
+    label: 'Featured Event', 
+    note: 'Only one event should be featured'
+	},
+	enabled: {
+    type: Types.Boolean,
+    label: 'Enabled',
+    note: 'Will never appear on site if not enabled'
+	},
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
-});
 
-// Event.schema.virtual('name').get(function() { return this.theTitle; })
+});
 
 Event.schema.pre('save', function(next) {
 
     // Save state for post hook
     this.wasNew = this.isNew;
     this.wasModified = this.isModified();
-
-    this.name = this.theTitle.html;
-    this.name = this.name.replace('<p>', '');
-    this.name = this.name.replace('</p>', '');
 
     next();
 

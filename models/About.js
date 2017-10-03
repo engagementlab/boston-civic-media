@@ -20,13 +20,12 @@ var Types = keystone.Field.Types;
  * See: http://keystonejs.com/docs/database/#lists-options
  */
 var About = new keystone.List('About', 
-	{
-		label: 'About Page',
-		singular: 'About Page',
-		track: true,
-		nodelete: true,
-		nocreate: true
-	});
+{
+	label: 'About Page',
+	singular: 'About Page',
+	nodelete: true,
+	nocreate: true
+});
 
 /**
  * Model Fields

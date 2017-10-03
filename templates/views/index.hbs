@@ -1,136 +1,57 @@
 {{!< default}}
-<!--====================BEGIN HOME==============-->
-<div class="container-fluid">
-	<div class="row">
-		<!-- main start -->
-		<!-- ================ -->
-		<div class="main">
-		{{!-- {{jsonPrint this}} --}}
-			<div class="col-md-12 main-blurb" style="background-image: url({{{background.url}}}); background-size: cover; background-repeat: no-repeat;">
-				<div class="main-text pv-20">
-					<span class="main-mission-statement">{{missionStatements.[0]}}</span>
-					<span class="main-description">{{missionStatements.[1]}}</span>
-				</div>
+<div>
+	<div class="row top-content">
+		
+		<section class="col-md-12 main-blurb">
+			<div class="header">
+				<h1>Boston Civic Media</h1>
+				<h2>a network for solving problems at the scale of the city</h2>
 			</div>
+			<div class="features desktop">
+				{{#each features}}
+				{{> index/feature}}
+				{{/each}}
+			</div>
+		</section>
+		
+		<div class="features mobile">
+			{{#each features}}
+			{{> index/feature}}
+			{{/each}}
 		</div>
 	</div>
-
-		<div class="row beckyBanner">
-			<div class="col-md-4">
-				<a href="{{beckyBannerUrl}}"><img class="becky-banner" src="{{{cloudinaryUrl beckyBanner width=595 height=397 crop='scale' quality=100}}}" alt="{{this_event.name}}" class="photo" style="margin:0 auto; min-width: 100%; max-width: 100%; min-height: auto;"></a>
-			</div>
-
-			<div class="col-md-8">
-				<h3>{{beckyBannerTitle}}</h3>
-				{{{beckyBannerText.html}}}
+</div>
+<div class="row main-featured">
+	
+	{{#if featured_syllabi}}
+	<section class="col-md-5 featured-syllabi">
+		<h1>Featured Syllabi</h1>
+		
+		<div>
+			<div>
+				<ul class="featured-list">
+					{{#each featured_syllabi}}
+					<li>{{> index/featured_syllabi featured_syllabi=this}}</li>
+					{{/each}}
+				</ul>
 			</div>
 		</div>
+	</section>
+	{{/if}}
 
-		<div class="row main-featured">
-			{{#if featured_syllabi}}
-				<section class="col-md-6 featured-syllabi">
-					<h1>Featured Syllabi:</h1>
-					<div>
-					    <div>
-					        <ul class="featured-list">
-					        	{{!-- {{jsonPrint this}} --}}
-								{{#each featured_syllabi}}
-									<li>{{> index/featured_syllabi featured_syllabi=this}}</li>
-								{{/each}}
-					        </ul>
-					    </div>
-						<div class="more-button"><a href="/syllabi">See All Syllabi</a></div>
-
-					</div>
-					
-
-				</section>
-			{{/if}}	
-
-			{{#if featured_lightning_talks}}
-				<section class="col-md-6 featured-lightning-talks">
-						<div class="slider-header">
-							
-							<div class="slider-text">
-								<h1>Featured Lightning Talks:</h1>
-								<h3>Listen to local civic media leaders share lessons and provocations from the field</h3>
-							</div>
-							
-							<div class="row slider-buttons">
-					        	<div class="col-md-6" id="slider-prev"></div>
-					        	 <div class="col-md-6" id="slider-next"></div>
-				        	</div>
-				        </div>
-			        
-					<ul class="bxslider">
-						{{#each featured_lightning_talks}}
-							<li>{{> index/featured_lightning_talk featured_lightning_talk=this}}</li>
-						{{/each}}
-						
-			        </ul>
-			       
-			        
-			        
-		        	<div class="more-button">
-			        	<a href="/lightning_talk">Watch All Lightning Talks</a>
-		        	</div>					
-				</section>
-			{{/if}}
-		</div>
-		{{!-- <div class="main col-md-12 no-gutter">
-
-			<section class="hidden-xs-sm">
-				<div class="banner clearfix fullscreen">
-					<div class="overlay-container overlay-visible">
-						<!-- Video Background -->
-						<div class="fullscreenvideo"
-							data-autoplay="true"
-							data-volume="mute"
-							data-forceCover="1"
-							data-aspectratio="16:9"
-							data-forcerewind="on"
-							style="z-index: 2;">
-							
-							<div class='embed-container'>
-								<iframe width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-							</div>
-
-						</div>
-						<div class="overlay">
-							<div class="va-container">
-								<div class="va-align">
-									<div class="call-to-action text-center">
-										<a href="/about">
-											<img src="/images/logos/logo_white.png" alt="Engagement Lab Logo" id="logo-img">
-											<h1 class="title font-default">Engagement Lab</h1>
-											<h3>An applied research lab at Emerson College for reimagining civic engagement in a digital culture</h3>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section> --}}
-			<!-- banner end -->
-
-			{{!-- {{#if featured_content}}
-				<section class="recent-events clearfix light-bg">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-12">
-								<h2 class="title text-center">What's Good at the Lab</h2>
-							</div>
-						</div>
-						<div class="row grid-space-30">
-							{{#each featured_content}}
-								{{> index/recent_event colSize=eventsColumnSize event=this}}
-							{{/each}}
-						</div>
-					</div>
-				</section>
-			{{/if}} --}}
+	<section class="col-md-5 upcoming-events">
+		<h1>Events</h1>
+		<ul>
+			<li>{{> index/event event=recentEvent}}</li>
 			
-		</div> <!-- .main -->
-	</div> <!-- .row -->
-</div> <!-- .container-fluid -->
+		</ul>
+
+		
+		<div class="more-button">
+			<a href="/events">See More Events</a>
+		</div>
+	</section>
+
+	<div class="divider desktop-only"></div>
+</div>
+</div>

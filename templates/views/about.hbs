@@ -1,7 +1,7 @@
 {{!< default}}
 {{!--
 /**
-* Engagement Lab Website
+* Boston Civic Media
 * Developed by Engagement Lab, 2015
 * ==============
 *
@@ -12,23 +12,21 @@
 */
 --}}
 {{!-- {{jsonPrint this}} --}}
-<section class="section">
-	<div class="banner border-clear light-gray-bg">
-		<div class="container">
+<section class="">
+	<div class="banner border-clear ">
+		<div class="container container-max">
 			<div class="row">
-				<div class="col-md-12 pv-40">
+				<div class="col-md-12 p-80-40 about-header">
 					{{!-- {{> page/name name="Vision"}} --}}
-					<span class="about-vision"> {{about.vision}}</span>
-					<span class="about-description"> {{about.mission}}</span>
+					<div class="about-vision"> {{about.vision}}</div>
+					<div class="about-description"> {{about.mission}}</div>
 					<span class="about-links"> {{{about.externalLinks.html}}}</span>
 				</div>
 			</div>
 		</div>
 	</div>
 
-{{!-- 	{{{jsonPrint this}}}
- --}}
-	<div class="bcm-timeline banner border-clear light-gray-bg">
+{{!-- 	<div class="bcm-timeline banner border-clear light-gray-bg">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 pv-40">
@@ -38,17 +36,55 @@
 			</div>
 		</div>
 	</div>
-</section>
+</section> --}}
 
 <!-- People and Affiliates-->
-<section class="section clearfix">
-	<div class="container">
+<section class="section clearfix light-gray-bg">
+	<div class="container container-max">
 
 		<div class="row">
 
 			<div class="col-md-12">
 				{{!-- {{> page/name name="Our Partners"}} --}}
-				<h1 class="page-title text-center">Affiliates</h1>
+				<h1 class="about-title page-title text-center pb-60">BCM Leadership</h1>
+			</div>
+			{{#if teamMembers}}
+				{{#each teamMembers}}
+					{{>people/person person=this}}
+				{{!-- {{people}} --}}
+				{{/each}}
+			{{/if}}
+		</div>
+		
+	</div>
+</section>
+
+{{!-- <section class="section clearfix">
+	<div class="container container-max">
+		<div class="row">
+
+			<div class="col-md-12 section-header">
+				<h1 class="page-title text-center">Collaborations</h1>
+				<p class="text-center">We're always looking for more collaborators. If you're interested in getting involved, here are some ways to engage with BCM:</p>
+			</div>
+
+			<div class="collaborations col-md-12 container-fluid p-40">
+
+			{{{collaborations.theText.html}}}
+
+			</div>
+
+		</div>
+	</div>
+</section> --}}
+
+<section class="section clearfix">
+	<div class="container container-max">
+		<div class="row">
+
+			<div class="col-md-12">
+				{{!-- {{> page/name name="Our Partners"}} --}}
+				<h1 class="page-title text-center">Partners</h1>
 			</div>
 
 			<div class="affiliates col-md-12 container-fluid pv-20">
@@ -79,22 +115,7 @@
 			</div>
 		</div>
 
-		<div class="row">
-
-			<div class="col-md-12">
-				{{!-- {{> page/name name="Our Partners"}} --}}
-				<h1 class="about-title text-center">Leadership</h1>
-			</div>
-			{{#if teamMembers}}
-				{{#each teamMembers}}
-					{{>people/person person=this}}
-				{{!-- {{people}} --}}
-				{{/each}}
-			{{/if}}
-		</div>
-
-
-			{{!-- Partner icons --}}
+		{{!-- Partner icons --}}
 
 		<div class="row">
 
@@ -116,9 +137,7 @@
 			</div>
 
 		</div>
-		
 	</div>
 </section>
-
 
 

@@ -11,55 +11,19 @@
  */
 --}}
 
-<!-- DIRECTORY START -->
-<!-- ================ -->
-<section class="">
-	{{!-- <div class="container" style="width:100%; overflow:hidden;">
-		<div class="main">
-			<h1 class="page-title"><strong>Events</strong></h1>
-		</div>
-	</div> --}} 
+<section id="events">
 
-	{{!-- We'll need some filtering dropdowns here --}}
-
-	{{!-- Show all syllabi below by default --}}
-	<div class="container-fluid" style="padding: 0px">
-		<div class="row events-feature">
-			<div class="col-md-12">
-				<h1 class="page-title text-center">Featured Event:</h1>
-
-
+	{{#if events}}
+	<div class="events">
+		<div class="col-xs-12 col-sm-10 col-md-10 col-lg-8 col-centered">
+			<h1 class="page-title text-center" style="padding-bottom:3%;">Events</h1>
 			{{#each events}}
 				{{#if enabled}}
-					{{#if featured}}
-						{{!-- {{#unless past}} --}}
-							{{>index/featured_event event=this}}
-						{{!-- {{/unless}} --}}
-					{{/if}}
+					{{>index/recent_event event=this}}
 				{{/if}}
-			{{/each}}
-			
-			</div>
+			{{/each}}			
 		</div>
-					{{!-- <div class="separator"></div> --}}
-
-
-		<div class="talks-grid">
-			{{!-- {{#if lightning_talk}} --}}
-			<div class="row">
-				<h1 class="page-title text-center" style="padding-bottom:3%;">Past Events</h1>
-
-					{{#each events}}
-						{{#if enabled}}
-							{{!-- {{#if past}} --}}
-								{{>index/recent_event event=this}}
-							{{!-- {{/if}} --}}
-						{{/if}}
-					{{/each}}
-
-			</div>
-				
-		</div>
-		
 	</div>
+	{{/if}}
+
 </section>

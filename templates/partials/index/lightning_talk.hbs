@@ -1,6 +1,6 @@
 {{!-- 
 /**
-	* Engagement Lab Website
+	* Boston Civic Media
 	* Developed by Engagement Lab, 2016
 	* ==============
 	* 
@@ -8,24 +8,13 @@
 	* ==========
 	*/
 --}}
-{{!-- <div class="banner border-clear"> --}}
-	<div class="">
-		{{!-- <div class="row"> --}}
-			<div class="lightning-talk">
-				<div class="va-container">
-					<div class="va-align">
-						
-						{{!-- <p><a href="/projects/{{syllabi.subdirectory.key}}/{{project.key}}">Read more</a> --}}
-						<div class="embed-responsive embed-responsive-16by9">
-						  {{{lightning_talk.data.html}}}
-						  {{!-- {{jsonPrint featured_lightning_talk}} --}}
-						</div>
-						{{!-- <div class="lightning-talk-title"><h5 class="talk-title">{{lightning_talk.title}}</h5></div> --}}
-						<p>{{{lightning_talk.talkDescription.html}}}</p>
-						<a href="/lightning_talks/{{lightning_talk.talk_key}}"><p>More Information</p></a>
-					</div> <!-- .va-align -->
-				</div> <!-- .va-container -->
-			</div> <!-- .col-sm-6 -->
-		{{!-- </div> <!-- .row --> --}}
-	</div> <!-- .container -->
-{{!-- </div> <!-- .banner --> --}}
+<div class="lightning-talk {{lightning_talk.category}} col-sm-12 col-md-6" data-category="{{{lightning_talk.category}}}">
+  <div class="thumb-parent">
+	  <img class="video-embed-thumb" data-url="{{lightning_talk.data.thumbnail_url_with_play_button}}" data-embed="{{lightning_talk.data.html}}">
+	  <div class="video-overlay"></div>
+  </div>
+  
+  <h1>{{lightning_talk.name}}</h1>
+  {{lightning_talk.shortDescription}}
+	{{!-- <a href="/lightning-talks/{{lightning_talk.talk_key}}"><p>More Information</p></a> --}}
+</div>

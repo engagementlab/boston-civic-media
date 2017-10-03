@@ -1,17 +1,14 @@
-<div class="col-md-3 col-sm-6 event-item">
-	<div class="text-center" id="box-{{@index}}">
-		<div class="va-container">
-			<div class="va-align recent-event">
-				<div class="event-title">
-					<h4>{{{event.theTitle.html}}}</h4>
-					{{!-- {{jsonPrint this}} --}}
-				</div>
-				<a href="/events/{{event.event_key}}"><img src="{{{cloudinaryUrl event.image width=150 height=150 crop='scale' quality=100}}}" alt="{{event.name}}" class="photo" style="margin:0 auto;"></a>
-				{{!-- {{#if event.footer}} --}}
-					<div class="ellipsis">{{{event.theFooter.html}}}</div>
-					<a href="/events/{{event.event_key}}"><p>Read More</p></a>
-				{{!-- {{/if}} --}}
-			</div>
+<div class="recent-event">
+	<div class="row" id="box-{{@index}}">
+		<div class="col-md-2 col-sm-4 col-xs-12 col-lg-2 image">
+			<img src="{{{cloudinaryUrl event.image width=150 crop='scale'}}}" alt="{{event.name}}" class="photo">
+		</div>
+		<div class="col-md-10 col-sm-8 col-xs-12 col-lg-10 content">
+			<h1>{{event.name}}</h1>
+			<h2>{{date event.date format='MMMM Do YYYY'}}</h2>
+			
+			{{{event.theFooter.html}}}
+			<a href="/events/{{event.event_key}}"><span>Read More</span></a>
 		</div>
 	</div>
 </div>

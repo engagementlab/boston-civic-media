@@ -8,26 +8,15 @@
 ----------------------------------------------------------------------------- */
 /*Fonts
 ---------------------------------- */
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6,
-.navbar .navbar-nav {
-	font-family: $font-family-base;
-}
 body {
 	font-family: $font-family-base;
-}
-.logo-font {
-	font-family: $font-family-pacifico;
-}
-.font-light {
-	font-family: $font-theme-light;
-}
-.page-title, .title {
-	font-family: $font-theme-smallcaps;
 }
 /*Typography
 ---------------------------------- */
@@ -51,7 +40,7 @@ h3,
 h4,
 h5,
 h6 {
-	color: $gray-dark;
+	color: $color-theme-text;
 	line-height: $headings-line-height;
 }
 h1 a,
@@ -145,7 +134,16 @@ h6 {
 }
 .page-title {
 	margin-top: 0;
+	color: $color-dark-blue-green;
+
+	&.title {
+		padding-top: 5%;
+	}
+	&.light {
+		color: $color-seafoam-blue;
+	}
 }
+
 /* Medium devices (desktops, tablets, 992px and up) */
 @media (min-width:992px) {
 	.title {

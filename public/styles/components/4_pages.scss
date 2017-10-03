@@ -56,52 +56,86 @@ body .dropdown-backdrop {
 
 }
 
-
-
-
 .slider-buttons  {
 	position: relative;
 	z-index: 1000;
-	// height: 0px;
 	margin-top: -100px;
 	margin-bottom:10%;
-
-	#slider-next {
-		// position: absolute;
-		// top: 50%; 
-		// right: 5%;
-		// transform: translate(-50%,-50%);
-		// width: 100px;
-		// height: 60px;
-  		
-		// background-color: $gray-lighter;
-		// border-radius: 0px 20px 20px 0px;
-		// float: right;
-	}
-	#slider-prev {
-		// position: absolute;
-		// top: 50%; 
-		// left: 5%;
-		// transform: translate(-50%,-50%);
-		// width: 100px;
-		// height: 60px;
-	    
-		// background-color: $gray-lighter;
-		// border-radius: 20px 0px 0px 20px;
-	}
 }
 
 .main-featured {
-	margin: 5% 0px;
+	max-width: 944px;
+	margin: 5% auto;
+	padding: 0px 40px;
+	position: relative;
+
+	@include tablet-portrait-and-below {
+		padding: 0px 8px;
+	}
+
+	.upcoming-events {
+		background-color: white;
+		margin-left: 48px;
+		h1 {
+			text-align: center;
+		}
+
+		@include tablet-landscape-and-below {
+			margin: 0 auto;
+		}
+	}
+
+	section {
+		margin: 24px;
+
+		@media(max-width:426px) {
+			margin: 12px 0px;
+		}
+
+		h1 {
+			margin-bottom: 24px;
+		}
+	}
+
+	.divider {
+		margin-top: 48px;
+		left: calc(50% - 8px);
+		position: absolute;
+		height: 85%;
+		background: #26625c;
+		width: 8px;
+		display: inline-block;
+	}
 }
 
 .featured-syllabi {
-	color: $gray-dark;
-	text-align: center;
-	margin: 0 auto;
+	color: $color-warm-grey-two;
+	text-align: left;
+	font-family: HalisGR-Book;
+
+	h1 {
+		color: #003732;
+		text-align: center;
+		font-family: HalisGR-Black;
+	}
 	
 	h3 {
-		color: $base-color-hover;
+		color: $color-sea-two;
+		margin:0px;
+		font-family: HalisGR-Book;
+	  font-size: 22px;
+	  line-height: 1.18;
+	  letter-spacing: -0.1px;
+	  text-align: left;
+	}	
+
+	p {
+		padding-bottom: 24px;
+		font-family: HalisGR-Book;
+	  font-size: 18px;
+	  line-height: 1.22;
+	  letter-spacing: -0.1px;
+	  text-align: left;
 	}
 
 	@media (max-width: 991px) {
@@ -115,22 +149,54 @@ body .dropdown-backdrop {
 	min-height: 100%;
 }
 
-body .beckyBanner {
-	margin: 3% 0px;	
-}
-
-.main-syllabi {
-	background-image: url("https://res.cloudinary.com/engagement-lab-home/image/upload/v1464274547/boston-civic-media/infographic.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-	min-height: 200px;
-	min-width: 100%;
-
-}
-
 .syllabi-title {
 	color: white;
 	text-align: center;
+}
+
+.syllabus-wrap {
+	background-color: $color-pale-grey;
+	.page-title {
+		font-family: HalisGR-SBold;
+		  font-size: em(34);
+		  line-height: 1.12;
+		  letter-spacing: 0.2px;
+		  text-align: left;
+		  color: $color-sea-two;
+	}
+
+	.this-syllabus-description {
+		font-family: Helvetica;
+	  font-size: em(18);
+	  line-height: 1.22;
+	  text-align: left;
+	}
+
+	.this-syllabus-info {
+		font-family: Helvetica-Bold;
+	  font-size: em(15);
+	  line-height: 1.47;
+	  text-align: left;
+	  color: $color-warm-grey;
+	}
+
+	.syllabus-button {
+		font-size: em(26);
+		float: left;
+		line-height: 0.73;
+	    letter-spacing: 0px;
+		font-family: HalisGR-SBold;
+		border: 3px solid $color-light-blue-grey;
+		color: $color-light-blue-grey;	
+		padding: 16px 8px;
+		margin-top: 24px;
+
+		&:hover, &:active, &:focus {
+			color: darken($color-light-blue-grey, 10%);
+			border: 3px solide darken($color-light-blue-grey, 10%);
+		}
+
+	}
 }
 
 .syllabus {
@@ -142,13 +208,16 @@ body .beckyBanner {
 	}
 }
 
-.this-syllabus-description {
-	font-size: 1.5em;
+body .beckyBanner {
+	margin: 3% 0px;	
 }
 
-.syllabus-button {
-	font-size: 2em;
-	float: right;
+.main-syllabi {
+	@include cdn-background('/v1464274547/boston-civic-media/infographic.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 200px;
+	min-width: 100%;
 
 }
 
@@ -192,7 +261,7 @@ body .filters {
 	.btn-group.open > btn.syllabi-options:active,
 	.btn-group.open > btn.syllabi-options:visited{
 		background-color: white;
-		border: 3px solid $green;
+		border: 3px solid #85bbb2;
 		color: $gray-light;
 		box-shadow:none;
 	}
@@ -201,14 +270,14 @@ body .filters {
 		background-color: white;
 		color: $gray-dark;
 		font-weight: bold;
-		border: 3px solid $green;
+		border: 3px solid #85bbb2;
 	}
 
 	.btn.syllabi-options:hover,
 	.btn.syllabi-options:active,
 	.btn.syllabi-options:focus {
 		background-color: white;
-		border: 3px solid $green;
+		border: 3px solid #85bbb2;
 		color: $gray-light;
 		box-shadow:none;
 	}
@@ -216,12 +285,12 @@ body .filters {
 	.btn.syllabi-options:selected {
 		color: $gray-dark;
 		background-color: white;
-		border: 3px solid $green;
+		border: 3px solid #85bbb2;
 
 	}
 	.btn.syllabi-options:focus {
 		background-color: white;
-		border: 3px solid $green;
+		border: 3px solid #85bbb2;
 		color: $gray-light;
 	}
 
@@ -232,7 +301,7 @@ body .dropdown-menu {
 
 	li a {
 		color: $gray-dark;
-		background-color: $green-light;
+		background-color: #85bbb2;
 	}
 	li a:hover {
 		color: $gray-dark;
@@ -243,7 +312,6 @@ body .dropdown-menu {
 .featured-list {
 	list-style-type: none;
 	padding: 0;
-	width: 80%;
 	margin: 0 auto;
 
 	@media (max-width: 767px) {
@@ -257,47 +325,83 @@ body .dropdown-menu {
 	}
 }
 
-.featured-lightning-talks {
-	// background-color: $gray-dark;
-	// padding: 5%;
-	border-left: 1px $gray-dark solid;
-	color: $gray-dark;
-	margin: 0 auto;
-	position: relative;
-	text-align: center;
-	h3 {
-		color: $base-color-hover;
-
-		@media (max-width: 767px) {
-			font-size: 1em;
-		}
-	}
-}
-
 .lightning-talk {
-	margin-bottom:1%;
-	margin-top:1%;
-	min-height: 350px;
 
+	max-height: 500px;
+	min-height: 500px;
 
-	@media (max-width: 767px){
-		min-width: 100%;
+	@include tablet-landscape-and-up {
+		margin-bottom: 40px;
+	}
+
+	h1 {
+		font-family: $body-type;
+		font-size: em(22);
+		color: $color-sea-two;
+	}
+	p {
+		font-family: $extra-light-type;
+		color: $color-warm-grey;
+		font-size: em(16);		
 	}
 }
 
-body .lightning-talk-title {
-	display: relative;
-	color: $gray-dark;
-	font-weight: 700;
-	// min-height: 80px;
+.upcoming-events {
 
-	h4 {
-		position: relative;
-		vertical-align: center;
+
+	ul {
+		padding: 0;
+		list-style-type: none;
+		list-style-image: none;
+		color: white;
 	}
-	// padding-top: 20%;
+
+
+	h1 {
+		font-family: HalisGR-Black;
+		color: #003732;
+	}
+
+	.title {
+		h2 {
+		  font-family: HalisGR-Book;
+		  font-size: em(22);
+		  line-height: 1.18;
+		  letter-spacing: -0.1px;
+		  text-align: center;
+		  color: $color-sea-two;
+		  margin: 0px;
+		  a {
+			  color: $color-sea-two;
+		  }
+		}
+
+	  p {
+	  	color: $color-dull-teal;
+	  	font-family: HalisGR-Light;
+	  	font-size: em(20);
+	  letter-spacing: -0.1px;
+	  text-align: center;
+	  margin-bottom: 8px;
+	  }
+	}
+
+	p {
+	  font-family: HalisGR-Book;
+	  font-size: 18px;
+	  line-height: 1.22;
+	  letter-spacing: -0.1px;
+	  text-align: center;
+	  color: $color-warm-grey-two;
+	}
+
+	img {
+		float: none;
+		margin: 8px auto;
+	}
 
 }
+
 .slider-header {
 	width: 100%;
 	// display: table-cell;
@@ -329,17 +433,8 @@ body .lightning-talk-title {
 	}
 }
 .talks-feature {
-	padding: 2% 5%;
-	margin: 0 5%;
+	background-color: $color-pale-grey;
 	margin-bottom: 5%;
-	border-bottom: 1px $gray-dark solid;
-	.feature {
-		float: right;
-
-		@media (max-width: 767px) {
-			display: none;
-		}
-	}
 }
 .feat-talk-description {
 	padding: 4% 2%;
@@ -360,16 +455,16 @@ body .lightning-talk-title {
 }
 
 .talks-buttons {
-	float: left;
 	padding-bottom: 5%;
 	text-align: center;
 	// margin-top: 5%;
 	.button {
-		display: block;
-		width: 100%;
-		background: $green-blue;
-		border: none;
-		color: white;
+		display: inline-block;
+		width: auto;
+		padding: 8px;
+		background: white;
+		border: 2px solid $color-light-blue-grey;
+		color: $color-light-blue-grey;
 		height: 60px;
 		margin: 10px 0;
 	}
@@ -458,12 +553,13 @@ body .lightning-talk-title {
 
 }
 #talks-content {
-	padding: 0px 2%;
+	padding: 0px;
 	min-height: 100%;
 }
 body .talks-item {
 	text-align: center;	
-	min-height: 500px;
+	min-height: 600px;
+	max-height: 600px;
 	p {
 		margin: 0 auto;
 		// width: 90%;
@@ -485,11 +581,31 @@ body .talks-item {
 	}
 }
 .irb-proj {
-	padding: 5% 2%;
+	padding: 50px 40px;
+	color:black;
+	font-size: em(18);
+	line-height: 1.22;
+  letter-spacing: -0.1px;
 
 	.irb-proj-title {
-		font-size: x-large;
+		font-family: HalisGR-Book;
+		font-size: em(22);
 		font-weight: bold;
+		color: $color-sea-two;
+		padding-top: em(16);
+		padding-bottom: em(8);
+	}
+	.description {
+		padding-bottom: 16px;
+	}
+
+	.did, .found {
+		background-color: rgba(207, 235, 234, 0.3);
+    margin-right: -54px;
+    margin-left: -54px;
+    display: inline-block;
+    padding: 0px 54px;
+
 	}
 
 }
@@ -510,6 +626,7 @@ body .talks-item {
 .clients {
 	position: relative;
 	padding-top:5%;
+	text-align: center;
 }
 
 .funder {
@@ -531,50 +648,164 @@ body .talks-item {
 }
 
 .about-title {
-	margin: 2%;
+	margin: 0px;
 }
-.involved {
-	width: 70%;
-	margin: 0 auto;
-	text-align: left;
-	.title {
-		text-align: left;
+
+#get-involved {
+	background-color: #f1f9f8;
+	
+	.subscribe-button {
+
+		width: 420px;
+
+		@include mobile-landscape-and-below { 
+			width: 270px;
+			font-size: em(18);
+		}
+
 	}
-	li {
-		line-height: 35px;
+}
+.involved-wrapper {
+	max-width: 1024px;
+
+    margin: 0 auto;
+
+    @media (max-width: 1200px) {
+    	width: 90%;
+    }
+
+	// TOP BORDER
+	.involved {
+
+		div {
+
+			background-color: white;
+			height: 400px;
+			margin: 0 auto;
+			margin-bottom: 60px;
+		  border-top: solid 40px;
+		  width: 100%;
+
+			&.educators {
+				border-top-color: $color-seafoam-blue;
+			}
+			&.organizations {
+				border-top-color: $color-pale-teal;
+			}
+			&.researchers {
+				border-top-color: $color-sea;
+			}
+			&.students {
+				border-top-color: $color-seafoam-blue;
+			}
+		}
+
+		@include tablet-portrait-and-below {
+			height: auto;
+			padding-bottom: 44px;
+		}
 	}
 
-	@media (max-width: 767px) {
-		width: 90%;
+	.involved {
+	  
+		ul {
+			list-style-type: none;
+			padding: 0px;
+			@media (max-width: 1024px) {
+				padding: 0px;
+			}
+		}
+		li {
+/* 			background-repeat:no-repeat;
+			background-position: 0px center;
+			background-image: url('https://res.cloudinary.com/engagement-lab-home/image/upload/v1495473210/boston-civic-media/layout/bullet.svg'); */
+		  margin: 12px;
+		  color: $gray-dark;
+		  font-family: $body-type;
+		  font-size: em(18);
+		  letter-spacing: -0.1px;
+		  padding-left: 20px;
+		  padding-right: 20px;
+		  line-height: 1.2;
+		  display: none;
+
+		  @media (max-width: 426px) {
+		  	font-size: em(16);
+		  }
+		}
+
+		h1 {
+			font-family: $body-type;
+			font-size: em(34);
+			line-height: 0.76;
+			letter-spacing: -0.2px;
+			padding-top: 34px;
+		}
+		h4 {
+			font-family: $light-type;
+			font-size: em(20);
+			letter-spacing: -0.1px;
+			color: $color-dull-teal;
+		}
+
 	}
 }
-.get-involved-header {
+
+.listserv {
+	background-color: white;
+	text-align: left;
+
+	.guidelines {
+		// margin: 40px;
+		width: 100%;
+	}
+}
+
+.page-header {
 	min-height: 200px;
 	width: 100%;
-
+	margin: 0;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
+
+.sub-header {
+	font-family: $body-type;
+	font-size: em(22);
+	color: $color-sea-two;
+	line-height: 1.17;
+	letter-spacing: -0.4px;
+	text-align: center;
+	padding: 2%;
+	@include mobile-landscape-and-below {
+		padding-left: 10%;
+		padding-right: 10%;
+	}
+	padding-top: 10px;
+
+  &.dark {
+		color: $color-dark-blue-green;
+  }
+}
+
 .newsletters {
 	background-color: $gray-lighter;
 }
-body .listserv {
-	background-color: $green-dark;
-	color: white;
-
-	a:hover, 
-	a:active {
-		color: $gray-dark;
-	}
-}
 
 .guideline {
-	color: white;
+	color: $color-dark-green-blue-two;
+	h4 {
+		font-size: em(14);
+		color: $color-seafoam-blue;
+	}
 	p {
-		text-align: justify;
+		font-size: em(12); 
+		line-height: 1.57;
 	}
 }
 
 .cirb {
-	background-color: $green-blue;
+	background-color: white;
 }
 
 .this-event{
@@ -595,34 +826,96 @@ body .listserv {
 }
 .event-description {
 
-	.read-summary {
-		font-size: 1.3em;
+	padding-top: 24px;
+	padding-bottom: 48px;
+
+	@include tablet-portrait-and-below {
+		padding: 24px;
 	}
-	@media (max-width: 767px) {
-		margin-left: -15px;
-		margin-right: -15px;
+	
+	h1 {
+		font-family: $body-type;
+		font-size: em(48);
+		color: $color-dark-green-blue;
+		margin-bottom: 0;
+		margin-top: 16px;
+		display: inline-block;
+	}
+	h2 {
+		margin: 0;
+		font-family: $body-type;
+		font-size: em(36);
+		color: $color-seafoam-blue;
+		display: block;
+
+	}
+	img {
+		display: inline-block;
+		margin: 0 auto;
+		float: left;
+		margin-bottom: 40px;
+	}
+
+	.short {
+		color: $color-light-blue-grey;
+		font-size: em(22);
+		line-height: 1.18;
+		letter-spacing: -0.1px;
 	}
 }
 
 .featured-event {
+	text-align: center;
+
+	@include mobile-landscape-and-below {
+		padding: 0;
+	}
+
 	.summary {
 		font-size: 2em;
 		font-style: bold;
 		width: 60%;
 		margin: 0 auto;
 	}
+	a {
+  	font-family: $light-type;
+  	font-size: em(16);
+		span {
+			@include arrow(12px, 102px, auto, 5px);
+		}
+	}
+
+	img {
+		display: inline;
+	}
+	h1 {
+		font-family: $body-type;
+		font-size: em(40);
+		color: $color-dull-teal;
+		margin-bottom: 0;
+		@include mobile-landscape-and-below {
+			font-size: em(24);
+		}
+	}
+	h2 {
+		margin: 0;
+		font-family: $body-type;
+		font-size: em(30);
+		color: $color-warm-grey;
+		@include mobile-landscape-and-below {
+			font-size: em(20);
+		}
+
+	}
 	p {
+		font-family: $extra-light-type;
 		color: $gray-dark;
 		font-size: large;
-		margin: 15% auto;
-		// width: 50%;
-		padding: 2%;
+		@include mobile-landscape-and-below {
+			font-size: em(16);
+		}
 	}
-}
-.event-photo {
-	@media(max-width: 767px) {
-		height: 200px;
-	}
+
 }
 
 .featured-event p {
@@ -635,41 +928,120 @@ body .listserv {
 	background-color: $gray-lighter;
 }
 
+.featured-event-wrap {
+	padding: 80px;
+	@include mobile-landscape-and-below {
+		padding: 1px;
+		margin-top: 30px;
+		border-left: $color-pale-grey 8px solid;
+    	border-right: $color-pale-grey 8px solid;
+	}
+}
+
+section#events {
+	background-color: #f1f9f8;
+}
+
+.past-events, .upcoming-events {
+	background-color: $color-pale-grey;
+	max-width: 1024px;
+	margin: 0 auto;
+
+	.page-title {
+		font-size: 32px;
+	  line-height: 0.81;
+	  letter-spacing: -0.2px;
+	  color: $color-sea-two;
+	  font-family: HalisGR-Book;
+		padding: 3%;
+	}
+}
+
+.event-wrap {
+	background-color: $color-pale-grey;
+
+	.event-talks {
+		background-color: white;
+
+	}
+}
+
 .recent-event {
-	padding-bottom: 15%;
+	padding-bottom: 64px;
+	padding-left: 15px;
+	padding-right: 15px;
+
+	&:nth-last-child(1) {
+		padding-bottom:24px;
+	}
+	.image {
+		padding-top: 16px;
+	}
+	.content {
+		//@include tablet-landscape-and-up {
+			border-bottom: 7px solid $color-seafoam-blue;
+		//}
+		padding: 8px 0px;
+
+		span { 
+			
+			@include arrow(12px, 86px, auto, 13px, 12px);
+			
+		}
+	}
+	img {
+    border-radius: 50%;
+    margin: 0 auto;
+	}
+	h1 {
+		font-family: $regular-type;
+		font-size: em(24);
+		color: $color-greeny-blue;
+		margin: 0;
+	}
+	h2 {
+		font-family: $bold-type;
+		color: $color-warm-grey;
+		font-size: em(19);
+		margin: 0;
+		margin-top: 1%;
+	}
 	p {
-		margin: 0 auto;
-		width: 200px;
-		padding: 5% 2%;
-		max-height: 160px;
-		min-height: 160px;
-		overflow: hidden;
+		font-family: $extra-light-type;
+		color: $color-warm-grey;
+		font-size: em(16);
+		text-align: left;
+		margin: 0;
+		margin-top: 8px;
+		margin-bottom: 8px;
 	}
 
 }
 
-.event-talks {
-	h3 {
-		padding-left: 3%;
-	}
-}
-.feat-event-title {
-	p {
-		font-size: xx-large;
-		margin: 0 auto;
-		padding: 0px;
-	}
-}
-.event-title {
-	min-height: 60px;
-	p {
-		min-height: 40px;
-		max-height: 50px;
-		padding: 0px;
-		margin: 0 auto;
-	}
-}
+#event-talks {
+	text-align: center;
+	background: white;
+    padding: 40px 0px;
 
+	.row {
+		//padding: 16px;
+		margin: 0 auto;
+	}
+	.event-talk {
+		padding: 0;
+	}
+
+	.event-description {
+		padding: 24px auto;
+	}
+
+	h2 {
+		font-size: em(32);
+		color: $color-sea-two;
+		margin-bottom: 40px;
+		margin-top: 80px;
+	}
+}
 
 /* Blog pages
 ---------------------------------- */
@@ -684,7 +1056,7 @@ body .listserv {
 		}
 	}
 	.post-info {
-		font-size: 12px;
+		font-size: em(12);
 		color: #aaa;
 		font-weight: 400;
 		>span {
@@ -1117,12 +1489,21 @@ body .listserv {
 }
 
 .about-vision {
-	color: $base-color-hover;
-	font-weight: bold;
-	font-size: x-large;
+	margin-bottom: 16px;
+	color: #338b83;
+	font-size: em(24);
+	font-family: HalisGR-Bold;
+	line-height: 1.08;
+  letter-spacing: -0.1px;
+  text-align: left;
 }
 
 .about-description {
+	font-family: HalisGR-Book;
+  font-size: 18px;
+  line-height: 1.22;
+  letter-spacing: -0.1px;
+  text-align: left;
 	color: $gray-dark;
 	font-size: large;
 	// font-weight: light;
@@ -1130,6 +1511,11 @@ body .listserv {
 
 .about-links {
 	font-size: large;
+
+	p {
+		line-height: 1.2;
+	}
+
 }
 
 .affiliate-image {
@@ -1205,4 +1591,313 @@ body .listserv {
 	text-align: center;
 	margin-bottom: 10px;
 	color: #fff;
+}
+
+/* Course Catalog
+---------------------------------- */
+
+.course-catalog {
+	width: 100%;
+	padding: 0px;
+	padding-bottom:60px;
+	max-width: 1024px;
+  margin: 0 auto;
+
+  #blurb {
+		font-size: em(24);
+		line-height: 1.17;
+		letter-spacing: -0.4px;
+		text-align: justify;
+		color: $color-greyish-brown;
+
+		@include mobile-landscape-and-below {
+			font-size: em(16);
+			font-family: $extra-light-type;
+			text-align: left;
+			margin-top: 15px;
+		}
+  }
+
+  .features {
+  	text-align: center;
+
+		@include mobile-landscape-and-below {
+			margin-top: 40px;
+		}
+
+  	img {
+  		margin: 0 auto;
+  	}
+  	h1 {
+			font-size: em(18);
+			line-height: 1.44;
+			letter-spacing: -0.1px;
+			color: $color-sea-two;
+			margin: 0;
+  	}
+  	h2 {
+			font-size: em(14);
+			line-height: 1.44;
+			letter-spacing: -0.1px;
+			color: $color-warm-grey-two;
+			margin-top: 8px;
+  	}
+  }
+}
+
+.courses-header {
+	padding: 0px 8%;
+	width:100%;
+	background-color: white;
+	h1 {
+		font-size: em(34);
+		text-align: center;
+		line-height: 1.12;
+
+		// BCM
+		&:nth-child(1) {
+		  font-weight: bold;
+		  letter-spacing: 0.2px;
+		  color: #338b83;
+		  font-family: $bold-type;
+		  text-transform: uppercase;
+
+			@include mobile-landscape-and-below {
+				font-size: em(24);
+			}
+		}
+		// Courses
+		&:nth-child(2) {
+		  letter-spacing: -0.1px;
+		  font-family: HalisGR-Black;
+		  color: #003732;
+		  margin-bottom: 16px;
+		  padding: 0px;
+
+			@include mobile-landscape-and-below {
+				font-size: em(28);
+			}
+		}
+	}
+	p {
+		margin:0 auto;
+		padding-top: 16px;
+		padding-bottom: 40px;
+		text-align:justify;
+	}
+
+	@media(max-width: 426px) {
+		p {
+			padding:0px;
+		}
+	}
+}
+.courses {
+
+	    padding-top: 60px;
+	height: 100%;
+  position: relative;
+
+  @include mobile-landscape-and-below {
+  	padding: 0;
+  }
+	select {
+    width: 100%;
+
+	text-align: center;
+  	text-align-last: center;
+    cursor: pointer;
+    padding: 10px 15px;
+    margin-bottom: 4%;
+    outline: 0;
+    border: 0;
+    border-radius: 0;
+    font-family: $extra-light-type;
+    text-align: center;
+    background: $color-light-blue-grey;
+    color: $color-warm-grey;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+  .select-arrow {
+	  position: absolute;
+	  top: 39px;
+	  right: 34px;
+	  width: 0;
+	  height: 0;
+	  pointer-events: none;
+	  border-style: solid;
+	  border-width: 15px 9px 0 9px;
+	  border-color: $color-seafoam-blue transparent transparent transparent;
+	}
+
+	#course-menu {
+		ul {
+			list-style-type: none;
+			list-style-image: none;
+			padding:0px;
+			li {
+		    margin-top: 3%;
+		    margin-left: 3%;
+
+				a:hover, a.active {
+					color: #338b83;
+					font-family: $bold-type;
+				}
+				a {
+					font-family: HalisGR-Book;
+					color: $color-sea-two;
+					font-size: 1em;
+				}
+			}
+		}
+	}
+	#course-contents {
+		padding: 24px;
+		background-color: $color-seafoam-blue;
+		color: $color-dark-green-blue;
+
+	  @include tablet-portrait-and-up {
+			@include box-shadow(0 0 4px 1px rgba(0, 0, 0, 0.24));
+			border: solid 4px #ffffff;
+	  }
+
+		h1 {
+			font-family: $med-type;
+			font-size: 2em;
+			color: white;
+		}
+		h2 {
+			font-family: $med-type;
+			font-size: 1.5em;
+			color: $color-dark-green-blue;
+		}
+
+		.content {
+			display: none;
+
+			h1 {
+				padding: 0px;
+				margin: 0px;
+				margin-bottom: 8px;
+				font-family: HalisGR-Black;
+			}
+			&.active {
+				display: block;
+			}
+
+			a {
+				color: $color-dark-green-blue;
+				text-decoration: underline;
+
+				&:hover, &:focus, &:active {
+					color: lighten($color-dark-green-blue, 20%);
+				}
+			}
+
+			strong {
+				margin: 0px;
+				padding:0px;
+				font-size: 22px;
+			  line-height: 1.18;
+			  letter-spacing: -0.1px;
+			  text-align: left;
+			  color: $color-light-blue-grey;
+			  font-family: HalisGR-Book;
+			}
+
+			p {
+				font-family: HalisGR-Book;
+			  font-size: 18px;
+			  line-height: 1.22;
+			  letter-spacing: -0.1px;
+			  text-align: left;
+			  color: #1f635d;
+			}
+
+			h2 {
+				margin: 0px;
+				padding:0px;
+				font-size: 22px;
+			  line-height: 1.18;
+			  letter-spacing: -0.1px;
+			  text-align: left;
+			  color: $color-light-blue-grey;
+			  font-family: HalisGR-Book;
+			}
+
+			button {
+				width: 135px;
+			  height: 42px;
+			  border: solid 3px $color-light-blue-grey;
+			  font-family: HalisGR-Bold;
+			  font-size: 26px;
+			  line-height: 0.8;
+			  letter-spacing: 0px;
+			  text-align: center;
+			  color: $color-light-blue-grey;
+			  background-color:transparent;
+
+			  &:hover {
+			  	color: $color-seafoam-blue;
+			  	background-color: $color-light-blue-grey;
+			  }
+			}
+		}
+
+		#enroll-btn {
+			margin: 0 auto;
+			width: 285px;
+		}
+	}
+
+}
+
+
+.enroll-info-wrap {
+
+	margin-top: 120px;
+	
+	.page-title {
+		text-align: center;
+	}
+
+	a {
+		display: block;
+		font-family: HalisGR-Bold;
+		font-size: em(22);
+		line-height: 1.18;
+		letter-spacing: -0.1px;
+		text-align: left;
+		margin: 16px 0px;
+	}
+
+	.enroll-info {
+		h1 {
+			font-family: HalisGR-Black;
+		  font-size: em(34);
+		  line-height: 1.12;
+		  letter-spacing: -0.1px;
+		  text-align: center;
+		  color: $color-dark-blue-green;
+		}
+		h2 {
+			font-family: HalisGR-Book;
+		  font-size: em(20);
+		  line-height: 1.3;
+		  letter-spacing: -0.1px;
+		  text-align: left;
+		  color: $color-light-blue-grey;
+		}
+
+		p {
+			font-family: HalisGR-Book;
+			  font-size: em(16);
+			  line-height: 1.38;
+			  letter-spacing: -0.1px;
+			  text-align: left;
+			  color: $color-dark-green-blue;
+		}
+	}
 }

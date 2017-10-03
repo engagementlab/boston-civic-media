@@ -22,8 +22,7 @@ var Types = keystone.Field.Types;
 var ListservGuidelines = new keystone.List('ListservGuidelines', 
 	{
 		label: 'Listserv Guidelines Page',
-		singular: 'Listserv Guidelines Page',
-		track: true
+		singular: 'Listserv Guidelines Page'
 		// nodelete: true,
 		// nocreate: true
 	});
@@ -33,7 +32,6 @@ var ListservGuidelines = new keystone.List('ListservGuidelines',
  * @main Listserv
  */
 ListservGuidelines.add({
-	name: { type: String, hidden: true, required: true, initial: true },
 	question: { type: String, label: "Question",  initial: true, required: true },
 	answer: { type: Types.Textarea, label: "Answer",  initial: true, required: true },
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
@@ -43,5 +41,5 @@ ListservGuidelines.add({
  * Model Registration
  */
 ListservGuidelines.defaultSort = '-createdAt';
-ListservGuidelines.defaultColumns = 'name, question, answer';
+ListservGuidelines.defaultColumns = 'question';
 ListservGuidelines.register();

@@ -29,14 +29,12 @@ exports = module.exports = function(req, res) {
 
         // locals.featured_lightning_talks = [];
 
-        var queryEvent = Event.model.find({}).sort([
-            ['sortOrder', 'ascending']
-        ]);
+        var queryEvent = Event.model.find({}).sort('-date');
 
         queryEvent.exec(function(err, resultEvent) {
             locals.events = resultEvent;
 
-            next(err);
+            next();
         });
 
     });

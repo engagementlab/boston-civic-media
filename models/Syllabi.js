@@ -11,14 +11,28 @@ var Syllabi = new keystone.List('Syllabi',
 	{
 		label: 'Syllabi',
 		singular: 'Syllabus',
-		track: true, 
 		sortable: true,
 		sortContent: 'Filter:category',
     autokey: { path: 'syllabus_key', from: 'title', unique: true },
     map: { name: 'title' }
-		// nodelete: true,
-		// nocreate: true
 	});
+
+// Storage adapter for Azure
+var azureFile = new keystone.Storage({
+  adapter: require('keystone-storage-adapter-azure'),
+  azure: {
+    container: 'bcmsyllabi',
+    generateFilename: function (file) {
+      // Cleanup filename
+      return file.originalname.replace(/[\\'\-\[\]\/\{\}\(\)\*\+\?\\\^\$\|]/g, "").replace(/ /g, '_').toLowerCase();
+    }
+  },
+  schema: {
+    path: true,
+    originalname: true,
+    url: true
+  }
+});
 
 /**
  * Model Fields
@@ -83,18 +97,12 @@ Syllabi.add({
       note: 'This is optional'
   },
   title: { type: Types.Text, label: "Title", required: true, initial: true },
-  blurb: { type: String, label: "Short Description", note: 'Cut off at 300 characters. Appears below each syllabus in grids.', max: {chars: 300, mode: 'validate'}, required: true, initial: true },
+  blurb: { type: String, label: "Blurb/Short Description", note: 'Cut off at 300 characters. Appears below each syllabus in grids.', max: 300, required: true, initial: true },
 	description: { type: Types.Textarea, label: "Long Description", note: 'CAN BE AS LONG AS YOU WANT. Appears on individual syllabus page', required: true, initial: true },
   file: {
-		type: Types.AzureFile,
+		type: Types.File,
 		label: 'File',
-		filenameFormatter: function(item, filename) {
-      // console.log ("hi");
-			return item.syllabus_key + require('path').extname(filename);
-		},
-		containerFormatter: function(item, filename) {
-			return 'bcmsyllabi';
-		}
+    storage: azureFile
 	},
 	enabled: {
       type: Types.Boolean,
@@ -155,23 +163,6 @@ Syllabi.schema.statics.removeFilterRef = function(filterId, callback) {
     );
 
 };
-
-/**
- * Hooks
- * =============
- */
-Syllabi.schema.pre('save', function(next) {
-
-    // Filter.populate(this.institution, )
-
-    // // Save state for post hook
-    // this.filters = Object.assign(this.discipline, this.institution);
-
-    // console.log(this.filters)
-
-    next();
-
-});
 
 /**
  * Model Registration

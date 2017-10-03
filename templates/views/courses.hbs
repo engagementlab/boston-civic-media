@@ -1,0 +1,122 @@
+{{!< default}}
+{{!--
+/**
+* Boston Civic Media Website
+* Developed by Engagement Lab, 2016
+* ==============
+*
+* Course Directory Page Template
+* - Use {{jsonPrint project}} to print entire json...DEBUG ONLY
+* ==========
+*/
+--}}
+<section class="course-catalog row">
+
+	<div class="courses-header main">
+		<h1 class="page-title">Boston Civic Media</h1>
+		<h1 class="page-title"><strong>{{page.pageTitle}}</strong></h1>
+		<p id="blurb">{{page.pageBlurb}}</p>
+	</div>
+
+	<div class="col-md-10 col-sm-10 col-xs-12 col-centered features row">
+		<div class="col-md-4 col-sm-12">
+			{{{cloudinaryUrl '/v1495743504/boston-civic-media/layout/courses/clipboardimage' width=102 format='svg' alt='Courses Symbol'}}}
+			<h1>{{page.featureHeadings.[0]}}</h1>
+			<h2>{{page.featureContent.[0]}}</h2>
+		</div>
+		<div class="col-md-4 col-sm-12">
+			{{{cloudinaryUrl '/v1495743504/boston-civic-media/layout/courses/communicateimage' width=102 format='svg' alt='Courses Symbol'}}}
+			<h1>{{page.featureHeadings.[1]}}</h1>
+			<h2>{{page.featureContent.[1]}}</h2>
+		</div>
+		<div class="col-md-4 col-sm-12">
+			{{{cloudinaryUrl '/v1495743504/boston-civic-media/layout/courses/checkmarkimage' width=102 format='svg' alt='Courses Symbol'}}}
+			<h1>{{page.featureHeadings.[2]}}</h1>
+			<h2>{{page.featureContent.[2]}}</h2>
+		</div>
+	</div>
+
+	<div class="col-xs-12 col-centered courses">
+
+		<div id="course-menu" class="col-lg-4 col-md-4 col-sm-10 col-xs-12 col-centered-md">
+			<ul class="desktop-only">
+				{{!-- COURSE LISTING --}}
+				{{#if fallCourses}}
+				<h3>Fall Courses</h3>
+					{{#each fallCourses}}
+					<li><a href="#" data-key="{{course_key}}" {{#if @first}} class="active"{{/if}}>{{name}}</a></li>
+					{{/each}}
+				{{/if}}
+				{{#if springCourses}}
+				<h3>Spring Courses</h3>
+					{{#each springCourses}}
+					<li><a href="#" data-key="{{course_key}}">{{name}}</a></li>
+					{{/each}}
+				{{/if}}
+			</ul>
+		</div>
+
+		<section id="course-contents" class="col-lg-8 col-md-8 col-sm-10 col-xs-12 col-centered-md">
+			<select id="courses-mobile" class="mobile-tablet-only">
+				{{!-- COURSE LISTING --}}
+				{{#if fallCourses}}
+				<h3>Fall Courses</h3>
+					{{#each fallCourses}}
+					<option data-key="{{course_key}}" {{#if @first}} selected="selected"{{/if}}>{{name}}</option>
+					{{/each}}
+				{{/if}}
+				{{#if springCourses}}
+				<h3>Spring Courses</h3>
+					{{#each springCourses}}
+					<option data-key="{{course_key}}">{{name}}</option>
+					{{/each}}
+				{{/if}}
+			</select>
+
+			<div class="select-arrow mobile-tablet-only"></div>
+
+			{{!-- COURSE CONTENT --}}
+			{{#each courses}}
+			<div data-key="{{course_key}}" class="content{{#if @first}} active{{/if}}">
+				<h1>{{name}}</h1>
+				<p><strong>Semester</strong><br />{{semester}}</p>
+				<p><strong>Institution</strong><br />{{inst.name}}</p>
+				<p>
+					{{#ifeq instructor.length 1}}
+					<h2>Instructor</h2>{{instructor.[0].name}} {{#if instructor.[0].contactEmail}} (<a href="mailto:{{instructor.[0].contactEmail}}">{{instructor.[0].contactEmail}}</a>) {{/if}}
+					{{else}}
+					<strong>Instructors</strong><br />
+						{{#each instructor}}
+						{{name}}{{#if contactEmail}} (<a href="mailto:{{contactEmail}}">{{contactEmail}}</a>){{/if}}{{#unless @last}}, {{/unless}}
+						{{/each}}
+					{{/ifeq}}
+				</p>
+				<h2 style="padding-top:16px">Course Description</h2>
+				<p>{{description}}</p>
+
+				<h2>Contact Information</h2>
+				
+				<p>{{contactName}}<br>
+					<a href="{{contactUrl}}">Website</a> | {{contactPhone}} | <a href="mailto:{{contactEmail}}">{{contactEmail}}</a>
+				</p>
+					<a href="#{{inst.key}}"><button class="btn" id="enroll-btn">Learn how to enroll</button></a>
+			</div>
+			{{/each}}
+
+		</section>
+			
+	</div>
+
+	<div class="col-sm-12 col-lg-12 enroll-info-wrap">
+		<h1 class="page-title">Enrollment Information</h1>
+
+		{{#each filters}}
+		<div class="enroll-info" id="{{this.key}}">
+			<h1>{{this.name}}</h1>
+			{{{this.info.html}}}
+		</div>
+		{{/each}}
+
+	</div>
+		
+</section>

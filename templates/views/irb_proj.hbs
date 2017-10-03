@@ -1,7 +1,7 @@
 {{!< default}}
 {{!--
 /**
-* Engagement Lab Website
+* Boston Civic Media
 * Developed by Engagement Lab, 2015
 * ==============
 *
@@ -13,34 +13,36 @@
 --}}
 {{!-- {{jsonPrint this}} --}}
 <div class="cirb banner border-clear">
+
+	{{!-- Image will be loaded w/ responsive width and then loaded as cld-background bg img --}}
+	<img class="cld-responsive temp" data-src="{{cloudinaryUrl irb_proj.banner height=205 width='auto' crop='fill' effect='tint:100:5b5151'}}">
+
+	<section class="page-header cld-background"><h1 class="title page-title title-white"><strong>Community IRB</strong></h1></section>
+	<section class="sub-header col-sm-12 col-md-6 col-centered">
+		{{irb_proj.subHeader}}
+	</section>
 	<div class="container-fluid">
-		{{!-- <div class="row"></div> --}}
 		<div class="row irb-proj">
 			<div class="col-md-12 col-sm-12">
-			{{!-- {{jsonPrint irb_proj}} --}}
-				{{!-- {{> page/name name="Vision"}} --}}
-				<div class="title-white irb-description">
 					<div class="problem">
 						<div class="irb-proj-title">{{irb_proj.probTitle}}</div>
-						<div>{{{irb_proj.probText.html}}}</div>
+						<div class="description">{{{irb_proj.probText.html}}}</div>
 					</div>
 					<div class="did">
 						<div class="irb-proj-title">{{irb_proj.didTitle}}</div>
-						<div>{{{irb_proj.didText.html}}}</div>
+						<div class="description">{{{irb_proj.didText.html}}}</div>
 					</div>
 					<div class="found">
 						<div class="irb-proj-title">{{irb_proj.foundTitle}}</div>
-						<div>{{{irb_proj.foundText.html}}}</div>
+						<div class="description">{{{irb_proj.foundText.html}}}</div>
 					</div>
 					<div class="next">
 						<div class="irb-proj-title">{{irb_proj.nextTitle}}</div>
-						<div>{{{irb_proj.nextText.html}}}</div>
+						<div class="description">{{{irb_proj.nextText.html}}}</div>
 					</div>		
 					<div class="contact-email">
 						<h4>{{irb_proj.email}}</h4>
 					</div>			
-				</div>
-
 			</div>
 			
 			{{!-- <div class="row"></div> --}}

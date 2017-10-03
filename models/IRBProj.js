@@ -23,8 +23,7 @@ var IRBProj = new keystone.List('IRBProj',
 	{
 		label: 'IRB Project',
 		singular: 'IRB Project',
-		track: true,
-		nodelete: true,
+				nodelete: true,
 		nocreate: true
 	});
 
@@ -34,6 +33,8 @@ var IRBProj = new keystone.List('IRBProj',
  */
 IRBProj.add({
 	name: { type: String, default: "Community IRB Project", hidden: true, required: true, initial: true },
+    banner: { type: Types.CloudinaryImage, label: 'Banner Image', folder: 'boston-civic-media/banner' },
+    subHeader: { type: String, label: 'Subheader Text', note: "Subheader is under banner", initial: true, required: true },
 	email: { type: String, label: "Contact Email", required: true, initial: true},
 	createdAt: { type: Date, default: Date.now, noedit: true, hidden: true }
 },

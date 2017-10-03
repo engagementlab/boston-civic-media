@@ -24,16 +24,13 @@
 {{!-- Appear javascript --}}
 <script type="text/javascript" src="/plugins/waypoints/jquery.waypoints.js"></script>
 
-{{!-- Glide javascript --}}
+{{!-- Bower --}}
 <script type="text/javascript" src="/bower_components/jquery.fitvids/jquery.fitvids.js"></script> 
+<script type="text/javascript" src="/bower_components/cloudinary-core/cloudinary-core-shrinkwrap.js"></script> 
+<script type="text/javascript" src="/bower_components/vimeo-player-js/dist/player.min.js"></script> 
 
 {{!-- Isotope javascript --}}
-
-{{!-- <script type="text/javascript" src="/plugins/isotope/layout-mode.js"></script> --}}
-
 <script type="text/javascript" src="/plugins/isotope/isotope.pkgd.js"></script>
-{{!-- <script type="text/javascript" src="/plugins/isotope/layout-mode.js"></script> --}}
-{{!-- <script type="text/javascript" src="/plugins/isotope/fit-columns.js"></script> --}}
 
 {{!-- Pace javascript --}}
 <script type="text/javascript" src="/plugins/pace/pace.min.js"></script>
@@ -44,13 +41,8 @@
 
 {{!-- Bxslider javascript --}}
 <script type="text/javascript" src="/plugins/bxslider/jquery.bxslider.min.js"></script>
-{{!-- <script type="text/javascript" src="/plugins/bxslider/fit-columns.js"></script> --}}
-
-{{!-- Player.js --}}
-<script type="text/javascript" src="https://cdn.embed.ly/player-0.0.11.min.js"></script>
 
 {{!-- Custom Scripts --}}
 <script type="text/javascript" src="/js/custom.js"></script>
-{{!-- <script type="text/javascript" src="/js/build/dest/output.js"></script> --}}
 
-{{> script/sections section=section key=key }}
+{{> script/sections section=section key=key env=environment }}

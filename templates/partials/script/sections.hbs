@@ -11,8 +11,22 @@
 --}}
 
 <script type="text/javascript">
+	
 	$(document).ready(function() {
-		// alert('{{section}}');
+		
+		var container;
+		// Image responsiveness
+		var cl = cloudinary.Cloudinary.new({cloud_name: "engagement-lab-home"}); 
+		cl.responsive({responsive_resize:true});
+
+		/* Look for any temp img tag w/ cloud path and wait for it to load,
+			 then replace background element with url from image and hide image.
+		*/
+		$(".cld-responsive.temp").load(function(){
+			$(".cld-background:first").css('backgroundImage', 'url('+$(".cld-responsive.temp:first").attr('src')+')');
+			$(".cld-responsive.temp:first").hide();
+    });
+
 		/*
 		 Analytics start
 		 ==============
@@ -24,66 +38,118 @@
 
 		ga('create', 'UA-64617433-3', 'auto');
 		ga('send', 'pageview');
+
 		/*
 		 =============
 		 Analytics end
 		*/
-		
-		// $(document).ready(function(){
-		  
-		// });
-		// {{removePara}}
-
-		// lastImageLoaded (container, function () {
-				console.log("events lightning talk masonry")
-				// var container = $('#event-talks');
-					$('#event-talks').isotope({
-				    itemSelector: '.event-talks-item', 
-				    isFitHeight: true, 
-				    layoutMode: 'fitRows'
-				  });
-			// $('.isotopeContent').isotope('reloadItems').isotope();
-
-		// });
-
 		$('.markdown-span p').contents().unwrap().html("");
 
-		{{!-- INDEX Template Script --}}
-		{{#ifeq section 'home'}}
-			$('.bxslider').bxSlider({
-			  nextSelector: '#slider-next',
-			  prevSelector: '#slider-prev',
-			  autoheight: true,
-			  infiniteLoop: true,
-			  pager: false,
-			  // controls: true,
-			  nextText: '<img src="/images/rightarrow.png" height="50%" width="20%" style="margin:0 auto;">',
-			  prevText: '<img src="/images/leftarrow.png" height="50%" width="20%" style="margin:0 auto;">'
-			  // controls: true
+		$('#toggle-nav').on('click', function() {
+			$('.navbar.navbar-default, body, .navbar.navbar-default container-fluid, .navbar.navbar-default .row, #navbar-collapse, .logo-container, #logo-col, #toggle-nav').toggleClass('expand');
 
-		  })
-	  	
+		});
 
-		{{/ifeq}}
+		function lightningTalks() {
+
+			container = $('#talks-content');
+			function preLoad() {
+      	container.isotope({
+      		itemSelector: '.lightning-talk',
+	        filter: '*', 
+			    layoutMode: 'fitRows'
+		    });
+			}
+			function loadVidThumbs() {
+
+      	$.each($('.video-embed-thumb'), function(i, thumb) {
+      		var url = $(thumb).data('url');
+      		var replaceStart = url.indexOf('_640.jpg&src1');
+      		url = url.substr(0, replaceStart) + '_' + $(thumb).parent().width() + '.jpg&src1' + url.substr(replaceStart, url.length);
+
+        	$(thumb).attr('src', url);
+        	$(thumb).click(function(el) {
+
+        		$('#modal-video .embed-responsive').html($(el.currentTarget).data('embed'));
+        		$('#modal-video').modal('show');
+
+	      		var frame = $('#modal-video .embed-responsive iframe');
+		      	frame.on('load', function(evt) {
+		      		$(evt.currentTarget).fadeIn(200);
+
+	        		var player = new Vimeo.Player(frame[0]);
+					    // Listen to the play event.
+					    player.on('play', function() {
+						      // Tell Google analytics that a video was played.
+						     ga('send', 'event', 'Video', 'Play');
+							});
+		      	});
+
+        	});
+
+      	});
+
+      	$('#modal-video').click(function(el) {
+      		$('#modal-video .embed-responsive').empty();
+      		$('#modal-video').modal('hide');
+      	});
+
+      }
+			function checkFiltered() {
+
+		    var talks = $('#talks-content');
+		    if (talks.data('isotope').filteredItems.length === 0)
+		        $('.no-talks-visible').show();
+		    else
+		        $('.no-talks-visible').hide();
+
+			}
+
+			$('.filters-button-group').on('click', 'button', function() {
+
+			    var filterValue = $(this).attr('data-filter');
+			    container.isotope({
+			    	itemSelector: '.lightning-talk',
+		        filter: filterValue,
+				    isFitHeight: true,
+				    layoutMode: 'fitRows'
+			    });
+
+			});
+			// change is-checked class on buttons
+			$('.button-group').each(function(i, buttonGroup) {
+			    var $buttonGroup = $(buttonGroup);
+
+			    $buttonGroup.on('click', 'button', function() {
+			        $buttonGroup.find('.is-checked').removeClass('is-checked');
+			        $(this).addClass('is-checked');
+
+			        checkFiltered();
+			    });
+
+			});
+
+			loadVidThumbs();
+
+		}
 
 		{{!-- ABOUT Template Script --}}
 		{{#ifeq section 'about'}}
-		var container = $('#affiliate-content');
+	
+			container = $('#affiliate-content');
 
-		lastImageLoaded (container, function () {
-			var container = $('#affiliate-content');
-				container.isotope({
-			    itemSelector: '.affiliate-item', 
-			    layoutMode: 'fitRows'
-			  });
-			// $('.isotopeContent').isotope('reloadItems').isotope();
+			lastImageLoaded (container, function () {
+				var container = $('#affiliate-content');
+					container.isotope({
+				    itemSelector: '.affiliate-item', 
+				    layoutMode: 'fitRows'
+				  });
 
-		});
-		$('.filters-button-group').on( 'click', 'button', function() {
-			  var filterValue = $( this ).attr('data-filter');
-			  // use filterFn if matches value
-			  // filterValue = filterFns[ filterValue ] || filterValue;
-			  container.isotope({ filter: filterValue });
+			});
+
+			$('.filters-button-group').on( 'click', 'button', function() {
+				  var filterValue = $( this ).attr('data-filter');
+				  container.isotope({ filter: filterValue });
 			});
 			// change is-checked class on buttons
 			$('.button-group').each( function( i, buttonGroup ) {
@@ -179,9 +245,7 @@
 
 			});
 
-
 		{{/ifeq}}
-
 
 		{{!-- SYLLABI Template Script --}}
 		{{#ifeq section 'syllabi'}}
@@ -192,14 +256,12 @@
 			var keywords = $('.dropdown-menu li .option-keyword').size();
 			var disciplines = $('.dropdown-menu li .option-discipline').size();
 
-			console.log (institutions, "number of institutions");
-
 			$('span.institution-number').html("(" + institutions + ")");
 			$('span.faculty-member-number').text("(" + faculty + ")");
 			$('span.partnership-organization-number').text("(" + partnerOrgs + ")");
 			$('span.keyword-number').text("(" + keywords + ")");
 			$('span.discipline-number').text("(" + disciplines + ")");
-			// store filter for each group
+
 			var filters = {};
 			$('.dropdown-menu li').delegate('a','click', function() {
 				
@@ -220,15 +282,13 @@
 			$('.isotopeContent').isotope('reloadItems').isotope();
 
 		function displayChecked (elem) {
-			// var label = $('')
+
 			var selector = $(elem);
 			var label = selector.attr('id');
 			var id = '#syllabi' + label;
 			var option = selector.html();
-			// console.log (id + " is the ID")
-			// console.log (label + " is the label");
-			// console.log (option + " is the option");
-			$(id).html (option + '<span class="bigCaret"></span>')
+			$(id).html (option + '<span class="bigCaret"></span>');
+
 		}
 
 		function checkFiltered () {
@@ -241,124 +301,103 @@
 
 		}
 	    
-	    function applyFilter(elem) {
-				
-		    var selector = $(elem);
-		    
-		    // store filter value in object
-		    var group = selector.attr('data-filter-group');
-		    filters[group] = selector.attr('data-filter-value');
-		    
-		    // convert object into array
-		    var isoFilters = [];
-		    for ( var prop in filters ) {
-		      isoFilters.push( filters[ prop ] )
-		    }
-		    			    
-		    var filterStr = isoFilters.join('');
-		    syllabiContainer.isotope({ filter: filterStr });
-		    console.log (filterStr);
-		  }
+    function applyFilter(elem) {
+			
+	    var selector = $(elem);
+	    
+	    // store filter value in object
+	    var group = selector.attr('data-filter-group');
+	    filters[group] = selector.attr('data-filter-value');
+	    
+	    // convert object into array
+	    var isoFilters = [];
+	    for ( var prop in filters ) {
+	      isoFilters.push( filters[ prop ] )
+	    }
+	    			    
+	    var filterStr = isoFilters.join('');
+	    syllabiContainer.isotope({ filter: filterStr });
+	  }
 
 		$(".clear-all").on('click', function(){
 			filters = {};
-			// var syllabiContainer = $('#syllabi-content');
-		    syllabiContainer.isotope({
-		        filter: '*'
-		    });
-		    // $('.dropdown-menu li').delegate('a','click', function() {
+	    syllabiContainer.isotope({
+	        filter: '*'
+	    });
 				
 			$('.is-checked').removeClass('is-checked');
 			$('.all-options').addClass('is-checked');
-			// applyFilter('.all-options'); 
 			$('.all-options').each(function(i, obj){
 				applyFilter(this);
 				displayChecked(this);
 			});
-			// });
 		});
 
 		{{/ifeq}}
 
 		{{!-- LIGHTNING TALK Template Script --}}
 		{{#ifeq section 'lightning_talk'}}
-			
-			var videos = $('iframe.embedly-embed'),
-			container = $('#talks-content'),
-			count;
 
-			// find all the embedly iframes on the page.
-			videos.each(function(){
-			  // initialize the player.
-			  var player = new playerjs.Player(this);
-			  
-			  // Wait for the player to be ready.
-			  player.on('ready', function(){
-					    
-			    count++;
-
-			    if (count === videos.length) {
-			        container.isotope({
-			            itemSelector: '.talks-item',
-			            isFitHeight: true,
-			            layoutMode: 'fitRows'
-			        });
-			    };
-			    
-			    // Listen to the play event.
-			    player.on('play', function(){
-			      // Tell Google analytics that a video was played.
-			      window.ga('send', 'event', 'Video', 'Play');
-			    });
-			  
-			  });
-			});
-
-			function checkFiltered() {
-
-			    var talks = $('#talks-content');
-			    if (talks.data('isotope').filteredItems.length === 0)
-			        $('.no-talks-visible').show();
-			    else
-			        $('.no-talks-visible').hide();
-
-			}
-
-			$('.filters-button-group').on('click', 'button', function() {
-
-			    var filterValue = $(this).attr('data-filter');
-			    container.isotope({
-			        filter: filterValue
-			    });
-
-			});
-			// change is-checked class on buttons
-			$('.button-group').each(function(i, buttonGroup) {
-			    var $buttonGroup = $(buttonGroup);
-
-			    $buttonGroup.on('click', 'button', function() {
-			        $buttonGroup.find('.is-checked').removeClass('is-checked');
-			        $(this).addClass('is-checked');
-
-			        checkFiltered();
-			    });
-
-			});
+			lightningTalks();
 
 		{{/ifeq}}
 
+		{{!-- EVENTS Template Script --}}
 		{{#ifeq section 'events'}}
 
 			$('.ellipsis p').text(function(index, currentText) {
-				if (currentText) {
-					console.log (currentText, "current text");
-					// console.log (currentText.substr(0, 10));
+				if (currentText)
 				    return currentText.substr(0, 120) + "...";
-				}
 			});
-
-
+			
+		{{/ifeq}}
+		
+		{{!-- EVENT Template Script --}}
+		{{#ifeq section 'event'}}
+			
+			lightningTalks();
 
 		{{/ifeq}}
+
+		{{!-- COURSE CATALOG Template Script --}}
+		{{#ifeq section 'courses'}}
+
+			function courseChange(el) {
+			
+				var courseKey = el.data('key');
+		  	$('#course-menu a').removeClass('active');
+		  	$('#course-menu a[data-key="' + courseKey + '"]').addClass('active');
+
+		  	$('#course-contents .content').hide()
+		  	$('#course-contents .content[data-key="' + courseKey + '"]').show();
+
+		  }
+
+			$('#course-menu a').click(
+			  function(evt) {
+			  	evt.preventDefault();
+			  	courseChange($(this));
+			  }
+			);
+
+			$('#courses-mobile').change(
+			  function() {
+			  	courseChange($(this).find(':selected'));
+			  }
+			);
+		{{/ifeq}}
+
+		{{#ifeq section 'getting_involved'}}
+
+		$('.involved ul li').each(function(text) {
+			var item = $('.involved ul li')[text];
+			if ($(item).text().indexOf('href') > 0) {
+				$(item).html($(item).text())
+			}
+			$(item).show();
+		});
+
+		{{/ifeq}}
+
 	})
 </script>

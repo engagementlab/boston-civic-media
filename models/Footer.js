@@ -23,7 +23,6 @@ var Footer = new keystone.List('Footer',
 	{
 		label: 'Footer Page',
 		singular: 'Footer Page',
-		track: true,
 		nodelete: true,
 		nocreate: true
 	});
@@ -57,16 +56,6 @@ Footer.add({
 	}, 
 	'Main Footer', {
 
-	    elLogo: {
-            type: Types.CloudinaryImage, 
-            label: 'EL Logo', 
-            folder: 'site/logos'
-        },
-        bcmLogo: {
-            type: Types.CloudinaryImage, 
-            label: 'BCM Logo', 
-            folder: 'site/logos'
-        },
         content: {
             type: Types.TextArray, 
             label: 'Footer Content',

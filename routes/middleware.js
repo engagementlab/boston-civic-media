@@ -1,4 +1,4 @@
-/* Engagement Lab Website */
+/* Boston Civic Media */
 /**
  * Route middleware
  * This file contains the common middleware used by all routes. Extend or replace these functions as the application requires.
@@ -25,6 +25,7 @@ var _ = require('underscore');
 exports.initLocals = function(req, res, next) {
 
     var locals = res.locals;
+    locals.env = process.env.NODE_ENV; 
 
     locals.navLinks = [{
         label: 'About',
@@ -32,9 +33,14 @@ exports.initLocals = function(req, res, next) {
         href: '/about'
     },
     {
-        label: 'Get Involved',
-        key: 'get-involved',
-        href: '/getting_involved'
+        label: 'Events',
+        key: 'events',
+        href: '/events'
+    },
+    {
+        label: 'Climate Courses',
+        key: 'courses',
+        href: '/courses'
     },
     {
         label: 'Syllabi',
@@ -44,18 +50,14 @@ exports.initLocals = function(req, res, next) {
     {
         label: 'Lightning Talks',
         key: 'lightning-talk',
-        href: '/lightning_talks'
+        href: '/lightning-talks'
     },
-    // {
-    //     label: 'CIRB',
-    //     key: 'irb_proj',
-    //     href: '/irb_proj'
-    // },
     {
-        label: 'Events',
-        key: 'events',
-        href: '/events'
+        label: 'Get Involved',
+        key: 'get-involved',
+        href: '/get-involved'
     }];
+    
 
     locals.user = req.user;
 

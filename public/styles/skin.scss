@@ -12,7 +12,7 @@ File Description:Light Blue Skin
 //== Colors
 //
 //## Gray and brand colors for use across The Project Template.
-$gray-dark: 			#7d7d7d;
+$gray-dark: 			$color-warm-grey-two;
 $gray:            		#cccccc;
 $gray-light:            #bababa;
 $gray-lighter:          #dadada;
@@ -99,7 +99,7 @@ $font-theme-smallcaps:	  'HalisGR-SBook', sans-serif;
 
 $font-family-base:        $font-theme;
 
-$font-size-base:          15px;
+$font-size-base:          16px;
 $font-size-large:         ceil(($font-size-base * 1.25)); // ~18px
 $font-size-small:         ceil(($font-size-base * 0.85)); // ~12px
 
@@ -532,34 +532,34 @@ ul.pagination li.active a,
 /*Pace (Page loader)
 ---------------------------------- */
 .page-loader-1 .pace {
-	border: 1px solid $base-color;
+	border: 1px solid $color-pale-teal;
 }
 .page-loader-1 .pace .pace-progress {
-	background: $base-color;
+	background: $color-pale-teal;
 }
 .page-loader-2 .pace .pace-progress:before {
-	background: $base-color;
+	background: $color-pale-teal;
 }
 .page-loader-2 .pace .pace-activity {
-	border: 5px solid $base-color;
+	border: 5px solid $color-pale-teal;
 }
 .page-loader-2 .pace .pace-activity:after {
-	border: 5px solid $base-color;
+	border: 5px solid $color-pale-teal;
 }
 .page-loader-2 .pace .pace-activity:before {
-	border: 5px solid $base-color;
+	border: 5px solid $color-pale-teal;
 }
 .page-loader-3 .pace .pace-progress {
-	background: $base-color;
+	background: $color-pale-teal;
 }
 .page-loader-4 .pace .pace-progress {
-  background: $base-color;
+  background: $color-pale-teal;
 }
 .page-loader-5 .pace .pace-progress:after {
-  color: $base-color;
+  color: $color-pale-teal;
 }
 .page-loader-6 .pace .pace-activity { 
-	background: $base-color; 
+	background: $color-pale-teal; 
 }
 /* 6 Navigations
 -------------------------------------------------
@@ -644,12 +644,6 @@ header:not(.dark) .dropdown-menu > li.active > a i {
 /* mobile menu toggle button on hover/focus */
 .navbar-default {
 	.navbar-toggle {
-		border-color: #ccc;
-		&:hover,
-		&:focus {
-			background-color: #fafafa;
-			border-color: $base-color-hover;
-		}
 		.icon-bar {
 			background-color: #ccc;
 		}

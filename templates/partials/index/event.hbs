@@ -1,0 +1,17 @@
+{{!--
+/**
+* Boston Civic Media
+* Developed by Engagement Lab, 2016
+* ==============
+*/
+--}}
+<div class="title">
+	<h2><a href="/events/{{event.key}}">{{event.name}}</a></h2>
+		<p>{{date event.date format='MMMM Do YYYY'}}</p>
+</div>
+{{!-- <img src="{{{cloudinaryUrl event.image height=200 width='auto' effect='grayscale' crop='scale' gravity='center'}}}" alt="{{event.name}}"> --}}
+<img 
+  data-src="{{{cloudinaryUrl event.image height=200 width='auto' effect='grayscale' crop='fill' gravity='faces:center'}}}" 
+  class="cld-responsive">
+
+<p>{{{event.theFooter.html}}}</p>
